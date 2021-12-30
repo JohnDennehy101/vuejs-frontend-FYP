@@ -4,6 +4,8 @@ import App from './App.vue'
 import LoginPage from './pages/LoginPage'
 import HomePage from './pages/HomePage'
 import RegisterPage from './pages/RegisterPage'
+import DashboardPage from './pages/DashboardPage'
+import CreateEventPage from './pages/CreateEventPage'
 import '@fortawesome/fontawesome-free/css/all.css'
 import '@fortawesome/fontawesome-free/js/all.js'
 
@@ -24,6 +26,16 @@ const router = createRouter({
             path: '/register',
             name: 'Register',
             component: RegisterPage
+        },
+        {
+            path: '/dashboard/:id',
+            name: 'Dashboard',
+            component: DashboardPage
+        },
+        {
+            path: '/dashboard/createEvent',
+            name: 'Create Event Page',
+            component: CreateEventPage
         }
     ]
 });

@@ -6,7 +6,9 @@
         <p>Group Activity Planner</p>
       </div>
       <ul v-if="loggedInHeader">
-        <li>Heading 1</li>
+        <li>
+          <router-link to="createEvent"> Add Event </router-link>
+        </li>
         <li>Heading 2</li>
         <li>Heading 3</li>
         <li>Heading 4</li>
