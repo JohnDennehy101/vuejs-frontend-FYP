@@ -1,18 +1,18 @@
 <template>
   <div id="wrapper">
-    <LoginForm title="Login" />
+    <RegisterForm />
     <LoginImage />
   </div>
 </template>
 
 <script>
-import LoginForm from "../components/LoginForm";
+import RegisterForm from "../components/RegisterForm";
 import LoginImage from "../components/LoginImage";
 
 export default {
-  name: "Login Page",
+  name: "Register Page",
   components: {
-    LoginForm,
+    RegisterForm,
     LoginImage,
   },
 };

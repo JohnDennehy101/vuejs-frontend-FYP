@@ -3,6 +3,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 import App from './App.vue'
 import LoginPage from './pages/LoginPage'
 import HomePage from './pages/HomePage'
+import RegisterPage from './pages/RegisterPage'
+import '@fortawesome/fontawesome-free/css/all.css'
+import '@fortawesome/fontawesome-free/js/all.js'
 
 const router = createRouter({
     history: createWebHistory(),
@@ -16,6 +19,11 @@ const router = createRouter({
             path: '/login',
             name: 'Login',
             component: LoginPage
+        },
+        {
+            path: '/register',
+            name: 'Register',
+            component: RegisterPage
         }
     ]
 });
