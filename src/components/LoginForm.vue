@@ -30,6 +30,7 @@
 
       <AccountErrorMessage
         :toggle="this.invalidLogin"
+        :errorMessage="this.errorMessage"
         v-on:hideErrorMessage="hideErrorMessage"
       />
     </form>
@@ -47,6 +48,7 @@ export default {
       password: "",
       formTitle: this.title,
       invalidLogin: false,
+      errorMessage: "There was an error logging you in.",
     };
   },
   components: {
@@ -70,12 +72,10 @@ export default {
       if (!("error" in response)) {
         localStorage.setItem("token", response.data.jwtToken);
       } else {
-        console.log("SETTING TO TRUE");
         this.invalidLogin = true;
       }
     },
     hideErrorMessage() {
-      console.log("TESTING");
       this.invalidLogin = false;
     },
   },

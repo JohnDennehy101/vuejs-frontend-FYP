@@ -1,7 +1,7 @@
 <template>
   <div class="form-control" v-show="toggle" id="error-sign-up-notice">
     <i class="fas fa-exclamation-triangle"></i>
-    <p>There was an error logging you in.</p>
+    <p>{{ errorMessage }}</p>
 
     <span @click="hideErrorMessage">
       <i class="fas fa-times-circle"></i>
@@ -14,6 +14,9 @@ export default {
   props: {
     toggle: {
       type: Boolean,
+    },
+    errorMessage: {
+      type: String,
     },
   },
   data() {

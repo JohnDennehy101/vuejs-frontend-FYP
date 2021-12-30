@@ -24,17 +24,26 @@
       <div class="form-control">
         <button>Sign up</button>
       </div>
+
+      <AccountErrorMessage
+        :toggle="this.invalidRegistration"
+        :errorMessage="this.errorMessage"
+        v-on:hideErrorMessage="hideErrorMessage"
+      />
     </form>
   </div>
 </template>
 
 <script>
 import axios from "axios";
+import AccountErrorMessage from "./AccountErrorMessage";
 export default {
   data() {
     return {
       email: "",
       password: "",
+      invalidRegistration: false,
+      errorMessage: "There was an error registering your account details.",
     };
   },
   methods: {
@@ -42,18 +51,27 @@ export default {
       console.log(this.email + " " + this.password);
       const payload = { email: this.email, password: this.password };
 
-      const response = await axios.post(
-        "http://localhost:3000/users",
-        payload,
-        {
+      const response = await axios
+        .post("http://localhost:3000/users", payload, {
           headers: {
             "Access-Control-Allow-Origin": "*",
           },
-        }
-      );
-      localStorage.setItem("token", response.data.jwtToken);
+        })
+        .catch((error) => {
+          return { error };
+        });
+
+      if (!("error" in response)) {
+        localStorage.setItem("token", response.data.jwtToken);
+      } else {
+        this.invalidRegistration = true;
+      }
+    },
+    hideErrorMessage() {
+      this.invalidRegistration = false;
     },
   },
+  components: { AccountErrorMessage },
 };
 </script>
 
