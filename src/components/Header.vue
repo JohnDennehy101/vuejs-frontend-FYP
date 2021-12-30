@@ -1,12 +1,11 @@
 <template>
-  <header v-if="loggedInHeader"></header>
-  <header v-else>
+  <header>
     <div class="parent-container">
       <div class="logo-and-title-container">
         <img src="../assets/logoIcon.png" />
         <p>Group Activity Planner</p>
       </div>
-      <ul>
+      <ul v-if="loggedInHeader">
         <li>Heading 1</li>
         <li>Heading 2</li>
         <li>Heading 3</li>
@@ -29,7 +28,7 @@ export default {
   },
   watch: {
     $route() {
-      if (this.$route.path !== "/") {
+      if (this.$route.path !== "/" || this.$route.path !== "/login") {
         this.loggedInHeader = true;
       }
     },
