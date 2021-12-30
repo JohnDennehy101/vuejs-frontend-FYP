@@ -1,20 +1,11 @@
 <template>
-  <div id="wrapper">
-    <LoginForm />
-    <LoginImage />
-  </div>
+  <router-view />
 </template>
 
 <script>
-import LoginForm from "./components/LoginForm.vue";
-import LoginImage from "./components/LoginImage.vue";
-
 export default {
   name: "App",
-  components: {
-    LoginForm,
-    LoginImage,
-  },
+  components: {},
 };
 </script>
 
@@ -28,8 +19,5 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
   background-color: grey;
-}
-#wrapper {
-  display: flex;
 }
 </style>
