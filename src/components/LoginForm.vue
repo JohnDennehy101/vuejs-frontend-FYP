@@ -29,6 +29,7 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   data() {
     return {
@@ -37,8 +38,20 @@ export default {
     };
   },
   methods: {
-    submitForm() {
+    async submitForm() {
       console.log(this.email + " " + this.password);
+      const payload = { email: this.email, password: this.password };
+
+      const response = await axios.post(
+        "http://localhost:3000/users",
+        payload,
+        {
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+          },
+        }
+      );
+      localStorage.setItem("token", response.data.jwtToken);
     },
   },
 };
