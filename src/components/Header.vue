@@ -13,8 +13,12 @@
       </ul>
     </div>
     <ul>
-      <li class="login">Login</li>
-      <li class="register">Register</li>
+      <li v-bind:class="{ activeHeader: loginPage }">
+        <router-link to="/login"> Login </router-link>
+      </li>
+      <li v-bind:class="{ activeHeader: registerPage }">
+        <router-link to="/register">Register </router-link>
+      </li>
     </ul>
   </header>
 </template>
@@ -24,12 +28,21 @@ export default {
   data() {
     return {
       loggedInHeader: false,
+      loginPage: false,
+      registerPage: false,
     };
   },
   watch: {
     $route() {
       if (this.$route.path !== "/" || this.$route.path !== "/login") {
         this.loggedInHeader = true;
+      }
+      if (this.$route.path === "/login") {
+        this.loginPage = true;
+        this.registerPage = false;
+      } else if (this.$route.path === "/register") {
+        this.registerPage = true;
+        this.loginPage = false;
       }
     },
   },
@@ -75,11 +88,17 @@ ul {
     margin: 0 1.5rem;
     width: 100%;
     font-size: 1rem;
+    text-decoration: none;
+    color: #ffffff;
   }
 }
-.login {
+.activeHeader {
   padding: 0.5rem 1rem;
   border: 1px solid white;
   border-radius: 50px;
+}
+a {
+  color: #ffffff;
+  text-decoration: none;
 }
 </style>

@@ -28,19 +28,17 @@
         <button>Sign up</button>
       </div>
 
-      <div class="form-control" v-if="invalidLogin" id="error-sign-up-notice">
-        <i class="fas fa-exclamation-triangle"></i>
-        <p>There was an error logging you in.</p>
-        <span @click="hideErrorMessage">
-          <i class="fas fa-times-circle"></i>
-        </span>
-      </div>
+      <AccountErrorMessage
+        :toggle="this.invalidLogin"
+        v-on:hideErrorMessage="hideErrorMessage"
+      />
     </form>
   </div>
 </template>
 
 <script>
 import axios from "axios";
+import AccountErrorMessage from "./AccountErrorMessage";
 export default {
   props: ["title"],
   data() {
@@ -50,6 +48,9 @@ export default {
       formTitle: this.title,
       invalidLogin: false,
     };
+  },
+  components: {
+    AccountErrorMessage,
   },
   methods: {
     async submitForm() {
@@ -66,17 +67,15 @@ export default {
           return { error };
         });
 
-      console.log(response);
-
       if (!("error" in response)) {
-        console.log(response);
         localStorage.setItem("token", response.data.jwtToken);
       } else {
+        console.log("SETTING TO TRUE");
         this.invalidLogin = true;
       }
     },
     hideErrorMessage() {
-      console.log("HITTING HERE");
+      console.log("TESTING");
       this.invalidLogin = false;
     },
   },
@@ -129,26 +128,8 @@ form {
     background-color: $primary-button-background-colour;
     color: $primary-button-text-colour;
   }
-  #error-sign-up-notice {
-    border-radius: 5px;
-    background-color: #e57373;
-    color: white;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.5rem;
-
-    p {
-      margin-left: 0.5rem;
-      margin-right: 0.5rem;
-    }
-  }
   img {
     width: 1.5rem;
-  }
-  i {
-    pointer-events: all;
   }
 }
 </style>
