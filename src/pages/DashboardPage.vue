@@ -8,7 +8,46 @@
   </div>
 </template>
 
-<script></script>
+<script>
+import axios from "axios";
+export default {
+  data() {
+    return {
+      events: [],
+      invalidEventCreation: false,
+      errorMessage:
+        "There was an error adding this event, not successfully created.",
+    };
+  },
+  methods: {
+    async getUserCreatedEvents() {
+      const jwtToken = localStorage.getItem("token");
+      console.log(jwtToken);
+      const response = await axios
+        .get("http://localhost:3000/users/findOne/" + jwtToken, {
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            Authorization: `Bearer ${jwtToken}`,
+          },
+        })
+        .catch((error) => {
+          return { error };
+        });
+
+      console.log(response);
+
+      if (!("error" in response)) {
+        this.$router.push({ path: "/dashboard/1" });
+      } else {
+        this.invalidEventCreation = true;
+      }
+    },
+  },
+  created() {
+    this.getUserCreatedEvents();
+  },
+};
+</script>
 
 <style scoped lang="scss">
 #wrapper {
