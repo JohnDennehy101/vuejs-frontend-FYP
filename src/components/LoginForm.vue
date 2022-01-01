@@ -70,7 +70,9 @@ export default {
         });
 
       if (!("error" in response)) {
+        localStorage.setItem("id", response.data.userId);
         localStorage.setItem("token", response.data.jwtToken);
+        this.$router.push({ path: `/dashboard/${response.data.userId}` });
       } else {
         this.invalidLogin = true;
       }

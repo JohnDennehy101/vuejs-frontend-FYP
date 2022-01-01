@@ -1,9 +1,34 @@
 <template>
   <div id="wrapper">
-    <div id="create-event-call-to-action-container">
+    <div v-if="events.length === 0" id="create-event-call-to-action-container">
       <i class="fas fa-folder-open"></i>
       <h4>You haven't created any events.</h4>
       <button @click="$router.push('createEvent')">Create Event</button>
+    </div>
+    <div v-if="events.length > 0" id="events-parent-container">
+      <h2>Your Events</h2>
+      <div
+        v-for="item in events"
+        v-bind:key="item.title"
+        class="individual-event-container"
+      >
+        <div
+          v-if="item.type === 'DOMESTIC_DAY'"
+          class="domestic-day-colour-mark"
+        ></div>
+        <div
+          v-else-if="item.type === 'DOMESTIC_OVERNIGHT'"
+          class="domestic-overnight-colour-mark"
+        ></div>
+
+        <div v-else class="foreign-overnight-colour-mark"></div>
+
+        <div class="event-information-container">
+          <h3>{{ item.title }}</h3>
+          <p>More info about group trip here...description</p>
+          <span>{{ item.type }}</span>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -17,6 +42,9 @@ export default {
       invalidEventCreation: false,
       errorMessage:
         "There was an error adding this event, not successfully created.",
+      domesticDayColourHex: "#F49F85",
+      domesticOvernightColourHex: "#AD1FEA",
+      foreignOvernightColourHex: "#62BCFA",
     };
   },
   methods: {
@@ -24,7 +52,7 @@ export default {
       const jwtToken = localStorage.getItem("token");
       console.log(jwtToken);
       const response = await axios
-        .get("http://localhost:3000/users/findOne/" + jwtToken, {
+        .get("http://localhost:3000/events", {
           headers: {
             "Access-Control-Allow-Origin": "*",
             Authorization: `Bearer ${jwtToken}`,
@@ -36,10 +64,10 @@ export default {
 
       console.log(response);
 
-      if (!("error" in response)) {
-        this.$router.push({ path: "/dashboard/1" });
-      } else {
+      if ("error" in response) {
         this.invalidEventCreation = true;
+      } else {
+        this.events = response.data;
       }
     },
   },
@@ -52,11 +80,12 @@ export default {
 <style scoped lang="scss">
 #wrapper {
   width: 100%;
-  height: 80vh;
+  height: 90vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  background-color: #f2f2f2;
 }
 #create-event-call-to-action-container {
   height: 20vh;
@@ -69,6 +98,65 @@ export default {
   justify-content: center;
   align-items: center;
   border: 1px solid #eeeeee;
+}
+#events-parent-container {
+  height: 80vh;
+  width: 85%;
+  border: 1px solid black;
+
+  h2 {
+    text-align: center;
+  }
+}
+.individual-event-container {
+  width: 30%;
+  height: 30%;
+  display: inline-block;
+  margin: 1rem;
+  border-radius: 5px;
+  background-color: #ffffff;
+
+  .domestic-day-colour-mark {
+    background-color: v-bind(domesticDayColourHex);
+    height: 3%;
+  }
+
+  .domestic-overnight-colour-mark {
+    background-color: v-bind(domesticOvernightColourHex);
+    height: 3%;
+  }
+
+  .foreign-overnight-colour-mark {
+    background-color: v-bind(foreignOvernightColourHex);
+    height: 3%;
+  }
+
+  .event-information-container {
+    width: 80%;
+    height: 100%;
+    margin: 1rem auto;
+
+    h3 {
+      font-size: 1.1rem;
+      color: #3a4374;
+    }
+    p {
+      margin: 0.8rem auto;
+      color: #647196;
+      font-size: 1rem;
+    }
+    span {
+      padding: 0.4rem;
+      background-color: #f2f4fe;
+      color: #3a4374;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 0.7rem;
+    }
+  }
+}
+.individual-event-container:hover {
+  cursor: pointer;
 }
 button {
   border-radius: 10px;

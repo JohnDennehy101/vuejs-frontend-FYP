@@ -55,8 +55,7 @@ export default {
 header {
   display: flex;
   justify-content: space-between;
-
-  margin: 0px 0 40px 0;
+  margin: 0;
   padding: 30px 100px;
   background-color: $header-background-colour;
   color: #ffffff;

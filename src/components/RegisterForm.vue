@@ -63,6 +63,8 @@ export default {
 
       if (!("error" in response)) {
         localStorage.setItem("token", response.data.jwtToken);
+        localStorage.setItem("id", response.data.userId);
+        this.$router.push({ path: `/dashboard/${response.data.userId}` });
       } else {
         this.invalidRegistration = true;
       }
