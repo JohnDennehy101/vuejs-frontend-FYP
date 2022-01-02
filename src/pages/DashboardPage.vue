@@ -50,9 +50,9 @@ export default {
   methods: {
     async getUserCreatedEvents() {
       const jwtToken = localStorage.getItem("token");
-      console.log(jwtToken);
+      const userId = localStorage.getItem("id");
       const response = await axios
-        .get("http://localhost:3000/events", {
+        .get("http://localhost:3000/events/user/" + userId, {
           headers: {
             "Access-Control-Allow-Origin": "*",
             Authorization: `Bearer ${jwtToken}`,
@@ -61,8 +61,6 @@ export default {
         .catch((error) => {
           return { error };
         });
-
-      console.log(response);
 
       if ("error" in response) {
         this.invalidEventCreation = true;

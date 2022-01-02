@@ -87,10 +87,14 @@ export default {
   methods: {
     async submitForm() {
       if (this.title.length > 0 && this.eventType !== null) {
-        const payload = { title: this.title, type: this.eventType };
         const jwtToken = localStorage.getItem("token");
+        const userId = localStorage.getItem("id");
+        const payload = {
+          title: this.title,
+          type: this.eventType,
+        };
         const response = await axios
-          .post("http://localhost:3000/events", payload, {
+          .post(`http://localhost:3000/events/${userId}`, payload, {
             headers: {
               "Access-Control-Allow-Origin": "*",
               Authorization: `Bearer ${jwtToken}`,
@@ -101,7 +105,7 @@ export default {
           });
 
         if (!("error" in response)) {
-          this.$router.push({ path: "/dashboard/1" });
+          this.$router.push({ path: `/dashboard/${userId}` });
         } else {
           this.invalidEventCreation = true;
         }
