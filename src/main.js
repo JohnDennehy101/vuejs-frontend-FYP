@@ -36,6 +36,12 @@ const router = createRouter({
             path: '/dashboard/createEvent',
             name: 'Create Event Page',
             component: CreateEventPage
+        },
+        {
+            path: '/event/:userId/:eventId',
+            name: 'Edit Event Page',
+            component: CreateEventPage,
+            props: true
         }
     ]
 });

@@ -27,6 +27,17 @@
           <h3>{{ item.title }}</h3>
           <p>More info about group trip here...description</p>
           <span>{{ item.type }}</span>
+          <div class="event-user-actions-parent-container">
+            <span
+              ><router-link
+                :to="{
+                  name: 'Edit Event Page',
+                  params: { userId: userId, eventId: item.id, editEvent: true },
+                }"
+              >
+                <i class="fas fa-pen"></i> </router-link
+            ></span>
+          </div>
         </div>
       </div>
     </div>
@@ -45,12 +56,14 @@ export default {
       domesticDayColourHex: "#F49F85",
       domesticOvernightColourHex: "#AD1FEA",
       foreignOvernightColourHex: "#62BCFA",
+      userId: null,
     };
   },
   methods: {
     async getUserCreatedEvents() {
       const jwtToken = localStorage.getItem("token");
       const userId = localStorage.getItem("id");
+      this.userId = userId;
       const response = await axios
         .get("http://localhost:3000/events/user/" + userId, {
           headers: {
@@ -132,7 +145,7 @@ export default {
   .event-information-container {
     width: 80%;
     height: 100%;
-    margin: 1rem auto;
+    margin: 1rem auto 0 auto;
 
     h3 {
       font-size: 1.1rem;
@@ -150,6 +163,19 @@ export default {
       border-radius: 10px;
       font-weight: bold;
       font-size: 0.7rem;
+    }
+
+    .event-user-actions-parent-container {
+      display: flex;
+      margin: 1rem auto;
+      svg {
+        font-size: 1rem;
+        padding: 0.2rem;
+        color: #3a4374;
+      }
+      span {
+        height: 100%;
+      }
     }
   }
 }
