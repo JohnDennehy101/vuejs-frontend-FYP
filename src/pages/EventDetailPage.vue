@@ -1,6 +1,10 @@
 <template>
   <div id="wrapper">
-    <EventForm :edit="this.edit" :individualEvent="this.individualEvent" />
+    <EventForm
+      v-if="showEditForm"
+      :edit="this.edit"
+      :individualEvent="this.individualEvent"
+    />
     <NoCreatedItems
       v-if="polls"
       :message="noCreatedPollsMessage"
@@ -18,6 +22,7 @@ export default {
   props: ["editEvent", "event"],
   data() {
     return {
+      showEditForm: false,
       edit: this.editEvent,
       individualEvent: this.event,
       polls: true,
@@ -29,6 +34,16 @@ export default {
   components: {
     EventForm,
     NoCreatedItems,
+  },
+  methods: {
+    async checkEditAction() {
+      if (this.edit === "true") {
+        this.showEditForm = true;
+      }
+    },
+  },
+  async created() {
+    await this.checkEditAction();
   },
 };
 </script>

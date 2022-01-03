@@ -9,43 +9,56 @@
 
     <div v-if="events.length > 0" id="events-parent-container">
       <h2>Your Events</h2>
+
       <div
         v-for="item in events"
         v-bind:key="item.title"
         class="individual-event-container"
       >
-        <div
-          v-if="item.type === 'DOMESTIC_DAY'"
-          class="domestic-day-colour-mark"
-        ></div>
-        <div
-          v-else-if="item.type === 'DOMESTIC_OVERNIGHT'"
-          class="domestic-overnight-colour-mark"
-        ></div>
+        <router-link
+          :to="{
+            name: 'Event Detail Page',
+            params: {
+              userId: userId,
+              eventId: item.id,
+              editEvent: false,
+              event: JSON.stringify(item),
+            },
+          }"
+        >
+          <div
+            v-if="item.type === 'DOMESTIC_DAY'"
+            class="domestic-day-colour-mark"
+          ></div>
+          <div
+            v-else-if="item.type === 'DOMESTIC_OVERNIGHT'"
+            class="domestic-overnight-colour-mark"
+          ></div>
 
-        <div v-else class="foreign-overnight-colour-mark"></div>
+          <div v-else class="foreign-overnight-colour-mark"></div>
 
-        <div class="event-information-container">
-          <h3>{{ item.title }}</h3>
-          <p>More info about group trip here...description</p>
-          <span>{{ item.type }}</span>
-          <div class="event-user-actions-parent-container">
-            <span
-              ><router-link
-                :to="{
-                  name: 'Event Detail Page',
-                  params: {
-                    userId: userId,
-                    eventId: item.id,
-                    editEvent: true,
-                    event: JSON.stringify(item),
-                  },
-                }"
-              >
-                <i class="fas fa-pen"></i> </router-link
-            ></span>
+          <div class="event-information-container">
+            <h3>{{ item.title }}</h3>
+            <p>More info about group trip here...description</p>
+            <span>{{ item.type }}</span>
+            <div class="event-user-actions-parent-container">
+              <span
+                ><router-link
+                  :to="{
+                    name: 'Event Detail Page',
+                    params: {
+                      userId: userId,
+                      eventId: item.id,
+                      editEvent: true,
+                      event: JSON.stringify(item),
+                    },
+                  }"
+                >
+                  <i class="fas fa-pen"></i> </router-link
+              ></span>
+            </div>
           </div>
-        </div>
+        </router-link>
       </div>
     </div>
   </div>
@@ -128,6 +141,10 @@ export default {
   margin: 1rem;
   border-radius: 5px;
   background-color: #ffffff;
+
+  a {
+    text-decoration: none;
+  }
 
   .domestic-day-colour-mark {
     background-color: v-bind(domesticDayColourHex);
