@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage'
 import RegisterPage from './pages/RegisterPage'
 import DashboardPage from './pages/DashboardPage'
 import CreateEventPage from './pages/CreateEventPage'
+import EventDetailPage from './pages/EventDetailPage'
 import '@fortawesome/fontawesome-free/css/all.css'
 import '@fortawesome/fontawesome-free/js/all.js'
 
@@ -39,8 +40,8 @@ const router = createRouter({
         },
         {
             path: '/event/:userId/:eventId',
-            name: 'Edit Event Page',
-            component: CreateEventPage,
+            name: 'Event Detail Page',
+            component: EventDetailPage,
             props: true
         }
     ]

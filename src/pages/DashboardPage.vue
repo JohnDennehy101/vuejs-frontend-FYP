@@ -31,8 +31,13 @@
             <span
               ><router-link
                 :to="{
-                  name: 'Edit Event Page',
-                  params: { userId: userId, eventId: item.id, editEvent: true },
+                  name: 'Event Detail Page',
+                  params: {
+                    userId: userId,
+                    eventId: item.id,
+                    editEvent: true,
+                    event: JSON.stringify(item),
+                  },
                 }"
               >
                 <i class="fas fa-pen"></i> </router-link
