@@ -1,10 +1,12 @@
 <template>
   <div id="wrapper">
-    <div v-if="events.length === 0" id="create-event-call-to-action-container">
-      <i class="fas fa-folder-open"></i>
-      <h4>You haven't created any events.</h4>
-      <button @click="$router.push('createEvent')">Create Event</button>
-    </div>
+    <NoCreatedItems
+      v-if="events.length === 0"
+      :message="noCreatedEventsMessage"
+      :callToAction="noCreatedEventsCallToAction"
+      :routerLink="noCreatedEventsCallToActionLink"
+    />
+
     <div v-if="events.length > 0" id="events-parent-container">
       <h2>Your Events</h2>
       <div
@@ -51,11 +53,15 @@
 
 <script>
 import axios from "axios";
+import NoCreatedItems from "../components/NoCreatedItems";
 export default {
   data() {
     return {
       events: [],
       invalidEventCreation: false,
+      noCreatedEventsMessage: "You haven't created any events",
+      noCreatedEventsCallToAction: "Create Event",
+      noCreatedEventsCallToActionLink: "createEvent",
       errorMessage:
         "There was an error adding this event, not successfully created.",
       domesticDayColourHex: "#F49F85",
@@ -87,8 +93,11 @@ export default {
       }
     },
   },
-  created() {
-    this.getUserCreatedEvents();
+  async created() {
+    await this.getUserCreatedEvents();
+  },
+  components: {
+    NoCreatedItems,
   },
 };
 </script>
@@ -102,18 +111,6 @@ export default {
   flex-direction: column;
   align-items: center;
   background-color: #f2f2f2;
-}
-#create-event-call-to-action-container {
-  height: 20vh;
-  padding: 1rem;
-  width: 50%;
-  border-radius: 10px;
-  border: 1px solid black;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #eeeeee;
 }
 #events-parent-container {
   height: 80vh;
@@ -186,22 +183,5 @@ export default {
 }
 .individual-event-container:hover {
   cursor: pointer;
-}
-button {
-  border-radius: 10px;
-  border: none;
-  width: 30%;
-  width: 40%;
-  height: 2.5rem;
-  margin: 1rem 0;
-  background-color: $primary-button-background-colour;
-  color: $primary-button-text-colour;
-}
-button:hover {
-  cursor: pointer;
-}
-svg {
-  font-size: 1.5rem;
-  padding: 1rem;
 }
 </style>

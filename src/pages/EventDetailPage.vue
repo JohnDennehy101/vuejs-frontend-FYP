@@ -1,10 +1,18 @@
 <template>
-  {{ this.individualEvent.title }}
-  <EventForm :edit="this.edit" :individualEvent="this.individualEvent" />
+  <div id="wrapper">
+    <EventForm :edit="this.edit" :individualEvent="this.individualEvent" />
+    <NoCreatedItems
+      v-if="polls"
+      :message="noCreatedPollsMessage"
+      :callToAction="noCreatedPollsCallToAction"
+      :routerLink="noCreatedPollsCallToActionLink"
+    />
+  </div>
 </template>
 
 <script>
 import EventForm from "../components/EventForm";
+import NoCreatedItems from "../components/NoCreatedItems";
 export default {
   name: "eventDetailPage",
   props: ["editEvent", "event"],
@@ -12,12 +20,27 @@ export default {
     return {
       edit: this.editEvent,
       individualEvent: this.event,
+      polls: true,
+      noCreatedPollsMessage: "You have not created any polls for this event.",
+      noCreatedPollsCallToAction: "Create Poll",
+      noCreatedPollsCallToActionLink: "poll",
     };
   },
   components: {
     EventForm,
+    NoCreatedItems,
   },
 };
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+#wrapper {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f2f2f2;
+}
+</style>
