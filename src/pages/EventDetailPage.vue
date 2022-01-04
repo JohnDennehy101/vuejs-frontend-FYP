@@ -26,7 +26,7 @@ import EventOverview from "../components/EventOverview";
 import NoCreatedItems from "../components/NoCreatedItems";
 export default {
   name: "eventDetailPage",
-  props: ["editEvent", "event"],
+  props: ["editEvent", "event", "eventId"],
   data() {
     return {
       showEditForm: false,
@@ -35,7 +35,7 @@ export default {
       polls: true,
       noCreatedPollsMessage: "You have not created any polls for this event.",
       noCreatedPollsCallToAction: "Create Poll",
-      noCreatedPollsCallToActionLink: "poll",
+      noCreatedPollsCallToActionLink: `${this.eventId}/poll`,
     };
   },
   components: {
@@ -55,9 +55,13 @@ export default {
     hideEditForm(value) {
       this.showEditForm = value;
     },
+    async createPollLink() {
+      localStorage.setItem("eventId", this.individualEvent.id);
+    },
   },
   async created() {
     await this.checkEditAction();
+    await this.createPollLink();
   },
 };
 </script>
