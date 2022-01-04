@@ -173,13 +173,13 @@ export default {
   align-items: center;
 }
 form {
-  width: 70%;
+  width: 60%;
   height: 90%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: #fff;
-  margin: 0 auto;
+  margin: 1rem auto;
   border-radius: 10px;
   border: 1px solid #eeeeee;
 

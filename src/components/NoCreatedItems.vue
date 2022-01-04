@@ -26,8 +26,8 @@ export default {
 <style scoped lang="scss">
 #no-items-call-to-action-container {
   height: 20vh;
-  padding: 1rem;
-  width: 50%;
+  padding: 1rem 0;
+  width: 60%;
   border-radius: 10px;
   border: 1px solid black;
   display: flex;
@@ -35,6 +35,7 @@ export default {
   justify-content: center;
   align-items: center;
   border: 1px solid #eeeeee;
+  background-color: white;
 }
 button {
   border-radius: 10px;

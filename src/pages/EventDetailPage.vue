@@ -5,6 +5,11 @@
       :edit="this.edit"
       :individualEvent="this.individualEvent"
     />
+    <EventOverview
+      v-else-if="showEditForm == false"
+      :individualEvent="this.individualEvent"
+      @editActionClick="editEventInfo"
+    />
     <NoCreatedItems
       v-if="polls"
       :message="noCreatedPollsMessage"
@@ -16,6 +21,7 @@
 
 <script>
 import EventForm from "../components/EventForm";
+import EventOverview from "../components/EventOverview";
 import NoCreatedItems from "../components/NoCreatedItems";
 export default {
   name: "eventDetailPage",
@@ -33,6 +39,7 @@ export default {
   },
   components: {
     EventForm,
+    EventOverview,
     NoCreatedItems,
   },
   methods: {
@@ -40,6 +47,9 @@ export default {
       if (this.edit === "true") {
         this.showEditForm = true;
       }
+    },
+    editEventInfo(value) {
+      this.showEditForm = value;
     },
   },
   async created() {
