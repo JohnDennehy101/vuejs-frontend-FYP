@@ -12,11 +12,19 @@
     </div>
     <div class="form-control">
       <label for="startDate">Start Date</label>
-      <datepicker v-model="startDate" :lower-limit="startDate" />
+      <datepicker
+        v-model="startDate"
+        v-bind:style="datePickerStyleObject"
+        :lower-limit="restrictDatePicker"
+      />
     </div>
     <div class="form-control">
       <label for="endDate">End Date</label>
-      <datepicker v-model="endDate" :lower-limit="endDate" />
+      <datepicker
+        v-model="endDate"
+        v-bind:style="datePickerStyleObject"
+        :lower-limit="startDate"
+      />
     </div>
     <div class="form-control">
       <button>Submit</button>
@@ -32,10 +40,26 @@ export default {
     return {
       title: "",
       startDate: new Date(),
-      endDate: new Date(),
+      restrictDatePicker: new Date(),
+      endDate: null,
       options: [],
       id: "",
+      datePickerStyleObject: {
+        height: "2.5rem",
+        width: "98%",
+        borderRadius: "12px",
+        border: "1px solid grey",
+        paddingLeft: "10px",
+      },
     };
+  },
+
+  watch: {
+    startDate: function (val) {
+      if (val > this.endDate) {
+        this.endDate = null;
+      }
+    },
   },
 
   methods: {
@@ -48,12 +72,8 @@ export default {
         title: this.title,
         options: [
           {
-            startDate: new Date(this.startDate),
-            endDate: new Date(this.endDate),
-          },
-          {
-            startDate: "A",
-            endDate: "B",
+            startDate: this.startDate,
+            endDate: this.endDate,
           },
         ],
       };
@@ -85,6 +105,26 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.v3dp__datepicker {
+  --vdp-bg-color: #ffffff;
+  --vdp-text-color: #000000;
+  --vdp-box-shadow: 0 4px 10px 0 rgba(128, 144, 160, 0.1),
+    0 0 1px 0 rgba(128, 144, 160, 0.81);
+  --vdp-border-radius: 24px;
+  --vdp-heading-size: 2.5em;
+  --vdp-heading-weight: bold;
+  --vdp-heading-hover-color: #eeeeee;
+  --vdp-arrow-color: #eeeeee;
+  --vdp-elem-color: #eeeeee;
+  --vdp-disabled-color: #d5d9e0;
+  --vdp-hover-color: #ffffff;
+  --vdp-hover-bg-color: #0384ff;
+  --vdp-selected-color: #ffffff;
+  --vdp-selected-bg-color: #0384ff;
+  --vdp-elem-font-size: 1rem;
+  --vdp-elem-border-radius: 0.5rem;
+  --vdp-divider-color: #d5d9e0;
+}
 form {
   width: 60%;
   height: 90%;
