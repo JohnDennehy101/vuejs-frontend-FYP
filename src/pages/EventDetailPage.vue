@@ -4,6 +4,7 @@
       v-if="showEditForm"
       :edit="this.edit"
       :individualEvent="this.individualEvent"
+      @hideEditEventActionClick="this.hideEditForm"
     />
     <EventOverview
       v-else-if="showEditForm == false"
@@ -49,6 +50,9 @@ export default {
       }
     },
     editEventInfo(value) {
+      this.showEditForm = value;
+    },
+    hideEditForm(value) {
       this.showEditForm = value;
     },
   },

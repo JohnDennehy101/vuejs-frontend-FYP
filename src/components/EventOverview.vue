@@ -24,7 +24,6 @@ export default {
   methods: {
     populateEventInfo() {
       const eventInfo = JSON.parse(this.item);
-      console.log(eventInfo);
 
       this.title = eventInfo.title;
       this.type = eventInfo.type;

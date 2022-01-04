@@ -1,5 +1,14 @@
 <template>
   <form @submit.prevent="submitForm">
+    <div
+      v-if="editEventAction"
+      class="form-control"
+      id="hide-form-icon-container"
+    >
+      <span v-on:click="$emit('hideEditEventActionClick', false)"
+        ><i class="fas fa-times-circle"></i
+      ></span>
+    </div>
     <div class="form-control">
       <h2>{{ formTitle }}</h2>
     </div>
@@ -182,6 +191,23 @@ form {
   margin: 1rem auto;
   border-radius: 10px;
   border: 1px solid #eeeeee;
+
+  #hide-form-icon-container {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 0.8rem;
+
+    span {
+      padding: 0 0.5rem;
+    }
+
+    svg {
+      font-size: 1.3rem;
+    }
+    svg:hover {
+      cursor: pointer;
+    }
+  }
 
   .form-control {
     width: 80%;
