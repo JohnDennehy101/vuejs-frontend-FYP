@@ -40,6 +40,7 @@
           <div class="event-information-container">
             <h3>{{ item.title }}</h3>
             <p>More info about group trip here...description</p>
+            <p style="display: none">{{ item.id }}</p>
             <span>{{ item.type }}</span>
             <div class="event-user-actions-parent-container">
               <span
@@ -56,17 +57,27 @@
                 >
                   <i class="fas fa-pen"></i> </router-link
               ></span>
+              <span @click.prevent="showDeleteModal">
+                <i class="fas fa-times-circle"></i
+              ></span>
             </div>
           </div>
         </router-link>
       </div>
     </div>
   </div>
+  <DeleteModal
+    v-if="displayDeleteModal"
+    :title="deleteEventTitle"
+    :uuid="deleteEventId"
+    @close="displayDeleteModal = false"
+  />
 </template>
 
 <script>
 import axios from "axios";
 import NoCreatedItems from "../components/NoCreatedItems";
+import DeleteModal from "../components/DeleteModal";
 export default {
   data() {
     return {
@@ -81,6 +92,9 @@ export default {
       domesticOvernightColourHex: "#AD1FEA",
       foreignOvernightColourHex: "#62BCFA",
       userId: null,
+      displayDeleteModal: false,
+      deleteEventTitle: "",
+      deleteEventId: "",
     };
   },
   methods: {
@@ -105,12 +119,19 @@ export default {
         this.events = response.data;
       }
     },
+    showDeleteModal(event) {
+      console.log(event);
+      this.deleteEventId = event.path[4].children[2].textContent;
+      this.deleteEventTitle = event.path[4].children[0].textContent;
+      this.displayDeleteModal = true;
+    },
   },
   async created() {
     await this.getUserCreatedEvents();
   },
   components: {
     NoCreatedItems,
+    DeleteModal,
   },
 };
 </script>
@@ -186,6 +207,7 @@ export default {
 
     .event-user-actions-parent-container {
       display: flex;
+      justify-content: space-between;
       margin: 1rem auto;
       svg {
         font-size: 1rem;
