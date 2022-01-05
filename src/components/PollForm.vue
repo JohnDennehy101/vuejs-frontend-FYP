@@ -93,28 +93,61 @@ export default {
       this.options.splice(index, 1);
     },
     async submitForm() {
-      const userId = localStorage.getItem("id");
+      if (this.editPollAction) {
+        const userId = localStorage.getItem("id");
 
-      if (this.title.length > 0 && this.options.length > 0) {
-        const payload = {
-          title: this.title,
-          options: this.options,
-        };
+        if (this.title.length > 0 && this.options.length > 0) {
+          const payload = {
+            title: this.title,
+            options: this.options,
+          };
 
-        const response = await axios
-          .post(`http://localhost:3000/events/${this.id}/poll`, payload, {
-            headers: {
-              "Access-Control-Allow-Origin": "*",
-            },
-          })
-          .catch((error) => {
-            return { error };
-          });
+          const response = await axios
+            .patch(
+              `http://localhost:3000/events/${this.id}/poll/${
+                JSON.parse(this.pollInfo).id
+              }`,
+              payload,
+              {
+                headers: {
+                  "Access-Control-Allow-Origin": "*",
+                },
+              }
+            )
+            .catch((error) => {
+              return { error };
+            });
 
-        if (!("error" in response)) {
-          this.$router.push({ path: `/dashboard/${userId}` });
-        } else {
-          this.invalidLogin = true;
+          if (!("error" in response)) {
+            this.$router.push({ path: `/dashboard/${userId}` });
+          } else {
+            this.invalidLogin = true;
+          }
+        }
+      } else {
+        const userId = localStorage.getItem("id");
+
+        if (this.title.length > 0 && this.options.length > 0) {
+          const payload = {
+            title: this.title,
+            options: this.options,
+          };
+
+          const response = await axios
+            .post(`http://localhost:3000/events/${this.id}/poll`, payload, {
+              headers: {
+                "Access-Control-Allow-Origin": "*",
+              },
+            })
+            .catch((error) => {
+              return { error };
+            });
+
+          if (!("error" in response)) {
+            this.$router.push({ path: `/dashboard/${userId}` });
+          } else {
+            this.invalidLogin = true;
+          }
         }
       }
     },

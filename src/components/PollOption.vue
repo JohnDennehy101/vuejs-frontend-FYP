@@ -17,7 +17,9 @@ export default {
   },
   computed: {
     formattedStartDate: function () {
-      let month = this.start.getMonth();
+      let date = new Date(this.start);
+      console.log(date);
+      let month = date.getMonth();
       let months = [
         "January",
         "February",
@@ -34,14 +36,15 @@ export default {
       ];
 
       let formattedDate =
-        ("0" + this.start.getDate()).slice(-2) +
+        ("0" + date.getDate()).slice(-2) +
         "-" +
-        (months[month] + "-" + this.start.getFullYear() + " ");
+        (months[month] + "-" + date.getFullYear() + " ");
 
       return formattedDate;
     },
     formattedEndDate: function () {
-      let month = this.end.getMonth();
+      let date = new Date(this.end);
+      let month = date.getMonth();
       let months = [
         "January",
         "February",
@@ -58,9 +61,9 @@ export default {
       ];
 
       let formattedDate =
-        ("0" + this.end.getDate()).slice(-2) +
+        ("0" + date.getDate()).slice(-2) +
         "-" +
-        (months[month] + "-" + this.end.getFullYear() + " ");
+        (months[month] + "-" + date.getFullYear() + " ");
 
       return formattedDate;
     },
