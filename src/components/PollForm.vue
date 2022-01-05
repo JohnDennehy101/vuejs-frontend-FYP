@@ -27,6 +27,20 @@
       />
     </div>
     <div class="form-control">
+      <button @click="addPollOption" id="add-option-button">Add Option</button>
+    </div>
+    <div v-if="options.length > 0" class="form-control">
+      <label for="options">Poll Options</label>
+      <ul v-for="option in options" :key="option.id">
+        <PollOption
+          v-on:removePollOption="removeIndividualPollOption"
+          :startDate="option.startDate"
+          :endDate="option.endDate"
+          :optionId="option.id"
+        />
+      </ul>
+    </div>
+    <div class="form-control">
       {{ pollInfo }}
       <button>Submit</button>
     </div>
@@ -36,6 +50,7 @@
 <script>
 import axios from "axios";
 import Datepicker from "vue3-datepicker";
+import PollOption from "./PollOption";
 export default {
   props: ["poll", "editPoll"],
   data() {
@@ -48,6 +63,7 @@ export default {
       endDate: null,
       options: [],
       id: "",
+      optionId: 0,
       datePickerStyleObject: {
         height: "2.5rem",
         width: "98%",
@@ -70,32 +86,36 @@ export default {
     async extractIdFromUrl() {
       this.id = window.location.pathname.split("/")[3];
     },
+    removeIndividualPollOption(id) {
+      const index = this.options.findIndex(
+        (option) => option.id === Number(id)
+      );
+      this.options.splice(index, 1);
+    },
     async submitForm() {
       const userId = localStorage.getItem("id");
-      const payload = {
-        title: this.title,
-        options: [
-          {
-            startDate: this.startDate,
-            endDate: this.endDate,
-          },
-        ],
-      };
 
-      const response = await axios
-        .post(`http://localhost:3000/events/${this.id}/poll`, payload, {
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-          },
-        })
-        .catch((error) => {
-          return { error };
-        });
+      if (this.title.length > 0 && this.options.length > 0) {
+        const payload = {
+          title: this.title,
+          options: this.options,
+        };
 
-      if (!("error" in response)) {
-        this.$router.push({ path: `/dashboard/${userId}` });
-      } else {
-        this.invalidLogin = true;
+        const response = await axios
+          .post(`http://localhost:3000/events/${this.id}/poll`, payload, {
+            headers: {
+              "Access-Control-Allow-Origin": "*",
+            },
+          })
+          .catch((error) => {
+            return { error };
+          });
+
+        if (!("error" in response)) {
+          this.$router.push({ path: `/dashboard/${userId}` });
+        } else {
+          this.invalidLogin = true;
+        }
       }
     },
     populateFormInfo() {
@@ -105,13 +125,30 @@ export default {
         this.options = pollInformation.options;
       }
     },
+    addPollOption(event) {
+      event.preventDefault();
+      if (this.startDate !== null && this.endDate !== null) {
+        this.options.push({
+          id: this.optionId,
+          startDate: this.startDate,
+          endDate: this.endDate,
+        });
+
+        this.optionId++;
+
+        this.startDate = null;
+        this.endDate = null;
+      }
+    },
   },
+
   async created() {
     this.populateFormInfo();
     await this.extractIdFromUrl();
   },
   components: {
     Datepicker,
+    PollOption,
   },
 };
 </script>
@@ -194,6 +231,16 @@ form {
     margin: 1rem auto;
     background-color: $primary-button-background-colour;
     color: $primary-button-text-colour;
+  }
+  button:hover {
+    cursor: pointer;
+  }
+  #add-option-button {
+    width: 20%;
+    background-color: #3a4374;
+  }
+  ul {
+    display: flex;
   }
   .button-container {
     text-align: center;
