@@ -27,6 +27,7 @@
       />
     </div>
     <div class="form-control">
+      {{ pollInfo }}
       <button>Submit</button>
     </div>
   </form>
@@ -36,9 +37,12 @@
 import axios from "axios";
 import Datepicker from "vue3-datepicker";
 export default {
+  props: ["poll", "editPoll"],
   data() {
     return {
       title: "",
+      pollInfo: this.poll,
+      editPollAction: this.editPoll,
       startDate: new Date(),
       restrictDatePicker: new Date(),
       endDate: null,
@@ -94,8 +98,16 @@ export default {
         this.invalidLogin = true;
       }
     },
+    populateFormInfo() {
+      if (this.editPollAction) {
+        const pollInformation = JSON.parse(this.pollInfo);
+        this.title = pollInformation.title;
+        this.options = pollInformation.options;
+      }
+    },
   },
   async created() {
+    this.populateFormInfo();
     await this.extractIdFromUrl();
   },
   components: {

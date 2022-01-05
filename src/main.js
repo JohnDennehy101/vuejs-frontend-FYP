@@ -42,7 +42,8 @@ const router = createRouter({
         {
             path: '/event/:userId/:eventId/poll',
             name: 'Create Poll Page',
-            component: CreatePollPage
+            component: CreatePollPage,
+            props: true
         },
         {
             path: '/event/:userId/:eventId',
