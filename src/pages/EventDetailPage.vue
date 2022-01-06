@@ -42,7 +42,21 @@
             {{ poll.title }}
           </div>
         </div>
+
         <div class="poll-call-to-action-container">
+          <span>
+            <router-link
+              :to="{
+                name: 'Take Poll Page',
+                params: {
+                  userId: userId,
+                  eventId: this.eventId,
+                  pollId: poll.id,
+                },
+              }"
+            >
+              <i class="fas fa-check-circle"></i> </router-link
+          ></span>
           <span v-on:click="$emit('editActionClick', true)">
             <router-link
               :to="{
@@ -186,12 +200,12 @@ export default {
     justify-content: space-between;
 
     .poll-info-parent-container {
-      width: 80%;
+      width: 65%;
       display: flex;
     }
 
     .poll-call-to-action-container {
-      width: 20%;
+      width: 35%;
       display: flex;
       justify-content: center;
       align-items: center;
