@@ -28,6 +28,9 @@
           <div class="poll-info-container">
             <h3>Title</h3>
             {{ poll.title }}
+            <h3 style="display: none">
+              {{ poll.id }}
+            </h3>
           </div>
           <div class="poll-info-container">
             <h3>Created At</h3>
@@ -60,6 +63,14 @@
         </div>
       </div>
     </div>
+    <DeleteModal
+      v-if="displayDeleteModal"
+      :title="deletePollTitle"
+      :eventId="this.eventId"
+      :pollId="this.pollId"
+      :modalHeading="deletePollModalHeading"
+      @close="displayDeleteModal = false"
+    />
   </div>
 </template>
 
@@ -68,6 +79,7 @@ import axios from "axios";
 import EventForm from "../components/EventForm";
 import EventOverview from "../components/EventOverview";
 import NoCreatedItems from "../components/NoCreatedItems";
+import DeleteModal from "../components/DeleteModal";
 export default {
   name: "eventDetailPage",
   props: ["editEvent", "event", "eventId"],
@@ -81,12 +93,17 @@ export default {
       noCreatedPollsMessage: "You have not created any polls for this event.",
       noCreatedPollsCallToAction: "Create Poll",
       noCreatedPollsCallToActionLink: `${this.eventId}/poll`,
+      displayDeleteModal: false,
+      deletePollTitle: "",
+      deletePollModalHeading: "Poll",
+      pollId: null,
     };
   },
   components: {
     EventForm,
     EventOverview,
     NoCreatedItems,
+    DeleteModal,
   },
   methods: {
     async checkEditAction() {
@@ -118,6 +135,13 @@ export default {
       } else {
         this.polls = response.data[0].polls;
       }
+    },
+    showDeleteModal(event) {
+      this.deletePollTitle =
+        event.path[3].children[0].childNodes[0].childNodes[1].textContent;
+      this.pollId =
+        event.path[3].children[0].childNodes[0].childNodes[2].textContent;
+      this.displayDeleteModal = true;
     },
   },
   async created() {

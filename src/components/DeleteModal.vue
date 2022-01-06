@@ -4,7 +4,9 @@
     <div class="modal-wrapper">
       <div class="modal-container">
         <div class="modal-header">
-          <slot name="header"> <h2>Delete Event</h2> </slot>
+          <slot name="header">
+            <h2>Delete {{ itemType }}</h2>
+          </slot>
         </div>
 
         <div class="modal-body">
@@ -39,32 +41,56 @@
 <script>
 import axios from "axios";
 export default {
-  props: ["title", "uuid"],
+  props: ["title", "eventId", "modalHeading", "pollId"],
   data() {
     return {
+      itemType: this.modalHeading,
       itemTitle: this.title,
-      id: this.uuid,
+      eventUuid: this.eventId,
+      pollUuid: this.pollId,
     };
   },
   methods: {
     async deleteEvent() {
       const jwtToken = localStorage.getItem("token");
 
-      const response = await axios
-        .delete(`http://localhost:3000/events/${this.id}`, {
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-            Authorization: `Bearer ${jwtToken}`,
-          },
-        })
-        .catch((error) => {
-          return { error };
-        });
+      if (this.itemType === "Event") {
+        const response = await axios
+          .delete(`http://localhost:3000/events/${this.eventUuid}`, {
+            headers: {
+              "Access-Control-Allow-Origin": "*",
+              Authorization: `Bearer ${jwtToken}`,
+            },
+          })
+          .catch((error) => {
+            return { error };
+          });
 
-      if (!("error" in response)) {
-        this.$router.go(0);
+        if (!("error" in response)) {
+          this.$router.go(0);
+        } else {
+          this.invalidEventCreation = true;
+        }
       } else {
-        this.invalidEventCreation = true;
+        const response = await axios
+          .delete(
+            `http://localhost:3000/events/${this.eventUuid}/poll/${this.pollUuid}`,
+            {
+              headers: {
+                "Access-Control-Allow-Origin": "*",
+                Authorization: `Bearer ${jwtToken}`,
+              },
+            }
+          )
+          .catch((error) => {
+            return { error };
+          });
+
+        if (!("error" in response)) {
+          this.$router.go(0);
+        } else {
+          this.invalidEventCreation = true;
+        }
       }
     },
   },

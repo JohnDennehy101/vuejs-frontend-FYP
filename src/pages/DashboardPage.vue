@@ -69,7 +69,8 @@
   <DeleteModal
     v-if="displayDeleteModal"
     :title="deleteEventTitle"
-    :uuid="deleteEventId"
+    :eventId="deleteEventId"
+    :modalHeading="deleteEventModalHeading"
     @close="displayDeleteModal = false"
   />
 </template>
@@ -95,6 +96,7 @@ export default {
       displayDeleteModal: false,
       deleteEventTitle: "",
       deleteEventId: "",
+      deleteEventModalHeading: "Event",
     };
   },
   methods: {
@@ -120,7 +122,6 @@ export default {
       }
     },
     showDeleteModal(event) {
-      console.log(event);
       this.deleteEventId = event.path[4].children[2].textContent;
       this.deleteEventTitle = event.path[4].children[0].textContent;
       this.displayDeleteModal = true;
