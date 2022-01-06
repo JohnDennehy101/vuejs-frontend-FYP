@@ -23,10 +23,12 @@ export default {
   },
   methods: {
     populateEventInfo() {
-      const eventInfo = JSON.parse(this.item);
+      const eventInfo = this.item;
 
-      this.title = eventInfo.title;
-      this.type = eventInfo.type;
+      if (eventInfo !== null) {
+        this.title = eventInfo.title;
+        this.type = eventInfo.type;
+      }
     },
   },
   created() {

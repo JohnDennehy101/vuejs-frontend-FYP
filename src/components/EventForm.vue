@@ -156,7 +156,7 @@ export default {
     populateFormInfo() {
       if (this.editEventAction) {
         this.formTitle = "Edit Event";
-        const eventInfo = JSON.parse(this.editEventInfo);
+        const eventInfo = this.editEventInfo;
 
         this.title = eventInfo.title;
         this.eventType = eventInfo.type;

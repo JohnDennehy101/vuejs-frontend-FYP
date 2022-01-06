@@ -41,7 +41,6 @@
       </ul>
     </div>
     <div class="form-control">
-      {{ pollInfo }}
       <button>Submit</button>
     </div>
   </form>
@@ -152,10 +151,13 @@ export default {
       }
     },
     populateFormInfo() {
+      console.log(this.editPollAction);
       if (this.editPollAction) {
         const pollInformation = JSON.parse(this.pollInfo);
         this.title = pollInformation.title;
         this.options = pollInformation.options;
+      } else if (this.editPollAction === undefined) {
+        this.$router.go(-1);
       }
     },
     addPollOption(event) {

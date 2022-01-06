@@ -7,12 +7,12 @@
       @hideEditEventActionClick="this.hideEditForm"
     />
     <EventOverview
-      v-else-if="showEditForm == false"
+      v-else-if="showEditForm == false && showEventInfo"
       :individualEvent="this.individualEvent"
       @editActionClick="editEventInfo"
     />
     <NoCreatedItems
-      v-if="polls.length === 0"
+      v-if="polls.length === 0 && noCreatedPollsCallToActionLink.length > 0"
       :message="noCreatedPollsMessage"
       :callToAction="noCreatedPollsCallToAction"
       :routerLink="noCreatedPollsCallToActionLink"
@@ -82,21 +82,23 @@ import NoCreatedItems from "../components/NoCreatedItems";
 import DeleteModal from "../components/DeleteModal";
 export default {
   name: "eventDetailPage",
-  props: ["editEvent", "event", "eventId"],
+  props: ["editEvent"],
   data() {
     return {
       showEditForm: false,
       edit: this.editEvent,
-      individualEvent: this.event,
+      individualEvent: {},
       polls: [],
       userId: localStorage.getItem("id"),
       noCreatedPollsMessage: "You have not created any polls for this event.",
       noCreatedPollsCallToAction: "Create Poll",
-      noCreatedPollsCallToActionLink: `${this.eventId}/poll`,
+      noCreatedPollsCallToActionLink: "",
       displayDeleteModal: false,
       deletePollTitle: "",
       deletePollModalHeading: "Poll",
       pollId: null,
+      showEventInfo: false,
+      eventId: "",
     };
   },
   components: {
@@ -117,6 +119,9 @@ export default {
     hideEditForm(value) {
       this.showEditForm = value;
     },
+    async extractIdFromUrl() {
+      this.eventId = window.location.pathname.split("/")[3];
+    },
     async getEventInfo() {
       const jwtToken = localStorage.getItem("token");
       const response = await axios
@@ -133,6 +138,10 @@ export default {
       if ("error" in response) {
         this.invalidEventCreation = true;
       } else {
+        this.individualEvent = response.data[0];
+        this.noCreatedPollsCallToActionLink = `${response.data[0].id}/poll`;
+
+        this.showEventInfo = true;
         this.polls = response.data[0].polls;
       }
     },
@@ -145,6 +154,7 @@ export default {
     },
   },
   async created() {
+    await this.extractIdFromUrl();
     await this.getEventInfo();
     await this.checkEditAction();
   },
