@@ -4,7 +4,7 @@
       <h3>Suitable Dates Poll For - {{ pollInformation.title }}</h3>
 
       <div
-        v-for="option in pollInformation.options"
+        v-for="option in pollOptions"
         v-bind:key="option.id"
         class="checkbox-parent-container"
       >
@@ -74,7 +74,7 @@ export default {
         this.invalidEventCreation = true;
       } else {
         this.pollInformation = response.data;
-        this.pollOptions = response.data.options;
+        this.pollOptions = response.data[0].pollOptions;
       }
     },
     async submitForm() {

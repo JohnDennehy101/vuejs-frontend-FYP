@@ -86,9 +86,7 @@ export default {
       this.id = window.location.pathname.split("/")[3];
     },
     removeIndividualPollOption(id) {
-      const index = this.options.findIndex(
-        (option) => option.id === Number(id)
-      );
+      const index = this.options.findIndex((option) => option.id === id);
       this.options.splice(index, 1);
     },
     async submitForm() {
@@ -150,12 +148,30 @@ export default {
         }
       }
     },
-    populateFormInfo() {
+    async populateFormInfo() {
       console.log(this.editPollAction);
       if (this.editPollAction) {
         const pollInformation = JSON.parse(this.pollInfo);
-        this.title = pollInformation.title;
-        this.options = pollInformation.options;
+        console.log(pollInformation);
+
+        const jwtToken = localStorage.getItem("token");
+        const response = await axios
+          .get(
+            `http://localhost:3000/events/${this.id}/poll/${pollInformation.id}`,
+            {
+              headers: {
+                "Access-Control-Allow-Origin": "*",
+                Authorization: `Bearer ${jwtToken}`,
+              },
+            }
+          )
+          .catch((error) => {
+            return { error };
+          });
+
+        console.log(response);
+        this.title = response.data[0].title;
+        this.options = response.data[0].pollOptions;
       } /*else if (this.editPollAction === undefined) {
         this.$router.go(-1);
       }*/
@@ -194,8 +210,8 @@ export default {
   },
 
   async created() {
-    this.populateFormInfo();
     await this.extractIdFromUrl();
+    await this.populateFormInfo();
   },
   components: {
     Datepicker,
