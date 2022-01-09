@@ -2,7 +2,7 @@
   <div id="no-items-call-to-action-container">
     <i class="fas fa-folder-open"></i>
     <h4>{{ messageForUser }}</h4>
-    {{ numberOfItems }}
+
     <button @click="$router.push({ path: `${this.link}` })">
       {{ callToActionForUser }}
     </button>

@@ -156,17 +156,33 @@ export default {
         const pollInformation = JSON.parse(this.pollInfo);
         this.title = pollInformation.title;
         this.options = pollInformation.options;
-      } else if (this.editPollAction === undefined) {
+      } /*else if (this.editPollAction === undefined) {
         this.$router.go(-1);
-      }
+      }*/
+    },
+    generateUUID() {
+      let d = new Date().getTime(),
+        d2 = (performance && performance.now && performance.now() * 1000) || 0;
+      return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
+        let r = Math.random() * 16;
+        if (d > 0) {
+          r = (d + r) % 16 | 0;
+          d = Math.floor(d / 16);
+        } else {
+          r = (d2 + r) % 16 | 0;
+          d2 = Math.floor(d2 / 16);
+        }
+        return (c == "x" ? r : (r & 0x7) | 0x8).toString(16);
+      });
     },
     addPollOption(event) {
       event.preventDefault();
       if (this.startDate !== null && this.endDate !== null) {
         this.options.push({
-          id: this.optionId,
+          id: this.generateUUID(),
           startDate: this.startDate,
           endDate: this.endDate,
+          votes: [],
         });
 
         this.optionId++;
