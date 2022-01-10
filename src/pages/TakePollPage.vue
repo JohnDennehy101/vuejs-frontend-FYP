@@ -3,6 +3,8 @@
     <div class="form-control">
       <h3>Suitable Dates Poll For - {{ pollInformation.title }}</h3>
 
+      <PollBarChart v-if="loaded" :chartData="chartdata" />
+
       <div
         v-for="option in pollOptions"
         v-bind:key="option.id"
@@ -31,6 +33,7 @@
 <script>
 import axios from "axios";
 import TakePollLabel from "../components/TakePollLabel";
+import PollBarChart from "../components/PollBarChart";
 export default {
   data() {
     return {
@@ -39,6 +42,8 @@ export default {
       checkedOptions: [],
       pollInformation: null,
       pollOptions: null,
+      loaded: false,
+      chartdata: null,
     };
   },
   methods: {
@@ -75,6 +80,8 @@ export default {
       } else {
         this.pollInformation = response.data;
         this.pollOptions = response.data[0].pollOptions;
+        this.chartdata = response.data[0].pollOptions;
+        this.loaded = true;
       }
     },
     async submitForm() {
@@ -124,6 +131,7 @@ export default {
   },
   components: {
     TakePollLabel,
+    PollBarChart,
   },
 };
 </script>
