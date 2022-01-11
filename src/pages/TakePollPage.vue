@@ -206,6 +206,7 @@ form {
       display: inline-block;
     }
     .checkbox-parent-container {
+      justify-content: center;
       margin: 0.5rem auto;
       display: flex;
       align-items: center;
@@ -216,6 +217,7 @@ form {
     }
     h3 {
       font-size: 1rem;
+      text-align: center;
     }
   }
 

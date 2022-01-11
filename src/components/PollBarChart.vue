@@ -46,7 +46,7 @@ export default {
             ticks: {
               autoSkip: false,
               maxRotation: 90,
-              minRotation: 45,
+              minRotation: 70,
             },
           },
         ],
