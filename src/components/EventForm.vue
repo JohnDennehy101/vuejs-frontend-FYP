@@ -65,6 +65,29 @@
         >
       </div>
     </div>
+
+    <div class="form-control">
+      <label for="users"> Users</label>
+      <input
+        id="useremail"
+        name="useremail"
+        type="text"
+        placeholder="Enter user email"
+        v-model="userEmail"
+      />
+    </div>
+    <div class="form-control">
+      <button @click="addUserEmail" id="add-option-button">Add Email</button>
+    </div>
+    <div v-if="userEmails.length > 0" class="form-control">
+      <label for="userEmails">User Emails</label>
+      <ul v-for="email in userEmails" :key="email">
+        <EventFormUserEmailDisplay
+          v-on:removeUserEmail="removeIndividualUserEmail"
+          :email="email"
+        />
+      </ul>
+    </div>
     <div class="form-control button-container">
       <button>Add Event</button>
     </div>
@@ -80,6 +103,7 @@
 <script>
 import axios from "axios";
 import AccountErrorMessage from "../components/AccountErrorMessage";
+import EventFormUserEmailDisplay from "../components/EventFormUserEmailDisplay";
 export default {
   props: ["edit", "individualEvent"],
   data() {
@@ -92,6 +116,8 @@ export default {
       eventType: null,
       editEventAction: this.edit,
       editEventInfo: this.individualEvent,
+      userEmails: [],
+      userEmail: "",
     };
   },
   methods: {
@@ -102,6 +128,7 @@ export default {
         const payload = {
           title: this.title,
           type: this.eventType,
+          userEmails: this.userEmails,
         };
         const response = await axios
           .patch(
@@ -130,6 +157,7 @@ export default {
           const payload = {
             title: this.title,
             type: this.eventType,
+            userEmails: this.userEmails,
           };
           const response = await axios
             .post(`http://localhost:3000/events/${userId}`, payload, {
@@ -149,6 +177,21 @@ export default {
           }
         }
       }
+    },
+    addUserEmail(event) {
+      event.preventDefault();
+      //Add email validation here as well
+      if (
+        this.userEmail.length > 0 &&
+        !this.userEmails.includes(this.userEmail)
+      ) {
+        this.userEmails.push(this.userEmail);
+
+        this.userEmail = "";
+      }
+    },
+    removeIndividualUserEmail(id) {
+      this.userEmails.splice(this.userEmails.indexOf(id), 1);
     },
     hideErrorMessage() {
       this.invalidEventCreation = false;
@@ -170,6 +213,7 @@ export default {
   },
   components: {
     AccountErrorMessage,
+    EventFormUserEmailDisplay,
   },
 };
 </script>
@@ -244,6 +288,7 @@ form {
     }
     h3 {
       font-size: 1rem;
+      text-align: left;
     }
   }
   button {
