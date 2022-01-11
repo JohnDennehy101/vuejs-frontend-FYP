@@ -1,10 +1,18 @@
 <template>
-  <BarChart ref="barchartRef" :chartData="chartInfo" :options="options" />
+  <div id="wrapper">
+    <BarChart
+      ref="barchartRef"
+      :chartData="chartInfo"
+      :options="options"
+      :styles="myStyles"
+    />
+  </div>
 </template>
 
 <script>
 import { BarChart } from "vue-chart-3";
 import { computed, ref } from "vue";
+import DateUtils from "../utils/dateUtils";
 export default {
   props: ["chartData"],
   data: () => ({}),
@@ -14,7 +22,11 @@ export default {
     for (let option in props.chartData) {
       chartPollVotes.push(props.chartData[option].votes.length);
       chartLabels.push(
-        `${props.chartData[option].startDate} - ${props.chartData[option].endDate}`
+        `${DateUtils.returnFormattedChartLabelDate(
+          props.chartData[option].startDate
+        )} - ${DateUtils.returnFormattedChartLabelDate(
+          props.chartData[option].endDate
+        )}`
       );
     }
 
@@ -24,14 +36,25 @@ export default {
 
     const options = ref({
       responsive: true,
-      plugins: {
-        legend: {
-          position: "top",
-        },
-        title: {
-          display: true,
-          text: "Chart.js Doughnut Chart",
-        },
+      legend: false,
+      scales: {
+        xAxes: [
+          {
+            ticks: {
+              autoSkip: false,
+              maxRotation: 90,
+              minRotation: 45,
+            },
+          },
+        ],
+        yAxes: [
+          {
+            ticks: {
+              beginAtZero: true,
+              stepSize: 1,
+            },
+          },
+        ],
       },
     });
 
@@ -54,8 +77,24 @@ export default {
     return { chartInfo, barchartRef, options };
   },
 
+  computed: {
+    myStyles() {
+      return {
+        height: `30%`,
+        position: "relative",
+      };
+    },
+  },
+
   components: {
     BarChart,
   },
 };
 </script>
+
+<style scoped lang="scss">
+#wrapper {
+  max-width: 430px;
+  margin: 1rem auto;
+}
+</style>
