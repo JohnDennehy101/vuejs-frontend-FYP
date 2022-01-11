@@ -1,9 +1,14 @@
 <template>
   <form @submit.prevent="submitForm" v-if="pollInformation">
     <div class="form-control">
-      <h3>Suitable Dates Poll For - {{ pollInformation.title }}</h3>
+      <h3>Suitable Dates Poll For - {{ pollInformation[0].title }}</h3>
 
-      <PollBarChart v-if="loaded" :chartData="chartdata" />
+      <PollBarChart
+        v-if="loaded"
+        :key="chartKey"
+        :chartKey="chartKey"
+        :chartData="chartdata"
+      />
 
       <div
         v-for="option in pollOptions"
@@ -13,6 +18,7 @@
         <input
           :id="option.id"
           type="checkbox"
+          v-on:change="triggerChartRefresh"
           :value="option.id"
           v-model="checkedOptions"
         />
@@ -44,6 +50,7 @@ export default {
       pollOptions: null,
       loaded: false,
       chartdata: null,
+      chartKey: 0,
     };
   },
   methods: {
@@ -83,6 +90,32 @@ export default {
         this.chartdata = response.data[0].pollOptions;
         this.loaded = true;
       }
+    },
+    triggerChartRefresh(event) {
+      const userId = localStorage.getItem("id");
+
+      const individualOption = this.chartdata.find(
+        (item) => item.id === event.target.value
+      );
+
+      if (
+        individualOption.votes.indexOf(userId) === -1 &&
+        event.target.checked
+      ) {
+        for (let option in this.chartdata) {
+          if (this.chartdata[option].id === individualOption.id) {
+            this.chartdata[option].votes.push(userId);
+          }
+        }
+      } else {
+        for (let option in this.chartdata) {
+          if (this.chartdata[option].id === individualOption.id) {
+            this.chartdata[option].votes.splice(individualOption.id, 1);
+          }
+        }
+      }
+
+      this.chartKey++;
     },
     async submitForm() {
       const userId = localStorage.getItem("id");

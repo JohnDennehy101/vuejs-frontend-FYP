@@ -149,10 +149,8 @@ export default {
       }
     },
     async populateFormInfo() {
-      console.log(this.editPollAction);
       if (this.editPollAction) {
         const pollInformation = JSON.parse(this.pollInfo);
-        console.log(pollInformation);
 
         const jwtToken = localStorage.getItem("token");
         const response = await axios

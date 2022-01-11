@@ -5,6 +5,7 @@
       :chartData="chartInfo"
       :options="options"
       :styles="myStyles"
+      :key="key"
     />
   </div>
 </template>
@@ -14,8 +15,10 @@ import { BarChart } from "vue-chart-3";
 import { computed, ref } from "vue";
 import DateUtils from "../utils/dateUtils";
 export default {
-  props: ["chartData"],
-  data: () => ({}),
+  props: ["chartData", "chartKey"],
+  data: () => ({
+    key: 0,
+  }),
   setup(props) {
     let chartPollVotes = [];
     let chartLabels = [];
