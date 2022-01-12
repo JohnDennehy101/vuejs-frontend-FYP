@@ -3,6 +3,17 @@
     <h3>{{ title }}</h3>
     <p>More info about group trip here...description</p>
     <span>{{ type }}</span>
+    <div id="event-users-parent-container">
+      <h4>Users</h4>
+      <div
+        v-for="user in item.invitedUsers"
+        v-bind:key="user.email"
+        class="event-user-container"
+      >
+        <span> <i class="fas fa-user"></i> </span>
+        <p>{{ user.email }}</p>
+      </div>
+    </div>
     <div class="event-user-actions-parent-container">
       <span v-on:click="$emit('editActionClick', true)">
         <i class="fas fa-pen"></i
@@ -62,6 +73,32 @@ export default {
     border-radius: 10px;
     font-weight: bold;
     font-size: 0.7rem;
+  }
+
+  #event-users-parent-container {
+    h4 {
+      margin-top: 1rem;
+      font-size: 1rem;
+      color: #3a4374;
+    }
+  }
+
+  .event-user-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+
+    p {
+      display: inline-block;
+      margin: 0 0.8rem;
+      min-width: 220px;
+      text-align: left;
+    }
+    svg {
+      font-size: 1rem;
+      padding: 0.2rem;
+    }
   }
 
   .event-user-actions-parent-container {
