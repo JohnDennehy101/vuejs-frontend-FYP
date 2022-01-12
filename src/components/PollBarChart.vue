@@ -23,7 +23,7 @@ export default {
     let chartPollVotes = [];
     let chartLabels = [];
     for (let option in props.chartData) {
-      chartPollVotes.push(props.chartData[option].votes.length);
+      chartPollVotes.push(props.chartData[option].votes);
       chartLabels.push(
         `${DateUtils.returnFormattedChartLabelDate(
           props.chartData[option].startDate

@@ -1,7 +1,7 @@
 <template>
   <form @submit.prevent="submitForm" v-if="pollInformation">
     <div class="form-control">
-      <h3>Suitable Dates Poll For - {{ pollInformation[0].title }}</h3>
+      <h3>Suitable Dates Poll For - {{ pollInformation.title }}</h3>
 
       <PollBarChart
         v-if="loaded"
@@ -48,6 +48,7 @@ export default {
       checkedOptions: [],
       pollInformation: null,
       pollOptions: null,
+      pollVotes: null,
       loaded: false,
       chartdata: null,
       chartKey: 0,
@@ -60,9 +61,9 @@ export default {
     },
     async populateFormInfo() {
       const userId = localStorage.getItem("id");
-      for (let option in this.pollOptions) {
-        if (this.pollOptions[option].votes.indexOf(userId) !== -1) {
-          this.checkedOptions.push(this.pollOptions[option].id);
+      for (let option in this.pollVotes) {
+        if (this.pollVotes[option].userId === userId) {
+          this.checkedOptions.push(this.pollVotes[option].pollOptionId);
         }
       }
     },
@@ -82,35 +83,33 @@ export default {
           return { error };
         });
 
+      console.log(response);
+
       if ("error" in response) {
         this.invalidEventCreation = true;
       } else {
         this.pollInformation = response.data;
-        this.pollOptions = response.data[0].pollOptions;
-        this.chartdata = response.data[0].pollOptions;
+        this.pollOptions = response.data.pollOptions;
+        this.pollVotes = response.data.pollVote;
+        this.chartdata = response.data.pollOptions;
         this.loaded = true;
       }
     },
     triggerChartRefresh(event) {
-      const userId = localStorage.getItem("id");
-
       const individualOption = this.chartdata.find(
         (item) => item.id === event.target.value
       );
 
-      if (
-        individualOption.votes.indexOf(userId) === -1 &&
-        event.target.checked
-      ) {
+      if (event.target.checked) {
         for (let option in this.chartdata) {
           if (this.chartdata[option].id === individualOption.id) {
-            this.chartdata[option].votes.push(userId);
+            this.chartdata[option].votes++;
           }
         }
       } else {
         for (let option in this.chartdata) {
           if (this.chartdata[option].id === individualOption.id) {
-            this.chartdata[option].votes.splice(individualOption.id, 1);
+            this.chartdata[option].votes--;
           }
         }
       }
@@ -119,25 +118,19 @@ export default {
     },
     async submitForm() {
       const userId = localStorage.getItem("id");
-      for (let option in this.pollOptions) {
-        if (
-          this.checkedOptions.includes(this.pollOptions[option].id) &&
-          this.pollOptions[option].votes.indexOf(userId) === -1
-        ) {
-          this.pollOptions[option].votes.push(userId);
-        }
-      }
+
+      let checkedOptions = this.pollOptions.filter((option) =>
+        this.checkedOptions.includes(option.id)
+      );
 
       if (this.checkedOptions.length > 0) {
         const payload = {
-          options: this.pollOptions,
+          options: checkedOptions,
         };
-
-        console.log(payload);
 
         const response = await axios
           .patch(
-            `http://localhost:3000/events/${this.eventId}/poll/${this.pollId}`,
+            `http://localhost:3000/events/${userId}/${this.eventId}/poll/${this.pollId}/vote`,
             payload,
             {
               headers: {
