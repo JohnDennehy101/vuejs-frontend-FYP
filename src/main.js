@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import App from './App.vue'
 import LoginPage from './pages/LoginPage'
+import ConfirmAccountPage from './pages/ConfirmAccountPage'
 import HomePage from './pages/HomePage'
 import RegisterPage from './pages/RegisterPage'
 import DashboardPage from './pages/DashboardPage'
@@ -24,6 +25,12 @@ const router = createRouter({
             path: '/login',
             name: 'Login',
             component: LoginPage
+        },
+        {
+            path: '/user/account-verification',
+            name: 'Confirm Email',
+            component: ConfirmAccountPage
+            
         },
         {
             path: '/register',
