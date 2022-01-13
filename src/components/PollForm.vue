@@ -167,9 +167,8 @@ export default {
             return { error };
           });
 
-        console.log(response);
-        this.title = response.data[0].title;
-        this.options = response.data[0].pollOptions;
+        this.title = response.data.title;
+        this.options = response.data.pollOptions;
       } /*else if (this.editPollAction === undefined) {
         this.$router.go(-1);
       }*/
