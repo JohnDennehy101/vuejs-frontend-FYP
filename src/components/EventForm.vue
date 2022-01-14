@@ -203,6 +203,9 @@ export default {
 
         this.title = eventInfo.title;
         this.eventType = eventInfo.type;
+        for (let email in eventInfo.invitedUsers) {
+          this.userEmails.push(eventInfo.invitedUsers[email].email);
+        }
       } else {
         this.formTitle = "Create Event";
       }
