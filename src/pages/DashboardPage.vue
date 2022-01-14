@@ -1,17 +1,17 @@
 <template>
   <div id="wrapper">
     <NoCreatedItems
-      v-if="events.length === 0"
+      v-if="createdEvents.length === 0"
       :message="noCreatedEventsMessage"
       :callToAction="noCreatedEventsCallToAction"
       :routerLink="noCreatedEventsCallToActionLink"
     />
 
-    <div v-if="events.length > 0" id="events-parent-container">
+    <div v-if="createdEvents.length > 0" id="events-parent-container">
       <h2>Your Events</h2>
 
       <div
-        v-for="item in events"
+        v-for="item in createdEvents"
         v-bind:key="item.title"
         class="individual-event-container"
       >
@@ -82,7 +82,8 @@ import DeleteModal from "../components/DeleteModal";
 export default {
   data() {
     return {
-      events: [],
+      createdEvents: [],
+      invitedEvents: [],
       invalidEventCreation: false,
       noCreatedEventsMessage: "You haven't created any events",
       noCreatedEventsCallToAction: "Create Event",
@@ -115,10 +116,13 @@ export default {
           return { error };
         });
 
+      console.log(response);
+
       if ("error" in response) {
         this.invalidEventCreation = true;
       } else {
-        this.events = response.data;
+        this.createdEvents = response.data.created;
+        this.invitedEvents = response.data.invited;
       }
     },
     showDeleteModal(event) {
