@@ -35,13 +35,24 @@
             </h3>
           </div>
           <div class="poll-info-container">
-            <h3>Created At</h3>
-            {{ poll.title }}
+            <h3>Created</h3>
+            {{ transformTimeStampFormat(new Date(poll.created_at)) }}
           </div>
 
           <div class="poll-info-container">
-            <h3>Last Updated At</h3>
-            {{ poll.title }}
+            <h3>Updated</h3>
+            {{ transformTimeStampFormat(new Date(poll.updated_at)) }}
+          </div>
+
+          <div class="poll-info-container">
+            <h3>Complete</h3>
+
+            <span id="pollCompletedIcon" v-if="poll.completed">
+              <i class="fas fa-calendar-check"></i>
+            </span>
+            <span id="pollNotCompletedIcon" v-else>
+              <i class="fas fa-calendar-times"></i>
+            </span>
           </div>
         </div>
 
@@ -96,6 +107,7 @@ import EventForm from "../components/EventForm";
 import EventOverview from "../components/EventOverview";
 import NoCreatedItems from "../components/NoCreatedItems";
 import DeleteModal from "../components/DeleteModal";
+import DateUtils from "../utils/dateUtils";
 export default {
   name: "eventDetailPage",
   props: ["editEvent"],
@@ -173,6 +185,9 @@ export default {
         this.polls = response.data[0].polls;
       }
     },
+    transformTimeStampFormat(date) {
+      return DateUtils.returnFormattedDateWithTime(date);
+    },
     showDeleteModal(event) {
       this.deletePollTitle =
         event.path[3].children[0].childNodes[0].childNodes[1].textContent;
@@ -214,12 +229,12 @@ export default {
     justify-content: space-between;
 
     .poll-info-parent-container {
-      width: 65%;
+      width: 75%;
       display: flex;
     }
 
     .poll-call-to-action-container {
-      width: 35%;
+      width: 25%;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -245,10 +260,32 @@ export default {
 
     .poll-info-container {
       margin: 0 auto;
-
+      min-height: 90%;
       display: flex;
       flex-direction: column;
       justify-content: center;
+
+      span {
+        margin: 0 auto;
+        border-radius: 0.5rem;
+        padding: 0.2rem;
+
+        svg {
+          font-size: 1.2rem;
+          color: white;
+        }
+        #pollCompletedIcon {
+          svg {
+            color: green;
+          }
+        }
+      }
+
+      #pollNotCompletedIcon {
+        svg {
+          color: red;
+        }
+      }
     }
   }
 }
