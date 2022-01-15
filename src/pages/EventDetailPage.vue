@@ -158,18 +158,16 @@ export default {
       if ("error" in response) {
         this.invalidEventCreation = true;
       } else {
-        this.individualEvent = response.data[0];
+        const event = response.data[0];
 
-        if (this.individualEvent.createdByUser.length > 0) {
-          for (let user in this.individualEvent.createdByUser) {
-            if (this.individualEvent.createdByUser[user].id === userId) {
-              this.invitedUser = false;
-            } else {
-              this.invitedUser = true;
-            }
-          }
+        if (event["createdByUser"].id === userId) {
+          this.invitedUser = false;
+        } else {
+          this.invitedUser = true;
         }
+
         this.noCreatedPollsCallToActionLink = `${response.data[0].id}/poll`;
+        this.individualEvent = event;
 
         this.showEventInfo = true;
         this.polls = response.data[0].polls;
