@@ -3,7 +3,7 @@
     <i class="fas fa-folder-open"></i>
     <h4>{{ messageForUser }}</h4>
 
-    <button @click="$router.push({ path: `${this.link}` })">
+    <button v-if="!guestUser" @click="$router.push({ path: `${this.link}` })">
       {{ callToActionForUser }}
     </button>
   </div>
@@ -11,13 +11,14 @@
 
 <script>
 export default {
-  props: ["display", "message", "callToAction", "routerLink"],
+  props: ["display", "message", "callToAction", "routerLink", "invitedUser"],
   data() {
     return {
       messageForUser: this.message,
       callToActionForUser: this.callToAction,
       link: this.routerLink,
       noItemsPresent: this.display,
+      guestUser: this.invitedUser,
     };
   },
 };
@@ -27,7 +28,7 @@ export default {
 #no-items-call-to-action-container {
   height: 20vh;
   padding: 1rem 0;
-  width: 60%;
+  width: 85%;
   border-radius: 10px;
   border: 1px solid black;
   display: flex;

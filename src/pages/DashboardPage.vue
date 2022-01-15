@@ -7,8 +7,8 @@
       :routerLink="noCreatedEventsCallToActionLink"
     />
 
-    <div v-if="createdEvents.length > 0" id="events-parent-container">
-      <h2>Your Events</h2>
+    <div v-if="createdEvents.length > 0" class="events-parent-container">
+      <h2>Your Created Events</h2>
 
       <div
         v-for="item in createdEvents"
@@ -65,6 +65,63 @@
         </router-link>
       </div>
     </div>
+
+    <div v-if="invitedEvents.length > 0" class="events-parent-container">
+      <h2>Your Invited Events</h2>
+
+      <div
+        v-for="item in invitedEvents"
+        v-bind:key="item.title"
+        class="individual-event-container"
+      >
+        <router-link
+          :to="{
+            name: 'Event Detail Page',
+            params: {
+              userId: userId,
+              eventId: item.id,
+              editEvent: false,
+              event: JSON.stringify(item),
+            },
+          }"
+        >
+          <div
+            v-if="item.type === 'DOMESTIC_DAY'"
+            class="domestic-day-colour-mark"
+          ></div>
+          <div
+            v-else-if="item.type === 'DOMESTIC_OVERNIGHT'"
+            class="domestic-overnight-colour-mark"
+          ></div>
+
+          <div v-else class="foreign-overnight-colour-mark"></div>
+
+          <div class="event-information-container">
+            <h3>{{ item.title }}</h3>
+            <p>More info about group trip here...description</p>
+            <p style="display: none">{{ item.id }}</p>
+            <span>{{ item.type }}</span>
+            <div class="event-user-actions-parent-container">
+              <span>
+                <router-link
+                  :to="{
+                    name: 'Event Detail Page',
+                    params: {
+                      userId: userId,
+                      eventId: item.id,
+                      editEvent: false,
+                      event: JSON.stringify(item),
+                    },
+                  }"
+                >
+                  <i class="fas fa-external-link-square-alt"></i>
+                </router-link>
+              </span>
+            </div>
+          </div>
+        </router-link>
+      </div>
+    </div>
   </div>
   <DeleteModal
     v-if="displayDeleteModal"
@@ -116,8 +173,6 @@ export default {
           return { error };
         });
 
-      console.log(response);
-
       if ("error" in response) {
         this.invalidEventCreation = true;
       } else {
@@ -144,17 +199,18 @@ export default {
 <style scoped lang="scss">
 #wrapper {
   width: 100%;
-  height: 90vh;
+  min-height: 90vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   background-color: #f2f2f2;
 }
-#events-parent-container {
-  height: 80vh;
+.events-parent-container {
+  //height: 80vh;
   width: 85%;
   border: 1px solid black;
+  margin: 1rem auto;
 
   h2 {
     text-align: center;
@@ -162,7 +218,7 @@ export default {
 }
 .individual-event-container {
   width: 30%;
-  height: 30%;
+  height: 25vh;
   display: inline-block;
   margin: 1rem;
   border-radius: 5px;

@@ -14,7 +14,7 @@
         <p>{{ user.email }}</p>
       </div>
     </div>
-    <div class="event-user-actions-parent-container">
+    <div v-if="guestUser" class="event-user-actions-parent-container">
       <span v-on:click="$emit('editActionClick', true)">
         <i class="fas fa-pen"></i
       ></span>
@@ -24,12 +24,13 @@
 
 <script>
 export default {
-  props: ["individualEvent"],
+  props: ["individualEvent", "invitedUser"],
   data() {
     return {
       item: this.individualEvent,
       title: "",
       type: "",
+      guestUser: this.invitedUser,
     };
   },
   methods: {

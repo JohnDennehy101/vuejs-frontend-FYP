@@ -9,12 +9,14 @@
     <EventOverview
       v-else-if="showEditForm == false && showEventInfo"
       :individualEvent="this.individualEvent"
+      :invitedUser="this.invitedUser"
       @editActionClick="editEventInfo"
     />
     <NoCreatedItems
       v-if="polls.length === 0 && noCreatedPollsCallToActionLink.length > 0"
       :message="noCreatedPollsMessage"
       :callToAction="noCreatedPollsCallToAction"
+      :invitedUser="this.invitedUser"
       :routerLink="noCreatedPollsCallToActionLink"
     />
 
@@ -104,7 +106,7 @@ export default {
       individualEvent: {},
       polls: [],
       userId: localStorage.getItem("id"),
-      noCreatedPollsMessage: "You have not created any polls for this event.",
+      noCreatedPollsMessage: "No polls have been created yet for this event.",
       noCreatedPollsCallToAction: "Create Poll",
       noCreatedPollsCallToActionLink: "",
       displayDeleteModal: false,
@@ -113,6 +115,7 @@ export default {
       pollId: null,
       showEventInfo: false,
       eventId: "",
+      invitedUser: null,
     };
   },
   components: {
@@ -138,6 +141,7 @@ export default {
     },
     async getEventInfo() {
       const jwtToken = localStorage.getItem("token");
+      const userId = localStorage.getItem("id");
       const response = await axios
         .get("http://localhost:3000/events/" + this.eventId, {
           headers: {
@@ -149,10 +153,22 @@ export default {
           return { error };
         });
 
+      console.log(response);
+
       if ("error" in response) {
         this.invalidEventCreation = true;
       } else {
         this.individualEvent = response.data[0];
+
+        if (this.individualEvent.createdByUser.length > 0) {
+          for (let user in this.individualEvent.createdByUser) {
+            if (this.individualEvent.createdByUser[user].id === userId) {
+              this.invitedUser = false;
+            } else {
+              this.invitedUser = true;
+            }
+          }
+        }
         this.noCreatedPollsCallToActionLink = `${response.data[0].id}/poll`;
 
         this.showEventInfo = true;
