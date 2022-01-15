@@ -59,7 +59,7 @@
             >
               <i class="fas fa-check-circle"></i> </router-link
           ></span>
-          <span v-on:click="$emit('editActionClick', true)">
+          <span v-if="!invitedUser" v-on:click="$emit('editActionClick', true)">
             <router-link
               :to="{
                 name: 'Create Poll Page',
@@ -73,7 +73,7 @@
             >
               <i class="fas fa-pen"></i></router-link
           ></span>
-          <span @click.prevent="showDeleteModal">
+          <span v-if="!invitedUser" @click.prevent="showDeleteModal">
             <i class="fas fa-trash-alt"></i
           ></span>
         </div>
