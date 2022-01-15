@@ -67,6 +67,16 @@
     </div>
 
     <div class="form-control">
+      <label class="radio-label" for="location">Location</label>
+      <select id="location" v-model="location">
+        <option disabled value="">Please select location</option>
+        <option v-for="city in domesticCityLocations" v-bind:key="city">
+          {{ city }}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-control">
       <label for="users"> Users</label>
       <input
         id="useremail"
@@ -118,6 +128,15 @@ export default {
       editEventInfo: this.individualEvent,
       userEmails: [],
       userEmail: "",
+      domesticCityLocations: [
+        "Cork",
+        "Dublin",
+        "Galway",
+        "Kilkenny",
+        "Limerick",
+        "Waterford",
+      ],
+      location: "",
     };
   },
   methods: {
@@ -129,6 +148,7 @@ export default {
           title: this.title,
           type: this.eventType,
           userEmails: this.userEmails,
+          city: this.location,
         };
         const response = await axios
           .patch(
@@ -158,6 +178,7 @@ export default {
             title: this.title,
             type: this.eventType,
             userEmails: this.userEmails,
+            city: this.location,
           };
           const response = await axios
             .post(`http://localhost:3000/events/${userId}`, payload, {
@@ -203,6 +224,7 @@ export default {
 
         this.title = eventInfo.title;
         this.eventType = eventInfo.type;
+        this.location = eventInfo.city;
         for (let email in eventInfo.invitedUsers) {
           this.userEmails.push(eventInfo.invitedUsers[email].email);
         }
@@ -271,6 +293,18 @@ form {
       border-radius: 12px;
       border: 1px solid grey;
       padding-left: 10px;
+    }
+    select {
+      height: 2.5rem;
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid grey;
+      padding-left: 10px;
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 0.5rem center;
+      background-size: 1em;
     }
     input[type="radio"] {
       height: 1rem;
