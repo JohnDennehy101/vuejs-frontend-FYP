@@ -152,7 +152,7 @@ export default {
         };
         const response = await axios
           .patch(
-            `http://localhost:3000/events/${JSON.parse(this.editEventInfo).id}`,
+            `http://localhost:3000/events/${this.editEventInfo.id}`,
             payload,
             {
               headers: {
