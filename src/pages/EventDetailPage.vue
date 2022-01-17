@@ -185,6 +185,31 @@ export default {
         this.polls = response.data[0].polls;
       }
     },
+    async getEventAccommodationInfo() {
+      const jwtToken = localStorage.getItem("token");
+
+      const response = await axios
+        .get(
+          "http://localhost:3000/events/" + this.eventId + "/accommodation",
+          {
+            headers: {
+              "Access-Control-Allow-Origin": "*",
+              Authorization: `Bearer ${jwtToken}`,
+            },
+          }
+        )
+        .catch((error) => {
+          return { error };
+        });
+
+      console.log(response);
+
+      if ("error" in response) {
+        this.invalidEventCreation = true;
+      } else {
+        //Store accommodation info for use on UI
+      }
+    },
     transformTimeStampFormat(date) {
       return DateUtils.returnFormattedDateWithTime(date);
     },
@@ -199,6 +224,7 @@ export default {
   async created() {
     await this.extractIdFromUrl();
     await this.getEventInfo();
+    await this.getEventAccommodationInfo();
     await this.checkEditAction();
   },
 };
