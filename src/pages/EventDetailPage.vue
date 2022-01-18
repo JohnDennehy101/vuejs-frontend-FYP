@@ -242,6 +242,8 @@ export default {
       } else {
         const event = response.data[0];
 
+        console.log(event);
+
         if (event["createdByUser"].id === userId) {
           this.invitedUser = false;
         } else {
@@ -259,6 +261,10 @@ export default {
         );
         if (pollCompletionCheck.length > 0) {
           await this.getEventAccommodationInfo();
+
+          if (event.type === "FOREIGN_OVERNIGHT") {
+            await this.getEventFlightInfo();
+          }
         }
       }
     },
@@ -279,8 +285,6 @@ export default {
           return { error };
         });
 
-      console.log(response);
-
       if (response.status === 200) {
         this.accommodationInfo = response.data.resultPages;
         this.accommodationDateRange =
@@ -293,7 +297,7 @@ export default {
       const jwtToken = localStorage.getItem("token");
 
       const response = await axios
-        .get("http://localhost:3000/events/" + this.eventId + "/flight", {
+        .get("http://localhost:3000/events/" + this.eventId + "/flights", {
           headers: {
             "Access-Control-Allow-Origin": "*",
             Authorization: `Bearer ${jwtToken}`,
@@ -306,11 +310,7 @@ export default {
       console.log(response);
 
       if (response.status === 200) {
-        this.accommodationInfo = response.data.resultPages;
-        this.accommodationDateRange =
-          response.data.resultPages[1][0].startDate +
-          " - " +
-          response.data.resultPages[1][0].endDate;
+        this.flightInfo = response.data;
       }
     },
     transformTimeStampFormat(date) {
