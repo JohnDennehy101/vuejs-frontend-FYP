@@ -33,6 +33,7 @@
           name="eventType"
           type="radio"
           value="DOMESTIC_DAY"
+          v-on:change="eventTypeChange"
           v-model="eventType"
           required="required"
         />
@@ -45,6 +46,7 @@
           type="radio"
           value="DOMESTIC_OVERNIGHT"
           v-model="eventType"
+          v-on:change="eventTypeChange"
           required="required"
         />
         <label class="radio-label" for="DOMESTIC_OVERNIGHT"
@@ -58,6 +60,7 @@
           type="radio"
           value="FOREIGN_OVERNIGHT"
           v-model="eventType"
+          v-on:change="eventTypeChange"
           required="required"
         />
         <label class="radio-label" for="FOREIGN_OVERNIGHT"
@@ -66,8 +69,18 @@
       </div>
     </div>
 
+    <div v-if="foreignTrip" class="form-control">
+      <label class="radio-label" for="location">Departure</label>
+      <select id="location" v-model="departureCity">
+        <option disabled value="">Please select location</option>
+        <option v-for="city in domesticCityLocations" v-bind:key="city">
+          {{ city }}
+        </option>
+      </select>
+    </div>
+
     <div class="form-control">
-      <label class="radio-label" for="location">Location</label>
+      <label class="radio-label" for="location">Destination</label>
       <select id="location" v-model="location">
         <option disabled value="">Please select location</option>
         <option v-for="city in domesticCityLocations" v-bind:key="city">
@@ -137,6 +150,8 @@ export default {
         "Waterford",
       ],
       location: "",
+      departureCity: "",
+      foreignTrip: false,
     };
   },
   methods: {
@@ -149,7 +164,9 @@ export default {
           type: this.eventType,
           userEmails: this.userEmails,
           city: this.location,
+          departureCity: this.departureCity,
         };
+
         const response = await axios
           .patch(
             `http://localhost:3000/events/${this.editEventInfo.id}`,
@@ -179,7 +196,9 @@ export default {
             type: this.eventType,
             userEmails: this.userEmails,
             city: this.location,
+            departureCity: this.departureCity,
           };
+
           const response = await axios
             .post(`http://localhost:3000/events/${userId}`, payload, {
               headers: {
@@ -225,11 +244,25 @@ export default {
         this.title = eventInfo.title;
         this.eventType = eventInfo.type;
         this.location = eventInfo.city;
+
+        if (this.eventType === "FOREIGN_OVERNIGHT") {
+          this.foreignTrip = true;
+          this.departureCity = eventInfo.departureCity;
+        }
+
         for (let email in eventInfo.invitedUsers) {
           this.userEmails.push(eventInfo.invitedUsers[email].email);
         }
       } else {
         this.formTitle = "Create Event";
+      }
+    },
+    eventTypeChange(event) {
+      if (event.target.value === "FOREIGN_OVERNIGHT") {
+        this.foreignTrip = true;
+      } else {
+        this.foreignTrip = false;
+        this.departureCity = "N/A";
       }
     },
   },

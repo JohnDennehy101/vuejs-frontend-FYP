@@ -197,6 +197,7 @@ export default {
       page: 1,
       checkedAccommodation: [],
       acommodationDateRange: null,
+      flightInfo: null,
     };
   },
   components: {
@@ -274,6 +275,30 @@ export default {
             },
           }
         )
+        .catch((error) => {
+          return { error };
+        });
+
+      console.log(response);
+
+      if (response.status === 200) {
+        this.accommodationInfo = response.data.resultPages;
+        this.accommodationDateRange =
+          response.data.resultPages[1][0].startDate +
+          " - " +
+          response.data.resultPages[1][0].endDate;
+      }
+    },
+    async getEventFlightInfo() {
+      const jwtToken = localStorage.getItem("token");
+
+      const response = await axios
+        .get("http://localhost:3000/events/" + this.eventId + "/flight", {
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            Authorization: `Bearer ${jwtToken}`,
+          },
+        })
         .catch((error) => {
           return { error };
         });
