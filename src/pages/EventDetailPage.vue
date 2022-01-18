@@ -20,6 +20,58 @@
       :routerLink="noCreatedPollsCallToActionLink"
     />
 
+    <table
+      class="web-scraped-info-parent-container"
+      v-for="(value, page) in accommodationInfo"
+      v-bind:key="value"
+    >
+      <caption>
+        Accommodation -
+        {{
+          page
+        }}
+      </caption>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Price</th>
+          <th>Room Type</th>
+          <th>Beds</th>
+          <th>Review Category</th>
+          <th>Review Score</th>
+          <th>Review Quantity</th>
+          <th>Location</th>
+          <!--<th>Cancellation</th>-->
+          <th>Link</th>
+          <th>Map</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr v-for="(item, key) of value" :key="key">
+          <td>{{ item.title }}</td>
+          <td>{{ item.price }}</td>
+          <td>{{ item.roomTypeRecommendedBooking }}</td>
+          <td>{{ item.numberOfBedsRecommendedBooking }}</td>
+          <td>{{ item.ratingScoreCategory }}</td>
+          <td>{{ item.ratingScore }}</td>
+          <td>{{ item.reviewQuantity }}</td>
+          <td>{{ item.locationDistance }}</td>
+          <td>
+            <a :href="item.bookingSiteLink" target="_blank">
+              <i class="fas fa-external-link-square-alt"></i>
+            </a>
+          </td>
+          <td>
+            <a :href="item.bookingSiteDisplayLocationMapLink" target="_blank">
+              <i class="fas fa-map-marker-alt"></i>
+            </a>
+          </td>
+          <!-- <td>{{ item.freeCancellationText }}</td>-->
+        </tr>
+      </tbody>
+    </table>
+
     <div id="polls-display-parent-container" v-if="polls.length > 0">
       <div
         class="individual-poll-container"
@@ -128,6 +180,8 @@ export default {
       showEventInfo: false,
       eventId: "",
       invitedUser: null,
+      accommodationInfo: null,
+      page: 1,
     };
   },
   components: {
@@ -165,8 +219,6 @@ export default {
           return { error };
         });
 
-      console.log(response);
-
       if ("error" in response) {
         this.invalidEventCreation = true;
       } else {
@@ -183,6 +235,13 @@ export default {
 
         this.showEventInfo = true;
         this.polls = response.data[0].polls;
+
+        let pollCompletionCheck = response.data[0].polls.filter(
+          (poll) => poll.completed === true
+        );
+        if (pollCompletionCheck.length > 0) {
+          await this.getEventAccommodationInfo();
+        }
       }
     },
     async getEventAccommodationInfo() {
@@ -204,10 +263,8 @@ export default {
 
       console.log(response);
 
-      if ("error" in response) {
-        this.invalidEventCreation = true;
-      } else {
-        //Store accommodation info for use on UI
+      if (response.status === 200) {
+        this.accommodationInfo = response.data.resultPages;
       }
     },
     transformTimeStampFormat(date) {
@@ -224,7 +281,7 @@ export default {
   async created() {
     await this.extractIdFromUrl();
     await this.getEventInfo();
-    await this.getEventAccommodationInfo();
+    //await this.getEventAccommodationInfo();
     await this.checkEditAction();
   },
 };
@@ -313,6 +370,39 @@ export default {
         }
       }
     }
+  }
+}
+
+.web-scraped-info-parent-container {
+  overflow-x: auto;
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  max-width: 80%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+  thead {
+    background-color: #373f68;
+    color: white;
+    text-align: left;
+
+    th {
+      padding: 12px 15px;
+    }
+  }
+
+  tbody tr {
+    border-bottom: 1px solid #dddddd;
+  }
+
+  tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }
+
+  td {
+    padding: 12px 15px;
   }
 }
 </style>
