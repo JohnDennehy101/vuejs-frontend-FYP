@@ -20,70 +20,6 @@
       :routerLink="noCreatedPollsCallToActionLink"
     />
 
-    <table
-      class="web-scraped-info-parent-container"
-      v-for="(value, page) in accommodationInfo"
-      v-bind:key="value"
-    >
-      <caption>
-        Accommodation Results for
-        {{
-          accommodationDateRange
-        }}
-        - Page
-        {{
-          page
-        }}
-      </caption>
-      <thead>
-        <tr>
-          <th></th>
-          <th>Title</th>
-          <th>Price</th>
-          <th>Room Type</th>
-          <th>Beds</th>
-          <th>Review Category</th>
-          <th>Review Score</th>
-          <th>Review Quantity</th>
-          <th>Location</th>
-          <!--<th>Cancellation</th>-->
-          <th>Link</th>
-          <th>Map</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <tr v-for="(item, key) of value" :key="key">
-          <td>
-            <input
-              type="checkbox"
-              :value="item"
-              v-model="checkedAccommodation"
-            />
-          </td>
-          <td>{{ item.title }}</td>
-          <td>{{ item.price }}</td>
-          <td>{{ item.roomTypeRecommendedBooking }}</td>
-          <td>{{ item.numberOfBedsRecommendedBooking }}</td>
-          <td>{{ item.ratingScoreCategory }}</td>
-          <td>{{ item.ratingScore }}</td>
-          <td>{{ item.reviewQuantity }}</td>
-          <td>{{ item.locationDistance }}</td>
-          <td>
-            <a :href="item.bookingSiteLink" target="_blank">
-              <i class="fas fa-external-link-square-alt"></i>
-            </a>
-          </td>
-          <td>
-            <a :href="item.bookingSiteDisplayLocationMapLink" target="_blank">
-              <i class="fas fa-map-marker-alt"></i>
-            </a>
-          </td>
-          <!-- <td>{{ item.freeCancellationText }}</td>-->
-        </tr>
-      </tbody>
-    </table>
-
     <div id="polls-display-parent-container" v-if="polls.length > 0">
       <h2>Event Polls</h2>
       <div
@@ -155,6 +91,125 @@
         </div>
       </div>
     </div>
+
+    <table
+      class="web-scraped-info-parent-container"
+      v-for="(value, page) in accommodationInfo"
+      v-bind:key="value"
+    >
+      <caption>
+        Accommodation Results for
+        {{
+          accommodationDateRange
+        }}
+        - Page
+        {{
+          page
+        }}
+      </caption>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Title</th>
+          <th>Price</th>
+          <th>Room Type</th>
+          <th>Beds</th>
+          <th>Review Category</th>
+          <th>Review Score</th>
+          <th>Review Quantity</th>
+          <th>Location</th>
+          <!--<th>Cancellation</th>-->
+          <th>Link</th>
+          <th>Map</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr v-for="(item, key) of value" :key="key">
+          <td>
+            <input
+              type="checkbox"
+              :value="item"
+              v-model="checkedAccommodation"
+            />
+          </td>
+          <td>{{ item.title }}</td>
+          <td>{{ item.price }}</td>
+          <td>{{ item.roomTypeRecommendedBooking }}</td>
+          <td>{{ item.numberOfBedsRecommendedBooking }}</td>
+          <td>{{ item.ratingScoreCategory }}</td>
+          <td>{{ item.ratingScore }}</td>
+          <td>{{ item.reviewQuantity }}</td>
+          <td>{{ item.locationDistance }}</td>
+          <td>
+            <a :href="item.bookingSiteLink" target="_blank">
+              <i class="fas fa-external-link-square-alt"></i>
+            </a>
+          </td>
+          <td>
+            <a :href="item.bookingSiteDisplayLocationMapLink" target="_blank">
+              <i class="fas fa-map-marker-alt"></i>
+            </a>
+          </td>
+          <!-- <td>{{ item.freeCancellationText }}</td>-->
+        </tr>
+      </tbody>
+    </table>
+
+    <table
+      class="web-scraped-info-parent-container"
+      v-for="value in flightInfo"
+      v-bind:key="value"
+    >
+      <caption>
+        Flight Results for
+        {{
+          accommodationDateRange
+        }}
+
+        {{
+          page
+        }}
+      </caption>
+      <thead>
+        <tr>
+          <th>Airport</th>
+          <th>Departure Time</th>
+          <th>Arrival Time</th>
+          <th>Price Per Person</th>
+          <th>Total Price</th>
+          <th>Carrier</th>
+          <th>Duration</th>
+          <!--<th>Cancellation</th>-->
+          <th>Link</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr v-for="(item, key) of value" :key="key">
+          <td>
+            <table>
+              <tr>
+                <td>{{ item.airport }}</td>
+              </tr>
+              <tr>
+                <td>{{ item.title }}</td>
+              </tr>
+            </table>
+          </td>
+          <td>{{ item.departureTime }}</td>
+          <td>{{ item.arrivalTime }}</td>
+          <td>{{ item.pricePerPerson }}</td>
+          <td>{{ item.priceTotal }}</td>
+          <td>{{ item.carrier }}</td>
+          <td>{{ item.duration }}</td>
+          <td>{{ item.locationDistance }}</td>
+
+          <!-- <td>{{ item.freeCancellationText }}</td>-->
+        </tr>
+      </tbody>
+    </table>
+
     <DeleteModal
       v-if="displayDeleteModal"
       :title="deletePollTitle"
@@ -456,6 +511,11 @@ export default {
 
   td {
     padding: 12px 15px;
+  }
+
+  td table {
+    margin: -2px;
+    width: calc(100% + 4px);
   }
 }
 </style>
