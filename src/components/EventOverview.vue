@@ -2,6 +2,7 @@
   <div id="event-information-container">
     <h3>{{ title }}</h3>
     <p>More info about group trip here...description</p>
+    <p>{{ city }}</p>
     <span>{{ type }}</span>
     <div id="event-users-parent-container">
       <h4>Users</h4>
@@ -30,6 +31,7 @@ export default {
       item: this.individualEvent,
       title: "",
       type: "",
+      city: "",
       guestUser: this.invitedUser,
     };
   },
@@ -40,6 +42,7 @@ export default {
       if (eventInfo !== null) {
         this.title = eventInfo.title;
         this.type = eventInfo.type;
+        this.city = eventInfo.city;
       }
     },
   },
@@ -51,7 +54,7 @@ export default {
 
 <style scoped lang="scss">
 #event-information-container {
-  width: 60%;
+  width: 80%;
   text-align: center;
   margin: 1rem auto;
   border-radius: 5px;

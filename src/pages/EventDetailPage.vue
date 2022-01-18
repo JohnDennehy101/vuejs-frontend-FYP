@@ -26,13 +26,18 @@
       v-bind:key="value"
     >
       <caption>
-        Accommodation -
+        Accommodation Results for
+        {{
+          accommodationDateRange
+        }}
+        - Page
         {{
           page
         }}
       </caption>
       <thead>
         <tr>
+          <th></th>
           <th>Title</th>
           <th>Price</th>
           <th>Room Type</th>
@@ -49,6 +54,13 @@
 
       <tbody>
         <tr v-for="(item, key) of value" :key="key">
+          <td>
+            <input
+              type="checkbox"
+              :value="item"
+              v-model="checkedAccommodation"
+            />
+          </td>
           <td>{{ item.title }}</td>
           <td>{{ item.price }}</td>
           <td>{{ item.roomTypeRecommendedBooking }}</td>
@@ -73,6 +85,7 @@
     </table>
 
     <div id="polls-display-parent-container" v-if="polls.length > 0">
+      <h2>Event Polls</h2>
       <div
         class="individual-poll-container"
         v-for="poll in polls"
@@ -182,6 +195,8 @@ export default {
       invitedUser: null,
       accommodationInfo: null,
       page: 1,
+      checkedAccommodation: [],
+      acommodationDateRange: null,
     };
   },
   components: {
@@ -218,6 +233,8 @@ export default {
         .catch((error) => {
           return { error };
         });
+
+      console.log(response);
 
       if ("error" in response) {
         this.invalidEventCreation = true;
@@ -265,6 +282,10 @@ export default {
 
       if (response.status === 200) {
         this.accommodationInfo = response.data.resultPages;
+        this.accommodationDateRange =
+          response.data.resultPages[1][0].startDate +
+          " - " +
+          response.data.resultPages[1][0].endDate;
       }
     },
     transformTimeStampFormat(date) {
@@ -281,7 +302,6 @@ export default {
   async created() {
     await this.extractIdFromUrl();
     await this.getEventInfo();
-    //await this.getEventAccommodationInfo();
     await this.checkEditAction();
   },
 };
@@ -298,7 +318,7 @@ export default {
   background-color: #f2f2f2;
 }
 #polls-display-parent-container {
-  width: 60%;
+  width: 80%;
   margin: 1rem auto;
 
   .individual-poll-container {
@@ -357,10 +377,11 @@ export default {
           font-size: 1.2rem;
           color: white;
         }
-        #pollCompletedIcon {
-          svg {
-            color: green;
-          }
+      }
+
+      #pollCompletedIcon {
+        svg {
+          color: green;
         }
       }
 
@@ -382,6 +403,13 @@ export default {
   min-width: 400px;
   max-width: 80%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+  caption {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: left;
+    margin: 1rem 0;
+  }
 
   thead {
     background-color: #373f68;
