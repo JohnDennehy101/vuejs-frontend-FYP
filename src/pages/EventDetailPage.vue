@@ -109,7 +109,6 @@
       </caption>
       <thead>
         <tr>
-          <th></th>
           <th>Title</th>
           <th>Price</th>
           <th>Room Type</th>
@@ -156,56 +155,59 @@
       </tbody>
     </table>
 
+    <h2>Flight Results</h2>
     <table
       class="web-scraped-info-parent-container"
       v-for="value in flightInfo"
       v-bind:key="value"
+      @change="checkedFlightChange(value)"
     >
-      <caption>
-        Flight Results for
-        {{
-          accommodationDateRange
-        }}
-
-        {{
-          page
-        }}
-      </caption>
       <thead>
         <tr>
+          <th></th>
           <th>Airport</th>
+          <th>Flight Date</th>
+
           <th>Departure Time</th>
           <th>Arrival Time</th>
-          <th>Price Per Person</th>
-          <th>Total Price</th>
-          <th>Carrier</th>
           <th>Duration</th>
-          <!--<th>Cancellation</th>-->
+          <th>Carrier</th>
+          <th>Return Price Per Person</th>
+          <th>Total Return Price</th>
           <th>Link</th>
         </tr>
       </thead>
 
       <tbody>
         <tr v-for="(item, key) of value" :key="key">
-          <td>
-            <table>
-              <tr>
-                <td>{{ item.airport }}</td>
-              </tr>
-              <tr>
-                <td>{{ item.title }}</td>
-              </tr>
-            </table>
+          <td v-if="key === 0" rowspan="2">
+            <input type="checkbox" :value="item" />
+          </td>
+
+          <td>{{ item.airport }}</td>
+          <td v-if="key === 0">
+            {{ item.startDate }}
+          </td>
+          <td v-else>
+            {{ item.endDate }}
           </td>
           <td>{{ item.departureTime }}</td>
           <td>{{ item.arrivalTime }}</td>
-          <td>{{ item.pricePerPerson }}</td>
-          <td>{{ item.priceTotal }}</td>
-          <td>{{ item.carrier }}</td>
           <td>{{ item.duration }}</td>
-          <td>{{ item.locationDistance }}</td>
+          <td>{{ item.carrier }}</td>
+          <td v-if="key === 0" rowspan="2">
+            {{ item.pricePerPerson }}
+          </td>
 
-          <!-- <td>{{ item.freeCancellationText }}</td>-->
+          <td v-if="key === 0" rowspan="2">
+            {{ item.priceTotal }}
+          </td>
+
+          <td v-if="key === 0" rowspan="2">
+            <a :href="item.flightUrl" target="_blank">
+              <i class="fas fa-external-link-square-alt"></i>
+            </a>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -253,6 +255,7 @@ export default {
       checkedAccommodation: [],
       acommodationDateRange: null,
       flightInfo: null,
+      checkedFlight: [],
     };
   },
   components: {
@@ -378,6 +381,9 @@ export default {
         event.path[3].children[0].childNodes[0].childNodes[2].textContent;
       this.displayDeleteModal = true;
     },
+    checkedFlightChange(value) {
+      this.checkedFlight.push(value);
+    },
   },
   async created() {
     await this.extractIdFromUrl();
@@ -396,6 +402,10 @@ export default {
   flex-direction: column;
   align-items: center;
   background-color: #f2f2f2;
+}
+h2 {
+  text-align: left;
+  width: 80%;
 }
 #polls-display-parent-container {
   width: 80%;
@@ -480,8 +490,7 @@ export default {
   margin: 25px 0;
   font-size: 0.9em;
   font-family: sans-serif;
-  min-width: 400px;
-  max-width: 80%;
+  width: 80%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 
   caption {
