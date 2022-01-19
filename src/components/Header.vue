@@ -5,6 +5,7 @@
         <img src="../assets/logoIcon.png" />
         <p>Group Activity Planner</p>
       </div>
+
       <ul v-if="loggedInHeader">
         <li>
           <router-link to="createEvent"> Add Event </router-link>
@@ -14,12 +15,18 @@
         <li>Heading 4</li>
       </ul>
     </div>
-    <ul>
+    <ul v-if="!loggedInHeader">
       <li v-bind:class="{ activeHeader: loginPage }">
         <router-link to="/login"> Login </router-link>
       </li>
       <li v-bind:class="{ activeHeader: registerPage }">
         <router-link to="/register">Register </router-link>
+      </li>
+    </ul>
+
+    <ul v-if="loggedInHeader">
+      <li>
+        <router-link class="activeHeader" to="/logout">Logout </router-link>
       </li>
     </ul>
   </header>
@@ -36,7 +43,13 @@ export default {
   },
   watch: {
     $route() {
-      if (this.$route.path !== "/" || this.$route.path !== "/login") {
+      if (
+        this.$route.path === "/login" ||
+        this.$route.path === "/register" ||
+        this.$route.path === "/"
+      ) {
+        this.loggedInHeader = false;
+      } else {
         this.loggedInHeader = true;
       }
       if (this.$route.path === "/login") {
