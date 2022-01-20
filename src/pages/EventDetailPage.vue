@@ -109,6 +109,7 @@
       </caption>
       <thead>
         <tr>
+          <th></th>
           <th>Title</th>
           <th>Price</th>
           <th>Room Type</th>
@@ -318,20 +319,33 @@ export default {
           (poll) => poll.completed === true
         );
         if (pollCompletionCheck.length > 0) {
-          await this.getEventAccommodationInfo();
+          let mostVotedPollOption = pollCompletionCheck[0].pollOptions.reduce(
+            function (prev, current) {
+              return prev.y > current.y ? prev : current;
+            }
+          );
+
+          await this.getEventAccommodationInfo(
+            mostVotedPollOption.startDate,
+            mostVotedPollOption.endDate
+          );
 
           if (event.type === "FOREIGN_OVERNIGHT") {
-            await this.getEventFlightInfo();
+            await this.getEventFlightInfo(
+              mostVotedPollOption.startDate,
+              mostVotedPollOption.endDate
+            );
           }
         }
       }
     },
-    async getEventAccommodationInfo() {
+
+    async getEventAccommodationInfo(startDate, endDate) {
       const jwtToken = localStorage.getItem("token");
 
       const response = await axios
         .get(
-          "http://localhost:3000/events/" + this.eventId + "/accommodation",
+          `http://localhost:3000/events/${this.eventId}/accommodation?startDate=${startDate}&endDate=${endDate}`,
           {
             headers: {
               "Access-Control-Allow-Origin": "*",
@@ -351,16 +365,20 @@ export default {
           response.data.resultPages[1][0].endDate;
       }
     },
-    async getEventFlightInfo() {
+
+    async getEventFlightInfo(startDate, endDate) {
       const jwtToken = localStorage.getItem("token");
 
       const response = await axios
-        .get("http://localhost:3000/events/" + this.eventId + "/flights", {
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-            Authorization: `Bearer ${jwtToken}`,
-          },
-        })
+        .get(
+          `http://localhost:3000/events/${this.eventId}/flights?startDate=${startDate}&endDate=${endDate}`,
+          {
+            headers: {
+              "Access-Control-Allow-Origin": "*",
+              Authorization: `Bearer ${jwtToken}`,
+            },
+          }
+        )
         .catch((error) => {
           return { error };
         });
