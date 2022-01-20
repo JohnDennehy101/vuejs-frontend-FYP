@@ -31,6 +31,10 @@
           <div class="poll-info-container">
             <h3>Title</h3>
             {{ poll.title }}
+            <h3 v-if="mostVotedPollOption">Most Suitable Start Date</h3>
+            <p v-if="mostVotedPollOption">
+              {{ formatDate(mostVotedPollOption.startDate) }}
+            </p>
             <h3 style="display: none">
               {{ poll.id }}
             </h3>
@@ -38,11 +42,19 @@
           <div class="poll-info-container">
             <h3>Created</h3>
             {{ transformTimeStampFormat(new Date(poll.created_at)) }}
+            <h3 v-if="mostVotedPollOption">Most Suitable End Date</h3>
+            <p v-if="mostVotedPollOption">
+              {{ formatDate(mostVotedPollOption.endDate) }}
+            </p>
           </div>
 
           <div class="poll-info-container">
             <h3>Updated</h3>
             {{ transformTimeStampFormat(new Date(poll.updated_at)) }}
+            <h3 v-if="mostVotedPollOption">Number of Votes</h3>
+            <p v-if="mostVotedPollOption">
+              {{ mostVotedPollOption.votes.length }}
+            </p>
           </div>
 
           <div class="poll-info-container">
@@ -257,6 +269,7 @@ export default {
       acommodationDateRange: null,
       flightInfo: null,
       checkedFlight: [],
+      mostVotedPollOption: null,
     };
   },
   components: {
@@ -319,21 +332,21 @@ export default {
           (poll) => poll.completed === true
         );
         if (pollCompletionCheck.length > 0) {
-          let mostVotedPollOption = pollCompletionCheck[0].pollOptions.reduce(
+          this.mostVotedPollOption = pollCompletionCheck[0].pollOptions.reduce(
             function (prev, current) {
               return prev.y > current.y ? prev : current;
             }
           );
 
           await this.getEventAccommodationInfo(
-            mostVotedPollOption.startDate,
-            mostVotedPollOption.endDate
+            this.mostVotedPollOption.startDate,
+            this.mostVotedPollOption.endDate
           );
 
           if (event.type === "FOREIGN_OVERNIGHT") {
             await this.getEventFlightInfo(
-              mostVotedPollOption.startDate,
-              mostVotedPollOption.endDate
+              this.mostVotedPollOption.startDate,
+              this.mostVotedPollOption.endDate
             );
           }
         }
@@ -392,6 +405,9 @@ export default {
     transformTimeStampFormat(date) {
       return DateUtils.returnFormattedDateWithTime(date);
     },
+    formatDate(date) {
+      return DateUtils.returnFormattedDate(date);
+    },
     showDeleteModal(event) {
       this.deletePollTitle =
         event.path[3].children[0].childNodes[0].childNodes[1].textContent;
@@ -436,6 +452,7 @@ h2 {
     margin: 1rem auto;
     background-color: #ffffff;
     display: flex;
+    flex-wrap: wrap;
 
     justify-content: space-between;
 
