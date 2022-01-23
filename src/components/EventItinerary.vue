@@ -178,6 +178,9 @@
       <div class="event-itinerary-category">
         <h3>Activities</h3>
       </div>
+      <div class="event-itinerary-category">
+        <button @click="submitItinerary">Submit Itinerary</button>
+      </div>
     </div>
 
     <div class="event-itinerary-info">
@@ -187,13 +190,59 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
-  props: ["accommodation", "flight"],
+  props: ["accommodation", "flight", "eventId", "editItinerary"],
   data() {
     return {
       itineraryAccommodation: this.accommodation,
       itineraryFlight: this.flight,
+      id: this.eventId,
+      editAction: this.editItinerary,
     };
+  },
+  methods: {
+    async submitItinerary(event) {
+      event.preventDefault();
+      console.log("SUBMITTING");
+      let flight =
+        this.itineraryFlight.length > 0 ? this.itineraryFlight[0] : [];
+      const payload = {
+        flight: flight,
+        accommodation: this.itineraryAccommodation,
+        activities: [],
+        completed: false,
+      };
+      const jwtToken = localStorage.getItem("token");
+
+      if (!this.editItinerary) {
+        const response = await axios
+          .post(`http://localhost:3000/events/${this.id}/itinerary`, payload, {
+            headers: {
+              "Access-Control-Allow-Origin": "*",
+              Authorization: `Bearer ${jwtToken}`,
+            },
+          })
+          .catch((error) => {
+            return { error };
+          });
+
+        console.log(response);
+      } else {
+        const response = await axios
+          .patch(`http://localhost:3000/events/${this.id}/itinerary`, payload, {
+            headers: {
+              "Access-Control-Allow-Origin": "*",
+              Authorization: `Bearer ${jwtToken}`,
+            },
+          })
+          .catch((error) => {
+            return { error };
+          });
+
+        console.log(response);
+      }
+    },
   },
 };
 </script>
@@ -225,5 +274,17 @@ h2 {
   p {
     display: inline-block;
   }
+}
+button {
+  border-radius: 1rem;
+  border: none;
+  width: 50%;
+  height: 2.5rem;
+  margin: 1rem auto;
+  background-color: $primary-button-background-colour;
+  color: $primary-button-text-colour;
+}
+button:hover {
+  cursor: pointer;
 }
 </style>

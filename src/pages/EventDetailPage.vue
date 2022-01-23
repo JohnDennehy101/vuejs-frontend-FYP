@@ -19,6 +19,8 @@
       "
       :accommodation="checkedAccommodation"
       :flight="checkedFlight"
+      :eventId="eventId"
+      :editItinerary="itineraryAlreadyCreated"
       :key="eventItineraryKey"
     />
 
@@ -152,6 +154,7 @@
             <input
               type="checkbox"
               :value="item"
+              @change="checkedAccommodationChange($event, item)"
               v-model="checkedAccommodation"
             />
           </td>
@@ -282,12 +285,11 @@ export default {
       checkedFlight: [],
       mostVotedPollOption: null,
       eventItineraryKey: 0,
+      itineraryAlreadyCreated: false,
     };
   },
   watch: {
     checkedAccommodation: function () {
-      console.log("CHANGE HAPPENING");
-      console.log(this.checkedAccommodation);
       this.eventItineraryKey++;
     },
   },
@@ -358,6 +360,8 @@ export default {
             }
           );
 
+          await this.getEventItinerary();
+
           await this.getEventAccommodationInfo(
             this.mostVotedPollOption.startDate,
             this.mostVotedPollOption.endDate
@@ -370,6 +374,27 @@ export default {
             );
           }
         }
+      }
+    },
+
+    async getEventItinerary() {
+      const jwtToken = localStorage.getItem("token");
+
+      const response = await axios
+        .get(`http://localhost:3000/events/${this.eventId}/itinerary`, {
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            Authorization: `Bearer ${jwtToken}`,
+          },
+        })
+        .catch((error) => {
+          return { error };
+        });
+
+      if (response.status === 200) {
+        this.checkedAccommodation = response.data.accommodation;
+        this.checkedFlight = response.data.flight;
+        this.itineraryAlreadyCreated = true;
       }
     },
 
@@ -436,8 +461,21 @@ export default {
       this.displayDeleteModal = true;
     },
     checkedFlightChange(value) {
+      this.checkedFlight = [];
       this.checkedFlight.push(value);
       this.eventItineraryKey++;
+    },
+    checkedAccommodationChange(event, value) {
+      console.log(event.target.checked);
+      console.log(value);
+      if (event.target.checked) {
+        this.checkedAccommodation = [];
+        this.checkedAccommodation.push(value);
+        console.log(this.checkedAccommodation);
+        this.eventItineraryKey++;
+      } else {
+        this.checkedAccommodation = [];
+      }
     },
   },
   async created() {
