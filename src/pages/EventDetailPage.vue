@@ -19,6 +19,8 @@
       :eventId="eventId"
       :editItinerary="itineraryAlreadyCreated"
       :key="eventItineraryKey"
+      v-on:editItineraryClick="editItineraryButtonClick"
+      :editItineraryClick="editItineraryClick"
     />
 
     <NoCreatedItems
@@ -112,128 +114,137 @@
         </div>
       </div>
     </div>
-
-    <table
-      class="web-scraped-info-parent-container"
-      v-for="(value, page) in accommodationInfo"
-      v-bind:key="value"
+    <div
+      class="scraped-info-wrapper"
+      v-if="checkedAccommodation.length == 0 || editItineraryClick"
     >
-      <caption>
-        Accommodation Results for
-        {{
-          accommodationDateRange
-        }}
-        - Page
-        {{
-          page
-        }}
-      </caption>
-      <thead>
-        <tr>
-          <th></th>
-          <th>Title</th>
-          <th>Price</th>
-          <th>Room Type</th>
-          <th>Beds</th>
-          <th>Review Category</th>
-          <th>Review Score</th>
-          <th>Review Quantity</th>
-          <th>Location</th>
-          <!--<th>Cancellation</th>-->
-          <th>Link</th>
-          <th>Map</th>
-        </tr>
-      </thead>
+      <table
+        class="web-scraped-info-parent-container"
+        v-for="(value, page) in accommodationInfo"
+        v-bind:key="value"
+      >
+        <caption>
+          Accommodation Results for
+          {{
+            accommodationDateRange
+          }}
+          - Page
+          {{
+            page
+          }}
+        </caption>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Room Type</th>
+            <th>Beds</th>
+            <th>Review Category</th>
+            <th>Review Score</th>
+            <th>Review Quantity</th>
+            <th>Location</th>
+            <!--<th>Cancellation</th>-->
+            <th>Link</th>
+            <th>Map</th>
+          </tr>
+        </thead>
 
-      <tbody>
-        <tr v-for="(item, key) of value" :key="key">
-          <td>
-            <input
-              type="checkbox"
-              :value="item"
-              @change="checkedAccommodationChange($event, item)"
-              v-model="checkedAccommodation"
-            />
-          </td>
-          <td>{{ item.title }}</td>
-          <td>{{ item.price }}</td>
-          <td>{{ item.roomTypeRecommendedBooking }}</td>
-          <td>{{ item.numberOfBedsRecommendedBooking }}</td>
-          <td>{{ item.ratingScoreCategory }}</td>
-          <td>{{ item.ratingScore }}</td>
-          <td>{{ item.reviewQuantity }}</td>
-          <td>{{ item.locationDistance }}</td>
-          <td>
-            <a :href="item.bookingSiteLink" target="_blank">
-              <i class="fas fa-external-link-square-alt"></i>
-            </a>
-          </td>
-          <td>
-            <a :href="item.bookingSiteDisplayLocationMapLink" target="_blank">
-              <i class="fas fa-map-marker-alt"></i>
-            </a>
-          </td>
-          <!-- <td>{{ item.freeCancellationText }}</td>-->
-        </tr>
-      </tbody>
-    </table>
+        <tbody>
+          <tr v-for="(item, key) of value" :key="key">
+            <td>
+              <input
+                type="checkbox"
+                :value="item"
+                @change="checkedAccommodationChange($event, item)"
+                v-model="checkedAccommodation"
+              />
+            </td>
+            <td>{{ item.title }}</td>
+            <td>{{ item.price }}</td>
+            <td>{{ item.roomTypeRecommendedBooking }}</td>
+            <td>{{ item.numberOfBedsRecommendedBooking }}</td>
+            <td>{{ item.ratingScoreCategory }}</td>
+            <td>{{ item.ratingScore }}</td>
+            <td>{{ item.reviewQuantity }}</td>
+            <td>{{ item.locationDistance }}</td>
+            <td>
+              <a :href="item.bookingSiteLink" target="_blank">
+                <i class="fas fa-external-link-square-alt"></i>
+              </a>
+            </td>
+            <td>
+              <a :href="item.bookingSiteDisplayLocationMapLink" target="_blank">
+                <i class="fas fa-map-marker-alt"></i>
+              </a>
+            </td>
+            <!-- <td>{{ item.freeCancellationText }}</td>-->
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-    <h2>Flight Results</h2>
-    <table
-      class="web-scraped-info-parent-container"
-      v-for="value in flightInfo"
-      v-bind:key="value"
-      @change="checkedFlightChange(value)"
+    <div
+      class="scraped-info-wrapper"
+      v-if="checkedFlight.length == 0 || editItineraryClick"
     >
-      <thead>
-        <tr>
-          <th></th>
-          <th>Airport</th>
-          <th>Flight Date</th>
+      <h2>Flight Results</h2>
+      <table
+        class="web-scraped-info-parent-container"
+        v-for="value in flightInfo"
+        v-bind:key="value"
+        @change="checkedFlightChange(value)"
+      >
+        <thead>
+          <tr>
+            <th></th>
+            <th>Airport</th>
+            <th>Flight Date</th>
 
-          <th>Departure Time</th>
-          <th>Arrival Time</th>
-          <th>Duration</th>
-          <th>Carrier</th>
-          <th>Return Price Per Person</th>
-          <th>Total Return Price</th>
-          <th>Link</th>
-        </tr>
-      </thead>
+            <th>Departure Time</th>
+            <th>Arrival Time</th>
+            <th>Duration</th>
+            <th>Carrier</th>
+            <th>Return Price Per Person</th>
+            <th>Total Return Price</th>
+            <th>Link</th>
+          </tr>
+        </thead>
 
-      <tbody>
-        <tr v-for="(item, key) of value" :key="key">
-          <td v-if="key === 0" rowspan="2">
-            <input type="checkbox" :value="item" />
-          </td>
+        <tbody>
+          <tr v-for="(item, key) of value" :key="key">
+            <td v-if="key === 0" rowspan="2">
+              <input type="checkbox" :value="item" />
+            </td>
 
-          <td>{{ item.airport }}</td>
-          <td v-if="key === 0">
-            {{ item.startDate }}
-          </td>
-          <td v-else>
-            {{ item.endDate }}
-          </td>
-          <td>{{ item.departureTime }}</td>
-          <td>{{ item.arrivalTime }}</td>
-          <td>{{ item.duration }}</td>
-          <td>{{ item.carrier }}</td>
-          <td v-if="key === 0" rowspan="2">
-            {{ item.pricePerPerson }}
-          </td>
+            <td>{{ item.airport }}</td>
+            <td v-if="key === 0">
+              {{ item.startDate }}
+            </td>
+            <td v-else>
+              {{ item.endDate }}
+            </td>
+            <td>{{ item.departureTime }}</td>
+            <td>{{ item.arrivalTime }}</td>
+            <td>{{ item.duration }}</td>
+            <td>{{ item.carrier }}</td>
+            <td v-if="key === 0" rowspan="2">
+              {{ item.pricePerPerson }}
+            </td>
 
-          <td v-if="key === 0" rowspan="2">
-            {{ item.priceTotal }}
-          </td>
+            <td v-if="key === 0" rowspan="2">
+              {{ item.priceTotal }}
+            </td>
 
-          <td v-if="key === 0" rowspan="2">
-            <a :href="item.flightUrl" target="_blank">
-              <i class="fas fa-external-link-square-alt"></i>
-            </a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+            <td v-if="key === 0" rowspan="2">
+              <a :href="item.flightUrl" target="_blank">
+                <i class="fas fa-external-link-square-alt"></i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
     <DeleteModal
       v-if="displayDeleteModal"
@@ -283,6 +294,7 @@ export default {
       mostVotedPollOption: null,
       eventItineraryKey: 0,
       itineraryAlreadyCreated: false,
+      editItineraryClick: false,
     };
   },
   watch: {
@@ -390,8 +402,9 @@ export default {
 
       if (response.status === 200) {
         if (response.data !== "") {
+          console.log(response.data);
           this.checkedAccommodation = response.data.accommodation;
-          this.checkedFlight = response.data.flight;
+          this.checkedFlight[0] = response.data.flight;
           this.itineraryAlreadyCreated = true;
         }
       }
@@ -475,6 +488,12 @@ export default {
       } else {
         this.checkedAccommodation = [];
       }
+    },
+    editItineraryButtonClick(value) {
+      console.log(value);
+
+      this.editItineraryClick = !this.editItineraryClick;
+      this.eventItineraryKey++;
     },
   },
   async created() {
@@ -577,13 +596,18 @@ h2 {
   }
 }
 
+.scraped-info-wrapper {
+  margin: 25px 0;
+  width: 80%;
+}
+
 .web-scraped-info-parent-container {
   overflow-x: auto;
   border-collapse: collapse;
-  margin: 25px 0;
+
   font-size: 0.9em;
   font-family: sans-serif;
-  width: 80%;
+
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 
   caption {

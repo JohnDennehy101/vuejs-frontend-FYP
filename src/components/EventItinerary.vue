@@ -179,6 +179,15 @@
         <h3>Activities</h3>
       </div>
       <div class="event-itinerary-category">
+        <button
+          v-if="editAction"
+          v-on:click="$emit('editItineraryClick', true)"
+          id="edit-itinerary-button"
+        >
+          Edit Itinerary
+        </button>
+      </div>
+      <div v-if="!editAction || editClick" class="event-itinerary-category">
         <button @click="submitItinerary">Submit Itinerary</button>
       </div>
     </div>
@@ -192,13 +201,20 @@
 <script>
 import axios from "axios";
 export default {
-  props: ["accommodation", "flight", "eventId", "editItinerary"],
+  props: [
+    "accommodation",
+    "flight",
+    "eventId",
+    "editItinerary",
+    "editItineraryClick",
+  ],
   data() {
     return {
       itineraryAccommodation: this.accommodation,
       itineraryFlight: this.flight,
       id: this.eventId,
       editAction: this.editItinerary,
+      editClick: this.editItineraryClick,
     };
   },
   methods: {
@@ -286,5 +302,10 @@ button {
 }
 button:hover {
   cursor: pointer;
+}
+
+#edit-itinerary-button {
+  width: 40%;
+  background-color: #3a4374;
 }
 </style>
