@@ -13,10 +13,7 @@
       @editActionClick="editEventInfo"
     />
     <EventItinerary
-      v-if="
-        (mostVotedPollOption && checkedFlight.length > 0) ||
-        (mostVotedPollOption && checkedAccommodation.length > 0)
-      "
+      v-if="mostVotedPollOption"
       :accommodation="checkedAccommodation"
       :flight="checkedFlight"
       :eventId="eventId"
@@ -392,9 +389,11 @@ export default {
         });
 
       if (response.status === 200) {
-        this.checkedAccommodation = response.data.accommodation;
-        this.checkedFlight = response.data.flight;
-        this.itineraryAlreadyCreated = true;
+        if (response.data !== "") {
+          this.checkedAccommodation = response.data.accommodation;
+          this.checkedFlight = response.data.flight;
+          this.itineraryAlreadyCreated = true;
+        }
       }
     },
 

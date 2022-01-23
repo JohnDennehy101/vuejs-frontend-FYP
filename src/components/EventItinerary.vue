@@ -203,10 +203,14 @@ export default {
   },
   methods: {
     async submitItinerary(event) {
+      let flight = [];
       event.preventDefault();
-      console.log("SUBMITTING");
-      let flight =
-        this.itineraryFlight.length > 0 ? this.itineraryFlight[0] : [];
+
+      if (this.itineraryFlight) {
+        if (this.itineraryFlight.length > 0) {
+          flight = this.itineraryFlight[0];
+        }
+      }
       const payload = {
         flight: flight,
         accommodation: this.itineraryAccommodation,
@@ -216,7 +220,7 @@ export default {
       const jwtToken = localStorage.getItem("token");
 
       if (!this.editItinerary) {
-        const response = await axios
+        await axios
           .post(`http://localhost:3000/events/${this.id}/itinerary`, payload, {
             headers: {
               "Access-Control-Allow-Origin": "*",
@@ -226,10 +230,8 @@ export default {
           .catch((error) => {
             return { error };
           });
-
-        console.log(response);
       } else {
-        const response = await axios
+        await axios
           .patch(`http://localhost:3000/events/${this.id}/itinerary`, payload, {
             headers: {
               "Access-Control-Allow-Origin": "*",
@@ -239,8 +241,6 @@ export default {
           .catch((error) => {
             return { error };
           });
-
-        console.log(response);
       }
     },
   },
