@@ -12,6 +12,16 @@
       :invitedUser="this.invitedUser"
       @editActionClick="editEventInfo"
     />
+    <EventItinerary
+      v-if="
+        (mostVotedPollOption && checkedFlight.length > 0) ||
+        (mostVotedPollOption && checkedAccommodation.length > 0)
+      "
+      :accommodation="checkedAccommodation"
+      :flight="checkedFlight"
+      :key="eventItineraryKey"
+    />
+
     <NoCreatedItems
       v-if="polls.length === 0 && noCreatedPollsCallToActionLink.length > 0"
       :message="noCreatedPollsMessage"
@@ -243,6 +253,7 @@ import EventOverview from "../components/EventOverview";
 import NoCreatedItems from "../components/NoCreatedItems";
 import DeleteModal from "../components/DeleteModal";
 import DateUtils from "../utils/dateUtils";
+import EventItinerary from "../components/EventItinerary";
 export default {
   name: "eventDetailPage",
   props: ["editEvent"],
@@ -270,10 +281,19 @@ export default {
       flightInfo: null,
       checkedFlight: [],
       mostVotedPollOption: null,
+      eventItineraryKey: 0,
     };
+  },
+  watch: {
+    checkedAccommodation: function () {
+      console.log("CHANGE HAPPENING");
+      console.log(this.checkedAccommodation);
+      this.eventItineraryKey++;
+    },
   },
   components: {
     EventForm,
+    EventItinerary,
     EventOverview,
     NoCreatedItems,
     DeleteModal,
@@ -417,6 +437,7 @@ export default {
     },
     checkedFlightChange(value) {
       this.checkedFlight.push(value);
+      this.eventItineraryKey++;
     },
   },
   async created() {
