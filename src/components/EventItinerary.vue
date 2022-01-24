@@ -235,13 +235,15 @@
     </div>
 
     <div class="event-itinerary-info">
-      <p>Map Will go here</p>
+      <div id="itinerary-map"></div>
     </div>
   </div>
 </template>
 
 <script>
 import axios from "axios";
+import leaflet from "leaflet";
+import { onMounted } from "vue";
 export default {
   props: [
     "accommodation",
@@ -326,6 +328,33 @@ export default {
       return this.flight.length === 0 && this.accommodation.length === 0;
     },
   },
+  setup() {
+    let mymap;
+
+    onMounted(() => {
+      console.log("HERE");
+
+      mymap = leaflet.map("itinerary-map").setView([51.05, -0.09], 13);
+
+      console.log(mymap);
+
+      leaflet
+        .tileLayer(
+          `https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=${process.env.VUE_APP_MAPBOX_API_KEY}`,
+          {
+            attribution:
+              'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            maxZoom: 18,
+            id: "mapbox/streets-v11",
+            tileSize: 512,
+            zoomOffset: -1,
+            accessToken: `${process.env.VUE_APP_MAPBOX_API_KEY}`,
+          }
+        )
+        .addTo(mymap);
+    });
+    return true;
+  },
 };
 </script>
 
@@ -391,5 +420,9 @@ button:hover {
 #delete-itinerary-button {
   width: 40%;
   background-color: red;
+}
+#itinerary-map {
+  width: 100%;
+  height: 100%;
 }
 </style>
