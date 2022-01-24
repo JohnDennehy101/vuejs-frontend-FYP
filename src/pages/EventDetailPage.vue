@@ -20,7 +20,10 @@
       :editItinerary="itineraryAlreadyCreated"
       :key="eventItineraryKey"
       v-on:editItineraryClick="editItineraryButtonClick"
+      v-on:removeItineraryAccommodationClick="removeItineraryAccommodation"
+      v-on:removeItineraryFlightsClick="removeItineraryFlights"
       :editItineraryClick="editItineraryClick"
+      :itemType="individualEvent.type"
     />
 
     <NoCreatedItems
@@ -493,6 +496,13 @@ export default {
       console.log(value);
 
       this.editItineraryClick = !this.editItineraryClick;
+      this.eventItineraryKey++;
+    },
+    removeItineraryAccommodation() {
+      this.checkedAccommodation = [];
+    },
+    removeItineraryFlights() {
+      this.checkedFlight = [];
       this.eventItineraryKey++;
     },
   },

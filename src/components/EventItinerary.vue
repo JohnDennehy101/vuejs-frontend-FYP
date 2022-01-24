@@ -3,7 +3,14 @@
   <div id="event-itinerary-parent-container">
     <div class="event-itinerary-info">
       <div v-if="itineraryAccommodation" class="event-itinerary-category">
-        <h3>Accommodation</h3>
+        <div class="event-itinerary-category-header">
+          <h3>Accommodation</h3>
+          <span
+            v-if="itineraryAccommodation[0]"
+            v-on:click="$emit('removeItineraryAccommodationClick', true)"
+            ><i class="fas fa-times-circle"></i
+          ></span>
+        </div>
         <h4 v-if="!itineraryAccommodation[0]">No Accommodation Selected</h4>
 
         <div
@@ -115,66 +122,93 @@
       </div>
 
       <div
-        v-if="itineraryFlight && itineraryFlight.length > 0"
+        v-if="itineraryFlight && eventType == 'FOREIGN_OVERNIGHT'"
         class="event-itinerary-category"
       >
-        <h3>Flights</h3>
-        <h4>Overview</h4>
-        <div class="event-itinerary-category-info">
-          <h4>Price Per Person:</h4>
-          <p>{{ itineraryFlight[0][0].pricePerPerson }}</p>
+        <div class="event-itinerary-category-header">
+          <h3>Flights</h3>
+          <span
+            v-if="itineraryFlight.length > 0"
+            v-on:click="$emit('removeItineraryFlightsClick', true)"
+            ><i class="fas fa-times-circle"></i
+          ></span>
         </div>
 
-        <div class="event-itinerary-category-info">
+        <h4 v-if="!itineraryFlight[0]">No Flights Selected</h4>
+
+        <h4 v-if="itineraryFlight.length > 0">Overview</h4>
+        <div
+          v-if="itineraryFlight.length > 0"
+          class="event-itinerary-category-info"
+        >
+          <h4>Price Per Person:</h4>
+          <p>
+            {{ itineraryFlight[0][0].pricePerPerson }}
+          </p>
+        </div>
+
+        <div
+          v-if="itineraryFlight.length > 0"
+          class="event-itinerary-category-info"
+        >
           <h4>Total Price:</h4>
           <p>{{ itineraryFlight[0][0].priceTotal }}</p>
         </div>
 
-        <div class="event-itinerary-category-info">
+        <div
+          v-if="itineraryFlight.length > 0"
+          class="event-itinerary-category-info"
+        >
           <h4>Flights Link:</h4>
           <a :href="itineraryFlight[0][0].flightUrl" target="_blank">
             <i class="fas fa-external-link-square-alt"></i>
           </a>
         </div>
 
-        <h4>Detail</h4>
-        <div v-for="(flight, index) in itineraryFlight[0]" v-bind:key="flight">
-          <div class="event-itinerary-category-info">
-            <h3 v-if="index == 0">Departure Flight</h3>
-            <h3 v-else>Return Flight</h3>
+        <h4 v-if="itineraryFlight.length > 0">Detail</h4>
+        <div v-if="itineraryFlight.length > 0">
+          <div
+            v-for="(flight, index) in itineraryFlight[0]"
+            v-bind:key="flight"
+          >
             <div class="event-itinerary-category-info">
-              <h4>Departure City:</h4>
-              <p v-if="index == 0">{{ flight.departureCity }}</p>
-              <p v-else>{{ flight.arrivalCity }}</p>
+              <h3 v-if="index == 0">Departure Flight</h3>
+              <h3 v-else>Return Flight</h3>
+              <div class="event-itinerary-category-info">
+                <h4>Departure City:</h4>
+                <p v-if="index == 0">{{ flight.departureCity }}</p>
+                <p v-else>{{ flight.arrivalCity }}</p>
+              </div>
+              <div class="event-itinerary-category-info">
+                <h4>Departure Time:</h4>
+                <p>{{ flight.departureTime }}</p>
+              </div>
+              <div class="event-itinerary-category-info">
+                <h4>Arrival City:</h4>
+                <p v-if="index == 0">{{ flight.arrivalCity }}</p>
+                <p v-else>{{ flight.departureCity }}</p>
+              </div>
+              <div class="event-itinerary-category-info">
+                <h4>Arrival Time:</h4>
+                <p>{{ flight.arrivalTime }}</p>
+              </div>
+              <div class="event-itinerary-category-info">
+                <h4>Carrier:</h4>
+                <p>{{ flight.carrier }}</p>
+              </div>
+              <div class="event-itinerary-category-info">
+                <h4>Duration:</h4>
+                <p>{{ flight.duration }}</p>
+              </div>
             </div>
             <div class="event-itinerary-category-info">
-              <h4>Departure Time:</h4>
-              <p>{{ flight.departureTime }}</p>
+              <h4>Airport:</h4>
+              <p>{{ flight.airport }}</p>
             </div>
-            <div class="event-itinerary-category-info">
-              <h4>Arrival City:</h4>
-              <p v-if="index == 0">{{ flight.arrivalCity }}</p>
-              <p v-else>{{ flight.departureCity }}</p>
-            </div>
-            <div class="event-itinerary-category-info">
-              <h4>Arrival Time:</h4>
-              <p>{{ flight.arrivalTime }}</p>
-            </div>
-            <div class="event-itinerary-category-info">
-              <h4>Carrier:</h4>
-              <p>{{ flight.carrier }}</p>
-            </div>
-            <div class="event-itinerary-category-info">
-              <h4>Duration:</h4>
-              <p>{{ flight.duration }}</p>
-            </div>
-          </div>
-          <div class="event-itinerary-category-info">
-            <h4>Airport:</h4>
-            <p>{{ flight.airport }}</p>
           </div>
         </div>
       </div>
+
       <div class="event-itinerary-category">
         <h3>Activities</h3>
       </div>
@@ -188,7 +222,15 @@
         </button>
       </div>
       <div v-if="!editAction || editClick" class="event-itinerary-category">
-        <button @click="submitItinerary">Submit Itinerary</button>
+        <button v-if="!emptyItineraryCheck" @click="submitItinerary">
+          Submit
+        </button>
+      </div>
+
+      <div v-if="editClick" class="event-itinerary-category">
+        <button id="delete-itinerary-button" @click="deletetItinerary">
+          Delete Itinerary
+        </button>
       </div>
     </div>
 
@@ -207,6 +249,7 @@ export default {
     "eventId",
     "editItinerary",
     "editItineraryClick",
+    "itemType",
   ],
   data() {
     return {
@@ -215,6 +258,7 @@ export default {
       id: this.eventId,
       editAction: this.editItinerary,
       editClick: this.editItineraryClick,
+      eventType: this.itemType,
     };
   },
   methods: {
@@ -259,6 +303,28 @@ export default {
           });
       }
     },
+    async deletetItinerary() {
+      const jwtToken = localStorage.getItem("token");
+      const response = await axios
+        .delete(`http://localhost:3000/events/${this.id}/itinerary`, {
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            Authorization: `Bearer ${jwtToken}`,
+          },
+        })
+        .catch((error) => {
+          return { error };
+        });
+
+      if (response.status === 200) {
+        this.$router.go(0);
+      }
+    },
+  },
+  computed: {
+    emptyItineraryCheck: function () {
+      return this.flight.length === 0 && this.accommodation.length === 0;
+    },
   },
 };
 </script>
@@ -282,6 +348,19 @@ h2 {
   margin: 1rem auto;
   width: 80%;
 }
+.event-itinerary-category-header {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 0.5rem;
+  margin: 1rem auto;
+  h3 {
+    display: inline-block;
+    width: 33%;
+  }
+  svg:hover {
+    cursor: pointer;
+  }
+}
 .event-itinerary-category-info {
   h4 {
     display: inline-block;
@@ -291,6 +370,7 @@ h2 {
     display: inline-block;
   }
 }
+
 button {
   border-radius: 1rem;
   border: none;
@@ -307,5 +387,9 @@ button:hover {
 #edit-itinerary-button {
   width: 40%;
   background-color: #3a4374;
+}
+#delete-itinerary-button {
+  width: 40%;
+  background-color: red;
 }
 </style>
