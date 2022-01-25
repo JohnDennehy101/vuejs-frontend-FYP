@@ -243,7 +243,7 @@
 <script>
 import axios from "axios";
 import leaflet from "leaflet";
-import { onMounted } from "vue";
+//import { onMounted } from "vue";
 export default {
   props: [
     "accommodation",
@@ -252,6 +252,7 @@ export default {
     "editItinerary",
     "editItineraryClick",
     "itemType",
+    "city",
   ],
   data() {
     return {
@@ -261,6 +262,7 @@ export default {
       editAction: this.editItinerary,
       editClick: this.editItineraryClick,
       eventType: this.itemType,
+      destinationCity: this.city,
     };
   },
   methods: {
@@ -322,17 +324,53 @@ export default {
         this.$router.go(0);
       }
     },
+    createMap() {
+      let mymap;
+
+      let locations = {
+        Limerick: [52.6638, -8.6267],
+        Cork: [51.8985, -8.4756],
+        Dublin: [53.3498, -6.2603],
+        Galway: [53.2707, -9.0568],
+        Waterford: [52.2593, -7.1101],
+        Kilkenny: [52.6541, -7.2448],
+      };
+
+      let latLng = locations[this.destinationCity];
+
+      mymap = leaflet.map("itinerary-map").setView(latLng, 13);
+
+      leaflet
+        .tileLayer(
+          `https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=${process.env.VUE_APP_MAPBOX_API_KEY}`,
+          {
+            attribution:
+              'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            maxZoom: 18,
+            id: "mapbox/streets-v11",
+            tileSize: 512,
+            zoomOffset: -1,
+            accessToken: `${process.env.VUE_APP_MAPBOX_API_KEY}`,
+          }
+        )
+        .addTo(mymap);
+    },
   },
   computed: {
     emptyItineraryCheck: function () {
       return this.flight.length === 0 && this.accommodation.length === 0;
     },
   },
-  setup() {
+  mounted() {
+    this.createMap();
+  },
+  /*setup() {
     let mymap;
 
     onMounted(() => {
       console.log("HERE");
+
+      this.test();
 
       mymap = leaflet.map("itinerary-map").setView([51.05, -0.09], 13);
 
@@ -354,7 +392,7 @@ export default {
         .addTo(mymap);
     });
     return true;
-  },
+  },*/
 };
 </script>
 

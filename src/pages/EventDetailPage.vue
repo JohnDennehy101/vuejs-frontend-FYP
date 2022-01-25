@@ -13,10 +13,11 @@
       @editActionClick="editEventInfo"
     />
     <EventItinerary
-      v-if="mostVotedPollOption"
+      v-if="mostVotedPollOption && individualEvent"
       :accommodation="checkedAccommodation"
       :flight="checkedFlight"
       :eventId="eventId"
+      :city="this.individualEvent.city"
       :editItinerary="itineraryAlreadyCreated"
       :key="eventItineraryKey"
       v-on:editItineraryClick="editItineraryButtonClick"
@@ -378,6 +379,8 @@ export default {
             this.mostVotedPollOption.startDate,
             this.mostVotedPollOption.endDate
           );
+
+          this.eventItineraryKey++;
 
           if (event.type === "FOREIGN_OVERNIGHT") {
             await this.getEventFlightInfo(
