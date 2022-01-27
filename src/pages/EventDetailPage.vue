@@ -31,6 +31,7 @@
       :editItineraryClick="editItineraryClick"
       :itemType="individualEvent.type"
       :guestUserCheck="invitedUser"
+      :complete="itineraryCompleted"
     />
 
     <NoCreatedItems
@@ -305,6 +306,7 @@ export default {
       eventItineraryKey: 0,
       itineraryAlreadyCreated: false,
       editItineraryClick: false,
+      itineraryCompleted: null,
     };
   },
   watch: {
@@ -418,6 +420,7 @@ export default {
           this.checkedAccommodation = response.data.accommodation;
           this.checkedFlight[0] = response.data.flight;
           this.itineraryAlreadyCreated = true;
+          this.itineraryCompleted = response.data.completed;
         }
       }
     },
@@ -505,6 +508,7 @@ export default {
       console.log(value);
 
       this.editItineraryClick = !this.editItineraryClick;
+      this.itineraryCompleted = !this.itineraryCompleted;
       this.eventItineraryKey++;
     },
     removeItineraryAccommodation() {
@@ -623,6 +627,8 @@ h2 {
 .web-scraped-info-parent-container {
   overflow-x: auto;
   border-collapse: collapse;
+  margin: 0.8rem auto;
+  width: 100%;
 
   font-size: 0.9em;
   font-family: sans-serif;

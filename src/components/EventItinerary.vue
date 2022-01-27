@@ -5,8 +5,9 @@
       <div v-if="itineraryAccommodation" class="event-itinerary-category">
         <div class="event-itinerary-category-header">
           <h3>Accommodation</h3>
+
           <span
-            v-if="itineraryAccommodation[0]"
+            v-if="itineraryAccommodation[0] && editClick"
             v-on:click="$emit('removeItineraryAccommodationClick', true)"
             ><i class="fas fa-times-circle"></i
           ></span>
@@ -133,7 +134,7 @@
           <h3>Flights</h3>
 
           <span
-            v-if="itineraryFlight.length > 0"
+            v-if="itineraryFlight.length > 0 && editClick"
             v-on:click="$emit('removeItineraryFlightsClick', true)"
             ><i class="fas fa-times-circle"></i
           ></span>
@@ -230,8 +231,9 @@
       </div>
       <div
         v-if="
-          (!guestUserCheck && itineraryAccommodation.length > 0) ||
-          itineraryFlight.length > 0
+          !guestUserCheck &&
+          !finaliseItinerary &&
+          (itineraryAccommodation.length > 0 || itineraryFlight.length > 0)
         "
         class="event-itinerary-category"
       >
@@ -274,6 +276,7 @@ export default {
     "guestUserCheck",
     "itemType",
     "city",
+    "complete",
   ],
   data() {
     return {
@@ -285,7 +288,7 @@ export default {
       eventType: this.itemType,
       destinationCity: this.city,
       guestUser: this.guestUserCheck,
-      finaliseItinerary: false,
+      finaliseItinerary: this.complete,
     };
   },
   methods: {
