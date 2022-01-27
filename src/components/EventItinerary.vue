@@ -7,7 +7,7 @@
           <h3>Accommodation</h3>
 
           <span
-            v-if="itineraryAccommodation[0] && editClick"
+            v-if="itineraryAccommodation[0]"
             v-on:click="$emit('removeItineraryAccommodationClick', true)"
             ><i class="fas fa-times-circle"></i
           ></span>
@@ -134,7 +134,7 @@
           <h3>Flights</h3>
 
           <span
-            v-if="itineraryFlight.length > 0 && editClick"
+            v-if="itineraryFlight[0].length > 0"
             v-on:click="$emit('removeItineraryFlightsClick', true)"
             ><i class="fas fa-times-circle"></i
           ></span>
@@ -229,11 +229,12 @@
           Edit Itinerary
         </button>
       </div>
+
       <div
         v-if="
           !guestUserCheck &&
-          !finaliseItinerary &&
-          (itineraryAccommodation.length > 0 || itineraryFlight.length > 0)
+          displayFinaliseCheckbox &&
+          (itineraryAccommodation.length > 0 || itineraryFlight[0].length > 0)
         "
         class="event-itinerary-category"
       >
@@ -277,6 +278,7 @@ export default {
     "itemType",
     "city",
     "complete",
+    "displayFinaliseCheckbox",
   ],
   data() {
     return {
@@ -289,6 +291,7 @@ export default {
       destinationCity: this.city,
       guestUser: this.guestUserCheck,
       finaliseItinerary: this.complete,
+      showFinaliseItineraryCheck: this.displayFinaliseCheckbox,
     };
   },
   methods: {

@@ -32,6 +32,7 @@
       :itemType="individualEvent.type"
       :guestUserCheck="invitedUser"
       :complete="itineraryCompleted"
+      :displayFinaliseCheckbox="showFinaliseItineraryCheck"
     />
 
     <NoCreatedItems
@@ -307,6 +308,7 @@ export default {
       itineraryAlreadyCreated: false,
       editItineraryClick: false,
       itineraryCompleted: null,
+      showFinaliseItineraryCheck: false,
     };
   },
   watch: {
@@ -508,7 +510,7 @@ export default {
       console.log(value);
 
       this.editItineraryClick = !this.editItineraryClick;
-      this.itineraryCompleted = !this.itineraryCompleted;
+      this.showFinaliseItineraryCheck = !this.showFinaliseItineraryCheck;
       this.eventItineraryKey++;
     },
     removeItineraryAccommodation() {
