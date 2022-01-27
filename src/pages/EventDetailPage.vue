@@ -13,7 +13,12 @@
       @editActionClick="editEventInfo"
     />
     <EventItinerary
-      v-if="mostVotedPollOption && individualEvent"
+      v-if="
+        mostVotedPollOption &&
+        individualEvent &&
+        checkedAccommodation &&
+        checkedFlight
+      "
       :accommodation="checkedAccommodation"
       :flight="checkedFlight"
       :eventId="eventId"
@@ -25,6 +30,7 @@
       v-on:removeItineraryFlightsClick="removeItineraryFlights"
       :editItineraryClick="editItineraryClick"
       :itemType="individualEvent.type"
+      :guestUserCheck="invitedUser"
     />
 
     <NoCreatedItems
@@ -190,7 +196,7 @@
 
     <div
       class="scraped-info-wrapper"
-      v-if="checkedFlight.length == 0 || editItineraryClick"
+      v-if="checkedFlight[0].length == 0 || editItineraryClick"
     >
       <h2>Flight Results</h2>
       <table
@@ -294,7 +300,7 @@ export default {
       checkedAccommodation: [],
       acommodationDateRange: null,
       flightInfo: null,
-      checkedFlight: [],
+      checkedFlight: [[]],
       mostVotedPollOption: null,
       eventItineraryKey: 0,
       itineraryAlreadyCreated: false,
@@ -505,7 +511,7 @@ export default {
       this.checkedAccommodation = [];
     },
     removeItineraryFlights() {
-      this.checkedFlight = [];
+      this.checkedFlight = [[]];
       this.eventItineraryKey++;
     },
   },

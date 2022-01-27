@@ -122,11 +122,16 @@
       </div>
 
       <div
-        v-if="itineraryFlight && eventType == 'FOREIGN_OVERNIGHT'"
+        v-if="
+          itineraryFlight &&
+          itineraryFlight[0].length > 0 &&
+          eventType == 'FOREIGN_OVERNIGHT'
+        "
         class="event-itinerary-category"
       >
         <div class="event-itinerary-category-header">
           <h3>Flights</h3>
+
           <span
             v-if="itineraryFlight.length > 0"
             v-on:click="$emit('removeItineraryFlightsClick', true)"
@@ -136,27 +141,29 @@
 
         <h4 v-if="!itineraryFlight[0]">No Flights Selected</h4>
 
-        <h4 v-if="itineraryFlight.length > 0">Overview</h4>
+        <h4 v-if="itineraryFlight[0].length > 0">Overview</h4>
         <div
-          v-if="itineraryFlight.length > 0"
+          v-if="itineraryFlight[0].length > 0"
           class="event-itinerary-category-info"
         >
           <h4>Price Per Person:</h4>
-          <p>
+          <p v-if="itineraryFlight[0].length > 0">
             {{ itineraryFlight[0][0].pricePerPerson }}
           </p>
         </div>
 
         <div
-          v-if="itineraryFlight.length > 0"
+          v-if="itineraryFlight[0].length > 0"
           class="event-itinerary-category-info"
         >
           <h4>Total Price:</h4>
-          <p>{{ itineraryFlight[0][0].priceTotal }}</p>
+          <p>
+            {{ itineraryFlight[0][0].priceTotal }}
+          </p>
         </div>
 
         <div
-          v-if="itineraryFlight.length > 0"
+          v-if="itineraryFlight[0].length > 0"
           class="event-itinerary-category-info"
         >
           <h4>Flights Link:</h4>
@@ -165,8 +172,8 @@
           </a>
         </div>
 
-        <h4 v-if="itineraryFlight.length > 0">Detail</h4>
-        <div v-if="itineraryFlight.length > 0">
+        <h4 v-if="itineraryFlight[0].length > 0">Detail</h4>
+        <div v-if="itineraryFlight[0].length > 0">
           <div
             v-for="(flight, index) in itineraryFlight[0]"
             v-bind:key="flight"
@@ -221,6 +228,20 @@
           Edit Itinerary
         </button>
       </div>
+      <div
+        v-if="
+          (!guestUserCheck && itineraryAccommodation.length > 0) ||
+          itineraryFlight.length > 0
+        "
+        class="event-itinerary-category"
+      >
+        <label for="finalise-itinerary">Finalise Itinerary</label>
+        <input
+          id="finalise-itinerary"
+          type="checkbox"
+          v-model="finaliseItinerary"
+        />
+      </div>
       <div v-if="!editAction || editClick" class="event-itinerary-category">
         <button v-if="!emptyItineraryCheck" @click="submitItinerary">
           Submit
@@ -242,8 +263,7 @@
 
 <script>
 import axios from "axios";
-import leaflet from "leaflet";
-//import { onMounted } from "vue";
+//import leaflet from "leaflet";
 export default {
   props: [
     "accommodation",
@@ -251,6 +271,7 @@ export default {
     "eventId",
     "editItinerary",
     "editItineraryClick",
+    "guestUserCheck",
     "itemType",
     "city",
   ],
@@ -263,6 +284,8 @@ export default {
       editClick: this.editItineraryClick,
       eventType: this.itemType,
       destinationCity: this.city,
+      guestUser: this.guestUserCheck,
+      finaliseItinerary: false,
     };
   },
   methods: {
@@ -279,7 +302,7 @@ export default {
         flight: flight,
         accommodation: this.itineraryAccommodation,
         activities: [],
-        completed: false,
+        completed: this.finaliseItinerary,
       };
       const jwtToken = localStorage.getItem("token");
 
@@ -325,7 +348,7 @@ export default {
       }
     },
     createMap() {
-      let mymap;
+      /*let mymap;
 
       let locations = {
         Limerick: [52.6638, -8.6267],
@@ -353,7 +376,7 @@ export default {
             accessToken: `${process.env.VUE_APP_MAPBOX_API_KEY}`,
           }
         )
-        .addTo(mymap);
+        .addTo(mymap); */
     },
   },
   computed: {
@@ -364,35 +387,6 @@ export default {
   mounted() {
     this.createMap();
   },
-  /*setup() {
-    let mymap;
-
-    onMounted(() => {
-      console.log("HERE");
-
-      this.test();
-
-      mymap = leaflet.map("itinerary-map").setView([51.05, -0.09], 13);
-
-      console.log(mymap);
-
-      leaflet
-        .tileLayer(
-          `https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=${process.env.VUE_APP_MAPBOX_API_KEY}`,
-          {
-            attribution:
-              'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-            maxZoom: 18,
-            id: "mapbox/streets-v11",
-            tileSize: 512,
-            zoomOffset: -1,
-            accessToken: `${process.env.VUE_APP_MAPBOX_API_KEY}`,
-          }
-        )
-        .addTo(mymap);
-    });
-    return true;
-  },*/
 };
 </script>
 
@@ -458,6 +452,9 @@ button:hover {
 #delete-itinerary-button {
   width: 40%;
   background-color: red;
+}
+label {
+  margin-right: 1rem;
 }
 #itinerary-map {
   width: 100%;
