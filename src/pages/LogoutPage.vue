@@ -14,6 +14,8 @@
 <script>
 import Loading from "vue-loading-overlay";
 import "vue-loading-overlay/dist/vue-loading.css";
+import UserService from "../services/UserService";
+const userService = new UserService();
 export default {
   data() {
     return {
@@ -31,9 +33,7 @@ export default {
       console.log("User cancelled the loader.");
     },
     logoutUser() {
-      localStorage.removeItem("id");
-      localStorage.removeItem("token");
-      localStorage.removeItem("eventId");
+      userService.logoutUser();
       setTimeout(() => this.$router.push({ name: "Login" }), 2500);
     },
   },

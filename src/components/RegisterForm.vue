@@ -35,8 +35,10 @@
 </template>
 
 <script>
-import axios from "axios";
+//import axios from "axios";
 import AccountErrorMessage from "./AccountErrorMessage";
+import UserService from "../services/UserService";
+const userService = new UserService();
 export default {
   data() {
     return {
@@ -48,25 +50,12 @@ export default {
   },
   methods: {
     async submitForm() {
-      console.log(this.email + " " + this.password);
-      const payload = { email: this.email, password: this.password };
+      const user = await userService.registerUser(this.email, this.password);
 
-      const response = await axios
-        .post("http://localhost:3000/users", payload, {
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-          },
-        })
-        .catch((error) => {
-          return { error };
-        });
-
-      if (!("error" in response)) {
-        localStorage.setItem("token", response.data.jwtToken);
-        localStorage.setItem("id", response.data.userId);
-        this.$router.push({ path: `/dashboard/${response.data.userId}` });
-      } else {
+      if (!user) {
         this.invalidRegistration = true;
+      } else {
+        this.$router.push({ path: `/dashboard/${user}` });
       }
     },
     hideErrorMessage() {
