@@ -58,6 +58,34 @@ class UserService {
     localStorage.removeItem("token");
     localStorage.removeItem("eventId");
   }
+  async confirmUserEmail(token) {
+    const payload = { token: token };
+
+    const response = await axios
+      .post(this.baseUrl + "/users/confirm-email", payload, {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
+      })
+      .catch((error) => {
+        return { error };
+      });
+
+    return response;
+  }
+  async updateUser(id, payload) {
+    const response = await axios
+      .patch(`http://localhost:3000/users/${id}`, payload, {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
+      })
+      .catch((error) => {
+        return { error };
+      });
+
+    return response;
+  }
 }
 
 export default UserService;

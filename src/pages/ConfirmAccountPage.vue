@@ -46,9 +46,10 @@
 </template>
 
 <script>
-import axios from "axios";
 import Loading from "vue-loading-overlay";
 import "vue-loading-overlay/dist/vue-loading.css";
+import UserService from "../services/UserService";
+const userService = new UserService();
 export default {
   data() {
     return {
@@ -75,17 +76,7 @@ export default {
       this.token = this.$route.query.token;
     },
     async confirmUserEmail() {
-      const payload = { token: this.token };
-
-      const response = await axios
-        .post("http://localhost:3000/users/confirm-email", payload, {
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-          },
-        })
-        .catch((error) => {
-          return { error };
-        });
+      const response = await userService.confirmUserEmail(this.token);
 
       if (response) {
         this.emailConfirmed = response.data.emailConfirmed;
@@ -98,7 +89,6 @@ export default {
           setTimeout(() => this.$router.push({ name: "Login" }), 2500);
         }
       }
-      console.log(response);
     },
     async updateUser(event) {
       event.preventDefault();
@@ -109,19 +99,7 @@ export default {
           password: this.password,
         };
 
-        console.log(payload);
-
-        const response = await axios
-          .patch(`http://localhost:3000/users/${this.id}`, payload, {
-            headers: {
-              "Access-Control-Allow-Origin": "*",
-            },
-          })
-          .catch((error) => {
-            return { error };
-          });
-
-        console.log(response);
+        const response = await userService.updateUser(this.id, payload);
 
         if (response.status === 200) {
           setTimeout(() => this.$router.push({ name: "Login" }), 2500);

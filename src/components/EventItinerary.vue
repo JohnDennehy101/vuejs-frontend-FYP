@@ -265,8 +265,8 @@
 </template>
 
 <script>
-import axios from "axios";
-//import leaflet from "leaflet";
+import EventService from "../services/EventService";
+const eventService = new EventService();
 export default {
   props: [
     "accommodation",
@@ -310,44 +310,15 @@ export default {
         activities: [],
         completed: this.finaliseItinerary,
       };
-      const jwtToken = localStorage.getItem("token");
 
       if (!this.editItinerary) {
-        await axios
-          .post(`http://localhost:3000/events/${this.id}/itinerary`, payload, {
-            headers: {
-              "Access-Control-Allow-Origin": "*",
-              Authorization: `Bearer ${jwtToken}`,
-            },
-          })
-          .catch((error) => {
-            return { error };
-          });
+        await eventService.createEventItinerary(this.id, payload);
       } else {
-        await axios
-          .patch(`http://localhost:3000/events/${this.id}/itinerary`, payload, {
-            headers: {
-              "Access-Control-Allow-Origin": "*",
-              Authorization: `Bearer ${jwtToken}`,
-            },
-          })
-          .catch((error) => {
-            return { error };
-          });
+        await eventService.updateEventItinerary(this.id, payload);
       }
     },
     async deletetItinerary() {
-      const jwtToken = localStorage.getItem("token");
-      const response = await axios
-        .delete(`http://localhost:3000/events/${this.id}/itinerary`, {
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-            Authorization: `Bearer ${jwtToken}`,
-          },
-        })
-        .catch((error) => {
-          return { error };
-        });
+      const response = await eventService.deleteEventItinerary(this.id);
 
       if (response.status === 200) {
         this.$router.go(0);

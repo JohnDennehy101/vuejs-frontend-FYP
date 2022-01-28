@@ -37,9 +37,10 @@
 </template>
 
 <script>
-import axios from "axios";
 import TakePollLabel from "../components/TakePollLabel";
 import PollBarChart from "../components/PollBarChart";
+import EventService from "../services/EventService";
+const eventService = new EventService();
 export default {
   data() {
     return {
@@ -68,20 +69,10 @@ export default {
       }
     },
     async getEventPollInfo() {
-      const jwtToken = localStorage.getItem("token");
-      const response = await axios
-        .get(
-          `http://localhost:3000/events/${this.eventId}/poll/${this.pollId}`,
-          {
-            headers: {
-              "Access-Control-Allow-Origin": "*",
-              Authorization: `Bearer ${jwtToken}`,
-            },
-          }
-        )
-        .catch((error) => {
-          return { error };
-        });
+      const response = await eventService.getEventPolls(
+        this.eventId,
+        this.pollId
+      );
 
       console.log(response);
 
@@ -128,19 +119,12 @@ export default {
           options: checkedOptions,
         };
 
-        const response = await axios
-          .patch(
-            `http://localhost:3000/events/${userId}/${this.eventId}/poll/${this.pollId}/vote`,
-            payload,
-            {
-              headers: {
-                "Access-Control-Allow-Origin": "*",
-              },
-            }
-          )
-          .catch((error) => {
-            return { error };
-          });
+        const response = await eventService.voteEventPoll(
+          userId,
+          this.eventId,
+          this.pollId,
+          payload
+        );
 
         if (!("error" in response)) {
           this.$router.push({ path: `/dashboard/${userId}` });

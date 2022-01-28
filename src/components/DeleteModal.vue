@@ -39,7 +39,8 @@
 </template>
 
 <script>
-import axios from "axios";
+import EventService from "../services/EventService";
+const eventService = new EventService();
 export default {
   props: ["title", "eventId", "modalHeading", "pollId"],
   data() {
@@ -52,19 +53,8 @@ export default {
   },
   methods: {
     async deleteEvent() {
-      const jwtToken = localStorage.getItem("token");
-
       if (this.itemType === "Event") {
-        const response = await axios
-          .delete(`http://localhost:3000/events/${this.eventUuid}`, {
-            headers: {
-              "Access-Control-Allow-Origin": "*",
-              Authorization: `Bearer ${jwtToken}`,
-            },
-          })
-          .catch((error) => {
-            return { error };
-          });
+        const response = await eventService.deleteEvent(this.eventUuid);
 
         if (!("error" in response)) {
           this.$router.go(0);
@@ -72,19 +62,10 @@ export default {
           this.invalidEventCreation = true;
         }
       } else {
-        const response = await axios
-          .delete(
-            `http://localhost:3000/events/${this.eventUuid}/poll/${this.pollUuid}`,
-            {
-              headers: {
-                "Access-Control-Allow-Origin": "*",
-                Authorization: `Bearer ${jwtToken}`,
-              },
-            }
-          )
-          .catch((error) => {
-            return { error };
-          });
+        const response = await eventService.deleteEventPoll(
+          this.eventUuid,
+          this.pollUuid
+        );
 
         if (!("error" in response)) {
           this.$router.go(0);

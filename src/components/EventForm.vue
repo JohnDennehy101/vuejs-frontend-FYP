@@ -124,9 +124,10 @@
 </template>
 
 <script>
-import axios from "axios";
 import AccountErrorMessage from "../components/AccountErrorMessage";
 import EventFormUserEmailDisplay from "../components/EventFormUserEmailDisplay";
+import EventService from "../services/EventService";
+const eventService = new EventService();
 export default {
   props: ["edit", "individualEvent"],
   data() {
@@ -157,7 +158,6 @@ export default {
   methods: {
     async submitForm() {
       if (this.editEventAction) {
-        const jwtToken = localStorage.getItem("token");
         const userId = localStorage.getItem("id");
         const payload = {
           title: this.title,
@@ -167,20 +167,10 @@ export default {
           departureCity: this.departureCity,
         };
 
-        const response = await axios
-          .patch(
-            `http://localhost:3000/events/${this.editEventInfo.id}`,
-            payload,
-            {
-              headers: {
-                "Access-Control-Allow-Origin": "*",
-                Authorization: `Bearer ${jwtToken}`,
-              },
-            }
-          )
-          .catch((error) => {
-            return { error };
-          });
+        const response = await eventService.updateEvent(
+          this.editEventInfo.id,
+          payload
+        );
 
         if (!("error" in response)) {
           this.$router.push({ path: `/dashboard/${userId}` });
@@ -189,7 +179,6 @@ export default {
         }
       } else {
         if (this.title.length > 0 && this.eventType !== null) {
-          const jwtToken = localStorage.getItem("token");
           const userId = localStorage.getItem("id");
           const payload = {
             title: this.title,
@@ -199,16 +188,7 @@ export default {
             departureCity: this.departureCity,
           };
 
-          const response = await axios
-            .post(`http://localhost:3000/events/${userId}`, payload, {
-              headers: {
-                "Access-Control-Allow-Origin": "*",
-                Authorization: `Bearer ${jwtToken}`,
-              },
-            })
-            .catch((error) => {
-              return { error };
-            });
+          const response = await eventService.createEvent(userId, payload);
 
           if (!("error" in response)) {
             this.$router.push({ path: `/dashboard/${userId}` });

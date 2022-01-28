@@ -47,9 +47,10 @@
 </template>
 
 <script>
-import axios from "axios";
 import Datepicker from "vue3-datepicker";
 import PollOption from "./PollOption";
+import EventService from "../services/EventService";
+const eventService = new EventService();
 export default {
   props: ["poll", "editPoll"],
   data() {
@@ -99,21 +100,11 @@ export default {
             options: this.options,
           };
 
-          const response = await axios
-            .patch(
-              `http://localhost:3000/events/${this.id}/poll/${
-                JSON.parse(this.pollInfo).id
-              }`,
-              payload,
-              {
-                headers: {
-                  "Access-Control-Allow-Origin": "*",
-                },
-              }
-            )
-            .catch((error) => {
-              return { error };
-            });
+          const response = await eventService.editEventPoll(
+            this.id,
+            this.pollInfo,
+            payload
+          );
 
           if (!("error" in response)) {
             this.$router.push({ path: `/dashboard/${userId}` });
@@ -130,15 +121,7 @@ export default {
             options: this.options,
           };
 
-          const response = await axios
-            .post(`http://localhost:3000/events/${this.id}/poll`, payload, {
-              headers: {
-                "Access-Control-Allow-Origin": "*",
-              },
-            })
-            .catch((error) => {
-              return { error };
-            });
+          const response = await eventService.createEventPoll(this.id, payload);
 
           if (!("error" in response)) {
             this.$router.push({ path: `/dashboard/${userId}` });
@@ -152,20 +135,10 @@ export default {
       if (this.editPollAction) {
         const pollInformation = JSON.parse(this.pollInfo);
 
-        const jwtToken = localStorage.getItem("token");
-        const response = await axios
-          .get(
-            `http://localhost:3000/events/${this.id}/poll/${pollInformation.id}`,
-            {
-              headers: {
-                "Access-Control-Allow-Origin": "*",
-                Authorization: `Bearer ${jwtToken}`,
-              },
-            }
-          )
-          .catch((error) => {
-            return { error };
-          });
+        const response = await eventService.getIndividualPoll(
+          this.id,
+          pollInformation.id
+        );
 
         this.title = response.data.title;
         this.options = response.data.pollOptions;

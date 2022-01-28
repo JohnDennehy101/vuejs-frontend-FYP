@@ -133,9 +133,10 @@
 </template>
 
 <script>
-import axios from "axios";
 import NoCreatedItems from "../components/NoCreatedItems";
 import DeleteModal from "../components/DeleteModal";
+import EventService from "../services/EventService";
+const eventService = new EventService();
 export default {
   data() {
     return {
@@ -159,19 +160,9 @@ export default {
   },
   methods: {
     async getUserCreatedEvents() {
-      const jwtToken = localStorage.getItem("token");
       const userId = localStorage.getItem("id");
       this.userId = userId;
-      const response = await axios
-        .get("http://localhost:3000/events/user/" + userId, {
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-            Authorization: `Bearer ${jwtToken}`,
-          },
-        })
-        .catch((error) => {
-          return { error };
-        });
+      const response = await eventService.getUserEvents(userId);
 
       if ("error" in response) {
         this.invalidEventCreation = true;
