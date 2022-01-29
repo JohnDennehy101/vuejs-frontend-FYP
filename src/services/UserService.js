@@ -66,6 +66,7 @@ class UserService {
       .post(this.baseUrl + "/users/confirm-email", payload, {
         headers: {
           "Access-Control-Allow-Origin": "*",
+          "Authorization": `Bearer ${token}`
         },
       })
       .catch((error) => {
@@ -76,7 +77,7 @@ class UserService {
   }
   async updateUser(id, payload) {
     const response = await axios
-      .patch(`http://localhost:3000/users/${id}`, payload, {
+      .patch(`${this.baseUrl}/users/${id}`, payload, {
         headers: {
           "Access-Control-Allow-Origin": "*",
         },
