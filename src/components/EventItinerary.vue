@@ -265,6 +265,7 @@
 </template>
 
 <script>
+import leaflet from "leaflet";
 import EventService from "../services/EventService";
 const eventService = new EventService();
 export default {
