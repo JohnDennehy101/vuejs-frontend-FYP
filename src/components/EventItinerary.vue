@@ -325,7 +325,7 @@ export default {
       }
     },
     createMap() {
-      /*let mymap;
+      let mymap;
 
       let locations = {
         Limerick: [52.6638, -8.6267],
@@ -353,7 +353,7 @@ export default {
             accessToken: `${process.env.VUE_APP_MAPBOX_API_KEY}`,
           }
         )
-        .addTo(mymap); */
+        .addTo(mymap);
     },
   },
   computed: {

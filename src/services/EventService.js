@@ -1,8 +1,9 @@
 import axios from "axios";
+//this.baseUrl = http://localhost:3000 for local
 
 class EventService {
   constructor() {
-    this.baseUrl = "http://localhost:3000";
+    this.baseUrl = "https://group-activity-planning-nest.herokuapp.com";
     if (localStorage.token) {
       axios.defaults.headers.common["Authorization"] =
         "Bearer " + localStorage.token;
@@ -11,7 +12,7 @@ class EventService {
 
   async createEvent(userId, payload) {
     const response = await axios
-      .post(`http://localhost:3000/events/${userId}`, payload)
+      .post(`${this.baseUrl}/events/${userId}`, payload)
       .catch((error) => {
         return { error };
       });
@@ -75,7 +76,7 @@ class EventService {
 
   async getIndividualPoll(eventId, pollId) {
     const response = await axios
-      .get(`http://localhost:3000/events/${eventId}/poll/${pollId}`)
+      .get(`${this.baseUrl}/events/${eventId}/poll/${pollId}`)
       .catch((error) => {
         return { error };
       });
