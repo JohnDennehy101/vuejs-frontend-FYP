@@ -198,7 +198,7 @@
 
     <div
       class="scraped-info-wrapper"
-      v-if="checkedFlight[0].length == 0 || editItineraryClick"
+      v-if="(flightInfo && checkedFlight[0].length == 0) || editItineraryClick"
     >
       <h2>Flight Results</h2>
       <table
@@ -309,6 +309,7 @@ export default {
       editItineraryClick: false,
       itineraryCompleted: null,
       showFinaliseItineraryCheck: false,
+      googlePlacesInfo: [],
     };
   },
   watch: {
@@ -390,6 +391,12 @@ export default {
             this.mostVotedPollOption.endDate
           );
 
+          //Commenting out to save on API calls
+          /*await this.getEventPlacesInfo(
+            this.individualEvent.cityLatitude,
+            this.individualEvent.cityLongitude
+          );*/
+
           this.eventItineraryKey++;
 
           if (event.type === "FOREIGN_OVERNIGHT") {
@@ -418,7 +425,7 @@ export default {
 
       if (response.status === 200) {
         if (response.data !== "") {
-          console.log(response.data);
+          //console.log(response.data);
           this.checkedAccommodation = response.data.accommodation;
           this.checkedFlight[0] = response.data.flight;
           this.itineraryAlreadyCreated = true;
@@ -470,10 +477,33 @@ export default {
           return { error };
         });
 
-      console.log(response);
+      //console.log(response);
 
       if (response.status === 200) {
         this.flightInfo = response.data;
+      }
+    },
+    async getEventPlacesInfo(latitude, longitude) {
+      const jwtToken = localStorage.getItem("token");
+
+      const response = await axios
+        .get(
+          `http://localhost:3000/events/${this.eventId}/places?latitude=${latitude}&longitude=${longitude}`,
+          {
+            headers: {
+              "Access-Control-Allow-Origin": "*",
+              Authorization: `Bearer ${jwtToken}`,
+            },
+          }
+        )
+        .catch((error) => {
+          return { error };
+        });
+
+      console.log(response);
+
+      if (response.status === 200) {
+        this.googlePlacesInfo = response.data.results;
       }
     },
     transformTimeStampFormat(date) {

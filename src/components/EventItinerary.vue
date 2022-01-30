@@ -363,7 +363,8 @@ export default {
     },
   },
   mounted() {
-    this.createMap();
+    //Commenting out to save on API calls
+    //this.createMap();
   },
 };
 </script>
