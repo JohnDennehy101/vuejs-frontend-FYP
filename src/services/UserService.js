@@ -1,9 +1,10 @@
 import axios from "axios";
 //this.baseUrl = http://localhost:3000 for local
+//this.baseUrl = https://group-activity-planning-nest.herokuapp.com for live
 
 class UserService {
   constructor() {
-    this.baseUrl = "https://group-activity-planning-nest.herokuapp.com";
+    this.baseUrl = "http://localhost:3000";
     if (localStorage.token) {
       axios.defaults.headers.common["Authorization"] =
         "Bearer " + localStorage.token;
@@ -49,6 +50,8 @@ class UserService {
 
     if (!("error" in response)) {
       localStorage.setItem("id", response.data.userId);
+      localStorage.setItem("token", response.data.jwtToken);
+      console.log(response.data);
       return response.data.userId;
     } else {
       return false;
