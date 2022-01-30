@@ -217,9 +217,52 @@
         </div>
       </div>
 
-      <div class="event-itinerary-category">
-        <h3>Activities</h3>
+      <div v-if="itineraryActivities" class="event-itinerary-category">
+        <div class="event-itinerary-category-header">
+          <h3>Activities</h3>
+
+          <span
+            v-if="itineraryActivities[0]"
+            v-on:click="$emit('removeItineraryAccommodationClick', true)"
+            ><i class="fas fa-times-circle"></i
+          ></span>
+        </div>
+
+        <h4 v-if="!itineraryActivities[0]">No Activities Selected</h4>
+
+        <div
+          id="activity-parent-container"
+          v-for="value in itineraryActivities"
+          v-bind:key="value"
+        >
+          <div class="event-itinerary-category-info">
+            <h4>Title:</h4>
+            <p>{{ value.name }}</p>
+          </div>
+          <div class="event-itinerary-category-info">
+            <h4>Address:</h4>
+            <p>{{ value.vicinity }}</p>
+          </div>
+          <div class="event-itinerary-category-info">
+            <h4>Rating:</h4>
+            <p>{{ value.rating }}</p>
+          </div>
+          <div class="event-itinerary-category-info">
+            <h4>Rating Quantity:</h4>
+            <p>{{ value.user_ratings_total }}</p>
+          </div>
+          <div class="event-itinerary-category-info">
+            <h4>Map Link:</h4>
+            <a
+              :href="extractLink(value.photos[0].html_attributions[0])"
+              target="_blank"
+            >
+              <i class="fas fa-map-marker-alt"></i>
+            </a>
+          </div>
+        </div>
       </div>
+
       <div class="event-itinerary-category">
         <button
           v-if="editAction"
@@ -268,9 +311,11 @@
 import leaflet from "leaflet";
 import EventService from "../services/EventService";
 const eventService = new EventService();
+import StringUtils from "../utils/stringUtils";
 export default {
   props: [
     "accommodation",
+    "activities",
     "flight",
     "eventId",
     "editItinerary",
@@ -293,6 +338,7 @@ export default {
       guestUser: this.guestUserCheck,
       finaliseItinerary: this.complete,
       showFinaliseItineraryCheck: this.displayFinaliseCheckbox,
+      itineraryActivities: this.activities,
     };
   },
   methods: {
@@ -355,6 +401,10 @@ export default {
           }
         )
         .addTo(mymap);
+    },
+    extractLink(link) {
+      let extractedLink = StringUtils.extractGoogleMapLink(link);
+      return extractedLink;
     },
   },
   computed: {
@@ -438,5 +488,8 @@ label {
 #itinerary-map {
   width: 100%;
   height: 100%;
+}
+#activity-parent-container {
+  margin: 1rem auto;
 }
 </style>

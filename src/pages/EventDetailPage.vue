@@ -21,6 +21,7 @@
       "
       :accommodation="checkedAccommodation"
       :flight="checkedFlight"
+      :activities="checkedThingsToDo"
       :eventId="eventId"
       :city="this.individualEvent.city"
       :editItinerary="itineraryAlreadyCreated"
@@ -198,6 +199,55 @@
 
     <div
       class="scraped-info-wrapper"
+      v-if="(individualEvent && googlePlacesInfo) || editItineraryClick"
+    >
+      <table class="web-scraped-info-parent-container">
+        <caption>
+          Tourist Attractions in
+          {{
+            individualEvent.city
+          }}
+        </caption>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Title</th>
+            <th>Address</th>
+            <th>Review Score</th>
+            <th>Review Quantity</th>
+            <th>Map</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr v-for="value in googlePlacesInfo" v-bind:key="value">
+            <td>
+              <input
+                type="checkbox"
+                :value="value"
+                @change="checkedThingToDoChange($event, value)"
+                v-model="checkedThingsToDo"
+              />
+            </td>
+
+            <td>{{ value.name }}</td>
+            <td>{{ value.vicinity }}</td>
+            <td>{{ value.rating }}</td>
+            <td>{{ value.user_ratings_total }}</td>
+            <td>
+              <a :href="extractLink(value.photos[0].html_attributions[0])">
+                <i class="fas fa-map-marker-alt"></i>
+              </a>
+            </td>
+            <td><img :src="value.icon" /></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div
+      class="scraped-info-wrapper"
       v-if="(flightInfo && checkedFlight[0].length == 0) || editItineraryClick"
     >
       <h2>Flight Results</h2>
@@ -277,6 +327,9 @@ import NoCreatedItems from "../components/NoCreatedItems";
 import DeleteModal from "../components/DeleteModal";
 import DateUtils from "../utils/dateUtils";
 import EventItinerary from "../components/EventItinerary";
+import StringUtils from "../utils/stringUtils";
+//Using test data to construct UI to save on API
+import data from "../components/googleplaces_response.json";
 export default {
   name: "eventDetailPage",
   props: ["editEvent"],
@@ -310,6 +363,7 @@ export default {
       itineraryCompleted: null,
       showFinaliseItineraryCheck: false,
       googlePlacesInfo: [],
+      checkedThingsToDo: [],
     };
   },
   watch: {
@@ -536,6 +590,11 @@ export default {
         this.checkedAccommodation = [];
       }
     },
+    checkedThingToDoChange(event, value) {
+      this.eventItineraryKey++;
+      console.log(event);
+      console.log(value);
+    },
     editItineraryButtonClick(value) {
       console.log(value);
 
@@ -550,8 +609,13 @@ export default {
       this.checkedFlight = [[]];
       this.eventItineraryKey++;
     },
+    extractLink(link) {
+      let extractedLink = StringUtils.extractGoogleMapLink(link);
+      return extractedLink;
+    },
   },
   async created() {
+    this.googlePlacesInfo = data.results;
     await this.extractIdFromUrl();
     await this.getEventInfo();
     await this.checkEditAction();
@@ -699,6 +763,10 @@ h2 {
   td table {
     margin: -2px;
     width: calc(100% + 4px);
+  }
+
+  td img {
+    height: 1.5rem;
   }
 }
 </style>
