@@ -496,11 +496,6 @@ export default {
 
           await this.getEventItinerary();
 
-          await this.getEventAccommodationInfo(
-            this.mostVotedPollOption.startDate,
-            this.mostVotedPollOption.endDate
-          );
-
           //Commenting out to save on API calls
           /*await this.getEventPlacesInfo(
             this.individualEvent.cityLatitude,
@@ -508,13 +503,6 @@ export default {
           );*/
 
           this.eventItineraryKey++;
-
-          if (event.type === "FOREIGN_OVERNIGHT") {
-            await this.getEventFlightInfo(
-              this.mostVotedPollOption.startDate,
-              this.mostVotedPollOption.endDate
-            );
-          }
         }
       }
     },
@@ -690,14 +678,38 @@ export default {
       let extractedLink = StringUtils.extractGoogleMapLink(link);
       return extractedLink;
     },
-    toggleEventDetailInfo(value) {
+    async toggleEventDetailInfo(value) {
       if (value === "Accommodation") {
+        if (this.mostVotedPollOption && !this.accommodationInfo) {
+          await this.getEventAccommodationInfo(
+            this.mostVotedPollOption.startDate,
+            this.mostVotedPollOption.endDate
+          );
+        }
         this.displayAccommodation = !this.displayAccommodation;
         this.accommodationSectionKey++;
       } else if (value === "Tourist Attractions") {
+        if (
+          this.mostVotedPollOption &&
+          this.individualEvent &&
+          !this.googlePlacesInfo
+        ) {
+          //Commenting out to save on API calls
+          /*await this.getEventPlacesInfo(
+            this.individualEvent.cityLatitude,
+            this.individualEvent.cityLongitude
+          );*/
+        }
+
         this.displayActivities = !this.displayActivities;
         this.activitiesSectionKey++;
       } else if (value === "Flights") {
+        if (this.mostVotedPollOption && !this.flightInfo) {
+          await this.getEventFlightInfo(
+            this.mostVotedPollOption.startDate,
+            this.mostVotedPollOption.endDate
+          );
+        }
         this.displayFlights = !this.displayFlights;
         this.flightsSectionKey++;
       }
