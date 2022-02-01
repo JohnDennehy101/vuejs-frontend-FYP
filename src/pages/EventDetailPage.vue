@@ -29,6 +29,7 @@
       v-on:editItineraryClick="editItineraryButtonClick"
       v-on:removeItineraryAccommodationClick="removeItineraryAccommodation"
       v-on:removeItineraryFlightsClick="removeItineraryFlights"
+      v-on:removeItineraryActivityClick="removeItineraryActivity"
       :editItineraryClick="editItineraryClick"
       :itemType="individualEvent.type"
       :guestUserCheck="invitedUser"
@@ -227,7 +228,6 @@
                 type="checkbox"
                 :value="value"
                 @change="checkedThingToDoChange($event, value)"
-                v-model="checkedThingsToDo"
               />
             </td>
 
@@ -479,8 +479,9 @@ export default {
 
       if (response.status === 200) {
         if (response.data !== "") {
-          //console.log(response.data);
+          console.log(response.data);
           this.checkedAccommodation = response.data.accommodation;
+          this.checkedThingsToDo = response.data.activities;
           this.checkedFlight[0] = response.data.flight;
           this.itineraryAlreadyCreated = true;
           this.itineraryCompleted = response.data.completed;
@@ -591,6 +592,33 @@ export default {
       }
     },
     checkedThingToDoChange(event, value) {
+      console.log(
+        this.checkedThingsToDo.filter(
+          (activity) => activity.name === value.name
+        ).length === 0
+      );
+      if (
+        event.target.checked &&
+        this.checkedThingsToDo.filter(
+          (activity) => activity.name === value.name
+        ).length === 0
+      ) {
+        console.log("IN HERE");
+        this.checkedThingsToDo.push({
+          name: value.name,
+          placesId: value.place_id,
+          mapLink: this.extractLink(value.photos[0].html_attributions[0]),
+          rating: value.rating,
+          user_ratings_total: value.user_ratings_total,
+          vicinity: value.vicinity,
+        });
+        console.log(this.checkedThingsToDo);
+      } else if (!event.target.checked) {
+        this.checkedThingsToDo = this.checkedThingsToDo.filter(
+          (activity) => activity.name !== value.name
+        );
+      }
+
       this.eventItineraryKey++;
       console.log(event);
       console.log(value);
@@ -607,6 +635,12 @@ export default {
     },
     removeItineraryFlights() {
       this.checkedFlight = [[]];
+      this.eventItineraryKey++;
+    },
+    removeItineraryActivity(value) {
+      this.checkedThingsToDo = this.checkedThingsToDo.filter(
+        (activity) => activity.name !== value
+      );
       this.eventItineraryKey++;
     },
     extractLink(link) {

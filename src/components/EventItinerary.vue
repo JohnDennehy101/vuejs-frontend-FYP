@@ -220,12 +220,6 @@
       <div v-if="itineraryActivities" class="event-itinerary-category">
         <div class="event-itinerary-category-header">
           <h3>Activities</h3>
-
-          <span
-            v-if="itineraryActivities[0]"
-            v-on:click="$emit('removeItineraryAccommodationClick', true)"
-            ><i class="fas fa-times-circle"></i
-          ></span>
         </div>
 
         <h4 v-if="!itineraryActivities[0]">No Activities Selected</h4>
@@ -235,6 +229,11 @@
           v-for="value in itineraryActivities"
           v-bind:key="value"
         >
+          <div class="event-itinerary-activity-remove-item-container">
+            <span v-on:click="$emit('removeItineraryActivityClick', value.name)"
+              ><i class="fas fa-times-circle"></i
+            ></span>
+          </div>
           <div class="event-itinerary-category-info">
             <h4>Title:</h4>
             <p>{{ value.name }}</p>
@@ -254,9 +253,13 @@
           <div class="event-itinerary-category-info">
             <h4>Map Link:</h4>
             <a
+              v-if="!value.mapLink"
               :href="extractLink(value.photos[0].html_attributions[0])"
               target="_blank"
             >
+              <i class="fas fa-map-marker-alt"></i>
+            </a>
+            <a v-else :href="value.mapLink" target="_blank">
               <i class="fas fa-map-marker-alt"></i>
             </a>
           </div>
@@ -354,7 +357,7 @@ export default {
       const payload = {
         flight: flight,
         accommodation: this.itineraryAccommodation,
-        activities: [],
+        activities: this.itineraryActivities,
         completed: this.finaliseItinerary,
       };
 
@@ -491,5 +494,13 @@ label {
 }
 #activity-parent-container {
   margin: 1rem auto;
+}
+.event-itinerary-activity-remove-item-container {
+  display: flex;
+  justify-content: flex-end;
+
+  svg:hover {
+    cursor: pointer;
+  }
 }
 </style>
