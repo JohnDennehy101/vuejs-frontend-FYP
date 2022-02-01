@@ -128,10 +128,21 @@
         </div>
       </div>
     </div>
-    <div
-      class="scraped-info-wrapper"
-      v-if="checkedAccommodation.length == 0 || editItineraryClick"
-    >
+    <EventDetailInfoSectionPlaceholder
+      v-if="!displayAccommodation"
+      :title="accommodationSectionTitle"
+      :icon="accommodationSectionIcon"
+      :key="accommodationSectionKey"
+      v-on:showScrapedInfo="toggleEventDetailInfo"
+    />
+
+    <div class="scraped-info-wrapper" v-if="displayAccommodation">
+      <button
+        className="hide-event-detail-category-button"
+        v-on:click="toggleEventDetailInfo('Accommodation')"
+      >
+        Hide
+      </button>
       <table
         class="web-scraped-info-parent-container"
         v-for="(value, page) in accommodationInfo"
@@ -198,10 +209,27 @@
       </table>
     </div>
 
+    <EventDetailInfoSectionPlaceholder
+      v-if="!displayActivities"
+      :title="activitySectionTitle"
+      :icon="activitySectionIcon"
+      :key="activitySectionKey"
+      v-on:showScrapedInfo="toggleEventDetailInfo"
+    />
+
     <div
       class="scraped-info-wrapper"
-      v-if="(individualEvent && googlePlacesInfo) || editItineraryClick"
+      v-if="
+        (individualEvent && googlePlacesInfo && displayActivities) ||
+        editItineraryClick
+      "
     >
+      <button
+        className="hide-event-detail-category-button"
+        v-on:click="toggleEventDetailInfo('Tourist Attractions')"
+      >
+        Hide
+      </button>
       <table class="web-scraped-info-parent-container">
         <caption>
           Tourist Attractions in
@@ -246,11 +274,25 @@
       </table>
     </div>
 
+    <EventDetailInfoSectionPlaceholder
+      v-if="!displayFlights && individualEvent.type === 'FOREIGN_OVERNIGHT'"
+      :title="flightsSectionTitle"
+      :icon="flightsSectionIcon"
+      :key="flightSectionKey"
+      v-on:showScrapedInfo="toggleEventDetailInfo"
+    />
+
     <div
       class="scraped-info-wrapper"
-      v-if="(flightInfo && checkedFlight[0].length == 0) || editItineraryClick"
+      v-if="(flightInfo && displayFlights) || editItineraryClick"
     >
       <h2>Flight Results</h2>
+      <button
+        className="hide-event-detail-category-button"
+        v-on:click="toggleEventDetailInfo('Flights')"
+      >
+        Hide
+      </button>
       <table
         class="web-scraped-info-parent-container"
         v-for="value in flightInfo"
@@ -328,6 +370,7 @@ import DeleteModal from "../components/DeleteModal";
 import DateUtils from "../utils/dateUtils";
 import EventItinerary from "../components/EventItinerary";
 import StringUtils from "../utils/stringUtils";
+import EventDetailInfoSectionPlaceholder from "../components/EventDetailInfoSectionPlaceholder";
 //Using test data to construct UI to save on API
 import data from "../components/googleplaces_response.json";
 export default {
@@ -364,6 +407,18 @@ export default {
       showFinaliseItineraryCheck: false,
       googlePlacesInfo: [],
       checkedThingsToDo: [],
+      accommodationSectionTitle: "Accommodation",
+      accommodationSectionIcon: "fas fa-home",
+      accommodationSectionKey: 0,
+      activitySectionTitle: "Tourist Attractions",
+      activitySectionIcon: "fas fa-landmark",
+      flightsSectionTitle: "Flights",
+      flightsSectionIcon: "fas fa-plane",
+      flightsSectionKey: 0,
+      displayFlights: false,
+      displayAccommodation: false,
+      displayActivities: false,
+      activitiesSectionKey: 0,
     };
   },
   watch: {
@@ -372,6 +427,7 @@ export default {
     },
   },
   components: {
+    EventDetailInfoSectionPlaceholder,
     EventForm,
     EventItinerary,
     EventOverview,
@@ -580,30 +636,22 @@ export default {
       this.eventItineraryKey++;
     },
     checkedAccommodationChange(event, value) {
-      console.log(event.target.checked);
-      console.log(value);
       if (event.target.checked) {
         this.checkedAccommodation = [];
         this.checkedAccommodation.push(value);
-        console.log(this.checkedAccommodation);
+
         this.eventItineraryKey++;
       } else {
         this.checkedAccommodation = [];
       }
     },
     checkedThingToDoChange(event, value) {
-      console.log(
-        this.checkedThingsToDo.filter(
-          (activity) => activity.name === value.name
-        ).length === 0
-      );
       if (
         event.target.checked &&
         this.checkedThingsToDo.filter(
           (activity) => activity.name === value.name
         ).length === 0
       ) {
-        console.log("IN HERE");
         this.checkedThingsToDo.push({
           name: value.name,
           placesId: value.place_id,
@@ -612,7 +660,6 @@ export default {
           user_ratings_total: value.user_ratings_total,
           vicinity: value.vicinity,
         });
-        console.log(this.checkedThingsToDo);
       } else if (!event.target.checked) {
         this.checkedThingsToDo = this.checkedThingsToDo.filter(
           (activity) => activity.name !== value.name
@@ -620,12 +667,8 @@ export default {
       }
 
       this.eventItineraryKey++;
-      console.log(event);
-      console.log(value);
     },
-    editItineraryButtonClick(value) {
-      console.log(value);
-
+    editItineraryButtonClick() {
       this.editItineraryClick = !this.editItineraryClick;
       this.showFinaliseItineraryCheck = !this.showFinaliseItineraryCheck;
       this.eventItineraryKey++;
@@ -646,6 +689,19 @@ export default {
     extractLink(link) {
       let extractedLink = StringUtils.extractGoogleMapLink(link);
       return extractedLink;
+    },
+    toggleEventDetailInfo(value) {
+      if (value === "Accommodation") {
+        this.displayAccommodation = !this.displayAccommodation;
+        this.accommodationSectionKey++;
+      } else if (value === "Tourist Attractions") {
+        this.displayActivities = !this.displayActivities;
+        this.activitiesSectionKey++;
+      } else if (value === "Flights") {
+        this.displayFlights = !this.displayFlights;
+        this.flightsSectionKey++;
+      }
+      console.log(value);
     },
   },
   async created() {
@@ -752,6 +808,20 @@ h2 {
 .scraped-info-wrapper {
   margin: 25px 0;
   width: 80%;
+
+  .hide-event-detail-category-button {
+    background-color: #d73737;
+    color: #ffffff;
+    border-radius: 10px;
+    border: none;
+    width: 10%;
+
+    height: 2.5rem;
+    margin: 1rem auto;
+  }
+  button:hover {
+    cursor: pointer;
+  }
 }
 
 .web-scraped-info-parent-container {
@@ -770,6 +840,7 @@ h2 {
     font-weight: bold;
     text-align: left;
     margin: 1rem 0;
+    align-items: center;
   }
 
   thead {
