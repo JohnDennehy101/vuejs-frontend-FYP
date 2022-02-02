@@ -60,6 +60,7 @@ export default {
       const user = await userService.loginUser(this.email, this.password);
 
       if (user) {
+        this.$store.dispatch("setUserId", user);
         this.$store.dispatch("login");
         this.$router.push({ path: `/dashboard/${user}` });
       } else {

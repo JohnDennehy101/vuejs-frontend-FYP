@@ -137,43 +137,55 @@ import NoCreatedItems from "../components/NoCreatedItems";
 import DeleteModal from "../components/DeleteModal";
 import EventService from "../services/EventService";
 const eventService = new EventService();
+import { mapGetters } from "vuex";
 export default {
   data() {
     return {
-      createdEvents: [],
-      invitedEvents: [],
       invalidEventCreation: false,
-      noCreatedEventsMessage: "You haven't created any events",
-      noCreatedEventsCallToAction: "Create Event",
-      noCreatedEventsCallToActionLink: "createEvent",
       errorMessage:
         "There was an error adding this event, not successfully created.",
       domesticDayColourHex: "#F49F85",
       domesticOvernightColourHex: "#AD1FEA",
       foreignOvernightColourHex: "#62BCFA",
-      userId: null,
       displayDeleteModal: false,
-      deleteEventTitle: "",
-      deleteEventId: "",
-      deleteEventModalHeading: "Event",
     };
+  },
+  computed: {
+    ...mapGetters({
+      noCreatedEventsMessage: "event/noCreatedEventsMessage",
+      noCreatedEventsCallToAction: "event/noCreatedEventsCallToAction",
+      noCreatedEventsCallToActionLink: "event/noCreatedEventsCallToActionLink",
+      deleteEventModalHeading: "event/deleteEventModalHeading",
+      deleteEventTitle: "event/deleteEventTitle",
+      deleteEventId: "event/deleteEventId",
+      createdEvents: "event/createdEvents",
+      invitedEvents: "event/invitedEvents",
+      userId: "userId",
+    }),
   },
   methods: {
     async getUserCreatedEvents() {
-      const userId = localStorage.getItem("id");
-      this.userId = userId;
-      const response = await eventService.getUserEvents(userId);
+      const response = await eventService.getUserEvents(this.userId);
 
       if ("error" in response) {
         this.invalidEventCreation = true;
       } else {
-        this.createdEvents = response.data.created;
-        this.invitedEvents = response.data.invited;
+        this.$store.dispatch(
+          "event/populateUserCreatedEvents",
+          response.data.created
+        );
+        this.$store.dispatch(
+          "event/populateUserInvitedEvents",
+          response.data.invited
+        );
       }
     },
     showDeleteModal(event) {
-      this.deleteEventId = event.path[4].children[2].textContent;
-      this.deleteEventTitle = event.path[4].children[0].textContent;
+      this.$store.dispatch("event/populateDeleteModal", {
+        deleteEventTitle: event.path[4].children[0].textContent,
+        deleteEventId: event.path[4].children[2].textContent,
+      });
+
       this.displayDeleteModal = true;
     },
   },

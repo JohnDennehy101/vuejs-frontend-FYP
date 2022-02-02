@@ -5,12 +5,11 @@ import createPersistedState from "vuex-persistedstate";
 
 const store = createStore({
     plugins: [createPersistedState()],
-    modules: [
-        eventModule
-    ],
+    modules: {event: eventModule},
     state() {
         return {
-            isLoggedIn: false
+            isLoggedIn: false,
+            userId: null
         }
     },
     mutations: {
@@ -19,6 +18,9 @@ const store = createStore({
         },
         logout(state) {
             state.isLoggedIn = false;
+        },
+        setUserId(state, payload) {
+            state.userId = payload
         }
 
     },
@@ -28,12 +30,18 @@ const store = createStore({
         },
         logout(context) {
             context.commit('logout');
+        },
+        setUserId(context, payload) {
+            context.commit('setUserId', payload);
         }
     },
     getters: {
 
         isAuthenticated(state) {
             return state.isLoggedIn;
+        },
+        userId(state) {
+            return state.userId
         }
 
     }
