@@ -3,6 +3,7 @@ export default {
     state() {
         return {
             createdEvents: [],
+            individualEvent: {},
             invitedEvents: [],
             noEventsCreatedMessage: "You haven't created any events",
             noCreatedEventsCallToAction: "Create Event",
@@ -27,6 +28,11 @@ export default {
            
             state.invitedEvents = payload;
             
+        },
+        setIndividualEvent(state,payload) {
+            console.log(payload)
+            state.individualEvent = payload;
+            console.log(state.individualEvent)
         }
     },
     actions: {
@@ -38,6 +44,9 @@ export default {
          },
          populateUserInvitedEvents(context, payload) {
              context.commit('populateUserInvitedEvents', payload);
+         },
+         setIndividualEvent(context, payload) {
+             context.commit('setIndividualEvent', payload);
          }
     },
     getters: {
@@ -65,6 +74,11 @@ export default {
         },
         invitedEvents(state) {
             return state.invitedEvents;
+        },
+        individualEvent(state) {
+            console.log("HERE")
+            console.log(state.individualEvent)
+            return state.individualEvent;
         }
     }
 

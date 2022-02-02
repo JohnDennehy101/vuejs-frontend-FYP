@@ -373,6 +373,7 @@ import StringUtils from "../utils/stringUtils";
 import EventDetailInfoSectionPlaceholder from "../components/EventDetailInfoSectionPlaceholder";
 //Using test data to construct UI to save on API
 import data from "../components/googleplaces_response.json";
+import { mapGetters } from "vuex";
 export default {
   name: "eventDetailPage",
   props: ["editEvent"],
@@ -380,9 +381,7 @@ export default {
     return {
       showEditForm: false,
       edit: this.editEvent,
-      individualEvent: {},
       polls: [],
-      userId: localStorage.getItem("id"),
       noCreatedPollsMessage: "No polls have been created yet for this event.",
       noCreatedPollsCallToAction: "Create Poll",
       noCreatedPollsCallToActionLink: "",
@@ -421,6 +420,12 @@ export default {
       activitiesSectionKey: 0,
     };
   },
+  computed: {
+    ...mapGetters({
+      individualEvent: "event/individualEvent",
+      userId: "userId",
+    }),
+  },
   watch: {
     checkedAccommodation: function () {
       this.eventItineraryKey++;
@@ -451,7 +456,6 @@ export default {
     },
     async getEventInfo() {
       const jwtToken = localStorage.getItem("token");
-      const userId = localStorage.getItem("id");
       const response = await axios
         .get("http://localhost:3000/events/" + this.eventId, {
           headers: {
@@ -472,14 +476,15 @@ export default {
 
         console.log(event);
 
-        if (event["createdByUser"].id === userId) {
+        if (event["createdByUser"].id === this.userId) {
           this.invitedUser = false;
         } else {
           this.invitedUser = true;
         }
 
         this.noCreatedPollsCallToActionLink = `${response.data[0].id}/poll`;
-        this.individualEvent = event;
+
+        this.$store.dispatch("event/setIndividualEvent", event);
 
         this.showEventInfo = true;
         this.polls = response.data[0].polls;
