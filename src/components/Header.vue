@@ -6,7 +6,7 @@
         <p>Group Activity Planner</p>
       </div>
 
-      <ul v-if="loggedInHeader">
+      <ul v-if="isLoggedIn">
         <li>
           <router-link to="createEvent"> Add Event </router-link>
         </li>
@@ -15,7 +15,7 @@
         <li>Heading 4</li>
       </ul>
     </div>
-    <ul v-if="!loggedInHeader">
+    <ul v-if="!isLoggedIn">
       <li v-bind:class="{ activeHeader: loginPage }">
         <router-link to="/login"> Login </router-link>
       </li>
@@ -24,7 +24,7 @@
       </li>
     </ul>
 
-    <ul v-if="loggedInHeader">
+    <ul v-if="isLoggedIn">
       <li>
         <router-link class="activeHeader" to="/logout">Logout </router-link>
       </li>
@@ -41,17 +41,13 @@ export default {
       registerPage: false,
     };
   },
+  computed: {
+    isLoggedIn() {
+      return this.$store.getters.isAuthenticated;
+    },
+  },
   watch: {
     $route() {
-      if (
-        this.$route.path === "/login" ||
-        this.$route.path === "/register" ||
-        this.$route.path === "/"
-      ) {
-        this.loggedInHeader = false;
-      } else {
-        this.loggedInHeader = true;
-      }
       if (this.$route.path === "/login") {
         this.loginPage = true;
         this.registerPage = false;

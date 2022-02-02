@@ -49,8 +49,8 @@ class UserService {
       });
 
     if (!("error" in response)) {
-      localStorage.setItem("id", response.data.userId);
-      localStorage.setItem("token", response.data.jwtToken);
+      await localStorage.setItem("id", response.data.userId);
+      await localStorage.setItem("token", response.data.jwtToken);
       console.log(response.data);
       return response.data.userId;
     } else {
