@@ -1,7 +1,7 @@
 <template>
   <div id="wrapper">
-    <LoginForm title="Login" />
     <LoginImage />
+    <LoginForm title="Login" />
   </div>
 </template>
 
@@ -21,5 +21,9 @@ export default {
 <style scoped lang="scss">
 #wrapper {
   display: flex;
+
+  @include for-phone-only {
+    flex-direction: column;
+  }
 }
 </style>
