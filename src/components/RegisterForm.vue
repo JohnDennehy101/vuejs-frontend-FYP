@@ -73,6 +73,11 @@ export default {
   height: 80vh;
   display: flex;
   align-items: center;
+
+  @include for-phone-only {
+    width: 100%;
+    height: 60vh;
+  }
 }
 form {
   width: 70%;
@@ -84,6 +89,11 @@ form {
   margin: 0 auto;
   border-radius: 10px;
   border: 1px solid #eeeeee;
+
+  @include for-phone-only {
+    width: 90%;
+    height: 80%;
+  }
 
   .form-control {
     width: 80%;
