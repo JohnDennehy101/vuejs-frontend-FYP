@@ -6,7 +6,7 @@
         <p>Group Activity Planner</p>
       </div>
 
-      <ul v-if="isLoggedIn">
+      <ul v-if="isLoggedIn && !isMobile()">
         <li>
           <router-link to="createEvent"> Add Event </router-link>
         </li>
@@ -15,7 +15,7 @@
         <li>Heading 4</li>
       </ul>
     </div>
-    <ul v-if="!isLoggedIn">
+    <ul v-if="!isLoggedIn && !isMobile()">
       <li v-bind:class="{ activeHeader: loginPage }">
         <router-link to="/login"> Login </router-link>
       </li>
@@ -24,7 +24,19 @@
       </li>
     </ul>
 
-    <ul v-if="isLoggedIn">
+    <MobileNavBar
+      v-if="isMobile()"
+      name="Logo Name"
+      :navLinks="[
+        {
+          name: 'Register',
+          link: '/register',
+        },
+        { name: 'Login', link: '/login' },
+      ]"
+    />
+
+    <ul v-if="isLoggedIn && !isMobile()">
       <li>
         <router-link class="activeHeader" to="/logout">Logout </router-link>
       </li>
@@ -33,6 +45,7 @@
 </template>
 
 <script>
+import MobileNavBar from "./MobileNavBar";
 export default {
   data() {
     return {
@@ -44,6 +57,14 @@ export default {
   computed: {
     isLoggedIn() {
       return this.$store.getters.isAuthenticated;
+    },
+  },
+  components: { MobileNavBar },
+  methods: {
+    isMobile() {
+      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      );
     },
   },
   watch: {
@@ -68,6 +89,10 @@ header {
   padding: 30px 100px;
   background-color: $header-background-colour;
   color: #ffffff;
+
+  @include for-phone-only {
+    padding: 1rem;
+  }
 }
 p {
   font-weight: bold;
@@ -82,6 +107,10 @@ img {
 }
 .parent-container {
   display: flex;
+
+  @include for-phone-only {
+    width: 90%;
+  }
 }
 .logo-and-title-container {
   display: flex;

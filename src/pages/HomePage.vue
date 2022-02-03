@@ -21,14 +21,27 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @include for-phone-only {
+    flex-direction: column;
+  }
 }
 div {
   width: 50%;
   margin: auto;
   text-align: center;
+
+  @include for-phone-only {
+    width: 90%;
+    margin: 1rem auto;
+  }
 }
 h1 {
   font-size: 3rem;
+
+  @include for-phone-only {
+    font-size: 1.2rem;
+  }
 }
 p {
   font-size: 1.2rem;
@@ -37,16 +50,23 @@ img {
   width: 40%;
   height: 80%;
   margin: auto;
+
+  @include for-phone-only {
+    width: 80%;
+  }
 }
 button {
   border-radius: 10px;
   border: none;
-  width: 30%;
   width: 40%;
   height: 2.5rem;
   margin: 1rem 0;
   background-color: $primary-button-background-colour;
   color: $primary-button-text-colour;
+
+  @include for-phone-only {
+    height: 2rem;
+  }
 }
 button:hover {
   cursor: pointer;
