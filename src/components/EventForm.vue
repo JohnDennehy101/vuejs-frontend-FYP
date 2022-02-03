@@ -127,6 +127,7 @@
 import AccountErrorMessage from "../components/AccountErrorMessage";
 import EventFormUserEmailDisplay from "../components/EventFormUserEmailDisplay";
 import EventService from "../services/EventService";
+import { mapGetters } from "vuex";
 const eventService = new EventService();
 export default {
   props: ["edit", "individualEvent"],
@@ -155,10 +156,14 @@ export default {
       foreignTrip: false,
     };
   },
+  computed: {
+    ...mapGetters({
+      userId: "userId",
+    }),
+  },
   methods: {
     async submitForm() {
       if (this.editEventAction) {
-        const userId = localStorage.getItem("id");
         const payload = {
           title: this.title,
           type: this.eventType,
@@ -173,13 +178,12 @@ export default {
         );
 
         if (!("error" in response)) {
-          this.$router.push({ path: `/dashboard/${userId}` });
+          this.$router.push({ path: `/dashboard/${this.userId}` });
         } else {
           this.invalidEventCreation = true;
         }
       } else {
         if (this.title.length > 0 && this.eventType !== null) {
-          const userId = localStorage.getItem("id");
           const payload = {
             title: this.title,
             type: this.eventType,
@@ -188,10 +192,10 @@ export default {
             departureCity: this.departureCity,
           };
 
-          const response = await eventService.createEvent(userId, payload);
+          const response = await eventService.createEvent(this.userId, payload);
 
           if (!("error" in response)) {
-            this.$router.push({ path: `/dashboard/${userId}` });
+            this.$router.push({ path: `/dashboard/${this.userId}` });
           } else {
             this.invalidEventCreation = true;
           }

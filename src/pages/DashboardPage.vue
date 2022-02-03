@@ -208,12 +208,19 @@ export default {
   flex-direction: column;
   align-items: center;
   background-color: #f2f2f2;
+
+  @include for-phone-only {
+    min-height: 100vh;
+  }
 }
 .events-parent-container {
-  //height: 80vh;
   width: 85%;
-  border: 1px solid black;
+
   margin: 1rem auto;
+
+  @include for-phone-only {
+    width: 90%;
+  }
 
   h2 {
     text-align: center;
@@ -226,6 +233,11 @@ export default {
   margin: 1rem;
   border-radius: 5px;
   background-color: #ffffff;
+
+  @include for-phone-only {
+    width: 90%;
+    height: 30vh;
+  }
 
   a {
     text-decoration: none;
