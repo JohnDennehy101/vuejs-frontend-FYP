@@ -222,9 +222,18 @@ form {
   border-radius: 10px;
   border: 1px solid #eeeeee;
 
+  @include for-phone-only {
+    width: 90%;
+    min-height: 90vh;
+  }
+
   .form-control {
     width: 80%;
     margin: 0.5rem auto;
+
+    @include for-phone-only {
+      width: 88%;
+    }
 
     label {
       display: block;

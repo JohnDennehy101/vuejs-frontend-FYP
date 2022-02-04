@@ -37,6 +37,10 @@ export default {
   align-items: center;
   border: 1px solid #eeeeee;
   background-color: white;
+
+  @include for-phone-only {
+    width: 90%;
+  }
 }
 button {
   border-radius: 10px;
@@ -46,6 +50,10 @@ button {
   margin: 1rem 0;
   background-color: $primary-button-background-colour;
   color: $primary-button-text-colour;
+
+  @include for-phone-only {
+    width: 60%;
+  }
 }
 button:hover {
   cursor: pointer;
@@ -53,5 +61,13 @@ button:hover {
 svg {
   font-size: 1.5rem;
   padding: 1rem;
+}
+
+h4 {
+  @include for-phone-only {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+  }
 }
 </style>

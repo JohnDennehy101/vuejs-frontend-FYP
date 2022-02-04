@@ -748,6 +748,11 @@ h2 {
   width: 80%;
   margin: 1rem auto;
 
+  @include for-phone-only {
+    width: 90%;
+    margin: 1rem;
+  }
+
   .individual-poll-container {
     height: 6rem;
     padding: 1rem 3rem;
@@ -756,12 +761,21 @@ h2 {
     background-color: #ffffff;
     display: flex;
     flex-wrap: wrap;
-
     justify-content: space-between;
+
+    @include for-phone-only {
+      flex-direction: column;
+      padding: 1rem;
+      min-height: 12rem;
+    }
 
     .poll-info-parent-container {
       width: 75%;
       display: flex;
+
+      @include for-phone-only {
+        flex-direction: column;
+      }
     }
 
     .poll-call-to-action-container {
@@ -770,6 +784,11 @@ h2 {
       justify-content: center;
       align-items: center;
       margin: 1rem auto;
+
+      @include for-phone-only {
+        flex-direction: column;
+      }
+
       svg {
         font-size: 1rem;
         padding: 0.2rem;
@@ -786,6 +805,10 @@ h2 {
         border-radius: 10px;
         font-weight: bold;
         font-size: 0.7rem;
+
+        @include for-phone-only {
+          margin: 0.5rem auto;
+        }
       }
     }
 
@@ -795,6 +818,12 @@ h2 {
       display: flex;
       flex-direction: column;
       justify-content: center;
+
+      @include for-phone-only {
+        min-height: 20%;
+        margin: 0;
+        justify-content: start;
+      }
 
       span {
         margin: 0 auto;
@@ -811,11 +840,19 @@ h2 {
         svg {
           color: green;
         }
+
+        @include for-phone-only {
+          margin: 0;
+        }
       }
 
       #pollNotCompletedIcon {
         svg {
           color: red;
+        }
+
+        @include for-phone-only {
+          margin: 0;
         }
       }
     }
