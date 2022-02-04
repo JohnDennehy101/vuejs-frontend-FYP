@@ -158,9 +158,17 @@ form {
   border-radius: 10px;
   border: 1px solid #eeeeee;
 
+  @include for-phone-only {
+    width: 90%;
+  }
+
   .form-control {
     width: 80%;
     margin: 0.5rem auto;
+
+    @include for-phone-only {
+      width: 90%;
+    }
 
     label {
       display: block;
@@ -181,6 +189,10 @@ form {
       text-align: left;
       padding-left: 0;
       display: inline-block;
+
+      @include for-phone-only {
+        width: 5%;
+      }
     }
     .checkbox-parent-container {
       justify-content: center;
