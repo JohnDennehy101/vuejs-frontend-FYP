@@ -266,6 +266,10 @@ export default {
   height: 80vh;
   display: flex;
   align-items: center;
+
+  @include for-phone-only {
+    width: 90%;
+  }
 }
 form {
   width: 60%;
@@ -277,6 +281,10 @@ form {
   margin: 1rem auto;
   border-radius: 10px;
   border: 1px solid #eeeeee;
+
+  @include for-phone-only {
+    width: 90%;
+  }
 
   #hide-form-icon-container {
     display: flex;
@@ -310,6 +318,10 @@ form {
       border-radius: 12px;
       border: 1px solid grey;
       padding-left: 10px;
+
+      @include for-phone-only {
+        height: 2rem;
+      }
     }
     select {
       height: 2.5rem;
@@ -322,6 +334,10 @@ form {
       background-repeat: no-repeat;
       background-position: right 0.5rem center;
       background-size: 1em;
+
+      @include for-phone-only {
+        height: 2rem;
+      }
     }
     input[type="radio"] {
       height: 1rem;
@@ -330,6 +346,10 @@ form {
       text-align: left;
       padding-left: 0;
       display: inline-block;
+
+      @include for-phone-only {
+        width: 5%;
+      }
     }
     .radio-parent-container {
       margin: 0.5rem auto;

@@ -23,5 +23,9 @@ export default {
   align-items: center;
   justify-content: center;
   height: 80vh;
+
+  @include for-phone-only {
+    min-height: 100vh;
+  }
 }
 </style>

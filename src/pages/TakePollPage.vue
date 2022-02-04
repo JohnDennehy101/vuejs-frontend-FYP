@@ -213,6 +213,10 @@ form {
   #add-option-button {
     width: 20%;
     background-color: #3a4374;
+
+    @include for-phone-only {
+      width: 50%;
+    }
   }
   ul {
     display: flex;
