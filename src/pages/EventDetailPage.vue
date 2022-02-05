@@ -321,8 +321,28 @@
         </thead>
 
         <tbody>
+          <tr
+            id="mobile-flight-overview-row"
+            v-for="(item, key) of value"
+            :key="key"
+          >
+            <td v-if="key === 0 && isMobile()" rowspan="2">
+              <input type="checkbox" :value="item" />
+            </td>
+            <td v-if="key === 0 && isMobile()" rowspan="2">
+              {{ item.pricePerPerson }}
+            </td>
+            <td v-if="key === 0 && isMobile()" rowspan="2">
+              {{ item.priceTotal }}
+            </td>
+            <td v-if="key === 0 && isMobile()" rowspan="2">
+              <a :href="item.flightUrl" target="_blank">
+                <i class="fas fa-external-link-square-alt"></i>
+              </a>
+            </td>
+          </tr>
           <tr v-for="(item, key) of value" :key="key">
-            <td v-if="key === 0" rowspan="2">
+            <td v-if="key === 0 && !isMobile()" rowspan="2">
               <input type="checkbox" :value="item" />
             </td>
 
@@ -337,15 +357,15 @@
             <td>{{ item.arrivalTime }}</td>
             <td>{{ item.duration }}</td>
             <td>{{ item.carrier }}</td>
-            <td v-if="key === 0" rowspan="2">
+            <td v-if="key === 0 && !isMobile()" rowspan="2">
               {{ item.pricePerPerson }}
             </td>
 
-            <td v-if="key === 0" rowspan="2">
+            <td v-if="key === 0 && !isMobile()" rowspan="2">
               {{ item.priceTotal }}
             </td>
 
-            <td v-if="key === 0" rowspan="2">
+            <td v-if="key === 0 && !isMobile()" rowspan="2">
               <a :href="item.flightUrl" target="_blank">
                 <i class="fas fa-external-link-square-alt"></i>
               </a>
@@ -725,6 +745,11 @@ export default {
       }
       console.log(value);
     },
+    isMobile() {
+      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      );
+    },
   },
   async created() {
     this.googlePlacesInfo = data.results;
@@ -1049,6 +1074,56 @@ h2 {
     }
     td:nth-of-type(11):before {
       content: "Map";
+    }
+  }
+}
+
+#flight-information-table {
+  #mobile-flight-overview-row {
+    display: none;
+  }
+}
+@include for-phone-only {
+  #flight-information-table {
+    #mobile-flight-overview-row {
+      display: block;
+      background-color: #373f68;
+      color: #ffffff;
+
+      svg {
+        color: white;
+      }
+
+      td:nth-of-type(1):before {
+        content: "Select";
+      }
+      td:nth-of-type(2):before {
+        content: "Price Per Person";
+      }
+      td:nth-of-type(3):before {
+        content: "Total Price";
+      }
+      td:nth-of-type(4):before {
+        content: "Flight Link";
+      }
+    }
+    td:nth-of-type(1):before {
+      content: "Airport";
+    }
+    td:nth-of-type(2):before {
+      content: "Date";
+    }
+    td:nth-of-type(3):before {
+      content: "Departure Time";
+    }
+    td:nth-of-type(4):before {
+      content: "Arrival Time";
+    }
+    td:nth-of-type(5):before {
+      content: "Duration";
+    }
+    td:nth-of-type(6):before {
+      content: "Carrier";
     }
   }
 }
