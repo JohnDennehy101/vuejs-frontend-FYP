@@ -2,6 +2,9 @@
   <h2>Itinerary</h2>
   <div id="event-itinerary-parent-container">
     <div class="event-itinerary-info">
+      <div id="itinerary-map"></div>
+    </div>
+    <div class="event-itinerary-info">
       <div v-if="itineraryAccommodation" class="event-itinerary-category">
         <div class="event-itinerary-category-header">
           <h3>Accommodation</h3>
@@ -303,10 +306,6 @@
         </button>
       </div>
     </div>
-
-    <div class="event-itinerary-info">
-      <div id="itinerary-map"></div>
-    </div>
   </div>
 </template>
 
@@ -429,6 +428,12 @@ export default {
   border-radius: 5px;
   background-color: #ffffff;
   display: flex;
+
+  @include for-phone-only {
+    width: 90%;
+    flex-direction: column;
+    min-height: 60vh;
+  }
 }
 h2 {
   text-align: left;
@@ -436,10 +441,19 @@ h2 {
 }
 .event-itinerary-info {
   width: 50%;
+
+  @include for-phone-only {
+    width: 100%;
+    min-height: 50vh;
+  }
 }
 .event-itinerary-category {
   margin: 1rem auto;
   width: 80%;
+
+  @include for-phone-only {
+    width: 90%;
+  }
 }
 .event-itinerary-category-header {
   display: flex;
@@ -458,9 +472,17 @@ h2 {
   h4 {
     display: inline-block;
     width: 33%;
+
+    @include for-phone-only {
+      width: 65%;
+    }
   }
   p {
     display: inline-block;
+
+    @include for-phone-only {
+      width: 35%;
+    }
   }
 }
 
@@ -491,6 +513,10 @@ label {
 #itinerary-map {
   width: 100%;
   height: 100%;
+
+  @include for-phone-only {
+    height: 300px;
+  }
 }
 #activity-parent-container {
   margin: 1rem auto;
