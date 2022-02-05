@@ -220,10 +220,7 @@
 
     <div
       class="scraped-info-wrapper"
-      v-if="
-        (individualEvent && googlePlacesInfo && displayActivities) ||
-        editItineraryClick
-      "
+      v-if="individualEvent && googlePlacesInfo && displayActivities"
     >
       <button
         className="hide-event-detail-category-button"
@@ -286,10 +283,7 @@
       v-on:showScrapedInfo="toggleEventDetailInfo"
     />
 
-    <div
-      class="scraped-info-wrapper"
-      v-if="(flightInfo && displayFlights) || editItineraryClick"
-    >
+    <div class="scraped-info-wrapper" v-if="flightInfo && displayFlights">
       <h2>Flight Results</h2>
       <button
         className="hide-event-detail-category-button"
