@@ -60,6 +60,10 @@ export default {
   border-radius: 5px;
   background-color: #ffffff;
 
+  @include for-phone-only {
+    width: 90%;
+  }
+
   h3 {
     margin-top: 0.5rem;
     font-size: 1.1rem;
@@ -69,6 +73,10 @@ export default {
     margin: 0.8rem auto;
     color: #647196;
     font-size: 1rem;
+
+    @include for-phone-only {
+      margin: 1rem;
+    }
   }
   span {
     padding: 0.4rem;

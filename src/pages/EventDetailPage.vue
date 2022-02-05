@@ -169,7 +169,7 @@
             <th>Review Score</th>
             <th>Review Quantity</th>
             <th>Location</th>
-            <!--<th>Cancellation</th>-->
+
             <th>Link</th>
             <th>Map</th>
           </tr>
@@ -766,7 +766,7 @@ h2 {
     @include for-phone-only {
       flex-direction: column;
       padding: 1rem;
-      min-height: 12rem;
+      min-height: 20rem;
     }
 
     .poll-info-parent-container {
@@ -775,6 +775,7 @@ h2 {
 
       @include for-phone-only {
         flex-direction: column;
+        width: 85%;
       }
     }
 
@@ -787,6 +788,8 @@ h2 {
 
       @include for-phone-only {
         flex-direction: column;
+        width: 15%;
+        height: 100%;
       }
 
       svg {
@@ -863,15 +866,23 @@ h2 {
   margin: 25px 0;
   width: 80%;
 
+  @include for-phone-only {
+    width: 90%;
+  }
+
   .hide-event-detail-category-button {
     background-color: #d73737;
     color: #ffffff;
     border-radius: 10px;
     border: none;
     width: 10%;
-
     height: 2.5rem;
     margin: 1rem auto;
+
+    @include for-phone-only {
+      width: 40%;
+      height: 2rem;
+    }
   }
   button:hover {
     cursor: pointer;
@@ -895,6 +906,12 @@ h2 {
     text-align: left;
     margin: 1rem 0;
     align-items: center;
+
+    @include for-phone-only {
+      display: block;
+      font-size: 1rem;
+      text-align: center;
+    }
   }
 
   thead {
@@ -917,6 +934,13 @@ h2 {
 
   td {
     padding: 12px 15px;
+
+    @include for-phone-only {
+      border: none;
+      border-bottom: 1px solid #eee;
+      position: relative;
+      padding-left: 50% !important;
+    }
   }
 
   td table {
@@ -926,6 +950,60 @@ h2 {
 
   td img {
     height: 1.5rem;
+  }
+
+  @include for-phone-only {
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+      display: block;
+    }
+
+    thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+
+    tr {
+      border: 1px solid #ccc;
+    }
+
+    td:before {
+      position: absolute;
+      top: 0px;
+      left: 6px;
+      width: 45%;
+      font-weight: bold;
+      padding: 12px 0px 12px 15px;
+      white-space: nowrap;
+    }
+
+    td:nth-of-type(1):before {
+      content: "Select";
+    }
+
+    td:nth-of-type(2):before {
+      content: "Title";
+    }
+    td:nth-of-type(3):before {
+      content: "Address";
+    }
+    td:nth-of-type(4):before {
+      content: "Review Score";
+    }
+    td:nth-of-type(5):before {
+      content: "Review Quantity";
+    }
+    td:nth-of-type(6):before {
+      content: "Map";
+    }
+    td:nth-of-type(7):before {
+      content: "Icon";
+    }
   }
 }
 </style>

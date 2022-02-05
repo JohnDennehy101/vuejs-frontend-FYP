@@ -40,6 +40,7 @@
 import TakePollLabel from "../components/TakePollLabel";
 import PollBarChart from "../components/PollBarChart";
 import EventService from "../services/EventService";
+import { mapGetters } from "vuex";
 const eventService = new EventService();
 export default {
   data() {
@@ -54,6 +55,11 @@ export default {
       chartdata: null,
       chartKey: 0,
     };
+  },
+  computed: {
+    ...mapGetters({
+      userId: "userId",
+    }),
   },
   methods: {
     async extractIdsFromUrl() {
@@ -108,8 +114,6 @@ export default {
       this.chartKey++;
     },
     async submitForm() {
-      const userId = localStorage.getItem("id");
-
       let checkedOptions = this.pollOptions.filter((option) =>
         this.checkedOptions.includes(option.id)
       );
@@ -120,14 +124,14 @@ export default {
         };
 
         const response = await eventService.voteEventPoll(
-          userId,
+          this.userId,
           this.eventId,
           this.pollId,
           payload
         );
 
         if (!("error" in response)) {
-          this.$router.push({ path: `/dashboard/${userId}` });
+          this.$router.push({ path: `/dashboard/${this.userId}` });
         } else {
           this.invalidLogin = true;
         }

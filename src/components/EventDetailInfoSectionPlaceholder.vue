@@ -36,6 +36,11 @@ h2 {
   flex-direction: column;
   align-items: center;
   background-color: #ffffff;
+
+  @include for-phone-only {
+    width: 90%;
+    min-height: 20vh;
+  }
 }
 svg {
   padding-bottom: 1rem;
@@ -50,6 +55,11 @@ button {
   height: 2.5rem;
 
   color: $primary-button-text-colour;
+
+  @include for-phone-only {
+    width: 60%;
+    height: 2rem;
+  }
 }
 button:hover {
   cursor: pointer;
