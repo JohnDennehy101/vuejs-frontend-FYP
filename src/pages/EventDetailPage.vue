@@ -144,6 +144,7 @@
         Hide
       </button>
       <table
+        id="accommodation-information-table"
         class="web-scraped-info-parent-container"
         v-for="(value, page) in accommodationInfo"
         v-bind:key="value"
@@ -230,7 +231,10 @@
       >
         Hide
       </button>
-      <table class="web-scraped-info-parent-container">
+      <table
+        id="tourist-attractions-information-table"
+        class="web-scraped-info-parent-container"
+      >
         <caption>
           Tourist Attractions in
           {{
@@ -294,6 +298,7 @@
         Hide
       </button>
       <table
+        id="flight-information-table"
         class="web-scraped-info-parent-container"
         v-for="value in flightInfo"
         v-bind:key="value"
@@ -981,7 +986,10 @@ h2 {
       padding: 12px 0px 12px 15px;
       white-space: nowrap;
     }
-
+  }
+}
+@include for-phone-only {
+  #tourist-attractions-information-table {
     td:nth-of-type(1):before {
       content: "Select";
     }
@@ -1003,6 +1011,44 @@ h2 {
     }
     td:nth-of-type(7):before {
       content: "Icon";
+    }
+  }
+}
+@include for-phone-only {
+  #accommodation-information-table {
+    td:nth-of-type(1):before {
+      content: "Select";
+    }
+
+    td:nth-of-type(2):before {
+      content: "Title";
+    }
+    td:nth-of-type(3):before {
+      content: "Price";
+    }
+    td:nth-of-type(4):before {
+      content: "Room Type";
+    }
+    td:nth-of-type(5):before {
+      content: "Beds";
+    }
+    td:nth-of-type(6):before {
+      content: "Review Category";
+    }
+    td:nth-of-type(7):before {
+      content: "Review Score";
+    }
+    td:nth-of-type(8):before {
+      content: "Review Quantity";
+    }
+    td:nth-of-type(9):before {
+      content: "Location";
+    }
+    td:nth-of-type(10):before {
+      content: "Link";
+    }
+    td:nth-of-type(11):before {
+      content: "Map";
     }
   }
 }
