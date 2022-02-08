@@ -11,6 +11,7 @@ import CreateEventPage from './pages/CreateEventPage'
 import CreatePollPage from './pages/CreatePollPage'
 import TakePollPage from './pages/TakePollPage'
 import EventDetailPage from './pages/EventDetailPage'
+import UserSettingsPage from './pages/UserSettingsPage'
 import '@fortawesome/fontawesome-free/css/all.css'
 import '@fortawesome/fontawesome-free/js/all.js'
 import store from './store/index.js';
@@ -53,6 +54,11 @@ const router = createRouter({
             path: '/dashboard/createEvent',
             name: 'Create Event Page',
             component: CreateEventPage
+        },
+        {
+            path: '/settings',
+            name: 'User Settings Page',
+            component: UserSettingsPage
         },
         {
             path: '/event/:userId/:eventId/poll',

@@ -8,9 +8,23 @@
 
       <ul v-if="isLoggedIn && !isMobile()">
         <li>
-          <router-link to="createEvent"> Add Event </router-link>
+          <router-link
+            :to="{
+              name: 'Create Event Page',
+            }"
+          >
+            Add Event
+          </router-link>
         </li>
-        <li>Heading 2</li>
+        <li>
+          <router-link
+            :to="{
+              name: 'User Settings Page',
+            }"
+          >
+            Account Settings
+          </router-link>
+        </li>
         <li>Heading 3</li>
         <li>Heading 4</li>
       </ul>
