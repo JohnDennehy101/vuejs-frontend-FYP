@@ -91,6 +91,21 @@ class UserService {
 
     return response;
   }
+  async getUser(id) {
+    const response = await axios
+      .get(`${this.baseUrl}/users/${id}`, {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
+      })
+      .catch((error) => {
+        return { error };
+      });
+
+    return response;
+  }
+
+  
 }
 
 export default UserService;

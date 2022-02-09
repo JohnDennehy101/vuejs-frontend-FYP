@@ -121,6 +121,7 @@ img {
 }
 .parent-container {
   display: flex;
+  justify-content: space-between;
 
   @include for-phone-only {
     width: 90%;
@@ -134,12 +135,13 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 3rem;
+  margin-left: 4rem;
 
   li {
     list-style-type: none;
     margin: 0 1.5rem;
-    width: 100%;
+    min-width: 7rem;
+    text-align: center;
     font-size: 1rem;
     text-decoration: none;
     color: #ffffff;
