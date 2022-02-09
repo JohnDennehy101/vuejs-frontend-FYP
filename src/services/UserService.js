@@ -105,6 +105,24 @@ class UserService {
     return response;
   }
 
+  async uploadUserProfileImage(id, image) {
+    let payload = new FormData();
+    payload.append("file", image);
+    const response = await axios
+      .post(`${this.baseUrl}/users/${id}/image`, payload, {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type":'multipart/form-data'
+        },
+      })
+      .catch((error) => {
+        return { error };
+      });
+
+    return response;
+    
+  }
+
   
 }
 

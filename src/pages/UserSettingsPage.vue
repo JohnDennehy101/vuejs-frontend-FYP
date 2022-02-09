@@ -1,9 +1,15 @@
 <template>
+  <UserSettingsProfileImage
+    v-if="user"
+    :userId="user.id"
+    :image="user.profileImageUrl"
+  />
   <UserSettingsForm v-if="user" :user="user" />
 </template>
 
 <script>
 import UserSettingsForm from "../components/UserSettingsForm";
+import UserSettingsProfileImage from "../components/UserSettingsProfileImage";
 import UserService from "../services/UserService";
 import { mapGetters } from "vuex";
 const userService = new UserService();
@@ -15,6 +21,7 @@ export default {
   },
   components: {
     UserSettingsForm,
+    UserSettingsProfileImage,
   },
   computed: {
     ...mapGetters({
