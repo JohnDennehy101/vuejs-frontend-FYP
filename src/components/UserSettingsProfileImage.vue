@@ -3,8 +3,14 @@
     <img v-if="profileImage" :src="profileImage" />
     <i v-else class="fas fa-map-marker-alt"></i>
 
-    <input type="file" @change="previewFiles($event)" accept="image/*" />
-    <button @click="updateUserImage">Submit</button>
+    <input
+      type="file"
+      id="image-upload"
+      @change="previewFiles($event)"
+      accept="image/*"
+    />
+    <label for="image-upload">Update Image</label>
+    <!--<button @click="updateUserImage">Submit</button>-->
   </div>
 
   {{ newImage }}
@@ -23,8 +29,11 @@ export default {
     };
   },
   methods: {
-    previewFiles(event) {
+    async previewFiles(event) {
       this.newImage = event.target.files[0];
+      this.$emit("updateUserImage", true);
+
+      await this.updateUserImage();
     },
 
     async updateUserImage() {
@@ -37,6 +46,7 @@ export default {
       if ("error" in response) {
         this.invalidEventCreation = true;
       } else {
+        this.$emit("updateUserImage", false);
         this.$router.go(0);
       }
     },
@@ -49,11 +59,42 @@ export default {
   width: 60%;
   margin: 1rem auto;
   text-align: center;
+  border: 1px solid #eeeeee;
+
+  @include for-phone-only {
+    width: 90%;
+  }
 }
 img {
-  max-width: 50%;
-  max-height: 30%;
+  max-width: 80%;
+  max-height: 20%;
   display: block;
-  margin: 1rem auto;
+  margin: 2rem auto 2rem auto;
+}
+input[type="file"] {
+  opacity: 0;
+  z-index: -1;
+  position: absolute;
+}
+label {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: none;
+  width: 30%;
+  font-size: 1rem;
+  height: 2.5rem;
+  margin: 2rem auto;
+  background-color: $primary-button-background-colour;
+  color: $primary-button-text-colour;
+
+  @include for-phone-only {
+    width: 80%;
+  }
+}
+label:hover {
+  cursor: pointer;
 }
 </style>
