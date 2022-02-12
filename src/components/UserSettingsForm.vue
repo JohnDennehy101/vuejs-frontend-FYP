@@ -39,7 +39,7 @@
       </div>
 
       <AccountErrorMessage
-        :toggle="this.invalidLogin"
+        :toggle="this.invalidUpdate"
         :errorMessage="this.errorMessage"
         v-on:hideErrorMessage="hideErrorMessage"
       />
@@ -49,6 +49,7 @@
 
 <script>
 import UserService from "../services/UserService";
+import AccountErrorMessage from "./AccountErrorMessage";
 const userService = new UserService();
 export default {
   props: ["user"],
@@ -58,11 +59,17 @@ export default {
       password: "",
       reEnterPassword: "",
       formTitle: "Edit settings",
+      errorMessage: "Values must be provided for email and password.",
+      invalidUpdate: false,
     };
   },
   methods: {
     async submitForm() {
-      if (this.password === this.reEnterPassword && this.email) {
+      if (
+        this.password.length > 0 &&
+        this.password === this.reEnterPassword &&
+        this.email
+      ) {
         const payload = {
           email: this.email,
           password: this.password,
@@ -71,14 +78,17 @@ export default {
 
         if (response) {
           this.$router.push({ path: `/dashboard/${this.user.id}` });
-        } else {
-          this.invalidUpdate = true;
         }
+      } else {
+        this.invalidUpdate = true;
       }
     },
     hideErrorMessage() {
       this.invalidUpdate = false;
     },
+  },
+  components: {
+    AccountErrorMessage,
   },
 };
 </script>
