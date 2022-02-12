@@ -1,5 +1,11 @@
 <template>
   <div id="wrapper">
+    <UserInfoDisplay
+      v-if="user"
+      :user="user"
+      :createdEventsQuantity="createdEvents.length"
+      :invitedEventsQuantity="invitedEvents.length"
+    />
     <NoCreatedItems
       v-if="createdEvents.length === 0"
       :message="noCreatedEventsMessage"
@@ -136,7 +142,10 @@
 import NoCreatedItems from "../components/NoCreatedItems";
 import DeleteModal from "../components/DeleteModal";
 import EventService from "../services/EventService";
+import UserService from "../services/UserService";
+import UserInfoDisplay from "../components/UserInfoDisplay";
 const eventService = new EventService();
+const userService = new UserService();
 import { mapGetters } from "vuex";
 export default {
   data() {
@@ -148,6 +157,7 @@ export default {
       domesticOvernightColourHex: "#AD1FEA",
       foreignOvernightColourHex: "#62BCFA",
       displayDeleteModal: false,
+      user: null,
     };
   },
   computed: {
@@ -167,6 +177,8 @@ export default {
     async getUserCreatedEvents() {
       const response = await eventService.getUserEvents(this.userId);
 
+      console.log(response);
+
       if ("error" in response) {
         this.invalidEventCreation = true;
       } else {
@@ -180,6 +192,15 @@ export default {
         );
       }
     },
+    async getUserInfo() {
+      const response = await userService.getUser(this.userId);
+
+      if ("error" in response) {
+        console.log("Invalid");
+      } else {
+        this.user = response.data;
+      }
+    },
     showDeleteModal(event) {
       this.$store.dispatch("event/populateDeleteModal", {
         deleteEventTitle: event.path[4].children[0].textContent,
@@ -190,11 +211,13 @@ export default {
     },
   },
   async created() {
+    await this.getUserInfo();
     await this.getUserCreatedEvents();
   },
   components: {
     NoCreatedItems,
     DeleteModal,
+    UserInfoDisplay,
   },
 };
 </script>
@@ -213,6 +236,11 @@ export default {
     min-height: 100vh;
   }
 }
+
+h2 {
+  width: 82%;
+  margin-top: 2rem;
+}
 .events-parent-container {
   width: 85%;
 
@@ -223,14 +251,14 @@ export default {
   }
 
   h2 {
-    text-align: center;
+    margin-left: 1rem;
   }
 }
 .individual-event-container {
   width: 30%;
-  height: 25vh;
+  height: 28vh;
   display: inline-block;
-  margin: 1rem;
+  margin: 1rem 1.2rem;
   border-radius: 5px;
   background-color: #ffffff;
 
