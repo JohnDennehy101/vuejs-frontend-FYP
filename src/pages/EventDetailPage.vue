@@ -47,6 +47,22 @@
     />
 
     <p>{{ messages }}</p>
+    <p>Chat Room: {{ memberOfChatRoom }}</p>
+
+    <input
+      id="message"
+      name="message"
+      type="text"
+      placeholder="Enter message"
+      v-model="message"
+    />
+
+    <button
+      className="hide-event-detail-category-button"
+      v-on:click="sendSocketMessage"
+    >
+      Send Chat Message
+    </button>
 
     <div id="polls-display-parent-container" v-if="polls.length > 0">
       <h2>Event Polls</h2>
@@ -443,12 +459,15 @@ export default {
       activitiesSectionKey: 0,
       messages: [],
       socket: null,
+      memberOfChatRoom: null,
+      message: "",
     };
   },
   computed: {
     ...mapGetters({
       individualEvent: "event/individualEvent",
       userId: "userId",
+      userEmail: "userEmail",
     }),
   },
   watch: {
@@ -755,18 +774,30 @@ export default {
       this.messages.push(message);
     },
     sendSocketMessage() {
-      this.socket.emit("msgToServer", "test");
+      if (this.memberOfChatRoom) {
+        this.socket.emit("messageToServer", {
+          sender: this.userEmail,
+          message: this.message,
+          room: this.eventId,
+        });
+      } else {
+        this.socket.emit("joinChatRoom", this.eventId);
+      }
     },
   },
   async created() {
+    await this.extractIdFromUrl();
     this.googlePlacesInfo = data.results;
     this.socket = WebSocketService.createSocketConnection();
     console.log(this.socket);
-    this.socket.on("msgToClient", (message) => {
+    this.socket.on("messageToClient", (message) => {
       this.receiveSocketMessage(message);
     });
     this.sendSocketMessage();
-    await this.extractIdFromUrl();
+    this.socket.on("joinedRoom", (room) => {
+      this.memberOfChatRoom = room;
+    });
+
     await this.getEventInfo();
     await this.checkEditAction();
   },

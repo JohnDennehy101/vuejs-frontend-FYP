@@ -60,9 +60,10 @@ export default {
       const user = await userService.loginUser(this.email, this.password);
 
       if (user) {
-        this.$store.dispatch("setUserId", user);
+        this.$store.dispatch("setUserId", user.userId);
+        this.$store.dispatch("setUserEmail", user.userEmail);
         this.$store.dispatch("login");
-        this.$router.push({ path: `/dashboard/${user}` });
+        this.$router.push({ path: `/dashboard/${user.userId}` });
       } else {
         this.invalidLogin = true;
       }

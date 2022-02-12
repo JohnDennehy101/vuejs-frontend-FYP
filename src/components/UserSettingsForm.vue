@@ -79,6 +79,8 @@ export default {
         if (response) {
           await localStorage.setItem("token", response.data.jwtToken);
           this.$store.dispatch("setUserId", response.data.userId);
+          //Bug here - user email is not currently returned
+          //this.$store.dispatch("setUserEmail", response.data.email);
 
           this.$router.push({ path: `/dashboard/${response.data.userId}` });
         }

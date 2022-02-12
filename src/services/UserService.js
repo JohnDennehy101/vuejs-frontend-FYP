@@ -52,7 +52,7 @@ class UserService {
       //await localStorage.setItem("id", response.data.userId);
       await localStorage.setItem("token", response.data.jwtToken);
       console.log(response.data);
-      return response.data.userId;
+      return response.data;
     } else {
       return false;
     }

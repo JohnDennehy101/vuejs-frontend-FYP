@@ -34,6 +34,7 @@ export default {
     },
     logoutUser() {
       this.$store.dispatch("setUserId", null);
+      this.$store.dispatch("setUserEmail", null);
       this.$store.dispatch("logout");
       userService.logoutUser();
       setTimeout(() => this.$router.push({ name: "Login" }), 2500);
