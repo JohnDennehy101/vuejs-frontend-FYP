@@ -1,7 +1,7 @@
 <template>
   <div id="image-display-parent-container">
     <img v-if="profileImage" :src="profileImage" />
-    <i v-else class="fas fa-map-marker-alt"></i>
+    <img v-else src="../assets/defaultUserImage.png" />
 
     <input
       type="file"
@@ -10,7 +10,6 @@
       accept="image/*"
     />
     <label for="image-upload">Update Image</label>
-    <!--<button @click="updateUserImage">Submit</button>-->
   </div>
 
   {{ newImage }}
@@ -66,8 +65,8 @@ export default {
   }
 }
 img {
-  max-width: 80%;
-  max-height: 20%;
+  max-width: 428px;
+  max-height: 428px;
   display: block;
   margin: 2rem auto 2rem auto;
 }
