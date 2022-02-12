@@ -6,6 +6,7 @@
       :individualEvent="this.individualEvent"
       @hideEditEventActionClick="this.hideEditForm"
     />
+
     <EventOverview
       v-else-if="showEditForm == false && showEventInfo"
       :individualEvent="this.individualEvent"
@@ -44,6 +45,8 @@
       :invitedUser="this.invitedUser"
       :routerLink="noCreatedPollsCallToActionLink"
     />
+
+    <p>{{ messages }}</p>
 
     <div id="polls-display-parent-container" v-if="polls.length > 0">
       <h2>Event Polls</h2>
@@ -393,6 +396,7 @@ import EventDetailInfoSectionPlaceholder from "../components/EventDetailInfoSect
 //Using test data to construct UI to save on API
 import data from "../components/googleplaces_response.json";
 import { mapGetters } from "vuex";
+import WebSocketService from "../services/WebSocketService.js";
 export default {
   name: "eventDetailPage",
   props: ["editEvent"],
@@ -437,6 +441,8 @@ export default {
       displayAccommodation: false,
       displayActivities: false,
       activitiesSectionKey: 0,
+      messages: [],
+      socket: null,
     };
   },
   computed: {
@@ -744,12 +750,28 @@ export default {
         navigator.userAgent
       );
     },
+    receiveSocketMessage(message) {
+      console.log(message);
+      this.messages.push(message);
+    },
+    sendSocketMessage() {
+      this.socket.emit("msgToServer", "test");
+    },
   },
   async created() {
     this.googlePlacesInfo = data.results;
+    this.socket = WebSocketService.createSocketConnection();
+    console.log(this.socket);
+    this.socket.on("msgToClient", (message) => {
+      this.receiveSocketMessage(message);
+    });
+    this.sendSocketMessage();
     await this.extractIdFromUrl();
     await this.getEventInfo();
     await this.checkEditAction();
+  },
+  beforeUnMount() {
+    WebSocketService.disconnect();
   },
 };
 </script>
