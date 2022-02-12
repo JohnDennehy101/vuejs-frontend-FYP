@@ -77,7 +77,10 @@ export default {
         const response = await userService.updateUser(this.user.id, payload);
 
         if (response) {
-          this.$router.push({ path: `/dashboard/${this.user.id}` });
+          await localStorage.setItem("token", response.data.jwtToken);
+          this.$store.dispatch("setUserId", response.data.userId);
+
+          this.$router.push({ path: `/dashboard/${response.data.userId}` });
         }
       } else {
         this.invalidUpdate = true;
