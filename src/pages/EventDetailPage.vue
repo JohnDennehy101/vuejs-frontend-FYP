@@ -45,8 +45,8 @@
       :invitedUser="this.invitedUser"
       :routerLink="noCreatedPollsCallToActionLink"
     />
+    <ChatMessagesDisplay v-if="messages.length > 0" :chatMessages="messages" />
 
-    <p>{{ messages }}</p>
     <p>Chat Room: {{ memberOfChatRoom }}</p>
 
     <input
@@ -413,6 +413,7 @@ import EventDetailInfoSectionPlaceholder from "../components/EventDetailInfoSect
 import data from "../components/googleplaces_response.json";
 import { mapGetters } from "vuex";
 import WebSocketService from "../services/WebSocketService.js";
+import ChatMessagesDisplay from "../components/ChatMessagesDisplay";
 export default {
   name: "eventDetailPage",
   props: ["editEvent"],
@@ -482,6 +483,7 @@ export default {
     EventOverview,
     NoCreatedItems,
     DeleteModal,
+    ChatMessagesDisplay,
   },
   methods: {
     async checkEditAction() {
@@ -778,6 +780,7 @@ export default {
     },
     initialLoadSocketMessages(messages) {
       if (this.messages.length === 0) {
+        console.log("YEAH");
         this.messages = messages;
       }
     },
@@ -800,7 +803,7 @@ export default {
     await this.extractIdFromUrl();
     this.googlePlacesInfo = data.results;
     this.socket = WebSocketService.createSocketConnection();
-    console.log(this.socket);
+
     this.socket.on("messageToClient", (message) => {
       this.receiveSocketMessage(message);
     });
@@ -810,6 +813,7 @@ export default {
     });
 
     this.socket.on("allEventChatMessages", (messages) => {
+      console.log(messages);
       this.initialLoadSocketMessages(messages);
     });
 
