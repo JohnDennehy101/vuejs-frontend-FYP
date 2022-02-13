@@ -774,8 +774,12 @@ export default {
     receiveSocketMessage(message) {
       console.log(message);
       this.messages.push({
-        author: { email: message.author },
+        author: {
+          email: message.author.email,
+          profileImageUrl: message.author.profileImageUrl,
+        },
         content: message.content,
+        created_at: message.created_at,
       });
     },
     initialLoadSocketMessages(messages) {

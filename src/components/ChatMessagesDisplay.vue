@@ -74,6 +74,12 @@ h4 {
   min-height: 10vh;
   border-bottom: 1px solid #eeeeee;
   padding-bottom: 1rem;
+
+  @include for-phone-only {
+    flex-direction: column;
+    justify-content: center;
+    margin: 1rem;
+  }
 }
 #user-image-container {
   max-width: 50px;
@@ -94,18 +100,38 @@ h4 {
 .message-info-container {
   margin-left: 3rem;
 
+  @include for-phone-only {
+    margin: 0;
+  }
+
   p {
     font-weight: bold;
     margin-left: 1rem;
     min-width: 320px;
+
+    @include for-phone-only {
+      margin-left: 0;
+      min-width: 100%;
+      font-size: 0.8rem;
+    }
   }
 }
 .message-author-info p {
   display: inline-block;
+
+  @include for-phone-only {
+    display: block;
+    margin-top: 0.5rem;
+  }
 }
 .message-author-info span {
   font-weight: normal;
   margin-left: 0.8rem;
+
+  @include for-phone-only {
+    display: block;
+    margin: 0;
+  }
 }
 .message-content-info {
   margin: 1.5rem auto;
