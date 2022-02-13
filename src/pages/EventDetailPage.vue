@@ -771,17 +771,28 @@ export default {
     },
     receiveSocketMessage(message) {
       console.log(message);
-      this.messages.push(message);
+      this.messages.push({
+        author: { email: message.author },
+        content: message.content,
+      });
+    },
+    initialLoadSocketMessages(messages) {
+      if (this.messages.length === 0) {
+        this.messages = messages;
+      }
     },
     sendSocketMessage() {
-      if (this.memberOfChatRoom) {
+      if (this.memberOfChatRoom && this.message.length > 0) {
         this.socket.emit("messageToServer", {
-          sender: this.userEmail,
-          message: this.message,
+          author: this.userEmail,
+          content: this.message,
           room: this.eventId,
         });
       } else {
         this.socket.emit("joinChatRoom", this.eventId);
+        this.socket.emit("requestAllEventChatMessages", {
+          room: this.eventId,
+        });
       }
     },
   },
@@ -796,6 +807,10 @@ export default {
     this.sendSocketMessage();
     this.socket.on("joinedRoom", (room) => {
       this.memberOfChatRoom = room;
+    });
+
+    this.socket.on("allEventChatMessages", (messages) => {
+      this.initialLoadSocketMessages(messages);
     });
 
     await this.getEventInfo();
