@@ -45,24 +45,14 @@
       :invitedUser="this.invitedUser"
       :routerLink="noCreatedPollsCallToActionLink"
     />
-    <ChatMessagesDisplay v-if="messages.length > 0" :chatMessages="messages" />
-
-    <ChatMessagesInput v-on:addComment="addComment" />
-
-    <!-- <input
-      id="message"
-      name="message"
-      type="text"
-      placeholder="Enter message"
-      v-model="message"
+    <ChatMessagesDisplay
+      v-if="messages.length > 0 && userId"
+      v-on:deleteComment="deleteComment"
+      :chatMessages="messages"
+      :userId="userId"
     />
 
-    <button
-      className="hide-event-detail-category-button"
-      v-on:click="sendSocketMessage"
-    >
-      Send Chat Message
-    </button> -->
+    <ChatMessagesInput v-on:addComment="addComment" />
 
     <div id="polls-display-parent-container" v-if="polls.length > 0">
       <h2>Event Polls</h2>
@@ -796,6 +786,18 @@ export default {
         });
       }
     },
+    deleteComment(value) {
+      this.socket.emit("deleteChatMessage", {
+        messageId: value,
+        room: this.eventId,
+      });
+    },
+    socketMessageCommentDeletion(messageId) {
+      this.messages.splice(
+        this.messages.findIndex((message) => message.id === messageId),
+        1
+      );
+    },
     joinChatRoom() {
       if (!this.memberOfChatRoom) {
         this.socket.emit("joinChatRoom", this.eventId);
@@ -820,6 +822,10 @@ export default {
 
     this.socket.on("allEventChatMessages", (messages) => {
       this.initialLoadSocketMessages(messages);
+    });
+
+    this.socket.on("chatMessageDeleted", (messageId) => {
+      this.socketMessageCommentDeletion(messageId);
     });
 
     await this.getEventInfo();

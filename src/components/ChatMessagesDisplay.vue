@@ -6,7 +6,7 @@
     <div
       class="individual-message-container"
       v-for="message in messages"
-      :key="message"
+      :key="message.id"
     >
       <div id="user-image-container">
         <img
@@ -31,23 +31,38 @@
           <p>{{ message.content }}</p>
         </div>
       </div>
+      <div class="message-delete-icon-container">
+        <span
+          v-if="message.author.id === user"
+          @click.prevent="deleteComment(message.id)"
+        >
+          <i class="fas fa-times-circle"></i
+        ></span>
+      </div>
     </div>
   </div>
-  <!--<p>{{ messages }}</p>-->
 </template>
 
 <script>
 import DateUtils from "../utils/dateUtils";
 export default {
-  props: ["chatMessages"],
+  props: ["chatMessages", "userId"],
   data() {
     return {
       messages: this.chatMessages,
+      user: this.userId,
     };
   },
   methods: {
     transformTimeStampFormat(date) {
       return DateUtils.returnFormattedDateWithTime(date);
+    },
+    deleteComment(messageId) {
+      event.preventDefault();
+
+      console.log(messageId);
+
+      this.$emit("deleteComment", messageId);
     },
   },
 };
@@ -100,6 +115,7 @@ h4 {
 }
 .message-info-container {
   margin-left: 3rem;
+  min-width: 80%;
 
   @include for-phone-only {
     margin: 0;
@@ -107,7 +123,7 @@ h4 {
 
   p {
     font-weight: bold;
-    margin-left: 1rem;
+    margin-left: 2.5rem;
     min-width: 320px;
 
     @include for-phone-only {
@@ -127,7 +143,7 @@ h4 {
 }
 .message-author-info span {
   font-weight: normal;
-  margin-left: 0.8rem;
+  margin-left: 1.5rem;
 
   @include for-phone-only {
     display: block;
@@ -140,5 +156,17 @@ h4 {
   p {
     font-weight: normal;
   }
+}
+.message-delete-icon-container {
+  width: 20%;
+  display: flex;
+  justify-content: flex-end;
+
+  @include for-phone-only {
+    justify-content: start;
+  }
+}
+svg:hover {
+  cursor: pointer;
 }
 </style>

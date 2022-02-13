@@ -94,9 +94,4 @@ button {
 button:hover {
   cursor: pointer;
 }
-
-/*textarea::placeholder {
-  padding-left: 1rem;
-  padding-top: 1rem;
-} */
 </style>
