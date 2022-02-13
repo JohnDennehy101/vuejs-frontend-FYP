@@ -1,6 +1,7 @@
 <template>
   <div id="chat-messages-container">
-    <h4>{{ messages.length }} Comments</h4>
+    <h4 v-if="messages.length === 1">{{ messages.length }} Comment</h4>
+    <h4 v-else>{{ messages.length }} Comments</h4>
 
     <div
       class="individual-message-container"
@@ -70,7 +71,7 @@ h4 {
 .individual-message-container {
   display: flex;
 
-  margin: 2rem;
+  margin: 1.5rem;
   min-height: 10vh;
   border-bottom: 1px solid #eeeeee;
   padding-bottom: 1rem;

@@ -47,9 +47,9 @@
     />
     <ChatMessagesDisplay v-if="messages.length > 0" :chatMessages="messages" />
 
-    <p>Chat Room: {{ memberOfChatRoom }}</p>
+    <ChatMessagesInput v-on:addComment="addComment" />
 
-    <input
+    <!-- <input
       id="message"
       name="message"
       type="text"
@@ -62,7 +62,7 @@
       v-on:click="sendSocketMessage"
     >
       Send Chat Message
-    </button>
+    </button> -->
 
     <div id="polls-display-parent-container" v-if="polls.length > 0">
       <h2>Event Polls</h2>
@@ -414,6 +414,7 @@ import data from "../components/googleplaces_response.json";
 import { mapGetters } from "vuex";
 import WebSocketService from "../services/WebSocketService.js";
 import ChatMessagesDisplay from "../components/ChatMessagesDisplay";
+import ChatMessagesInput from "../components/ChatMessagesInput";
 export default {
   name: "eventDetailPage",
   props: ["editEvent"],
@@ -484,6 +485,7 @@ export default {
     NoCreatedItems,
     DeleteModal,
     ChatMessagesDisplay,
+    ChatMessagesInput,
   },
   methods: {
     async checkEditAction() {
@@ -626,8 +628,6 @@ export default {
         .catch((error) => {
           return { error };
         });
-
-      //console.log(response);
 
       if (response.status === 200) {
         this.flightInfo = response.data;
@@ -784,18 +784,20 @@ export default {
     },
     initialLoadSocketMessages(messages) {
       if (this.messages.length === 0) {
-        console.log("YEAH");
         this.messages = messages;
       }
     },
-    sendSocketMessage() {
-      if (this.memberOfChatRoom && this.message.length > 0) {
+    addComment(value) {
+      if (this.memberOfChatRoom && value.length > 0) {
         this.socket.emit("messageToServer", {
           author: this.userEmail,
-          content: this.message,
+          content: value,
           room: this.eventId,
         });
-      } else {
+      }
+    },
+    joinChatRoom() {
+      if (!this.memberOfChatRoom) {
         this.socket.emit("joinChatRoom", this.eventId);
         this.socket.emit("requestAllEventChatMessages", {
           room: this.eventId,
@@ -811,13 +813,12 @@ export default {
     this.socket.on("messageToClient", (message) => {
       this.receiveSocketMessage(message);
     });
-    this.sendSocketMessage();
+    this.joinChatRoom();
     this.socket.on("joinedRoom", (room) => {
       this.memberOfChatRoom = room;
     });
 
     this.socket.on("allEventChatMessages", (messages) => {
-      console.log(messages);
       this.initialLoadSocketMessages(messages);
     });
 
