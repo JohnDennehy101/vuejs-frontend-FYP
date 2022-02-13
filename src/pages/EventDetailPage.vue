@@ -765,6 +765,7 @@ export default {
       console.log(message);
       this.messages.push({
         author: {
+          id: message.author.id,
           email: message.author.email,
           profileImageUrl: message.author.profileImageUrl,
         },
