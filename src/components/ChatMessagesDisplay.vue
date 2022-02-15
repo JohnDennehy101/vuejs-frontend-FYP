@@ -15,6 +15,16 @@
         />
         <img v-else src="../assets/defaultUserImage.png" />
       </div>
+      <div id="user-online-icon-container">
+        <i
+          v-if="
+            presentUsers.find((user) => user.email === message.author.email)
+          "
+          class="fas fa-circle"
+          style="color: green"
+        ></i>
+        <i v-else class="fas fa-circle" style="color: red"></i>
+      </div>
       <div class="message-info-container">
         <div class="message-author-info">
           <p>
@@ -46,11 +56,12 @@
 <script>
 import DateUtils from "../utils/dateUtils";
 export default {
-  props: ["chatMessages", "userId"],
+  props: ["chatMessages", "userId", "onlineUsers"],
   data() {
     return {
       messages: this.chatMessages,
       user: this.userId,
+      presentUsers: this.onlineUsers,
     };
   },
   methods: {
@@ -114,7 +125,7 @@ h4 {
   }
 }
 .message-info-container {
-  margin-left: 3rem;
+  margin-left: 1rem;
   min-width: 80%;
 
   @include for-phone-only {
@@ -168,5 +179,16 @@ h4 {
 }
 svg:hover {
   cursor: pointer;
+}
+#user-online-icon-container {
+  margin: 0 0 0 3rem;
+
+  @include for-phone-only {
+    margin: 0;
+  }
+
+  svg {
+    padding-top: 1rem;
+  }
 }
 </style>

@@ -13,7 +13,7 @@
       :invitedUser="this.invitedUser"
       @editActionClick="editEventInfo"
     />
-    <p>{{ onlineUsers }}</p>
+
     <EventItinerary
       v-if="
         mostVotedPollOption &&
@@ -47,10 +47,12 @@
       :routerLink="noCreatedPollsCallToActionLink"
     />
     <ChatMessagesDisplay
-      v-if="messages.length > 0 && userId"
+      v-if="messages.length > 0 && userId && onlineUsers"
       v-on:deleteComment="deleteComment"
       :chatMessages="messages"
       :userId="userId"
+      :onlineUsers="onlineUsers"
+      :key="chatIndex"
     />
 
     <ChatMessagesInput v-on:addComment="addComment" />
@@ -455,6 +457,7 @@ export default {
       memberOfChatRoom: null,
       message: "",
       onlineUsers: [],
+      chatIndex: 0,
     };
   },
   computed: {
@@ -507,14 +510,10 @@ export default {
           return { error };
         });
 
-      console.log(response);
-
       if ("error" in response) {
         this.invalidEventCreation = true;
       } else {
         const event = response.data[0];
-
-        console.log(event);
 
         if (event["createdByUser"].id === this.userId) {
           this.invitedUser = false;
@@ -568,7 +567,6 @@ export default {
 
       if (response.status === 200) {
         if (response.data !== "") {
-          console.log(response.data);
           this.checkedAccommodation = response.data.accommodation;
           this.checkedThingsToDo = response.data.activities;
           this.checkedFlight[0] = response.data.flight;
@@ -641,8 +639,6 @@ export default {
         .catch((error) => {
           return { error };
         });
-
-      console.log(response);
 
       if (response.status === 200) {
         this.googlePlacesInfo = response.data.results;
@@ -756,7 +752,6 @@ export default {
         this.displayFlights = !this.displayFlights;
         this.flightsSectionKey++;
       }
-      console.log(value);
     },
     isMobile() {
       return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
@@ -764,7 +759,6 @@ export default {
       );
     },
     receiveSocketMessage(message) {
-      console.log(message);
       this.messages.push({
         author: {
           id: message.author.id,
@@ -786,7 +780,7 @@ export default {
       }
     },
     addComment(value) {
-      if (this.memberOfChatRoom && value.length > 0) {
+      if (value.length > 0) {
         this.socket.emit("messageToServer", {
           author: this.userEmail,
           content: value,
@@ -818,7 +812,6 @@ export default {
       }
     },
     requestOnlineMembers() {
-      console.log("HAPPENDING");
       this.socket.emit("requestAllEventOnlineUsers", {
         room: this.eventId,
       });
@@ -838,6 +831,7 @@ export default {
       this.memberOfChatRoom = message.room;
 
       this.onlineUsers = message.onlineUsers;
+      this.chatIndex++;
     });
 
     this.socket.on("allEventChatMessages", (messages) => {
@@ -855,8 +849,11 @@ export default {
     await this.getEventInfo();
     await this.checkEditAction();
   },
-  beforeUnMount() {
+
+  beforeRouteLeave(to, from, next) {
     WebSocketService.disconnect();
+    this.chatIndex++;
+    next();
   },
 };
 </script>
