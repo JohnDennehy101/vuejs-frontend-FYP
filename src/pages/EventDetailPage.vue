@@ -13,6 +13,7 @@
       :invitedUser="this.invitedUser"
       @editActionClick="editEventInfo"
     />
+    <p>{{ onlineUsers }}</p>
     <EventItinerary
       v-if="
         mostVotedPollOption &&
@@ -453,6 +454,7 @@ export default {
       socket: null,
       memberOfChatRoom: null,
       message: "",
+      onlineUsers: [],
     };
   },
   computed: {
@@ -778,6 +780,11 @@ export default {
         this.messages = messages;
       }
     },
+    initialLoadSocketOnlineUsers(users) {
+      if (this.onlineUsers.length === 0) {
+        this.onlineUsers = users;
+      }
+    },
     addComment(value) {
       if (this.memberOfChatRoom && value.length > 0) {
         this.socket.emit("messageToServer", {
@@ -801,28 +808,44 @@ export default {
     },
     joinChatRoom() {
       if (!this.memberOfChatRoom) {
-        this.socket.emit("joinChatRoom", this.eventId);
+        this.socket.emit("joinChatRoom", {
+          room: this.eventId,
+          user: this.userEmail,
+        });
         this.socket.emit("requestAllEventChatMessages", {
           room: this.eventId,
         });
       }
     },
+    requestOnlineMembers() {
+      console.log("HAPPENDING");
+      this.socket.emit("requestAllEventOnlineUsers", {
+        room: this.eventId,
+      });
+    },
   },
   async created() {
     await this.extractIdFromUrl();
     this.googlePlacesInfo = data.results;
-    this.socket = WebSocketService.createSocketConnection();
+    this.socket = WebSocketService.createSocketConnection(this.userEmail);
 
     this.socket.on("messageToClient", (message) => {
       this.receiveSocketMessage(message);
     });
     this.joinChatRoom();
-    this.socket.on("joinedRoom", (room) => {
-      this.memberOfChatRoom = room;
+    this.requestOnlineMembers();
+    this.socket.on("userChange", (message) => {
+      this.memberOfChatRoom = message.room;
+
+      this.onlineUsers = message.onlineUsers;
     });
 
     this.socket.on("allEventChatMessages", (messages) => {
       this.initialLoadSocketMessages(messages);
+    });
+
+    this.socket.on("allEventOnlineUsers", (users) => {
+      this.initialLoadSocketOnlineUsers(users);
     });
 
     this.socket.on("chatMessageDeleted", (messageId) => {
