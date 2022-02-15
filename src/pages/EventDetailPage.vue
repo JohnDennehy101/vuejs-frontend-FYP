@@ -46,11 +46,21 @@
       :invitedUser="this.invitedUser"
       :routerLink="noCreatedPollsCallToActionLink"
     />
+
+    <h2>Comments</h2>
     <ChatMessagesDisplay
       v-if="messages.length > 0 && userId && onlineUsers"
       v-on:deleteComment="deleteComment"
       :chatMessages="messages"
       :userId="userId"
+      :onlineUsers="onlineUsers"
+      :key="chatIndex"
+    />
+
+    <h2>Users Online</h2>
+    <ChatOnlineUsers
+      v-if="onlineUsers && this.individualEvent"
+      :eventUsers="this.individualEvent.invitedUsers"
       :onlineUsers="onlineUsers"
       :key="chatIndex"
     />
@@ -408,6 +418,7 @@ import { mapGetters } from "vuex";
 import WebSocketService from "../services/WebSocketService.js";
 import ChatMessagesDisplay from "../components/ChatMessagesDisplay";
 import ChatMessagesInput from "../components/ChatMessagesInput";
+import ChatOnlineUsers from "../components/ChatOnlineUsers";
 export default {
   name: "eventDetailPage",
   props: ["editEvent"],
@@ -481,6 +492,7 @@ export default {
     DeleteModal,
     ChatMessagesDisplay,
     ChatMessagesInput,
+    ChatOnlineUsers,
   },
   methods: {
     async checkEditAction() {
@@ -853,6 +865,7 @@ export default {
   beforeRouteLeave(to, from, next) {
     WebSocketService.disconnect();
     this.chatIndex++;
+
     next();
   },
 };
