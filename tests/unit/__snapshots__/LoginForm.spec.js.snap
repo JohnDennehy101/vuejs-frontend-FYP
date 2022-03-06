@@ -1,0 +1,2113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginForm.vue should render correctly 1`] = `
+VueWrapper {
+  "__app": Object {
+    "_component": Object {
+      "name": "VTU_ROOT",
+      "render": [Function],
+    },
+    "_container": <div
+      data-v-app=""
+    >
+      <div
+        class="login-form-container"
+      >
+        <form>
+          <div
+            class="form-control"
+          >
+            <h2 />
+          </div>
+          <div
+            class="form-control"
+          >
+            <label
+              for="email"
+            >
+              Email
+            </label>
+            <input
+              id="email"
+              name="email"
+              placeholder="Enter email"
+              type="text"
+            />
+          </div>
+          <div
+            class="form-control"
+          >
+            <label
+              for="password"
+            >
+              Password
+            </label>
+            <input
+              id="password"
+              name="password"
+              placeholder="Enter password"
+              type="password"
+            />
+          </div>
+          <div
+            class="form-control"
+          >
+            <button>
+              Sign up
+            </button>
+          </div>
+          <account-error-message-stub
+            errormessage="There was an error logging you in."
+            toggle="false"
+          />
+        </form>
+      </div>
+    </div>,
+    "_context": Object {
+      "app": [Circular],
+      "components": Object {
+        "transition": Object {
+          "name": "transition",
+        },
+        "transition-group": Object {
+          "name": "transition-group",
+        },
+      },
+      "config": Object {
+        "compilerOptions": Object {},
+        "errorHandler": undefined,
+        "globalProperties": Object {},
+        "isNativeTag": [Function],
+        "optionMergeStrategies": Object {},
+        "performance": false,
+        "warnHandler": undefined,
+      },
+      "directives": Object {},
+      "emitsCache": WeakMap {},
+      "mixins": Array [
+        Object {
+          "beforeCreate": [Function],
+        },
+      ],
+      "optionsCache": WeakMap {},
+      "propsCache": WeakMap {},
+      "provides": Object {},
+      "reload": [Function],
+    },
+    "_instance": Object {
+      "a": null,
+      "accessCache": Object {},
+      "appContext": Object {
+        "app": [Circular],
+        "components": Object {
+          "transition": Object {
+            "name": "transition",
+          },
+          "transition-group": Object {
+            "name": "transition-group",
+          },
+        },
+        "config": Object {
+          "compilerOptions": Object {},
+          "errorHandler": undefined,
+          "globalProperties": Object {},
+          "isNativeTag": [Function],
+          "optionMergeStrategies": Object {},
+          "performance": false,
+          "warnHandler": undefined,
+        },
+        "directives": Object {},
+        "emitsCache": WeakMap {},
+        "mixins": Array [
+          Object {
+            "beforeCreate": [Function],
+          },
+        ],
+        "optionsCache": WeakMap {},
+        "propsCache": WeakMap {},
+        "provides": Object {},
+        "reload": [Function],
+      },
+      "asyncDep": null,
+      "asyncResolved": false,
+      "attrs": Object {},
+      "bc": null,
+      "bm": null,
+      "bu": null,
+      "bum": null,
+      "c": null,
+      "components": null,
+      "ctx": Object {},
+      "da": null,
+      "data": Object {},
+      "directives": null,
+      "ec": null,
+      "effect": ReactiveEffect {
+        "active": true,
+        "allowRecurse": true,
+        "deps": Array [
+          Set {
+            [Circular],
+          },
+          Set {
+            [Circular],
+          },
+        ],
+        "fn": [Function],
+        "onTrack": undefined,
+        "onTrigger": undefined,
+        "scheduler": [Function],
+      },
+      "emit": [Function],
+      "emitsOptions": null,
+      "emitted": null,
+      "exposeProxy": null,
+      "exposed": null,
+      "inheritAttrs": undefined,
+      "isDeactivated": false,
+      "isMounted": true,
+      "isUnmounted": false,
+      "m": null,
+      "next": null,
+      "parent": null,
+      "props": Object {},
+      "propsDefaults": Object {},
+      "propsOptions": Array [
+        Object {},
+        Array [],
+      ],
+      "provides": Object {},
+      "proxy": Object {},
+      "refs": Object {
+        "VTU_COMPONENT": Object {
+          "email": "",
+          "errorMessage": "There was an error logging you in.",
+          "formTitle": undefined,
+          "hasOwnProperty": [Function],
+          "hideErrorMessage": [Function],
+          "invalidLogin": false,
+          "password": "",
+          "submitForm": [Function],
+          "title": undefined,
+          "userService": UserService {
+            "baseUrl": "http://localhost:3000",
+          },
+        },
+      },
+      "render": [Function],
+      "renderCache": Array [],
+      "root": [Circular],
+      "rtc": null,
+      "rtg": null,
+      "scope": EffectScope {
+        "active": true,
+        "cleanups": Array [],
+        "effects": Array [
+          ReactiveEffect {
+            "active": true,
+            "allowRecurse": true,
+            "deps": Array [
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+            ],
+            "fn": [Function],
+            "onTrack": undefined,
+            "onTrigger": undefined,
+            "scheduler": [Function],
+          },
+        ],
+      },
+      "setupContext": null,
+      "setupState": Object {},
+      "slots": Object {},
+      "sp": null,
+      "subTree": Object {
+        "__v_isVNode": true,
+        "__v_skip": true,
+        "anchor": null,
+        "appContext": null,
+        "children": null,
+        "component": Object {
+          "a": null,
+          "accessCache": Object {
+            "@@__IMMUTABLE_ITERABLE__@@": 0,
+            "@@__IMMUTABLE_RECORD__@@": 0,
+            "_isMockFunction": 0,
+            "constructor": 0,
+            "email": 2,
+            "errorMessage": 2,
+            "formTitle": 2,
+            "hasOwnProperty": 4,
+            "hideErrorMessage": 4,
+            "invalidLogin": 2,
+            "isVueInstance": 0,
+            "password": 2,
+            "submitForm": 4,
+            "title": 3,
+            "toJSON": 0,
+            "userService": 3,
+            Symbol(Symbol.toStringTag): 0,
+          },
+          "appContext": Object {
+            "app": [Circular],
+            "components": Object {
+              "transition": Object {
+                "name": "transition",
+              },
+              "transition-group": Object {
+                "name": "transition-group",
+              },
+            },
+            "config": Object {
+              "compilerOptions": Object {},
+              "errorHandler": undefined,
+              "globalProperties": Object {},
+              "isNativeTag": [Function],
+              "optionMergeStrategies": Object {},
+              "performance": false,
+              "warnHandler": undefined,
+            },
+            "directives": Object {},
+            "emitsCache": WeakMap {},
+            "mixins": Array [
+              Object {
+                "beforeCreate": [Function],
+              },
+            ],
+            "optionsCache": WeakMap {},
+            "propsCache": WeakMap {},
+            "provides": Object {},
+            "reload": [Function],
+          },
+          "asyncDep": null,
+          "asyncResolved": false,
+          "attrs": Object {},
+          "bc": null,
+          "bm": null,
+          "bu": null,
+          "bum": null,
+          "c": null,
+          "components": Object {
+            "AccountErrorMessage": Object {
+              "data": [Function],
+              "methods": Object {
+                "hideErrorMessage": [Function],
+              },
+              "props": Object {
+                "errorMessage": Object {
+                  "0": false,
+                  "1": true,
+                  "type": [Function],
+                },
+                "toggle": Object {
+                  "0": true,
+                  "1": true,
+                  "type": [Function],
+                },
+              },
+              "render": [Function],
+            },
+          },
+          "ctx": Object {
+            "email": "",
+            "errorMessage": "There was an error logging you in.",
+            "formTitle": undefined,
+            "hasOwnProperty": [Function],
+            "hideErrorMessage": [Function],
+            "invalidLogin": false,
+            "password": "",
+            "submitForm": [Function],
+            "title": undefined,
+            "userService": UserService {
+              "baseUrl": "http://localhost:3000",
+            },
+          },
+          "da": null,
+          "data": Object {
+            "email": "",
+            "errorMessage": "There was an error logging you in.",
+            "formTitle": undefined,
+            "invalidLogin": false,
+            "password": "",
+          },
+          "directives": null,
+          "ec": null,
+          "effect": ReactiveEffect {
+            "active": true,
+            "allowRecurse": true,
+            "deps": Array [
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+            ],
+            "fn": [Function],
+            "onTrack": undefined,
+            "onTrigger": undefined,
+            "scheduler": [Function],
+          },
+          "emit": [Function],
+          "emitsOptions": null,
+          "emitted": null,
+          "exposeProxy": null,
+          "exposed": null,
+          "inheritAttrs": undefined,
+          "isDeactivated": false,
+          "isMounted": true,
+          "isUnmounted": false,
+          "m": null,
+          "next": null,
+          "parent": [Circular],
+          "props": Object {
+            "title": undefined,
+            "userService": UserService {
+              "baseUrl": "http://localhost:3000",
+            },
+          },
+          "propsDefaults": Object {},
+          "propsOptions": Array [
+            Object {
+              "title": Object {
+                "0": false,
+                "1": true,
+                "type": [Function],
+              },
+              "userService": Object {
+                "0": false,
+                "1": true,
+                "default": UserService {
+                  "baseUrl": "http://localhost:3000",
+                },
+              },
+            },
+            Array [
+              "userService",
+            ],
+          ],
+          "provides": Object {},
+          "proxy": Object {
+            "email": "",
+            "errorMessage": "There was an error logging you in.",
+            "formTitle": undefined,
+            "hasOwnProperty": [Function],
+            "hideErrorMessage": [Function],
+            "invalidLogin": false,
+            "password": "",
+            "submitForm": [Function],
+            "title": undefined,
+            "userService": UserService {
+              "baseUrl": "http://localhost:3000",
+            },
+          },
+          "refs": Object {},
+          "render": [Function],
+          "renderCache": Array [
+            [Function],
+            [Function],
+            [Function],
+          ],
+          "root": [Circular],
+          "rtc": null,
+          "rtg": null,
+          "scope": EffectScope {
+            "active": true,
+            "cleanups": Array [],
+            "effects": Array [
+              ReactiveEffect {
+                "active": true,
+                "allowRecurse": true,
+                "deps": Array [
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                ],
+                "fn": [Function],
+                "onTrack": undefined,
+                "onTrigger": undefined,
+                "scheduler": [Function],
+              },
+            ],
+          },
+          "setupContext": null,
+          "setupState": Object {},
+          "slots": Object {},
+          "sp": null,
+          "subTree": Object {
+            "__v_isVNode": true,
+            "__v_skip": true,
+            "anchor": null,
+            "appContext": null,
+            "children": Array [
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": Array [
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": Array [
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <h2 />,
+                        "key": null,
+                        "patchFlag": 1,
+                        "props": null,
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 1,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "h2",
+                      },
+                    ],
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <div
+                      class="form-control"
+                    >
+                      <h2 />
+                    </div>,
+                    "key": null,
+                    "patchFlag": 0,
+                    "props": Object {
+                      "class": "form-control",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 17,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "div",
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": Array [
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "Email",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <label
+                          for="email"
+                        >
+                          Email
+                        </label>,
+                        "key": null,
+                        "patchFlag": -1,
+                        "props": Object {
+                          "for": "email",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 9,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "label",
+                      },
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": null,
+                        "component": null,
+                        "dirs": Array [
+                          Object {
+                            "arg": undefined,
+                            "dir": Object {
+                              "beforeUpdate": [Function],
+                              "created": [Function],
+                              "mounted": [Function],
+                            },
+                            "instance": Object {
+                              "email": "",
+                              "errorMessage": "There was an error logging you in.",
+                              "formTitle": undefined,
+                              "hasOwnProperty": [Function],
+                              "hideErrorMessage": [Function],
+                              "invalidLogin": false,
+                              "password": "",
+                              "submitForm": [Function],
+                              "title": undefined,
+                              "userService": UserService {
+                                "baseUrl": "http://localhost:3000",
+                              },
+                            },
+                            "modifiers": Object {},
+                            "oldValue": undefined,
+                            "value": "",
+                          },
+                        ],
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <input
+                          id="email"
+                          name="email"
+                          placeholder="Enter email"
+                          type="text"
+                        />,
+                        "key": null,
+                        "patchFlag": 512,
+                        "props": Object {
+                          "id": "email",
+                          "name": "email",
+                          "onUpdate:modelValue": [Function],
+                          "placeholder": "Enter email",
+                          "type": "text",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 1,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "input",
+                      },
+                    ],
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <div
+                      class="form-control"
+                    >
+                      <label
+                        for="email"
+                      >
+                        Email
+                      </label>
+                      <input
+                        id="email"
+                        name="email"
+                        placeholder="Enter email"
+                        type="text"
+                      />
+                    </div>,
+                    "key": null,
+                    "patchFlag": 0,
+                    "props": Object {
+                      "class": "form-control",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 17,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "div",
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": Array [
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "Password",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <label
+                          for="password"
+                        >
+                          Password
+                        </label>,
+                        "key": null,
+                        "patchFlag": -1,
+                        "props": Object {
+                          "for": "password",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 9,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "label",
+                      },
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": null,
+                        "component": null,
+                        "dirs": Array [
+                          Object {
+                            "arg": undefined,
+                            "dir": Object {
+                              "beforeUpdate": [Function],
+                              "created": [Function],
+                              "mounted": [Function],
+                            },
+                            "instance": Object {
+                              "email": "",
+                              "errorMessage": "There was an error logging you in.",
+                              "formTitle": undefined,
+                              "hasOwnProperty": [Function],
+                              "hideErrorMessage": [Function],
+                              "invalidLogin": false,
+                              "password": "",
+                              "submitForm": [Function],
+                              "title": undefined,
+                              "userService": UserService {
+                                "baseUrl": "http://localhost:3000",
+                              },
+                            },
+                            "modifiers": Object {},
+                            "oldValue": undefined,
+                            "value": "",
+                          },
+                        ],
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <input
+                          id="password"
+                          name="password"
+                          placeholder="Enter password"
+                          type="password"
+                        />,
+                        "key": null,
+                        "patchFlag": 512,
+                        "props": Object {
+                          "id": "password",
+                          "name": "password",
+                          "onUpdate:modelValue": [Function],
+                          "placeholder": "Enter password",
+                          "type": "password",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 1,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "input",
+                      },
+                    ],
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <div
+                      class="form-control"
+                    >
+                      <label
+                        for="password"
+                      >
+                        Password
+                      </label>
+                      <input
+                        id="password"
+                        name="password"
+                        placeholder="Enter password"
+                        type="password"
+                      />
+                    </div>,
+                    "key": null,
+                    "patchFlag": 0,
+                    "props": Object {
+                      "class": "form-control",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 17,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "div",
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": Array [
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "Sign up",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <button>
+                          Sign up
+                        </button>,
+                        "key": null,
+                        "patchFlag": 0,
+                        "props": null,
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 9,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "button",
+                      },
+                    ],
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <div
+                      class="form-control"
+                    >
+                      <button>
+                        Sign up
+                      </button>
+                    </div>,
+                    "key": null,
+                    "patchFlag": -1,
+                    "props": Object {
+                      "class": "form-control",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 17,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "div",
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": null,
+                    "component": Object {
+                      "a": null,
+                      "accessCache": Object {},
+                      "appContext": Object {
+                        "app": [Circular],
+                        "components": Object {
+                          "transition": Object {
+                            "name": "transition",
+                          },
+                          "transition-group": Object {
+                            "name": "transition-group",
+                          },
+                        },
+                        "config": Object {
+                          "compilerOptions": Object {},
+                          "errorHandler": undefined,
+                          "globalProperties": Object {},
+                          "isNativeTag": [Function],
+                          "optionMergeStrategies": Object {},
+                          "performance": false,
+                          "warnHandler": undefined,
+                        },
+                        "directives": Object {},
+                        "emitsCache": WeakMap {},
+                        "mixins": Array [
+                          Object {
+                            "beforeCreate": [Function],
+                          },
+                        ],
+                        "optionsCache": WeakMap {},
+                        "propsCache": WeakMap {},
+                        "provides": Object {},
+                        "reload": [Function],
+                      },
+                      "asyncDep": null,
+                      "asyncResolved": false,
+                      "attrs": Object {
+                        "onHideErrorMessage": [Function],
+                      },
+                      "bc": null,
+                      "bm": null,
+                      "bu": null,
+                      "bum": null,
+                      "c": null,
+                      "components": null,
+                      "ctx": Object {
+                        "errorMessage": "There was an error logging you in.",
+                        "toggle": false,
+                      },
+                      "da": null,
+                      "data": Object {},
+                      "directives": null,
+                      "ec": null,
+                      "effect": ReactiveEffect {
+                        "active": true,
+                        "allowRecurse": true,
+                        "deps": Array [
+                          Set {
+                            [Circular],
+                          },
+                          Set {
+                            [Circular],
+                          },
+                          Set {
+                            [Circular],
+                          },
+                          Set {
+                            [Circular],
+                          },
+                        ],
+                        "fn": [Function],
+                        "onTrack": undefined,
+                        "onTrigger": undefined,
+                        "scheduler": [Function],
+                      },
+                      "emit": [Function],
+                      "emitsOptions": null,
+                      "emitted": null,
+                      "exposeProxy": null,
+                      "exposed": null,
+                      "inheritAttrs": undefined,
+                      "isDeactivated": false,
+                      "isMounted": true,
+                      "isUnmounted": false,
+                      "m": null,
+                      "next": null,
+                      "parent": [Circular],
+                      "props": Object {
+                        "errorMessage": "There was an error logging you in.",
+                        "toggle": false,
+                      },
+                      "propsDefaults": Object {},
+                      "propsOptions": Array [
+                        Object {
+                          "errorMessage": Object {
+                            "0": false,
+                            "1": true,
+                            "type": [Function],
+                          },
+                          "toggle": Object {
+                            "0": true,
+                            "1": true,
+                            "type": [Function],
+                          },
+                        },
+                        Array [
+                          "toggle",
+                        ],
+                      ],
+                      "provides": Object {},
+                      "proxy": Object {
+                        "errorMessage": "There was an error logging you in.",
+                        "toggle": false,
+                      },
+                      "refs": Object {},
+                      "render": [Function],
+                      "renderCache": Array [],
+                      "root": [Circular],
+                      "rtc": null,
+                      "rtg": null,
+                      "scope": EffectScope {
+                        "active": true,
+                        "cleanups": Array [],
+                        "effects": Array [
+                          ReactiveEffect {
+                            "active": true,
+                            "allowRecurse": true,
+                            "deps": Array [
+                              Set {
+                                [Circular],
+                              },
+                              Set {
+                                [Circular],
+                              },
+                              Set {
+                                [Circular],
+                              },
+                              Set {
+                                [Circular],
+                              },
+                            ],
+                            "fn": [Function],
+                            "onTrack": undefined,
+                            "onTrigger": undefined,
+                            "scheduler": [Function],
+                          },
+                        ],
+                      },
+                      "setupContext": null,
+                      "setupState": Object {},
+                      "slots": Object {},
+                      "sp": null,
+                      "subTree": Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": null,
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <account-error-message-stub
+                          errormessage="There was an error logging you in."
+                          toggle="false"
+                        />,
+                        "key": null,
+                        "patchFlag": 16,
+                        "props": Object {
+                          "errorMessage": "There was an error logging you in.",
+                          "onHideErrorMessage": [Function],
+                          "toggle": false,
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 1,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "account-error-message-stub",
+                      },
+                      "suspense": null,
+                      "suspenseId": 0,
+                      "type": Object {
+                        "compatConfig": Object {
+                          "MODE": 3,
+                          "RENDER_FUNCTION": false,
+                        },
+                        "name": "AccountErrorMessage",
+                        "props": Object {
+                          "errorMessage": Object {
+                            "0": false,
+                            "1": true,
+                            "type": [Function],
+                          },
+                          "toggle": Object {
+                            "0": true,
+                            "1": true,
+                            "type": [Function],
+                          },
+                        },
+                        "render": [Function],
+                      },
+                      "u": null,
+                      "uid": 2,
+                      "um": null,
+                      "update": [Function],
+                      "vnode": [Circular],
+                      "withProxy": null,
+                    },
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": Array [
+                      "toggle",
+                      "errorMessage",
+                      "onHideErrorMessage",
+                    ],
+                    "el": <account-error-message-stub
+                      errormessage="There was an error logging you in."
+                      toggle="false"
+                    />,
+                    "key": null,
+                    "patchFlag": 8,
+                    "props": Object {
+                      "errorMessage": "There was an error logging you in.",
+                      "onHideErrorMessage": [Function],
+                      "toggle": false,
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 4,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": Object {
+                      "compatConfig": Object {
+                        "MODE": 3,
+                        "RENDER_FUNCTION": false,
+                      },
+                      "name": "AccountErrorMessage",
+                      "props": Object {
+                        "errorMessage": Object {
+                          "0": false,
+                          "1": true,
+                          "type": [Function],
+                        },
+                        "toggle": Object {
+                          "0": true,
+                          "1": true,
+                          "type": [Function],
+                        },
+                      },
+                      "render": [Function],
+                    },
+                  },
+                ],
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": null,
+                "dynamicProps": null,
+                "el": <form>
+                  <div
+                    class="form-control"
+                  >
+                    <h2 />
+                  </div>
+                  <div
+                    class="form-control"
+                  >
+                    <label
+                      for="email"
+                    >
+                      Email
+                    </label>
+                    <input
+                      id="email"
+                      name="email"
+                      placeholder="Enter email"
+                      type="text"
+                    />
+                  </div>
+                  <div
+                    class="form-control"
+                  >
+                    <label
+                      for="password"
+                    >
+                      Password
+                    </label>
+                    <input
+                      id="password"
+                      name="password"
+                      placeholder="Enter password"
+                      type="password"
+                    />
+                  </div>
+                  <div
+                    class="form-control"
+                  >
+                    <button>
+                      Sign up
+                    </button>
+                  </div>
+                  <account-error-message-stub
+                    errormessage="There was an error logging you in."
+                    toggle="false"
+                  />
+                </form>,
+                "key": null,
+                "patchFlag": 32,
+                "props": Object {
+                  "onSubmit": [Function],
+                },
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 17,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": "form",
+              },
+            ],
+            "component": null,
+            "dirs": null,
+            "dynamicChildren": Array [
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": "",
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": null,
+                "dynamicProps": null,
+                "el": <h2 />,
+                "key": null,
+                "patchFlag": 1,
+                "props": null,
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 1,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": "h2",
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": null,
+                "component": null,
+                "dirs": Array [
+                  Object {
+                    "arg": undefined,
+                    "dir": Object {
+                      "beforeUpdate": [Function],
+                      "created": [Function],
+                      "mounted": [Function],
+                    },
+                    "instance": Object {
+                      "email": "",
+                      "errorMessage": "There was an error logging you in.",
+                      "formTitle": undefined,
+                      "hasOwnProperty": [Function],
+                      "hideErrorMessage": [Function],
+                      "invalidLogin": false,
+                      "password": "",
+                      "submitForm": [Function],
+                      "title": undefined,
+                      "userService": UserService {
+                        "baseUrl": "http://localhost:3000",
+                      },
+                    },
+                    "modifiers": Object {},
+                    "oldValue": undefined,
+                    "value": "",
+                  },
+                ],
+                "dynamicChildren": null,
+                "dynamicProps": null,
+                "el": <input
+                  id="email"
+                  name="email"
+                  placeholder="Enter email"
+                  type="text"
+                />,
+                "key": null,
+                "patchFlag": 512,
+                "props": Object {
+                  "id": "email",
+                  "name": "email",
+                  "onUpdate:modelValue": [Function],
+                  "placeholder": "Enter email",
+                  "type": "text",
+                },
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 1,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": "input",
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": null,
+                "component": null,
+                "dirs": Array [
+                  Object {
+                    "arg": undefined,
+                    "dir": Object {
+                      "beforeUpdate": [Function],
+                      "created": [Function],
+                      "mounted": [Function],
+                    },
+                    "instance": Object {
+                      "email": "",
+                      "errorMessage": "There was an error logging you in.",
+                      "formTitle": undefined,
+                      "hasOwnProperty": [Function],
+                      "hideErrorMessage": [Function],
+                      "invalidLogin": false,
+                      "password": "",
+                      "submitForm": [Function],
+                      "title": undefined,
+                      "userService": UserService {
+                        "baseUrl": "http://localhost:3000",
+                      },
+                    },
+                    "modifiers": Object {},
+                    "oldValue": undefined,
+                    "value": "",
+                  },
+                ],
+                "dynamicChildren": null,
+                "dynamicProps": null,
+                "el": <input
+                  id="password"
+                  name="password"
+                  placeholder="Enter password"
+                  type="password"
+                />,
+                "key": null,
+                "patchFlag": 512,
+                "props": Object {
+                  "id": "password",
+                  "name": "password",
+                  "onUpdate:modelValue": [Function],
+                  "placeholder": "Enter password",
+                  "type": "password",
+                },
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 1,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": "input",
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": null,
+                "component": Object {
+                  "a": null,
+                  "accessCache": Object {
+                    "@@__IMMUTABLE_ITERABLE__@@": 0,
+                    "@@__IMMUTABLE_RECORD__@@": 0,
+                    "_isMockFunction": 0,
+                    "constructor": 0,
+                    "errorMessage": 3,
+                    "isVueInstance": 0,
+                    "toJSON": 0,
+                    "toggle": 3,
+                    Symbol(Symbol.toStringTag): 0,
+                  },
+                  "appContext": Object {
+                    "app": [Circular],
+                    "components": Object {
+                      "transition": Object {
+                        "name": "transition",
+                      },
+                      "transition-group": Object {
+                        "name": "transition-group",
+                      },
+                    },
+                    "config": Object {
+                      "compilerOptions": Object {},
+                      "errorHandler": undefined,
+                      "globalProperties": Object {},
+                      "isNativeTag": [Function],
+                      "optionMergeStrategies": Object {},
+                      "performance": false,
+                      "warnHandler": undefined,
+                    },
+                    "directives": Object {},
+                    "emitsCache": WeakMap {},
+                    "mixins": Array [
+                      Object {
+                        "beforeCreate": [Function],
+                      },
+                    ],
+                    "optionsCache": WeakMap {},
+                    "propsCache": WeakMap {},
+                    "provides": Object {},
+                    "reload": [Function],
+                  },
+                  "asyncDep": null,
+                  "asyncResolved": false,
+                  "attrs": Object {
+                    "onHideErrorMessage": [Function],
+                  },
+                  "bc": null,
+                  "bm": null,
+                  "bu": null,
+                  "bum": null,
+                  "c": null,
+                  "components": null,
+                  "ctx": Object {
+                    "errorMessage": "There was an error logging you in.",
+                    "toggle": false,
+                  },
+                  "da": null,
+                  "data": Object {},
+                  "directives": null,
+                  "ec": null,
+                  "effect": ReactiveEffect {
+                    "active": true,
+                    "allowRecurse": true,
+                    "deps": Array [
+                      Set {
+                        [Circular],
+                      },
+                      Set {
+                        [Circular],
+                      },
+                      Set {
+                        [Circular],
+                      },
+                      Set {
+                        [Circular],
+                      },
+                    ],
+                    "fn": [Function],
+                    "onTrack": undefined,
+                    "onTrigger": undefined,
+                    "scheduler": [Function],
+                  },
+                  "emit": [Function],
+                  "emitsOptions": null,
+                  "emitted": null,
+                  "exposeProxy": null,
+                  "exposed": null,
+                  "inheritAttrs": undefined,
+                  "isDeactivated": false,
+                  "isMounted": true,
+                  "isUnmounted": false,
+                  "m": null,
+                  "next": null,
+                  "parent": [Circular],
+                  "props": Object {
+                    "errorMessage": "There was an error logging you in.",
+                    "toggle": false,
+                  },
+                  "propsDefaults": Object {},
+                  "propsOptions": Array [
+                    Object {
+                      "errorMessage": Object {
+                        "0": false,
+                        "1": true,
+                        "type": [Function],
+                      },
+                      "toggle": Object {
+                        "0": true,
+                        "1": true,
+                        "type": [Function],
+                      },
+                    },
+                    Array [
+                      "toggle",
+                    ],
+                  ],
+                  "provides": Object {},
+                  "proxy": Object {
+                    "errorMessage": "There was an error logging you in.",
+                    "toggle": false,
+                  },
+                  "refs": Object {},
+                  "render": [Function],
+                  "renderCache": Array [],
+                  "root": [Circular],
+                  "rtc": null,
+                  "rtg": null,
+                  "scope": EffectScope {
+                    "active": true,
+                    "cleanups": Array [],
+                    "effects": Array [
+                      ReactiveEffect {
+                        "active": true,
+                        "allowRecurse": true,
+                        "deps": Array [
+                          Set {
+                            [Circular],
+                          },
+                          Set {
+                            [Circular],
+                          },
+                          Set {
+                            [Circular],
+                          },
+                          Set {
+                            [Circular],
+                          },
+                        ],
+                        "fn": [Function],
+                        "onTrack": undefined,
+                        "onTrigger": undefined,
+                        "scheduler": [Function],
+                      },
+                    ],
+                  },
+                  "setupContext": null,
+                  "setupState": Object {},
+                  "slots": Object {},
+                  "sp": null,
+                  "subTree": Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": null,
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <account-error-message-stub
+                      errormessage="There was an error logging you in."
+                      toggle="false"
+                    />,
+                    "key": null,
+                    "patchFlag": 16,
+                    "props": Object {
+                      "errorMessage": "There was an error logging you in.",
+                      "onHideErrorMessage": [Function],
+                      "toggle": false,
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 1,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "account-error-message-stub",
+                  },
+                  "suspense": null,
+                  "suspenseId": 0,
+                  "type": Object {
+                    "compatConfig": Object {
+                      "MODE": 3,
+                      "RENDER_FUNCTION": false,
+                    },
+                    "name": "AccountErrorMessage",
+                    "props": Object {
+                      "errorMessage": Object {
+                        "0": false,
+                        "1": true,
+                        "type": [Function],
+                      },
+                      "toggle": Object {
+                        "0": true,
+                        "1": true,
+                        "type": [Function],
+                      },
+                    },
+                    "render": [Function],
+                  },
+                  "u": null,
+                  "uid": 2,
+                  "um": null,
+                  "update": [Function],
+                  "vnode": [Circular],
+                  "withProxy": null,
+                },
+                "dirs": null,
+                "dynamicChildren": null,
+                "dynamicProps": Array [
+                  "toggle",
+                  "errorMessage",
+                  "onHideErrorMessage",
+                ],
+                "el": <account-error-message-stub
+                  errormessage="There was an error logging you in."
+                  toggle="false"
+                />,
+                "key": null,
+                "patchFlag": 8,
+                "props": Object {
+                  "errorMessage": "There was an error logging you in.",
+                  "onHideErrorMessage": [Function],
+                  "toggle": false,
+                },
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 4,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": Object {
+                  "compatConfig": Object {
+                    "MODE": 3,
+                    "RENDER_FUNCTION": false,
+                  },
+                  "name": "AccountErrorMessage",
+                  "props": Object {
+                    "errorMessage": Object {
+                      "0": false,
+                      "1": true,
+                      "type": [Function],
+                    },
+                    "toggle": Object {
+                      "0": true,
+                      "1": true,
+                      "type": [Function],
+                    },
+                  },
+                  "render": [Function],
+                },
+              },
+            ],
+            "dynamicProps": null,
+            "el": <div
+              class="login-form-container"
+            >
+              <form>
+                <div
+                  class="form-control"
+                >
+                  <h2 />
+                </div>
+                <div
+                  class="form-control"
+                >
+                  <label
+                    for="email"
+                  >
+                    Email
+                  </label>
+                  <input
+                    id="email"
+                    name="email"
+                    placeholder="Enter email"
+                    type="text"
+                  />
+                </div>
+                <div
+                  class="form-control"
+                >
+                  <label
+                    for="password"
+                  >
+                    Password
+                  </label>
+                  <input
+                    id="password"
+                    name="password"
+                    placeholder="Enter password"
+                    type="password"
+                  />
+                </div>
+                <div
+                  class="form-control"
+                >
+                  <button>
+                    Sign up
+                  </button>
+                </div>
+                <account-error-message-stub
+                  errormessage="There was an error logging you in."
+                  toggle="false"
+                />
+              </form>
+            </div>,
+            "key": null,
+            "patchFlag": 0,
+            "props": Object {
+              "class": "login-form-container",
+            },
+            "ref": null,
+            "scopeId": null,
+            "shapeFlag": 17,
+            "slotScopeIds": null,
+            "ssContent": null,
+            "ssFallback": null,
+            "staticCount": 0,
+            "suspense": null,
+            "target": null,
+            "targetAnchor": null,
+            "transition": null,
+            "type": "div",
+          },
+          "suspense": null,
+          "suspenseId": 0,
+          "type": Object {
+            "components": Object {
+              "AccountErrorMessage": Object {
+                "data": [Function],
+                "methods": Object {
+                  "hideErrorMessage": [Function],
+                },
+                "props": Object {
+                  "errorMessage": Object {
+                    "0": false,
+                    "1": true,
+                    "type": [Function],
+                  },
+                  "toggle": Object {
+                    "0": true,
+                    "1": true,
+                    "type": [Function],
+                  },
+                },
+                "render": [Function],
+              },
+            },
+            "data": [Function],
+            "methods": Object {
+              "hideErrorMessage": [Function],
+              "submitForm": [Function],
+            },
+            "props": Object {
+              "title": [Function],
+              "userService": Object {
+                "0": false,
+                "1": true,
+                "default": UserService {
+                  "baseUrl": "http://localhost:3000",
+                },
+              },
+            },
+            "render": [Function],
+          },
+          "u": null,
+          "uid": 1,
+          "um": null,
+          "update": [Function],
+          "vnode": [Circular],
+          "withProxy": null,
+        },
+        "dirs": null,
+        "dynamicChildren": null,
+        "dynamicProps": null,
+        "el": <div
+          class="login-form-container"
+        >
+          <form>
+            <div
+              class="form-control"
+            >
+              <h2 />
+            </div>
+            <div
+              class="form-control"
+            >
+              <label
+                for="email"
+              >
+                Email
+              </label>
+              <input
+                id="email"
+                name="email"
+                placeholder="Enter email"
+                type="text"
+              />
+            </div>
+            <div
+              class="form-control"
+            >
+              <label
+                for="password"
+              >
+                Password
+              </label>
+              <input
+                id="password"
+                name="password"
+                placeholder="Enter password"
+                type="password"
+              />
+            </div>
+            <div
+              class="form-control"
+            >
+              <button>
+                Sign up
+              </button>
+            </div>
+            <account-error-message-stub
+              errormessage="There was an error logging you in."
+              toggle="false"
+            />
+          </form>
+        </div>,
+        "key": null,
+        "patchFlag": 0,
+        "props": Object {
+          "ref": "VTU_COMPONENT",
+        },
+        "ref": Object {
+          "f": false,
+          "i": [Circular],
+          "k": undefined,
+          "r": "VTU_COMPONENT",
+        },
+        "scopeId": null,
+        "shapeFlag": 4,
+        "slotScopeIds": null,
+        "ssContent": null,
+        "ssFallback": null,
+        "staticCount": 0,
+        "suspense": null,
+        "target": null,
+        "targetAnchor": null,
+        "transition": null,
+        "type": Object {
+          "components": Object {
+            "AccountErrorMessage": Object {
+              "data": [Function],
+              "methods": Object {
+                "hideErrorMessage": [Function],
+              },
+              "props": Object {
+                "errorMessage": Object {
+                  "0": false,
+                  "1": true,
+                  "type": [Function],
+                },
+                "toggle": Object {
+                  "0": true,
+                  "1": true,
+                  "type": [Function],
+                },
+              },
+              "render": [Function],
+            },
+          },
+          "data": [Function],
+          "methods": Object {
+            "hideErrorMessage": [Function],
+            "submitForm": [Function],
+          },
+          "props": Object {
+            "title": [Function],
+            "userService": Object {
+              "0": false,
+              "1": true,
+              "default": UserService {
+                "baseUrl": "http://localhost:3000",
+              },
+            },
+          },
+          "render": [Function],
+        },
+      },
+      "suspense": null,
+      "suspenseId": 0,
+      "type": Object {
+        "name": "VTU_ROOT",
+        "render": [Function],
+      },
+      "u": null,
+      "uid": 0,
+      "um": null,
+      "update": [Function],
+      "vnode": Object {
+        "__v_isVNode": true,
+        "__v_skip": true,
+        "anchor": null,
+        "appContext": Object {
+          "app": [Circular],
+          "components": Object {
+            "transition": Object {
+              "name": "transition",
+            },
+            "transition-group": Object {
+              "name": "transition-group",
+            },
+          },
+          "config": Object {
+            "compilerOptions": Object {},
+            "errorHandler": undefined,
+            "globalProperties": Object {},
+            "isNativeTag": [Function],
+            "optionMergeStrategies": Object {},
+            "performance": false,
+            "warnHandler": undefined,
+          },
+          "directives": Object {},
+          "emitsCache": WeakMap {},
+          "mixins": Array [
+            Object {
+              "beforeCreate": [Function],
+            },
+          ],
+          "optionsCache": WeakMap {},
+          "propsCache": WeakMap {},
+          "provides": Object {},
+          "reload": [Function],
+        },
+        "children": null,
+        "component": [Circular],
+        "dirs": null,
+        "dynamicChildren": null,
+        "dynamicProps": null,
+        "el": <div
+          class="login-form-container"
+        >
+          <form>
+            <div
+              class="form-control"
+            >
+              <h2 />
+            </div>
+            <div
+              class="form-control"
+            >
+              <label
+                for="email"
+              >
+                Email
+              </label>
+              <input
+                id="email"
+                name="email"
+                placeholder="Enter email"
+                type="text"
+              />
+            </div>
+            <div
+              class="form-control"
+            >
+              <label
+                for="password"
+              >
+                Password
+              </label>
+              <input
+                id="password"
+                name="password"
+                placeholder="Enter password"
+                type="password"
+              />
+            </div>
+            <div
+              class="form-control"
+            >
+              <button>
+                Sign up
+              </button>
+            </div>
+            <account-error-message-stub
+              errormessage="There was an error logging you in."
+              toggle="false"
+            />
+          </form>
+        </div>,
+        "key": null,
+        "patchFlag": 0,
+        "props": null,
+        "ref": null,
+        "scopeId": null,
+        "shapeFlag": 4,
+        "slotScopeIds": null,
+        "ssContent": null,
+        "ssFallback": null,
+        "staticCount": 0,
+        "suspense": null,
+        "target": null,
+        "targetAnchor": null,
+        "transition": null,
+        "type": Object {
+          "name": "VTU_ROOT",
+          "render": [Function],
+        },
+      },
+      "withProxy": null,
+    },
+    "_props": null,
+    "_uid": 0,
+    "component": [Function],
+    "config": Object {
+      "compilerOptions": Object {},
+      "errorHandler": undefined,
+      "globalProperties": Object {},
+      "isNativeTag": [Function],
+      "optionMergeStrategies": Object {},
+      "performance": false,
+      "warnHandler": undefined,
+    },
+    "directive": [Function],
+    "mixin": [Function],
+    "mount": [Function],
+    "provide": [Function],
+    "unmount": [Function],
+    "use": [Function],
+    "version": "3.2.26",
+  },
+  "__setProps": [Function],
+  "componentVM": Object {
+    "email": "",
+    "errorMessage": "There was an error logging you in.",
+    "formTitle": undefined,
+    "hasOwnProperty": [Function],
+    "hideErrorMessage": [Function],
+    "invalidLogin": false,
+    "password": "",
+    "submitForm": [Function],
+    "title": undefined,
+    "userService": UserService {
+      "baseUrl": "http://localhost:3000",
+    },
+  },
+  "isDisabled": [Function],
+  "rootVM": Object {},
+  "wrapperElement": <div
+    class="login-form-container"
+  >
+    <form>
+      <div
+        class="form-control"
+      >
+        <h2 />
+      </div>
+      <div
+        class="form-control"
+      >
+        <label
+          for="email"
+        >
+          Email
+        </label>
+        <input
+          id="email"
+          name="email"
+          placeholder="Enter email"
+          type="text"
+        />
+      </div>
+      <div
+        class="form-control"
+      >
+        <label
+          for="password"
+        >
+          Password
+        </label>
+        <input
+          id="password"
+          name="password"
+          placeholder="Enter password"
+          type="password"
+        />
+      </div>
+      <div
+        class="form-control"
+      >
+        <button>
+          Sign up
+        </button>
+      </div>
+      <account-error-message-stub
+        errormessage="There was an error logging you in."
+        toggle="false"
+      />
+    </form>
+  </div>,
+}
+`;

@@ -1,17 +1,40 @@
-import { mount, flushPromises } from "@vue/test-utils";
+import { mount, shallowMount } from "@vue/test-utils";
 import LoginForm from "@/components/LoginForm.vue";
-import UserService from "@/services/UserService";
-import axios from "axios";
+import AccountErrorMessage from "@/components/AccountErrorMessage";
 
-jest.mock("@/services/UserService");
-jest.mock("axios");
+const mockSuccessfulService = {
+  loginUser() {
+    return new Promise((resolve, reject) => {
+      resolve({
+        jwtToken: "token",
+        userId: "userId",
+        userEmail: "name@mail.com",
+      });
+    });
+  },
+};
+
+const mockStore = {
+  state: {
+    count: 25,
+  },
+  dispatch: jest.fn(),
+};
+
+const mockRoute = {
+  params: {
+    id: 1,
+  },
+};
+const mockRouter = {
+  push: jest.fn(),
+};
 
 describe("LoginForm.vue", () => {
-  UserService.loginUser = jest.fn().mockResolvedValue({ test: "yes" });
 
-  afterEach(() => {
-    // reset mock after each test
-    UserService.mockClear();
+  it("should render correctly", () => {
+    const wrapper = shallowMount(LoginForm);
+    expect(wrapper).toMatchSnapshot();
   });
   it("sets value of email and password when user inputs values", async () => {
     const wrapper = mount(LoginForm);
@@ -29,13 +52,21 @@ describe("LoginForm.vue", () => {
     );
   });
 
-  it("We can check if the consumer called the class constructor", () => {
-    const userService = new UserService();
-    expect(UserService).toHaveBeenCalledTimes(1);
-  });
-
   it("successfully logs in a user if valid password and email", async () => {
-    const wrapper = mount(LoginForm);
+    const wrapper = mount(LoginForm, {
+      props: {
+        userService: {
+          default: mockSuccessfulService,
+        },
+      },
+      global: {
+        mocks: {
+          $store: mockStore,
+          $route: mockRoute,
+          $router: mockRouter,
+        },
+      },
+    });
 
     await wrapper.find("input[type=text]").setValue("name@mail.com");
     await wrapper
@@ -44,11 +75,34 @@ describe("LoginForm.vue", () => {
 
     const button = await wrapper.find("button");
     expect(button.exists()).toBe(true);
-    const spySubmitForm = jest.spyOn(wrapper.vm, "submitForm");
+
     await wrapper.find("form").trigger("submit.prevent");
 
-    await flushPromises();
+    expect(mockRouter.push).toHaveBeenCalledTimes(1);
+    expect(mockStore.dispatch).toHaveBeenCalledTimes(3);
+    expect(wrapper.findComponent(AccountErrorMessage).isVisible()).toBe(false);
+  });
 
-    expect(spySubmitForm).toBeCalled();
+  it("shows error message if invalid login", async () => {
+    const wrapper = mount(LoginForm, {
+      data() {
+        return {
+          invalidLogin: true,
+        };
+      },
+    });
+    expect(wrapper.findComponent(AccountErrorMessage).isVisible()).toBe(true);
+  });
+
+  it("hides error message if user clicks to remove message", async () => {
+    const wrapper = mount(LoginForm, {
+      data() {
+        return {
+          invalidLogin: true,
+        };
+      },
+    });
+    await wrapper.vm.hideErrorMessage();
+    expect(wrapper.findComponent(AccountErrorMessage).isVisible()).toBe(false);
   });
 });

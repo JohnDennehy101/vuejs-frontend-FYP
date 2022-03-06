@@ -39,10 +39,14 @@
 
 <script>
 import AccountErrorMessage from "./AccountErrorMessage";
-import UserService from "../services/UserService";
-const userService = new UserService();
+import userService from "../services/UserService";
 export default {
-  props: ["title"],
+  props: {
+    title: String,
+    userService: {
+      default: userService,
+    },
+  },
   data() {
     return {
       email: "",
@@ -57,7 +61,11 @@ export default {
   },
   methods: {
     async submitForm() {
-      const user = await userService.loginUser(this.email, this.password);
+      const user = await this.userService.default.loginUser(
+        this.email,
+        this.password
+      );
+      console.log(user);
 
       if (user) {
         this.$store.dispatch("setUserId", user.userId);
