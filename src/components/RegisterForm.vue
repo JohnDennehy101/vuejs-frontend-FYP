@@ -35,10 +35,8 @@
 </template>
 
 <script>
-//import axios from "axios";
 import AccountErrorMessage from "./AccountErrorMessage";
-import UserService from "../services/UserService";
-const userService = new UserService();
+import userService from "../services/UserService";
 export default {
   data() {
     return {
@@ -48,9 +46,17 @@ export default {
       errorMessage: "There was an error registering your account details.",
     };
   },
+  props: {
+    userService: {
+      default: userService,
+    },
+  },
   methods: {
     async submitForm() {
-      const user = await userService.registerUser(this.email, this.password);
+      const user = await this.userService.default.registerUser(
+        this.email,
+        this.password
+      );
 
       if (!user) {
         this.invalidRegistration = true;

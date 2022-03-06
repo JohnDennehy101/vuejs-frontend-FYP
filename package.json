@@ -7,6 +7,7 @@
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "test:unit:update": "vue-cli-service test:unit -u",
+    "test:coverage": "vue-cli-service test:unit --coverage",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -75,6 +76,11 @@
       "ts",
       "json",
       "vue"
+    ],
+    "coveragePathIgnorePatterns": [
+      "node_modules",
+      "<rootDir>/src/assets",
+      ".mock.js"
     ],
     "transform": {
       ".*\\.(vue)$": "vue-jest",

@@ -1,5 +1,5 @@
 import { mount, shallowMount } from "@vue/test-utils";
-import LoginForm from "@/components/LoginForm.vue";
+import RegisterForm from "@/components/RegisterForm.vue";
 import AccountErrorMessage from "@/components/AccountErrorMessage";
 import mockSuccessfulUserService from "./mocks/userService.mock";
 import mockStore from "./mocks/mockStore.mock";
@@ -11,14 +11,14 @@ const mockRoute = {
   },
 };
 
-describe("LoginForm.vue", () => {
+describe("RegisterForm.vue", () => {
 
   it("should render correctly", () => {
-    const wrapper = shallowMount(LoginForm);
+    const wrapper = shallowMount(RegisterForm);
     expect(wrapper).toMatchSnapshot();
   });
   it("sets value of email and password when user inputs values", async () => {
-    const wrapper = mount(LoginForm);
+    const wrapper = mount(RegisterForm);
 
     await wrapper.find("input[type=text]").setValue("name@mail.com");
     await wrapper
@@ -33,8 +33,8 @@ describe("LoginForm.vue", () => {
     );
   });
 
-  it("successfully logs in a user if valid password and email", async () => {
-    const wrapper = mount(LoginForm, {
+  it("successfully registers a user if valid password and email", async () => {
+    const wrapper = mount(RegisterForm, {
       props: {
         userService: {
           default: mockSuccessfulUserService,
@@ -60,15 +60,15 @@ describe("LoginForm.vue", () => {
     await wrapper.find("form").trigger("submit.prevent");
 
     expect(mockRouter.push).toHaveBeenCalledTimes(1);
-    expect(mockStore.dispatch).toHaveBeenCalledTimes(3);
+    //expect(mockStore.dispatch).toHaveBeenCalledTimes(3);
     expect(wrapper.findComponent(AccountErrorMessage).isVisible()).toBe(false);
   });
 
-  it("shows error message if invalid login", async () => {
-    const wrapper = mount(LoginForm, {
+  it("shows error message if invalid registration", async () => {
+    const wrapper = mount(RegisterForm, {
       data() {
         return {
-          invalidLogin: true,
+          invalidRegistration: true,
         };
       },
     });
@@ -76,10 +76,10 @@ describe("LoginForm.vue", () => {
   });
 
   it("hides error message if user clicks to remove message", async () => {
-    const wrapper = mount(LoginForm, {
+    const wrapper = mount(RegisterForm, {
       data() {
         return {
-          invalidLogin: true,
+          invalidRegistration: true,
         };
       },
     });
