@@ -1,6 +1,11 @@
 const mockStore = {
   state: {
-    count: 25,
+    userId: 1,
+  },
+  getters: {
+    userId: () => {
+      return 1;
+    },
   },
   dispatch: jest.fn(),
 };

@@ -126,11 +126,16 @@
 <script>
 import AccountErrorMessage from "../components/AccountErrorMessage";
 import EventFormUserEmailDisplay from "../components/EventFormUserEmailDisplay";
-import EventService from "../services/EventService";
+import eventService from "../services/EventService";
 import { mapGetters } from "vuex";
-const eventService = new EventService();
 export default {
-  props: ["edit", "individualEvent"],
+  props: {
+    edit: Boolean,
+    eventService: {
+      default: eventService,
+    },
+    individualEvent: Object,
+  },
   data() {
     return {
       title: "",
@@ -172,12 +177,13 @@ export default {
           departureCity: this.departureCity,
         };
 
-        const response = await eventService.updateEvent(
+        const response = await this.eventService.default.updateEvent(
           this.editEventInfo.id,
           payload
         );
 
         if (!("error" in response)) {
+          console.log("YEAH");
           this.$router.push({ path: `/dashboard/${this.userId}` });
         } else {
           this.invalidEventCreation = true;
@@ -192,9 +198,13 @@ export default {
             departureCity: this.departureCity,
           };
 
-          const response = await eventService.createEvent(this.userId, payload);
+          const response = await this.eventService.default.createEvent(
+            this.userId,
+            payload
+          );
 
           if (!("error" in response)) {
+            console.log("NON");
             this.$router.push({ path: `/dashboard/${this.userId}` });
           } else {
             this.invalidEventCreation = true;

@@ -1,0 +1,5484 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EventForm.vue should render correctly 1`] = `
+VueWrapper {
+  "__app": Object {
+    "_component": Object {
+      "name": "VTU_ROOT",
+      "render": [Function],
+    },
+    "_container": <div
+      data-v-app=""
+    >
+      <form>
+        <!--v-if-->
+        <div
+          class="form-control"
+        >
+          <h2>
+            Create Event
+          </h2>
+        </div>
+        <div
+          class="form-control"
+        >
+          <label
+            for="title"
+          >
+            Title
+          </label>
+          <input
+            id="title"
+            name="title"
+            placeholder="Enter event title"
+            required=""
+            type="text"
+          />
+        </div>
+        <div
+          class="form-control"
+        >
+          <h3>
+            Event Type
+          </h3>
+          <div
+            class="radio-parent-container"
+          >
+            <input
+              id="DOMESTIC_DAY"
+              name="eventType"
+              required=""
+              type="radio"
+              value="DOMESTIC_DAY"
+            />
+            <label
+              class="radio-label"
+              for="DOMESTIC_DAY"
+            >
+              Domestic Day Trip
+            </label>
+          </div>
+          <div
+            class="radio-parent-container"
+          >
+            <input
+              id="DOMESTIC_OVERNIGHT"
+              name="eventType"
+              required=""
+              type="radio"
+              value="DOMESTIC_OVERNIGHT"
+            />
+            <label
+              class="radio-label"
+              for="DOMESTIC_OVERNIGHT"
+            >
+              Domestic Overnight Trip
+            </label>
+          </div>
+          <div
+            class="radio-parent-container"
+          >
+            <input
+              id="FOREIGN_OVERNIGHT"
+              name="eventType"
+              required=""
+              type="radio"
+              value="FOREIGN_OVERNIGHT"
+            />
+            <label
+              class="radio-label"
+              for="FOREIGN_OVERNIGHT"
+            >
+              Foreign Overnight Trip
+            </label>
+          </div>
+        </div>
+        <!--v-if-->
+        <div
+          class="form-control"
+        >
+          <label
+            class="radio-label"
+            for="location"
+          >
+            Destination
+          </label>
+          <select
+            id="location"
+          >
+            <option
+              disabled=""
+              value=""
+            >
+              Please select location
+            </option>
+            
+            <option>
+              Cork
+            </option>
+            <option>
+              Dublin
+            </option>
+            <option>
+              Galway
+            </option>
+            <option>
+              Kilkenny
+            </option>
+            <option>
+              Limerick
+            </option>
+            <option>
+              Waterford
+            </option>
+            
+          </select>
+        </div>
+        <div
+          class="form-control"
+        >
+          <label
+            for="users"
+          >
+             Users
+          </label>
+          <input
+            id="useremail"
+            name="useremail"
+            placeholder="Enter user email"
+            type="text"
+          />
+        </div>
+        <div
+          class="form-control"
+        >
+          <button
+            id="add-option-button"
+          >
+            Add Email
+          </button>
+        </div>
+        <!--v-if-->
+        <div
+          class="form-control button-container"
+        >
+          <button>
+            Add Event
+          </button>
+        </div>
+        <account-error-message-stub
+          errormessage="There was an error adding this event, not successfully created."
+          toggle="false"
+        />
+      </form>
+    </div>,
+    "_context": Object {
+      "app": [Circular],
+      "components": Object {
+        "transition": Object {
+          "name": "transition",
+        },
+        "transition-group": Object {
+          "name": "transition-group",
+        },
+      },
+      "config": Object {
+        "compilerOptions": Object {},
+        "errorHandler": undefined,
+        "globalProperties": Object {},
+        "isNativeTag": [Function],
+        "optionMergeStrategies": Object {},
+        "performance": false,
+        "warnHandler": undefined,
+      },
+      "directives": Object {},
+      "emitsCache": WeakMap {},
+      "mixins": Array [
+        Object {
+          "beforeCreate": [Function],
+        },
+      ],
+      "optionsCache": WeakMap {},
+      "propsCache": WeakMap {},
+      "provides": Object {},
+      "reload": [Function],
+    },
+    "_instance": Object {
+      "a": null,
+      "accessCache": Object {},
+      "appContext": Object {
+        "app": [Circular],
+        "components": Object {
+          "transition": Object {
+            "name": "transition",
+          },
+          "transition-group": Object {
+            "name": "transition-group",
+          },
+        },
+        "config": Object {
+          "compilerOptions": Object {},
+          "errorHandler": undefined,
+          "globalProperties": Object {},
+          "isNativeTag": [Function],
+          "optionMergeStrategies": Object {},
+          "performance": false,
+          "warnHandler": undefined,
+        },
+        "directives": Object {},
+        "emitsCache": WeakMap {},
+        "mixins": Array [
+          Object {
+            "beforeCreate": [Function],
+          },
+        ],
+        "optionsCache": WeakMap {},
+        "propsCache": WeakMap {},
+        "provides": Object {},
+        "reload": [Function],
+      },
+      "asyncDep": null,
+      "asyncResolved": false,
+      "attrs": Object {},
+      "bc": null,
+      "bm": null,
+      "bu": null,
+      "bum": null,
+      "c": null,
+      "components": null,
+      "ctx": Object {
+        "$route": Object {
+          "params": Object {
+            "id": 1,
+          },
+        },
+        "$router": Object {
+          "push": [MockFunction],
+        },
+        "$store": Object {
+          "dispatch": [MockFunction],
+          "getters": Object {
+            "userId": [Function],
+          },
+          "state": Object {
+            "userId": 1,
+          },
+        },
+      },
+      "da": null,
+      "data": Object {},
+      "directives": null,
+      "ec": null,
+      "effect": ReactiveEffect {
+        "active": true,
+        "allowRecurse": true,
+        "deps": Array [
+          Set {
+            [Circular],
+          },
+          Set {
+            [Circular],
+          },
+        ],
+        "fn": [Function],
+        "onTrack": undefined,
+        "onTrigger": undefined,
+        "scheduler": [Function],
+      },
+      "emit": [Function],
+      "emitsOptions": null,
+      "emitted": null,
+      "exposeProxy": null,
+      "exposed": null,
+      "inheritAttrs": undefined,
+      "isDeactivated": false,
+      "isMounted": true,
+      "isUnmounted": false,
+      "m": null,
+      "next": null,
+      "parent": null,
+      "props": Object {},
+      "propsDefaults": Object {},
+      "propsOptions": Array [
+        Object {},
+        Array [],
+      ],
+      "provides": Object {},
+      "proxy": Object {
+        "$route": Object {
+          "params": Object {
+            "id": 1,
+          },
+        },
+        "$router": Object {
+          "push": [MockFunction],
+        },
+        "$store": Object {
+          "dispatch": [MockFunction],
+          "getters": Object {
+            "userId": [Function],
+          },
+          "state": Object {
+            "userId": 1,
+          },
+        },
+      },
+      "refs": Object {
+        "VTU_COMPONENT": Object {
+          "$route": Object {
+            "params": Object {
+              "id": 1,
+            },
+          },
+          "$router": Object {
+            "push": [MockFunction],
+          },
+          "$store": Object {
+            "dispatch": [MockFunction],
+            "getters": Object {
+              "userId": [Function],
+            },
+            "state": Object {
+              "userId": 1,
+            },
+          },
+          "addUserEmail": [Function],
+          "departureCity": "",
+          "domesticCityLocations": Array [
+            "Cork",
+            "Dublin",
+            "Galway",
+            "Kilkenny",
+            "Limerick",
+            "Waterford",
+          ],
+          "edit": false,
+          "editEventAction": false,
+          "editEventInfo": undefined,
+          "errorMessage": "There was an error adding this event, not successfully created.",
+          "eventService": EventService {
+            "baseUrl": "http://localhost:3000",
+          },
+          "eventType": null,
+          "eventTypeChange": [Function],
+          "foreignTrip": false,
+          "formTitle": "Create Event",
+          "hasOwnProperty": [Function],
+          "hideErrorMessage": [Function],
+          "individualEvent": undefined,
+          "invalidEventCreation": false,
+          "location": "",
+          "populateFormInfo": [Function],
+          "removeIndividualUserEmail": [Function],
+          "submitForm": [Function],
+          "title": "",
+          "userEmail": "",
+          "userEmails": Array [],
+          "userId": [Function],
+        },
+      },
+      "render": [Function],
+      "renderCache": Array [],
+      "root": [Circular],
+      "rtc": null,
+      "rtg": null,
+      "scope": EffectScope {
+        "active": true,
+        "cleanups": Array [],
+        "effects": Array [
+          ReactiveEffect {
+            "active": true,
+            "allowRecurse": true,
+            "deps": Array [
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+            ],
+            "fn": [Function],
+            "onTrack": undefined,
+            "onTrigger": undefined,
+            "scheduler": [Function],
+          },
+        ],
+      },
+      "setupContext": null,
+      "setupState": Object {},
+      "slots": Object {},
+      "sp": null,
+      "subTree": Object {
+        "__v_isVNode": true,
+        "__v_skip": true,
+        "anchor": null,
+        "appContext": null,
+        "children": null,
+        "component": Object {
+          "a": null,
+          "accessCache": Object {
+            "$route": 4,
+            "$router": 4,
+            "$store": 4,
+            "@@__IMMUTABLE_ITERABLE__@@": 0,
+            "@@__IMMUTABLE_RECORD__@@": 0,
+            "_isMockFunction": 0,
+            "addUserEmail": 4,
+            "constructor": 0,
+            "departureCity": 2,
+            "domesticCityLocations": 2,
+            "edit": 3,
+            "editEventAction": 2,
+            "editEventInfo": 2,
+            "errorMessage": 2,
+            "eventService": 3,
+            "eventType": 2,
+            "eventTypeChange": 4,
+            "foreignTrip": 2,
+            "formTitle": 2,
+            "hasOwnProperty": 4,
+            "hideErrorMessage": 4,
+            "individualEvent": 3,
+            "invalidEventCreation": 2,
+            "isVueInstance": 0,
+            "location": 2,
+            "populateFormInfo": 4,
+            "removeIndividualUserEmail": 4,
+            "submitForm": 4,
+            "title": 2,
+            "toJSON": 0,
+            "userEmail": 2,
+            "userEmails": 2,
+            "userId": 4,
+            Symbol(Symbol.toStringTag): 0,
+          },
+          "appContext": Object {
+            "app": [Circular],
+            "components": Object {
+              "transition": Object {
+                "name": "transition",
+              },
+              "transition-group": Object {
+                "name": "transition-group",
+              },
+            },
+            "config": Object {
+              "compilerOptions": Object {},
+              "errorHandler": undefined,
+              "globalProperties": Object {},
+              "isNativeTag": [Function],
+              "optionMergeStrategies": Object {},
+              "performance": false,
+              "warnHandler": undefined,
+            },
+            "directives": Object {},
+            "emitsCache": WeakMap {},
+            "mixins": Array [
+              Object {
+                "beforeCreate": [Function],
+              },
+            ],
+            "optionsCache": WeakMap {},
+            "propsCache": WeakMap {},
+            "provides": Object {},
+            "reload": [Function],
+          },
+          "asyncDep": null,
+          "asyncResolved": false,
+          "attrs": Object {},
+          "bc": null,
+          "bm": null,
+          "bu": null,
+          "bum": null,
+          "c": null,
+          "components": Object {
+            "AccountErrorMessage": Object {
+              "data": [Function],
+              "methods": Object {
+                "hideErrorMessage": [Function],
+              },
+              "props": Object {
+                "errorMessage": Object {
+                  "0": false,
+                  "1": true,
+                  "type": [Function],
+                },
+                "toggle": Object {
+                  "0": true,
+                  "1": true,
+                  "type": [Function],
+                },
+              },
+              "render": [Function],
+            },
+            "EventFormUserEmailDisplay": Object {
+              "data": [Function],
+              "props": Array [
+                "email",
+              ],
+              "render": [Function],
+            },
+          },
+          "ctx": Object {
+            "$route": Object {
+              "params": Object {
+                "id": 1,
+              },
+            },
+            "$router": Object {
+              "push": [MockFunction],
+            },
+            "$store": Object {
+              "dispatch": [MockFunction],
+              "getters": Object {
+                "userId": [Function],
+              },
+              "state": Object {
+                "userId": 1,
+              },
+            },
+            "addUserEmail": [Function],
+            "departureCity": "",
+            "domesticCityLocations": Array [
+              "Cork",
+              "Dublin",
+              "Galway",
+              "Kilkenny",
+              "Limerick",
+              "Waterford",
+            ],
+            "edit": false,
+            "editEventAction": false,
+            "editEventInfo": undefined,
+            "errorMessage": "There was an error adding this event, not successfully created.",
+            "eventService": EventService {
+              "baseUrl": "http://localhost:3000",
+            },
+            "eventType": null,
+            "eventTypeChange": [Function],
+            "foreignTrip": false,
+            "formTitle": "Create Event",
+            "hasOwnProperty": [Function],
+            "hideErrorMessage": [Function],
+            "individualEvent": undefined,
+            "invalidEventCreation": false,
+            "location": "",
+            "populateFormInfo": [Function],
+            "removeIndividualUserEmail": [Function],
+            "submitForm": [Function],
+            "title": "",
+            "userEmail": "",
+            "userEmails": Array [],
+            "userId": [Function],
+          },
+          "da": null,
+          "data": Object {
+            "departureCity": "",
+            "domesticCityLocations": Array [
+              "Cork",
+              "Dublin",
+              "Galway",
+              "Kilkenny",
+              "Limerick",
+              "Waterford",
+            ],
+            "editEventAction": false,
+            "editEventInfo": undefined,
+            "errorMessage": "There was an error adding this event, not successfully created.",
+            "eventType": null,
+            "foreignTrip": false,
+            "formTitle": "Create Event",
+            "invalidEventCreation": false,
+            "location": "",
+            "title": "",
+            "userEmail": "",
+            "userEmails": Array [],
+          },
+          "directives": null,
+          "ec": null,
+          "effect": ReactiveEffect {
+            "active": true,
+            "allowRecurse": true,
+            "deps": Array [
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+            ],
+            "fn": [Function],
+            "onTrack": undefined,
+            "onTrigger": undefined,
+            "scheduler": [Function],
+          },
+          "emit": [Function],
+          "emitsOptions": null,
+          "emitted": null,
+          "exposeProxy": null,
+          "exposed": null,
+          "inheritAttrs": undefined,
+          "isDeactivated": false,
+          "isMounted": true,
+          "isUnmounted": false,
+          "m": null,
+          "next": null,
+          "parent": [Circular],
+          "props": Object {
+            "edit": false,
+            "eventService": EventService {
+              "baseUrl": "http://localhost:3000",
+            },
+            "individualEvent": undefined,
+          },
+          "propsDefaults": Object {},
+          "propsOptions": Array [
+            Object {
+              "edit": Object {
+                "0": true,
+                "1": true,
+                "type": [Function],
+              },
+              "eventService": Object {
+                "0": false,
+                "1": true,
+                "default": EventService {
+                  "baseUrl": "http://localhost:3000",
+                },
+              },
+              "individualEvent": Object {
+                "0": false,
+                "1": true,
+                "type": [Function],
+              },
+            },
+            Array [
+              "edit",
+              "eventService",
+            ],
+          ],
+          "provides": Object {},
+          "proxy": Object {
+            "$route": Object {
+              "params": Object {
+                "id": 1,
+              },
+            },
+            "$router": Object {
+              "push": [MockFunction],
+            },
+            "$store": Object {
+              "dispatch": [MockFunction],
+              "getters": Object {
+                "userId": [Function],
+              },
+              "state": Object {
+                "userId": 1,
+              },
+            },
+            "addUserEmail": [Function],
+            "departureCity": "",
+            "domesticCityLocations": Array [
+              "Cork",
+              "Dublin",
+              "Galway",
+              "Kilkenny",
+              "Limerick",
+              "Waterford",
+            ],
+            "edit": false,
+            "editEventAction": false,
+            "editEventInfo": undefined,
+            "errorMessage": "There was an error adding this event, not successfully created.",
+            "eventService": EventService {
+              "baseUrl": "http://localhost:3000",
+            },
+            "eventType": null,
+            "eventTypeChange": [Function],
+            "foreignTrip": false,
+            "formTitle": "Create Event",
+            "hasOwnProperty": [Function],
+            "hideErrorMessage": [Function],
+            "individualEvent": undefined,
+            "invalidEventCreation": false,
+            "location": "",
+            "populateFormInfo": [Function],
+            "removeIndividualUserEmail": [Function],
+            "submitForm": [Function],
+            "title": "",
+            "userEmail": "",
+            "userEmails": Array [],
+            "userId": [Function],
+          },
+          "refs": Object {},
+          "render": [Function],
+          "renderCache": Array [
+            undefined,
+            [Function],
+            [Function],
+            [Function],
+            [Function],
+            [Function],
+            [Function],
+            [Function],
+            undefined,
+            [Function],
+            [Function],
+            [Function],
+            [Function],
+          ],
+          "root": [Circular],
+          "rtc": null,
+          "rtg": null,
+          "scope": EffectScope {
+            "active": true,
+            "cleanups": Array [],
+            "effects": Array [
+              ReactiveEffect {
+                "active": true,
+                "deps": Array [],
+                "fn": [Function],
+                "scheduler": [Function],
+              },
+              ReactiveEffect {
+                "active": true,
+                "allowRecurse": true,
+                "deps": Array [
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                ],
+                "fn": [Function],
+                "onTrack": undefined,
+                "onTrigger": undefined,
+                "scheduler": [Function],
+              },
+            ],
+          },
+          "setupContext": null,
+          "setupState": Object {},
+          "slots": Object {},
+          "sp": null,
+          "subTree": Object {
+            "__v_isVNode": true,
+            "__v_skip": true,
+            "anchor": null,
+            "appContext": null,
+            "children": Array [
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": "v-if",
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": Array [],
+                "dynamicProps": null,
+                "el": <!--v-if-->,
+                "key": null,
+                "patchFlag": 0,
+                "props": null,
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 8,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": Symbol(Comment),
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": Array [
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": "Create Event",
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <h2>
+                      Create Event
+                    </h2>,
+                    "key": null,
+                    "patchFlag": 1,
+                    "props": null,
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 9,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "h2",
+                  },
+                ],
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": null,
+                "dynamicProps": null,
+                "el": <div
+                  class="form-control"
+                >
+                  <h2>
+                    Create Event
+                  </h2>
+                </div>,
+                "key": null,
+                "patchFlag": 0,
+                "props": Object {
+                  "class": "form-control",
+                },
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 17,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": "div",
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": Array [
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": "Title",
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <label
+                      for="title"
+                    >
+                      Title
+                    </label>,
+                    "key": null,
+                    "patchFlag": -1,
+                    "props": Object {
+                      "for": "title",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 9,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "label",
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": null,
+                    "component": null,
+                    "dirs": Array [
+                      Object {
+                        "arg": undefined,
+                        "dir": Object {
+                          "beforeUpdate": [Function],
+                          "created": [Function],
+                          "mounted": [Function],
+                        },
+                        "instance": Object {
+                          "$route": Object {
+                            "params": Object {
+                              "id": 1,
+                            },
+                          },
+                          "$router": Object {
+                            "push": [MockFunction],
+                          },
+                          "$store": Object {
+                            "dispatch": [MockFunction],
+                            "getters": Object {
+                              "userId": [Function],
+                            },
+                            "state": Object {
+                              "userId": 1,
+                            },
+                          },
+                          "addUserEmail": [Function],
+                          "departureCity": "",
+                          "domesticCityLocations": Array [
+                            "Cork",
+                            "Dublin",
+                            "Galway",
+                            "Kilkenny",
+                            "Limerick",
+                            "Waterford",
+                          ],
+                          "edit": false,
+                          "editEventAction": false,
+                          "editEventInfo": undefined,
+                          "errorMessage": "There was an error adding this event, not successfully created.",
+                          "eventService": EventService {
+                            "baseUrl": "http://localhost:3000",
+                          },
+                          "eventType": null,
+                          "eventTypeChange": [Function],
+                          "foreignTrip": false,
+                          "formTitle": "Create Event",
+                          "hasOwnProperty": [Function],
+                          "hideErrorMessage": [Function],
+                          "individualEvent": undefined,
+                          "invalidEventCreation": false,
+                          "location": "",
+                          "populateFormInfo": [Function],
+                          "removeIndividualUserEmail": [Function],
+                          "submitForm": [Function],
+                          "title": "",
+                          "userEmail": "",
+                          "userEmails": Array [],
+                          "userId": [Function],
+                        },
+                        "modifiers": Object {},
+                        "oldValue": undefined,
+                        "value": "",
+                      },
+                    ],
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <input
+                      id="title"
+                      name="title"
+                      placeholder="Enter event title"
+                      required=""
+                      type="text"
+                    />,
+                    "key": null,
+                    "patchFlag": 512,
+                    "props": Object {
+                      "id": "title",
+                      "name": "title",
+                      "onUpdate:modelValue": [Function],
+                      "placeholder": "Enter event title",
+                      "required": "",
+                      "type": "text",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 1,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "input",
+                  },
+                ],
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": null,
+                "dynamicProps": null,
+                "el": <div
+                  class="form-control"
+                >
+                  <label
+                    for="title"
+                  >
+                    Title
+                  </label>
+                  <input
+                    id="title"
+                    name="title"
+                    placeholder="Enter event title"
+                    required=""
+                    type="text"
+                  />
+                </div>,
+                "key": null,
+                "patchFlag": 0,
+                "props": Object {
+                  "class": "form-control",
+                },
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 17,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": "div",
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": Array [
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": "Event Type",
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <h3>
+                      Event Type
+                    </h3>,
+                    "key": null,
+                    "patchFlag": -1,
+                    "props": null,
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 9,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "h3",
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": Array [
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": null,
+                        "component": null,
+                        "dirs": Array [
+                          Object {
+                            "arg": undefined,
+                            "dir": Object {
+                              "beforeUpdate": [Function],
+                              "created": [Function],
+                            },
+                            "instance": Object {
+                              "$route": Object {
+                                "params": Object {
+                                  "id": 1,
+                                },
+                              },
+                              "$router": Object {
+                                "push": [MockFunction],
+                              },
+                              "$store": Object {
+                                "dispatch": [MockFunction],
+                                "getters": Object {
+                                  "userId": [Function],
+                                },
+                                "state": Object {
+                                  "userId": 1,
+                                },
+                              },
+                              "addUserEmail": [Function],
+                              "departureCity": "",
+                              "domesticCityLocations": Array [
+                                "Cork",
+                                "Dublin",
+                                "Galway",
+                                "Kilkenny",
+                                "Limerick",
+                                "Waterford",
+                              ],
+                              "edit": false,
+                              "editEventAction": false,
+                              "editEventInfo": undefined,
+                              "errorMessage": "There was an error adding this event, not successfully created.",
+                              "eventService": EventService {
+                                "baseUrl": "http://localhost:3000",
+                              },
+                              "eventType": null,
+                              "eventTypeChange": [Function],
+                              "foreignTrip": false,
+                              "formTitle": "Create Event",
+                              "hasOwnProperty": [Function],
+                              "hideErrorMessage": [Function],
+                              "individualEvent": undefined,
+                              "invalidEventCreation": false,
+                              "location": "",
+                              "populateFormInfo": [Function],
+                              "removeIndividualUserEmail": [Function],
+                              "submitForm": [Function],
+                              "title": "",
+                              "userEmail": "",
+                              "userEmails": Array [],
+                              "userId": [Function],
+                            },
+                            "modifiers": Object {},
+                            "oldValue": undefined,
+                            "value": null,
+                          },
+                        ],
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <input
+                          id="DOMESTIC_DAY"
+                          name="eventType"
+                          required=""
+                          type="radio"
+                          value="DOMESTIC_DAY"
+                        />,
+                        "key": null,
+                        "patchFlag": 544,
+                        "props": Object {
+                          "id": "DOMESTIC_DAY",
+                          "name": "eventType",
+                          "onChange": [Function],
+                          "onUpdate:modelValue": [Function],
+                          "required": "required",
+                          "type": "radio",
+                          "value": "DOMESTIC_DAY",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 1,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "input",
+                      },
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "Domestic Day Trip",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <label
+                          class="radio-label"
+                          for="DOMESTIC_DAY"
+                        >
+                          Domestic Day Trip
+                        </label>,
+                        "key": null,
+                        "patchFlag": -1,
+                        "props": Object {
+                          "class": "radio-label",
+                          "for": "DOMESTIC_DAY",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 9,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "label",
+                      },
+                    ],
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <div
+                      class="radio-parent-container"
+                    >
+                      <input
+                        id="DOMESTIC_DAY"
+                        name="eventType"
+                        required=""
+                        type="radio"
+                        value="DOMESTIC_DAY"
+                      />
+                      <label
+                        class="radio-label"
+                        for="DOMESTIC_DAY"
+                      >
+                        Domestic Day Trip
+                      </label>
+                    </div>,
+                    "key": null,
+                    "patchFlag": 0,
+                    "props": Object {
+                      "class": "radio-parent-container",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 17,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "div",
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": Array [
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": null,
+                        "component": null,
+                        "dirs": Array [
+                          Object {
+                            "arg": undefined,
+                            "dir": Object {
+                              "beforeUpdate": [Function],
+                              "created": [Function],
+                            },
+                            "instance": Object {
+                              "$route": Object {
+                                "params": Object {
+                                  "id": 1,
+                                },
+                              },
+                              "$router": Object {
+                                "push": [MockFunction],
+                              },
+                              "$store": Object {
+                                "dispatch": [MockFunction],
+                                "getters": Object {
+                                  "userId": [Function],
+                                },
+                                "state": Object {
+                                  "userId": 1,
+                                },
+                              },
+                              "addUserEmail": [Function],
+                              "departureCity": "",
+                              "domesticCityLocations": Array [
+                                "Cork",
+                                "Dublin",
+                                "Galway",
+                                "Kilkenny",
+                                "Limerick",
+                                "Waterford",
+                              ],
+                              "edit": false,
+                              "editEventAction": false,
+                              "editEventInfo": undefined,
+                              "errorMessage": "There was an error adding this event, not successfully created.",
+                              "eventService": EventService {
+                                "baseUrl": "http://localhost:3000",
+                              },
+                              "eventType": null,
+                              "eventTypeChange": [Function],
+                              "foreignTrip": false,
+                              "formTitle": "Create Event",
+                              "hasOwnProperty": [Function],
+                              "hideErrorMessage": [Function],
+                              "individualEvent": undefined,
+                              "invalidEventCreation": false,
+                              "location": "",
+                              "populateFormInfo": [Function],
+                              "removeIndividualUserEmail": [Function],
+                              "submitForm": [Function],
+                              "title": "",
+                              "userEmail": "",
+                              "userEmails": Array [],
+                              "userId": [Function],
+                            },
+                            "modifiers": Object {},
+                            "oldValue": undefined,
+                            "value": null,
+                          },
+                        ],
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <input
+                          id="DOMESTIC_OVERNIGHT"
+                          name="eventType"
+                          required=""
+                          type="radio"
+                          value="DOMESTIC_OVERNIGHT"
+                        />,
+                        "key": null,
+                        "patchFlag": 544,
+                        "props": Object {
+                          "id": "DOMESTIC_OVERNIGHT",
+                          "name": "eventType",
+                          "onChange": [Function],
+                          "onUpdate:modelValue": [Function],
+                          "required": "required",
+                          "type": "radio",
+                          "value": "DOMESTIC_OVERNIGHT",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 1,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "input",
+                      },
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "Domestic Overnight Trip",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <label
+                          class="radio-label"
+                          for="DOMESTIC_OVERNIGHT"
+                        >
+                          Domestic Overnight Trip
+                        </label>,
+                        "key": null,
+                        "patchFlag": -1,
+                        "props": Object {
+                          "class": "radio-label",
+                          "for": "DOMESTIC_OVERNIGHT",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 9,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "label",
+                      },
+                    ],
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <div
+                      class="radio-parent-container"
+                    >
+                      <input
+                        id="DOMESTIC_OVERNIGHT"
+                        name="eventType"
+                        required=""
+                        type="radio"
+                        value="DOMESTIC_OVERNIGHT"
+                      />
+                      <label
+                        class="radio-label"
+                        for="DOMESTIC_OVERNIGHT"
+                      >
+                        Domestic Overnight Trip
+                      </label>
+                    </div>,
+                    "key": null,
+                    "patchFlag": 0,
+                    "props": Object {
+                      "class": "radio-parent-container",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 17,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "div",
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": Array [
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": null,
+                        "component": null,
+                        "dirs": Array [
+                          Object {
+                            "arg": undefined,
+                            "dir": Object {
+                              "beforeUpdate": [Function],
+                              "created": [Function],
+                            },
+                            "instance": Object {
+                              "$route": Object {
+                                "params": Object {
+                                  "id": 1,
+                                },
+                              },
+                              "$router": Object {
+                                "push": [MockFunction],
+                              },
+                              "$store": Object {
+                                "dispatch": [MockFunction],
+                                "getters": Object {
+                                  "userId": [Function],
+                                },
+                                "state": Object {
+                                  "userId": 1,
+                                },
+                              },
+                              "addUserEmail": [Function],
+                              "departureCity": "",
+                              "domesticCityLocations": Array [
+                                "Cork",
+                                "Dublin",
+                                "Galway",
+                                "Kilkenny",
+                                "Limerick",
+                                "Waterford",
+                              ],
+                              "edit": false,
+                              "editEventAction": false,
+                              "editEventInfo": undefined,
+                              "errorMessage": "There was an error adding this event, not successfully created.",
+                              "eventService": EventService {
+                                "baseUrl": "http://localhost:3000",
+                              },
+                              "eventType": null,
+                              "eventTypeChange": [Function],
+                              "foreignTrip": false,
+                              "formTitle": "Create Event",
+                              "hasOwnProperty": [Function],
+                              "hideErrorMessage": [Function],
+                              "individualEvent": undefined,
+                              "invalidEventCreation": false,
+                              "location": "",
+                              "populateFormInfo": [Function],
+                              "removeIndividualUserEmail": [Function],
+                              "submitForm": [Function],
+                              "title": "",
+                              "userEmail": "",
+                              "userEmails": Array [],
+                              "userId": [Function],
+                            },
+                            "modifiers": Object {},
+                            "oldValue": undefined,
+                            "value": null,
+                          },
+                        ],
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <input
+                          id="FOREIGN_OVERNIGHT"
+                          name="eventType"
+                          required=""
+                          type="radio"
+                          value="FOREIGN_OVERNIGHT"
+                        />,
+                        "key": null,
+                        "patchFlag": 544,
+                        "props": Object {
+                          "id": "FOREIGN_OVERNIGHT",
+                          "name": "eventType",
+                          "onChange": [Function],
+                          "onUpdate:modelValue": [Function],
+                          "required": "required",
+                          "type": "radio",
+                          "value": "FOREIGN_OVERNIGHT",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 1,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "input",
+                      },
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "Foreign Overnight Trip",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <label
+                          class="radio-label"
+                          for="FOREIGN_OVERNIGHT"
+                        >
+                          Foreign Overnight Trip
+                        </label>,
+                        "key": null,
+                        "patchFlag": -1,
+                        "props": Object {
+                          "class": "radio-label",
+                          "for": "FOREIGN_OVERNIGHT",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 9,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "label",
+                      },
+                    ],
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <div
+                      class="radio-parent-container"
+                    >
+                      <input
+                        id="FOREIGN_OVERNIGHT"
+                        name="eventType"
+                        required=""
+                        type="radio"
+                        value="FOREIGN_OVERNIGHT"
+                      />
+                      <label
+                        class="radio-label"
+                        for="FOREIGN_OVERNIGHT"
+                      >
+                        Foreign Overnight Trip
+                      </label>
+                    </div>,
+                    "key": null,
+                    "patchFlag": 0,
+                    "props": Object {
+                      "class": "radio-parent-container",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 17,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "div",
+                  },
+                ],
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": null,
+                "dynamicProps": null,
+                "el": <div
+                  class="form-control"
+                >
+                  <h3>
+                    Event Type
+                  </h3>
+                  <div
+                    class="radio-parent-container"
+                  >
+                    <input
+                      id="DOMESTIC_DAY"
+                      name="eventType"
+                      required=""
+                      type="radio"
+                      value="DOMESTIC_DAY"
+                    />
+                    <label
+                      class="radio-label"
+                      for="DOMESTIC_DAY"
+                    >
+                      Domestic Day Trip
+                    </label>
+                  </div>
+                  <div
+                    class="radio-parent-container"
+                  >
+                    <input
+                      id="DOMESTIC_OVERNIGHT"
+                      name="eventType"
+                      required=""
+                      type="radio"
+                      value="DOMESTIC_OVERNIGHT"
+                    />
+                    <label
+                      class="radio-label"
+                      for="DOMESTIC_OVERNIGHT"
+                    >
+                      Domestic Overnight Trip
+                    </label>
+                  </div>
+                  <div
+                    class="radio-parent-container"
+                  >
+                    <input
+                      id="FOREIGN_OVERNIGHT"
+                      name="eventType"
+                      required=""
+                      type="radio"
+                      value="FOREIGN_OVERNIGHT"
+                    />
+                    <label
+                      class="radio-label"
+                      for="FOREIGN_OVERNIGHT"
+                    >
+                      Foreign Overnight Trip
+                    </label>
+                  </div>
+                </div>,
+                "key": null,
+                "patchFlag": 0,
+                "props": Object {
+                  "class": "form-control",
+                },
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 17,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": "div",
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": "v-if",
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": Array [],
+                "dynamicProps": null,
+                "el": <!--v-if-->,
+                "key": null,
+                "patchFlag": 0,
+                "props": null,
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 8,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": Symbol(Comment),
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": Array [
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": "Destination",
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <label
+                      class="radio-label"
+                      for="location"
+                    >
+                      Destination
+                    </label>,
+                    "key": null,
+                    "patchFlag": -1,
+                    "props": Object {
+                      "class": "radio-label",
+                      "for": "location",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 9,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "label",
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": Array [
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "Please select location",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <option
+                          disabled=""
+                          value=""
+                        >
+                          Please select location
+                        </option>,
+                        "key": null,
+                        "patchFlag": -1,
+                        "props": Object {
+                          "disabled": "",
+                          "value": "",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 9,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "option",
+                      },
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": ,
+                        "appContext": null,
+                        "children": Array [
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": "Cork",
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": Array [],
+                            "dynamicProps": null,
+                            "el": <option>
+                              Cork
+                            </option>,
+                            "key": "Cork",
+                            "patchFlag": 1,
+                            "props": Object {
+                              "key": "Cork",
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 9,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "option",
+                          },
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": "Dublin",
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": Array [],
+                            "dynamicProps": null,
+                            "el": <option>
+                              Dublin
+                            </option>,
+                            "key": "Dublin",
+                            "patchFlag": 1,
+                            "props": Object {
+                              "key": "Dublin",
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 9,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "option",
+                          },
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": "Galway",
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": Array [],
+                            "dynamicProps": null,
+                            "el": <option>
+                              Galway
+                            </option>,
+                            "key": "Galway",
+                            "patchFlag": 1,
+                            "props": Object {
+                              "key": "Galway",
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 9,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "option",
+                          },
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": "Kilkenny",
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": Array [],
+                            "dynamicProps": null,
+                            "el": <option>
+                              Kilkenny
+                            </option>,
+                            "key": "Kilkenny",
+                            "patchFlag": 1,
+                            "props": Object {
+                              "key": "Kilkenny",
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 9,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "option",
+                          },
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": "Limerick",
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": Array [],
+                            "dynamicProps": null,
+                            "el": <option>
+                              Limerick
+                            </option>,
+                            "key": "Limerick",
+                            "patchFlag": 1,
+                            "props": Object {
+                              "key": "Limerick",
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 9,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "option",
+                          },
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": "Waterford",
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": Array [],
+                            "dynamicProps": null,
+                            "el": <option>
+                              Waterford
+                            </option>,
+                            "key": "Waterford",
+                            "patchFlag": 1,
+                            "props": Object {
+                              "key": "Waterford",
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 9,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "option",
+                          },
+                        ],
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": Array [],
+                        "dynamicProps": null,
+                        "el": ,
+                        "key": null,
+                        "patchFlag": 128,
+                        "props": null,
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 16,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": Symbol(Fragment),
+                      },
+                    ],
+                    "component": null,
+                    "dirs": Array [
+                      Object {
+                        "arg": undefined,
+                        "dir": Object {
+                          "beforeUpdate": [Function],
+                          "created": [Function],
+                          "deep": true,
+                          "mounted": [Function],
+                          "updated": [Function],
+                        },
+                        "instance": Object {
+                          "$route": Object {
+                            "params": Object {
+                              "id": 1,
+                            },
+                          },
+                          "$router": Object {
+                            "push": [MockFunction],
+                          },
+                          "$store": Object {
+                            "dispatch": [MockFunction],
+                            "getters": Object {
+                              "userId": [Function],
+                            },
+                            "state": Object {
+                              "userId": 1,
+                            },
+                          },
+                          "addUserEmail": [Function],
+                          "departureCity": "",
+                          "domesticCityLocations": Array [
+                            "Cork",
+                            "Dublin",
+                            "Galway",
+                            "Kilkenny",
+                            "Limerick",
+                            "Waterford",
+                          ],
+                          "edit": false,
+                          "editEventAction": false,
+                          "editEventInfo": undefined,
+                          "errorMessage": "There was an error adding this event, not successfully created.",
+                          "eventService": EventService {
+                            "baseUrl": "http://localhost:3000",
+                          },
+                          "eventType": null,
+                          "eventTypeChange": [Function],
+                          "foreignTrip": false,
+                          "formTitle": "Create Event",
+                          "hasOwnProperty": [Function],
+                          "hideErrorMessage": [Function],
+                          "individualEvent": undefined,
+                          "invalidEventCreation": false,
+                          "location": "",
+                          "populateFormInfo": [Function],
+                          "removeIndividualUserEmail": [Function],
+                          "submitForm": [Function],
+                          "title": "",
+                          "userEmail": "",
+                          "userEmails": Array [],
+                          "userId": [Function],
+                        },
+                        "modifiers": Object {},
+                        "oldValue": undefined,
+                        "value": "",
+                      },
+                    ],
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <select
+                      id="location"
+                    >
+                      <option
+                        disabled=""
+                        value=""
+                      >
+                        Please select location
+                      </option>
+                      
+                      <option>
+                        Cork
+                      </option>
+                      <option>
+                        Dublin
+                      </option>
+                      <option>
+                        Galway
+                      </option>
+                      <option>
+                        Kilkenny
+                      </option>
+                      <option>
+                        Limerick
+                      </option>
+                      <option>
+                        Waterford
+                      </option>
+                      
+                    </select>,
+                    "key": null,
+                    "patchFlag": 512,
+                    "props": Object {
+                      "id": "location",
+                      "onUpdate:modelValue": [Function],
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 17,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "select",
+                  },
+                ],
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": null,
+                "dynamicProps": null,
+                "el": <div
+                  class="form-control"
+                >
+                  <label
+                    class="radio-label"
+                    for="location"
+                  >
+                    Destination
+                  </label>
+                  <select
+                    id="location"
+                  >
+                    <option
+                      disabled=""
+                      value=""
+                    >
+                      Please select location
+                    </option>
+                    
+                    <option>
+                      Cork
+                    </option>
+                    <option>
+                      Dublin
+                    </option>
+                    <option>
+                      Galway
+                    </option>
+                    <option>
+                      Kilkenny
+                    </option>
+                    <option>
+                      Limerick
+                    </option>
+                    <option>
+                      Waterford
+                    </option>
+                    
+                  </select>
+                </div>,
+                "key": null,
+                "patchFlag": 0,
+                "props": Object {
+                  "class": "form-control",
+                },
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 17,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": "div",
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": Array [
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": " Users",
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <label
+                      for="users"
+                    >
+                       Users
+                    </label>,
+                    "key": null,
+                    "patchFlag": -1,
+                    "props": Object {
+                      "for": "users",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 9,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "label",
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": null,
+                    "component": null,
+                    "dirs": Array [
+                      Object {
+                        "arg": undefined,
+                        "dir": Object {
+                          "beforeUpdate": [Function],
+                          "created": [Function],
+                          "mounted": [Function],
+                        },
+                        "instance": Object {
+                          "$route": Object {
+                            "params": Object {
+                              "id": 1,
+                            },
+                          },
+                          "$router": Object {
+                            "push": [MockFunction],
+                          },
+                          "$store": Object {
+                            "dispatch": [MockFunction],
+                            "getters": Object {
+                              "userId": [Function],
+                            },
+                            "state": Object {
+                              "userId": 1,
+                            },
+                          },
+                          "addUserEmail": [Function],
+                          "departureCity": "",
+                          "domesticCityLocations": Array [
+                            "Cork",
+                            "Dublin",
+                            "Galway",
+                            "Kilkenny",
+                            "Limerick",
+                            "Waterford",
+                          ],
+                          "edit": false,
+                          "editEventAction": false,
+                          "editEventInfo": undefined,
+                          "errorMessage": "There was an error adding this event, not successfully created.",
+                          "eventService": EventService {
+                            "baseUrl": "http://localhost:3000",
+                          },
+                          "eventType": null,
+                          "eventTypeChange": [Function],
+                          "foreignTrip": false,
+                          "formTitle": "Create Event",
+                          "hasOwnProperty": [Function],
+                          "hideErrorMessage": [Function],
+                          "individualEvent": undefined,
+                          "invalidEventCreation": false,
+                          "location": "",
+                          "populateFormInfo": [Function],
+                          "removeIndividualUserEmail": [Function],
+                          "submitForm": [Function],
+                          "title": "",
+                          "userEmail": "",
+                          "userEmails": Array [],
+                          "userId": [Function],
+                        },
+                        "modifiers": Object {},
+                        "oldValue": undefined,
+                        "value": "",
+                      },
+                    ],
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <input
+                      id="useremail"
+                      name="useremail"
+                      placeholder="Enter user email"
+                      type="text"
+                    />,
+                    "key": null,
+                    "patchFlag": 512,
+                    "props": Object {
+                      "id": "useremail",
+                      "name": "useremail",
+                      "onUpdate:modelValue": [Function],
+                      "placeholder": "Enter user email",
+                      "type": "text",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 1,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "input",
+                  },
+                ],
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": null,
+                "dynamicProps": null,
+                "el": <div
+                  class="form-control"
+                >
+                  <label
+                    for="users"
+                  >
+                     Users
+                  </label>
+                  <input
+                    id="useremail"
+                    name="useremail"
+                    placeholder="Enter user email"
+                    type="text"
+                  />
+                </div>,
+                "key": null,
+                "patchFlag": 0,
+                "props": Object {
+                  "class": "form-control",
+                },
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 17,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": "div",
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": Array [
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": "Add Email",
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <button
+                      id="add-option-button"
+                    >
+                      Add Email
+                    </button>,
+                    "key": null,
+                    "patchFlag": 0,
+                    "props": Object {
+                      "id": "add-option-button",
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 9,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "button",
+                  },
+                ],
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": null,
+                "dynamicProps": null,
+                "el": <div
+                  class="form-control"
+                >
+                  <button
+                    id="add-option-button"
+                  >
+                    Add Email
+                  </button>
+                </div>,
+                "key": null,
+                "patchFlag": 0,
+                "props": Object {
+                  "class": "form-control",
+                },
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 17,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": "div",
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": "v-if",
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": Array [],
+                "dynamicProps": null,
+                "el": <!--v-if-->,
+                "key": null,
+                "patchFlag": 0,
+                "props": null,
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 8,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": Symbol(Comment),
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": Array [
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": "Add Event",
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <button>
+                      Add Event
+                    </button>,
+                    "key": null,
+                    "patchFlag": 0,
+                    "props": null,
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 9,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "button",
+                  },
+                ],
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": null,
+                "dynamicProps": null,
+                "el": <div
+                  class="form-control button-container"
+                >
+                  <button>
+                    Add Event
+                  </button>
+                </div>,
+                "key": null,
+                "patchFlag": -1,
+                "props": Object {
+                  "class": "form-control button-container",
+                },
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 17,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": "div",
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": null,
+                "component": Object {
+                  "a": null,
+                  "accessCache": Object {},
+                  "appContext": Object {
+                    "app": [Circular],
+                    "components": Object {
+                      "transition": Object {
+                        "name": "transition",
+                      },
+                      "transition-group": Object {
+                        "name": "transition-group",
+                      },
+                    },
+                    "config": Object {
+                      "compilerOptions": Object {},
+                      "errorHandler": undefined,
+                      "globalProperties": Object {},
+                      "isNativeTag": [Function],
+                      "optionMergeStrategies": Object {},
+                      "performance": false,
+                      "warnHandler": undefined,
+                    },
+                    "directives": Object {},
+                    "emitsCache": WeakMap {},
+                    "mixins": Array [
+                      Object {
+                        "beforeCreate": [Function],
+                      },
+                    ],
+                    "optionsCache": WeakMap {},
+                    "propsCache": WeakMap {},
+                    "provides": Object {},
+                    "reload": [Function],
+                  },
+                  "asyncDep": null,
+                  "asyncResolved": false,
+                  "attrs": Object {
+                    "onHideErrorMessage": [Function],
+                  },
+                  "bc": null,
+                  "bm": null,
+                  "bu": null,
+                  "bum": null,
+                  "c": null,
+                  "components": null,
+                  "ctx": Object {
+                    "$route": Object {
+                      "params": Object {
+                        "id": 1,
+                      },
+                    },
+                    "$router": Object {
+                      "push": [MockFunction],
+                    },
+                    "$store": Object {
+                      "dispatch": [MockFunction],
+                      "getters": Object {
+                        "userId": [Function],
+                      },
+                      "state": Object {
+                        "userId": 1,
+                      },
+                    },
+                    "errorMessage": "There was an error adding this event, not successfully created.",
+                    "toggle": false,
+                  },
+                  "da": null,
+                  "data": Object {},
+                  "directives": null,
+                  "ec": null,
+                  "effect": ReactiveEffect {
+                    "active": true,
+                    "allowRecurse": true,
+                    "deps": Array [
+                      Set {
+                        [Circular],
+                      },
+                      Set {
+                        [Circular],
+                      },
+                      Set {
+                        [Circular],
+                      },
+                      Set {
+                        [Circular],
+                      },
+                    ],
+                    "fn": [Function],
+                    "onTrack": undefined,
+                    "onTrigger": undefined,
+                    "scheduler": [Function],
+                  },
+                  "emit": [Function],
+                  "emitsOptions": null,
+                  "emitted": null,
+                  "exposeProxy": null,
+                  "exposed": null,
+                  "inheritAttrs": undefined,
+                  "isDeactivated": false,
+                  "isMounted": true,
+                  "isUnmounted": false,
+                  "m": null,
+                  "next": null,
+                  "parent": [Circular],
+                  "props": Object {
+                    "errorMessage": "There was an error adding this event, not successfully created.",
+                    "toggle": false,
+                  },
+                  "propsDefaults": Object {},
+                  "propsOptions": Array [
+                    Object {
+                      "errorMessage": Object {
+                        "0": false,
+                        "1": true,
+                        "type": [Function],
+                      },
+                      "toggle": Object {
+                        "0": true,
+                        "1": true,
+                        "type": [Function],
+                      },
+                    },
+                    Array [
+                      "toggle",
+                    ],
+                  ],
+                  "provides": Object {},
+                  "proxy": Object {
+                    "$route": Object {
+                      "params": Object {
+                        "id": 1,
+                      },
+                    },
+                    "$router": Object {
+                      "push": [MockFunction],
+                    },
+                    "$store": Object {
+                      "dispatch": [MockFunction],
+                      "getters": Object {
+                        "userId": [Function],
+                      },
+                      "state": Object {
+                        "userId": 1,
+                      },
+                    },
+                    "errorMessage": "There was an error adding this event, not successfully created.",
+                    "toggle": false,
+                  },
+                  "refs": Object {},
+                  "render": [Function],
+                  "renderCache": Array [],
+                  "root": [Circular],
+                  "rtc": null,
+                  "rtg": null,
+                  "scope": EffectScope {
+                    "active": true,
+                    "cleanups": Array [],
+                    "effects": Array [
+                      ReactiveEffect {
+                        "active": true,
+                        "allowRecurse": true,
+                        "deps": Array [
+                          Set {
+                            [Circular],
+                          },
+                          Set {
+                            [Circular],
+                          },
+                          Set {
+                            [Circular],
+                          },
+                          Set {
+                            [Circular],
+                          },
+                        ],
+                        "fn": [Function],
+                        "onTrack": undefined,
+                        "onTrigger": undefined,
+                        "scheduler": [Function],
+                      },
+                    ],
+                  },
+                  "setupContext": null,
+                  "setupState": Object {},
+                  "slots": Object {},
+                  "sp": null,
+                  "subTree": Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": null,
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <account-error-message-stub
+                      errormessage="There was an error adding this event, not successfully created."
+                      toggle="false"
+                    />,
+                    "key": null,
+                    "patchFlag": 16,
+                    "props": Object {
+                      "errorMessage": "There was an error adding this event, not successfully created.",
+                      "onHideErrorMessage": [Function],
+                      "toggle": false,
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 1,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "account-error-message-stub",
+                  },
+                  "suspense": null,
+                  "suspenseId": 0,
+                  "type": Object {
+                    "compatConfig": Object {
+                      "MODE": 3,
+                      "RENDER_FUNCTION": false,
+                    },
+                    "name": "AccountErrorMessage",
+                    "props": Object {
+                      "errorMessage": Object {
+                        "0": false,
+                        "1": true,
+                        "type": [Function],
+                      },
+                      "toggle": Object {
+                        "0": true,
+                        "1": true,
+                        "type": [Function],
+                      },
+                    },
+                    "render": [Function],
+                  },
+                  "u": null,
+                  "uid": 2,
+                  "um": null,
+                  "update": [Function],
+                  "vnode": [Circular],
+                  "withProxy": null,
+                },
+                "dirs": null,
+                "dynamicChildren": null,
+                "dynamicProps": Array [
+                  "toggle",
+                  "errorMessage",
+                  "onHideErrorMessage",
+                ],
+                "el": <account-error-message-stub
+                  errormessage="There was an error adding this event, not successfully created."
+                  toggle="false"
+                />,
+                "key": null,
+                "patchFlag": 8,
+                "props": Object {
+                  "errorMessage": "There was an error adding this event, not successfully created.",
+                  "onHideErrorMessage": [Function],
+                  "toggle": false,
+                },
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 4,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": Object {
+                  "compatConfig": Object {
+                    "MODE": 3,
+                    "RENDER_FUNCTION": false,
+                  },
+                  "name": "AccountErrorMessage",
+                  "props": Object {
+                    "errorMessage": Object {
+                      "0": false,
+                      "1": true,
+                      "type": [Function],
+                    },
+                    "toggle": Object {
+                      "0": true,
+                      "1": true,
+                      "type": [Function],
+                    },
+                  },
+                  "render": [Function],
+                },
+              },
+            ],
+            "component": null,
+            "dirs": null,
+            "dynamicChildren": Array [
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": "v-if",
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": Array [],
+                "dynamicProps": null,
+                "el": <!--v-if-->,
+                "key": null,
+                "patchFlag": 0,
+                "props": null,
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 8,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": Symbol(Comment),
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": "Create Event",
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": null,
+                "dynamicProps": null,
+                "el": <h2>
+                  Create Event
+                </h2>,
+                "key": null,
+                "patchFlag": 1,
+                "props": null,
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 9,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": "h2",
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": null,
+                "component": null,
+                "dirs": Array [
+                  Object {
+                    "arg": undefined,
+                    "dir": Object {
+                      "beforeUpdate": [Function],
+                      "created": [Function],
+                      "mounted": [Function],
+                    },
+                    "instance": Object {
+                      "$route": Object {
+                        "params": Object {
+                          "id": 1,
+                        },
+                      },
+                      "$router": Object {
+                        "push": [MockFunction],
+                      },
+                      "$store": Object {
+                        "dispatch": [MockFunction],
+                        "getters": Object {
+                          "userId": [Function],
+                        },
+                        "state": Object {
+                          "userId": 1,
+                        },
+                      },
+                      "addUserEmail": [Function],
+                      "departureCity": "",
+                      "domesticCityLocations": Array [
+                        "Cork",
+                        "Dublin",
+                        "Galway",
+                        "Kilkenny",
+                        "Limerick",
+                        "Waterford",
+                      ],
+                      "edit": false,
+                      "editEventAction": false,
+                      "editEventInfo": undefined,
+                      "errorMessage": "There was an error adding this event, not successfully created.",
+                      "eventService": EventService {
+                        "baseUrl": "http://localhost:3000",
+                      },
+                      "eventType": null,
+                      "eventTypeChange": [Function],
+                      "foreignTrip": false,
+                      "formTitle": "Create Event",
+                      "hasOwnProperty": [Function],
+                      "hideErrorMessage": [Function],
+                      "individualEvent": undefined,
+                      "invalidEventCreation": false,
+                      "location": "",
+                      "populateFormInfo": [Function],
+                      "removeIndividualUserEmail": [Function],
+                      "submitForm": [Function],
+                      "title": "",
+                      "userEmail": "",
+                      "userEmails": Array [],
+                      "userId": [Function],
+                    },
+                    "modifiers": Object {},
+                    "oldValue": undefined,
+                    "value": "",
+                  },
+                ],
+                "dynamicChildren": null,
+                "dynamicProps": null,
+                "el": <input
+                  id="title"
+                  name="title"
+                  placeholder="Enter event title"
+                  required=""
+                  type="text"
+                />,
+                "key": null,
+                "patchFlag": 512,
+                "props": Object {
+                  "id": "title",
+                  "name": "title",
+                  "onUpdate:modelValue": [Function],
+                  "placeholder": "Enter event title",
+                  "required": "",
+                  "type": "text",
+                },
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 1,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": "input",
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": null,
+                "component": null,
+                "dirs": Array [
+                  Object {
+                    "arg": undefined,
+                    "dir": Object {
+                      "beforeUpdate": [Function],
+                      "created": [Function],
+                    },
+                    "instance": Object {
+                      "$route": Object {
+                        "params": Object {
+                          "id": 1,
+                        },
+                      },
+                      "$router": Object {
+                        "push": [MockFunction],
+                      },
+                      "$store": Object {
+                        "dispatch": [MockFunction],
+                        "getters": Object {
+                          "userId": [Function],
+                        },
+                        "state": Object {
+                          "userId": 1,
+                        },
+                      },
+                      "addUserEmail": [Function],
+                      "departureCity": "",
+                      "domesticCityLocations": Array [
+                        "Cork",
+                        "Dublin",
+                        "Galway",
+                        "Kilkenny",
+                        "Limerick",
+                        "Waterford",
+                      ],
+                      "edit": false,
+                      "editEventAction": false,
+                      "editEventInfo": undefined,
+                      "errorMessage": "There was an error adding this event, not successfully created.",
+                      "eventService": EventService {
+                        "baseUrl": "http://localhost:3000",
+                      },
+                      "eventType": null,
+                      "eventTypeChange": [Function],
+                      "foreignTrip": false,
+                      "formTitle": "Create Event",
+                      "hasOwnProperty": [Function],
+                      "hideErrorMessage": [Function],
+                      "individualEvent": undefined,
+                      "invalidEventCreation": false,
+                      "location": "",
+                      "populateFormInfo": [Function],
+                      "removeIndividualUserEmail": [Function],
+                      "submitForm": [Function],
+                      "title": "",
+                      "userEmail": "",
+                      "userEmails": Array [],
+                      "userId": [Function],
+                    },
+                    "modifiers": Object {},
+                    "oldValue": undefined,
+                    "value": null,
+                  },
+                ],
+                "dynamicChildren": null,
+                "dynamicProps": null,
+                "el": <input
+                  id="DOMESTIC_DAY"
+                  name="eventType"
+                  required=""
+                  type="radio"
+                  value="DOMESTIC_DAY"
+                />,
+                "key": null,
+                "patchFlag": 544,
+                "props": Object {
+                  "id": "DOMESTIC_DAY",
+                  "name": "eventType",
+                  "onChange": [Function],
+                  "onUpdate:modelValue": [Function],
+                  "required": "required",
+                  "type": "radio",
+                  "value": "DOMESTIC_DAY",
+                },
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 1,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": "input",
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": null,
+                "component": null,
+                "dirs": Array [
+                  Object {
+                    "arg": undefined,
+                    "dir": Object {
+                      "beforeUpdate": [Function],
+                      "created": [Function],
+                    },
+                    "instance": Object {
+                      "$route": Object {
+                        "params": Object {
+                          "id": 1,
+                        },
+                      },
+                      "$router": Object {
+                        "push": [MockFunction],
+                      },
+                      "$store": Object {
+                        "dispatch": [MockFunction],
+                        "getters": Object {
+                          "userId": [Function],
+                        },
+                        "state": Object {
+                          "userId": 1,
+                        },
+                      },
+                      "addUserEmail": [Function],
+                      "departureCity": "",
+                      "domesticCityLocations": Array [
+                        "Cork",
+                        "Dublin",
+                        "Galway",
+                        "Kilkenny",
+                        "Limerick",
+                        "Waterford",
+                      ],
+                      "edit": false,
+                      "editEventAction": false,
+                      "editEventInfo": undefined,
+                      "errorMessage": "There was an error adding this event, not successfully created.",
+                      "eventService": EventService {
+                        "baseUrl": "http://localhost:3000",
+                      },
+                      "eventType": null,
+                      "eventTypeChange": [Function],
+                      "foreignTrip": false,
+                      "formTitle": "Create Event",
+                      "hasOwnProperty": [Function],
+                      "hideErrorMessage": [Function],
+                      "individualEvent": undefined,
+                      "invalidEventCreation": false,
+                      "location": "",
+                      "populateFormInfo": [Function],
+                      "removeIndividualUserEmail": [Function],
+                      "submitForm": [Function],
+                      "title": "",
+                      "userEmail": "",
+                      "userEmails": Array [],
+                      "userId": [Function],
+                    },
+                    "modifiers": Object {},
+                    "oldValue": undefined,
+                    "value": null,
+                  },
+                ],
+                "dynamicChildren": null,
+                "dynamicProps": null,
+                "el": <input
+                  id="DOMESTIC_OVERNIGHT"
+                  name="eventType"
+                  required=""
+                  type="radio"
+                  value="DOMESTIC_OVERNIGHT"
+                />,
+                "key": null,
+                "patchFlag": 544,
+                "props": Object {
+                  "id": "DOMESTIC_OVERNIGHT",
+                  "name": "eventType",
+                  "onChange": [Function],
+                  "onUpdate:modelValue": [Function],
+                  "required": "required",
+                  "type": "radio",
+                  "value": "DOMESTIC_OVERNIGHT",
+                },
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 1,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": "input",
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": null,
+                "component": null,
+                "dirs": Array [
+                  Object {
+                    "arg": undefined,
+                    "dir": Object {
+                      "beforeUpdate": [Function],
+                      "created": [Function],
+                    },
+                    "instance": Object {
+                      "$route": Object {
+                        "params": Object {
+                          "id": 1,
+                        },
+                      },
+                      "$router": Object {
+                        "push": [MockFunction],
+                      },
+                      "$store": Object {
+                        "dispatch": [MockFunction],
+                        "getters": Object {
+                          "userId": [Function],
+                        },
+                        "state": Object {
+                          "userId": 1,
+                        },
+                      },
+                      "addUserEmail": [Function],
+                      "departureCity": "",
+                      "domesticCityLocations": Array [
+                        "Cork",
+                        "Dublin",
+                        "Galway",
+                        "Kilkenny",
+                        "Limerick",
+                        "Waterford",
+                      ],
+                      "edit": false,
+                      "editEventAction": false,
+                      "editEventInfo": undefined,
+                      "errorMessage": "There was an error adding this event, not successfully created.",
+                      "eventService": EventService {
+                        "baseUrl": "http://localhost:3000",
+                      },
+                      "eventType": null,
+                      "eventTypeChange": [Function],
+                      "foreignTrip": false,
+                      "formTitle": "Create Event",
+                      "hasOwnProperty": [Function],
+                      "hideErrorMessage": [Function],
+                      "individualEvent": undefined,
+                      "invalidEventCreation": false,
+                      "location": "",
+                      "populateFormInfo": [Function],
+                      "removeIndividualUserEmail": [Function],
+                      "submitForm": [Function],
+                      "title": "",
+                      "userEmail": "",
+                      "userEmails": Array [],
+                      "userId": [Function],
+                    },
+                    "modifiers": Object {},
+                    "oldValue": undefined,
+                    "value": null,
+                  },
+                ],
+                "dynamicChildren": null,
+                "dynamicProps": null,
+                "el": <input
+                  id="FOREIGN_OVERNIGHT"
+                  name="eventType"
+                  required=""
+                  type="radio"
+                  value="FOREIGN_OVERNIGHT"
+                />,
+                "key": null,
+                "patchFlag": 544,
+                "props": Object {
+                  "id": "FOREIGN_OVERNIGHT",
+                  "name": "eventType",
+                  "onChange": [Function],
+                  "onUpdate:modelValue": [Function],
+                  "required": "required",
+                  "type": "radio",
+                  "value": "FOREIGN_OVERNIGHT",
+                },
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 1,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": "input",
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": "v-if",
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": Array [],
+                "dynamicProps": null,
+                "el": <!--v-if-->,
+                "key": null,
+                "patchFlag": 0,
+                "props": null,
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 8,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": Symbol(Comment),
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": ,
+                "appContext": null,
+                "children": Array [
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": "Cork",
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": Array [],
+                    "dynamicProps": null,
+                    "el": <option>
+                      Cork
+                    </option>,
+                    "key": "Cork",
+                    "patchFlag": 1,
+                    "props": Object {
+                      "key": "Cork",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 9,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "option",
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": "Dublin",
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": Array [],
+                    "dynamicProps": null,
+                    "el": <option>
+                      Dublin
+                    </option>,
+                    "key": "Dublin",
+                    "patchFlag": 1,
+                    "props": Object {
+                      "key": "Dublin",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 9,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "option",
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": "Galway",
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": Array [],
+                    "dynamicProps": null,
+                    "el": <option>
+                      Galway
+                    </option>,
+                    "key": "Galway",
+                    "patchFlag": 1,
+                    "props": Object {
+                      "key": "Galway",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 9,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "option",
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": "Kilkenny",
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": Array [],
+                    "dynamicProps": null,
+                    "el": <option>
+                      Kilkenny
+                    </option>,
+                    "key": "Kilkenny",
+                    "patchFlag": 1,
+                    "props": Object {
+                      "key": "Kilkenny",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 9,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "option",
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": "Limerick",
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": Array [],
+                    "dynamicProps": null,
+                    "el": <option>
+                      Limerick
+                    </option>,
+                    "key": "Limerick",
+                    "patchFlag": 1,
+                    "props": Object {
+                      "key": "Limerick",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 9,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "option",
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": "Waterford",
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": Array [],
+                    "dynamicProps": null,
+                    "el": <option>
+                      Waterford
+                    </option>,
+                    "key": "Waterford",
+                    "patchFlag": 1,
+                    "props": Object {
+                      "key": "Waterford",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 9,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "option",
+                  },
+                ],
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": Array [],
+                "dynamicProps": null,
+                "el": ,
+                "key": null,
+                "patchFlag": 128,
+                "props": null,
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 16,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": Symbol(Fragment),
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": Array [
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": "Please select location",
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <option
+                      disabled=""
+                      value=""
+                    >
+                      Please select location
+                    </option>,
+                    "key": null,
+                    "patchFlag": -1,
+                    "props": Object {
+                      "disabled": "",
+                      "value": "",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 9,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "option",
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": ,
+                    "appContext": null,
+                    "children": Array [
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "Cork",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": Array [],
+                        "dynamicProps": null,
+                        "el": <option>
+                          Cork
+                        </option>,
+                        "key": "Cork",
+                        "patchFlag": 1,
+                        "props": Object {
+                          "key": "Cork",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 9,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "option",
+                      },
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "Dublin",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": Array [],
+                        "dynamicProps": null,
+                        "el": <option>
+                          Dublin
+                        </option>,
+                        "key": "Dublin",
+                        "patchFlag": 1,
+                        "props": Object {
+                          "key": "Dublin",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 9,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "option",
+                      },
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "Galway",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": Array [],
+                        "dynamicProps": null,
+                        "el": <option>
+                          Galway
+                        </option>,
+                        "key": "Galway",
+                        "patchFlag": 1,
+                        "props": Object {
+                          "key": "Galway",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 9,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "option",
+                      },
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "Kilkenny",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": Array [],
+                        "dynamicProps": null,
+                        "el": <option>
+                          Kilkenny
+                        </option>,
+                        "key": "Kilkenny",
+                        "patchFlag": 1,
+                        "props": Object {
+                          "key": "Kilkenny",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 9,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "option",
+                      },
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "Limerick",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": Array [],
+                        "dynamicProps": null,
+                        "el": <option>
+                          Limerick
+                        </option>,
+                        "key": "Limerick",
+                        "patchFlag": 1,
+                        "props": Object {
+                          "key": "Limerick",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 9,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "option",
+                      },
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "Waterford",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": Array [],
+                        "dynamicProps": null,
+                        "el": <option>
+                          Waterford
+                        </option>,
+                        "key": "Waterford",
+                        "patchFlag": 1,
+                        "props": Object {
+                          "key": "Waterford",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 9,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "option",
+                      },
+                    ],
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": Array [],
+                    "dynamicProps": null,
+                    "el": ,
+                    "key": null,
+                    "patchFlag": 128,
+                    "props": null,
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 16,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": Symbol(Fragment),
+                  },
+                ],
+                "component": null,
+                "dirs": Array [
+                  Object {
+                    "arg": undefined,
+                    "dir": Object {
+                      "beforeUpdate": [Function],
+                      "created": [Function],
+                      "deep": true,
+                      "mounted": [Function],
+                      "updated": [Function],
+                    },
+                    "instance": Object {
+                      "$route": Object {
+                        "params": Object {
+                          "id": 1,
+                        },
+                      },
+                      "$router": Object {
+                        "push": [MockFunction],
+                      },
+                      "$store": Object {
+                        "dispatch": [MockFunction],
+                        "getters": Object {
+                          "userId": [Function],
+                        },
+                        "state": Object {
+                          "userId": 1,
+                        },
+                      },
+                      "addUserEmail": [Function],
+                      "departureCity": "",
+                      "domesticCityLocations": Array [
+                        "Cork",
+                        "Dublin",
+                        "Galway",
+                        "Kilkenny",
+                        "Limerick",
+                        "Waterford",
+                      ],
+                      "edit": false,
+                      "editEventAction": false,
+                      "editEventInfo": undefined,
+                      "errorMessage": "There was an error adding this event, not successfully created.",
+                      "eventService": EventService {
+                        "baseUrl": "http://localhost:3000",
+                      },
+                      "eventType": null,
+                      "eventTypeChange": [Function],
+                      "foreignTrip": false,
+                      "formTitle": "Create Event",
+                      "hasOwnProperty": [Function],
+                      "hideErrorMessage": [Function],
+                      "individualEvent": undefined,
+                      "invalidEventCreation": false,
+                      "location": "",
+                      "populateFormInfo": [Function],
+                      "removeIndividualUserEmail": [Function],
+                      "submitForm": [Function],
+                      "title": "",
+                      "userEmail": "",
+                      "userEmails": Array [],
+                      "userId": [Function],
+                    },
+                    "modifiers": Object {},
+                    "oldValue": undefined,
+                    "value": "",
+                  },
+                ],
+                "dynamicChildren": null,
+                "dynamicProps": null,
+                "el": <select
+                  id="location"
+                >
+                  <option
+                    disabled=""
+                    value=""
+                  >
+                    Please select location
+                  </option>
+                  
+                  <option>
+                    Cork
+                  </option>
+                  <option>
+                    Dublin
+                  </option>
+                  <option>
+                    Galway
+                  </option>
+                  <option>
+                    Kilkenny
+                  </option>
+                  <option>
+                    Limerick
+                  </option>
+                  <option>
+                    Waterford
+                  </option>
+                  
+                </select>,
+                "key": null,
+                "patchFlag": 512,
+                "props": Object {
+                  "id": "location",
+                  "onUpdate:modelValue": [Function],
+                },
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 17,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": "select",
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": null,
+                "component": null,
+                "dirs": Array [
+                  Object {
+                    "arg": undefined,
+                    "dir": Object {
+                      "beforeUpdate": [Function],
+                      "created": [Function],
+                      "mounted": [Function],
+                    },
+                    "instance": Object {
+                      "$route": Object {
+                        "params": Object {
+                          "id": 1,
+                        },
+                      },
+                      "$router": Object {
+                        "push": [MockFunction],
+                      },
+                      "$store": Object {
+                        "dispatch": [MockFunction],
+                        "getters": Object {
+                          "userId": [Function],
+                        },
+                        "state": Object {
+                          "userId": 1,
+                        },
+                      },
+                      "addUserEmail": [Function],
+                      "departureCity": "",
+                      "domesticCityLocations": Array [
+                        "Cork",
+                        "Dublin",
+                        "Galway",
+                        "Kilkenny",
+                        "Limerick",
+                        "Waterford",
+                      ],
+                      "edit": false,
+                      "editEventAction": false,
+                      "editEventInfo": undefined,
+                      "errorMessage": "There was an error adding this event, not successfully created.",
+                      "eventService": EventService {
+                        "baseUrl": "http://localhost:3000",
+                      },
+                      "eventType": null,
+                      "eventTypeChange": [Function],
+                      "foreignTrip": false,
+                      "formTitle": "Create Event",
+                      "hasOwnProperty": [Function],
+                      "hideErrorMessage": [Function],
+                      "individualEvent": undefined,
+                      "invalidEventCreation": false,
+                      "location": "",
+                      "populateFormInfo": [Function],
+                      "removeIndividualUserEmail": [Function],
+                      "submitForm": [Function],
+                      "title": "",
+                      "userEmail": "",
+                      "userEmails": Array [],
+                      "userId": [Function],
+                    },
+                    "modifiers": Object {},
+                    "oldValue": undefined,
+                    "value": "",
+                  },
+                ],
+                "dynamicChildren": null,
+                "dynamicProps": null,
+                "el": <input
+                  id="useremail"
+                  name="useremail"
+                  placeholder="Enter user email"
+                  type="text"
+                />,
+                "key": null,
+                "patchFlag": 512,
+                "props": Object {
+                  "id": "useremail",
+                  "name": "useremail",
+                  "onUpdate:modelValue": [Function],
+                  "placeholder": "Enter user email",
+                  "type": "text",
+                },
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 1,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": "input",
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": "v-if",
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": Array [],
+                "dynamicProps": null,
+                "el": <!--v-if-->,
+                "key": null,
+                "patchFlag": 0,
+                "props": null,
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 8,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": Symbol(Comment),
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": null,
+                "component": Object {
+                  "a": null,
+                  "accessCache": Object {
+                    "$route": 4,
+                    "$router": 4,
+                    "$store": 4,
+                    "@@__IMMUTABLE_ITERABLE__@@": 0,
+                    "@@__IMMUTABLE_RECORD__@@": 0,
+                    "_isMockFunction": 0,
+                    "constructor": 0,
+                    "errorMessage": 3,
+                    "isVueInstance": 0,
+                    "toJSON": 0,
+                    "toggle": 3,
+                    Symbol(Symbol.toStringTag): 0,
+                  },
+                  "appContext": Object {
+                    "app": [Circular],
+                    "components": Object {
+                      "transition": Object {
+                        "name": "transition",
+                      },
+                      "transition-group": Object {
+                        "name": "transition-group",
+                      },
+                    },
+                    "config": Object {
+                      "compilerOptions": Object {},
+                      "errorHandler": undefined,
+                      "globalProperties": Object {},
+                      "isNativeTag": [Function],
+                      "optionMergeStrategies": Object {},
+                      "performance": false,
+                      "warnHandler": undefined,
+                    },
+                    "directives": Object {},
+                    "emitsCache": WeakMap {},
+                    "mixins": Array [
+                      Object {
+                        "beforeCreate": [Function],
+                      },
+                    ],
+                    "optionsCache": WeakMap {},
+                    "propsCache": WeakMap {},
+                    "provides": Object {},
+                    "reload": [Function],
+                  },
+                  "asyncDep": null,
+                  "asyncResolved": false,
+                  "attrs": Object {
+                    "onHideErrorMessage": [Function],
+                  },
+                  "bc": null,
+                  "bm": null,
+                  "bu": null,
+                  "bum": null,
+                  "c": null,
+                  "components": null,
+                  "ctx": Object {
+                    "$route": Object {
+                      "params": Object {
+                        "id": 1,
+                      },
+                    },
+                    "$router": Object {
+                      "push": [MockFunction],
+                    },
+                    "$store": Object {
+                      "dispatch": [MockFunction],
+                      "getters": Object {
+                        "userId": [Function],
+                      },
+                      "state": Object {
+                        "userId": 1,
+                      },
+                    },
+                    "errorMessage": "There was an error adding this event, not successfully created.",
+                    "toggle": false,
+                  },
+                  "da": null,
+                  "data": Object {},
+                  "directives": null,
+                  "ec": null,
+                  "effect": ReactiveEffect {
+                    "active": true,
+                    "allowRecurse": true,
+                    "deps": Array [
+                      Set {
+                        [Circular],
+                      },
+                      Set {
+                        [Circular],
+                      },
+                      Set {
+                        [Circular],
+                      },
+                      Set {
+                        [Circular],
+                      },
+                    ],
+                    "fn": [Function],
+                    "onTrack": undefined,
+                    "onTrigger": undefined,
+                    "scheduler": [Function],
+                  },
+                  "emit": [Function],
+                  "emitsOptions": null,
+                  "emitted": null,
+                  "exposeProxy": null,
+                  "exposed": null,
+                  "inheritAttrs": undefined,
+                  "isDeactivated": false,
+                  "isMounted": true,
+                  "isUnmounted": false,
+                  "m": null,
+                  "next": null,
+                  "parent": [Circular],
+                  "props": Object {
+                    "errorMessage": "There was an error adding this event, not successfully created.",
+                    "toggle": false,
+                  },
+                  "propsDefaults": Object {},
+                  "propsOptions": Array [
+                    Object {
+                      "errorMessage": Object {
+                        "0": false,
+                        "1": true,
+                        "type": [Function],
+                      },
+                      "toggle": Object {
+                        "0": true,
+                        "1": true,
+                        "type": [Function],
+                      },
+                    },
+                    Array [
+                      "toggle",
+                    ],
+                  ],
+                  "provides": Object {},
+                  "proxy": Object {
+                    "$route": Object {
+                      "params": Object {
+                        "id": 1,
+                      },
+                    },
+                    "$router": Object {
+                      "push": [MockFunction],
+                    },
+                    "$store": Object {
+                      "dispatch": [MockFunction],
+                      "getters": Object {
+                        "userId": [Function],
+                      },
+                      "state": Object {
+                        "userId": 1,
+                      },
+                    },
+                    "errorMessage": "There was an error adding this event, not successfully created.",
+                    "toggle": false,
+                  },
+                  "refs": Object {},
+                  "render": [Function],
+                  "renderCache": Array [],
+                  "root": [Circular],
+                  "rtc": null,
+                  "rtg": null,
+                  "scope": EffectScope {
+                    "active": true,
+                    "cleanups": Array [],
+                    "effects": Array [
+                      ReactiveEffect {
+                        "active": true,
+                        "allowRecurse": true,
+                        "deps": Array [
+                          Set {
+                            [Circular],
+                          },
+                          Set {
+                            [Circular],
+                          },
+                          Set {
+                            [Circular],
+                          },
+                          Set {
+                            [Circular],
+                          },
+                        ],
+                        "fn": [Function],
+                        "onTrack": undefined,
+                        "onTrigger": undefined,
+                        "scheduler": [Function],
+                      },
+                    ],
+                  },
+                  "setupContext": null,
+                  "setupState": Object {},
+                  "slots": Object {},
+                  "sp": null,
+                  "subTree": Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": null,
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <account-error-message-stub
+                      errormessage="There was an error adding this event, not successfully created."
+                      toggle="false"
+                    />,
+                    "key": null,
+                    "patchFlag": 16,
+                    "props": Object {
+                      "errorMessage": "There was an error adding this event, not successfully created.",
+                      "onHideErrorMessage": [Function],
+                      "toggle": false,
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 1,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "account-error-message-stub",
+                  },
+                  "suspense": null,
+                  "suspenseId": 0,
+                  "type": Object {
+                    "compatConfig": Object {
+                      "MODE": 3,
+                      "RENDER_FUNCTION": false,
+                    },
+                    "name": "AccountErrorMessage",
+                    "props": Object {
+                      "errorMessage": Object {
+                        "0": false,
+                        "1": true,
+                        "type": [Function],
+                      },
+                      "toggle": Object {
+                        "0": true,
+                        "1": true,
+                        "type": [Function],
+                      },
+                    },
+                    "render": [Function],
+                  },
+                  "u": null,
+                  "uid": 2,
+                  "um": null,
+                  "update": [Function],
+                  "vnode": [Circular],
+                  "withProxy": null,
+                },
+                "dirs": null,
+                "dynamicChildren": null,
+                "dynamicProps": Array [
+                  "toggle",
+                  "errorMessage",
+                  "onHideErrorMessage",
+                ],
+                "el": <account-error-message-stub
+                  errormessage="There was an error adding this event, not successfully created."
+                  toggle="false"
+                />,
+                "key": null,
+                "patchFlag": 8,
+                "props": Object {
+                  "errorMessage": "There was an error adding this event, not successfully created.",
+                  "onHideErrorMessage": [Function],
+                  "toggle": false,
+                },
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 4,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": Object {
+                  "compatConfig": Object {
+                    "MODE": 3,
+                    "RENDER_FUNCTION": false,
+                  },
+                  "name": "AccountErrorMessage",
+                  "props": Object {
+                    "errorMessage": Object {
+                      "0": false,
+                      "1": true,
+                      "type": [Function],
+                    },
+                    "toggle": Object {
+                      "0": true,
+                      "1": true,
+                      "type": [Function],
+                    },
+                  },
+                  "render": [Function],
+                },
+              },
+            ],
+            "dynamicProps": null,
+            "el": <form>
+              <!--v-if-->
+              <div
+                class="form-control"
+              >
+                <h2>
+                  Create Event
+                </h2>
+              </div>
+              <div
+                class="form-control"
+              >
+                <label
+                  for="title"
+                >
+                  Title
+                </label>
+                <input
+                  id="title"
+                  name="title"
+                  placeholder="Enter event title"
+                  required=""
+                  type="text"
+                />
+              </div>
+              <div
+                class="form-control"
+              >
+                <h3>
+                  Event Type
+                </h3>
+                <div
+                  class="radio-parent-container"
+                >
+                  <input
+                    id="DOMESTIC_DAY"
+                    name="eventType"
+                    required=""
+                    type="radio"
+                    value="DOMESTIC_DAY"
+                  />
+                  <label
+                    class="radio-label"
+                    for="DOMESTIC_DAY"
+                  >
+                    Domestic Day Trip
+                  </label>
+                </div>
+                <div
+                  class="radio-parent-container"
+                >
+                  <input
+                    id="DOMESTIC_OVERNIGHT"
+                    name="eventType"
+                    required=""
+                    type="radio"
+                    value="DOMESTIC_OVERNIGHT"
+                  />
+                  <label
+                    class="radio-label"
+                    for="DOMESTIC_OVERNIGHT"
+                  >
+                    Domestic Overnight Trip
+                  </label>
+                </div>
+                <div
+                  class="radio-parent-container"
+                >
+                  <input
+                    id="FOREIGN_OVERNIGHT"
+                    name="eventType"
+                    required=""
+                    type="radio"
+                    value="FOREIGN_OVERNIGHT"
+                  />
+                  <label
+                    class="radio-label"
+                    for="FOREIGN_OVERNIGHT"
+                  >
+                    Foreign Overnight Trip
+                  </label>
+                </div>
+              </div>
+              <!--v-if-->
+              <div
+                class="form-control"
+              >
+                <label
+                  class="radio-label"
+                  for="location"
+                >
+                  Destination
+                </label>
+                <select
+                  id="location"
+                >
+                  <option
+                    disabled=""
+                    value=""
+                  >
+                    Please select location
+                  </option>
+                  
+                  <option>
+                    Cork
+                  </option>
+                  <option>
+                    Dublin
+                  </option>
+                  <option>
+                    Galway
+                  </option>
+                  <option>
+                    Kilkenny
+                  </option>
+                  <option>
+                    Limerick
+                  </option>
+                  <option>
+                    Waterford
+                  </option>
+                  
+                </select>
+              </div>
+              <div
+                class="form-control"
+              >
+                <label
+                  for="users"
+                >
+                   Users
+                </label>
+                <input
+                  id="useremail"
+                  name="useremail"
+                  placeholder="Enter user email"
+                  type="text"
+                />
+              </div>
+              <div
+                class="form-control"
+              >
+                <button
+                  id="add-option-button"
+                >
+                  Add Email
+                </button>
+              </div>
+              <!--v-if-->
+              <div
+                class="form-control button-container"
+              >
+                <button>
+                  Add Event
+                </button>
+              </div>
+              <account-error-message-stub
+                errormessage="There was an error adding this event, not successfully created."
+                toggle="false"
+              />
+            </form>,
+            "key": null,
+            "patchFlag": 32,
+            "props": Object {
+              "onSubmit": [Function],
+            },
+            "ref": null,
+            "scopeId": null,
+            "shapeFlag": 17,
+            "slotScopeIds": null,
+            "ssContent": null,
+            "ssFallback": null,
+            "staticCount": 0,
+            "suspense": null,
+            "target": null,
+            "targetAnchor": null,
+            "transition": null,
+            "type": "form",
+          },
+          "suspense": null,
+          "suspenseId": 0,
+          "type": Object {
+            "components": Object {
+              "AccountErrorMessage": Object {
+                "data": [Function],
+                "methods": Object {
+                  "hideErrorMessage": [Function],
+                },
+                "props": Object {
+                  "errorMessage": Object {
+                    "0": false,
+                    "1": true,
+                    "type": [Function],
+                  },
+                  "toggle": Object {
+                    "0": true,
+                    "1": true,
+                    "type": [Function],
+                  },
+                },
+                "render": [Function],
+              },
+              "EventFormUserEmailDisplay": Object {
+                "data": [Function],
+                "props": Array [
+                  "email",
+                ],
+                "render": [Function],
+              },
+            },
+            "computed": Object {
+              "userId": [Function],
+            },
+            "created": [Function],
+            "data": [Function],
+            "methods": Object {
+              "addUserEmail": [Function],
+              "eventTypeChange": [Function],
+              "hideErrorMessage": [Function],
+              "populateFormInfo": [Function],
+              "removeIndividualUserEmail": [Function],
+              "submitForm": [Function],
+            },
+            "props": Object {
+              "edit": [Function],
+              "eventService": Object {
+                "0": false,
+                "1": true,
+                "default": EventService {
+                  "baseUrl": "http://localhost:3000",
+                },
+              },
+              "individualEvent": [Function],
+            },
+            "render": [Function],
+          },
+          "u": null,
+          "uid": 1,
+          "um": null,
+          "update": [Function],
+          "vnode": [Circular],
+          "withProxy": null,
+        },
+        "dirs": null,
+        "dynamicChildren": null,
+        "dynamicProps": null,
+        "el": <form>
+          <!--v-if-->
+          <div
+            class="form-control"
+          >
+            <h2>
+              Create Event
+            </h2>
+          </div>
+          <div
+            class="form-control"
+          >
+            <label
+              for="title"
+            >
+              Title
+            </label>
+            <input
+              id="title"
+              name="title"
+              placeholder="Enter event title"
+              required=""
+              type="text"
+            />
+          </div>
+          <div
+            class="form-control"
+          >
+            <h3>
+              Event Type
+            </h3>
+            <div
+              class="radio-parent-container"
+            >
+              <input
+                id="DOMESTIC_DAY"
+                name="eventType"
+                required=""
+                type="radio"
+                value="DOMESTIC_DAY"
+              />
+              <label
+                class="radio-label"
+                for="DOMESTIC_DAY"
+              >
+                Domestic Day Trip
+              </label>
+            </div>
+            <div
+              class="radio-parent-container"
+            >
+              <input
+                id="DOMESTIC_OVERNIGHT"
+                name="eventType"
+                required=""
+                type="radio"
+                value="DOMESTIC_OVERNIGHT"
+              />
+              <label
+                class="radio-label"
+                for="DOMESTIC_OVERNIGHT"
+              >
+                Domestic Overnight Trip
+              </label>
+            </div>
+            <div
+              class="radio-parent-container"
+            >
+              <input
+                id="FOREIGN_OVERNIGHT"
+                name="eventType"
+                required=""
+                type="radio"
+                value="FOREIGN_OVERNIGHT"
+              />
+              <label
+                class="radio-label"
+                for="FOREIGN_OVERNIGHT"
+              >
+                Foreign Overnight Trip
+              </label>
+            </div>
+          </div>
+          <!--v-if-->
+          <div
+            class="form-control"
+          >
+            <label
+              class="radio-label"
+              for="location"
+            >
+              Destination
+            </label>
+            <select
+              id="location"
+            >
+              <option
+                disabled=""
+                value=""
+              >
+                Please select location
+              </option>
+              
+              <option>
+                Cork
+              </option>
+              <option>
+                Dublin
+              </option>
+              <option>
+                Galway
+              </option>
+              <option>
+                Kilkenny
+              </option>
+              <option>
+                Limerick
+              </option>
+              <option>
+                Waterford
+              </option>
+              
+            </select>
+          </div>
+          <div
+            class="form-control"
+          >
+            <label
+              for="users"
+            >
+               Users
+            </label>
+            <input
+              id="useremail"
+              name="useremail"
+              placeholder="Enter user email"
+              type="text"
+            />
+          </div>
+          <div
+            class="form-control"
+          >
+            <button
+              id="add-option-button"
+            >
+              Add Email
+            </button>
+          </div>
+          <!--v-if-->
+          <div
+            class="form-control button-container"
+          >
+            <button>
+              Add Event
+            </button>
+          </div>
+          <account-error-message-stub
+            errormessage="There was an error adding this event, not successfully created."
+            toggle="false"
+          />
+        </form>,
+        "key": null,
+        "patchFlag": 0,
+        "props": Object {
+          "ref": "VTU_COMPONENT",
+        },
+        "ref": Object {
+          "f": false,
+          "i": [Circular],
+          "k": undefined,
+          "r": "VTU_COMPONENT",
+        },
+        "scopeId": null,
+        "shapeFlag": 4,
+        "slotScopeIds": null,
+        "ssContent": null,
+        "ssFallback": null,
+        "staticCount": 0,
+        "suspense": null,
+        "target": null,
+        "targetAnchor": null,
+        "transition": null,
+        "type": Object {
+          "components": Object {
+            "AccountErrorMessage": Object {
+              "data": [Function],
+              "methods": Object {
+                "hideErrorMessage": [Function],
+              },
+              "props": Object {
+                "errorMessage": Object {
+                  "0": false,
+                  "1": true,
+                  "type": [Function],
+                },
+                "toggle": Object {
+                  "0": true,
+                  "1": true,
+                  "type": [Function],
+                },
+              },
+              "render": [Function],
+            },
+            "EventFormUserEmailDisplay": Object {
+              "data": [Function],
+              "props": Array [
+                "email",
+              ],
+              "render": [Function],
+            },
+          },
+          "computed": Object {
+            "userId": [Function],
+          },
+          "created": [Function],
+          "data": [Function],
+          "methods": Object {
+            "addUserEmail": [Function],
+            "eventTypeChange": [Function],
+            "hideErrorMessage": [Function],
+            "populateFormInfo": [Function],
+            "removeIndividualUserEmail": [Function],
+            "submitForm": [Function],
+          },
+          "props": Object {
+            "edit": [Function],
+            "eventService": Object {
+              "0": false,
+              "1": true,
+              "default": EventService {
+                "baseUrl": "http://localhost:3000",
+              },
+            },
+            "individualEvent": [Function],
+          },
+          "render": [Function],
+        },
+      },
+      "suspense": null,
+      "suspenseId": 0,
+      "type": Object {
+        "name": "VTU_ROOT",
+        "render": [Function],
+      },
+      "u": null,
+      "uid": 0,
+      "um": null,
+      "update": [Function],
+      "vnode": Object {
+        "__v_isVNode": true,
+        "__v_skip": true,
+        "anchor": null,
+        "appContext": Object {
+          "app": [Circular],
+          "components": Object {
+            "transition": Object {
+              "name": "transition",
+            },
+            "transition-group": Object {
+              "name": "transition-group",
+            },
+          },
+          "config": Object {
+            "compilerOptions": Object {},
+            "errorHandler": undefined,
+            "globalProperties": Object {},
+            "isNativeTag": [Function],
+            "optionMergeStrategies": Object {},
+            "performance": false,
+            "warnHandler": undefined,
+          },
+          "directives": Object {},
+          "emitsCache": WeakMap {},
+          "mixins": Array [
+            Object {
+              "beforeCreate": [Function],
+            },
+          ],
+          "optionsCache": WeakMap {},
+          "propsCache": WeakMap {},
+          "provides": Object {},
+          "reload": [Function],
+        },
+        "children": null,
+        "component": [Circular],
+        "dirs": null,
+        "dynamicChildren": null,
+        "dynamicProps": null,
+        "el": <form>
+          <!--v-if-->
+          <div
+            class="form-control"
+          >
+            <h2>
+              Create Event
+            </h2>
+          </div>
+          <div
+            class="form-control"
+          >
+            <label
+              for="title"
+            >
+              Title
+            </label>
+            <input
+              id="title"
+              name="title"
+              placeholder="Enter event title"
+              required=""
+              type="text"
+            />
+          </div>
+          <div
+            class="form-control"
+          >
+            <h3>
+              Event Type
+            </h3>
+            <div
+              class="radio-parent-container"
+            >
+              <input
+                id="DOMESTIC_DAY"
+                name="eventType"
+                required=""
+                type="radio"
+                value="DOMESTIC_DAY"
+              />
+              <label
+                class="radio-label"
+                for="DOMESTIC_DAY"
+              >
+                Domestic Day Trip
+              </label>
+            </div>
+            <div
+              class="radio-parent-container"
+            >
+              <input
+                id="DOMESTIC_OVERNIGHT"
+                name="eventType"
+                required=""
+                type="radio"
+                value="DOMESTIC_OVERNIGHT"
+              />
+              <label
+                class="radio-label"
+                for="DOMESTIC_OVERNIGHT"
+              >
+                Domestic Overnight Trip
+              </label>
+            </div>
+            <div
+              class="radio-parent-container"
+            >
+              <input
+                id="FOREIGN_OVERNIGHT"
+                name="eventType"
+                required=""
+                type="radio"
+                value="FOREIGN_OVERNIGHT"
+              />
+              <label
+                class="radio-label"
+                for="FOREIGN_OVERNIGHT"
+              >
+                Foreign Overnight Trip
+              </label>
+            </div>
+          </div>
+          <!--v-if-->
+          <div
+            class="form-control"
+          >
+            <label
+              class="radio-label"
+              for="location"
+            >
+              Destination
+            </label>
+            <select
+              id="location"
+            >
+              <option
+                disabled=""
+                value=""
+              >
+                Please select location
+              </option>
+              
+              <option>
+                Cork
+              </option>
+              <option>
+                Dublin
+              </option>
+              <option>
+                Galway
+              </option>
+              <option>
+                Kilkenny
+              </option>
+              <option>
+                Limerick
+              </option>
+              <option>
+                Waterford
+              </option>
+              
+            </select>
+          </div>
+          <div
+            class="form-control"
+          >
+            <label
+              for="users"
+            >
+               Users
+            </label>
+            <input
+              id="useremail"
+              name="useremail"
+              placeholder="Enter user email"
+              type="text"
+            />
+          </div>
+          <div
+            class="form-control"
+          >
+            <button
+              id="add-option-button"
+            >
+              Add Email
+            </button>
+          </div>
+          <!--v-if-->
+          <div
+            class="form-control button-container"
+          >
+            <button>
+              Add Event
+            </button>
+          </div>
+          <account-error-message-stub
+            errormessage="There was an error adding this event, not successfully created."
+            toggle="false"
+          />
+        </form>,
+        "key": null,
+        "patchFlag": 0,
+        "props": null,
+        "ref": null,
+        "scopeId": null,
+        "shapeFlag": 4,
+        "slotScopeIds": null,
+        "ssContent": null,
+        "ssFallback": null,
+        "staticCount": 0,
+        "suspense": null,
+        "target": null,
+        "targetAnchor": null,
+        "transition": null,
+        "type": Object {
+          "name": "VTU_ROOT",
+          "render": [Function],
+        },
+      },
+      "withProxy": null,
+    },
+    "_props": null,
+    "_uid": 0,
+    "component": [Function],
+    "config": Object {
+      "compilerOptions": Object {},
+      "errorHandler": undefined,
+      "globalProperties": Object {},
+      "isNativeTag": [Function],
+      "optionMergeStrategies": Object {},
+      "performance": false,
+      "warnHandler": undefined,
+    },
+    "directive": [Function],
+    "mixin": [Function],
+    "mount": [Function],
+    "provide": [Function],
+    "unmount": [Function],
+    "use": [Function],
+    "version": "3.2.26",
+  },
+  "__setProps": [Function],
+  "componentVM": Object {
+    "$route": Object {
+      "params": Object {
+        "id": 1,
+      },
+    },
+    "$router": Object {
+      "push": [MockFunction],
+    },
+    "$store": Object {
+      "dispatch": [MockFunction],
+      "getters": Object {
+        "userId": [Function],
+      },
+      "state": Object {
+        "userId": 1,
+      },
+    },
+    "addUserEmail": [Function],
+    "departureCity": "",
+    "domesticCityLocations": Array [
+      "Cork",
+      "Dublin",
+      "Galway",
+      "Kilkenny",
+      "Limerick",
+      "Waterford",
+    ],
+    "edit": false,
+    "editEventAction": false,
+    "editEventInfo": undefined,
+    "errorMessage": "There was an error adding this event, not successfully created.",
+    "eventService": EventService {
+      "baseUrl": "http://localhost:3000",
+    },
+    "eventType": null,
+    "eventTypeChange": [Function],
+    "foreignTrip": false,
+    "formTitle": "Create Event",
+    "hasOwnProperty": [Function],
+    "hideErrorMessage": [Function],
+    "individualEvent": undefined,
+    "invalidEventCreation": false,
+    "location": "",
+    "populateFormInfo": [Function],
+    "removeIndividualUserEmail": [Function],
+    "submitForm": [Function],
+    "title": "",
+    "userEmail": "",
+    "userEmails": Array [],
+    "userId": [Function],
+  },
+  "isDisabled": [Function],
+  "rootVM": Object {
+    "$route": Object {
+      "params": Object {
+        "id": 1,
+      },
+    },
+    "$router": Object {
+      "push": [MockFunction],
+    },
+    "$store": Object {
+      "dispatch": [MockFunction],
+      "getters": Object {
+        "userId": [Function],
+      },
+      "state": Object {
+        "userId": 1,
+      },
+    },
+  },
+  "wrapperElement": <form>
+    <!--v-if-->
+    <div
+      class="form-control"
+    >
+      <h2>
+        Create Event
+      </h2>
+    </div>
+    <div
+      class="form-control"
+    >
+      <label
+        for="title"
+      >
+        Title
+      </label>
+      <input
+        id="title"
+        name="title"
+        placeholder="Enter event title"
+        required=""
+        type="text"
+      />
+    </div>
+    <div
+      class="form-control"
+    >
+      <h3>
+        Event Type
+      </h3>
+      <div
+        class="radio-parent-container"
+      >
+        <input
+          id="DOMESTIC_DAY"
+          name="eventType"
+          required=""
+          type="radio"
+          value="DOMESTIC_DAY"
+        />
+        <label
+          class="radio-label"
+          for="DOMESTIC_DAY"
+        >
+          Domestic Day Trip
+        </label>
+      </div>
+      <div
+        class="radio-parent-container"
+      >
+        <input
+          id="DOMESTIC_OVERNIGHT"
+          name="eventType"
+          required=""
+          type="radio"
+          value="DOMESTIC_OVERNIGHT"
+        />
+        <label
+          class="radio-label"
+          for="DOMESTIC_OVERNIGHT"
+        >
+          Domestic Overnight Trip
+        </label>
+      </div>
+      <div
+        class="radio-parent-container"
+      >
+        <input
+          id="FOREIGN_OVERNIGHT"
+          name="eventType"
+          required=""
+          type="radio"
+          value="FOREIGN_OVERNIGHT"
+        />
+        <label
+          class="radio-label"
+          for="FOREIGN_OVERNIGHT"
+        >
+          Foreign Overnight Trip
+        </label>
+      </div>
+    </div>
+    <!--v-if-->
+    <div
+      class="form-control"
+    >
+      <label
+        class="radio-label"
+        for="location"
+      >
+        Destination
+      </label>
+      <select
+        id="location"
+      >
+        <option
+          disabled=""
+          value=""
+        >
+          Please select location
+        </option>
+        
+        <option>
+          Cork
+        </option>
+        <option>
+          Dublin
+        </option>
+        <option>
+          Galway
+        </option>
+        <option>
+          Kilkenny
+        </option>
+        <option>
+          Limerick
+        </option>
+        <option>
+          Waterford
+        </option>
+        
+      </select>
+    </div>
+    <div
+      class="form-control"
+    >
+      <label
+        for="users"
+      >
+         Users
+      </label>
+      <input
+        id="useremail"
+        name="useremail"
+        placeholder="Enter user email"
+        type="text"
+      />
+    </div>
+    <div
+      class="form-control"
+    >
+      <button
+        id="add-option-button"
+      >
+        Add Email
+      </button>
+    </div>
+    <!--v-if-->
+    <div
+      class="form-control button-container"
+    >
+      <button>
+        Add Event
+      </button>
+    </div>
+    <account-error-message-stub
+      errormessage="There was an error adding this event, not successfully created."
+      toggle="false"
+    />
+  </form>,
+}
+`;
