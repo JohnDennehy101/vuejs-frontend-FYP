@@ -183,7 +183,6 @@ export default {
         );
 
         if (!("error" in response)) {
-          console.log("YEAH");
           this.$router.push({ path: `/dashboard/${this.userId}` });
         } else {
           this.invalidEventCreation = true;
@@ -204,7 +203,6 @@ export default {
           );
 
           if (!("error" in response)) {
-            console.log("NON");
             this.$router.push({ path: `/dashboard/${this.userId}` });
           } else {
             this.invalidEventCreation = true;
