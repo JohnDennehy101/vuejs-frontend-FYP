@@ -11,7 +11,7 @@
 
         <div class="modal-body">
           <slot name="body">
-            Are you sure you want to delete - {{ title }}?
+            <p>Are you sure you want to delete - {{ title }}?</p>
           </slot>
         </div>
 
@@ -39,10 +39,17 @@
 </template>
 
 <script>
-import EventService from "../services/EventService";
-const eventService = new EventService();
+import eventService from "../services/EventService";
 export default {
-  props: ["title", "eventId", "modalHeading", "pollId"],
+  props: {
+    eventService: {
+      default: eventService,
+    },
+    title: String,
+    eventId: String,
+    modalHeading: String,
+    pollId: String,
+  },
   data() {
     return {
       itemType: this.modalHeading,
@@ -54,23 +61,19 @@ export default {
   methods: {
     async deleteEvent() {
       if (this.itemType === "Event") {
-        const response = await eventService.deleteEvent(this.eventUuid);
-
+        const response = await this.eventService.default.deleteEvent(
+          this.eventUuid
+        );
         if (!("error" in response)) {
           this.$router.go(0);
-        } else {
-          this.invalidEventCreation = true;
         }
       } else {
-        const response = await eventService.deleteEventPoll(
+        const response = await this.eventService.default.deleteEventPoll(
           this.eventUuid,
           this.pollUuid
         );
-
         if (!("error" in response)) {
           this.$router.go(0);
-        } else {
-          this.invalidEventCreation = true;
         }
       }
     },

@@ -18,6 +18,24 @@ const mockSuccessfulEventService = {
       });
     });
   },
+
+  deleteEvent() {
+    return new Promise((resolve, reject) => {
+      resolve({
+        rawAffected: [],
+        rowsImpacted: 1,
+      });
+    });
+  },
+
+  deleteEventPoll() {
+    return new Promise((resolve, reject) => {
+      resolve({
+        rawAffected: [],
+        rowsImpacted: 1,
+      });
+    });
+  },
 };
 
 export default mockSuccessfulEventService;

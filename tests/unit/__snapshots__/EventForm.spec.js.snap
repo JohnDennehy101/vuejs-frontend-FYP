@@ -253,6 +253,7 @@ VueWrapper {
           },
         },
         "$router": Object {
+          "go": [MockFunction],
           "push": [MockFunction],
         },
         "$store": Object {
@@ -311,6 +312,7 @@ VueWrapper {
           },
         },
         "$router": Object {
+          "go": [MockFunction],
           "push": [MockFunction],
         },
         "$store": Object {
@@ -331,6 +333,7 @@ VueWrapper {
             },
           },
           "$router": Object {
+            "go": [MockFunction],
             "push": [MockFunction],
           },
           "$store": Object {
@@ -526,6 +529,7 @@ VueWrapper {
               },
             },
             "$router": Object {
+              "go": [MockFunction],
               "push": [MockFunction],
             },
             "$store": Object {
@@ -716,6 +720,7 @@ VueWrapper {
               },
             },
             "$router": Object {
+              "go": [MockFunction],
               "push": [MockFunction],
             },
             "$store": Object {
@@ -1023,6 +1028,7 @@ VueWrapper {
                             },
                           },
                           "$router": Object {
+                            "go": [MockFunction],
                             "push": [MockFunction],
                           },
                           "$store": Object {
@@ -1206,6 +1212,7 @@ VueWrapper {
                                 },
                               },
                               "$router": Object {
+                                "go": [MockFunction],
                                 "push": [MockFunction],
                               },
                               "$store": Object {
@@ -1391,6 +1398,7 @@ VueWrapper {
                                 },
                               },
                               "$router": Object {
+                                "go": [MockFunction],
                                 "push": [MockFunction],
                               },
                               "$store": Object {
@@ -1576,6 +1584,7 @@ VueWrapper {
                                 },
                               },
                               "$router": Object {
+                                "go": [MockFunction],
                                 "push": [MockFunction],
                               },
                               "$store": Object {
@@ -2157,6 +2166,7 @@ VueWrapper {
                             },
                           },
                           "$router": Object {
+                            "go": [MockFunction],
                             "push": [MockFunction],
                           },
                           "$store": Object {
@@ -2382,6 +2392,7 @@ VueWrapper {
                             },
                           },
                           "$router": Object {
+                            "go": [MockFunction],
                             "push": [MockFunction],
                           },
                           "$store": Object {
@@ -2722,6 +2733,7 @@ VueWrapper {
                       },
                     },
                     "$router": Object {
+                      "go": [MockFunction],
                       "push": [MockFunction],
                     },
                     "$store": Object {
@@ -2804,6 +2816,7 @@ VueWrapper {
                       },
                     },
                     "$router": Object {
+                      "go": [MockFunction],
                       "push": [MockFunction],
                     },
                     "$store": Object {
@@ -3051,6 +3064,7 @@ VueWrapper {
                         },
                       },
                       "$router": Object {
+                        "go": [MockFunction],
                         "push": [MockFunction],
                       },
                       "$store": Object {
@@ -3154,6 +3168,7 @@ VueWrapper {
                         },
                       },
                       "$router": Object {
+                        "go": [MockFunction],
                         "push": [MockFunction],
                       },
                       "$store": Object {
@@ -3258,6 +3273,7 @@ VueWrapper {
                         },
                       },
                       "$router": Object {
+                        "go": [MockFunction],
                         "push": [MockFunction],
                       },
                       "$store": Object {
@@ -3362,6 +3378,7 @@ VueWrapper {
                         },
                       },
                       "$router": Object {
+                        "go": [MockFunction],
                         "push": [MockFunction],
                       },
                       "$store": Object {
@@ -3960,6 +3977,7 @@ VueWrapper {
                         },
                       },
                       "$router": Object {
+                        "go": [MockFunction],
                         "push": [MockFunction],
                       },
                       "$store": Object {
@@ -4083,6 +4101,7 @@ VueWrapper {
                         },
                       },
                       "$router": Object {
+                        "go": [MockFunction],
                         "push": [MockFunction],
                       },
                       "$store": Object {
@@ -4261,6 +4280,7 @@ VueWrapper {
                       },
                     },
                     "$router": Object {
+                      "go": [MockFunction],
                       "push": [MockFunction],
                     },
                     "$store": Object {
@@ -4343,6 +4363,7 @@ VueWrapper {
                       },
                     },
                     "$router": Object {
+                      "go": [MockFunction],
                       "push": [MockFunction],
                     },
                     "$store": Object {
@@ -5254,6 +5275,7 @@ VueWrapper {
       },
     },
     "$router": Object {
+      "go": [MockFunction],
       "push": [MockFunction],
     },
     "$store": Object {
@@ -5307,6 +5329,7 @@ VueWrapper {
       },
     },
     "$router": Object {
+      "go": [MockFunction],
       "push": [MockFunction],
     },
     "$store": Object {
