@@ -16,7 +16,7 @@
       </div>
     </div>
     <div v-if="!guestUser" class="event-user-actions-parent-container">
-      <span v-on:click="$emit('editActionClick', true)">
+      <span id="editEventIcon" v-on:click="$emit('editActionClick', true)">
         <i class="fas fa-pen"></i
       ></span>
     </div>
