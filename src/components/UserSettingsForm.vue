@@ -48,11 +48,15 @@
 </template>
 
 <script>
-import UserService from "../services/UserService";
+import userService from "../services/UserService";
 import AccountErrorMessage from "./AccountErrorMessage";
-const userService = new UserService();
 export default {
-  props: ["user"],
+  props: {
+    user: Object,
+    userService: {
+      default: userService,
+    },
+  },
   data() {
     return {
       email: this.user.email,
@@ -74,7 +78,10 @@ export default {
           email: this.email,
           password: this.password,
         };
-        const response = await userService.updateUser(this.user.id, payload);
+        const response = await this.userService.updateUser(
+          this.user.id,
+          payload
+        );
 
         if (response) {
           await localStorage.setItem("token", response.data.jwtToken);

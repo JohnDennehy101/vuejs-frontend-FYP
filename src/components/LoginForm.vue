@@ -61,10 +61,7 @@ export default {
   },
   methods: {
     async submitForm() {
-      const user = await this.userService.default.loginUser(
-        this.email,
-        this.password
-      );
+      const user = await this.userService.loginUser(this.email, this.password);
       console.log(user);
 
       if (user) {

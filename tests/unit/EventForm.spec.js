@@ -122,9 +122,8 @@ describe("EventForm.vue", () => {
                 };
             },
             props: {
-                eventService: {
-                    default: mockSuccessfulEventService,
-                },
+                eventService: mockSuccessfulEventService,
+                
             },
             global: {
                 mocks: {
@@ -162,9 +161,8 @@ describe("EventForm.vue", () => {
                 };
             },
             props: {
-                eventService: {
-                    default: mockSuccessfulEventService,
-                },
+                eventService: mockSuccessfulEventService,
+                
             },
             global: {
                 mocks: {
@@ -193,9 +191,8 @@ describe("EventForm.vue", () => {
                 };
             },
             props: {
-                eventService: {
-                    default: mockSuccessfulEventService,
-                },
+                eventService: mockSuccessfulEventService,
+                
             },
             global: {
                 mocks: {

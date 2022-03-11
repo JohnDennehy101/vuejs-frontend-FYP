@@ -177,7 +177,7 @@ export default {
           departureCity: this.departureCity,
         };
 
-        const response = await this.eventService.default.updateEvent(
+        const response = await this.eventService.updateEvent(
           this.editEventInfo.id,
           payload
         );
@@ -197,7 +197,7 @@ export default {
             departureCity: this.departureCity,
           };
 
-          const response = await this.eventService.default.createEvent(
+          const response = await this.eventService.createEvent(
             this.userId,
             payload
           );

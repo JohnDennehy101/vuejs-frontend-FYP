@@ -13,6 +13,10 @@ const mockRoute = {
 
 describe("LoginForm.vue", () => {
 
+  afterEach(() => {
+        jest.resetAllMocks();
+    });
+
   it("should render correctly", () => {
     const wrapper = shallowMount(LoginForm);
     expect(wrapper).toMatchSnapshot();
@@ -36,9 +40,7 @@ describe("LoginForm.vue", () => {
   it("successfully logs in a user if valid password and email", async () => {
     const wrapper = mount(LoginForm, {
       props: {
-        userService: {
-          default: mockSuccessfulUserService,
-        },
+        userService: mockSuccessfulUserService
       },
       global: {
         mocks: {

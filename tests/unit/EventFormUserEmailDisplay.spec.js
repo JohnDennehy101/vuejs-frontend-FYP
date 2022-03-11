@@ -2,6 +2,9 @@ import { mount, shallowMount } from "@vue/test-utils";
 import EventFormUserEmailDisplay from "@/components/EventFormUserEmailDisplay.vue";
 
 describe("EventFormUserEmailDisplay.vue", () => {
+  afterEach(() => {
+        jest.resetAllMocks();
+    });
   it("should render correctly", () => {
     const wrapper = shallowMount(EventFormUserEmailDisplay);
     expect(wrapper).toMatchSnapshot();

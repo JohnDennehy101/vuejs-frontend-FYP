@@ -2,6 +2,9 @@ import { mount, shallowMount } from "@vue/test-utils";
 import AccountErrorMessage from "@/components/AccountErrorMessage.vue";
 
 describe("AccountErrorMessage.vue", () => {
+  afterEach(() => {
+        jest.resetAllMocks();
+    });
   it("should render correctly", () => {
     const wrapper = shallowMount(AccountErrorMessage);
     expect(wrapper).toMatchSnapshot();

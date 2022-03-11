@@ -9,6 +9,11 @@ const mockRoute = {
 };
 
 describe("NoCreatedItems.vue", () => {
+
+  afterEach(() => {
+        jest.resetAllMocks();
+    });
+    
   it("should render correctly", () => {
     const wrapper = shallowMount(NoCreatedItems);
     expect(wrapper).toMatchSnapshot();

@@ -3,6 +3,10 @@ import LoginImage from "@/components/LoginImage.vue";
 
 describe("LoginImage.vue", () => {
 
+  afterEach(() => {
+        jest.resetAllMocks();
+    });
+
     it("should render correctly", () => {
    const wrapper = shallowMount(LoginImage);
    expect(wrapper).toMatchSnapshot();

@@ -53,7 +53,7 @@ export default {
   },
   methods: {
     async submitForm() {
-      const user = await this.userService.default.registerUser(
+      const user = await this.userService.registerUser(
         this.email,
         this.password
       );

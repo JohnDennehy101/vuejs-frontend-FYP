@@ -47,9 +47,8 @@ describe("DeleteModal.vue", () => {
         modalHeading: "Event",
         eventId: "1",
         pollId: "2",
-        eventService: {
-          default: mockSuccessfulEventService,
-        },
+        eventService: mockSuccessfulEventService,
+    
       },
       data() {
         return {
@@ -69,9 +68,8 @@ describe("DeleteModal.vue", () => {
         eventId: "1",
         pollId: "2",
         title: "Test title",
-        eventService: {
-          default: mockSuccessfulEventService,
-        },
+        eventService: mockSuccessfulEventService,
+      
       },
       data() {
         return {
@@ -91,9 +89,7 @@ describe("DeleteModal.vue", () => {
         eventId: "1",
         pollId: "2",
         title: "Test title",
-        eventService: {
-          default: mockSuccessfulEventService,
-        },
+        eventService: mockSuccessfulEventService,
       },
       data() {
         return {
@@ -122,9 +118,8 @@ describe("DeleteModal.vue", () => {
         eventId: "1",
         pollId: "2",
         title: "Test title",
-        eventService: {
-          default: mockSuccessfulEventService,
-        },
+        eventService: mockSuccessfulEventService,
+      
       },
       data() {
         return {

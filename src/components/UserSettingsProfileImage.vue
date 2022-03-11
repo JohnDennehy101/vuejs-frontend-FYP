@@ -16,10 +16,15 @@
 </template>
 
 <script>
-import UserService from "../services/UserService";
-const userService = new UserService();
+import userService from "../services/UserService";
 export default {
-  props: ["image", "userId"],
+  props: {
+    userService: {
+      default: userService,
+    },
+    userId: String,
+    image: String,
+  },
   data() {
     return {
       profileImage: this.image,
@@ -37,7 +42,7 @@ export default {
 
     async updateUserImage() {
       console.log(this.userId);
-      const response = await userService.uploadUserProfileImage(
+      const response = await this.userService.uploadUserProfileImage(
         this.id,
         this.newImage
       );

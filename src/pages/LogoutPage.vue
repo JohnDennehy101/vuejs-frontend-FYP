@@ -14,8 +14,7 @@
 <script>
 import Loading from "vue-loading-overlay";
 import "vue-loading-overlay/dist/vue-loading.css";
-import UserService from "../services/UserService";
-const userService = new UserService();
+import userService from "../services/UserService";
 export default {
   data() {
     return {

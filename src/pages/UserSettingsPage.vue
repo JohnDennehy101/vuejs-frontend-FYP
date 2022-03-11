@@ -21,12 +21,16 @@
 <script>
 import UserSettingsForm from "../components/UserSettingsForm";
 import UserSettingsProfileImage from "../components/UserSettingsProfileImage";
-import UserService from "../services/UserService";
+import userService from "../services/UserService";
 import { mapGetters } from "vuex";
 import Loading from "vue-loading-overlay";
 import "vue-loading-overlay/dist/vue-loading.css";
-const userService = new UserService();
 export default {
+  props: {
+    userService: {
+      default: userService,
+    },
+  },
   data() {
     return {
       user: null,
@@ -49,7 +53,7 @@ export default {
   methods: {
     async getUserInfo() {
       console.log(this.userId);
-      const response = await userService.getUser(await this.userId);
+      const response = await this.userService.getUser(await this.userId);
 
       console.log(response);
 

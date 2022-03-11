@@ -2,6 +2,9 @@ import { mount, shallowMount } from "@vue/test-utils";
 import EventDetailInfoSectionPlaceholder from "@/components/EventDetailInfoSectionPlaceholder.vue";
 
 describe("EventDetailInfoSectionPlaceholder.vue", () => {
+  afterEach(() => {
+        jest.resetAllMocks();
+    });
   it("should render correctly", () => {
     const wrapper = shallowMount(EventDetailInfoSectionPlaceholder);
     expect(wrapper).toMatchSnapshot();

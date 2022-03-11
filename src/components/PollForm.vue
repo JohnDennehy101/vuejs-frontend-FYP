@@ -27,7 +27,13 @@
       />
     </div>
     <div class="form-control">
-      <button @click="addPollOption" id="add-option-button">Add Option</button>
+      <button
+        @click="addPollOption"
+        data-testid="button"
+        id="add-option-button"
+      >
+        Add Option
+      </button>
     </div>
     <div v-if="options.length > 0" class="form-control">
       <label for="options">Poll Options</label>
@@ -49,10 +55,15 @@
 <script>
 import Datepicker from "vue3-datepicker";
 import PollOption from "./PollOption";
-import EventService from "../services/EventService";
-const eventService = new EventService();
+import eventService from "../services/EventService";
 export default {
-  props: ["poll", "editPoll"],
+  props: {
+    poll: Object,
+    editPoll: Boolean,
+    eventService: {
+      default: eventService,
+    },
+  },
   data() {
     return {
       title: "",
@@ -100,7 +111,7 @@ export default {
             options: this.options,
           };
 
-          const response = await eventService.editEventPoll(
+          const response = await this.eventService.editEventPoll(
             this.id,
             this.pollInfo,
             payload
@@ -121,7 +132,10 @@ export default {
             options: this.options,
           };
 
-          const response = await eventService.createEventPoll(this.id, payload);
+          const response = await this.eventService.createEventPoll(
+            this.id,
+            payload
+          );
 
           if (!("error" in response)) {
             this.$router.push({ path: `/dashboard/${userId}` });
@@ -135,7 +149,7 @@ export default {
       if (this.editPollAction) {
         const pollInformation = JSON.parse(this.pollInfo);
 
-        const response = await eventService.getIndividualPoll(
+        const response = await this.eventService.getIndividualPoll(
           this.id,
           pollInformation.id
         );
@@ -164,6 +178,7 @@ export default {
     addPollOption(event) {
       event.preventDefault();
       if (this.startDate !== null && this.endDate !== null) {
+        console.log("HERE");
         this.options.push({
           id: this.generateUUID(),
           startDate: this.startDate,

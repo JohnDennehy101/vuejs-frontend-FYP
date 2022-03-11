@@ -7,6 +7,9 @@ const mockEvent = {
   location: "Cork",
 };
 describe("EventOverview.vue", () => {
+  afterEach(() => {
+        jest.resetAllMocks();
+    });
   it("should render correctly", () => {
     const wrapper = shallowMount(EventOverview, {
       props: {

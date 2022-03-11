@@ -61,14 +61,12 @@ export default {
   methods: {
     async deleteEvent() {
       if (this.itemType === "Event") {
-        const response = await this.eventService.default.deleteEvent(
-          this.eventUuid
-        );
+        const response = await this.eventService.deleteEvent(this.eventUuid);
         if (!("error" in response)) {
           this.$router.go(0);
         }
       } else {
-        const response = await this.eventService.default.deleteEventPoll(
+        const response = await this.eventService.deleteEventPoll(
           this.eventUuid,
           this.pollUuid
         );

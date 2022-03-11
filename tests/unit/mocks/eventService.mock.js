@@ -28,7 +28,34 @@ const mockSuccessfulEventService = {
     });
   },
 
+  createEventPoll() {
+    return new Promise((resolve, reject) => {
+      resolve({
+        rawAffected: [],
+        rowsImpacted: 1,
+      });
+    });
+  },
+
+  editEventPoll() {
+    return new Promise((resolve, reject) => {
+      resolve({
+        rawAffected: [],
+        rowsImpacted: 1,
+      });
+    });
+  },
+
   deleteEventPoll() {
+    return new Promise((resolve, reject) => {
+      resolve({
+        rawAffected: [],
+        rowsImpacted: 1,
+      });
+    });
+  },
+
+  getindividualPoll() {
     return new Promise((resolve, reject) => {
       resolve({
         rawAffected: [],

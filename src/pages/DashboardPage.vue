@@ -141,13 +141,20 @@
 <script>
 import NoCreatedItems from "../components/NoCreatedItems";
 import DeleteModal from "../components/DeleteModal";
-import EventService from "../services/EventService";
-import UserService from "../services/UserService";
+import eventService from "../services/EventService";
+import userService from "../services/UserService";
 import UserInfoDisplay from "../components/UserInfoDisplay";
-const eventService = new EventService();
-const userService = new UserService();
+
 import { mapGetters } from "vuex";
 export default {
+  props: {
+    userService: {
+      default: userService,
+    },
+    eventService: {
+      default: eventService,
+    },
+  },
   data() {
     return {
       invalidEventCreation: false,
@@ -175,7 +182,7 @@ export default {
   },
   methods: {
     async getUserCreatedEvents() {
-      const response = await eventService.getUserEvents(this.userId);
+      const response = await this.eventService.getUserEvents(this.userId);
 
       console.log(response);
 
@@ -193,7 +200,7 @@ export default {
       }
     },
     async getUserInfo() {
-      const response = await userService.getUser(this.userId);
+      const response = await this.userService.getUser(this.userId);
 
       if ("error" in response) {
         console.log("Invalid");

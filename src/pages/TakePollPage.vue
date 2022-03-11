@@ -39,10 +39,14 @@
 <script>
 import TakePollLabel from "../components/TakePollLabel";
 import PollBarChart from "../components/PollBarChart";
-import EventService from "../services/EventService";
+import eventService from "../services/EventService";
 import { mapGetters } from "vuex";
-const eventService = new EventService();
 export default {
+  props: {
+    eventService: {
+      default: eventService,
+    },
+  },
   data() {
     return {
       eventId: null,
@@ -75,7 +79,7 @@ export default {
       }
     },
     async getEventPollInfo() {
-      const response = await eventService.getEventPolls(
+      const response = await this.eventService.getEventPolls(
         this.eventId,
         this.pollId
       );
@@ -123,7 +127,7 @@ export default {
           options: checkedOptions,
         };
 
-        const response = await eventService.voteEventPoll(
+        const response = await this.eventService.voteEventPoll(
           this.userId,
           this.eventId,
           this.pollId,

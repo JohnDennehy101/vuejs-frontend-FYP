@@ -311,23 +311,25 @@
 
 <script>
 import leaflet from "leaflet";
-import EventService from "../services/EventService";
-const eventService = new EventService();
+import eventService from "../services/EventService";
 import StringUtils from "../utils/stringUtils";
 export default {
-  props: [
-    "accommodation",
-    "activities",
-    "flight",
-    "eventId",
-    "editItinerary",
-    "editItineraryClick",
-    "guestUserCheck",
-    "itemType",
-    "city",
-    "complete",
-    "displayFinaliseCheckbox",
-  ],
+  props: {
+    eventService: {
+      default: eventService,
+    },
+    accommodation: Object,
+    activities: Object,
+    flight: Object,
+    eventId: String,
+    editItineray: Boolean,
+    editItineraryClick: Boolean,
+    guestUserCheck: Boolean,
+    itemType: String,
+    city: String,
+    complete: Boolean,
+    displayFinaliseCheckbox: Boolean,
+  },
   data() {
     return {
       itineraryAccommodation: this.accommodation,
@@ -361,13 +363,13 @@ export default {
       };
 
       if (!this.editItinerary) {
-        await eventService.createEventItinerary(this.id, payload);
+        await this.eventService.createEventItinerary(this.id, payload);
       } else {
-        await eventService.updateEventItinerary(this.id, payload);
+        await this.eventService.updateEventItinerary(this.id, payload);
       }
     },
     async deletetItinerary() {
-      const response = await eventService.deleteEventItinerary(this.id);
+      const response = await this.eventService.deleteEventItinerary(this.id);
 
       if (response.status === 200) {
         this.$router.go(0);

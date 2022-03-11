@@ -48,8 +48,7 @@
 <script>
 import Loading from "vue-loading-overlay";
 import "vue-loading-overlay/dist/vue-loading.css";
-import UserService from "../services/UserService";
-const userService = new UserService();
+import userService from "../services/UserService";
 export default {
   data() {
     return {
@@ -65,6 +64,11 @@ export default {
       id: null,
     };
   },
+  props: {
+    userService: {
+      default: userService,
+    },
+  },
   components: {
     Loading,
   },
@@ -76,7 +80,7 @@ export default {
       this.token = this.$route.query.token;
     },
     async confirmUserEmail() {
-      const response = await userService.confirmUserEmail(this.token);
+      const response = await this.userService.confirmUserEmail(this.token);
 
       if (response) {
         this.emailConfirmed = response.data.emailConfirmed;
@@ -99,7 +103,7 @@ export default {
           password: this.password,
         };
 
-        const response = await userService.updateUser(this.id, payload);
+        const response = await this.userService.updateUser(this.id, payload);
 
         if (response.status === 200) {
           setTimeout(() => this.$router.push({ name: "Login" }), 2500);
