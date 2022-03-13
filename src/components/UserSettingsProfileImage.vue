@@ -1,7 +1,11 @@
 <template>
   <div id="image-display-parent-container">
-    <img v-if="profileImage" :src="profileImage" />
-    <img v-else src="../assets/defaultUserImage.png" />
+    <img data-testid="userImage" v-if="profileImage" :src="profileImage" />
+    <img
+      data-testid="defaultImage"
+      v-else
+      src="../assets/defaultUserImage.png"
+    />
 
     <input
       type="file"
@@ -11,8 +15,6 @@
     />
     <label for="image-upload">Update Image</label>
   </div>
-
-  {{ newImage }}
 </template>
 
 <script>
@@ -30,6 +32,7 @@ export default {
       profileImage: this.image,
       id: this.userId,
       newImage: null,
+      invalidImageUpload: null,
     };
   },
   methods: {
@@ -41,14 +44,13 @@ export default {
     },
 
     async updateUserImage() {
-      console.log(this.userId);
       const response = await this.userService.uploadUserProfileImage(
         this.id,
         this.newImage
       );
 
       if ("error" in response) {
-        this.invalidEventCreation = true;
+        this.invalidImageUpload = true;
       } else {
         this.$emit("updateUserImage", false);
         this.$router.go(0);

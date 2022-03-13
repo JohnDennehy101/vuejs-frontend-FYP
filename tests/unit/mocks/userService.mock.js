@@ -27,6 +27,15 @@ const mockSuccessfulUserService = {
       });
     });
   },
+  uploadUserProfileImage() {
+    return new Promise((resolve, reject) => {
+      resolve({
+        data: {
+          secure_url: "https://www.cloudinary-new.com",
+        },
+      });
+    });
+  }
 };
 
 export default mockSuccessfulUserService;
