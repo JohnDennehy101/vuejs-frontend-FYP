@@ -1,0 +1,1563 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserInfoDisplay.vue should render correctly 1`] = `
+VueWrapper {
+  "__app": Object {
+    "_component": Object {
+      "name": "VTU_ROOT",
+      "render": [Function],
+    },
+    "_container": <div
+      data-v-app=""
+    >
+      <div
+        id="user-info-display-wrapper-container"
+      >
+        <div
+          id="user-info-display-parent-container"
+        >
+          <div
+            id="user-image-container"
+          >
+            <img
+              data-testid="userImageNotProvided"
+              src=""
+            />
+          </div>
+          <div
+            id="user-info-container"
+          >
+            <h3>
+              Email
+            </h3>
+            <div
+              class="user-individual-info"
+            >
+              <p
+                data-testid="userEmail"
+              >
+                test@gmail.com
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          id="user-info-stats-display-parent-container"
+        >
+          <i
+            class="far fa-address-book"
+          />
+          <div
+            class="user-individual-info"
+          >
+            <p
+              data-testid="numberOfCreatedEvents"
+            >
+              1 events created 
+            </p>
+          </div>
+          <i
+            class="fas fa-user-friends"
+          />
+          <div
+            class="user-individual-info"
+          >
+            <p
+              data-testid="numberOfInvitedEvents"
+            >
+              2 event invites 
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>,
+    "_context": Object {
+      "app": [Circular],
+      "components": Object {
+        "transition": Object {
+          "name": "transition",
+        },
+        "transition-group": Object {
+          "name": "transition-group",
+        },
+      },
+      "config": Object {
+        "compilerOptions": Object {},
+        "errorHandler": undefined,
+        "globalProperties": Object {},
+        "isNativeTag": [Function],
+        "optionMergeStrategies": Object {},
+        "performance": false,
+        "warnHandler": undefined,
+      },
+      "directives": Object {},
+      "emitsCache": WeakMap {},
+      "mixins": Array [
+        Object {
+          "beforeCreate": [Function],
+        },
+      ],
+      "optionsCache": WeakMap {},
+      "propsCache": WeakMap {},
+      "provides": Object {},
+      "reload": [Function],
+    },
+    "_instance": Object {
+      "a": null,
+      "accessCache": Object {},
+      "appContext": Object {
+        "app": [Circular],
+        "components": Object {
+          "transition": Object {
+            "name": "transition",
+          },
+          "transition-group": Object {
+            "name": "transition-group",
+          },
+        },
+        "config": Object {
+          "compilerOptions": Object {},
+          "errorHandler": undefined,
+          "globalProperties": Object {},
+          "isNativeTag": [Function],
+          "optionMergeStrategies": Object {},
+          "performance": false,
+          "warnHandler": undefined,
+        },
+        "directives": Object {},
+        "emitsCache": WeakMap {},
+        "mixins": Array [
+          Object {
+            "beforeCreate": [Function],
+          },
+        ],
+        "optionsCache": WeakMap {},
+        "propsCache": WeakMap {},
+        "provides": Object {},
+        "reload": [Function],
+      },
+      "asyncDep": null,
+      "asyncResolved": false,
+      "attrs": Object {},
+      "bc": null,
+      "bm": null,
+      "bu": null,
+      "bum": null,
+      "c": null,
+      "components": null,
+      "ctx": Object {},
+      "da": null,
+      "data": Object {},
+      "directives": null,
+      "ec": null,
+      "effect": ReactiveEffect {
+        "active": true,
+        "allowRecurse": true,
+        "deps": Array [
+          Set {
+            [Circular],
+          },
+          Set {
+            [Circular],
+          },
+          Set {
+            [Circular],
+          },
+          Set {
+            [Circular],
+          },
+          Set {
+            [Circular],
+          },
+        ],
+        "fn": [Function],
+        "onTrack": undefined,
+        "onTrigger": undefined,
+        "scheduler": [Function],
+      },
+      "emit": [Function],
+      "emitsOptions": null,
+      "emitted": null,
+      "exposeProxy": null,
+      "exposed": null,
+      "inheritAttrs": undefined,
+      "isDeactivated": false,
+      "isMounted": true,
+      "isUnmounted": false,
+      "m": null,
+      "next": null,
+      "parent": null,
+      "props": Object {},
+      "propsDefaults": Object {},
+      "propsOptions": Array [
+        Object {},
+        Array [],
+      ],
+      "provides": Object {},
+      "proxy": Object {},
+      "refs": Object {
+        "VTU_COMPONENT": Object {
+          "createdEventsQuantity": 1,
+          "hasOwnProperty": [Function],
+          "invitedEventsQuantity": 2,
+          "numberOfCreatedEvents": 1,
+          "numberOfInvitedEvents": 2,
+          "user": Object {
+            "email": "test@gmail.com",
+            "profileImageUrl": null,
+          },
+          "userInfo": Object {
+            "email": "test@gmail.com",
+            "profileImageUrl": null,
+          },
+        },
+      },
+      "render": [Function],
+      "renderCache": Array [],
+      "root": [Circular],
+      "rtc": null,
+      "rtg": null,
+      "scope": EffectScope {
+        "active": true,
+        "cleanups": Array [],
+        "effects": Array [
+          ReactiveEffect {
+            "active": true,
+            "allowRecurse": true,
+            "deps": Array [
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+            ],
+            "fn": [Function],
+            "onTrack": undefined,
+            "onTrigger": undefined,
+            "scheduler": [Function],
+          },
+        ],
+      },
+      "setupContext": null,
+      "setupState": Object {},
+      "slots": Object {},
+      "sp": null,
+      "subTree": Object {
+        "__v_isVNode": true,
+        "__v_skip": true,
+        "anchor": null,
+        "appContext": null,
+        "children": null,
+        "component": Object {
+          "a": null,
+          "accessCache": Object {
+            "@@__IMMUTABLE_ITERABLE__@@": 0,
+            "@@__IMMUTABLE_RECORD__@@": 0,
+            "_isMockFunction": 0,
+            "constructor": 0,
+            "createdEventsQuantity": 3,
+            "hasOwnProperty": 4,
+            "invitedEventsQuantity": 3,
+            "isVueInstance": 0,
+            "numberOfCreatedEvents": 2,
+            "numberOfInvitedEvents": 2,
+            "toJSON": 0,
+            "user": 3,
+            "userInfo": 2,
+            Symbol(Symbol.toStringTag): 0,
+          },
+          "appContext": Object {
+            "app": [Circular],
+            "components": Object {
+              "transition": Object {
+                "name": "transition",
+              },
+              "transition-group": Object {
+                "name": "transition-group",
+              },
+            },
+            "config": Object {
+              "compilerOptions": Object {},
+              "errorHandler": undefined,
+              "globalProperties": Object {},
+              "isNativeTag": [Function],
+              "optionMergeStrategies": Object {},
+              "performance": false,
+              "warnHandler": undefined,
+            },
+            "directives": Object {},
+            "emitsCache": WeakMap {},
+            "mixins": Array [
+              Object {
+                "beforeCreate": [Function],
+              },
+            ],
+            "optionsCache": WeakMap {},
+            "propsCache": WeakMap {},
+            "provides": Object {},
+            "reload": [Function],
+          },
+          "asyncDep": null,
+          "asyncResolved": false,
+          "attrs": Object {},
+          "bc": null,
+          "bm": null,
+          "bu": null,
+          "bum": null,
+          "c": null,
+          "components": Object {},
+          "ctx": Object {
+            "createdEventsQuantity": 1,
+            "hasOwnProperty": [Function],
+            "invitedEventsQuantity": 2,
+            "numberOfCreatedEvents": 1,
+            "numberOfInvitedEvents": 2,
+            "user": Object {
+              "email": "test@gmail.com",
+              "profileImageUrl": null,
+            },
+            "userInfo": Object {
+              "email": "test@gmail.com",
+              "profileImageUrl": null,
+            },
+          },
+          "da": null,
+          "data": Object {
+            "numberOfCreatedEvents": 1,
+            "numberOfInvitedEvents": 2,
+            "userInfo": Object {
+              "email": "test@gmail.com",
+              "profileImageUrl": null,
+            },
+          },
+          "directives": null,
+          "ec": null,
+          "effect": ReactiveEffect {
+            "active": true,
+            "allowRecurse": true,
+            "deps": Array [
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+            ],
+            "fn": [Function],
+            "onTrack": undefined,
+            "onTrigger": undefined,
+            "scheduler": [Function],
+          },
+          "emit": [Function],
+          "emitsOptions": null,
+          "emitted": null,
+          "exposeProxy": null,
+          "exposed": null,
+          "inheritAttrs": undefined,
+          "isDeactivated": false,
+          "isMounted": true,
+          "isUnmounted": false,
+          "m": null,
+          "next": null,
+          "parent": [Circular],
+          "props": Object {
+            "createdEventsQuantity": 1,
+            "invitedEventsQuantity": 2,
+            "user": Object {
+              "email": "test@gmail.com",
+              "profileImageUrl": null,
+            },
+          },
+          "propsDefaults": Object {},
+          "propsOptions": Array [
+            Object {
+              "createdEventsQuantity": Object {},
+              "invitedEventsQuantity": Object {},
+              "user": Object {},
+            },
+            Array [],
+          ],
+          "provides": Object {},
+          "proxy": Object {
+            "createdEventsQuantity": 1,
+            "hasOwnProperty": [Function],
+            "invitedEventsQuantity": 2,
+            "numberOfCreatedEvents": 1,
+            "numberOfInvitedEvents": 2,
+            "user": Object {
+              "email": "test@gmail.com",
+              "profileImageUrl": null,
+            },
+            "userInfo": Object {
+              "email": "test@gmail.com",
+              "profileImageUrl": null,
+            },
+          },
+          "refs": Object {},
+          "render": [Function],
+          "renderCache": Array [],
+          "root": [Circular],
+          "rtc": null,
+          "rtg": null,
+          "scope": EffectScope {
+            "active": true,
+            "cleanups": Array [],
+            "effects": Array [
+              ReactiveEffect {
+                "active": true,
+                "allowRecurse": true,
+                "deps": Array [
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                ],
+                "fn": [Function],
+                "onTrack": undefined,
+                "onTrigger": undefined,
+                "scheduler": [Function],
+              },
+            ],
+          },
+          "setupContext": null,
+          "setupState": Object {},
+          "slots": Object {},
+          "sp": null,
+          "subTree": Object {
+            "__v_isVNode": true,
+            "__v_skip": true,
+            "anchor": null,
+            "appContext": null,
+            "children": Array [
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": Array [
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": Array [
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": null,
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": Array [],
+                        "dynamicProps": null,
+                        "el": <img
+                          data-testid="userImageNotProvided"
+                          src=""
+                        />,
+                        "key": 1,
+                        "patchFlag": 0,
+                        "props": Object {
+                          "data-testid": "userImageNotProvided",
+                          "key": 1,
+                          "src": "",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 1,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "img",
+                      },
+                    ],
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <div
+                      id="user-image-container"
+                    >
+                      <img
+                        data-testid="userImageNotProvided"
+                        src=""
+                      />
+                    </div>,
+                    "key": null,
+                    "patchFlag": 0,
+                    "props": Object {
+                      "id": "user-image-container",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 17,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "div",
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": Array [
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "Email",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <h3>
+                          Email
+                        </h3>,
+                        "key": null,
+                        "patchFlag": -1,
+                        "props": null,
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 9,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "h3",
+                      },
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": Array [
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": "test@gmail.com",
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": null,
+                            "dynamicProps": null,
+                            "el": <p
+                              data-testid="userEmail"
+                            >
+                              test@gmail.com
+                            </p>,
+                            "key": null,
+                            "patchFlag": 1,
+                            "props": Object {
+                              "data-testid": "userEmail",
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 9,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "p",
+                          },
+                        ],
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <div
+                          class="user-individual-info"
+                        >
+                          <p
+                            data-testid="userEmail"
+                          >
+                            test@gmail.com
+                          </p>
+                        </div>,
+                        "key": null,
+                        "patchFlag": 0,
+                        "props": Object {
+                          "class": "user-individual-info",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 17,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "div",
+                      },
+                    ],
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <div
+                      id="user-info-container"
+                    >
+                      <h3>
+                        Email
+                      </h3>
+                      <div
+                        class="user-individual-info"
+                      >
+                        <p
+                          data-testid="userEmail"
+                        >
+                          test@gmail.com
+                        </p>
+                      </div>
+                    </div>,
+                    "key": null,
+                    "patchFlag": 0,
+                    "props": Object {
+                      "id": "user-info-container",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 17,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "div",
+                  },
+                ],
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": null,
+                "dynamicProps": null,
+                "el": <div
+                  id="user-info-display-parent-container"
+                >
+                  <div
+                    id="user-image-container"
+                  >
+                    <img
+                      data-testid="userImageNotProvided"
+                      src=""
+                    />
+                  </div>
+                  <div
+                    id="user-info-container"
+                  >
+                    <h3>
+                      Email
+                    </h3>
+                    <div
+                      class="user-individual-info"
+                    >
+                      <p
+                        data-testid="userEmail"
+                      >
+                        test@gmail.com
+                      </p>
+                    </div>
+                  </div>
+                </div>,
+                "key": null,
+                "patchFlag": 0,
+                "props": Object {
+                  "id": "user-info-display-parent-container",
+                },
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 17,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": "div",
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": Array [
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": null,
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <i
+                      class="far fa-address-book"
+                    />,
+                    "key": null,
+                    "patchFlag": -1,
+                    "props": Object {
+                      "class": "far fa-address-book",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 1,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "i",
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": Array [
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "1 events created ",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <p
+                          data-testid="numberOfCreatedEvents"
+                        >
+                          1 events created 
+                        </p>,
+                        "key": null,
+                        "patchFlag": 1,
+                        "props": Object {
+                          "data-testid": "numberOfCreatedEvents",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 9,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "p",
+                      },
+                    ],
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <div
+                      class="user-individual-info"
+                    >
+                      <p
+                        data-testid="numberOfCreatedEvents"
+                      >
+                        1 events created 
+                      </p>
+                    </div>,
+                    "key": null,
+                    "patchFlag": 0,
+                    "props": Object {
+                      "class": "user-individual-info",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 17,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "div",
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": null,
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <i
+                      class="fas fa-user-friends"
+                    />,
+                    "key": null,
+                    "patchFlag": -1,
+                    "props": Object {
+                      "class": "fas fa-user-friends",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 1,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "i",
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": Array [
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "2 event invites ",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <p
+                          data-testid="numberOfInvitedEvents"
+                        >
+                          2 event invites 
+                        </p>,
+                        "key": null,
+                        "patchFlag": 1,
+                        "props": Object {
+                          "data-testid": "numberOfInvitedEvents",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 9,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "p",
+                      },
+                    ],
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <div
+                      class="user-individual-info"
+                    >
+                      <p
+                        data-testid="numberOfInvitedEvents"
+                      >
+                        2 event invites 
+                      </p>
+                    </div>,
+                    "key": null,
+                    "patchFlag": 0,
+                    "props": Object {
+                      "class": "user-individual-info",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 17,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "div",
+                  },
+                ],
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": null,
+                "dynamicProps": null,
+                "el": <div
+                  id="user-info-stats-display-parent-container"
+                >
+                  <i
+                    class="far fa-address-book"
+                  />
+                  <div
+                    class="user-individual-info"
+                  >
+                    <p
+                      data-testid="numberOfCreatedEvents"
+                    >
+                      1 events created 
+                    </p>
+                  </div>
+                  <i
+                    class="fas fa-user-friends"
+                  />
+                  <div
+                    class="user-individual-info"
+                  >
+                    <p
+                      data-testid="numberOfInvitedEvents"
+                    >
+                      2 event invites 
+                    </p>
+                  </div>
+                </div>,
+                "key": null,
+                "patchFlag": 0,
+                "props": Object {
+                  "id": "user-info-stats-display-parent-container",
+                },
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 17,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": "div",
+              },
+            ],
+            "component": null,
+            "dirs": null,
+            "dynamicChildren": Array [
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": null,
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": Array [],
+                "dynamicProps": null,
+                "el": <img
+                  data-testid="userImageNotProvided"
+                  src=""
+                />,
+                "key": 1,
+                "patchFlag": 0,
+                "props": Object {
+                  "data-testid": "userImageNotProvided",
+                  "key": 1,
+                  "src": "",
+                },
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 1,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": "img",
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": "test@gmail.com",
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": null,
+                "dynamicProps": null,
+                "el": <p
+                  data-testid="userEmail"
+                >
+                  test@gmail.com
+                </p>,
+                "key": null,
+                "patchFlag": 1,
+                "props": Object {
+                  "data-testid": "userEmail",
+                },
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 9,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": "p",
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": "1 events created ",
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": null,
+                "dynamicProps": null,
+                "el": <p
+                  data-testid="numberOfCreatedEvents"
+                >
+                  1 events created 
+                </p>,
+                "key": null,
+                "patchFlag": 1,
+                "props": Object {
+                  "data-testid": "numberOfCreatedEvents",
+                },
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 9,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": "p",
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": "2 event invites ",
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": null,
+                "dynamicProps": null,
+                "el": <p
+                  data-testid="numberOfInvitedEvents"
+                >
+                  2 event invites 
+                </p>,
+                "key": null,
+                "patchFlag": 1,
+                "props": Object {
+                  "data-testid": "numberOfInvitedEvents",
+                },
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 9,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": "p",
+              },
+            ],
+            "dynamicProps": null,
+            "el": <div
+              id="user-info-display-wrapper-container"
+            >
+              <div
+                id="user-info-display-parent-container"
+              >
+                <div
+                  id="user-image-container"
+                >
+                  <img
+                    data-testid="userImageNotProvided"
+                    src=""
+                  />
+                </div>
+                <div
+                  id="user-info-container"
+                >
+                  <h3>
+                    Email
+                  </h3>
+                  <div
+                    class="user-individual-info"
+                  >
+                    <p
+                      data-testid="userEmail"
+                    >
+                      test@gmail.com
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                id="user-info-stats-display-parent-container"
+              >
+                <i
+                  class="far fa-address-book"
+                />
+                <div
+                  class="user-individual-info"
+                >
+                  <p
+                    data-testid="numberOfCreatedEvents"
+                  >
+                    1 events created 
+                  </p>
+                </div>
+                <i
+                  class="fas fa-user-friends"
+                />
+                <div
+                  class="user-individual-info"
+                >
+                  <p
+                    data-testid="numberOfInvitedEvents"
+                  >
+                    2 event invites 
+                  </p>
+                </div>
+              </div>
+            </div>,
+            "key": null,
+            "patchFlag": 0,
+            "props": Object {
+              "id": "user-info-display-wrapper-container",
+            },
+            "ref": null,
+            "scopeId": null,
+            "shapeFlag": 17,
+            "slotScopeIds": null,
+            "ssContent": null,
+            "ssFallback": null,
+            "staticCount": 0,
+            "suspense": null,
+            "target": null,
+            "targetAnchor": null,
+            "transition": null,
+            "type": "div",
+          },
+          "suspense": null,
+          "suspenseId": 0,
+          "type": Object {
+            "components": Object {},
+            "data": [Function],
+            "props": Array [
+              "user",
+              "invitedEventsQuantity",
+              "createdEventsQuantity",
+            ],
+            "render": [Function],
+          },
+          "u": null,
+          "uid": 1,
+          "um": null,
+          "update": [Function],
+          "vnode": [Circular],
+          "withProxy": null,
+        },
+        "dirs": null,
+        "dynamicChildren": null,
+        "dynamicProps": null,
+        "el": <div
+          id="user-info-display-wrapper-container"
+        >
+          <div
+            id="user-info-display-parent-container"
+          >
+            <div
+              id="user-image-container"
+            >
+              <img
+                data-testid="userImageNotProvided"
+                src=""
+              />
+            </div>
+            <div
+              id="user-info-container"
+            >
+              <h3>
+                Email
+              </h3>
+              <div
+                class="user-individual-info"
+              >
+                <p
+                  data-testid="userEmail"
+                >
+                  test@gmail.com
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            id="user-info-stats-display-parent-container"
+          >
+            <i
+              class="far fa-address-book"
+            />
+            <div
+              class="user-individual-info"
+            >
+              <p
+                data-testid="numberOfCreatedEvents"
+              >
+                1 events created 
+              </p>
+            </div>
+            <i
+              class="fas fa-user-friends"
+            />
+            <div
+              class="user-individual-info"
+            >
+              <p
+                data-testid="numberOfInvitedEvents"
+              >
+                2 event invites 
+              </p>
+            </div>
+          </div>
+        </div>,
+        "key": null,
+        "patchFlag": 0,
+        "props": Object {
+          "createdEventsQuantity": 1,
+          "invitedEventsQuantity": 2,
+          "ref": "VTU_COMPONENT",
+          "user": Object {
+            "email": "test@gmail.com",
+            "profileImageUrl": null,
+          },
+        },
+        "ref": Object {
+          "f": false,
+          "i": [Circular],
+          "k": undefined,
+          "r": "VTU_COMPONENT",
+        },
+        "scopeId": null,
+        "shapeFlag": 4,
+        "slotScopeIds": null,
+        "ssContent": null,
+        "ssFallback": null,
+        "staticCount": 0,
+        "suspense": null,
+        "target": null,
+        "targetAnchor": null,
+        "transition": null,
+        "type": Object {
+          "components": Object {},
+          "data": [Function],
+          "props": Array [
+            "user",
+            "invitedEventsQuantity",
+            "createdEventsQuantity",
+          ],
+          "render": [Function],
+        },
+      },
+      "suspense": null,
+      "suspenseId": 0,
+      "type": Object {
+        "name": "VTU_ROOT",
+        "render": [Function],
+      },
+      "u": null,
+      "uid": 0,
+      "um": null,
+      "update": [Function],
+      "vnode": Object {
+        "__v_isVNode": true,
+        "__v_skip": true,
+        "anchor": null,
+        "appContext": Object {
+          "app": [Circular],
+          "components": Object {
+            "transition": Object {
+              "name": "transition",
+            },
+            "transition-group": Object {
+              "name": "transition-group",
+            },
+          },
+          "config": Object {
+            "compilerOptions": Object {},
+            "errorHandler": undefined,
+            "globalProperties": Object {},
+            "isNativeTag": [Function],
+            "optionMergeStrategies": Object {},
+            "performance": false,
+            "warnHandler": undefined,
+          },
+          "directives": Object {},
+          "emitsCache": WeakMap {},
+          "mixins": Array [
+            Object {
+              "beforeCreate": [Function],
+            },
+          ],
+          "optionsCache": WeakMap {},
+          "propsCache": WeakMap {},
+          "provides": Object {},
+          "reload": [Function],
+        },
+        "children": null,
+        "component": [Circular],
+        "dirs": null,
+        "dynamicChildren": null,
+        "dynamicProps": null,
+        "el": <div
+          id="user-info-display-wrapper-container"
+        >
+          <div
+            id="user-info-display-parent-container"
+          >
+            <div
+              id="user-image-container"
+            >
+              <img
+                data-testid="userImageNotProvided"
+                src=""
+              />
+            </div>
+            <div
+              id="user-info-container"
+            >
+              <h3>
+                Email
+              </h3>
+              <div
+                class="user-individual-info"
+              >
+                <p
+                  data-testid="userEmail"
+                >
+                  test@gmail.com
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            id="user-info-stats-display-parent-container"
+          >
+            <i
+              class="far fa-address-book"
+            />
+            <div
+              class="user-individual-info"
+            >
+              <p
+                data-testid="numberOfCreatedEvents"
+              >
+                1 events created 
+              </p>
+            </div>
+            <i
+              class="fas fa-user-friends"
+            />
+            <div
+              class="user-individual-info"
+            >
+              <p
+                data-testid="numberOfInvitedEvents"
+              >
+                2 event invites 
+              </p>
+            </div>
+          </div>
+        </div>,
+        "key": null,
+        "patchFlag": 0,
+        "props": null,
+        "ref": null,
+        "scopeId": null,
+        "shapeFlag": 4,
+        "slotScopeIds": null,
+        "ssContent": null,
+        "ssFallback": null,
+        "staticCount": 0,
+        "suspense": null,
+        "target": null,
+        "targetAnchor": null,
+        "transition": null,
+        "type": Object {
+          "name": "VTU_ROOT",
+          "render": [Function],
+        },
+      },
+      "withProxy": null,
+    },
+    "_props": null,
+    "_uid": 0,
+    "component": [Function],
+    "config": Object {
+      "compilerOptions": Object {},
+      "errorHandler": undefined,
+      "globalProperties": Object {},
+      "isNativeTag": [Function],
+      "optionMergeStrategies": Object {},
+      "performance": false,
+      "warnHandler": undefined,
+    },
+    "directive": [Function],
+    "mixin": [Function],
+    "mount": [Function],
+    "provide": [Function],
+    "unmount": [Function],
+    "use": [Function],
+    "version": "3.2.26",
+  },
+  "__setProps": [Function],
+  "componentVM": Object {
+    "createdEventsQuantity": 1,
+    "hasOwnProperty": [Function],
+    "invitedEventsQuantity": 2,
+    "numberOfCreatedEvents": 1,
+    "numberOfInvitedEvents": 2,
+    "user": Object {
+      "email": "test@gmail.com",
+      "profileImageUrl": null,
+    },
+    "userInfo": Object {
+      "email": "test@gmail.com",
+      "profileImageUrl": null,
+    },
+  },
+  "isDisabled": [Function],
+  "rootVM": Object {},
+  "wrapperElement": <div
+    id="user-info-display-wrapper-container"
+  >
+    <div
+      id="user-info-display-parent-container"
+    >
+      <div
+        id="user-image-container"
+      >
+        <img
+          data-testid="userImageNotProvided"
+          src=""
+        />
+      </div>
+      <div
+        id="user-info-container"
+      >
+        <h3>
+          Email
+        </h3>
+        <div
+          class="user-individual-info"
+        >
+          <p
+            data-testid="userEmail"
+          >
+            test@gmail.com
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      id="user-info-stats-display-parent-container"
+    >
+      <i
+        class="far fa-address-book"
+      />
+      <div
+        class="user-individual-info"
+      >
+        <p
+          data-testid="numberOfCreatedEvents"
+        >
+          1 events created 
+        </p>
+      </div>
+      <i
+        class="fas fa-user-friends"
+      />
+      <div
+        class="user-individual-info"
+      >
+        <p
+          data-testid="numberOfInvitedEvents"
+        >
+          2 event invites 
+        </p>
+      </div>
+    </div>
+  </div>,
+}
+`;
