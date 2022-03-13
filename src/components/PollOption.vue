@@ -18,7 +18,6 @@ export default {
   computed: {
     formattedStartDate: function () {
       let date = new Date(this.start);
-      console.log(date);
       let month = date.getMonth();
       let months = [
         "January",
