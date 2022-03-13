@@ -152,6 +152,7 @@ VueWrapper {
             "userId": [Function],
           },
           "state": Object {
+            "jwtToken": "token",
             "userId": 1,
           },
         },
@@ -211,6 +212,7 @@ VueWrapper {
             "userId": [Function],
           },
           "state": Object {
+            "jwtToken": "token",
             "userId": 1,
           },
         },
@@ -232,6 +234,7 @@ VueWrapper {
               "userId": [Function],
             },
             "state": Object {
+              "jwtToken": "token",
               "userId": 1,
             },
           },
@@ -368,6 +371,7 @@ VueWrapper {
                 "userId": [Function],
               },
               "state": Object {
+                "jwtToken": "token",
                 "userId": 1,
               },
             },
@@ -483,6 +487,7 @@ VueWrapper {
                 "userId": [Function],
               },
               "state": Object {
+                "jwtToken": "token",
                 "userId": 1,
               },
             },
@@ -1559,6 +1564,7 @@ VueWrapper {
         "userId": [Function],
       },
       "state": Object {
+        "jwtToken": "token",
         "userId": 1,
       },
     },
@@ -1593,6 +1599,7 @@ VueWrapper {
         "userId": [Function],
       },
       "state": Object {
+        "jwtToken": "token",
         "userId": 1,
       },
     },

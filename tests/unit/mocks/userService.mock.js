@@ -17,6 +17,16 @@ const mockSuccessfulUserService = {
       });
     });
   },
+  updateUser() {
+    return new Promise((resolve, reject) => {
+      resolve({
+        data: {
+          jwtToken: "token",
+          id: "1",
+        },
+      });
+    });
+  },
 };
 
 export default mockSuccessfulUserService;

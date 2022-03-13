@@ -1,6 +1,7 @@
 const mockStore = {
   state: {
     userId: 1,
+    jwtToken: "token"
   },
   getters: {
     userId: () => {
