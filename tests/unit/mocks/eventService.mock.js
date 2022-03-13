@@ -31,8 +31,17 @@ const mockSuccessfulEventService = {
   createEventPoll() {
     return new Promise((resolve, reject) => {
       resolve({
-        rawAffected: [],
-        rowsImpacted: 1,
+        data: {
+          title: "Test Poll",
+          pollOptions: [
+            {
+              endDate: "2022-03-13T12:12:08.892Z",
+              id: "73bd7213-b4d3-4fda-b0f5-83dbc3ec34e1",
+              startDate: "2022-03-13T12:12:08.892Z",
+              votes: [],
+            },
+          ],
+        },
       });
     });
   },
@@ -40,8 +49,15 @@ const mockSuccessfulEventService = {
   editEventPoll() {
     return new Promise((resolve, reject) => {
       resolve({
-        rawAffected: [],
-        rowsImpacted: 1,
+        title: "Test Poll",
+        pollOptions: [
+          {
+            endDate: "2022-03-13T12:12:08.892Z",
+            id: "73bd7213-b4d3-4fda-b0f5-83dbc3ec34e1",
+            startDate: "2022-03-13T12:12:08.892Z",
+            votes: [],
+          },
+        ],
       });
     });
   },
@@ -58,8 +74,15 @@ const mockSuccessfulEventService = {
   getindividualPoll() {
     return new Promise((resolve, reject) => {
       resolve({
-        rawAffected: [],
-        rowsImpacted: 1,
+        title: "Test Poll",
+        pollOptions: [
+          {
+            endDate: "2022-03-13T12:12:08.892Z",
+            id: "73bd7213-b4d3-4fda-b0f5-83dbc3ec34e1",
+            startDate: "2022-03-13T12:12:08.892Z",
+            votes: [],
+          },
+        ],
       });
     });
   },
