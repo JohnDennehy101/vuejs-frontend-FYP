@@ -9,8 +9,16 @@
         v-if="eventUsers.find((oneUser) => oneUser.email === user.email)"
         id="user-image-container"
       >
-        <img v-if="user.profileImageUrl" :src="user.profileImageUrl" />
-        <img v-else src="../assets/defaultUserImage.png" />
+        <img
+          data-testid="userImage"
+          v-if="user.profileImageUrl"
+          :src="user.profileImageUrl"
+        />
+        <img
+          data-testid="defaultImage"
+          v-else
+          src="../assets/defaultUserImage.png"
+        />
       </div>
       <p v-if="eventUsers.find((oneUser) => oneUser.email === user.email)">
         {{ user.email }}
