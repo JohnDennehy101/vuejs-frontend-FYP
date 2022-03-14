@@ -1,7 +1,11 @@
 <template>
   <div id="chat-messages-container">
-    <h4 v-if="messages.length === 1">{{ messages.length }} Comment</h4>
-    <h4 v-else>{{ messages.length }} Comments</h4>
+    <h4 data-testid="oneMessage" v-if="messages.length === 1">
+      {{ messages.length }} Comment
+    </h4>
+    <h4 data-testid="multipleMessages" v-else>
+      {{ messages.length }} Comments
+    </h4>
 
     <div
       class="individual-message-container"
@@ -10,6 +14,7 @@
     >
       <div id="user-image-container">
         <img
+          data-testid="userImageProvided"
           v-if="message.author.profileImageUrl"
           :src="message.author.profileImageUrl"
         />
@@ -22,28 +27,36 @@
           "
           class="fas fa-circle"
           style="color: green"
+          data-testid="greenIconOnlineUser"
         ></i>
-        <i v-else class="fas fa-circle" style="color: red"></i>
+        <i
+          v-else
+          class="fas fa-circle"
+          data-testid="redIconOfflineUser"
+          style="color: red"
+        ></i>
       </div>
       <div class="message-info-container">
         <div class="message-author-info">
           <p>
-            User: <span>{{ message.author.email }}</span>
+            User:
+            <span data-testid="userEmail">{{ message.author.email }}</span>
           </p>
           <p>
             Timestamp:
-            <span>{{
+            <span data-testid="messageTimestamp">{{
               transformTimeStampFormat(new Date(message.created_at))
             }}</span>
           </p>
         </div>
         <div class="message-content-info">
-          <p>{{ message.content }}</p>
+          <p data-testid="messageContent">{{ message.content }}</p>
         </div>
       </div>
       <div class="message-delete-icon-container">
         <span
           v-if="message.author.id === user"
+          data-testid="deleteMessageIcon"
           @click.prevent="deleteComment(message.id)"
         >
           <i class="fas fa-times-circle"></i
@@ -69,10 +82,6 @@ export default {
       return DateUtils.returnFormattedDateWithTime(date);
     },
     deleteComment(messageId) {
-      event.preventDefault();
-
-      console.log(messageId);
-
       this.$emit("deleteComment", messageId);
     },
   },

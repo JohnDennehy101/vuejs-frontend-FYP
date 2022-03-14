@@ -1,16 +1,5 @@
 import { mount, shallowMount } from "@vue/test-utils";
 import ChatMessagesInput from "@/components/ChatMessagesInput.vue";
-import AccountErrorMessage from "@/components/AccountErrorMessage";
-import mockSuccessfulUserService from "./mocks/userService.mock";
-import mockStore from "./mocks/mockStore.mock";
-import mockRouter from "./mocks/mockRouter.mock";
-import { nextTick } from "vue";
-
-const mockRoute = {
-  params: {
-    id: 1,
-  },
-};
 
 describe("ChatMessagesInput.vue", () => {
   afterEach(() => {
