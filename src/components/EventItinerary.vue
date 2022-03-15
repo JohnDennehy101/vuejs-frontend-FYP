@@ -10,6 +10,7 @@
           <h3>Accommodation</h3>
 
           <span
+            data-testid="removeAccommodationIcon"
             v-if="itineraryAccommodation[0]"
             v-on:click="$emit('removeItineraryAccommodationClick', true)"
             ><i class="fas fa-times-circle"></i
@@ -22,91 +23,115 @@
           class="event-itinerary-category-info"
         >
           <h4>Title:</h4>
-          <p>{{ itineraryAccommodation[0].title }}</p>
+          <p data-testid="accommodationTitle">
+            {{ itineraryAccommodation[0].title }}
+          </p>
         </div>
         <div
           v-if="itineraryAccommodation[0]"
           class="event-itinerary-category-info"
         >
           <h4>City:</h4>
-          <p>{{ itineraryAccommodation[0].locationTitle }}</p>
+          <p data-testId="accommodationCity">
+            {{ itineraryAccommodation[0].locationTitle }}
+          </p>
         </div>
         <div
           v-if="itineraryAccommodation[0]"
           class="event-itinerary-category-info"
         >
           <h4>Start Date:</h4>
-          <p>{{ itineraryAccommodation[0].startDate }}</p>
+          <p data-testid="startDate">
+            {{ itineraryAccommodation[0].startDate }}
+          </p>
         </div>
         <div
           v-if="itineraryAccommodation[0]"
           class="event-itinerary-category-info"
         >
           <h4>End Date:</h4>
-          <p>{{ itineraryAccommodation[0].endDate }}</p>
+          <p data-testid="endDate">{{ itineraryAccommodation[0].endDate }}</p>
         </div>
         <div
           v-if="itineraryAccommodation[0]"
           class="event-itinerary-category-info"
         >
           <h4>Nights:</h4>
-          <p>{{ itineraryAccommodation[0].numberOfNightsAndGuests }}</p>
+          <p data-testid="numberOfNightsAndGuests">
+            {{ itineraryAccommodation[0].numberOfNightsAndGuests }}
+          </p>
         </div>
         <div
           v-if="itineraryAccommodation[0]"
           class="event-itinerary-category-info"
         >
           <h4>Room:</h4>
-          <p>{{ itineraryAccommodation[0].numberOfRoomsRecommendedBooking }}</p>
+          <p data-testid="numberOfRoomsRecommendedBooking">
+            {{ itineraryAccommodation[0].numberOfRoomsRecommendedBooking }}
+          </p>
         </div>
         <div
           v-if="itineraryAccommodation[0]"
           class="event-itinerary-category-info"
         >
           <h4>Beds:</h4>
-          <p>{{ itineraryAccommodation[0].numberOfBedsRecommendedBooking }}</p>
+          <p data-testid="numberOfBedsRecommendedBooking">
+            {{ itineraryAccommodation[0].numberOfBedsRecommendedBooking }}
+          </p>
         </div>
         <div
           v-if="itineraryAccommodation[0]"
           class="event-itinerary-category-info"
         >
           <h4>Price:</h4>
-          <p>{{ itineraryAccommodation[0].price }}</p>
+          <p data-testid="price">{{ itineraryAccommodation[0].price }}</p>
         </div>
         <div
           v-if="itineraryAccommodation[0]"
           class="event-itinerary-category-info"
         >
           <h4>Distance:</h4>
-          <p>{{ itineraryAccommodation[0].locationDistance }}</p>
+          <p data-testid="locationDistance">
+            {{ itineraryAccommodation[0].locationDistance }}
+          </p>
         </div>
         <div
           v-if="itineraryAccommodation[0]"
           class="event-itinerary-category-info"
         >
           <h4>Review Category:</h4>
-          <p>{{ itineraryAccommodation[0].ratingScoreCategory }}</p>
+          <p data-testid="ratingScoreCategory">
+            {{ itineraryAccommodation[0].ratingScoreCategory }}
+          </p>
         </div>
         <div
           v-if="itineraryAccommodation[0]"
           class="event-itinerary-category-info"
         >
           <h4>Average Review Score:</h4>
-          <p>{{ itineraryAccommodation[0].ratingScore }}</p>
+          <p data-testid="ratingScore">
+            {{ itineraryAccommodation[0].ratingScore }}
+          </p>
         </div>
         <div
           v-if="itineraryAccommodation[0]"
           class="event-itinerary-category-info"
         >
           <h4>Review Quantity:</h4>
-          <p>{{ itineraryAccommodation[0].reviewQuantity }}</p>
+          <p data-testid="reviewQuantity">
+            {{ itineraryAccommodation[0].reviewQuantity }}
+          </p>
         </div>
         <div
           v-if="itineraryAccommodation[0]"
           class="event-itinerary-category-info"
         >
           <h4>Booking Link:</h4>
-          <a :href="itineraryAccommodation[0].bookingSiteLink" target="_blank">
+          <a
+            data-testid="bookingSiteLink"
+            :href="itineraryAccommodation[0].bookingSiteLink"
+            target="_blank"
+          >
             <i class="fas fa-external-link-square-alt"></i>
           </a>
         </div>
@@ -117,6 +142,7 @@
         >
           <h4>Map Link:</h4>
           <a
+            data-testid="bookingSiteDisplayLocationMapLink"
             :href="itineraryAccommodation[0].bookingSiteDisplayLocationMapLink"
             target="_blank"
           >
