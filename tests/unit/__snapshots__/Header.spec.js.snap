@@ -1,0 +1,2471 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header.vue should render correctly 1`] = `
+VueWrapper {
+  "__app": Object {
+    "_component": Object {
+      "name": "VTU_ROOT",
+      "render": [Function],
+    },
+    "_container": <div
+      data-v-app=""
+    >
+      <header>
+        <div
+          class="parent-container"
+        >
+          <div
+            class="logo-and-title-container"
+          >
+            <img
+              src=""
+            />
+            <p
+              data-testid="title"
+            >
+              Group Activity Planner
+            </p>
+          </div>
+          <ul>
+            <li
+              data-testid="createEventLink"
+            >
+              <router-link
+                to="[object Object]"
+              >
+                 Add Event 
+              </router-link>
+            </li>
+            <li
+              data-testid="userSettingsLink"
+            >
+              <router-link
+                to="[object Object]"
+              >
+                 Account Settings 
+              </router-link>
+            </li>
+            <li
+              data-testid="dashboardLink"
+            >
+              <router-link
+                to="[object Object]"
+              >
+                 Dashboard 
+              </router-link>
+            </li>
+          </ul>
+        </div>
+        <!--v-if-->
+        <!--v-if-->
+        <ul>
+          <li
+            data-testid="logoutLink"
+          >
+            <router-link
+              class="activeHeader"
+              to="/logout"
+            >
+              Logout 
+            </router-link>
+          </li>
+        </ul>
+      </header>
+    </div>,
+    "_context": Object {
+      "app": [Circular],
+      "components": Object {
+        "transition": Object {
+          "name": "transition",
+        },
+        "transition-group": Object {
+          "name": "transition-group",
+        },
+      },
+      "config": Object {
+        "compilerOptions": Object {},
+        "errorHandler": undefined,
+        "globalProperties": Object {},
+        "isNativeTag": [Function],
+        "optionMergeStrategies": Object {},
+        "performance": false,
+        "warnHandler": undefined,
+      },
+      "directives": Object {},
+      "emitsCache": WeakMap {},
+      "mixins": Array [
+        Object {
+          "beforeCreate": [Function],
+        },
+      ],
+      "optionsCache": WeakMap {},
+      "propsCache": WeakMap {},
+      "provides": Object {},
+      "reload": [Function],
+    },
+    "_instance": Object {
+      "a": null,
+      "accessCache": Object {},
+      "appContext": Object {
+        "app": [Circular],
+        "components": Object {
+          "transition": Object {
+            "name": "transition",
+          },
+          "transition-group": Object {
+            "name": "transition-group",
+          },
+        },
+        "config": Object {
+          "compilerOptions": Object {},
+          "errorHandler": undefined,
+          "globalProperties": Object {},
+          "isNativeTag": [Function],
+          "optionMergeStrategies": Object {},
+          "performance": false,
+          "warnHandler": undefined,
+        },
+        "directives": Object {},
+        "emitsCache": WeakMap {},
+        "mixins": Array [
+          Object {
+            "beforeCreate": [Function],
+          },
+        ],
+        "optionsCache": WeakMap {},
+        "propsCache": WeakMap {},
+        "provides": Object {},
+        "reload": [Function],
+      },
+      "asyncDep": null,
+      "asyncResolved": false,
+      "attrs": Object {},
+      "bc": null,
+      "bm": null,
+      "bu": null,
+      "bum": null,
+      "c": null,
+      "components": null,
+      "ctx": Object {
+        "$route": Object {
+          "params": Object {
+            "id": 1,
+          },
+        },
+        "$router": Object {
+          "go": [MockFunction],
+          "push": [MockFunction],
+        },
+        "$store": Object {
+          "dispatch": [MockFunction],
+          "getters": Object {
+            "isAuthenticated": [Function],
+            "userId": [Function],
+          },
+          "state": Object {
+            "jwtToken": "token",
+            "userId": 1,
+          },
+        },
+      },
+      "da": null,
+      "data": Object {},
+      "directives": null,
+      "ec": null,
+      "effect": ReactiveEffect {
+        "active": true,
+        "allowRecurse": true,
+        "deps": Array [
+          Set {
+            [Circular],
+          },
+          Set {
+            [Circular],
+          },
+        ],
+        "fn": [Function],
+        "onTrack": undefined,
+        "onTrigger": undefined,
+        "scheduler": [Function],
+      },
+      "emit": [Function],
+      "emitsOptions": null,
+      "emitted": null,
+      "exposeProxy": null,
+      "exposed": null,
+      "inheritAttrs": undefined,
+      "isDeactivated": false,
+      "isMounted": true,
+      "isUnmounted": false,
+      "m": null,
+      "next": null,
+      "parent": null,
+      "props": Object {},
+      "propsDefaults": Object {},
+      "propsOptions": Array [
+        Object {},
+        Array [],
+      ],
+      "provides": Object {},
+      "proxy": Object {
+        "$route": Object {
+          "params": Object {
+            "id": 1,
+          },
+        },
+        "$router": Object {
+          "go": [MockFunction],
+          "push": [MockFunction],
+        },
+        "$store": Object {
+          "dispatch": [MockFunction],
+          "getters": Object {
+            "isAuthenticated": [Function],
+            "userId": [Function],
+          },
+          "state": Object {
+            "jwtToken": "token",
+            "userId": 1,
+          },
+        },
+      },
+      "refs": Object {
+        "VTU_COMPONENT": Object {
+          "$route": Object {
+            "params": Object {
+              "id": 1,
+            },
+          },
+          "$router": Object {
+            "go": [MockFunction],
+            "push": [MockFunction],
+          },
+          "$store": Object {
+            "dispatch": [MockFunction],
+            "getters": Object {
+              "isAuthenticated": [Function],
+              "userId": [Function],
+            },
+            "state": Object {
+              "jwtToken": "token",
+              "userId": 1,
+            },
+          },
+          "hasOwnProperty": [Function],
+          "isLoggedIn": [Function],
+          "isMobile": [Function],
+          "loggedInHeader": false,
+          "loginPage": false,
+          "registerPage": false,
+          "userId": [Function],
+        },
+      },
+      "render": [Function],
+      "renderCache": Array [],
+      "root": [Circular],
+      "rtc": null,
+      "rtg": null,
+      "scope": EffectScope {
+        "active": true,
+        "cleanups": Array [],
+        "effects": Array [
+          ReactiveEffect {
+            "active": true,
+            "allowRecurse": true,
+            "deps": Array [
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+            ],
+            "fn": [Function],
+            "onTrack": undefined,
+            "onTrigger": undefined,
+            "scheduler": [Function],
+          },
+        ],
+      },
+      "setupContext": null,
+      "setupState": Object {},
+      "slots": Object {},
+      "sp": null,
+      "subTree": Object {
+        "__v_isVNode": true,
+        "__v_skip": true,
+        "anchor": null,
+        "appContext": null,
+        "children": null,
+        "component": Object {
+          "a": null,
+          "accessCache": Object {
+            "$route": 4,
+            "$router": 4,
+            "$store": 4,
+            "@@__IMMUTABLE_ITERABLE__@@": 0,
+            "@@__IMMUTABLE_RECORD__@@": 0,
+            "_isMockFunction": 0,
+            "constructor": 0,
+            "hasOwnProperty": 4,
+            "isLoggedIn": 4,
+            "isMobile": 4,
+            "isVueInstance": 0,
+            "loggedInHeader": 2,
+            "loginPage": 2,
+            "registerPage": 2,
+            "toJSON": 0,
+            "userId": 4,
+            Symbol(Symbol.toStringTag): 0,
+          },
+          "appContext": Object {
+            "app": [Circular],
+            "components": Object {
+              "transition": Object {
+                "name": "transition",
+              },
+              "transition-group": Object {
+                "name": "transition-group",
+              },
+            },
+            "config": Object {
+              "compilerOptions": Object {},
+              "errorHandler": undefined,
+              "globalProperties": Object {},
+              "isNativeTag": [Function],
+              "optionMergeStrategies": Object {},
+              "performance": false,
+              "warnHandler": undefined,
+            },
+            "directives": Object {},
+            "emitsCache": WeakMap {},
+            "mixins": Array [
+              Object {
+                "beforeCreate": [Function],
+              },
+            ],
+            "optionsCache": WeakMap {},
+            "propsCache": WeakMap {},
+            "provides": Object {},
+            "reload": [Function],
+          },
+          "asyncDep": null,
+          "asyncResolved": false,
+          "attrs": Object {},
+          "bc": null,
+          "bm": null,
+          "bu": null,
+          "bum": null,
+          "c": null,
+          "components": Object {
+            "MobileNavBar": Object {
+              "methods": Object {
+                "openMobileMenu": [Function],
+              },
+              "props": Array [
+                "name",
+                "navLinks",
+              ],
+              "render": [Function],
+            },
+          },
+          "ctx": Object {
+            "$route": Object {
+              "params": Object {
+                "id": 1,
+              },
+            },
+            "$router": Object {
+              "go": [MockFunction],
+              "push": [MockFunction],
+            },
+            "$store": Object {
+              "dispatch": [MockFunction],
+              "getters": Object {
+                "isAuthenticated": [Function],
+                "userId": [Function],
+              },
+              "state": Object {
+                "jwtToken": "token",
+                "userId": 1,
+              },
+            },
+            "hasOwnProperty": [Function],
+            "isLoggedIn": [Function],
+            "isMobile": [Function],
+            "loggedInHeader": false,
+            "loginPage": false,
+            "registerPage": false,
+            "userId": [Function],
+          },
+          "da": null,
+          "data": Object {
+            "loggedInHeader": false,
+            "loginPage": false,
+            "registerPage": false,
+          },
+          "directives": null,
+          "ec": null,
+          "effect": ReactiveEffect {
+            "active": true,
+            "allowRecurse": true,
+            "deps": Array [
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+            ],
+            "fn": [Function],
+            "onTrack": undefined,
+            "onTrigger": undefined,
+            "scheduler": [Function],
+          },
+          "emit": [Function],
+          "emitsOptions": null,
+          "emitted": null,
+          "exposeProxy": null,
+          "exposed": null,
+          "inheritAttrs": undefined,
+          "isDeactivated": false,
+          "isMounted": true,
+          "isUnmounted": false,
+          "m": null,
+          "next": null,
+          "parent": [Circular],
+          "props": Object {},
+          "propsDefaults": Object {},
+          "propsOptions": Array [
+            Object {},
+            Array [],
+          ],
+          "provides": Object {},
+          "proxy": Object {
+            "$route": Object {
+              "params": Object {
+                "id": 1,
+              },
+            },
+            "$router": Object {
+              "go": [MockFunction],
+              "push": [MockFunction],
+            },
+            "$store": Object {
+              "dispatch": [MockFunction],
+              "getters": Object {
+                "isAuthenticated": [Function],
+                "userId": [Function],
+              },
+              "state": Object {
+                "jwtToken": "token",
+                "userId": 1,
+              },
+            },
+            "hasOwnProperty": [Function],
+            "isLoggedIn": [Function],
+            "isMobile": [Function],
+            "loggedInHeader": false,
+            "loginPage": false,
+            "registerPage": false,
+            "userId": [Function],
+          },
+          "refs": Object {},
+          "render": [Function],
+          "renderCache": Array [],
+          "root": [Circular],
+          "rtc": null,
+          "rtg": null,
+          "scope": EffectScope {
+            "active": true,
+            "cleanups": Array [],
+            "effects": Array [
+              ReactiveEffect {
+                "active": true,
+                "deps": Array [],
+                "fn": [Function],
+                "scheduler": [Function],
+              },
+              ReactiveEffect {
+                "active": true,
+                "deps": Array [],
+                "fn": [Function],
+                "scheduler": [Function],
+              },
+              ReactiveEffect {
+                "active": true,
+                "deps": Array [],
+                "fn": [Function],
+                "onTrack": undefined,
+                "onTrigger": undefined,
+                "scheduler": [Function],
+              },
+              ReactiveEffect {
+                "active": true,
+                "allowRecurse": true,
+                "deps": Array [
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                ],
+                "fn": [Function],
+                "onTrack": undefined,
+                "onTrigger": undefined,
+                "scheduler": [Function],
+              },
+            ],
+          },
+          "setupContext": null,
+          "setupState": Object {},
+          "slots": Object {},
+          "sp": null,
+          "subTree": Object {
+            "__v_isVNode": true,
+            "__v_skip": true,
+            "anchor": null,
+            "appContext": null,
+            "children": Array [
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": Array [
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": Array [
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": null,
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <img
+                          src=""
+                        />,
+                        "key": null,
+                        "patchFlag": 0,
+                        "props": Object {
+                          "src": "",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 1,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "img",
+                      },
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "Group Activity Planner",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <p
+                          data-testid="title"
+                        >
+                          Group Activity Planner
+                        </p>,
+                        "key": null,
+                        "patchFlag": 0,
+                        "props": Object {
+                          "data-testid": "title",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 9,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "p",
+                      },
+                    ],
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <div
+                      class="logo-and-title-container"
+                    >
+                      <img
+                        src=""
+                      />
+                      <p
+                        data-testid="title"
+                      >
+                        Group Activity Planner
+                      </p>
+                    </div>,
+                    "key": null,
+                    "patchFlag": -1,
+                    "props": Object {
+                      "class": "logo-and-title-container",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 17,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "div",
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": Array [
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": Array [
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": Array [
+                              Object {
+                                "__v_isVNode": true,
+                                "__v_skip": true,
+                                "anchor": null,
+                                "appContext": null,
+                                "children": " Add Event ",
+                                "component": null,
+                                "dirs": null,
+                                "dynamicChildren": null,
+                                "dynamicProps": null,
+                                "el":  Add Event ,
+                                "key": null,
+                                "patchFlag": 0,
+                                "props": null,
+                                "ref": null,
+                                "scopeId": null,
+                                "shapeFlag": 8,
+                                "slotScopeIds": null,
+                                "ssContent": null,
+                                "ssFallback": null,
+                                "staticCount": 0,
+                                "suspense": null,
+                                "target": null,
+                                "targetAnchor": null,
+                                "transition": null,
+                                "type": Symbol(Text),
+                              },
+                            ],
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": null,
+                            "dynamicProps": null,
+                            "el": <router-link
+                              to="[object Object]"
+                            >
+                               Add Event 
+                            </router-link>,
+                            "key": null,
+                            "patchFlag": 0,
+                            "props": Object {
+                              "to": Object {
+                                "name": "Create Event Page",
+                              },
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 17,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "router-link",
+                          },
+                        ],
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <li
+                          data-testid="createEventLink"
+                        >
+                          <router-link
+                            to="[object Object]"
+                          >
+                             Add Event 
+                          </router-link>
+                        </li>,
+                        "key": null,
+                        "patchFlag": 0,
+                        "props": Object {
+                          "data-testid": "createEventLink",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 17,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "li",
+                      },
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": Array [
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": Array [
+                              Object {
+                                "__v_isVNode": true,
+                                "__v_skip": true,
+                                "anchor": null,
+                                "appContext": null,
+                                "children": " Account Settings ",
+                                "component": null,
+                                "dirs": null,
+                                "dynamicChildren": null,
+                                "dynamicProps": null,
+                                "el":  Account Settings ,
+                                "key": null,
+                                "patchFlag": 0,
+                                "props": null,
+                                "ref": null,
+                                "scopeId": null,
+                                "shapeFlag": 8,
+                                "slotScopeIds": null,
+                                "ssContent": null,
+                                "ssFallback": null,
+                                "staticCount": 0,
+                                "suspense": null,
+                                "target": null,
+                                "targetAnchor": null,
+                                "transition": null,
+                                "type": Symbol(Text),
+                              },
+                            ],
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": null,
+                            "dynamicProps": null,
+                            "el": <router-link
+                              to="[object Object]"
+                            >
+                               Account Settings 
+                            </router-link>,
+                            "key": null,
+                            "patchFlag": 0,
+                            "props": Object {
+                              "to": Object {
+                                "name": "User Settings Page",
+                              },
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 17,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "router-link",
+                          },
+                        ],
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <li
+                          data-testid="userSettingsLink"
+                        >
+                          <router-link
+                            to="[object Object]"
+                          >
+                             Account Settings 
+                          </router-link>
+                        </li>,
+                        "key": null,
+                        "patchFlag": 0,
+                        "props": Object {
+                          "data-testid": "userSettingsLink",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 17,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "li",
+                      },
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": Array [
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": Array [
+                              Object {
+                                "__v_isVNode": true,
+                                "__v_skip": true,
+                                "anchor": null,
+                                "appContext": null,
+                                "children": " Dashboard ",
+                                "component": null,
+                                "dirs": null,
+                                "dynamicChildren": null,
+                                "dynamicProps": null,
+                                "el":  Dashboard ,
+                                "key": null,
+                                "patchFlag": 0,
+                                "props": null,
+                                "ref": null,
+                                "scopeId": null,
+                                "shapeFlag": 8,
+                                "slotScopeIds": null,
+                                "ssContent": null,
+                                "ssFallback": null,
+                                "staticCount": 0,
+                                "suspense": null,
+                                "target": null,
+                                "targetAnchor": null,
+                                "transition": null,
+                                "type": Symbol(Text),
+                              },
+                            ],
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": null,
+                            "dynamicProps": Array [
+                              "to",
+                            ],
+                            "el": <router-link
+                              to="[object Object]"
+                            >
+                               Dashboard 
+                            </router-link>,
+                            "key": null,
+                            "patchFlag": 8,
+                            "props": Object {
+                              "to": Object {
+                                "name": "Dashboard",
+                                "params": Object {
+                                  "id": [Function],
+                                },
+                              },
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 17,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "router-link",
+                          },
+                        ],
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <li
+                          data-testid="dashboardLink"
+                        >
+                          <router-link
+                            to="[object Object]"
+                          >
+                             Dashboard 
+                          </router-link>
+                        </li>,
+                        "key": null,
+                        "patchFlag": 0,
+                        "props": Object {
+                          "data-testid": "dashboardLink",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 17,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "li",
+                      },
+                    ],
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": Array [
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": Array [
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": " Dashboard ",
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": null,
+                            "dynamicProps": null,
+                            "el":  Dashboard ,
+                            "key": null,
+                            "patchFlag": 0,
+                            "props": null,
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 8,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": Symbol(Text),
+                          },
+                        ],
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": Array [
+                          "to",
+                        ],
+                        "el": <router-link
+                          to="[object Object]"
+                        >
+                           Dashboard 
+                        </router-link>,
+                        "key": null,
+                        "patchFlag": 8,
+                        "props": Object {
+                          "to": Object {
+                            "name": "Dashboard",
+                            "params": Object {
+                              "id": [Function],
+                            },
+                          },
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 17,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "router-link",
+                      },
+                    ],
+                    "dynamicProps": null,
+                    "el": <ul>
+                      <li
+                        data-testid="createEventLink"
+                      >
+                        <router-link
+                          to="[object Object]"
+                        >
+                           Add Event 
+                        </router-link>
+                      </li>
+                      <li
+                        data-testid="userSettingsLink"
+                      >
+                        <router-link
+                          to="[object Object]"
+                        >
+                           Account Settings 
+                        </router-link>
+                      </li>
+                      <li
+                        data-testid="dashboardLink"
+                      >
+                        <router-link
+                          to="[object Object]"
+                        >
+                           Dashboard 
+                        </router-link>
+                      </li>
+                    </ul>,
+                    "key": 0,
+                    "patchFlag": 0,
+                    "props": Object {
+                      "key": 0,
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 17,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "ul",
+                  },
+                ],
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": null,
+                "dynamicProps": null,
+                "el": <div
+                  class="parent-container"
+                >
+                  <div
+                    class="logo-and-title-container"
+                  >
+                    <img
+                      src=""
+                    />
+                    <p
+                      data-testid="title"
+                    >
+                      Group Activity Planner
+                    </p>
+                  </div>
+                  <ul>
+                    <li
+                      data-testid="createEventLink"
+                    >
+                      <router-link
+                        to="[object Object]"
+                      >
+                         Add Event 
+                      </router-link>
+                    </li>
+                    <li
+                      data-testid="userSettingsLink"
+                    >
+                      <router-link
+                        to="[object Object]"
+                      >
+                         Account Settings 
+                      </router-link>
+                    </li>
+                    <li
+                      data-testid="dashboardLink"
+                    >
+                      <router-link
+                        to="[object Object]"
+                      >
+                         Dashboard 
+                      </router-link>
+                    </li>
+                  </ul>
+                </div>,
+                "key": null,
+                "patchFlag": 0,
+                "props": Object {
+                  "class": "parent-container",
+                },
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 17,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": "div",
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": "v-if",
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": Array [],
+                "dynamicProps": null,
+                "el": <!--v-if-->,
+                "key": null,
+                "patchFlag": 0,
+                "props": null,
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 8,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": Symbol(Comment),
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": "v-if",
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": Array [],
+                "dynamicProps": null,
+                "el": <!--v-if-->,
+                "key": null,
+                "patchFlag": 0,
+                "props": null,
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 8,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": Symbol(Comment),
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": Array [
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": Array [
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": Array [
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": "Logout ",
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": null,
+                            "dynamicProps": null,
+                            "el": Logout ,
+                            "key": null,
+                            "patchFlag": 0,
+                            "props": null,
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 8,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": Symbol(Text),
+                          },
+                        ],
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <router-link
+                          class="activeHeader"
+                          to="/logout"
+                        >
+                          Logout 
+                        </router-link>,
+                        "key": null,
+                        "patchFlag": 0,
+                        "props": Object {
+                          "class": "activeHeader",
+                          "to": "/logout",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 17,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "router-link",
+                      },
+                    ],
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <li
+                      data-testid="logoutLink"
+                    >
+                      <router-link
+                        class="activeHeader"
+                        to="/logout"
+                      >
+                        Logout 
+                      </router-link>
+                    </li>,
+                    "key": null,
+                    "patchFlag": 0,
+                    "props": Object {
+                      "data-testid": "logoutLink",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 17,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "li",
+                  },
+                ],
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": Array [],
+                "dynamicProps": null,
+                "el": <ul>
+                  <li
+                    data-testid="logoutLink"
+                  >
+                    <router-link
+                      class="activeHeader"
+                      to="/logout"
+                    >
+                      Logout 
+                    </router-link>
+                  </li>
+                </ul>,
+                "key": 2,
+                "patchFlag": 0,
+                "props": Object {
+                  "key": 2,
+                },
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 17,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": "ul",
+              },
+            ],
+            "component": null,
+            "dirs": null,
+            "dynamicChildren": Array [
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": Array [
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": Array [
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": Array [
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": " Add Event ",
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": null,
+                            "dynamicProps": null,
+                            "el":  Add Event ,
+                            "key": null,
+                            "patchFlag": 0,
+                            "props": null,
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 8,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": Symbol(Text),
+                          },
+                        ],
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <router-link
+                          to="[object Object]"
+                        >
+                           Add Event 
+                        </router-link>,
+                        "key": null,
+                        "patchFlag": 0,
+                        "props": Object {
+                          "to": Object {
+                            "name": "Create Event Page",
+                          },
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 17,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "router-link",
+                      },
+                    ],
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <li
+                      data-testid="createEventLink"
+                    >
+                      <router-link
+                        to="[object Object]"
+                      >
+                         Add Event 
+                      </router-link>
+                    </li>,
+                    "key": null,
+                    "patchFlag": 0,
+                    "props": Object {
+                      "data-testid": "createEventLink",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 17,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "li",
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": Array [
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": Array [
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": " Account Settings ",
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": null,
+                            "dynamicProps": null,
+                            "el":  Account Settings ,
+                            "key": null,
+                            "patchFlag": 0,
+                            "props": null,
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 8,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": Symbol(Text),
+                          },
+                        ],
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <router-link
+                          to="[object Object]"
+                        >
+                           Account Settings 
+                        </router-link>,
+                        "key": null,
+                        "patchFlag": 0,
+                        "props": Object {
+                          "to": Object {
+                            "name": "User Settings Page",
+                          },
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 17,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "router-link",
+                      },
+                    ],
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <li
+                      data-testid="userSettingsLink"
+                    >
+                      <router-link
+                        to="[object Object]"
+                      >
+                         Account Settings 
+                      </router-link>
+                    </li>,
+                    "key": null,
+                    "patchFlag": 0,
+                    "props": Object {
+                      "data-testid": "userSettingsLink",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 17,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "li",
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": Array [
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": Array [
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": " Dashboard ",
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": null,
+                            "dynamicProps": null,
+                            "el":  Dashboard ,
+                            "key": null,
+                            "patchFlag": 0,
+                            "props": null,
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 8,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": Symbol(Text),
+                          },
+                        ],
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": Array [
+                          "to",
+                        ],
+                        "el": <router-link
+                          to="[object Object]"
+                        >
+                           Dashboard 
+                        </router-link>,
+                        "key": null,
+                        "patchFlag": 8,
+                        "props": Object {
+                          "to": Object {
+                            "name": "Dashboard",
+                            "params": Object {
+                              "id": [Function],
+                            },
+                          },
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 17,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "router-link",
+                      },
+                    ],
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <li
+                      data-testid="dashboardLink"
+                    >
+                      <router-link
+                        to="[object Object]"
+                      >
+                         Dashboard 
+                      </router-link>
+                    </li>,
+                    "key": null,
+                    "patchFlag": 0,
+                    "props": Object {
+                      "data-testid": "dashboardLink",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 17,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "li",
+                  },
+                ],
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": Array [
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": Array [
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": " Dashboard ",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el":  Dashboard ,
+                        "key": null,
+                        "patchFlag": 0,
+                        "props": null,
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 8,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": Symbol(Text),
+                      },
+                    ],
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": Array [
+                      "to",
+                    ],
+                    "el": <router-link
+                      to="[object Object]"
+                    >
+                       Dashboard 
+                    </router-link>,
+                    "key": null,
+                    "patchFlag": 8,
+                    "props": Object {
+                      "to": Object {
+                        "name": "Dashboard",
+                        "params": Object {
+                          "id": [Function],
+                        },
+                      },
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 17,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "router-link",
+                  },
+                ],
+                "dynamicProps": null,
+                "el": <ul>
+                  <li
+                    data-testid="createEventLink"
+                  >
+                    <router-link
+                      to="[object Object]"
+                    >
+                       Add Event 
+                    </router-link>
+                  </li>
+                  <li
+                    data-testid="userSettingsLink"
+                  >
+                    <router-link
+                      to="[object Object]"
+                    >
+                       Account Settings 
+                    </router-link>
+                  </li>
+                  <li
+                    data-testid="dashboardLink"
+                  >
+                    <router-link
+                      to="[object Object]"
+                    >
+                       Dashboard 
+                    </router-link>
+                  </li>
+                </ul>,
+                "key": 0,
+                "patchFlag": 0,
+                "props": Object {
+                  "key": 0,
+                },
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 17,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": "ul",
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": "v-if",
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": Array [],
+                "dynamicProps": null,
+                "el": <!--v-if-->,
+                "key": null,
+                "patchFlag": 0,
+                "props": null,
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 8,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": Symbol(Comment),
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": "v-if",
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": Array [],
+                "dynamicProps": null,
+                "el": <!--v-if-->,
+                "key": null,
+                "patchFlag": 0,
+                "props": null,
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 8,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": Symbol(Comment),
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": Array [
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": Array [
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": Array [
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": "Logout ",
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": null,
+                            "dynamicProps": null,
+                            "el": Logout ,
+                            "key": null,
+                            "patchFlag": 0,
+                            "props": null,
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 8,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": Symbol(Text),
+                          },
+                        ],
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <router-link
+                          class="activeHeader"
+                          to="/logout"
+                        >
+                          Logout 
+                        </router-link>,
+                        "key": null,
+                        "patchFlag": 0,
+                        "props": Object {
+                          "class": "activeHeader",
+                          "to": "/logout",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 17,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "router-link",
+                      },
+                    ],
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <li
+                      data-testid="logoutLink"
+                    >
+                      <router-link
+                        class="activeHeader"
+                        to="/logout"
+                      >
+                        Logout 
+                      </router-link>
+                    </li>,
+                    "key": null,
+                    "patchFlag": 0,
+                    "props": Object {
+                      "data-testid": "logoutLink",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 17,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "li",
+                  },
+                ],
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": Array [],
+                "dynamicProps": null,
+                "el": <ul>
+                  <li
+                    data-testid="logoutLink"
+                  >
+                    <router-link
+                      class="activeHeader"
+                      to="/logout"
+                    >
+                      Logout 
+                    </router-link>
+                  </li>
+                </ul>,
+                "key": 2,
+                "patchFlag": 0,
+                "props": Object {
+                  "key": 2,
+                },
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 17,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": "ul",
+              },
+            ],
+            "dynamicProps": null,
+            "el": <header>
+              <div
+                class="parent-container"
+              >
+                <div
+                  class="logo-and-title-container"
+                >
+                  <img
+                    src=""
+                  />
+                  <p
+                    data-testid="title"
+                  >
+                    Group Activity Planner
+                  </p>
+                </div>
+                <ul>
+                  <li
+                    data-testid="createEventLink"
+                  >
+                    <router-link
+                      to="[object Object]"
+                    >
+                       Add Event 
+                    </router-link>
+                  </li>
+                  <li
+                    data-testid="userSettingsLink"
+                  >
+                    <router-link
+                      to="[object Object]"
+                    >
+                       Account Settings 
+                    </router-link>
+                  </li>
+                  <li
+                    data-testid="dashboardLink"
+                  >
+                    <router-link
+                      to="[object Object]"
+                    >
+                       Dashboard 
+                    </router-link>
+                  </li>
+                </ul>
+              </div>
+              <!--v-if-->
+              <!--v-if-->
+              <ul>
+                <li
+                  data-testid="logoutLink"
+                >
+                  <router-link
+                    class="activeHeader"
+                    to="/logout"
+                  >
+                    Logout 
+                  </router-link>
+                </li>
+              </ul>
+            </header>,
+            "key": null,
+            "patchFlag": 0,
+            "props": null,
+            "ref": null,
+            "scopeId": null,
+            "shapeFlag": 17,
+            "slotScopeIds": null,
+            "ssContent": null,
+            "ssFallback": null,
+            "staticCount": 0,
+            "suspense": null,
+            "target": null,
+            "targetAnchor": null,
+            "transition": null,
+            "type": "header",
+          },
+          "suspense": null,
+          "suspenseId": 0,
+          "type": Object {
+            "components": Object {
+              "MobileNavBar": Object {
+                "methods": Object {
+                  "openMobileMenu": [Function],
+                },
+                "props": Array [
+                  "name",
+                  "navLinks",
+                ],
+                "render": [Function],
+              },
+            },
+            "computed": Object {
+              "isLoggedIn": [Function],
+              "userId": [Function],
+            },
+            "data": [Function],
+            "methods": Object {
+              "isMobile": [Function],
+            },
+            "render": [Function],
+            "watch": Object {
+              "$route": [Function],
+            },
+          },
+          "u": null,
+          "uid": 1,
+          "um": null,
+          "update": [Function],
+          "vnode": [Circular],
+          "withProxy": null,
+        },
+        "dirs": null,
+        "dynamicChildren": null,
+        "dynamicProps": null,
+        "el": <header>
+          <div
+            class="parent-container"
+          >
+            <div
+              class="logo-and-title-container"
+            >
+              <img
+                src=""
+              />
+              <p
+                data-testid="title"
+              >
+                Group Activity Planner
+              </p>
+            </div>
+            <ul>
+              <li
+                data-testid="createEventLink"
+              >
+                <router-link
+                  to="[object Object]"
+                >
+                   Add Event 
+                </router-link>
+              </li>
+              <li
+                data-testid="userSettingsLink"
+              >
+                <router-link
+                  to="[object Object]"
+                >
+                   Account Settings 
+                </router-link>
+              </li>
+              <li
+                data-testid="dashboardLink"
+              >
+                <router-link
+                  to="[object Object]"
+                >
+                   Dashboard 
+                </router-link>
+              </li>
+            </ul>
+          </div>
+          <!--v-if-->
+          <!--v-if-->
+          <ul>
+            <li
+              data-testid="logoutLink"
+            >
+              <router-link
+                class="activeHeader"
+                to="/logout"
+              >
+                Logout 
+              </router-link>
+            </li>
+          </ul>
+        </header>,
+        "key": null,
+        "patchFlag": 0,
+        "props": Object {
+          "ref": "VTU_COMPONENT",
+        },
+        "ref": Object {
+          "f": false,
+          "i": [Circular],
+          "k": undefined,
+          "r": "VTU_COMPONENT",
+        },
+        "scopeId": null,
+        "shapeFlag": 4,
+        "slotScopeIds": null,
+        "ssContent": null,
+        "ssFallback": null,
+        "staticCount": 0,
+        "suspense": null,
+        "target": null,
+        "targetAnchor": null,
+        "transition": null,
+        "type": Object {
+          "components": Object {
+            "MobileNavBar": Object {
+              "methods": Object {
+                "openMobileMenu": [Function],
+              },
+              "props": Array [
+                "name",
+                "navLinks",
+              ],
+              "render": [Function],
+            },
+          },
+          "computed": Object {
+            "isLoggedIn": [Function],
+            "userId": [Function],
+          },
+          "data": [Function],
+          "methods": Object {
+            "isMobile": [Function],
+          },
+          "render": [Function],
+          "watch": Object {
+            "$route": [Function],
+          },
+        },
+      },
+      "suspense": null,
+      "suspenseId": 0,
+      "type": Object {
+        "name": "VTU_ROOT",
+        "render": [Function],
+      },
+      "u": null,
+      "uid": 0,
+      "um": null,
+      "update": [Function],
+      "vnode": Object {
+        "__v_isVNode": true,
+        "__v_skip": true,
+        "anchor": null,
+        "appContext": Object {
+          "app": [Circular],
+          "components": Object {
+            "transition": Object {
+              "name": "transition",
+            },
+            "transition-group": Object {
+              "name": "transition-group",
+            },
+          },
+          "config": Object {
+            "compilerOptions": Object {},
+            "errorHandler": undefined,
+            "globalProperties": Object {},
+            "isNativeTag": [Function],
+            "optionMergeStrategies": Object {},
+            "performance": false,
+            "warnHandler": undefined,
+          },
+          "directives": Object {},
+          "emitsCache": WeakMap {},
+          "mixins": Array [
+            Object {
+              "beforeCreate": [Function],
+            },
+          ],
+          "optionsCache": WeakMap {},
+          "propsCache": WeakMap {},
+          "provides": Object {},
+          "reload": [Function],
+        },
+        "children": null,
+        "component": [Circular],
+        "dirs": null,
+        "dynamicChildren": null,
+        "dynamicProps": null,
+        "el": <header>
+          <div
+            class="parent-container"
+          >
+            <div
+              class="logo-and-title-container"
+            >
+              <img
+                src=""
+              />
+              <p
+                data-testid="title"
+              >
+                Group Activity Planner
+              </p>
+            </div>
+            <ul>
+              <li
+                data-testid="createEventLink"
+              >
+                <router-link
+                  to="[object Object]"
+                >
+                   Add Event 
+                </router-link>
+              </li>
+              <li
+                data-testid="userSettingsLink"
+              >
+                <router-link
+                  to="[object Object]"
+                >
+                   Account Settings 
+                </router-link>
+              </li>
+              <li
+                data-testid="dashboardLink"
+              >
+                <router-link
+                  to="[object Object]"
+                >
+                   Dashboard 
+                </router-link>
+              </li>
+            </ul>
+          </div>
+          <!--v-if-->
+          <!--v-if-->
+          <ul>
+            <li
+              data-testid="logoutLink"
+            >
+              <router-link
+                class="activeHeader"
+                to="/logout"
+              >
+                Logout 
+              </router-link>
+            </li>
+          </ul>
+        </header>,
+        "key": null,
+        "patchFlag": 0,
+        "props": null,
+        "ref": null,
+        "scopeId": null,
+        "shapeFlag": 4,
+        "slotScopeIds": null,
+        "ssContent": null,
+        "ssFallback": null,
+        "staticCount": 0,
+        "suspense": null,
+        "target": null,
+        "targetAnchor": null,
+        "transition": null,
+        "type": Object {
+          "name": "VTU_ROOT",
+          "render": [Function],
+        },
+      },
+      "withProxy": null,
+    },
+    "_props": null,
+    "_uid": 0,
+    "component": [Function],
+    "config": Object {
+      "compilerOptions": Object {},
+      "errorHandler": undefined,
+      "globalProperties": Object {},
+      "isNativeTag": [Function],
+      "optionMergeStrategies": Object {},
+      "performance": false,
+      "warnHandler": undefined,
+    },
+    "directive": [Function],
+    "mixin": [Function],
+    "mount": [Function],
+    "provide": [Function],
+    "unmount": [Function],
+    "use": [Function],
+    "version": "3.2.26",
+  },
+  "__setProps": [Function],
+  "componentVM": Object {
+    "$route": Object {
+      "params": Object {
+        "id": 1,
+      },
+    },
+    "$router": Object {
+      "go": [MockFunction],
+      "push": [MockFunction],
+    },
+    "$store": Object {
+      "dispatch": [MockFunction],
+      "getters": Object {
+        "isAuthenticated": [Function],
+        "userId": [Function],
+      },
+      "state": Object {
+        "jwtToken": "token",
+        "userId": 1,
+      },
+    },
+    "hasOwnProperty": [Function],
+    "isLoggedIn": [Function],
+    "isMobile": [Function],
+    "loggedInHeader": false,
+    "loginPage": false,
+    "registerPage": false,
+    "userId": [Function],
+  },
+  "isDisabled": [Function],
+  "rootVM": Object {
+    "$route": Object {
+      "params": Object {
+        "id": 1,
+      },
+    },
+    "$router": Object {
+      "go": [MockFunction],
+      "push": [MockFunction],
+    },
+    "$store": Object {
+      "dispatch": [MockFunction],
+      "getters": Object {
+        "isAuthenticated": [Function],
+        "userId": [Function],
+      },
+      "state": Object {
+        "jwtToken": "token",
+        "userId": 1,
+      },
+    },
+  },
+  "wrapperElement": <header>
+    <div
+      class="parent-container"
+    >
+      <div
+        class="logo-and-title-container"
+      >
+        <img
+          src=""
+        />
+        <p
+          data-testid="title"
+        >
+          Group Activity Planner
+        </p>
+      </div>
+      <ul>
+        <li
+          data-testid="createEventLink"
+        >
+          <router-link
+            to="[object Object]"
+          >
+             Add Event 
+          </router-link>
+        </li>
+        <li
+          data-testid="userSettingsLink"
+        >
+          <router-link
+            to="[object Object]"
+          >
+             Account Settings 
+          </router-link>
+        </li>
+        <li
+          data-testid="dashboardLink"
+        >
+          <router-link
+            to="[object Object]"
+          >
+             Dashboard 
+          </router-link>
+        </li>
+      </ul>
+    </div>
+    <!--v-if-->
+    <!--v-if-->
+    <ul>
+      <li
+        data-testid="logoutLink"
+      >
+        <router-link
+          class="activeHeader"
+          to="/logout"
+        >
+          Logout 
+        </router-link>
+      </li>
+    </ul>
+  </header>,
+}
+`;

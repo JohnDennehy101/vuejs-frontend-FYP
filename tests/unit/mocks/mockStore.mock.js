@@ -7,6 +7,9 @@ const mockStore = {
     userId: () => {
       return 1;
     },
+    isAuthenticated: () => {
+      return true;
+    }
   },
   dispatch: jest.fn(),
 };

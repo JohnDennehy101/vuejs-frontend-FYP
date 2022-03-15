@@ -259,6 +259,7 @@ VueWrapper {
         "$store": Object {
           "dispatch": [MockFunction],
           "getters": Object {
+            "isAuthenticated": [Function],
             "userId": [Function],
           },
           "state": Object {
@@ -319,6 +320,7 @@ VueWrapper {
         "$store": Object {
           "dispatch": [MockFunction],
           "getters": Object {
+            "isAuthenticated": [Function],
             "userId": [Function],
           },
           "state": Object {
@@ -341,6 +343,7 @@ VueWrapper {
           "$store": Object {
             "dispatch": [MockFunction],
             "getters": Object {
+              "isAuthenticated": [Function],
               "userId": [Function],
             },
             "state": Object {
@@ -538,6 +541,7 @@ VueWrapper {
             "$store": Object {
               "dispatch": [MockFunction],
               "getters": Object {
+                "isAuthenticated": [Function],
                 "userId": [Function],
               },
               "state": Object {
@@ -730,6 +734,7 @@ VueWrapper {
             "$store": Object {
               "dispatch": [MockFunction],
               "getters": Object {
+                "isAuthenticated": [Function],
                 "userId": [Function],
               },
               "state": Object {
@@ -1039,6 +1044,7 @@ VueWrapper {
                           "$store": Object {
                             "dispatch": [MockFunction],
                             "getters": Object {
+                              "isAuthenticated": [Function],
                               "userId": [Function],
                             },
                             "state": Object {
@@ -1224,6 +1230,7 @@ VueWrapper {
                               "$store": Object {
                                 "dispatch": [MockFunction],
                                 "getters": Object {
+                                  "isAuthenticated": [Function],
                                   "userId": [Function],
                                 },
                                 "state": Object {
@@ -1411,6 +1418,7 @@ VueWrapper {
                               "$store": Object {
                                 "dispatch": [MockFunction],
                                 "getters": Object {
+                                  "isAuthenticated": [Function],
                                   "userId": [Function],
                                 },
                                 "state": Object {
@@ -1598,6 +1606,7 @@ VueWrapper {
                               "$store": Object {
                                 "dispatch": [MockFunction],
                                 "getters": Object {
+                                  "isAuthenticated": [Function],
                                   "userId": [Function],
                                 },
                                 "state": Object {
@@ -2181,6 +2190,7 @@ VueWrapper {
                           "$store": Object {
                             "dispatch": [MockFunction],
                             "getters": Object {
+                              "isAuthenticated": [Function],
                               "userId": [Function],
                             },
                             "state": Object {
@@ -2408,6 +2418,7 @@ VueWrapper {
                           "$store": Object {
                             "dispatch": [MockFunction],
                             "getters": Object {
+                              "isAuthenticated": [Function],
                               "userId": [Function],
                             },
                             "state": Object {
@@ -2750,6 +2761,7 @@ VueWrapper {
                     "$store": Object {
                       "dispatch": [MockFunction],
                       "getters": Object {
+                        "isAuthenticated": [Function],
                         "userId": [Function],
                       },
                       "state": Object {
@@ -2834,6 +2846,7 @@ VueWrapper {
                     "$store": Object {
                       "dispatch": [MockFunction],
                       "getters": Object {
+                        "isAuthenticated": [Function],
                         "userId": [Function],
                       },
                       "state": Object {
@@ -3083,6 +3096,7 @@ VueWrapper {
                       "$store": Object {
                         "dispatch": [MockFunction],
                         "getters": Object {
+                          "isAuthenticated": [Function],
                           "userId": [Function],
                         },
                         "state": Object {
@@ -3188,6 +3202,7 @@ VueWrapper {
                       "$store": Object {
                         "dispatch": [MockFunction],
                         "getters": Object {
+                          "isAuthenticated": [Function],
                           "userId": [Function],
                         },
                         "state": Object {
@@ -3294,6 +3309,7 @@ VueWrapper {
                       "$store": Object {
                         "dispatch": [MockFunction],
                         "getters": Object {
+                          "isAuthenticated": [Function],
                           "userId": [Function],
                         },
                         "state": Object {
@@ -3400,6 +3416,7 @@ VueWrapper {
                       "$store": Object {
                         "dispatch": [MockFunction],
                         "getters": Object {
+                          "isAuthenticated": [Function],
                           "userId": [Function],
                         },
                         "state": Object {
@@ -4000,6 +4017,7 @@ VueWrapper {
                       "$store": Object {
                         "dispatch": [MockFunction],
                         "getters": Object {
+                          "isAuthenticated": [Function],
                           "userId": [Function],
                         },
                         "state": Object {
@@ -4125,6 +4143,7 @@ VueWrapper {
                       "$store": Object {
                         "dispatch": [MockFunction],
                         "getters": Object {
+                          "isAuthenticated": [Function],
                           "userId": [Function],
                         },
                         "state": Object {
@@ -4305,6 +4324,7 @@ VueWrapper {
                     "$store": Object {
                       "dispatch": [MockFunction],
                       "getters": Object {
+                        "isAuthenticated": [Function],
                         "userId": [Function],
                       },
                       "state": Object {
@@ -4389,6 +4409,7 @@ VueWrapper {
                     "$store": Object {
                       "dispatch": [MockFunction],
                       "getters": Object {
+                        "isAuthenticated": [Function],
                         "userId": [Function],
                       },
                       "state": Object {
@@ -5302,6 +5323,7 @@ VueWrapper {
     "$store": Object {
       "dispatch": [MockFunction],
       "getters": Object {
+        "isAuthenticated": [Function],
         "userId": [Function],
       },
       "state": Object {
@@ -5357,6 +5379,7 @@ VueWrapper {
     "$store": Object {
       "dispatch": [MockFunction],
       "getters": Object {
+        "isAuthenticated": [Function],
         "userId": [Function],
       },
       "state": Object {

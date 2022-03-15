@@ -3,11 +3,11 @@
     <div class="parent-container">
       <div class="logo-and-title-container">
         <img src="../assets/logoIcon.png" />
-        <p>Group Activity Planner</p>
+        <p data-testid="title">Group Activity Planner</p>
       </div>
 
       <ul v-if="isLoggedIn && !isMobile()">
-        <li>
+        <li data-testid="createEventLink">
           <router-link
             :to="{
               name: 'Create Event Page',
@@ -16,7 +16,7 @@
             Add Event
           </router-link>
         </li>
-        <li>
+        <li data-testid="userSettingsLink">
           <router-link
             :to="{
               name: 'User Settings Page',
@@ -25,15 +25,28 @@
             Account Settings
           </router-link>
         </li>
-        <li>Heading 3</li>
-        <li>Heading 4</li>
+        <li data-testid="dashboardLink">
+          <router-link
+            :to="{
+              name: 'Dashboard',
+              params: {
+                id: userId,
+              },
+            }"
+          >
+            Dashboard
+          </router-link>
+        </li>
       </ul>
     </div>
     <ul v-if="!isLoggedIn && !isMobile()">
-      <li v-bind:class="{ activeHeader: loginPage }">
+      <li data-testid="loginLink" v-bind:class="{ activeHeader: loginPage }">
         <router-link to="/login"> Login </router-link>
       </li>
-      <li v-bind:class="{ activeHeader: registerPage }">
+      <li
+        data-testid="registerLink"
+        v-bind:class="{ activeHeader: registerPage }"
+      >
         <router-link to="/register">Register </router-link>
       </li>
     </ul>
@@ -51,7 +64,7 @@
     />
 
     <ul v-if="isLoggedIn && !isMobile()">
-      <li>
+      <li data-testid="logoutLink">
         <router-link class="activeHeader" to="/logout">Logout </router-link>
       </li>
     </ul>
@@ -60,6 +73,7 @@
 
 <script>
 import MobileNavBar from "./MobileNavBar";
+import { mapGetters } from "vuex";
 export default {
   data() {
     return {
@@ -72,6 +86,9 @@ export default {
     isLoggedIn() {
       return this.$store.getters.isAuthenticated;
     },
+    ...mapGetters({
+      userId: "userId",
+    }),
   },
   components: { MobileNavBar },
   methods: {
@@ -84,6 +101,7 @@ export default {
   watch: {
     $route() {
       if (this.$route.path === "/login") {
+        console.log("YAE");
         this.loginPage = true;
         this.registerPage = false;
       } else if (this.$route.path === "/register") {
@@ -139,7 +157,7 @@ ul {
 
   li {
     list-style-type: none;
-    margin: 0 1.5rem;
+    margin: 0 2.5rem;
     min-width: 7rem;
     text-align: center;
     font-size: 1rem;
