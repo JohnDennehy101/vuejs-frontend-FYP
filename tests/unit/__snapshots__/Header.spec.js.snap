@@ -363,7 +363,6 @@ VueWrapper {
                 "openMobileMenu": [Function],
               },
               "props": Array [
-                "name",
                 "navLinks",
               ],
               "render": [Function],
@@ -2063,7 +2062,6 @@ VueWrapper {
                   "openMobileMenu": [Function],
                 },
                 "props": Array [
-                  "name",
                   "navLinks",
                 ],
                 "render": [Function],
@@ -2181,7 +2179,6 @@ VueWrapper {
                 "openMobileMenu": [Function],
               },
               "props": Array [
-                "name",
                 "navLinks",
               ],
               "render": [Function],

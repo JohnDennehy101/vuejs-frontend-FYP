@@ -101,7 +101,6 @@ export default {
   watch: {
     $route() {
       if (this.$route.path === "/login") {
-        console.log("YAE");
         this.loginPage = true;
         this.registerPage = false;
       } else if (this.$route.path === "/register") {

@@ -6,7 +6,11 @@
       </li>
     </ul>
 
-    <div v-on:click="openMobileMenu()" id="hamburger-icon">
+    <div
+      data-testid="hamburgerIcon"
+      v-on:click="openMobileMenu()"
+      id="hamburger-icon"
+    >
       <div class="line1"></div>
       <div class="line2"></div>
       <div class="line3"></div>
@@ -16,7 +20,7 @@
 
 <script>
 export default {
-  props: ["name", "navLinks"],
+  props: ["navLinks"],
   methods: {
     openMobileMenu() {
       const hamburgerIcon = document.getElementById("hamburger-icon");
