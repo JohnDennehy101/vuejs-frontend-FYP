@@ -86,6 +86,39 @@ const mockSuccessfulEventService = {
       });
     });
   },
+
+  createEventItinerary() {
+    return new Promise((resolve, reject) => {
+      resolve({
+        id: "1",
+        completed: false,
+        created_at: "2022-03-22",
+        updated_at: "2022-03-22",
+        eventId: "2",
+      });
+    });
+  },
+
+  updateEventItinerary() {
+    return new Promise((resolve, reject) => {
+      resolve({
+        id: "1",
+        completed: false,
+        created_at: "2022-03-22",
+        updated_at: "2022-03-22",
+        eventId: "2",
+      });
+    });
+  },
+  deleteEventItinerary() {
+    return new Promise((resolve, reject) => {
+      resolve({
+        rowsAffected: 1,
+        rawAffected: [],
+        status: 200
+      });
+    });
+  },
 };
 
 export default mockSuccessfulEventService;

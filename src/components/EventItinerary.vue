@@ -164,6 +164,7 @@
 
           <span
             v-if="itineraryFlight[0].length > 0"
+            data-testid="removeItineraryFlightsIcon"
             v-on:click="$emit('removeItineraryFlightsClick', true)"
             ><i class="fas fa-times-circle"></i
           ></span>
@@ -177,7 +178,7 @@
           class="event-itinerary-category-info"
         >
           <h4>Price Per Person:</h4>
-          <p v-if="itineraryFlight[0].length > 0">
+          <p data-testid="pricePerPerson" v-if="itineraryFlight[0].length > 0">
             {{ itineraryFlight[0][0].pricePerPerson }}
           </p>
         </div>
@@ -187,7 +188,7 @@
           class="event-itinerary-category-info"
         >
           <h4>Total Price:</h4>
-          <p>
+          <p data-testid="priceTotal">
             {{ itineraryFlight[0][0].priceTotal }}
           </p>
         </div>
@@ -197,7 +198,11 @@
           class="event-itinerary-category-info"
         >
           <h4>Flights Link:</h4>
-          <a :href="itineraryFlight[0][0].flightUrl" target="_blank">
+          <a
+            data-testid="flightUrl"
+            :href="itineraryFlight[0][0].flightUrl"
+            target="_blank"
+          >
             <i class="fas fa-external-link-square-alt"></i>
           </a>
         </div>
@@ -213,12 +218,14 @@
               <h3 v-else>Return Flight</h3>
               <div class="event-itinerary-category-info">
                 <h4>Departure City:</h4>
-                <p v-if="index == 0">{{ flight.departureCity }}</p>
-                <p v-else>{{ flight.arrivalCity }}</p>
+                <p data-testid="departureCity" v-if="index == 0">
+                  {{ flight.departureCity }}
+                </p>
+                <p data-testid="arrivalCity" v-else>{{ flight.arrivalCity }}</p>
               </div>
               <div class="event-itinerary-category-info">
                 <h4>Departure Time:</h4>
-                <p>{{ flight.departureTime }}</p>
+                <p data-testid="departureTime">{{ flight.departureTime }}</p>
               </div>
               <div class="event-itinerary-category-info">
                 <h4>Arrival City:</h4>
@@ -227,20 +234,20 @@
               </div>
               <div class="event-itinerary-category-info">
                 <h4>Arrival Time:</h4>
-                <p>{{ flight.arrivalTime }}</p>
+                <p data-testid="arrivalTime">{{ flight.arrivalTime }}</p>
               </div>
               <div class="event-itinerary-category-info">
                 <h4>Carrier:</h4>
-                <p>{{ flight.carrier }}</p>
+                <p data-testid="carrier">{{ flight.carrier }}</p>
               </div>
               <div class="event-itinerary-category-info">
                 <h4>Duration:</h4>
-                <p>{{ flight.duration }}</p>
+                <p data-testid="duration">{{ flight.duration }}</p>
               </div>
             </div>
             <div class="event-itinerary-category-info">
               <h4>Airport:</h4>
-              <p>{{ flight.airport }}</p>
+              <p data-testid="airport">{{ flight.airport }}</p>
             </div>
           </div>
         </div>
@@ -251,7 +258,9 @@
           <h3>Activities</h3>
         </div>
 
-        <h4 v-if="!itineraryActivities[0]">No Activities Selected</h4>
+        <h4 data-testid="noActivities" v-if="!itineraryActivities[0]">
+          No Activities Selected
+        </h4>
 
         <div
           id="activity-parent-container"
@@ -259,36 +268,46 @@
           v-bind:key="value"
         >
           <div class="event-itinerary-activity-remove-item-container">
-            <span v-on:click="$emit('removeItineraryActivityClick', value.name)"
+            <span
+              data-testid="deleteActivityIcon"
+              v-on:click="$emit('removeItineraryActivityClick', value.name)"
               ><i class="fas fa-times-circle"></i
             ></span>
           </div>
           <div class="event-itinerary-category-info">
             <h4>Title:</h4>
-            <p>{{ value.name }}</p>
+            <p data-testid="activityName">{{ value.name }}</p>
           </div>
           <div class="event-itinerary-category-info">
             <h4>Address:</h4>
-            <p>{{ value.vicinity }}</p>
+            <p data-testid="activityVicinity">{{ value.vicinity }}</p>
           </div>
           <div class="event-itinerary-category-info">
             <h4>Rating:</h4>
-            <p>{{ value.rating }}</p>
+            <p data-testid="activityRating">{{ value.rating }}</p>
           </div>
           <div class="event-itinerary-category-info">
             <h4>Rating Quantity:</h4>
-            <p>{{ value.user_ratings_total }}</p>
+            <p data-testid="activityRatingQuantity">
+              {{ value.user_ratings_total }}
+            </p>
           </div>
           <div class="event-itinerary-category-info">
             <h4>Map Link:</h4>
             <a
               v-if="!value.mapLink"
+              data-testid="activityApiResponse"
               :href="extractLink(value.photos[0].html_attributions[0])"
               target="_blank"
             >
               <i class="fas fa-map-marker-alt"></i>
             </a>
-            <a v-else :href="value.mapLink" target="_blank">
+            <a
+              data-testid="activityMapLink"
+              v-else
+              :href="value.mapLink"
+              target="_blank"
+            >
               <i class="fas fa-map-marker-alt"></i>
             </a>
           </div>
@@ -298,6 +317,7 @@
       <div class="event-itinerary-category">
         <button
           v-if="editAction"
+          data-testid="editItineraryButton"
           v-on:click="$emit('editItineraryClick', true)"
           id="edit-itinerary-button"
         >
@@ -317,11 +337,16 @@
         <input
           id="finalise-itinerary"
           type="checkbox"
+          data-testid="finaliseItineraryCheckBox"
           v-model="finaliseItinerary"
         />
       </div>
       <div v-if="!editAction || editClick" class="event-itinerary-category">
-        <button v-if="!emptyItineraryCheck" @click="submitItinerary">
+        <button
+          data-testid="submitButton"
+          v-if="!emptyItineraryCheck"
+          @click="submitItinerary"
+        >
           Submit
         </button>
       </div>
@@ -339,16 +364,17 @@
 import leaflet from "leaflet";
 import eventService from "../services/EventService";
 import StringUtils from "../utils/stringUtils";
+import LocationUtils from "../utils/locationUtils";
 export default {
   props: {
     eventService: {
       default: eventService,
     },
-    accommodation: Object,
-    activities: Object,
-    flight: Object,
+    accommodation: Array,
+    activities: Array,
+    flight: Array,
     eventId: String,
-    editItineray: Boolean,
+    editItinerary: Boolean,
     editItineraryClick: Boolean,
     guestUserCheck: Boolean,
     itemType: String,
@@ -404,16 +430,7 @@ export default {
     createMap() {
       let mymap;
 
-      let locations = {
-        Limerick: [52.6638, -8.6267],
-        Cork: [51.8985, -8.4756],
-        Dublin: [53.3498, -6.2603],
-        Galway: [53.2707, -9.0568],
-        Waterford: [52.2593, -7.1101],
-        Kilkenny: [52.6541, -7.2448],
-      };
-
-      let latLng = locations[this.destinationCity];
+      let latLng = LocationUtils.returnCityCoordinates(this.destinationCity);
 
       mymap = leaflet.map("itinerary-map").setView(latLng, 13);
 

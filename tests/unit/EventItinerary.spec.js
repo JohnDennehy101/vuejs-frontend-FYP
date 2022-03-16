@@ -4,12 +4,16 @@ import AccountErrorMessage from "@/components/AccountErrorMessage";
 import mockSuccessfulEventService from "./mocks/eventService.mock";
 import mockStore from "./mocks/mockStore.mock";
 import mockRouter from "./mocks/mockRouter.mock";
+import { nextTick } from "vue";
+import leaflet from "leaflet";
 
 const mockRoute = {
   params: {
     id: 1,
   },
 };
+
+jest.mock("leaflet");
 
 const accommodation = [
   {
@@ -30,6 +34,30 @@ const accommodation = [
   },
 ];
 
+const activities = [
+  {
+    name: "Test Activity",
+    vicinity: "Cork City",
+    rating: "8/10",
+    user_ratings_total: 2000,
+    mapLink: "https://www.testgooglemaps.ie",
+  },
+];
+
+const activitiesApiResponse = [
+  {
+    name: "Test Activity",
+    vicinity: "Cork City",
+    rating: "8/10",
+    user_ratings_total: 2000,
+    photos: [
+      {
+        html_attributions: ["https://testimage.ie"],
+      },
+    ],
+  },
+];
+
 const flights = [
   {
     departureCity: "Cork",
@@ -39,6 +67,9 @@ const flights = [
     carrier: "Ryanair",
     duration: "1h 20mins",
     airport: "COR Cork",
+    pricePerPerson: "€350",
+    priceTotal: "€700",
+    flightUrl: "https://www.mockkayak.ie",
   },
   {
     departureCity: "London",
@@ -48,6 +79,9 @@ const flights = [
     carrier: "Aer Lingus",
     duration: "1h 15mins",
     airport: "LHW Heathrow",
+    pricePerPerson: "€350",
+    priceTotal: "€700",
+    flightUrl: "https://www.mockkayak.ie",
   },
 ];
 
@@ -362,5 +396,562 @@ describe("EventItinerary.vue", () => {
         .find('[data-testid="bookingSiteDisplayLocationMapLink"]')
         .attributes().href
     ).toEqual(accommodation[0].bookingSiteDisplayLocationMapLink);
+  });
+
+  it("if flights passed as prop, should render x icon for removing itinerary flights", async () => {
+    const wrapper = mount(EventItinerary, {
+      props: {
+        accommodation: accommodation,
+        flight: [flights],
+        eventService: mockSuccessfulEventService,
+        activities: [],
+        itemType: "FOREIGN_OVERNIGHT",
+      },
+    });
+
+    expect(
+      wrapper.find('[data-testid="removeItineraryFlightsIcon"]').exists()
+    ).toBe(true);
+  });
+
+  it("if x icon clicked to remove itinerary flight, should emit event", async () => {
+    const wrapper = mount(EventItinerary, {
+      props: {
+        accommodation: accommodation,
+        flight: [flights],
+        eventService: mockSuccessfulEventService,
+        activities: [],
+        itemType: "FOREIGN_OVERNIGHT",
+      },
+    });
+
+    const removeFlightIcon = await wrapper.find(
+      '[data-testid="removeItineraryFlightsIcon"]'
+    );
+
+    await removeFlightIcon.trigger("click");
+
+    expect(wrapper.emitted()).toHaveProperty("removeItineraryFlightsClick");
+  });
+
+  it("if flights passed as prop, should render flights price per person", async () => {
+    const wrapper = mount(EventItinerary, {
+      props: {
+        accommodation: accommodation,
+        flight: [flights],
+        eventService: mockSuccessfulEventService,
+        activities: [],
+        itemType: "FOREIGN_OVERNIGHT",
+      },
+    });
+
+    expect(wrapper.find('[data-testid="pricePerPerson"]').text()).toBe(
+      flights[0].pricePerPerson
+    );
+  });
+
+  it("if flights passed as prop, should render flights total price", async () => {
+    const wrapper = mount(EventItinerary, {
+      props: {
+        accommodation: accommodation,
+        flight: [flights],
+        eventService: mockSuccessfulEventService,
+        activities: [],
+        itemType: "FOREIGN_OVERNIGHT",
+      },
+    });
+
+    expect(wrapper.find('[data-testid="priceTotal"]').text()).toBe(
+      flights[0].priceTotal
+    );
+  });
+
+  it("if flights passed as prop, should render icon with link to external site with more info on flights", async () => {
+    const wrapper = mount(EventItinerary, {
+      props: {
+        accommodation: accommodation,
+        flight: [flights],
+        eventService: mockSuccessfulEventService,
+        activities: [],
+        itemType: "FOREIGN_OVERNIGHT",
+      },
+    });
+
+    expect(wrapper.find('[data-testid="flightUrl"]').attributes().href).toEqual(
+      flights[0].flightUrl
+    );
+  });
+
+  it("if flights passed as prop, should render flights departure city", async () => {
+    const wrapper = mount(EventItinerary, {
+      props: {
+        accommodation: accommodation,
+        flight: [flights],
+        eventService: mockSuccessfulEventService,
+        activities: [],
+        itemType: "FOREIGN_OVERNIGHT",
+      },
+    });
+
+    expect(wrapper.find('[data-testid="departureCity"]').text()).toEqual(
+      flights[0].departureCity
+    );
+  });
+
+  it("if flights passed as prop, should render flights arrival city", async () => {
+    const wrapper = mount(EventItinerary, {
+      props: {
+        accommodation: accommodation,
+        flight: [flights],
+        eventService: mockSuccessfulEventService,
+        activities: [],
+        itemType: "FOREIGN_OVERNIGHT",
+      },
+    });
+
+    expect(wrapper.find('[data-testid="arrivalCity"]').text()).toEqual(
+      flights[1].arrivalCity
+    );
+  });
+
+  it("if flights passed as prop, should render flights departure time", async () => {
+    const wrapper = mount(EventItinerary, {
+      props: {
+        accommodation: accommodation,
+        flight: [flights],
+        eventService: mockSuccessfulEventService,
+        activities: [],
+        itemType: "FOREIGN_OVERNIGHT",
+      },
+    });
+
+    expect(wrapper.find('[data-testid="departureTime"]').text()).toEqual(
+      flights[0].departureTime
+    );
+  });
+
+  it("if flights passed as prop, should render flights arrival time", async () => {
+    const wrapper = mount(EventItinerary, {
+      props: {
+        accommodation: accommodation,
+        flight: [flights],
+        eventService: mockSuccessfulEventService,
+        activities: [],
+        itemType: "FOREIGN_OVERNIGHT",
+      },
+    });
+
+    expect(wrapper.find('[data-testid="arrivalTime"]').text()).toEqual(
+      flights[0].arrivalTime
+    );
+  });
+
+  it("if flights passed as prop, should render flight carrier info", async () => {
+    const wrapper = mount(EventItinerary, {
+      props: {
+        accommodation: accommodation,
+        flight: [flights],
+        eventService: mockSuccessfulEventService,
+        activities: [],
+        itemType: "FOREIGN_OVERNIGHT",
+      },
+    });
+
+    expect(wrapper.find('[data-testid="carrier"]').text()).toEqual(
+      flights[0].carrier
+    );
+  });
+
+  it("if flights passed as prop, should render flight duration info", async () => {
+    const wrapper = mount(EventItinerary, {
+      props: {
+        accommodation: accommodation,
+        flight: [flights],
+        eventService: mockSuccessfulEventService,
+        activities: [],
+        itemType: "FOREIGN_OVERNIGHT",
+      },
+    });
+
+    expect(wrapper.find('[data-testid="duration"]').text()).toEqual(
+      flights[0].duration
+    );
+  });
+
+  it("if flights passed as prop, should render flight airport info", async () => {
+    const wrapper = mount(EventItinerary, {
+      props: {
+        accommodation: accommodation,
+        flight: [flights],
+        eventService: mockSuccessfulEventService,
+        activities: [],
+        itemType: "FOREIGN_OVERNIGHT",
+      },
+    });
+
+    expect(wrapper.find('[data-testid="airport"]').text()).toEqual(
+      flights[0].airport
+    );
+  });
+
+  it("if no activities passed as prop, should render no activities message", async () => {
+    const wrapper = mount(EventItinerary, {
+      props: {
+        accommodation: accommodation,
+        flight: [flights],
+        eventService: mockSuccessfulEventService,
+        activities: [],
+        itemType: "FOREIGN_OVERNIGHT",
+      },
+    });
+
+    expect(wrapper.find('[data-testid="noActivities"]').text()).toEqual(
+      "No Activities Selected"
+    );
+  });
+
+  it("if activities passed as prop, should render delete activities icon", async () => {
+    const wrapper = mount(EventItinerary, {
+      props: {
+        accommodation: accommodation,
+        flight: [flights],
+        eventService: mockSuccessfulEventService,
+        activities: activities,
+        itemType: "FOREIGN_OVERNIGHT",
+      },
+    });
+
+    const deleteActivityIcon = await wrapper.find(
+      '[data-testid="deleteActivityIcon"]'
+    );
+    await deleteActivityIcon.trigger("click");
+
+    expect(wrapper.emitted()).toHaveProperty("removeItineraryActivityClick");
+  });
+
+  it("if activities passed as prop, should render activity title", async () => {
+    const wrapper = mount(EventItinerary, {
+      props: {
+        accommodation: accommodation,
+        flight: [flights],
+        eventService: mockSuccessfulEventService,
+        activities: activities,
+        itemType: "FOREIGN_OVERNIGHT",
+      },
+    });
+
+    expect(wrapper.find('[data-testid="activityName"]').text()).toBe(
+      activities[0].name
+    );
+  });
+
+  it("if activities passed as prop, should render activity vicinity", async () => {
+    const wrapper = mount(EventItinerary, {
+      props: {
+        accommodation: accommodation,
+        flight: [flights],
+        eventService: mockSuccessfulEventService,
+        activities: activities,
+        itemType: "FOREIGN_OVERNIGHT",
+      },
+    });
+
+    expect(wrapper.find('[data-testid="activityVicinity"]').text()).toBe(
+      activities[0].vicinity
+    );
+  });
+
+  it("if activities passed as prop, should render activity rating", async () => {
+    const wrapper = mount(EventItinerary, {
+      props: {
+        accommodation: accommodation,
+        flight: [flights],
+        eventService: mockSuccessfulEventService,
+        activities: activities,
+        itemType: "FOREIGN_OVERNIGHT",
+      },
+    });
+
+    expect(wrapper.find('[data-testid="activityRating"]').text()).toBe(
+      activities[0].rating
+    );
+  });
+
+  it("if activities passed as prop, should render activity rating quantity", async () => {
+    const wrapper = mount(EventItinerary, {
+      props: {
+        accommodation: accommodation,
+        flight: [flights],
+        eventService: mockSuccessfulEventService,
+        activities: activities,
+        itemType: "FOREIGN_OVERNIGHT",
+      },
+    });
+
+    expect(wrapper.find('[data-testid="activityRatingQuantity"]').text()).toBe(
+      activities[0].user_ratings_total.toString()
+    );
+  });
+
+  it("if activities passed as prop, should render activity map link", async () => {
+    const wrapper = mount(EventItinerary, {
+      props: {
+        accommodation: accommodation,
+        flight: [flights],
+        eventService: mockSuccessfulEventService,
+        activities: activities,
+        itemType: "FOREIGN_OVERNIGHT",
+      },
+    });
+
+    expect(
+      wrapper.find('[data-testid="activityMapLink"]').attributes().href
+    ).toEqual(activities[0].mapLink);
+  });
+
+  it("if activities retrieved from API call, mapLink property will not be available. Map Link should be extracted from url in Google Places API response.", async () => {
+    const wrapper = mount(EventItinerary, {
+      props: {
+        accommodation: accommodation,
+        flight: [flights],
+        eventService: mockSuccessfulEventService,
+        activities: activitiesApiResponse,
+        itemType: "FOREIGN_OVERNIGHT",
+      },
+    });
+
+    expect(wrapper.find('[data-testid="activityApiResponse"]').exists()).toBe(
+      true
+    );
+  });
+
+  it("if editItinerary prop is false, edit itinerary button should not be rendered", async () => {
+    const wrapper = mount(EventItinerary, {
+      props: {
+        accommodation: accommodation,
+        flight: [flights],
+        eventService: mockSuccessfulEventService,
+        activities: activities,
+        itemType: "FOREIGN_OVERNIGHT",
+        editItinerary: false,
+      },
+    });
+
+    expect(wrapper.find('[data-testid="editItineraryButton"]').exists()).toBe(
+      false
+    );
+  });
+
+  it("if editItinerary prop is true, edit itinerary button should be rendered", async () => {
+    const wrapper = mount(EventItinerary, {
+      props: {
+        accommodation: accommodation,
+        flight: [flights],
+        eventService: mockSuccessfulEventService,
+        activities: activities,
+        itemType: "FOREIGN_OVERNIGHT",
+        editItinerary: true,
+      },
+      data() {
+        return {
+          editAction: true,
+        };
+      },
+    });
+
+    await nextTick();
+
+    expect(wrapper.find('[data-testid="editItineraryButton"]').exists()).toBe(
+      true
+    );
+  });
+
+  it("if editItineraryButton is clicked, event is emitted ", async () => {
+    const wrapper = mount(EventItinerary, {
+      props: {
+        accommodation: accommodation,
+        flight: [flights],
+        eventService: mockSuccessfulEventService,
+        activities: activities,
+        itemType: "FOREIGN_OVERNIGHT",
+        editItinerary: true,
+      },
+      data() {
+        return {
+          editAction: true,
+        };
+      },
+    });
+
+    const editItineraryButton = await wrapper.find(
+      '[data-testid="editItineraryButton"]'
+    );
+    editItineraryButton.trigger("click");
+
+    expect(wrapper.emitted()).toHaveProperty("editItineraryClick");
+  });
+
+  it("if event creator viewing the page, displayFinaliseCheckbox prop is true and accommodation or flight present in itinerary, finalise itinerary checkbox rendered", async () => {
+    const wrapper = mount(EventItinerary, {
+      props: {
+        accommodation: accommodation,
+        flight: [flights],
+        eventService: mockSuccessfulEventService,
+        activities: activities,
+        itemType: "FOREIGN_OVERNIGHT",
+        editItinerary: true,
+        displayFinaliseCheckbox: true,
+      },
+      data() {
+        return {
+          editAction: true,
+        };
+      },
+    });
+
+    expect(
+      wrapper.find('[data-testid="finaliseItineraryCheckBox"]').exists()
+    ).toBe(true);
+  });
+
+  it("if accommodation or flights checked, submit itinerary button is rendered", async () => {
+    const wrapper = mount(EventItinerary, {
+      props: {
+        accommodation: accommodation,
+        flight: [flights],
+        eventService: mockSuccessfulEventService,
+        activities: activities,
+        itemType: "FOREIGN_OVERNIGHT",
+        editItinerary: true,
+        displayFinaliseCheckbox: true,
+      },
+      data() {
+        return {
+          editAction: false,
+        };
+      },
+    });
+
+    expect(wrapper.find('[data-testid="submitButton"]').exists()).toBe(true);
+  });
+
+  it("if user is editing existing itinerary, delete itinerary button should be rendered as an option", async () => {
+    const wrapper = mount(EventItinerary, {
+      props: {
+        accommodation: accommodation,
+        flight: [flights],
+        eventService: mockSuccessfulEventService,
+        activities: activities,
+        itemType: "FOREIGN_OVERNIGHT",
+        editItinerary: true,
+        displayFinaliseCheckbox: true,
+        editItineraryClick: true,
+      },
+      data() {
+        return {
+          editAction: false,
+        };
+      },
+    });
+
+    expect(wrapper.find("#delete-itinerary-button").exists()).toBe(true);
+  });
+
+  it("if event itinerary doesn't exist and user clicks submit, event itinerary create method is called", async () => {
+    const wrapper = mount(EventItinerary, {
+      props: {
+        accommodation: accommodation,
+        flight: [flights],
+        eventService: mockSuccessfulEventService,
+        activities: activities,
+        itemType: "FOREIGN_OVERNIGHT",
+        editItinerary: false,
+        displayFinaliseCheckbox: true,
+        editItineraryClick: false,
+      },
+      data() {
+        return {
+          editAction: false,
+        };
+      },
+    });
+
+    const createEventItineraryMock = jest.spyOn(
+      wrapper.vm.eventService,
+      "createEventItinerary"
+    );
+
+    const submitItineraryButton = wrapper.find('[data-testid="submitButton"]');
+    await submitItineraryButton.trigger("click");
+
+    expect(createEventItineraryMock).toHaveBeenCalled();
+  });
+
+  it("if event itinerary already exists and user clicks submit, event itinerary update method is called", async () => {
+    const wrapper = mount(EventItinerary, {
+      props: {
+        accommodation: accommodation,
+        flight: [flights],
+        eventService: mockSuccessfulEventService,
+        activities: activities,
+        itemType: "FOREIGN_OVERNIGHT",
+        displayFinaliseCheckbox: true,
+        editItinerary: true,
+      },
+      data() {
+        return {
+          editAction: true,
+          editClick: true,
+        };
+      },
+    });
+
+    const updateEventItineraryMock = jest.spyOn(
+      wrapper.vm.eventService,
+      "updateEventItinerary"
+    );
+
+    const submitItineraryButton = wrapper.find('[data-testid="submitButton"]');
+    await submitItineraryButton.trigger("click");
+
+    expect(updateEventItineraryMock).toHaveBeenCalled();
+  });
+
+  it("if event itinerary already exists and user clicks delete button, delete event itinerary method called", async () => {
+    const wrapper = mount(EventItinerary, {
+      props: {
+        accommodation: accommodation,
+        flight: [flights],
+        eventService: mockSuccessfulEventService,
+        activities: activities,
+        itemType: "FOREIGN_OVERNIGHT",
+        displayFinaliseCheckbox: true,
+        editItinerary: true,
+      },
+      data() {
+        return {
+          editAction: true,
+          editClick: true,
+        };
+      },
+      global: {
+        mocks: {
+          $store: mockStore,
+          $route: mockRoute,
+          $router: mockRouter,
+        },
+      },
+    });
+
+    const deleteEventItineraryMock = jest.spyOn(
+      wrapper.vm.eventService,
+      "deleteEventItinerary"
+    );
+
+    const deleteItineraryButton = wrapper.find("#delete-itinerary-button");
+    await deleteItineraryButton.trigger("click");
+
+    expect(deleteEventItineraryMock).toHaveBeenCalled();
+    expect(mockRouter.go).toHaveBeenCalled();
   });
 });

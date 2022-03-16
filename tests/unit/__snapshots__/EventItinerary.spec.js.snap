@@ -233,8 +233,10 @@ VueWrapper {
                 Activities
               </h3>
             </div>
-            <h4>
-              No Activities Selected
+            <h4
+              data-testid="noActivities"
+            >
+               No Activities Selected 
             </h4>
             
             
@@ -248,7 +250,9 @@ VueWrapper {
           <div
             class="event-itinerary-category"
           >
-            <button>
+            <button
+              data-testid="submitButton"
+            >
                Submit 
             </button>
           </div>
@@ -473,20 +477,23 @@ VueWrapper {
           "deletetItinerary": [Function],
           "destinationCity": undefined,
           "displayFinaliseCheckbox": false,
-          "editAction": undefined,
+          "editAction": false,
           "editClick": false,
+          "editItinerary": false,
           "editItineraryClick": false,
-          "editItineray": false,
           "emptyItineraryCheck": false,
           "eventId": undefined,
           "eventService": Object {
             "createEvent": [Function],
+            "createEventItinerary": [Function],
             "createEventPoll": [Function],
             "deleteEvent": [Function],
+            "deleteEventItinerary": [Function],
             "deleteEventPoll": [Function],
             "editEventPoll": [Function],
             "getindividualPoll": [Function],
             "updateEvent": [Function],
+            "updateEventItinerary": [Function],
           },
           "eventType": undefined,
           "extractLink": [Function],
@@ -594,8 +601,8 @@ VueWrapper {
             "displayFinaliseCheckbox": 3,
             "editAction": 2,
             "editClick": 2,
+            "editItinerary": 3,
             "editItineraryClick": 3,
-            "editItineray": 3,
             "emptyItineraryCheck": 4,
             "eventId": 3,
             "eventService": 3,
@@ -703,20 +710,23 @@ VueWrapper {
             "deletetItinerary": [Function],
             "destinationCity": undefined,
             "displayFinaliseCheckbox": false,
-            "editAction": undefined,
+            "editAction": false,
             "editClick": false,
+            "editItinerary": false,
             "editItineraryClick": false,
-            "editItineray": false,
             "emptyItineraryCheck": false,
             "eventId": undefined,
             "eventService": Object {
               "createEvent": [Function],
+              "createEventItinerary": [Function],
               "createEventPoll": [Function],
               "deleteEvent": [Function],
+              "deleteEventItinerary": [Function],
               "deleteEventPoll": [Function],
               "editEventPoll": [Function],
               "getindividualPoll": [Function],
               "updateEvent": [Function],
+              "updateEventItinerary": [Function],
             },
             "eventType": undefined,
             "extractLink": [Function],
@@ -757,7 +767,7 @@ VueWrapper {
           "da": null,
           "data": Object {
             "destinationCity": undefined,
-            "editAction": undefined,
+            "editAction": false,
             "editClick": false,
             "eventType": undefined,
             "finaliseItinerary": false,
@@ -917,17 +927,20 @@ VueWrapper {
             "city": undefined,
             "complete": false,
             "displayFinaliseCheckbox": false,
+            "editItinerary": false,
             "editItineraryClick": false,
-            "editItineray": false,
             "eventId": undefined,
             "eventService": Object {
               "createEvent": [Function],
+              "createEventItinerary": [Function],
               "createEventPoll": [Function],
               "deleteEvent": [Function],
+              "deleteEventItinerary": [Function],
               "deleteEventPoll": [Function],
               "editEventPoll": [Function],
               "getindividualPoll": [Function],
               "updateEvent": [Function],
+              "updateEventItinerary": [Function],
             },
             "flight": Array [
               Array [],
@@ -963,12 +976,12 @@ VueWrapper {
                 "1": true,
                 "type": [Function],
               },
-              "editItineraryClick": Object {
+              "editItinerary": Object {
                 "0": true,
                 "1": true,
                 "type": [Function],
               },
-              "editItineray": Object {
+              "editItineraryClick": Object {
                 "0": true,
                 "1": true,
                 "type": [Function],
@@ -1003,7 +1016,7 @@ VueWrapper {
             },
             Array [
               "eventService",
-              "editItineray",
+              "editItinerary",
               "editItineraryClick",
               "guestUserCheck",
               "complete",
@@ -1057,20 +1070,23 @@ VueWrapper {
             "deletetItinerary": [Function],
             "destinationCity": undefined,
             "displayFinaliseCheckbox": false,
-            "editAction": undefined,
+            "editAction": false,
             "editClick": false,
+            "editItinerary": false,
             "editItineraryClick": false,
-            "editItineray": false,
             "emptyItineraryCheck": false,
             "eventId": undefined,
             "eventService": Object {
               "createEvent": [Function],
+              "createEventItinerary": [Function],
               "createEventPoll": [Function],
               "deleteEvent": [Function],
+              "deleteEventItinerary": [Function],
               "deleteEventPoll": [Function],
               "editEventPoll": [Function],
               "getindividualPoll": [Function],
               "updateEvent": [Function],
+              "updateEventItinerary": [Function],
             },
             "eventType": undefined,
             "extractLink": [Function],
@@ -6141,17 +6157,20 @@ VueWrapper {
                             "__v_skip": true,
                             "anchor": null,
                             "appContext": null,
-                            "children": "No Activities Selected",
+                            "children": " No Activities Selected ",
                             "component": null,
                             "dirs": null,
                             "dynamicChildren": Array [],
                             "dynamicProps": null,
-                            "el": <h4>
-                              No Activities Selected
+                            "el": <h4
+                              data-testid="noActivities"
+                            >
+                               No Activities Selected 
                             </h4>,
                             "key": 0,
                             "patchFlag": 0,
                             "props": Object {
+                              "data-testid": "noActivities",
                               "key": 0,
                             },
                             "ref": null,
@@ -6203,17 +6222,20 @@ VueWrapper {
                             "__v_skip": true,
                             "anchor": null,
                             "appContext": null,
-                            "children": "No Activities Selected",
+                            "children": " No Activities Selected ",
                             "component": null,
                             "dirs": null,
                             "dynamicChildren": Array [],
                             "dynamicProps": null,
-                            "el": <h4>
-                              No Activities Selected
+                            "el": <h4
+                              data-testid="noActivities"
+                            >
+                               No Activities Selected 
                             </h4>,
                             "key": 0,
                             "patchFlag": 0,
                             "props": Object {
+                              "data-testid": "noActivities",
                               "key": 0,
                             },
                             "ref": null,
@@ -6268,8 +6290,10 @@ VueWrapper {
                               Activities
                             </h3>
                           </div>
-                          <h4>
-                            No Activities Selected
+                          <h4
+                            data-testid="noActivities"
+                          >
+                             No Activities Selected 
                           </h4>
                           
                           
@@ -6397,12 +6421,15 @@ VueWrapper {
                             "dirs": null,
                             "dynamicChildren": Array [],
                             "dynamicProps": null,
-                            "el": <button>
+                            "el": <button
+                              data-testid="submitButton"
+                            >
                                Submit 
                             </button>,
                             "key": 0,
                             "patchFlag": 0,
                             "props": Object {
+                              "data-testid": "submitButton",
                               "key": 0,
                               "onClick": [Function],
                             },
@@ -6433,12 +6460,15 @@ VueWrapper {
                             "dirs": null,
                             "dynamicChildren": Array [],
                             "dynamicProps": null,
-                            "el": <button>
+                            "el": <button
+                              data-testid="submitButton"
+                            >
                                Submit 
                             </button>,
                             "key": 0,
                             "patchFlag": 0,
                             "props": Object {
+                              "data-testid": "submitButton",
                               "key": 0,
                               "onClick": [Function],
                             },
@@ -6460,7 +6490,9 @@ VueWrapper {
                         "el": <div
                           class="event-itinerary-category"
                         >
-                          <button>
+                          <button
+                            data-testid="submitButton"
+                          >
                              Submit 
                           </button>
                         </div>,
@@ -6724,8 +6756,10 @@ VueWrapper {
                             Activities
                           </h3>
                         </div>
-                        <h4>
-                          No Activities Selected
+                        <h4
+                          data-testid="noActivities"
+                        >
+                           No Activities Selected 
                         </h4>
                         
                         
@@ -6739,7 +6773,9 @@ VueWrapper {
                       <div
                         class="event-itinerary-category"
                       >
-                        <button>
+                        <button
+                          data-testid="submitButton"
+                        >
                            Submit 
                         </button>
                       </div>
@@ -6987,8 +7023,10 @@ VueWrapper {
                           Activities
                         </h3>
                       </div>
-                      <h4>
-                        No Activities Selected
+                      <h4
+                        data-testid="noActivities"
+                      >
+                         No Activities Selected 
                       </h4>
                       
                       
@@ -7002,7 +7040,9 @@ VueWrapper {
                     <div
                       class="event-itinerary-category"
                     >
-                      <button>
+                      <button
+                        data-testid="submitButton"
+                      >
                          Submit 
                       </button>
                     </div>
@@ -11824,17 +11864,20 @@ VueWrapper {
                     "__v_skip": true,
                     "anchor": null,
                     "appContext": null,
-                    "children": "No Activities Selected",
+                    "children": " No Activities Selected ",
                     "component": null,
                     "dirs": null,
                     "dynamicChildren": Array [],
                     "dynamicProps": null,
-                    "el": <h4>
-                      No Activities Selected
+                    "el": <h4
+                      data-testid="noActivities"
+                    >
+                       No Activities Selected 
                     </h4>,
                     "key": 0,
                     "patchFlag": 0,
                     "props": Object {
+                      "data-testid": "noActivities",
                       "key": 0,
                     },
                     "ref": null,
@@ -11886,17 +11929,20 @@ VueWrapper {
                     "__v_skip": true,
                     "anchor": null,
                     "appContext": null,
-                    "children": "No Activities Selected",
+                    "children": " No Activities Selected ",
                     "component": null,
                     "dirs": null,
                     "dynamicChildren": Array [],
                     "dynamicProps": null,
-                    "el": <h4>
-                      No Activities Selected
+                    "el": <h4
+                      data-testid="noActivities"
+                    >
+                       No Activities Selected 
                     </h4>,
                     "key": 0,
                     "patchFlag": 0,
                     "props": Object {
+                      "data-testid": "noActivities",
                       "key": 0,
                     },
                     "ref": null,
@@ -11951,8 +11997,10 @@ VueWrapper {
                       Activities
                     </h3>
                   </div>
-                  <h4>
-                    No Activities Selected
+                  <h4
+                    data-testid="noActivities"
+                  >
+                     No Activities Selected 
                   </h4>
                   
                   
@@ -12046,12 +12094,15 @@ VueWrapper {
                     "dirs": null,
                     "dynamicChildren": Array [],
                     "dynamicProps": null,
-                    "el": <button>
+                    "el": <button
+                      data-testid="submitButton"
+                    >
                        Submit 
                     </button>,
                     "key": 0,
                     "patchFlag": 0,
                     "props": Object {
+                      "data-testid": "submitButton",
                       "key": 0,
                       "onClick": [Function],
                     },
@@ -12082,12 +12133,15 @@ VueWrapper {
                     "dirs": null,
                     "dynamicChildren": Array [],
                     "dynamicProps": null,
-                    "el": <button>
+                    "el": <button
+                      data-testid="submitButton"
+                    >
                        Submit 
                     </button>,
                     "key": 0,
                     "patchFlag": 0,
                     "props": Object {
+                      "data-testid": "submitButton",
                       "key": 0,
                       "onClick": [Function],
                     },
@@ -12109,7 +12163,9 @@ VueWrapper {
                 "el": <div
                   class="event-itinerary-category"
                 >
-                  <button>
+                  <button
+                    data-testid="submitButton"
+                  >
                      Submit 
                   </button>
                 </div>,
@@ -12199,8 +12255,8 @@ VueWrapper {
               "city": [Function],
               "complete": [Function],
               "displayFinaliseCheckbox": [Function],
+              "editItinerary": [Function],
               "editItineraryClick": [Function],
-              "editItineray": [Function],
               "eventId": [Function],
               "eventService": Object {
                 "0": false,
@@ -12250,12 +12306,15 @@ VueWrapper {
           "activities": Array [],
           "eventService": Object {
             "createEvent": [Function],
+            "createEventItinerary": [Function],
             "createEventPoll": [Function],
             "deleteEvent": [Function],
+            "deleteEventItinerary": [Function],
             "deleteEventPoll": [Function],
             "editEventPoll": [Function],
             "getindividualPoll": [Function],
             "updateEvent": [Function],
+            "updateEventItinerary": [Function],
           },
           "flight": Array [
             Array [],
@@ -12297,8 +12356,8 @@ VueWrapper {
             "city": [Function],
             "complete": [Function],
             "displayFinaliseCheckbox": [Function],
+            "editItinerary": [Function],
             "editItineraryClick": [Function],
-            "editItineray": [Function],
             "eventId": [Function],
             "eventService": Object {
               "0": false,
@@ -12453,20 +12512,23 @@ VueWrapper {
     "deletetItinerary": [Function],
     "destinationCity": undefined,
     "displayFinaliseCheckbox": false,
-    "editAction": undefined,
+    "editAction": false,
     "editClick": false,
+    "editItinerary": false,
     "editItineraryClick": false,
-    "editItineray": false,
     "emptyItineraryCheck": false,
     "eventId": undefined,
     "eventService": Object {
       "createEvent": [Function],
+      "createEventItinerary": [Function],
       "createEventPoll": [Function],
       "deleteEvent": [Function],
+      "deleteEventItinerary": [Function],
       "deleteEventPoll": [Function],
       "editEventPoll": [Function],
       "getindividualPoll": [Function],
       "updateEvent": [Function],
+      "updateEventItinerary": [Function],
     },
     "eventType": undefined,
     "extractLink": [Function],
