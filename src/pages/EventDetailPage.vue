@@ -76,7 +76,7 @@
         :pollItems="polls"
         :userUuid="userId"
         :individualEventId="eventId"
-        :invitedUser="guestUser"
+        :guestUser="invitedUser"
         v-on:showDeleteModal="showDeleteModal"
       />
     </div>
@@ -89,12 +89,11 @@
     />
 
     <div class="scraped-info-wrapper" v-if="displayAccommodation">
-      <button
-        className="hide-event-detail-category-button"
-        v-on:click="toggleEventDetailInfo('Accommodation')"
-      >
-        Hide
-      </button>
+      <EventDetailInfoToggleTableDisplay
+        v-on:toggleEventDetailInfo="toggleEventDetailInfo"
+        infoType="Accommodation"
+      />
+
       <table
         id="accommodation-information-table"
         class="web-scraped-info-parent-container"
@@ -174,12 +173,10 @@
       class="scraped-info-wrapper"
       v-if="individualEvent && googlePlacesInfo && displayActivities"
     >
-      <button
-        className="hide-event-detail-category-button"
-        v-on:click="toggleEventDetailInfo('Tourist Attractions')"
-      >
-        Hide
-      </button>
+      <EventDetailInfoToggleTableDisplay
+        v-on:toggleEventDetailInfo="toggleEventDetailInfo"
+        infoType="Tourist Attractions"
+      />
       <table
         id="tourist-attractions-information-table"
         class="web-scraped-info-parent-container"
@@ -237,12 +234,11 @@
 
     <div class="scraped-info-wrapper" v-if="flightInfo && displayFlights">
       <h2>Flight Results</h2>
-      <button
-        className="hide-event-detail-category-button"
-        v-on:click="toggleEventDetailInfo('Flights')"
-      >
-        Hide
-      </button>
+
+      <EventDetailInfoToggleTableDisplay
+        infoType="Flights"
+        v-on:toggleEventDetailInfo="toggleEventDetailInfo"
+      />
       <table
         id="flight-information-table"
         class="web-scraped-info-parent-container"
@@ -349,6 +345,7 @@ import ChatMessagesDisplay from "../components/ChatMessagesDisplay";
 import ChatMessagesInput from "../components/ChatMessagesInput";
 import ChatOnlineUsers from "../components/ChatOnlineUsers";
 import PollsOverview from "../components/PollsOverview";
+import EventDetailInfoToggleTableDisplay from "../components/EventDetailInfoToggleTableDisplay";
 export default {
   name: "eventDetailPage",
   props: ["editEvent"],
@@ -424,6 +421,7 @@ export default {
     ChatMessagesInput,
     ChatOnlineUsers,
     PollsOverview,
+    EventDetailInfoToggleTableDisplay,
   },
   methods: {
     async checkEditAction() {
@@ -828,24 +826,6 @@ h2 {
 
   @include for-phone-only {
     width: 90%;
-  }
-
-  .hide-event-detail-category-button {
-    background-color: #d73737;
-    color: #ffffff;
-    border-radius: 10px;
-    border: none;
-    width: 10%;
-    height: 2.5rem;
-    margin: 1rem auto;
-
-    @include for-phone-only {
-      width: 40%;
-      height: 2rem;
-    }
-  }
-  button:hover {
-    cursor: pointer;
   }
 }
 
