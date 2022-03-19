@@ -12,19 +12,10 @@
       <AccountConfirmationInfoMessage
         :message="emailConfirmedPasswordRequiredMessage"
       />
-      <div class="form-control">
-        <label for="password">Password</label>
-        <input
-          id="password"
-          name="password"
-          type="password"
-          placeholder="Enter password"
-          v-model="password"
-        />
-      </div>
-      <div class="form-control">
-        <button v-on:click="updateUser">Submit</button>
-      </div>
+
+      <AccountConfirmationProvidePassword
+        v-on:updateUserPassword="updateUser"
+      />
     </div>
     <div
       class="parent-component"
@@ -42,6 +33,7 @@ import Loading from "vue-loading-overlay";
 import "vue-loading-overlay/dist/vue-loading.css";
 import userService from "../services/UserService";
 import AccountConfirmationInfoMessage from "../components/AccountConfirmationInfoMessage";
+import AccountConfirmationProvidePassword from "../components/AccountConfirmationProvidePassword";
 export default {
   data() {
     return {
@@ -69,6 +61,7 @@ export default {
   components: {
     Loading,
     AccountConfirmationInfoMessage,
+    AccountConfirmationProvidePassword,
   },
   methods: {
     onCancel() {
@@ -92,16 +85,18 @@ export default {
         }
       }
     },
-    async updateUser(event) {
-      event.preventDefault();
-
-      if (this.password.length > 5) {
+    async updateUser(value) {
+      if (value.length > 5) {
         const payload = {
           email: this.email,
-          password: this.password,
+          password: value,
+          passwordProvided: true,
         };
-
-        const response = await this.userService.updateUser(this.id, payload);
+        const response = await this.userService.updateUser(
+          this.id,
+          payload,
+          this.token
+        );
 
         if (response.status === 200) {
           setTimeout(() => this.$router.push({ name: "Login" }), 2500);
@@ -137,36 +132,5 @@ export default {
   align-items: center;
   border: 1px solid #eeeeee;
   background-color: white;
-
-  .form-control {
-    width: 70%;
-    margin: 0.5rem auto;
-
-    label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: bold;
-    }
-    input {
-      width: 95%;
-      height: 2.5rem;
-      border-radius: 12px;
-      border: 1px solid grey;
-      padding-left: 10px;
-    }
-  }
-  button {
-    border-radius: 10px;
-    border: none;
-    width: 95%;
-    text-align: center;
-    height: 2.5rem;
-    margin: 1rem auto;
-    background-color: $primary-button-background-colour;
-    color: $primary-button-text-colour;
-  }
-  button:hover {
-    cursor: pointer;
-  }
 }
 </style>

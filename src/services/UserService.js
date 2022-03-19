@@ -49,9 +49,7 @@ class UserService {
       });
 
     if (!("error" in response)) {
-      //await localStorage.setItem("id", response.data.userId);
       await localStorage.setItem("token", response.data.jwtToken);
-      console.log(response.data);
       return response.data;
     } else {
       return false;
@@ -78,12 +76,18 @@ class UserService {
 
     return response;
   }
-  async updateUser(id, payload) {
+  async updateUser(id, payload, token) {
+    let headers;
+    if (token) {
+      headers = {"Access-Control-Allow-Origin": "*",
+      "Authorization": "Bearer " + token}
+    }
+    else {
+      headers = {"Access-Control-Allow-Origin": "*"}
+    }
     const response = await axios
       .patch(`${this.baseUrl}/users/${id}`, payload, {
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-        },
+        headers: headers,
       })
       .catch((error) => {
         return { error };
