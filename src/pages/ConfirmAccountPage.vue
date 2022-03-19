@@ -9,13 +9,9 @@
       :color="loaderColour"
     />
     <div class="parent-component" v-if="emailConfirmed && !passwordProvided">
-      <div class="banner-message-container">
-        <i class="fas fa-check-circle"></i>
-        <p>
-          Thanks for confirming your email, please provide a password for your
-          account.
-        </p>
-      </div>
+      <AccountConfirmationInfoMessage
+        :message="emailConfirmedPasswordRequiredMessage"
+      />
       <div class="form-control">
         <label for="password">Password</label>
         <input
@@ -34,13 +30,9 @@
       class="parent-component"
       v-else-if="emailConfirmed && passwordProvided"
     >
-      <div class="banner-message-container">
-        <i class="fas fa-check-circle"></i>
-        <p>
-          Thank you for confirming your email, you will now be re-directed to
-          the login page to access the service.
-        </p>
-      </div>
+      <AccountConfirmationInfoMessage
+        :message="emailConfirmedPasswordNotRequiredMessage"
+      />
     </div>
   </div>
 </template>
@@ -49,6 +41,7 @@
 import Loading from "vue-loading-overlay";
 import "vue-loading-overlay/dist/vue-loading.css";
 import userService from "../services/UserService";
+import AccountConfirmationInfoMessage from "../components/AccountConfirmationInfoMessage";
 export default {
   data() {
     return {
@@ -62,6 +55,10 @@ export default {
       password: "",
       email: null,
       id: null,
+      emailConfirmedPasswordRequiredMessage:
+        "Thanks for confirming your email, please provide a password for your account.",
+      emailConfirmedPasswordNotRequiredMessage:
+        "Thank you for confirming your email, you will now be re-directed to the login page to access the service.",
     };
   },
   props: {
@@ -71,6 +68,7 @@ export default {
   },
   components: {
     Loading,
+    AccountConfirmationInfoMessage,
   },
   methods: {
     onCancel() {
@@ -139,22 +137,6 @@ export default {
   align-items: center;
   border: 1px solid #eeeeee;
   background-color: white;
-
-  .banner-message-container {
-    display: flex;
-    align-items: center;
-    padding: 1rem;
-  }
-
-  p {
-    margin: 0 0.5rem;
-    color: #647196;
-    font-size: 1rem;
-  }
-  svg {
-    color: #647196;
-    font-size: 1rem;
-  }
 
   .form-control {
     width: 70%;
