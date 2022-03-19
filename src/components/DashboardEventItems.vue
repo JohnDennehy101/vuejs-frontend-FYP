@@ -96,6 +96,9 @@ export default {
       eventItems: this.events,
       showAllEventActions: this.createdEvents,
       userId: this.userUuid,
+      domesticDayColourHex: "#F49F85",
+      domesticOvernightColourHex: "#AD1FEA",
+      foreignOvernightColourHex: "#62BCFA",
     };
   },
   methods: {

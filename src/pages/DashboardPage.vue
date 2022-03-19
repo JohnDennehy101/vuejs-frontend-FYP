@@ -66,9 +66,6 @@ export default {
       invalidEventCreation: false,
       errorMessage:
         "There was an error adding this event, not successfully created.",
-      domesticDayColourHex: "#F49F85",
-      domesticOvernightColourHex: "#AD1FEA",
-      foreignOvernightColourHex: "#62BCFA",
       displayDeleteModal: false,
       user: null,
     };
@@ -115,6 +112,7 @@ export default {
       }
     },
     showDeleteModal(event) {
+      console.log(event);
       this.$store.dispatch("event/populateDeleteModal", {
         deleteEventTitle: event.path[4].children[0].textContent,
         deleteEventId: event.path[4].children[2].textContent,

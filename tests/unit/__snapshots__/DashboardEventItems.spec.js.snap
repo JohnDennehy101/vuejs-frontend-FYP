@@ -195,6 +195,8 @@ VueWrapper {
       "refs": Object {
         "VTU_COMPONENT": Object {
           "createdEvents": true,
+          "domesticDayColourHex": "#F49F85",
+          "domesticOvernightColourHex": "#AD1FEA",
           "eventItems": Array [
             Object {
               "location": "Cork",
@@ -209,6 +211,7 @@ VueWrapper {
               "type": "DOMESTIC_OVERNIGHT",
             },
           ],
+          "foreignOvernightColourHex": "#62BCFA",
           "hasOwnProperty": [Function],
           "showAllEventActions": true,
           "showDeleteModal": [Function],
@@ -270,8 +273,11 @@ VueWrapper {
             "_isMockFunction": 0,
             "constructor": 0,
             "createdEvents": 3,
+            "domesticDayColourHex": 2,
+            "domesticOvernightColourHex": 2,
             "eventItems": 2,
             "events": 3,
+            "foreignOvernightColourHex": 2,
             "hasOwnProperty": 4,
             "isVueInstance": 0,
             "showAllEventActions": 2,
@@ -323,6 +329,8 @@ VueWrapper {
           "components": Object {},
           "ctx": Object {
             "createdEvents": true,
+            "domesticDayColourHex": "#F49F85",
+            "domesticOvernightColourHex": "#AD1FEA",
             "eventItems": Array [
               Object {
                 "location": "Cork",
@@ -337,6 +345,7 @@ VueWrapper {
                 "type": "DOMESTIC_OVERNIGHT",
               },
             ],
+            "foreignOvernightColourHex": "#62BCFA",
             "hasOwnProperty": [Function],
             "showAllEventActions": true,
             "showDeleteModal": [Function],
@@ -345,6 +354,8 @@ VueWrapper {
           },
           "da": null,
           "data": Object {
+            "domesticDayColourHex": "#F49F85",
+            "domesticOvernightColourHex": "#AD1FEA",
             "eventItems": Array [
               Object {
                 "location": "Cork",
@@ -352,6 +363,7 @@ VueWrapper {
                 "type": "DOMESTIC_OVERNIGHT",
               },
             ],
+            "foreignOvernightColourHex": "#62BCFA",
             "showAllEventActions": true,
             "userId": "1",
           },
@@ -449,6 +461,8 @@ VueWrapper {
           "provides": Object {},
           "proxy": Object {
             "createdEvents": true,
+            "domesticDayColourHex": "#F49F85",
+            "domesticOvernightColourHex": "#AD1FEA",
             "eventItems": Array [
               Object {
                 "location": "Cork",
@@ -463,6 +477,7 @@ VueWrapper {
                 "type": "DOMESTIC_OVERNIGHT",
               },
             ],
+            "foreignOvernightColourHex": "#62BCFA",
             "hasOwnProperty": [Function],
             "showAllEventActions": true,
             "showDeleteModal": [Function],
@@ -2574,6 +2589,8 @@ VueWrapper {
   "__setProps": [Function],
   "componentVM": Object {
     "createdEvents": true,
+    "domesticDayColourHex": "#F49F85",
+    "domesticOvernightColourHex": "#AD1FEA",
     "eventItems": Array [
       Object {
         "location": "Cork",
@@ -2588,6 +2605,7 @@ VueWrapper {
         "type": "DOMESTIC_OVERNIGHT",
       },
     ],
+    "foreignOvernightColourHex": "#62BCFA",
     "hasOwnProperty": [Function],
     "showAllEventActions": true,
     "showDeleteModal": [Function],
