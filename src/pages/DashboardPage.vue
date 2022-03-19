@@ -16,117 +16,22 @@
     <div v-if="createdEvents.length > 0" class="events-parent-container">
       <h2>Your Created Events</h2>
 
-      <div
-        v-for="item in createdEvents"
-        v-bind:key="item.title"
-        class="individual-event-container"
-      >
-        <router-link
-          :to="{
-            name: 'Event Detail Page',
-            params: {
-              userId: userId,
-              eventId: item.id,
-              editEvent: false,
-              event: JSON.stringify(item),
-            },
-          }"
-        >
-          <div
-            v-if="item.type === 'DOMESTIC_DAY'"
-            class="domestic-day-colour-mark"
-          ></div>
-          <div
-            v-else-if="item.type === 'DOMESTIC_OVERNIGHT'"
-            class="domestic-overnight-colour-mark"
-          ></div>
-
-          <div v-else class="foreign-overnight-colour-mark"></div>
-
-          <div class="event-information-container">
-            <h3>{{ item.title }}</h3>
-            <p>More info about group trip here...description</p>
-            <p style="display: none">{{ item.id }}</p>
-            <span>{{ item.type }}</span>
-            <div class="event-user-actions-parent-container">
-              <span
-                ><router-link
-                  :to="{
-                    name: 'Event Detail Page',
-                    params: {
-                      userId: userId,
-                      eventId: item.id,
-                      editEvent: true,
-                      event: JSON.stringify(item),
-                    },
-                  }"
-                >
-                  <i class="fas fa-pen"></i> </router-link
-              ></span>
-              <span @click.prevent="showDeleteModal">
-                <i class="fas fa-times-circle"></i
-              ></span>
-            </div>
-          </div>
-        </router-link>
-      </div>
+      <DashboardEventItems
+        :events="createdEvents"
+        :userUuid="userId"
+        :createdEvents="true"
+        v-on:showDeleteModal="showDeleteModal"
+      />
     </div>
 
     <div v-if="invitedEvents.length > 0" class="events-parent-container">
       <h2>Your Invited Events</h2>
 
-      <div
-        v-for="item in invitedEvents"
-        v-bind:key="item.title"
-        class="individual-event-container"
-      >
-        <router-link
-          :to="{
-            name: 'Event Detail Page',
-            params: {
-              userId: userId,
-              eventId: item.id,
-              editEvent: false,
-              event: JSON.stringify(item),
-            },
-          }"
-        >
-          <div
-            v-if="item.type === 'DOMESTIC_DAY'"
-            class="domestic-day-colour-mark"
-          ></div>
-          <div
-            v-else-if="item.type === 'DOMESTIC_OVERNIGHT'"
-            class="domestic-overnight-colour-mark"
-          ></div>
-
-          <div v-else class="foreign-overnight-colour-mark"></div>
-
-          <div class="event-information-container">
-            <h3>{{ item.title }}</h3>
-            <p>More info about group trip here...description</p>
-            <p style="display: none">{{ item.id }}</p>
-            <span>{{ item.type }}</span>
-            <div class="event-user-actions-parent-container">
-              <span>
-                <router-link
-                  :to="{
-                    name: 'Event Detail Page',
-                    params: {
-                      userId: userId,
-                      eventId: item.id,
-                      editEvent: false,
-                      event: JSON.stringify(item),
-                    },
-                  }"
-                >
-                  <i class="fas fa-external-link-square-alt"></i>
-                </router-link>
-              </span>
-            </div>
-          </div>
-        </router-link>
-      </div>
+      <DashboardEventItems
+        :events="createdEvents"
+        :userUuid="userId"
+        :createdEvents="false"
+      />
     </div>
   </div>
   <DeleteModal
@@ -144,6 +49,7 @@ import DeleteModal from "../components/DeleteModal";
 import eventService from "../services/EventService";
 import userService from "../services/UserService";
 import UserInfoDisplay from "../components/UserInfoDisplay";
+import DashboardEventItems from "../components/DashboardEventItems";
 
 import { mapGetters } from "vuex";
 export default {
@@ -225,6 +131,7 @@ export default {
     NoCreatedItems,
     DeleteModal,
     UserInfoDisplay,
+    DashboardEventItems,
   },
 };
 </script>
@@ -260,78 +167,5 @@ h2 {
   h2 {
     margin-left: 1rem;
   }
-}
-.individual-event-container {
-  width: 30%;
-  height: 28vh;
-  display: inline-block;
-  margin: 1rem 1.2rem;
-  border-radius: 5px;
-  background-color: #ffffff;
-
-  @include for-phone-only {
-    width: 90%;
-    height: 30vh;
-  }
-
-  a {
-    text-decoration: none;
-  }
-
-  .domestic-day-colour-mark {
-    background-color: v-bind(domesticDayColourHex);
-    height: 3%;
-  }
-
-  .domestic-overnight-colour-mark {
-    background-color: v-bind(domesticOvernightColourHex);
-    height: 3%;
-  }
-
-  .foreign-overnight-colour-mark {
-    background-color: v-bind(foreignOvernightColourHex);
-    height: 3%;
-  }
-
-  .event-information-container {
-    width: 80%;
-    height: 100%;
-    margin: 1rem auto 0 auto;
-
-    h3 {
-      font-size: 1.1rem;
-      color: #3a4374;
-    }
-    p {
-      margin: 0.8rem auto;
-      color: #647196;
-      font-size: 1rem;
-    }
-    span {
-      padding: 0.4rem;
-      background-color: #f2f4fe;
-      color: #3a4374;
-      border-radius: 10px;
-      font-weight: bold;
-      font-size: 0.7rem;
-    }
-
-    .event-user-actions-parent-container {
-      display: flex;
-      justify-content: space-between;
-      margin: 1rem auto;
-      svg {
-        font-size: 1rem;
-        padding: 0.2rem;
-        color: #3a4374;
-      }
-      span {
-        height: 100%;
-      }
-    }
-  }
-}
-.individual-event-container:hover {
-  cursor: pointer;
 }
 </style>

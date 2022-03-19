@@ -1,0 +1,2601 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DashboardEventItems.vue should render correctly 1`] = `
+VueWrapper {
+  "__app": Object {
+    "_component": Object {
+      "name": "VTU_ROOT",
+      "render": [Function],
+    },
+    "_container": <div
+      data-v-app=""
+    >
+      
+      <div
+        class="individual-event-container"
+      >
+        <router-link
+          data-testid="eventDetailLink"
+          to="[object Object]"
+        >
+          <div
+            class="domestic-overnight-colour-mark"
+            data-testid="domesticOvernight"
+          />
+          <div
+            class="event-information-container"
+          >
+            <h3
+              data-testid="eventTitle"
+            >
+              Test Event
+            </h3>
+            <p>
+              More info about group trip here...description
+            </p>
+            <p
+              style="display: none;"
+            />
+            <span
+              data-testid="eventType"
+            >
+              DOMESTIC_OVERNIGHT
+            </span>
+            <div
+              class="event-user-actions-parent-container"
+            >
+              <span>
+                <router-link
+                  data-testid="editEventLink"
+                  to="[object Object]"
+                >
+                  <i
+                    class="fas fa-pen"
+                  />
+                </router-link>
+              </span>
+              <span
+                data-testid="deleteEvent"
+              >
+                <i
+                  class="fas fa-times-circle"
+                />
+              </span>
+              <!--v-if-->
+            </div>
+          </div>
+        </router-link>
+      </div>
+      
+    </div>,
+    "_context": Object {
+      "app": [Circular],
+      "components": Object {
+        "transition": Object {
+          "name": "transition",
+        },
+        "transition-group": Object {
+          "name": "transition-group",
+        },
+      },
+      "config": Object {
+        "compilerOptions": Object {},
+        "errorHandler": undefined,
+        "globalProperties": Object {},
+        "isNativeTag": [Function],
+        "optionMergeStrategies": Object {},
+        "performance": false,
+        "warnHandler": undefined,
+      },
+      "directives": Object {},
+      "emitsCache": WeakMap {},
+      "mixins": Array [
+        Object {
+          "beforeCreate": [Function],
+        },
+      ],
+      "optionsCache": WeakMap {},
+      "propsCache": WeakMap {},
+      "provides": Object {},
+      "reload": [Function],
+    },
+    "_instance": Object {
+      "a": null,
+      "accessCache": Object {},
+      "appContext": Object {
+        "app": [Circular],
+        "components": Object {
+          "transition": Object {
+            "name": "transition",
+          },
+          "transition-group": Object {
+            "name": "transition-group",
+          },
+        },
+        "config": Object {
+          "compilerOptions": Object {},
+          "errorHandler": undefined,
+          "globalProperties": Object {},
+          "isNativeTag": [Function],
+          "optionMergeStrategies": Object {},
+          "performance": false,
+          "warnHandler": undefined,
+        },
+        "directives": Object {},
+        "emitsCache": WeakMap {},
+        "mixins": Array [
+          Object {
+            "beforeCreate": [Function],
+          },
+        ],
+        "optionsCache": WeakMap {},
+        "propsCache": WeakMap {},
+        "provides": Object {},
+        "reload": [Function],
+      },
+      "asyncDep": null,
+      "asyncResolved": false,
+      "attrs": Object {},
+      "bc": null,
+      "bm": null,
+      "bu": null,
+      "bum": null,
+      "c": null,
+      "components": null,
+      "ctx": Object {},
+      "da": null,
+      "data": Object {},
+      "directives": null,
+      "ec": null,
+      "effect": ReactiveEffect {
+        "active": true,
+        "allowRecurse": true,
+        "deps": Array [
+          Set {
+            [Circular],
+          },
+          Set {
+            [Circular],
+          },
+          Set {
+            [Circular],
+          },
+          Set {
+            [Circular],
+          },
+          Set {
+            [Circular],
+          },
+        ],
+        "fn": [Function],
+        "onTrack": undefined,
+        "onTrigger": undefined,
+        "scheduler": [Function],
+      },
+      "emit": [Function],
+      "emitsOptions": null,
+      "emitted": null,
+      "exposeProxy": null,
+      "exposed": null,
+      "inheritAttrs": undefined,
+      "isDeactivated": false,
+      "isMounted": true,
+      "isUnmounted": false,
+      "m": null,
+      "next": null,
+      "parent": null,
+      "props": Object {},
+      "propsDefaults": Object {},
+      "propsOptions": Array [
+        Object {},
+        Array [],
+      ],
+      "provides": Object {},
+      "proxy": Object {},
+      "refs": Object {
+        "VTU_COMPONENT": Object {
+          "createdEvents": true,
+          "eventItems": Array [
+            Object {
+              "location": "Cork",
+              "title": "Test Event",
+              "type": "DOMESTIC_OVERNIGHT",
+            },
+          ],
+          "events": Array [
+            Object {
+              "location": "Cork",
+              "title": "Test Event",
+              "type": "DOMESTIC_OVERNIGHT",
+            },
+          ],
+          "hasOwnProperty": [Function],
+          "showAllEventActions": true,
+          "showDeleteModal": [Function],
+          "userId": "1",
+          "userUuid": "1",
+        },
+      },
+      "render": [Function],
+      "renderCache": Array [],
+      "root": [Circular],
+      "rtc": null,
+      "rtg": null,
+      "scope": EffectScope {
+        "active": true,
+        "cleanups": Array [],
+        "effects": Array [
+          ReactiveEffect {
+            "active": true,
+            "allowRecurse": true,
+            "deps": Array [
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+            ],
+            "fn": [Function],
+            "onTrack": undefined,
+            "onTrigger": undefined,
+            "scheduler": [Function],
+          },
+        ],
+      },
+      "setupContext": null,
+      "setupState": Object {},
+      "slots": Object {},
+      "sp": null,
+      "subTree": Object {
+        "__v_isVNode": true,
+        "__v_skip": true,
+        "anchor": null,
+        "appContext": null,
+        "children": null,
+        "component": Object {
+          "a": null,
+          "accessCache": Object {
+            "@@__IMMUTABLE_ITERABLE__@@": 0,
+            "@@__IMMUTABLE_RECORD__@@": 0,
+            "_isMockFunction": 0,
+            "constructor": 0,
+            "createdEvents": 3,
+            "eventItems": 2,
+            "events": 3,
+            "hasOwnProperty": 4,
+            "isVueInstance": 0,
+            "showAllEventActions": 2,
+            "showDeleteModal": 4,
+            "toJSON": 0,
+            "userId": 2,
+            "userUuid": 3,
+            Symbol(Symbol.toStringTag): 0,
+          },
+          "appContext": Object {
+            "app": [Circular],
+            "components": Object {
+              "transition": Object {
+                "name": "transition",
+              },
+              "transition-group": Object {
+                "name": "transition-group",
+              },
+            },
+            "config": Object {
+              "compilerOptions": Object {},
+              "errorHandler": undefined,
+              "globalProperties": Object {},
+              "isNativeTag": [Function],
+              "optionMergeStrategies": Object {},
+              "performance": false,
+              "warnHandler": undefined,
+            },
+            "directives": Object {},
+            "emitsCache": WeakMap {},
+            "mixins": Array [
+              Object {
+                "beforeCreate": [Function],
+              },
+            ],
+            "optionsCache": WeakMap {},
+            "propsCache": WeakMap {},
+            "provides": Object {},
+            "reload": [Function],
+          },
+          "asyncDep": null,
+          "asyncResolved": false,
+          "attrs": Object {},
+          "bc": null,
+          "bm": null,
+          "bu": null,
+          "bum": null,
+          "c": null,
+          "components": Object {},
+          "ctx": Object {
+            "createdEvents": true,
+            "eventItems": Array [
+              Object {
+                "location": "Cork",
+                "title": "Test Event",
+                "type": "DOMESTIC_OVERNIGHT",
+              },
+            ],
+            "events": Array [
+              Object {
+                "location": "Cork",
+                "title": "Test Event",
+                "type": "DOMESTIC_OVERNIGHT",
+              },
+            ],
+            "hasOwnProperty": [Function],
+            "showAllEventActions": true,
+            "showDeleteModal": [Function],
+            "userId": "1",
+            "userUuid": "1",
+          },
+          "da": null,
+          "data": Object {
+            "eventItems": Array [
+              Object {
+                "location": "Cork",
+                "title": "Test Event",
+                "type": "DOMESTIC_OVERNIGHT",
+              },
+            ],
+            "showAllEventActions": true,
+            "userId": "1",
+          },
+          "directives": null,
+          "ec": null,
+          "effect": ReactiveEffect {
+            "active": true,
+            "allowRecurse": true,
+            "deps": Array [
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+            ],
+            "fn": [Function],
+            "onTrack": undefined,
+            "onTrigger": undefined,
+            "scheduler": [Function],
+          },
+          "emit": [Function],
+          "emitsOptions": null,
+          "emitted": null,
+          "exposeProxy": null,
+          "exposed": null,
+          "inheritAttrs": undefined,
+          "isDeactivated": false,
+          "isMounted": true,
+          "isUnmounted": false,
+          "m": null,
+          "next": null,
+          "parent": [Circular],
+          "props": Object {
+            "createdEvents": true,
+            "events": Array [
+              Object {
+                "location": "Cork",
+                "title": "Test Event",
+                "type": "DOMESTIC_OVERNIGHT",
+              },
+            ],
+            "userUuid": "1",
+          },
+          "propsDefaults": Object {},
+          "propsOptions": Array [
+            Object {
+              "createdEvents": Object {
+                "0": true,
+                "1": true,
+                "type": [Function],
+              },
+              "events": Object {
+                "0": false,
+                "1": true,
+                "type": [Function],
+              },
+              "userUuid": Object {
+                "0": false,
+                "1": true,
+                "type": [Function],
+              },
+            },
+            Array [
+              "createdEvents",
+            ],
+          ],
+          "provides": Object {},
+          "proxy": Object {
+            "createdEvents": true,
+            "eventItems": Array [
+              Object {
+                "location": "Cork",
+                "title": "Test Event",
+                "type": "DOMESTIC_OVERNIGHT",
+              },
+            ],
+            "events": Array [
+              Object {
+                "location": "Cork",
+                "title": "Test Event",
+                "type": "DOMESTIC_OVERNIGHT",
+              },
+            ],
+            "hasOwnProperty": [Function],
+            "showAllEventActions": true,
+            "showDeleteModal": [Function],
+            "userId": "1",
+            "userUuid": "1",
+          },
+          "refs": Object {},
+          "render": [Function],
+          "renderCache": Array [
+            [Function],
+          ],
+          "root": [Circular],
+          "rtc": null,
+          "rtg": null,
+          "scope": EffectScope {
+            "active": true,
+            "cleanups": Array [],
+            "effects": Array [
+              ReactiveEffect {
+                "active": true,
+                "allowRecurse": true,
+                "deps": Array [
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                ],
+                "fn": [Function],
+                "onTrack": undefined,
+                "onTrigger": undefined,
+                "scheduler": [Function],
+              },
+            ],
+          },
+          "setupContext": null,
+          "setupState": Object {},
+          "slots": Object {},
+          "sp": null,
+          "subTree": Object {
+            "__v_isVNode": true,
+            "__v_skip": true,
+            "anchor": ,
+            "appContext": null,
+            "children": Array [
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": Array [
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": Array [
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": null,
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": Array [],
+                        "dynamicProps": null,
+                        "el": <div
+                          class="domestic-overnight-colour-mark"
+                          data-testid="domesticOvernight"
+                        />,
+                        "key": 1,
+                        "patchFlag": 0,
+                        "props": Object {
+                          "class": "domestic-overnight-colour-mark",
+                          "data-testid": "domesticOvernight",
+                          "key": 1,
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 1,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "div",
+                      },
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": Array [
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": "Test Event",
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": null,
+                            "dynamicProps": null,
+                            "el": <h3
+                              data-testid="eventTitle"
+                            >
+                              Test Event
+                            </h3>,
+                            "key": null,
+                            "patchFlag": 1,
+                            "props": Object {
+                              "data-testid": "eventTitle",
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 9,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "h3",
+                          },
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": "More info about group trip here...description",
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": null,
+                            "dynamicProps": null,
+                            "el": <p>
+                              More info about group trip here...description
+                            </p>,
+                            "key": null,
+                            "patchFlag": -1,
+                            "props": null,
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 9,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "p",
+                          },
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": "",
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": null,
+                            "dynamicProps": null,
+                            "el": <p
+                              style="display: none;"
+                            />,
+                            "key": null,
+                            "patchFlag": 1,
+                            "props": Object {
+                              "style": Object {
+                                "display": "none",
+                              },
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 1,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "p",
+                          },
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": "DOMESTIC_OVERNIGHT",
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": null,
+                            "dynamicProps": null,
+                            "el": <span
+                              data-testid="eventType"
+                            >
+                              DOMESTIC_OVERNIGHT
+                            </span>,
+                            "key": null,
+                            "patchFlag": 1,
+                            "props": Object {
+                              "data-testid": "eventType",
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 9,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "span",
+                          },
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": Array [
+                              Object {
+                                "__v_isVNode": true,
+                                "__v_skip": true,
+                                "anchor": null,
+                                "appContext": null,
+                                "children": Array [
+                                  Object {
+                                    "__v_isVNode": true,
+                                    "__v_skip": true,
+                                    "anchor": null,
+                                    "appContext": null,
+                                    "children": Array [
+                                      Object {
+                                        "__v_isVNode": true,
+                                        "__v_skip": true,
+                                        "anchor": null,
+                                        "appContext": null,
+                                        "children": null,
+                                        "component": null,
+                                        "dirs": null,
+                                        "dynamicChildren": null,
+                                        "dynamicProps": null,
+                                        "el": <i
+                                          class="fas fa-pen"
+                                        />,
+                                        "key": null,
+                                        "patchFlag": -1,
+                                        "props": Object {
+                                          "class": "fas fa-pen",
+                                        },
+                                        "ref": null,
+                                        "scopeId": null,
+                                        "shapeFlag": 1,
+                                        "slotScopeIds": null,
+                                        "ssContent": null,
+                                        "ssFallback": null,
+                                        "staticCount": 0,
+                                        "suspense": null,
+                                        "target": null,
+                                        "targetAnchor": null,
+                                        "transition": null,
+                                        "type": "i",
+                                      },
+                                    ],
+                                    "component": null,
+                                    "dirs": null,
+                                    "dynamicChildren": null,
+                                    "dynamicProps": Array [
+                                      "to",
+                                    ],
+                                    "el": <router-link
+                                      data-testid="editEventLink"
+                                      to="[object Object]"
+                                    >
+                                      <i
+                                        class="fas fa-pen"
+                                      />
+                                    </router-link>,
+                                    "key": null,
+                                    "patchFlag": 1032,
+                                    "props": Object {
+                                      "data-testid": "editEventLink",
+                                      "to": Object {
+                                        "name": "Event Detail Page",
+                                        "params": Object {
+                                          "editEvent": true,
+                                          "event": "{\\"title\\":\\"Test Event\\",\\"type\\":\\"DOMESTIC_OVERNIGHT\\",\\"location\\":\\"Cork\\"}",
+                                          "eventId": undefined,
+                                          "userId": "1",
+                                        },
+                                      },
+                                    },
+                                    "ref": null,
+                                    "scopeId": null,
+                                    "shapeFlag": 17,
+                                    "slotScopeIds": null,
+                                    "ssContent": null,
+                                    "ssFallback": null,
+                                    "staticCount": 0,
+                                    "suspense": null,
+                                    "target": null,
+                                    "targetAnchor": null,
+                                    "transition": null,
+                                    "type": "router-link",
+                                  },
+                                ],
+                                "component": null,
+                                "dirs": null,
+                                "dynamicChildren": Array [
+                                  Object {
+                                    "__v_isVNode": true,
+                                    "__v_skip": true,
+                                    "anchor": null,
+                                    "appContext": null,
+                                    "children": Array [
+                                      Object {
+                                        "__v_isVNode": true,
+                                        "__v_skip": true,
+                                        "anchor": null,
+                                        "appContext": null,
+                                        "children": null,
+                                        "component": null,
+                                        "dirs": null,
+                                        "dynamicChildren": null,
+                                        "dynamicProps": null,
+                                        "el": <i
+                                          class="fas fa-pen"
+                                        />,
+                                        "key": null,
+                                        "patchFlag": -1,
+                                        "props": Object {
+                                          "class": "fas fa-pen",
+                                        },
+                                        "ref": null,
+                                        "scopeId": null,
+                                        "shapeFlag": 1,
+                                        "slotScopeIds": null,
+                                        "ssContent": null,
+                                        "ssFallback": null,
+                                        "staticCount": 0,
+                                        "suspense": null,
+                                        "target": null,
+                                        "targetAnchor": null,
+                                        "transition": null,
+                                        "type": "i",
+                                      },
+                                    ],
+                                    "component": null,
+                                    "dirs": null,
+                                    "dynamicChildren": null,
+                                    "dynamicProps": Array [
+                                      "to",
+                                    ],
+                                    "el": <router-link
+                                      data-testid="editEventLink"
+                                      to="[object Object]"
+                                    >
+                                      <i
+                                        class="fas fa-pen"
+                                      />
+                                    </router-link>,
+                                    "key": null,
+                                    "patchFlag": 1032,
+                                    "props": Object {
+                                      "data-testid": "editEventLink",
+                                      "to": Object {
+                                        "name": "Event Detail Page",
+                                        "params": Object {
+                                          "editEvent": true,
+                                          "event": "{\\"title\\":\\"Test Event\\",\\"type\\":\\"DOMESTIC_OVERNIGHT\\",\\"location\\":\\"Cork\\"}",
+                                          "eventId": undefined,
+                                          "userId": "1",
+                                        },
+                                      },
+                                    },
+                                    "ref": null,
+                                    "scopeId": null,
+                                    "shapeFlag": 17,
+                                    "slotScopeIds": null,
+                                    "ssContent": null,
+                                    "ssFallback": null,
+                                    "staticCount": 0,
+                                    "suspense": null,
+                                    "target": null,
+                                    "targetAnchor": null,
+                                    "transition": null,
+                                    "type": "router-link",
+                                  },
+                                ],
+                                "dynamicProps": null,
+                                "el": <span>
+                                  <router-link
+                                    data-testid="editEventLink"
+                                    to="[object Object]"
+                                  >
+                                    <i
+                                      class="fas fa-pen"
+                                    />
+                                  </router-link>
+                                </span>,
+                                "key": 0,
+                                "patchFlag": 0,
+                                "props": Object {
+                                  "key": 0,
+                                },
+                                "ref": null,
+                                "scopeId": null,
+                                "shapeFlag": 17,
+                                "slotScopeIds": null,
+                                "ssContent": null,
+                                "ssFallback": null,
+                                "staticCount": 0,
+                                "suspense": null,
+                                "target": null,
+                                "targetAnchor": null,
+                                "transition": null,
+                                "type": "span",
+                              },
+                              Object {
+                                "__v_isVNode": true,
+                                "__v_skip": true,
+                                "anchor": null,
+                                "appContext": null,
+                                "children": Array [
+                                  Object {
+                                    "__v_isVNode": true,
+                                    "__v_skip": true,
+                                    "anchor": null,
+                                    "appContext": null,
+                                    "children": null,
+                                    "component": null,
+                                    "dirs": null,
+                                    "dynamicChildren": null,
+                                    "dynamicProps": null,
+                                    "el": <i
+                                      class="fas fa-times-circle"
+                                    />,
+                                    "key": null,
+                                    "patchFlag": -1,
+                                    "props": Object {
+                                      "class": "fas fa-times-circle",
+                                    },
+                                    "ref": null,
+                                    "scopeId": null,
+                                    "shapeFlag": 1,
+                                    "slotScopeIds": null,
+                                    "ssContent": null,
+                                    "ssFallback": null,
+                                    "staticCount": 0,
+                                    "suspense": null,
+                                    "target": null,
+                                    "targetAnchor": null,
+                                    "transition": null,
+                                    "type": "i",
+                                  },
+                                ],
+                                "component": null,
+                                "dirs": null,
+                                "dynamicChildren": Array [],
+                                "dynamicProps": null,
+                                "el": <span
+                                  data-testid="deleteEvent"
+                                >
+                                  <i
+                                    class="fas fa-times-circle"
+                                  />
+                                </span>,
+                                "key": 1,
+                                "patchFlag": 0,
+                                "props": Object {
+                                  "data-testid": "deleteEvent",
+                                  "key": 1,
+                                  "onClick": [Function],
+                                },
+                                "ref": null,
+                                "scopeId": null,
+                                "shapeFlag": 17,
+                                "slotScopeIds": null,
+                                "ssContent": null,
+                                "ssFallback": null,
+                                "staticCount": 0,
+                                "suspense": null,
+                                "target": null,
+                                "targetAnchor": null,
+                                "transition": null,
+                                "type": "span",
+                              },
+                              Object {
+                                "__v_isVNode": true,
+                                "__v_skip": true,
+                                "anchor": null,
+                                "appContext": null,
+                                "children": "v-if",
+                                "component": null,
+                                "dirs": null,
+                                "dynamicChildren": Array [],
+                                "dynamicProps": null,
+                                "el": <!--v-if-->,
+                                "key": null,
+                                "patchFlag": 0,
+                                "props": null,
+                                "ref": null,
+                                "scopeId": null,
+                                "shapeFlag": 8,
+                                "slotScopeIds": null,
+                                "ssContent": null,
+                                "ssFallback": null,
+                                "staticCount": 0,
+                                "suspense": null,
+                                "target": null,
+                                "targetAnchor": null,
+                                "transition": null,
+                                "type": Symbol(Comment),
+                              },
+                            ],
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": null,
+                            "dynamicProps": null,
+                            "el": <div
+                              class="event-user-actions-parent-container"
+                            >
+                              <span>
+                                <router-link
+                                  data-testid="editEventLink"
+                                  to="[object Object]"
+                                >
+                                  <i
+                                    class="fas fa-pen"
+                                  />
+                                </router-link>
+                              </span>
+                              <span
+                                data-testid="deleteEvent"
+                              >
+                                <i
+                                  class="fas fa-times-circle"
+                                />
+                              </span>
+                              <!--v-if-->
+                            </div>,
+                            "key": null,
+                            "patchFlag": 0,
+                            "props": Object {
+                              "class": "event-user-actions-parent-container",
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 17,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "div",
+                          },
+                        ],
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <div
+                          class="event-information-container"
+                        >
+                          <h3
+                            data-testid="eventTitle"
+                          >
+                            Test Event
+                          </h3>
+                          <p>
+                            More info about group trip here...description
+                          </p>
+                          <p
+                            style="display: none;"
+                          />
+                          <span
+                            data-testid="eventType"
+                          >
+                            DOMESTIC_OVERNIGHT
+                          </span>
+                          <div
+                            class="event-user-actions-parent-container"
+                          >
+                            <span>
+                              <router-link
+                                data-testid="editEventLink"
+                                to="[object Object]"
+                              >
+                                <i
+                                  class="fas fa-pen"
+                                />
+                              </router-link>
+                            </span>
+                            <span
+                              data-testid="deleteEvent"
+                            >
+                              <i
+                                class="fas fa-times-circle"
+                              />
+                            </span>
+                            <!--v-if-->
+                          </div>
+                        </div>,
+                        "key": null,
+                        "patchFlag": 0,
+                        "props": Object {
+                          "class": "event-information-container",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 17,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "div",
+                      },
+                    ],
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": Array [
+                      "to",
+                    ],
+                    "el": <router-link
+                      data-testid="eventDetailLink"
+                      to="[object Object]"
+                    >
+                      <div
+                        class="domestic-overnight-colour-mark"
+                        data-testid="domesticOvernight"
+                      />
+                      <div
+                        class="event-information-container"
+                      >
+                        <h3
+                          data-testid="eventTitle"
+                        >
+                          Test Event
+                        </h3>
+                        <p>
+                          More info about group trip here...description
+                        </p>
+                        <p
+                          style="display: none;"
+                        />
+                        <span
+                          data-testid="eventType"
+                        >
+                          DOMESTIC_OVERNIGHT
+                        </span>
+                        <div
+                          class="event-user-actions-parent-container"
+                        >
+                          <span>
+                            <router-link
+                              data-testid="editEventLink"
+                              to="[object Object]"
+                            >
+                              <i
+                                class="fas fa-pen"
+                              />
+                            </router-link>
+                          </span>
+                          <span
+                            data-testid="deleteEvent"
+                          >
+                            <i
+                              class="fas fa-times-circle"
+                            />
+                          </span>
+                          <!--v-if-->
+                        </div>
+                      </div>
+                    </router-link>,
+                    "key": null,
+                    "patchFlag": 1032,
+                    "props": Object {
+                      "data-testid": "eventDetailLink",
+                      "to": Object {
+                        "name": "Event Detail Page",
+                        "params": Object {
+                          "editEvent": false,
+                          "event": "{\\"title\\":\\"Test Event\\",\\"type\\":\\"DOMESTIC_OVERNIGHT\\",\\"location\\":\\"Cork\\"}",
+                          "eventId": undefined,
+                          "userId": "1",
+                        },
+                      },
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 17,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "router-link",
+                  },
+                ],
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": Array [
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": null,
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": Array [],
+                    "dynamicProps": null,
+                    "el": <div
+                      class="domestic-overnight-colour-mark"
+                      data-testid="domesticOvernight"
+                    />,
+                    "key": 1,
+                    "patchFlag": 0,
+                    "props": Object {
+                      "class": "domestic-overnight-colour-mark",
+                      "data-testid": "domesticOvernight",
+                      "key": 1,
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 1,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "div",
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": "Test Event",
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <h3
+                      data-testid="eventTitle"
+                    >
+                      Test Event
+                    </h3>,
+                    "key": null,
+                    "patchFlag": 1,
+                    "props": Object {
+                      "data-testid": "eventTitle",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 9,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "h3",
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": "",
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <p
+                      style="display: none;"
+                    />,
+                    "key": null,
+                    "patchFlag": 1,
+                    "props": Object {
+                      "style": Object {
+                        "display": "none",
+                      },
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 1,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "p",
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": "DOMESTIC_OVERNIGHT",
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <span
+                      data-testid="eventType"
+                    >
+                      DOMESTIC_OVERNIGHT
+                    </span>,
+                    "key": null,
+                    "patchFlag": 1,
+                    "props": Object {
+                      "data-testid": "eventType",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 9,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "span",
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": Array [
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": Array [
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": null,
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": null,
+                            "dynamicProps": null,
+                            "el": <i
+                              class="fas fa-pen"
+                            />,
+                            "key": null,
+                            "patchFlag": -1,
+                            "props": Object {
+                              "class": "fas fa-pen",
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 1,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "i",
+                          },
+                        ],
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": Array [
+                          "to",
+                        ],
+                        "el": <router-link
+                          data-testid="editEventLink"
+                          to="[object Object]"
+                        >
+                          <i
+                            class="fas fa-pen"
+                          />
+                        </router-link>,
+                        "key": null,
+                        "patchFlag": 1032,
+                        "props": Object {
+                          "data-testid": "editEventLink",
+                          "to": Object {
+                            "name": "Event Detail Page",
+                            "params": Object {
+                              "editEvent": true,
+                              "event": "{\\"title\\":\\"Test Event\\",\\"type\\":\\"DOMESTIC_OVERNIGHT\\",\\"location\\":\\"Cork\\"}",
+                              "eventId": undefined,
+                              "userId": "1",
+                            },
+                          },
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 17,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "router-link",
+                      },
+                    ],
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": Array [
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": Array [
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": null,
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": null,
+                            "dynamicProps": null,
+                            "el": <i
+                              class="fas fa-pen"
+                            />,
+                            "key": null,
+                            "patchFlag": -1,
+                            "props": Object {
+                              "class": "fas fa-pen",
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 1,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "i",
+                          },
+                        ],
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": Array [
+                          "to",
+                        ],
+                        "el": <router-link
+                          data-testid="editEventLink"
+                          to="[object Object]"
+                        >
+                          <i
+                            class="fas fa-pen"
+                          />
+                        </router-link>,
+                        "key": null,
+                        "patchFlag": 1032,
+                        "props": Object {
+                          "data-testid": "editEventLink",
+                          "to": Object {
+                            "name": "Event Detail Page",
+                            "params": Object {
+                              "editEvent": true,
+                              "event": "{\\"title\\":\\"Test Event\\",\\"type\\":\\"DOMESTIC_OVERNIGHT\\",\\"location\\":\\"Cork\\"}",
+                              "eventId": undefined,
+                              "userId": "1",
+                            },
+                          },
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 17,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "router-link",
+                      },
+                    ],
+                    "dynamicProps": null,
+                    "el": <span>
+                      <router-link
+                        data-testid="editEventLink"
+                        to="[object Object]"
+                      >
+                        <i
+                          class="fas fa-pen"
+                        />
+                      </router-link>
+                    </span>,
+                    "key": 0,
+                    "patchFlag": 0,
+                    "props": Object {
+                      "key": 0,
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 17,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "span",
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": Array [
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": null,
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <i
+                          class="fas fa-times-circle"
+                        />,
+                        "key": null,
+                        "patchFlag": -1,
+                        "props": Object {
+                          "class": "fas fa-times-circle",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 1,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "i",
+                      },
+                    ],
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": Array [],
+                    "dynamicProps": null,
+                    "el": <span
+                      data-testid="deleteEvent"
+                    >
+                      <i
+                        class="fas fa-times-circle"
+                      />
+                    </span>,
+                    "key": 1,
+                    "patchFlag": 0,
+                    "props": Object {
+                      "data-testid": "deleteEvent",
+                      "key": 1,
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 17,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "span",
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": "v-if",
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": Array [],
+                    "dynamicProps": null,
+                    "el": <!--v-if-->,
+                    "key": null,
+                    "patchFlag": 0,
+                    "props": null,
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 8,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": Symbol(Comment),
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": Array [
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": null,
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": Array [],
+                        "dynamicProps": null,
+                        "el": <div
+                          class="domestic-overnight-colour-mark"
+                          data-testid="domesticOvernight"
+                        />,
+                        "key": 1,
+                        "patchFlag": 0,
+                        "props": Object {
+                          "class": "domestic-overnight-colour-mark",
+                          "data-testid": "domesticOvernight",
+                          "key": 1,
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 1,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "div",
+                      },
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": Array [
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": "Test Event",
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": null,
+                            "dynamicProps": null,
+                            "el": <h3
+                              data-testid="eventTitle"
+                            >
+                              Test Event
+                            </h3>,
+                            "key": null,
+                            "patchFlag": 1,
+                            "props": Object {
+                              "data-testid": "eventTitle",
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 9,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "h3",
+                          },
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": "More info about group trip here...description",
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": null,
+                            "dynamicProps": null,
+                            "el": <p>
+                              More info about group trip here...description
+                            </p>,
+                            "key": null,
+                            "patchFlag": -1,
+                            "props": null,
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 9,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "p",
+                          },
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": "",
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": null,
+                            "dynamicProps": null,
+                            "el": <p
+                              style="display: none;"
+                            />,
+                            "key": null,
+                            "patchFlag": 1,
+                            "props": Object {
+                              "style": Object {
+                                "display": "none",
+                              },
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 1,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "p",
+                          },
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": "DOMESTIC_OVERNIGHT",
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": null,
+                            "dynamicProps": null,
+                            "el": <span
+                              data-testid="eventType"
+                            >
+                              DOMESTIC_OVERNIGHT
+                            </span>,
+                            "key": null,
+                            "patchFlag": 1,
+                            "props": Object {
+                              "data-testid": "eventType",
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 9,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "span",
+                          },
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": Array [
+                              Object {
+                                "__v_isVNode": true,
+                                "__v_skip": true,
+                                "anchor": null,
+                                "appContext": null,
+                                "children": Array [
+                                  Object {
+                                    "__v_isVNode": true,
+                                    "__v_skip": true,
+                                    "anchor": null,
+                                    "appContext": null,
+                                    "children": Array [
+                                      Object {
+                                        "__v_isVNode": true,
+                                        "__v_skip": true,
+                                        "anchor": null,
+                                        "appContext": null,
+                                        "children": null,
+                                        "component": null,
+                                        "dirs": null,
+                                        "dynamicChildren": null,
+                                        "dynamicProps": null,
+                                        "el": <i
+                                          class="fas fa-pen"
+                                        />,
+                                        "key": null,
+                                        "patchFlag": -1,
+                                        "props": Object {
+                                          "class": "fas fa-pen",
+                                        },
+                                        "ref": null,
+                                        "scopeId": null,
+                                        "shapeFlag": 1,
+                                        "slotScopeIds": null,
+                                        "ssContent": null,
+                                        "ssFallback": null,
+                                        "staticCount": 0,
+                                        "suspense": null,
+                                        "target": null,
+                                        "targetAnchor": null,
+                                        "transition": null,
+                                        "type": "i",
+                                      },
+                                    ],
+                                    "component": null,
+                                    "dirs": null,
+                                    "dynamicChildren": null,
+                                    "dynamicProps": Array [
+                                      "to",
+                                    ],
+                                    "el": <router-link
+                                      data-testid="editEventLink"
+                                      to="[object Object]"
+                                    >
+                                      <i
+                                        class="fas fa-pen"
+                                      />
+                                    </router-link>,
+                                    "key": null,
+                                    "patchFlag": 1032,
+                                    "props": Object {
+                                      "data-testid": "editEventLink",
+                                      "to": Object {
+                                        "name": "Event Detail Page",
+                                        "params": Object {
+                                          "editEvent": true,
+                                          "event": "{\\"title\\":\\"Test Event\\",\\"type\\":\\"DOMESTIC_OVERNIGHT\\",\\"location\\":\\"Cork\\"}",
+                                          "eventId": undefined,
+                                          "userId": "1",
+                                        },
+                                      },
+                                    },
+                                    "ref": null,
+                                    "scopeId": null,
+                                    "shapeFlag": 17,
+                                    "slotScopeIds": null,
+                                    "ssContent": null,
+                                    "ssFallback": null,
+                                    "staticCount": 0,
+                                    "suspense": null,
+                                    "target": null,
+                                    "targetAnchor": null,
+                                    "transition": null,
+                                    "type": "router-link",
+                                  },
+                                ],
+                                "component": null,
+                                "dirs": null,
+                                "dynamicChildren": Array [
+                                  Object {
+                                    "__v_isVNode": true,
+                                    "__v_skip": true,
+                                    "anchor": null,
+                                    "appContext": null,
+                                    "children": Array [
+                                      Object {
+                                        "__v_isVNode": true,
+                                        "__v_skip": true,
+                                        "anchor": null,
+                                        "appContext": null,
+                                        "children": null,
+                                        "component": null,
+                                        "dirs": null,
+                                        "dynamicChildren": null,
+                                        "dynamicProps": null,
+                                        "el": <i
+                                          class="fas fa-pen"
+                                        />,
+                                        "key": null,
+                                        "patchFlag": -1,
+                                        "props": Object {
+                                          "class": "fas fa-pen",
+                                        },
+                                        "ref": null,
+                                        "scopeId": null,
+                                        "shapeFlag": 1,
+                                        "slotScopeIds": null,
+                                        "ssContent": null,
+                                        "ssFallback": null,
+                                        "staticCount": 0,
+                                        "suspense": null,
+                                        "target": null,
+                                        "targetAnchor": null,
+                                        "transition": null,
+                                        "type": "i",
+                                      },
+                                    ],
+                                    "component": null,
+                                    "dirs": null,
+                                    "dynamicChildren": null,
+                                    "dynamicProps": Array [
+                                      "to",
+                                    ],
+                                    "el": <router-link
+                                      data-testid="editEventLink"
+                                      to="[object Object]"
+                                    >
+                                      <i
+                                        class="fas fa-pen"
+                                      />
+                                    </router-link>,
+                                    "key": null,
+                                    "patchFlag": 1032,
+                                    "props": Object {
+                                      "data-testid": "editEventLink",
+                                      "to": Object {
+                                        "name": "Event Detail Page",
+                                        "params": Object {
+                                          "editEvent": true,
+                                          "event": "{\\"title\\":\\"Test Event\\",\\"type\\":\\"DOMESTIC_OVERNIGHT\\",\\"location\\":\\"Cork\\"}",
+                                          "eventId": undefined,
+                                          "userId": "1",
+                                        },
+                                      },
+                                    },
+                                    "ref": null,
+                                    "scopeId": null,
+                                    "shapeFlag": 17,
+                                    "slotScopeIds": null,
+                                    "ssContent": null,
+                                    "ssFallback": null,
+                                    "staticCount": 0,
+                                    "suspense": null,
+                                    "target": null,
+                                    "targetAnchor": null,
+                                    "transition": null,
+                                    "type": "router-link",
+                                  },
+                                ],
+                                "dynamicProps": null,
+                                "el": <span>
+                                  <router-link
+                                    data-testid="editEventLink"
+                                    to="[object Object]"
+                                  >
+                                    <i
+                                      class="fas fa-pen"
+                                    />
+                                  </router-link>
+                                </span>,
+                                "key": 0,
+                                "patchFlag": 0,
+                                "props": Object {
+                                  "key": 0,
+                                },
+                                "ref": null,
+                                "scopeId": null,
+                                "shapeFlag": 17,
+                                "slotScopeIds": null,
+                                "ssContent": null,
+                                "ssFallback": null,
+                                "staticCount": 0,
+                                "suspense": null,
+                                "target": null,
+                                "targetAnchor": null,
+                                "transition": null,
+                                "type": "span",
+                              },
+                              Object {
+                                "__v_isVNode": true,
+                                "__v_skip": true,
+                                "anchor": null,
+                                "appContext": null,
+                                "children": Array [
+                                  Object {
+                                    "__v_isVNode": true,
+                                    "__v_skip": true,
+                                    "anchor": null,
+                                    "appContext": null,
+                                    "children": null,
+                                    "component": null,
+                                    "dirs": null,
+                                    "dynamicChildren": null,
+                                    "dynamicProps": null,
+                                    "el": <i
+                                      class="fas fa-times-circle"
+                                    />,
+                                    "key": null,
+                                    "patchFlag": -1,
+                                    "props": Object {
+                                      "class": "fas fa-times-circle",
+                                    },
+                                    "ref": null,
+                                    "scopeId": null,
+                                    "shapeFlag": 1,
+                                    "slotScopeIds": null,
+                                    "ssContent": null,
+                                    "ssFallback": null,
+                                    "staticCount": 0,
+                                    "suspense": null,
+                                    "target": null,
+                                    "targetAnchor": null,
+                                    "transition": null,
+                                    "type": "i",
+                                  },
+                                ],
+                                "component": null,
+                                "dirs": null,
+                                "dynamicChildren": Array [],
+                                "dynamicProps": null,
+                                "el": <span
+                                  data-testid="deleteEvent"
+                                >
+                                  <i
+                                    class="fas fa-times-circle"
+                                  />
+                                </span>,
+                                "key": 1,
+                                "patchFlag": 0,
+                                "props": Object {
+                                  "data-testid": "deleteEvent",
+                                  "key": 1,
+                                  "onClick": [Function],
+                                },
+                                "ref": null,
+                                "scopeId": null,
+                                "shapeFlag": 17,
+                                "slotScopeIds": null,
+                                "ssContent": null,
+                                "ssFallback": null,
+                                "staticCount": 0,
+                                "suspense": null,
+                                "target": null,
+                                "targetAnchor": null,
+                                "transition": null,
+                                "type": "span",
+                              },
+                              Object {
+                                "__v_isVNode": true,
+                                "__v_skip": true,
+                                "anchor": null,
+                                "appContext": null,
+                                "children": "v-if",
+                                "component": null,
+                                "dirs": null,
+                                "dynamicChildren": Array [],
+                                "dynamicProps": null,
+                                "el": <!--v-if-->,
+                                "key": null,
+                                "patchFlag": 0,
+                                "props": null,
+                                "ref": null,
+                                "scopeId": null,
+                                "shapeFlag": 8,
+                                "slotScopeIds": null,
+                                "ssContent": null,
+                                "ssFallback": null,
+                                "staticCount": 0,
+                                "suspense": null,
+                                "target": null,
+                                "targetAnchor": null,
+                                "transition": null,
+                                "type": Symbol(Comment),
+                              },
+                            ],
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": null,
+                            "dynamicProps": null,
+                            "el": <div
+                              class="event-user-actions-parent-container"
+                            >
+                              <span>
+                                <router-link
+                                  data-testid="editEventLink"
+                                  to="[object Object]"
+                                >
+                                  <i
+                                    class="fas fa-pen"
+                                  />
+                                </router-link>
+                              </span>
+                              <span
+                                data-testid="deleteEvent"
+                              >
+                                <i
+                                  class="fas fa-times-circle"
+                                />
+                              </span>
+                              <!--v-if-->
+                            </div>,
+                            "key": null,
+                            "patchFlag": 0,
+                            "props": Object {
+                              "class": "event-user-actions-parent-container",
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 17,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "div",
+                          },
+                        ],
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <div
+                          class="event-information-container"
+                        >
+                          <h3
+                            data-testid="eventTitle"
+                          >
+                            Test Event
+                          </h3>
+                          <p>
+                            More info about group trip here...description
+                          </p>
+                          <p
+                            style="display: none;"
+                          />
+                          <span
+                            data-testid="eventType"
+                          >
+                            DOMESTIC_OVERNIGHT
+                          </span>
+                          <div
+                            class="event-user-actions-parent-container"
+                          >
+                            <span>
+                              <router-link
+                                data-testid="editEventLink"
+                                to="[object Object]"
+                              >
+                                <i
+                                  class="fas fa-pen"
+                                />
+                              </router-link>
+                            </span>
+                            <span
+                              data-testid="deleteEvent"
+                            >
+                              <i
+                                class="fas fa-times-circle"
+                              />
+                            </span>
+                            <!--v-if-->
+                          </div>
+                        </div>,
+                        "key": null,
+                        "patchFlag": 0,
+                        "props": Object {
+                          "class": "event-information-container",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 17,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "div",
+                      },
+                    ],
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": Array [
+                      "to",
+                    ],
+                    "el": <router-link
+                      data-testid="eventDetailLink"
+                      to="[object Object]"
+                    >
+                      <div
+                        class="domestic-overnight-colour-mark"
+                        data-testid="domesticOvernight"
+                      />
+                      <div
+                        class="event-information-container"
+                      >
+                        <h3
+                          data-testid="eventTitle"
+                        >
+                          Test Event
+                        </h3>
+                        <p>
+                          More info about group trip here...description
+                        </p>
+                        <p
+                          style="display: none;"
+                        />
+                        <span
+                          data-testid="eventType"
+                        >
+                          DOMESTIC_OVERNIGHT
+                        </span>
+                        <div
+                          class="event-user-actions-parent-container"
+                        >
+                          <span>
+                            <router-link
+                              data-testid="editEventLink"
+                              to="[object Object]"
+                            >
+                              <i
+                                class="fas fa-pen"
+                              />
+                            </router-link>
+                          </span>
+                          <span
+                            data-testid="deleteEvent"
+                          >
+                            <i
+                              class="fas fa-times-circle"
+                            />
+                          </span>
+                          <!--v-if-->
+                        </div>
+                      </div>
+                    </router-link>,
+                    "key": null,
+                    "patchFlag": 1032,
+                    "props": Object {
+                      "data-testid": "eventDetailLink",
+                      "to": Object {
+                        "name": "Event Detail Page",
+                        "params": Object {
+                          "editEvent": false,
+                          "event": "{\\"title\\":\\"Test Event\\",\\"type\\":\\"DOMESTIC_OVERNIGHT\\",\\"location\\":\\"Cork\\"}",
+                          "eventId": undefined,
+                          "userId": "1",
+                        },
+                      },
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 17,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "router-link",
+                  },
+                ],
+                "dynamicProps": null,
+                "el": <div
+                  class="individual-event-container"
+                >
+                  <router-link
+                    data-testid="eventDetailLink"
+                    to="[object Object]"
+                  >
+                    <div
+                      class="domestic-overnight-colour-mark"
+                      data-testid="domesticOvernight"
+                    />
+                    <div
+                      class="event-information-container"
+                    >
+                      <h3
+                        data-testid="eventTitle"
+                      >
+                        Test Event
+                      </h3>
+                      <p>
+                        More info about group trip here...description
+                      </p>
+                      <p
+                        style="display: none;"
+                      />
+                      <span
+                        data-testid="eventType"
+                      >
+                        DOMESTIC_OVERNIGHT
+                      </span>
+                      <div
+                        class="event-user-actions-parent-container"
+                      >
+                        <span>
+                          <router-link
+                            data-testid="editEventLink"
+                            to="[object Object]"
+                          >
+                            <i
+                              class="fas fa-pen"
+                            />
+                          </router-link>
+                        </span>
+                        <span
+                          data-testid="deleteEvent"
+                        >
+                          <i
+                            class="fas fa-times-circle"
+                          />
+                        </span>
+                        <!--v-if-->
+                      </div>
+                    </div>
+                  </router-link>
+                </div>,
+                "key": "Test Event",
+                "patchFlag": 0,
+                "props": Object {
+                  "class": "individual-event-container",
+                  "key": "Test Event",
+                },
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 17,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": "div",
+              },
+            ],
+            "component": null,
+            "dirs": null,
+            "dynamicChildren": Array [],
+            "dynamicProps": null,
+            "el": ,
+            "key": null,
+            "patchFlag": 128,
+            "props": null,
+            "ref": null,
+            "scopeId": null,
+            "shapeFlag": 16,
+            "slotScopeIds": null,
+            "ssContent": null,
+            "ssFallback": null,
+            "staticCount": 0,
+            "suspense": null,
+            "target": null,
+            "targetAnchor": null,
+            "transition": null,
+            "type": Symbol(Fragment),
+          },
+          "suspense": null,
+          "suspenseId": 0,
+          "type": Object {
+            "components": Object {},
+            "data": [Function],
+            "methods": Object {
+              "showDeleteModal": [Function],
+            },
+            "props": Object {
+              "createdEvents": [Function],
+              "events": [Function],
+              "userUuid": [Function],
+            },
+            "render": [Function],
+          },
+          "u": null,
+          "uid": 1,
+          "um": null,
+          "update": [Function],
+          "vnode": [Circular],
+          "withProxy": null,
+        },
+        "dirs": null,
+        "dynamicChildren": null,
+        "dynamicProps": null,
+        "el": ,
+        "key": null,
+        "patchFlag": 0,
+        "props": Object {
+          "createdEvents": true,
+          "events": Array [
+            Object {
+              "location": "Cork",
+              "title": "Test Event",
+              "type": "DOMESTIC_OVERNIGHT",
+            },
+          ],
+          "ref": "VTU_COMPONENT",
+          "userUuid": "1",
+        },
+        "ref": Object {
+          "f": false,
+          "i": [Circular],
+          "k": undefined,
+          "r": "VTU_COMPONENT",
+        },
+        "scopeId": null,
+        "shapeFlag": 4,
+        "slotScopeIds": null,
+        "ssContent": null,
+        "ssFallback": null,
+        "staticCount": 0,
+        "suspense": null,
+        "target": null,
+        "targetAnchor": null,
+        "transition": null,
+        "type": Object {
+          "components": Object {},
+          "data": [Function],
+          "methods": Object {
+            "showDeleteModal": [Function],
+          },
+          "props": Object {
+            "createdEvents": [Function],
+            "events": [Function],
+            "userUuid": [Function],
+          },
+          "render": [Function],
+        },
+      },
+      "suspense": null,
+      "suspenseId": 0,
+      "type": Object {
+        "name": "VTU_ROOT",
+        "render": [Function],
+      },
+      "u": null,
+      "uid": 0,
+      "um": null,
+      "update": [Function],
+      "vnode": Object {
+        "__v_isVNode": true,
+        "__v_skip": true,
+        "anchor": null,
+        "appContext": Object {
+          "app": [Circular],
+          "components": Object {
+            "transition": Object {
+              "name": "transition",
+            },
+            "transition-group": Object {
+              "name": "transition-group",
+            },
+          },
+          "config": Object {
+            "compilerOptions": Object {},
+            "errorHandler": undefined,
+            "globalProperties": Object {},
+            "isNativeTag": [Function],
+            "optionMergeStrategies": Object {},
+            "performance": false,
+            "warnHandler": undefined,
+          },
+          "directives": Object {},
+          "emitsCache": WeakMap {},
+          "mixins": Array [
+            Object {
+              "beforeCreate": [Function],
+            },
+          ],
+          "optionsCache": WeakMap {},
+          "propsCache": WeakMap {},
+          "provides": Object {},
+          "reload": [Function],
+        },
+        "children": null,
+        "component": [Circular],
+        "dirs": null,
+        "dynamicChildren": null,
+        "dynamicProps": null,
+        "el": ,
+        "key": null,
+        "patchFlag": 0,
+        "props": null,
+        "ref": null,
+        "scopeId": null,
+        "shapeFlag": 4,
+        "slotScopeIds": null,
+        "ssContent": null,
+        "ssFallback": null,
+        "staticCount": 0,
+        "suspense": null,
+        "target": null,
+        "targetAnchor": null,
+        "transition": null,
+        "type": Object {
+          "name": "VTU_ROOT",
+          "render": [Function],
+        },
+      },
+      "withProxy": null,
+    },
+    "_props": null,
+    "_uid": 0,
+    "component": [Function],
+    "config": Object {
+      "compilerOptions": Object {},
+      "errorHandler": undefined,
+      "globalProperties": Object {},
+      "isNativeTag": [Function],
+      "optionMergeStrategies": Object {},
+      "performance": false,
+      "warnHandler": undefined,
+    },
+    "directive": [Function],
+    "mixin": [Function],
+    "mount": [Function],
+    "provide": [Function],
+    "unmount": [Function],
+    "use": [Function],
+    "version": "3.2.26",
+  },
+  "__setProps": [Function],
+  "componentVM": Object {
+    "createdEvents": true,
+    "eventItems": Array [
+      Object {
+        "location": "Cork",
+        "title": "Test Event",
+        "type": "DOMESTIC_OVERNIGHT",
+      },
+    ],
+    "events": Array [
+      Object {
+        "location": "Cork",
+        "title": "Test Event",
+        "type": "DOMESTIC_OVERNIGHT",
+      },
+    ],
+    "hasOwnProperty": [Function],
+    "showAllEventActions": true,
+    "showDeleteModal": [Function],
+    "userId": "1",
+    "userUuid": "1",
+  },
+  "isDisabled": [Function],
+  "rootVM": Object {},
+  "wrapperElement": ,
+}
+`;
