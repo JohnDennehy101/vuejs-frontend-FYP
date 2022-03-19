@@ -94,71 +94,12 @@
         infoType="Accommodation"
       />
 
-      <table
-        id="accommodation-information-table"
-        class="web-scraped-info-parent-container"
-        v-for="(value, page) in accommodationInfo"
-        v-bind:key="value"
-      >
-        <caption>
-          Accommodation Results for
-          {{
-            accommodationDateRange
-          }}
-          - Page
-          {{
-            page
-          }}
-        </caption>
-        <thead>
-          <tr>
-            <th></th>
-            <th>Title</th>
-            <th>Price</th>
-            <th>Room Type</th>
-            <th>Beds</th>
-            <th>Review Category</th>
-            <th>Review Score</th>
-            <th>Review Quantity</th>
-            <th>Location</th>
-
-            <th>Link</th>
-            <th>Map</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr v-for="(item, key) of value" :key="key">
-            <td>
-              <input
-                type="checkbox"
-                :value="item"
-                @change="checkedAccommodationChange($event, item)"
-                v-model="checkedAccommodation"
-              />
-            </td>
-            <td>{{ item.title }}</td>
-            <td>{{ item.price }}</td>
-            <td>{{ item.roomTypeRecommendedBooking }}</td>
-            <td>{{ item.numberOfBedsRecommendedBooking }}</td>
-            <td>{{ item.ratingScoreCategory }}</td>
-            <td>{{ item.ratingScore }}</td>
-            <td>{{ item.reviewQuantity }}</td>
-            <td>{{ item.locationDistance }}</td>
-            <td>
-              <a :href="item.bookingSiteLink" target="_blank">
-                <i class="fas fa-external-link-square-alt"></i>
-              </a>
-            </td>
-            <td>
-              <a :href="item.bookingSiteDisplayLocationMapLink" target="_blank">
-                <i class="fas fa-map-marker-alt"></i>
-              </a>
-            </td>
-            <!-- <td>{{ item.freeCancellationText }}</td>-->
-          </tr>
-        </tbody>
-      </table>
+      <EventDetailInfoAccommodationTable
+        v-if="accommodationInfo"
+        :accommodation="accommodationInfo"
+        :dateRange="accommodationDateRange"
+        v-on:checkedAccommodationChange="checkedAccommodationChange"
+      />
     </div>
 
     <EventDetailInfoSectionPlaceholder
@@ -346,6 +287,7 @@ import ChatMessagesInput from "../components/ChatMessagesInput";
 import ChatOnlineUsers from "../components/ChatOnlineUsers";
 import PollsOverview from "../components/PollsOverview";
 import EventDetailInfoToggleTableDisplay from "../components/EventDetailInfoToggleTableDisplay";
+import EventDetailInfoAccommodationTable from "../components/EventDetailInfoAccommodationTable";
 export default {
   name: "eventDetailPage",
   props: ["editEvent"],
@@ -422,6 +364,7 @@ export default {
     ChatOnlineUsers,
     PollsOverview,
     EventDetailInfoToggleTableDisplay,
+    EventDetailInfoAccommodationTable,
   },
   methods: {
     async checkEditAction() {
@@ -599,10 +542,10 @@ export default {
       this.checkedFlight.push(value);
       this.eventItineraryKey++;
     },
-    checkedAccommodationChange(event, value) {
-      if (event.target.checked) {
+    checkedAccommodationChange(value) {
+      if (value.event.target.checked) {
         this.checkedAccommodation = [];
-        this.checkedAccommodation.push(value);
+        this.checkedAccommodation.push(value.item);
 
         this.eventItineraryKey++;
       } else {
@@ -946,44 +889,6 @@ h2 {
     }
     td:nth-of-type(7):before {
       content: "Icon";
-    }
-  }
-}
-@include for-phone-only {
-  #accommodation-information-table {
-    td:nth-of-type(1):before {
-      content: "Select";
-    }
-
-    td:nth-of-type(2):before {
-      content: "Title";
-    }
-    td:nth-of-type(3):before {
-      content: "Price";
-    }
-    td:nth-of-type(4):before {
-      content: "Room Type";
-    }
-    td:nth-of-type(5):before {
-      content: "Beds";
-    }
-    td:nth-of-type(6):before {
-      content: "Review Category";
-    }
-    td:nth-of-type(7):before {
-      content: "Review Score";
-    }
-    td:nth-of-type(8):before {
-      content: "Review Quantity";
-    }
-    td:nth-of-type(9):before {
-      content: "Location";
-    }
-    td:nth-of-type(10):before {
-      content: "Link";
-    }
-    td:nth-of-type(11):before {
-      content: "Map";
     }
   }
 }
