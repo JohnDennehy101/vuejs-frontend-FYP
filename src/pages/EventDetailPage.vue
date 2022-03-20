@@ -118,51 +118,13 @@
         v-on:toggleEventDetailInfo="toggleEventDetailInfo"
         infoType="Tourist Attractions"
       />
-      <table
-        id="tourist-attractions-information-table"
-        class="web-scraped-info-parent-container"
-      >
-        <caption>
-          Tourist Attractions in
-          {{
-            individualEvent.city
-          }}
-        </caption>
-        <thead>
-          <tr>
-            <th></th>
-            <th>Title</th>
-            <th>Address</th>
-            <th>Review Score</th>
-            <th>Review Quantity</th>
-            <th>Map</th>
-            <th></th>
-          </tr>
-        </thead>
 
-        <tbody>
-          <tr v-for="value in googlePlacesInfo" v-bind:key="value">
-            <td>
-              <input
-                type="checkbox"
-                :value="value"
-                @change="checkedThingToDoChange($event, value)"
-              />
-            </td>
-
-            <td>{{ value.name }}</td>
-            <td>{{ value.vicinity }}</td>
-            <td>{{ value.rating }}</td>
-            <td>{{ value.user_ratings_total }}</td>
-            <td>
-              <a :href="extractLink(value.photos[0].html_attributions[0])">
-                <i class="fas fa-map-marker-alt"></i>
-              </a>
-            </td>
-            <td><img :src="value.icon" /></td>
-          </tr>
-        </tbody>
-      </table>
+      <EventDetailInfoActivitiesTable
+        v-if="googlePlacesInfo && individualEvent"
+        v-on:checkedActivityChange="checkedThingToDoChange"
+        :activitiesInfo="googlePlacesInfo"
+        :eventCity="individualEvent.city"
+      />
     </div>
 
     <EventDetailInfoSectionPlaceholder
@@ -187,82 +149,6 @@
         :mobile="mobileCheck"
         v-on:checkedFlightChange="checkedFlightChange"
       />
-      <!--<table
-        id="flight-information-table"
-        class="web-scraped-info-parent-container"
-        v-for="value in flightInfo"
-        v-bind:key="value"
-        @change="checkedFlightChange(value)"
-      >
-        <thead>
-          <tr>
-            <th></th>
-            <th>Airport</th>
-            <th>Flight Date</th>
-
-            <th>Departure Time</th>
-            <th>Arrival Time</th>
-            <th>Duration</th>
-            <th>Carrier</th>
-            <th>Return Price Per Person</th>
-            <th>Total Return Price</th>
-            <th>Link</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr
-            id="mobile-flight-overview-row"
-            v-for="(item, key) of value"
-            :key="key"
-          >
-            <td v-if="key === 0 && isMobile()" rowspan="2">
-              <input type="checkbox" :value="item" />
-            </td>
-            <td v-if="key === 0 && isMobile()" rowspan="2">
-              {{ item.pricePerPerson }}
-            </td>
-            <td v-if="key === 0 && isMobile()" rowspan="2">
-              {{ item.priceTotal }}
-            </td>
-            <td v-if="key === 0 && isMobile()" rowspan="2">
-              <a :href="item.flightUrl" target="_blank">
-                <i class="fas fa-external-link-square-alt"></i>
-              </a>
-            </td>
-          </tr>
-          <tr v-for="(item, key) of value" :key="key">
-            <td v-if="key === 0 && !isMobile()" rowspan="2">
-              <input type="checkbox" :value="item" />
-            </td>
-
-            <td>{{ item.airport }}</td>
-            <td v-if="key === 0">
-              {{ item.startDate }}
-            </td>
-            <td v-else>
-              {{ item.endDate }}
-            </td>
-            <td>{{ item.departureTime }}</td>
-            <td>{{ item.arrivalTime }}</td>
-            <td>{{ item.duration }}</td>
-            <td>{{ item.carrier }}</td>
-            <td v-if="key === 0 && !isMobile()" rowspan="2">
-              {{ item.pricePerPerson }}
-            </td>
-
-            <td v-if="key === 0 && !isMobile()" rowspan="2">
-              {{ item.priceTotal }}
-            </td>
-
-            <td v-if="key === 0 && !isMobile()" rowspan="2">
-              <a :href="item.flightUrl" target="_blank">
-                <i class="fas fa-external-link-square-alt"></i>
-              </a>
-            </td>
-          </tr>
-        </tbody>
-      </table>-->
     </div>
 
     <DeleteModal
@@ -296,6 +182,7 @@ import PollsOverview from "../components/PollsOverview";
 import EventDetailInfoToggleTableDisplay from "../components/EventDetailInfoToggleTableDisplay";
 import EventDetailInfoAccommodationTable from "../components/EventDetailInfoAccommodationTable";
 import EventDetailInfoFlightsTable from "../components/EventDetailInfoFlightsTable";
+import EventDetailInfoActivitiesTable from "../components/EventDetailInfoActivitiesTable";
 export default {
   name: "eventDetailPage",
   props: ["editEvent"],
@@ -379,6 +266,7 @@ export default {
     EventDetailInfoToggleTableDisplay,
     EventDetailInfoAccommodationTable,
     EventDetailInfoFlightsTable,
+    EventDetailInfoActivitiesTable,
   },
   methods: {
     async checkEditAction() {
@@ -541,6 +429,7 @@ export default {
         });
 
       if (response.status === 200) {
+        console.log(response.data.results);
         this.googlePlacesInfo = response.data.results;
       }
     },
@@ -566,24 +455,24 @@ export default {
         this.checkedAccommodation = [];
       }
     },
-    checkedThingToDoChange(event, value) {
+    checkedThingToDoChange(value) {
       if (
-        event.target.checked &&
+        value.event.target.checked &&
         this.checkedThingsToDo.filter(
-          (activity) => activity.name === value.name
+          (activity) => activity.name === value.item.name
         ).length === 0
       ) {
         this.checkedThingsToDo.push({
-          name: value.name,
-          placesId: value.place_id,
-          mapLink: this.extractLink(value.photos[0].html_attributions[0]),
-          rating: value.rating,
-          user_ratings_total: value.user_ratings_total,
-          vicinity: value.vicinity,
+          name: value.item.name,
+          placesId: value.item.place_id,
+          mapLink: this.extractLink(value.item.photos[0].html_attributions[0]),
+          rating: value.item.rating,
+          user_ratings_total: value.item.user_ratings_total,
+          vicinity: value.item.vicinity,
         });
-      } else if (!event.target.checked) {
+      } else if (!value.event.target.checked) {
         this.checkedThingsToDo = this.checkedThingsToDo.filter(
-          (activity) => activity.name !== value.name
+          (activity) => activity.name !== value.item.name
         );
       }
 
@@ -783,127 +672,6 @@ h2 {
 
   @include for-phone-only {
     width: 90%;
-  }
-}
-
-.web-scraped-info-parent-container {
-  overflow-x: auto;
-  border-collapse: collapse;
-  margin: 0.8rem auto;
-  width: 100%;
-
-  font-size: 0.9em;
-  font-family: sans-serif;
-
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-
-  caption {
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-align: left;
-    margin: 1rem 0;
-    align-items: center;
-
-    @include for-phone-only {
-      display: block;
-      font-size: 1rem;
-      text-align: center;
-    }
-  }
-
-  thead {
-    background-color: #373f68;
-    color: white;
-    text-align: left;
-
-    th {
-      padding: 12px 15px;
-    }
-  }
-
-  tbody tr {
-    border-bottom: 1px solid #dddddd;
-  }
-
-  tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
-  }
-
-  td {
-    padding: 12px 15px;
-
-    @include for-phone-only {
-      border: none;
-      border-bottom: 1px solid #eee;
-      position: relative;
-      padding-left: 50% !important;
-    }
-  }
-
-  td table {
-    margin: -2px;
-    width: calc(100% + 4px);
-  }
-
-  td img {
-    height: 1.5rem;
-  }
-
-  @include for-phone-only {
-    table,
-    thead,
-    tbody,
-    th,
-    td,
-    tr {
-      display: block;
-    }
-
-    thead tr {
-      position: absolute;
-      top: -9999px;
-      left: -9999px;
-    }
-
-    tr {
-      border: 1px solid #ccc;
-    }
-
-    td:before {
-      position: absolute;
-      top: 0px;
-      left: 6px;
-      width: 45%;
-      font-weight: bold;
-      padding: 12px 0px 12px 15px;
-      white-space: nowrap;
-    }
-  }
-}
-@include for-phone-only {
-  #tourist-attractions-information-table {
-    td:nth-of-type(1):before {
-      content: "Select";
-    }
-
-    td:nth-of-type(2):before {
-      content: "Title";
-    }
-    td:nth-of-type(3):before {
-      content: "Address";
-    }
-    td:nth-of-type(4):before {
-      content: "Review Score";
-    }
-    td:nth-of-type(5):before {
-      content: "Review Quantity";
-    }
-    td:nth-of-type(6):before {
-      content: "Map";
-    }
-    td:nth-of-type(7):before {
-      content: "Icon";
-    }
   }
 }
 </style>
