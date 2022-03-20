@@ -163,7 +163,6 @@
 </template>
 
 <script>
-import axios from "axios";
 import EventForm from "../components/EventForm";
 import EventOverview from "../components/EventOverview";
 import NoCreatedItems from "../components/NoCreatedItems";
@@ -183,9 +182,15 @@ import EventDetailInfoToggleTableDisplay from "../components/EventDetailInfoTogg
 import EventDetailInfoAccommodationTable from "../components/EventDetailInfoAccommodationTable";
 import EventDetailInfoFlightsTable from "../components/EventDetailInfoFlightsTable";
 import EventDetailInfoActivitiesTable from "../components/EventDetailInfoActivitiesTable";
+import eventService from "../services/EventService";
 export default {
   name: "eventDetailPage",
-  props: ["editEvent"],
+  props: {
+    editEvent: Boolean,
+    eventService: {
+      default: eventService,
+    },
+  },
   data() {
     return {
       showEditForm: false,
@@ -284,18 +289,7 @@ export default {
       this.eventId = window.location.pathname.split("/")[3];
     },
     async getEventInfo() {
-      const jwtToken = localStorage.getItem("token");
-      const response = await axios
-        .get("http://localhost:3000/events/" + this.eventId, {
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-            Authorization: `Bearer ${jwtToken}`,
-          },
-        })
-        .catch((error) => {
-          return { error };
-        });
-
+      const response = await this.eventService.getIndividualEvent(this.eventId);
       if ("error" in response) {
         this.invalidEventCreation = true;
       } else {
@@ -340,18 +334,9 @@ export default {
     },
 
     async getEventItinerary() {
-      const jwtToken = localStorage.getItem("token");
-
-      const response = await axios
-        .get(`http://localhost:3000/events/${this.eventId}/itinerary`, {
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-            Authorization: `Bearer ${jwtToken}`,
-          },
-        })
-        .catch((error) => {
-          return { error };
-        });
+      const response = await this.eventService.getIndividualEventItinerary(
+        this.eventId
+      );
 
       if (response.status === 200) {
         if (response.data !== "") {
@@ -365,21 +350,11 @@ export default {
     },
 
     async getEventAccommodationInfo(startDate, endDate) {
-      const jwtToken = localStorage.getItem("token");
-
-      const response = await axios
-        .get(
-          `http://localhost:3000/events/${this.eventId}/accommodation?startDate=${startDate}&endDate=${endDate}`,
-          {
-            headers: {
-              "Access-Control-Allow-Origin": "*",
-              Authorization: `Bearer ${jwtToken}`,
-            },
-          }
-        )
-        .catch((error) => {
-          return { error };
-        });
+      const response = await this.eventService.getAccommodationInformation(
+        this.eventId,
+        startDate,
+        endDate
+      );
 
       if (response.status === 200) {
         this.accommodationInfo = response.data.resultPages;
@@ -391,42 +366,22 @@ export default {
     },
 
     async getEventFlightInfo(startDate, endDate) {
-      const jwtToken = localStorage.getItem("token");
-
-      const response = await axios
-        .get(
-          `http://localhost:3000/events/${this.eventId}/flights?startDate=${startDate}&endDate=${endDate}`,
-          {
-            headers: {
-              "Access-Control-Allow-Origin": "*",
-              Authorization: `Bearer ${jwtToken}`,
-            },
-          }
-        )
-        .catch((error) => {
-          return { error };
-        });
+      const response = await this.eventService.getFlightInformation(
+        this.eventId,
+        startDate,
+        endDate
+      );
 
       if (response.status === 200) {
         this.flightInfo = response.data;
       }
     },
     async getEventPlacesInfo(latitude, longitude) {
-      const jwtToken = localStorage.getItem("token");
-
-      const response = await axios
-        .get(
-          `http://localhost:3000/events/${this.eventId}/places?latitude=${latitude}&longitude=${longitude}`,
-          {
-            headers: {
-              "Access-Control-Allow-Origin": "*",
-              Authorization: `Bearer ${jwtToken}`,
-            },
-          }
-        )
-        .catch((error) => {
-          return { error };
-        });
+      const response = await this.eventService.getActivityInformation(
+        this.eventId,
+        latitude,
+        longitude
+      );
 
       if (response.status === 200) {
         console.log(response.data.results);

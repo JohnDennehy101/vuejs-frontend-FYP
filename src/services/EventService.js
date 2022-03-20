@@ -52,6 +52,16 @@ class EventService {
     return response;
   }
 
+  async getIndividualEvent(eventId) {
+    const response = await axios
+      .get(this.baseUrl + "/events/" + eventId)
+      .catch((error) => {
+        return { error };
+      });
+
+    return response;
+  }
+
   async createEventPoll(id, payload) {
     const response = await axios
       .post(`${this.baseUrl}/events/${id}/poll`, payload, {
@@ -137,6 +147,16 @@ class EventService {
     return response;
   }
 
+  async getIndividualEventItinerary(eventId) {
+    const response = await axios
+      .get(`${this.baseUrl}/events/${eventId}/itinerary`)
+      .catch((error) => {
+        return { error };
+      });
+
+    return response;
+  }
+
   async updateEventItinerary(eventId, payload) {
     const response = await axios
       .patch(`${this.baseUrl}/events/${eventId}/itinerary`, payload)
@@ -150,6 +170,42 @@ class EventService {
   async deleteEventItinerary(eventId) {
     const response = await axios
       .delete(`${this.baseUrl}/events/${eventId}/itinerary`)
+      .catch((error) => {
+        return { error };
+      });
+
+    return response;
+  }
+
+  async getAccommodationInformation(eventId, startDate, endDate) {
+    const response = await axios
+      .get(
+        `${this.baseUrl}/events/${eventId}/accommodation?startDate=${startDate}&endDate=${endDate}`
+      )
+      .catch((error) => {
+        return { error };
+      });
+
+    return response;
+  }
+
+  async getFlightInformation(eventId, startDate, endDate) {
+    const response = await axios
+      .get(
+        `${this.baseUrl}/events/${eventId}/flights?startDate=${startDate}&endDate=${endDate}`
+      )
+      .catch((error) => {
+        return { error };
+      });
+
+    return response;
+  }
+
+  async getActivityInformation(eventId, latitude, longitude) {
+    const response = await axios
+      .get(
+        `${this.baseUrl}/events/${eventId}/places?latitude=${latitude}&longitude=${longitude}`
+      )
       .catch((error) => {
         return { error };
       });
