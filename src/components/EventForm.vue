@@ -79,11 +79,21 @@
       </select>
     </div>
 
-    <div class="form-control">
+    <div v-if="foreignTrip" class="form-control">
       <label class="radio-label" for="location">Destination</label>
       <select id="location" v-model="location">
         <option disabled value="">Please select location</option>
         <option v-for="city in foreignCityLocations" v-bind:key="city">
+          {{ city }}
+        </option>
+      </select>
+    </div>
+
+    <div v-else class="form-control">
+      <label class="radio-label" for="location">Destination</label>
+      <select id="location" v-model="location">
+        <option disabled value="">Please select location</option>
+        <option v-for="city in domesticCityLocations" v-bind:key="city">
           {{ city }}
         </option>
       </select>

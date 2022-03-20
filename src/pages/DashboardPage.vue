@@ -28,11 +28,17 @@
       <h2>Your Invited Events</h2>
 
       <DashboardEventItems
-        :events="createdEvents"
+        :events="invitedEvents"
         :userUuid="userId"
         :createdEvents="false"
       />
     </div>
+
+    <NoCreatedItems
+      v-else
+      :message="noInvitedEventsMessage"
+      :invitedUser="true"
+    />
   </div>
   <DeleteModal
     v-if="displayDeleteModal"
@@ -73,6 +79,7 @@ export default {
   computed: {
     ...mapGetters({
       noCreatedEventsMessage: "event/noCreatedEventsMessage",
+      noInvitedEventsMessage: "event/noInvitedEventsMessage",
       noCreatedEventsCallToAction: "event/noCreatedEventsCallToAction",
       noCreatedEventsCallToActionLink: "event/noCreatedEventsCallToActionLink",
       deleteEventModalHeading: "event/deleteEventModalHeading",
@@ -87,18 +94,33 @@ export default {
     async getUserCreatedEvents() {
       const response = await this.eventService.getUserEvents(this.userId);
 
-      console.log(response);
-
       if ("error" in response) {
         this.invalidEventCreation = true;
       } else {
+        let allInvitedEvents = response.data.invited;
+
+        if (response.data.created.length > 0) {
+          for (let item in response.data.created) {
+            let invitedEventCheck = allInvitedEvents.filter(
+              (event) => event.id === response.data.created[item].id
+            );
+            if (invitedEventCheck.length > 0) {
+              allInvitedEvents.splice(
+                allInvitedEvents
+                  .map((object) => object.id)
+                  .indexOf(invitedEventCheck[0].id)
+              );
+            }
+          }
+        }
+
         this.$store.dispatch(
           "event/populateUserCreatedEvents",
           response.data.created
         );
         this.$store.dispatch(
           "event/populateUserInvitedEvents",
-          response.data.invited
+          allInvitedEvents
         );
       }
     },
