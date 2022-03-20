@@ -180,7 +180,14 @@
         infoType="Flights"
         v-on:toggleEventDetailInfo="toggleEventDetailInfo"
       />
-      <table
+
+      <EventDetailInfoFlightsTable
+        v-if="flightInfo"
+        :flights="flightInfo"
+        :mobile="mobileCheck"
+        v-on:checkedFlightChange="checkedFlightChange"
+      />
+      <!--<table
         id="flight-information-table"
         class="web-scraped-info-parent-container"
         v-for="value in flightInfo"
@@ -255,7 +262,7 @@
             </td>
           </tr>
         </tbody>
-      </table>
+      </table>-->
     </div>
 
     <DeleteModal
@@ -288,6 +295,7 @@ import ChatOnlineUsers from "../components/ChatOnlineUsers";
 import PollsOverview from "../components/PollsOverview";
 import EventDetailInfoToggleTableDisplay from "../components/EventDetailInfoToggleTableDisplay";
 import EventDetailInfoAccommodationTable from "../components/EventDetailInfoAccommodationTable";
+import EventDetailInfoFlightsTable from "../components/EventDetailInfoFlightsTable";
 export default {
   name: "eventDetailPage",
   props: ["editEvent"],
@@ -346,6 +354,11 @@ export default {
       userId: "userId",
       userEmail: "userEmail",
     }),
+    mobileCheck() {
+      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      );
+    },
   },
   watch: {
     checkedAccommodation: function () {
@@ -365,6 +378,7 @@ export default {
     PollsOverview,
     EventDetailInfoToggleTableDisplay,
     EventDetailInfoAccommodationTable,
+    EventDetailInfoFlightsTable,
   },
   methods: {
     async checkEditAction() {
@@ -539,7 +553,7 @@ export default {
     },
     checkedFlightChange(value) {
       this.checkedFlight = [];
-      this.checkedFlight.push(value);
+      this.checkedFlight.push(value.item);
       this.eventItineraryKey++;
     },
     checkedAccommodationChange(value) {
@@ -889,56 +903,6 @@ h2 {
     }
     td:nth-of-type(7):before {
       content: "Icon";
-    }
-  }
-}
-
-#flight-information-table {
-  #mobile-flight-overview-row {
-    display: none;
-  }
-}
-@include for-phone-only {
-  #flight-information-table {
-    #mobile-flight-overview-row {
-      display: block;
-      background-color: #373f68;
-      color: #ffffff;
-
-      svg {
-        color: white;
-      }
-
-      td:nth-of-type(1):before {
-        content: "Select";
-      }
-      td:nth-of-type(2):before {
-        content: "Price Per Person";
-      }
-      td:nth-of-type(3):before {
-        content: "Total Price";
-      }
-      td:nth-of-type(4):before {
-        content: "Flight Link";
-      }
-    }
-    td:nth-of-type(1):before {
-      content: "Airport";
-    }
-    td:nth-of-type(2):before {
-      content: "Date";
-    }
-    td:nth-of-type(3):before {
-      content: "Departure Time";
-    }
-    td:nth-of-type(4):before {
-      content: "Arrival Time";
-    }
-    td:nth-of-type(5):before {
-      content: "Duration";
-    }
-    td:nth-of-type(6):before {
-      content: "Carrier";
     }
   }
 }
