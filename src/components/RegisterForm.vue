@@ -9,7 +9,11 @@
           type="text"
           placeholder="Enter email"
           v-model="email"
+          required
         />
+        <p class="error-message" v-if="!validEmail && email.length > 0">
+          Please provide a valid email
+        </p>
       </div>
       <div class="form-control">
         <label for="password">Password</label>
@@ -19,7 +23,13 @@
           type="password"
           placeholder="Enter password"
           v-model="password"
+          required
+          minlength="7"
         />
+        <p class="error-message" v-if="!validPassword && password.length > 0">
+          Password must have mininum length of 7, contain uppercase, lowercase,
+          special characters.
+        </p>
       </div>
       <div class="form-control">
         <button>Sign up</button>
@@ -37,6 +47,7 @@
 <script>
 import AccountErrorMessage from "./AccountErrorMessage";
 import userService from "../services/UserService";
+import StringUtils from "../utils/stringUtils";
 export default {
   data() {
     return {
@@ -46,6 +57,14 @@ export default {
       errorMessage: "There was an error registering your account details.",
     };
   },
+  computed: {
+    validEmail() {
+      return StringUtils.validateEmail(this.email);
+    },
+    validPassword() {
+      return StringUtils.validatePassword(this.password);
+    },
+  },
   props: {
     userService: {
       default: userService,
@@ -53,10 +72,10 @@ export default {
   },
   methods: {
     async submitForm() {
-      const user = await this.userService.registerUser(
-        this.email,
-        this.password
-      );
+      let user;
+      if (this.validEmail && this.validPassword) {
+        user = await this.userService.registerUser(this.email, this.password);
+      }
 
       if (!user) {
         this.invalidRegistration = true;
@@ -128,6 +147,13 @@ form {
     margin: 1rem 0;
     background-color: $primary-button-background-colour;
     color: $primary-button-text-colour;
+  }
+
+  .error-message {
+    margin-top: 0.4rem;
+    margin-left: 0.1rem;
+    font-size: 0.9rem;
+    color: red;
   }
 }
 </style>
