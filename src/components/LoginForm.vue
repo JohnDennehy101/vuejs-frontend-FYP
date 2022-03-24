@@ -25,7 +25,7 @@
         />
       </div>
       <div class="form-control">
-        <button>Sign up</button>
+        <button>Login</button>
       </div>
 
       <AccountErrorMessage

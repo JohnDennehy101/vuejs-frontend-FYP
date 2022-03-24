@@ -53,7 +53,7 @@ VueWrapper {
             class="form-control"
           >
             <button>
-              Sign up
+              Login
             </button>
           </div>
           <account-error-message-stub
@@ -825,13 +825,13 @@ VueWrapper {
                         "__v_skip": true,
                         "anchor": null,
                         "appContext": null,
-                        "children": "Sign up",
+                        "children": "Login",
                         "component": null,
                         "dirs": null,
                         "dynamicChildren": null,
                         "dynamicProps": null,
                         "el": <button>
-                          Sign up
+                          Login
                         </button>,
                         "key": null,
                         "patchFlag": 0,
@@ -858,7 +858,7 @@ VueWrapper {
                       class="form-control"
                     >
                       <button>
-                        Sign up
+                        Login
                       </button>
                     </div>,
                     "key": null,
@@ -1195,7 +1195,7 @@ VueWrapper {
                     class="form-control"
                   >
                     <button>
-                      Sign up
+                      Login
                     </button>
                   </div>
                   <account-error-message-stub
@@ -1706,7 +1706,7 @@ VueWrapper {
                   class="form-control"
                 >
                   <button>
-                    Sign up
+                    Login
                   </button>
                 </div>
                 <account-error-message-stub
@@ -1827,7 +1827,7 @@ VueWrapper {
               class="form-control"
             >
               <button>
-                Sign up
+                Login
               </button>
             </div>
             <account-error-message-stub
@@ -1990,7 +1990,7 @@ VueWrapper {
               class="form-control"
             >
               <button>
-                Sign up
+                Login
               </button>
             </div>
             <account-error-message-stub
@@ -2100,7 +2100,7 @@ VueWrapper {
         class="form-control"
       >
         <button>
-          Sign up
+          Login
         </button>
       </div>
       <account-error-message-stub

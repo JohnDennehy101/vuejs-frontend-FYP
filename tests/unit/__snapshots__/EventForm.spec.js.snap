@@ -114,10 +114,22 @@ VueWrapper {
             </option>
             
             <option>
-              London
+              Cork
             </option>
             <option>
-              Manchester
+              Dublin
+            </option>
+            <option>
+              Galway
+            </option>
+            <option>
+              Kilkenny
+            </option>
+            <option>
+              Limerick
+            </option>
+            <option>
+              Waterford
             </option>
             
           </select>
@@ -658,6 +670,18 @@ VueWrapper {
               Set {
                 [Circular],
               },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
             ],
             "fn": [Function],
             "onTrack": undefined,
@@ -781,6 +805,7 @@ VueWrapper {
             [Function],
             [Function],
             undefined,
+            undefined,
             [Function],
             [Function],
             [Function],
@@ -803,6 +828,18 @@ VueWrapper {
                 "active": true,
                 "allowRecurse": true,
                 "deps": Array [
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
                   Set {
                     [Circular],
                   },
@@ -1959,18 +1996,18 @@ VueWrapper {
                             "__v_skip": true,
                             "anchor": null,
                             "appContext": null,
-                            "children": "London",
+                            "children": "Cork",
                             "component": null,
                             "dirs": null,
                             "dynamicChildren": Array [],
                             "dynamicProps": null,
                             "el": <option>
-                              London
+                              Cork
                             </option>,
-                            "key": "London",
+                            "key": "Cork",
                             "patchFlag": 1,
                             "props": Object {
-                              "key": "London",
+                              "key": "Cork",
                             },
                             "ref": null,
                             "scopeId": null,
@@ -1990,18 +2027,142 @@ VueWrapper {
                             "__v_skip": true,
                             "anchor": null,
                             "appContext": null,
-                            "children": "Manchester",
+                            "children": "Dublin",
                             "component": null,
                             "dirs": null,
                             "dynamicChildren": Array [],
                             "dynamicProps": null,
                             "el": <option>
-                              Manchester
+                              Dublin
                             </option>,
-                            "key": "Manchester",
+                            "key": "Dublin",
                             "patchFlag": 1,
                             "props": Object {
-                              "key": "Manchester",
+                              "key": "Dublin",
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 9,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "option",
+                          },
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": "Galway",
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": Array [],
+                            "dynamicProps": null,
+                            "el": <option>
+                              Galway
+                            </option>,
+                            "key": "Galway",
+                            "patchFlag": 1,
+                            "props": Object {
+                              "key": "Galway",
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 9,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "option",
+                          },
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": "Kilkenny",
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": Array [],
+                            "dynamicProps": null,
+                            "el": <option>
+                              Kilkenny
+                            </option>,
+                            "key": "Kilkenny",
+                            "patchFlag": 1,
+                            "props": Object {
+                              "key": "Kilkenny",
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 9,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "option",
+                          },
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": "Limerick",
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": Array [],
+                            "dynamicProps": null,
+                            "el": <option>
+                              Limerick
+                            </option>,
+                            "key": "Limerick",
+                            "patchFlag": 1,
+                            "props": Object {
+                              "key": "Limerick",
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 9,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "option",
+                          },
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": "Waterford",
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": Array [],
+                            "dynamicProps": null,
+                            "el": <option>
+                              Waterford
+                            </option>,
+                            "key": "Waterford",
+                            "patchFlag": 1,
+                            "props": Object {
+                              "key": "Waterford",
                             },
                             "ref": null,
                             "scopeId": null,
@@ -2127,10 +2288,22 @@ VueWrapper {
                       </option>
                       
                       <option>
-                        London
+                        Cork
                       </option>
                       <option>
-                        Manchester
+                        Dublin
+                      </option>
+                      <option>
+                        Galway
+                      </option>
+                      <option>
+                        Kilkenny
+                      </option>
+                      <option>
+                        Limerick
+                      </option>
+                      <option>
+                        Waterford
                       </option>
                       
                     </select>,
@@ -2156,7 +2329,604 @@ VueWrapper {
                 ],
                 "component": null,
                 "dirs": null,
-                "dynamicChildren": null,
+                "dynamicChildren": Array [
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": ,
+                    "appContext": null,
+                    "children": Array [
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "Cork",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": Array [],
+                        "dynamicProps": null,
+                        "el": <option>
+                          Cork
+                        </option>,
+                        "key": "Cork",
+                        "patchFlag": 1,
+                        "props": Object {
+                          "key": "Cork",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 9,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "option",
+                      },
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "Dublin",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": Array [],
+                        "dynamicProps": null,
+                        "el": <option>
+                          Dublin
+                        </option>,
+                        "key": "Dublin",
+                        "patchFlag": 1,
+                        "props": Object {
+                          "key": "Dublin",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 9,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "option",
+                      },
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "Galway",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": Array [],
+                        "dynamicProps": null,
+                        "el": <option>
+                          Galway
+                        </option>,
+                        "key": "Galway",
+                        "patchFlag": 1,
+                        "props": Object {
+                          "key": "Galway",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 9,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "option",
+                      },
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "Kilkenny",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": Array [],
+                        "dynamicProps": null,
+                        "el": <option>
+                          Kilkenny
+                        </option>,
+                        "key": "Kilkenny",
+                        "patchFlag": 1,
+                        "props": Object {
+                          "key": "Kilkenny",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 9,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "option",
+                      },
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "Limerick",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": Array [],
+                        "dynamicProps": null,
+                        "el": <option>
+                          Limerick
+                        </option>,
+                        "key": "Limerick",
+                        "patchFlag": 1,
+                        "props": Object {
+                          "key": "Limerick",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 9,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "option",
+                      },
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "Waterford",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": Array [],
+                        "dynamicProps": null,
+                        "el": <option>
+                          Waterford
+                        </option>,
+                        "key": "Waterford",
+                        "patchFlag": 1,
+                        "props": Object {
+                          "key": "Waterford",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 9,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "option",
+                      },
+                    ],
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": Array [],
+                    "dynamicProps": null,
+                    "el": ,
+                    "key": null,
+                    "patchFlag": 128,
+                    "props": null,
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 16,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": Symbol(Fragment),
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": Array [
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "Please select location",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <option
+                          disabled=""
+                          value=""
+                        >
+                          Please select location
+                        </option>,
+                        "key": null,
+                        "patchFlag": -1,
+                        "props": Object {
+                          "disabled": "",
+                          "value": "",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 9,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "option",
+                      },
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": ,
+                        "appContext": null,
+                        "children": Array [
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": "Cork",
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": Array [],
+                            "dynamicProps": null,
+                            "el": <option>
+                              Cork
+                            </option>,
+                            "key": "Cork",
+                            "patchFlag": 1,
+                            "props": Object {
+                              "key": "Cork",
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 9,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "option",
+                          },
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": "Dublin",
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": Array [],
+                            "dynamicProps": null,
+                            "el": <option>
+                              Dublin
+                            </option>,
+                            "key": "Dublin",
+                            "patchFlag": 1,
+                            "props": Object {
+                              "key": "Dublin",
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 9,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "option",
+                          },
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": "Galway",
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": Array [],
+                            "dynamicProps": null,
+                            "el": <option>
+                              Galway
+                            </option>,
+                            "key": "Galway",
+                            "patchFlag": 1,
+                            "props": Object {
+                              "key": "Galway",
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 9,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "option",
+                          },
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": "Kilkenny",
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": Array [],
+                            "dynamicProps": null,
+                            "el": <option>
+                              Kilkenny
+                            </option>,
+                            "key": "Kilkenny",
+                            "patchFlag": 1,
+                            "props": Object {
+                              "key": "Kilkenny",
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 9,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "option",
+                          },
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": "Limerick",
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": Array [],
+                            "dynamicProps": null,
+                            "el": <option>
+                              Limerick
+                            </option>,
+                            "key": "Limerick",
+                            "patchFlag": 1,
+                            "props": Object {
+                              "key": "Limerick",
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 9,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "option",
+                          },
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": "Waterford",
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": Array [],
+                            "dynamicProps": null,
+                            "el": <option>
+                              Waterford
+                            </option>,
+                            "key": "Waterford",
+                            "patchFlag": 1,
+                            "props": Object {
+                              "key": "Waterford",
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 9,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "option",
+                          },
+                        ],
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": Array [],
+                        "dynamicProps": null,
+                        "el": ,
+                        "key": null,
+                        "patchFlag": 128,
+                        "props": null,
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 16,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": Symbol(Fragment),
+                      },
+                    ],
+                    "component": null,
+                    "dirs": Array [
+                      Object {
+                        "arg": undefined,
+                        "dir": Object {
+                          "beforeUpdate": [Function],
+                          "created": [Function],
+                          "deep": true,
+                          "mounted": [Function],
+                          "updated": [Function],
+                        },
+                        "instance": Object {
+                          "$route": Object {
+                            "params": Object {
+                              "id": 1,
+                            },
+                          },
+                          "$router": Object {
+                            "go": [MockFunction],
+                            "push": [MockFunction],
+                          },
+                          "$store": Object {
+                            "dispatch": [MockFunction],
+                            "getters": Object {
+                              "isAuthenticated": [Function],
+                              "userId": [Function],
+                            },
+                            "state": Object {
+                              "jwtToken": "token",
+                              "userId": 1,
+                            },
+                          },
+                          "addUserEmail": [Function],
+                          "departureCity": "",
+                          "domesticCityLocations": Array [
+                            "Cork",
+                            "Dublin",
+                            "Galway",
+                            "Kilkenny",
+                            "Limerick",
+                            "Waterford",
+                          ],
+                          "edit": false,
+                          "editEventAction": false,
+                          "editEventInfo": undefined,
+                          "errorMessage": "There was an error adding this event, not successfully created.",
+                          "eventService": EventService {
+                            "baseUrl": "http://localhost:3000",
+                          },
+                          "eventType": null,
+                          "eventTypeChange": [Function],
+                          "foreignCityLocations": Array [
+                            "London",
+                            "Manchester",
+                          ],
+                          "foreignTrip": false,
+                          "formTitle": "Create Event",
+                          "hasOwnProperty": [Function],
+                          "hideErrorMessage": [Function],
+                          "individualEvent": undefined,
+                          "invalidEventCreation": false,
+                          "location": "",
+                          "populateFormInfo": [Function],
+                          "removeIndividualUserEmail": [Function],
+                          "submitForm": [Function],
+                          "title": "",
+                          "userEmail": "",
+                          "userEmails": Array [],
+                          "userId": [Function],
+                        },
+                        "modifiers": Object {},
+                        "oldValue": undefined,
+                        "value": "",
+                      },
+                    ],
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <select
+                      id="location"
+                    >
+                      <option
+                        disabled=""
+                        value=""
+                      >
+                        Please select location
+                      </option>
+                      
+                      <option>
+                        Cork
+                      </option>
+                      <option>
+                        Dublin
+                      </option>
+                      <option>
+                        Galway
+                      </option>
+                      <option>
+                        Kilkenny
+                      </option>
+                      <option>
+                        Limerick
+                      </option>
+                      <option>
+                        Waterford
+                      </option>
+                      
+                    </select>,
+                    "key": null,
+                    "patchFlag": 512,
+                    "props": Object {
+                      "id": "location",
+                      "onUpdate:modelValue": [Function],
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 17,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "select",
+                  },
+                ],
                 "dynamicProps": null,
                 "el": <div
                   class="form-control"
@@ -2178,18 +2948,31 @@ VueWrapper {
                     </option>
                     
                     <option>
-                      London
+                      Cork
                     </option>
                     <option>
-                      Manchester
+                      Dublin
+                    </option>
+                    <option>
+                      Galway
+                    </option>
+                    <option>
+                      Kilkenny
+                    </option>
+                    <option>
+                      Limerick
+                    </option>
+                    <option>
+                      Waterford
                     </option>
                     
                   </select>
                 </div>,
-                "key": null,
+                "key": 3,
                 "patchFlag": 0,
                 "props": Object {
                   "class": "form-control",
+                  "key": 3,
                 },
                 "ref": null,
                 "scopeId": null,
@@ -3399,96 +4182,6 @@ VueWrapper {
               Object {
                 "__v_isVNode": true,
                 "__v_skip": true,
-                "anchor": ,
-                "appContext": null,
-                "children": Array [
-                  Object {
-                    "__v_isVNode": true,
-                    "__v_skip": true,
-                    "anchor": null,
-                    "appContext": null,
-                    "children": "London",
-                    "component": null,
-                    "dirs": null,
-                    "dynamicChildren": Array [],
-                    "dynamicProps": null,
-                    "el": <option>
-                      London
-                    </option>,
-                    "key": "London",
-                    "patchFlag": 1,
-                    "props": Object {
-                      "key": "London",
-                    },
-                    "ref": null,
-                    "scopeId": null,
-                    "shapeFlag": 9,
-                    "slotScopeIds": null,
-                    "ssContent": null,
-                    "ssFallback": null,
-                    "staticCount": 0,
-                    "suspense": null,
-                    "target": null,
-                    "targetAnchor": null,
-                    "transition": null,
-                    "type": "option",
-                  },
-                  Object {
-                    "__v_isVNode": true,
-                    "__v_skip": true,
-                    "anchor": null,
-                    "appContext": null,
-                    "children": "Manchester",
-                    "component": null,
-                    "dirs": null,
-                    "dynamicChildren": Array [],
-                    "dynamicProps": null,
-                    "el": <option>
-                      Manchester
-                    </option>,
-                    "key": "Manchester",
-                    "patchFlag": 1,
-                    "props": Object {
-                      "key": "Manchester",
-                    },
-                    "ref": null,
-                    "scopeId": null,
-                    "shapeFlag": 9,
-                    "slotScopeIds": null,
-                    "ssContent": null,
-                    "ssFallback": null,
-                    "staticCount": 0,
-                    "suspense": null,
-                    "target": null,
-                    "targetAnchor": null,
-                    "transition": null,
-                    "type": "option",
-                  },
-                ],
-                "component": null,
-                "dirs": null,
-                "dynamicChildren": Array [],
-                "dynamicProps": null,
-                "el": ,
-                "key": null,
-                "patchFlag": 128,
-                "props": null,
-                "ref": null,
-                "scopeId": null,
-                "shapeFlag": 16,
-                "slotScopeIds": null,
-                "ssContent": null,
-                "ssFallback": null,
-                "staticCount": 0,
-                "suspense": null,
-                "target": null,
-                "targetAnchor": null,
-                "transition": null,
-                "type": Symbol(Fragment),
-              },
-              Object {
-                "__v_isVNode": true,
-                "__v_skip": true,
                 "anchor": null,
                 "appContext": null,
                 "children": Array [
@@ -3497,22 +4190,22 @@ VueWrapper {
                     "__v_skip": true,
                     "anchor": null,
                     "appContext": null,
-                    "children": "Please select location",
+                    "children": "Destination",
                     "component": null,
                     "dirs": null,
                     "dynamicChildren": null,
                     "dynamicProps": null,
-                    "el": <option
-                      disabled=""
-                      value=""
+                    "el": <label
+                      class="radio-label"
+                      for="location"
                     >
-                      Please select location
-                    </option>,
+                      Destination
+                    </label>,
                     "key": null,
                     "patchFlag": -1,
                     "props": Object {
-                      "disabled": "",
-                      "value": "",
+                      "class": "radio-label",
+                      "for": "location",
                     },
                     "ref": null,
                     "scopeId": null,
@@ -3525,8 +4218,394 @@ VueWrapper {
                     "target": null,
                     "targetAnchor": null,
                     "transition": null,
-                    "type": "option",
+                    "type": "label",
                   },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": Array [
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "Please select location",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <option
+                          disabled=""
+                          value=""
+                        >
+                          Please select location
+                        </option>,
+                        "key": null,
+                        "patchFlag": -1,
+                        "props": Object {
+                          "disabled": "",
+                          "value": "",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 9,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "option",
+                      },
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": ,
+                        "appContext": null,
+                        "children": Array [
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": "Cork",
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": Array [],
+                            "dynamicProps": null,
+                            "el": <option>
+                              Cork
+                            </option>,
+                            "key": "Cork",
+                            "patchFlag": 1,
+                            "props": Object {
+                              "key": "Cork",
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 9,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "option",
+                          },
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": "Dublin",
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": Array [],
+                            "dynamicProps": null,
+                            "el": <option>
+                              Dublin
+                            </option>,
+                            "key": "Dublin",
+                            "patchFlag": 1,
+                            "props": Object {
+                              "key": "Dublin",
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 9,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "option",
+                          },
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": "Galway",
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": Array [],
+                            "dynamicProps": null,
+                            "el": <option>
+                              Galway
+                            </option>,
+                            "key": "Galway",
+                            "patchFlag": 1,
+                            "props": Object {
+                              "key": "Galway",
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 9,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "option",
+                          },
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": "Kilkenny",
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": Array [],
+                            "dynamicProps": null,
+                            "el": <option>
+                              Kilkenny
+                            </option>,
+                            "key": "Kilkenny",
+                            "patchFlag": 1,
+                            "props": Object {
+                              "key": "Kilkenny",
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 9,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "option",
+                          },
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": "Limerick",
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": Array [],
+                            "dynamicProps": null,
+                            "el": <option>
+                              Limerick
+                            </option>,
+                            "key": "Limerick",
+                            "patchFlag": 1,
+                            "props": Object {
+                              "key": "Limerick",
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 9,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "option",
+                          },
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": "Waterford",
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": Array [],
+                            "dynamicProps": null,
+                            "el": <option>
+                              Waterford
+                            </option>,
+                            "key": "Waterford",
+                            "patchFlag": 1,
+                            "props": Object {
+                              "key": "Waterford",
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 9,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "option",
+                          },
+                        ],
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": Array [],
+                        "dynamicProps": null,
+                        "el": ,
+                        "key": null,
+                        "patchFlag": 128,
+                        "props": null,
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 16,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": Symbol(Fragment),
+                      },
+                    ],
+                    "component": null,
+                    "dirs": Array [
+                      Object {
+                        "arg": undefined,
+                        "dir": Object {
+                          "beforeUpdate": [Function],
+                          "created": [Function],
+                          "deep": true,
+                          "mounted": [Function],
+                          "updated": [Function],
+                        },
+                        "instance": Object {
+                          "$route": Object {
+                            "params": Object {
+                              "id": 1,
+                            },
+                          },
+                          "$router": Object {
+                            "go": [MockFunction],
+                            "push": [MockFunction],
+                          },
+                          "$store": Object {
+                            "dispatch": [MockFunction],
+                            "getters": Object {
+                              "isAuthenticated": [Function],
+                              "userId": [Function],
+                            },
+                            "state": Object {
+                              "jwtToken": "token",
+                              "userId": 1,
+                            },
+                          },
+                          "addUserEmail": [Function],
+                          "departureCity": "",
+                          "domesticCityLocations": Array [
+                            "Cork",
+                            "Dublin",
+                            "Galway",
+                            "Kilkenny",
+                            "Limerick",
+                            "Waterford",
+                          ],
+                          "edit": false,
+                          "editEventAction": false,
+                          "editEventInfo": undefined,
+                          "errorMessage": "There was an error adding this event, not successfully created.",
+                          "eventService": EventService {
+                            "baseUrl": "http://localhost:3000",
+                          },
+                          "eventType": null,
+                          "eventTypeChange": [Function],
+                          "foreignCityLocations": Array [
+                            "London",
+                            "Manchester",
+                          ],
+                          "foreignTrip": false,
+                          "formTitle": "Create Event",
+                          "hasOwnProperty": [Function],
+                          "hideErrorMessage": [Function],
+                          "individualEvent": undefined,
+                          "invalidEventCreation": false,
+                          "location": "",
+                          "populateFormInfo": [Function],
+                          "removeIndividualUserEmail": [Function],
+                          "submitForm": [Function],
+                          "title": "",
+                          "userEmail": "",
+                          "userEmails": Array [],
+                          "userId": [Function],
+                        },
+                        "modifiers": Object {},
+                        "oldValue": undefined,
+                        "value": "",
+                      },
+                    ],
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <select
+                      id="location"
+                    >
+                      <option
+                        disabled=""
+                        value=""
+                      >
+                        Please select location
+                      </option>
+                      
+                      <option>
+                        Cork
+                      </option>
+                      <option>
+                        Dublin
+                      </option>
+                      <option>
+                        Galway
+                      </option>
+                      <option>
+                        Kilkenny
+                      </option>
+                      <option>
+                        Limerick
+                      </option>
+                      <option>
+                        Waterford
+                      </option>
+                      
+                    </select>,
+                    "key": null,
+                    "patchFlag": 512,
+                    "props": Object {
+                      "id": "location",
+                      "onUpdate:modelValue": [Function],
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 17,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "select",
+                  },
+                ],
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": Array [
                   Object {
                     "__v_isVNode": true,
                     "__v_skip": true,
@@ -3538,18 +4617,18 @@ VueWrapper {
                         "__v_skip": true,
                         "anchor": null,
                         "appContext": null,
-                        "children": "London",
+                        "children": "Cork",
                         "component": null,
                         "dirs": null,
                         "dynamicChildren": Array [],
                         "dynamicProps": null,
                         "el": <option>
-                          London
+                          Cork
                         </option>,
-                        "key": "London",
+                        "key": "Cork",
                         "patchFlag": 1,
                         "props": Object {
-                          "key": "London",
+                          "key": "Cork",
                         },
                         "ref": null,
                         "scopeId": null,
@@ -3569,18 +4648,142 @@ VueWrapper {
                         "__v_skip": true,
                         "anchor": null,
                         "appContext": null,
-                        "children": "Manchester",
+                        "children": "Dublin",
                         "component": null,
                         "dirs": null,
                         "dynamicChildren": Array [],
                         "dynamicProps": null,
                         "el": <option>
-                          Manchester
+                          Dublin
                         </option>,
-                        "key": "Manchester",
+                        "key": "Dublin",
                         "patchFlag": 1,
                         "props": Object {
-                          "key": "Manchester",
+                          "key": "Dublin",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 9,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "option",
+                      },
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "Galway",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": Array [],
+                        "dynamicProps": null,
+                        "el": <option>
+                          Galway
+                        </option>,
+                        "key": "Galway",
+                        "patchFlag": 1,
+                        "props": Object {
+                          "key": "Galway",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 9,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "option",
+                      },
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "Kilkenny",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": Array [],
+                        "dynamicProps": null,
+                        "el": <option>
+                          Kilkenny
+                        </option>,
+                        "key": "Kilkenny",
+                        "patchFlag": 1,
+                        "props": Object {
+                          "key": "Kilkenny",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 9,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "option",
+                      },
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "Limerick",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": Array [],
+                        "dynamicProps": null,
+                        "el": <option>
+                          Limerick
+                        </option>,
+                        "key": "Limerick",
+                        "patchFlag": 1,
+                        "props": Object {
+                          "key": "Limerick",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 9,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "option",
+                      },
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "Waterford",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": Array [],
+                        "dynamicProps": null,
+                        "el": <option>
+                          Waterford
+                        </option>,
+                        "key": "Waterford",
+                        "patchFlag": 1,
+                        "props": Object {
+                          "key": "Waterford",
                         },
                         "ref": null,
                         "scopeId": null,
@@ -3617,107 +4820,435 @@ VueWrapper {
                     "transition": null,
                     "type": Symbol(Fragment),
                   },
-                ],
-                "component": null,
-                "dirs": Array [
                   Object {
-                    "arg": undefined,
-                    "dir": Object {
-                      "beforeUpdate": [Function],
-                      "created": [Function],
-                      "deep": true,
-                      "mounted": [Function],
-                      "updated": [Function],
-                    },
-                    "instance": Object {
-                      "$route": Object {
-                        "params": Object {
-                          "id": 1,
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": Array [
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "Please select location",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <option
+                          disabled=""
+                          value=""
+                        >
+                          Please select location
+                        </option>,
+                        "key": null,
+                        "patchFlag": -1,
+                        "props": Object {
+                          "disabled": "",
+                          "value": "",
                         },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 9,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "option",
                       },
-                      "$router": Object {
-                        "go": [MockFunction],
-                        "push": [MockFunction],
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": ,
+                        "appContext": null,
+                        "children": Array [
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": "Cork",
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": Array [],
+                            "dynamicProps": null,
+                            "el": <option>
+                              Cork
+                            </option>,
+                            "key": "Cork",
+                            "patchFlag": 1,
+                            "props": Object {
+                              "key": "Cork",
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 9,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "option",
+                          },
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": "Dublin",
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": Array [],
+                            "dynamicProps": null,
+                            "el": <option>
+                              Dublin
+                            </option>,
+                            "key": "Dublin",
+                            "patchFlag": 1,
+                            "props": Object {
+                              "key": "Dublin",
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 9,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "option",
+                          },
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": "Galway",
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": Array [],
+                            "dynamicProps": null,
+                            "el": <option>
+                              Galway
+                            </option>,
+                            "key": "Galway",
+                            "patchFlag": 1,
+                            "props": Object {
+                              "key": "Galway",
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 9,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "option",
+                          },
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": "Kilkenny",
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": Array [],
+                            "dynamicProps": null,
+                            "el": <option>
+                              Kilkenny
+                            </option>,
+                            "key": "Kilkenny",
+                            "patchFlag": 1,
+                            "props": Object {
+                              "key": "Kilkenny",
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 9,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "option",
+                          },
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": "Limerick",
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": Array [],
+                            "dynamicProps": null,
+                            "el": <option>
+                              Limerick
+                            </option>,
+                            "key": "Limerick",
+                            "patchFlag": 1,
+                            "props": Object {
+                              "key": "Limerick",
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 9,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "option",
+                          },
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": "Waterford",
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": Array [],
+                            "dynamicProps": null,
+                            "el": <option>
+                              Waterford
+                            </option>,
+                            "key": "Waterford",
+                            "patchFlag": 1,
+                            "props": Object {
+                              "key": "Waterford",
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 9,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "option",
+                          },
+                        ],
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": Array [],
+                        "dynamicProps": null,
+                        "el": ,
+                        "key": null,
+                        "patchFlag": 128,
+                        "props": null,
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 16,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": Symbol(Fragment),
                       },
-                      "$store": Object {
-                        "dispatch": [MockFunction],
-                        "getters": Object {
-                          "isAuthenticated": [Function],
+                    ],
+                    "component": null,
+                    "dirs": Array [
+                      Object {
+                        "arg": undefined,
+                        "dir": Object {
+                          "beforeUpdate": [Function],
+                          "created": [Function],
+                          "deep": true,
+                          "mounted": [Function],
+                          "updated": [Function],
+                        },
+                        "instance": Object {
+                          "$route": Object {
+                            "params": Object {
+                              "id": 1,
+                            },
+                          },
+                          "$router": Object {
+                            "go": [MockFunction],
+                            "push": [MockFunction],
+                          },
+                          "$store": Object {
+                            "dispatch": [MockFunction],
+                            "getters": Object {
+                              "isAuthenticated": [Function],
+                              "userId": [Function],
+                            },
+                            "state": Object {
+                              "jwtToken": "token",
+                              "userId": 1,
+                            },
+                          },
+                          "addUserEmail": [Function],
+                          "departureCity": "",
+                          "domesticCityLocations": Array [
+                            "Cork",
+                            "Dublin",
+                            "Galway",
+                            "Kilkenny",
+                            "Limerick",
+                            "Waterford",
+                          ],
+                          "edit": false,
+                          "editEventAction": false,
+                          "editEventInfo": undefined,
+                          "errorMessage": "There was an error adding this event, not successfully created.",
+                          "eventService": EventService {
+                            "baseUrl": "http://localhost:3000",
+                          },
+                          "eventType": null,
+                          "eventTypeChange": [Function],
+                          "foreignCityLocations": Array [
+                            "London",
+                            "Manchester",
+                          ],
+                          "foreignTrip": false,
+                          "formTitle": "Create Event",
+                          "hasOwnProperty": [Function],
+                          "hideErrorMessage": [Function],
+                          "individualEvent": undefined,
+                          "invalidEventCreation": false,
+                          "location": "",
+                          "populateFormInfo": [Function],
+                          "removeIndividualUserEmail": [Function],
+                          "submitForm": [Function],
+                          "title": "",
+                          "userEmail": "",
+                          "userEmails": Array [],
                           "userId": [Function],
                         },
-                        "state": Object {
-                          "jwtToken": "token",
-                          "userId": 1,
-                        },
+                        "modifiers": Object {},
+                        "oldValue": undefined,
+                        "value": "",
                       },
-                      "addUserEmail": [Function],
-                      "departureCity": "",
-                      "domesticCityLocations": Array [
-                        "Cork",
-                        "Dublin",
-                        "Galway",
-                        "Kilkenny",
-                        "Limerick",
-                        "Waterford",
-                      ],
-                      "edit": false,
-                      "editEventAction": false,
-                      "editEventInfo": undefined,
-                      "errorMessage": "There was an error adding this event, not successfully created.",
-                      "eventService": EventService {
-                        "baseUrl": "http://localhost:3000",
-                      },
-                      "eventType": null,
-                      "eventTypeChange": [Function],
-                      "foreignCityLocations": Array [
-                        "London",
-                        "Manchester",
-                      ],
-                      "foreignTrip": false,
-                      "formTitle": "Create Event",
-                      "hasOwnProperty": [Function],
-                      "hideErrorMessage": [Function],
-                      "individualEvent": undefined,
-                      "invalidEventCreation": false,
-                      "location": "",
-                      "populateFormInfo": [Function],
-                      "removeIndividualUserEmail": [Function],
-                      "submitForm": [Function],
-                      "title": "",
-                      "userEmail": "",
-                      "userEmails": Array [],
-                      "userId": [Function],
+                    ],
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <select
+                      id="location"
+                    >
+                      <option
+                        disabled=""
+                        value=""
+                      >
+                        Please select location
+                      </option>
+                      
+                      <option>
+                        Cork
+                      </option>
+                      <option>
+                        Dublin
+                      </option>
+                      <option>
+                        Galway
+                      </option>
+                      <option>
+                        Kilkenny
+                      </option>
+                      <option>
+                        Limerick
+                      </option>
+                      <option>
+                        Waterford
+                      </option>
+                      
+                    </select>,
+                    "key": null,
+                    "patchFlag": 512,
+                    "props": Object {
+                      "id": "location",
+                      "onUpdate:modelValue": [Function],
                     },
-                    "modifiers": Object {},
-                    "oldValue": undefined,
-                    "value": "",
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 17,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "select",
                   },
                 ],
-                "dynamicChildren": null,
                 "dynamicProps": null,
-                "el": <select
-                  id="location"
+                "el": <div
+                  class="form-control"
                 >
-                  <option
-                    disabled=""
-                    value=""
+                  <label
+                    class="radio-label"
+                    for="location"
                   >
-                    Please select location
-                  </option>
-                  
-                  <option>
-                    London
-                  </option>
-                  <option>
-                    Manchester
-                  </option>
-                  
-                </select>,
-                "key": null,
-                "patchFlag": 512,
+                    Destination
+                  </label>
+                  <select
+                    id="location"
+                  >
+                    <option
+                      disabled=""
+                      value=""
+                    >
+                      Please select location
+                    </option>
+                    
+                    <option>
+                      Cork
+                    </option>
+                    <option>
+                      Dublin
+                    </option>
+                    <option>
+                      Galway
+                    </option>
+                    <option>
+                      Kilkenny
+                    </option>
+                    <option>
+                      Limerick
+                    </option>
+                    <option>
+                      Waterford
+                    </option>
+                    
+                  </select>
+                </div>,
+                "key": 3,
+                "patchFlag": 0,
                 "props": Object {
-                  "id": "location",
-                  "onUpdate:modelValue": [Function],
+                  "class": "form-control",
+                  "key": 3,
                 },
                 "ref": null,
                 "scopeId": null,
@@ -3730,7 +5261,7 @@ VueWrapper {
                 "target": null,
                 "targetAnchor": null,
                 "transition": null,
-                "type": "select",
+                "type": "div",
               },
               Object {
                 "__v_isVNode": true,
@@ -4298,10 +5829,22 @@ VueWrapper {
                   </option>
                   
                   <option>
-                    London
+                    Cork
                   </option>
                   <option>
-                    Manchester
+                    Dublin
+                  </option>
+                  <option>
+                    Galway
+                  </option>
+                  <option>
+                    Kilkenny
+                  </option>
+                  <option>
+                    Limerick
+                  </option>
+                  <option>
+                    Waterford
                   </option>
                   
                 </select>
@@ -4532,10 +6075,22 @@ VueWrapper {
               </option>
               
               <option>
-                London
+                Cork
               </option>
               <option>
-                Manchester
+                Dublin
+              </option>
+              <option>
+                Galway
+              </option>
+              <option>
+                Kilkenny
+              </option>
+              <option>
+                Limerick
+              </option>
+              <option>
+                Waterford
               </option>
               
             </select>
@@ -4808,10 +6363,22 @@ VueWrapper {
               </option>
               
               <option>
-                London
+                Cork
               </option>
               <option>
-                Manchester
+                Dublin
+              </option>
+              <option>
+                Galway
+              </option>
+              <option>
+                Kilkenny
+              </option>
+              <option>
+                Limerick
+              </option>
+              <option>
+                Waterford
               </option>
               
             </select>
@@ -5081,10 +6648,22 @@ VueWrapper {
         </option>
         
         <option>
-          London
+          Cork
         </option>
         <option>
-          Manchester
+          Dublin
+        </option>
+        <option>
+          Galway
+        </option>
+        <option>
+          Kilkenny
+        </option>
+        <option>
+          Limerick
+        </option>
+        <option>
+          Waterford
         </option>
         
       </select>

@@ -61,8 +61,7 @@ describe("RegisterForm.vue", () => {
 
     await wrapper.find("form").trigger("submit.prevent");
 
-    expect(mockRouter.push).toHaveBeenCalledTimes(1);
-    //expect(mockStore.dispatch).toHaveBeenCalledTimes(3);
+    expect(wrapper.emitted()).toHaveProperty("showToast");
     expect(wrapper.findComponent(AccountErrorMessage).isVisible()).toBe(false);
   });
 

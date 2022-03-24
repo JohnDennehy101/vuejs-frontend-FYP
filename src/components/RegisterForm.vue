@@ -61,7 +61,9 @@ export default {
       if (!user) {
         this.invalidRegistration = true;
       } else {
-        this.$router.push({ path: `/dashboard/${user}` });
+        this.$emit("showToast", true);
+        this.email = "";
+        this.password = "";
       }
     },
     hideErrorMessage() {
@@ -72,7 +74,6 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .login-form-container {
   width: 50%;
