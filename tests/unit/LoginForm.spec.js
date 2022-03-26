@@ -12,10 +12,9 @@ const mockRoute = {
 };
 
 describe("LoginForm.vue", () => {
-
   afterEach(() => {
-        jest.resetAllMocks();
-    });
+    jest.resetAllMocks();
+  });
 
   it("should render correctly", () => {
     const wrapper = shallowMount(LoginForm);
@@ -37,10 +36,82 @@ describe("LoginForm.vue", () => {
     );
   });
 
+  it("error messages not shown if valid inputs provided for email and password", async () => {
+    const wrapper = mount(LoginForm, {
+      props: {
+        userService: mockSuccessfulUserService,
+      },
+      global: {
+        mocks: {
+          $store: mockStore,
+          $route: mockRoute,
+          $router: mockRouter,
+        },
+      },
+    });
+
+    await wrapper.find("input[type=text]").setValue("name@mail.com");
+    await wrapper
+      .find("input[type=password]")
+      .setValue("ReallyHardPassword112234%");
+
+    expect(wrapper.find(".error-message").exists()).toBe(false);
+  });
+
+  it("error message shown in email field if no value provided", async () => {
+    const wrapper = mount(LoginForm, {
+      props: {
+        userService: mockSuccessfulUserService,
+      },
+      global: {
+        mocks: {
+          $store: mockStore,
+          $route: mockRoute,
+          $router: mockRouter,
+        },
+      },
+    });
+    await wrapper
+      .find("input[type=password]")
+      .setValue("ReallyHardPassword112234%");
+
+    const button = await wrapper.find("button");
+    expect(button.exists()).toBe(true);
+
+    await wrapper.find("form").trigger("submit.prevent");
+    expect(wrapper.find(".error-message").text()).toBe(
+      "Please provide an email"
+    );
+  });
+
+  it("error message shown in password field if no value provided for password", async () => {
+    const wrapper = mount(LoginForm, {
+      props: {
+        userService: mockSuccessfulUserService,
+      },
+      global: {
+        mocks: {
+          $store: mockStore,
+          $route: mockRoute,
+          $router: mockRouter,
+        },
+      },
+    });
+    await wrapper.find("input[type=text]").setValue("name@mail.com");
+
+    const button = await wrapper.find("button");
+    expect(button.exists()).toBe(true);
+
+    await wrapper.find("form").trigger("submit.prevent");
+    expect(wrapper.find(".error-message").text()).toBe(
+      "Please provide a password"
+    );
+  });
+
   it("successfully logs in a user if valid password and email", async () => {
     const wrapper = mount(LoginForm, {
       props: {
-        userService: mockSuccessfulUserService
+        userService: mockSuccessfulUserService,
       },
       global: {
         mocks: {

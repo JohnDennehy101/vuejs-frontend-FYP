@@ -33,6 +33,7 @@ VueWrapper {
               placeholder="Enter email"
               type="text"
             />
+            <!--v-if-->
           </div>
           <div
             class="form-control"
@@ -48,6 +49,7 @@ VueWrapper {
               placeholder="Enter password"
               type="password"
             />
+            <!--v-if-->
           </div>
           <div
             class="form-control"
@@ -181,12 +183,14 @@ VueWrapper {
       "refs": Object {
         "VTU_COMPONENT": Object {
           "email": "",
+          "emailNotProvided": false,
           "errorMessage": "There was an error logging you in.",
           "formTitle": undefined,
           "hasOwnProperty": [Function],
           "hideErrorMessage": [Function],
           "invalidLogin": false,
           "password": "",
+          "passwordNotProvided": false,
           "submitForm": [Function],
           "title": undefined,
           "userService": UserService {
@@ -239,6 +243,7 @@ VueWrapper {
             "_isMockFunction": 0,
             "constructor": 0,
             "email": 2,
+            "emailNotProvided": 2,
             "errorMessage": 2,
             "formTitle": 2,
             "hasOwnProperty": 4,
@@ -246,6 +251,7 @@ VueWrapper {
             "invalidLogin": 2,
             "isVueInstance": 0,
             "password": 2,
+            "passwordNotProvided": 2,
             "submitForm": 4,
             "title": 3,
             "toJSON": 0,
@@ -314,12 +320,14 @@ VueWrapper {
           },
           "ctx": Object {
             "email": "",
+            "emailNotProvided": false,
             "errorMessage": "There was an error logging you in.",
             "formTitle": undefined,
             "hasOwnProperty": [Function],
             "hideErrorMessage": [Function],
             "invalidLogin": false,
             "password": "",
+            "passwordNotProvided": false,
             "submitForm": [Function],
             "title": undefined,
             "userService": UserService {
@@ -329,10 +337,12 @@ VueWrapper {
           "da": null,
           "data": Object {
             "email": "",
+            "emailNotProvided": false,
             "errorMessage": "There was an error logging you in.",
             "formTitle": undefined,
             "invalidLogin": false,
             "password": "",
+            "passwordNotProvided": false,
           },
           "directives": null,
           "ec": null,
@@ -340,6 +350,12 @@ VueWrapper {
             "active": true,
             "allowRecurse": true,
             "deps": Array [
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
               Set {
                 [Circular],
               },
@@ -402,12 +418,14 @@ VueWrapper {
           "provides": Object {},
           "proxy": Object {
             "email": "",
+            "emailNotProvided": false,
             "errorMessage": "There was an error logging you in.",
             "formTitle": undefined,
             "hasOwnProperty": [Function],
             "hideErrorMessage": [Function],
             "invalidLogin": false,
             "password": "",
+            "passwordNotProvided": false,
             "submitForm": [Function],
             "title": undefined,
             "userService": UserService {
@@ -432,6 +450,12 @@ VueWrapper {
                 "active": true,
                 "allowRecurse": true,
                 "deps": Array [
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
                   Set {
                     [Circular],
                   },
@@ -588,12 +612,14 @@ VueWrapper {
                             },
                             "instance": Object {
                               "email": "",
+                              "emailNotProvided": false,
                               "errorMessage": "There was an error logging you in.",
                               "formTitle": undefined,
                               "hasOwnProperty": [Function],
                               "hideErrorMessage": [Function],
                               "invalidLogin": false,
                               "password": "",
+                              "passwordNotProvided": false,
                               "submitForm": [Function],
                               "title": undefined,
                               "userService": UserService {
@@ -635,6 +661,33 @@ VueWrapper {
                         "transition": null,
                         "type": "input",
                       },
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "v-if",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": Array [],
+                        "dynamicProps": null,
+                        "el": <!--v-if-->,
+                        "key": null,
+                        "patchFlag": 0,
+                        "props": null,
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 8,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": Symbol(Comment),
+                      },
                     ],
                     "component": null,
                     "dirs": null,
@@ -654,6 +707,7 @@ VueWrapper {
                         placeholder="Enter email"
                         type="text"
                       />
+                      <!--v-if-->
                     </div>,
                     "key": null,
                     "patchFlag": 0,
@@ -729,12 +783,14 @@ VueWrapper {
                             },
                             "instance": Object {
                               "email": "",
+                              "emailNotProvided": false,
                               "errorMessage": "There was an error logging you in.",
                               "formTitle": undefined,
                               "hasOwnProperty": [Function],
                               "hideErrorMessage": [Function],
                               "invalidLogin": false,
                               "password": "",
+                              "passwordNotProvided": false,
                               "submitForm": [Function],
                               "title": undefined,
                               "userService": UserService {
@@ -776,6 +832,33 @@ VueWrapper {
                         "transition": null,
                         "type": "input",
                       },
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "v-if",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": Array [],
+                        "dynamicProps": null,
+                        "el": <!--v-if-->,
+                        "key": null,
+                        "patchFlag": 0,
+                        "props": null,
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 8,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": Symbol(Comment),
+                      },
                     ],
                     "component": null,
                     "dirs": null,
@@ -795,6 +878,7 @@ VueWrapper {
                         placeholder="Enter password"
                         type="password"
                       />
+                      <!--v-if-->
                     </div>,
                     "key": null,
                     "patchFlag": 0,
@@ -1175,6 +1259,7 @@ VueWrapper {
                       placeholder="Enter email"
                       type="text"
                     />
+                    <!--v-if-->
                   </div>
                   <div
                     class="form-control"
@@ -1190,6 +1275,7 @@ VueWrapper {
                       placeholder="Enter password"
                       type="password"
                     />
+                    <!--v-if-->
                   </div>
                   <div
                     class="form-control"
@@ -1269,12 +1355,14 @@ VueWrapper {
                     },
                     "instance": Object {
                       "email": "",
+                      "emailNotProvided": false,
                       "errorMessage": "There was an error logging you in.",
                       "formTitle": undefined,
                       "hasOwnProperty": [Function],
                       "hideErrorMessage": [Function],
                       "invalidLogin": false,
                       "password": "",
+                      "passwordNotProvided": false,
                       "submitForm": [Function],
                       "title": undefined,
                       "userService": UserService {
@@ -1321,6 +1409,33 @@ VueWrapper {
                 "__v_skip": true,
                 "anchor": null,
                 "appContext": null,
+                "children": "v-if",
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": Array [],
+                "dynamicProps": null,
+                "el": <!--v-if-->,
+                "key": null,
+                "patchFlag": 0,
+                "props": null,
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 8,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": Symbol(Comment),
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
                 "children": null,
                 "component": null,
                 "dirs": Array [
@@ -1333,12 +1448,14 @@ VueWrapper {
                     },
                     "instance": Object {
                       "email": "",
+                      "emailNotProvided": false,
                       "errorMessage": "There was an error logging you in.",
                       "formTitle": undefined,
                       "hasOwnProperty": [Function],
                       "hideErrorMessage": [Function],
                       "invalidLogin": false,
                       "password": "",
+                      "passwordNotProvided": false,
                       "submitForm": [Function],
                       "title": undefined,
                       "userService": UserService {
@@ -1379,6 +1496,33 @@ VueWrapper {
                 "targetAnchor": null,
                 "transition": null,
                 "type": "input",
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": "v-if",
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": Array [],
+                "dynamicProps": null,
+                "el": <!--v-if-->,
+                "key": null,
+                "patchFlag": 0,
+                "props": null,
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 8,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": Symbol(Comment),
               },
               Object {
                 "__v_isVNode": true,
@@ -1686,6 +1830,7 @@ VueWrapper {
                     placeholder="Enter email"
                     type="text"
                   />
+                  <!--v-if-->
                 </div>
                 <div
                   class="form-control"
@@ -1701,6 +1846,7 @@ VueWrapper {
                     placeholder="Enter password"
                     type="password"
                   />
+                  <!--v-if-->
                 </div>
                 <div
                   class="form-control"
@@ -1807,6 +1953,7 @@ VueWrapper {
                 placeholder="Enter email"
                 type="text"
               />
+              <!--v-if-->
             </div>
             <div
               class="form-control"
@@ -1822,6 +1969,7 @@ VueWrapper {
                 placeholder="Enter password"
                 type="password"
               />
+              <!--v-if-->
             </div>
             <div
               class="form-control"
@@ -1970,6 +2118,7 @@ VueWrapper {
                 placeholder="Enter email"
                 type="text"
               />
+              <!--v-if-->
             </div>
             <div
               class="form-control"
@@ -1985,6 +2134,7 @@ VueWrapper {
                 placeholder="Enter password"
                 type="password"
               />
+              <!--v-if-->
             </div>
             <div
               class="form-control"
@@ -2043,12 +2193,14 @@ VueWrapper {
   "__setProps": [Function],
   "componentVM": Object {
     "email": "",
+    "emailNotProvided": false,
     "errorMessage": "There was an error logging you in.",
     "formTitle": undefined,
     "hasOwnProperty": [Function],
     "hideErrorMessage": [Function],
     "invalidLogin": false,
     "password": "",
+    "passwordNotProvided": false,
     "submitForm": [Function],
     "title": undefined,
     "userService": UserService {
@@ -2080,6 +2232,7 @@ VueWrapper {
           placeholder="Enter email"
           type="text"
         />
+        <!--v-if-->
       </div>
       <div
         class="form-control"
@@ -2095,6 +2248,7 @@ VueWrapper {
           placeholder="Enter password"
           type="password"
         />
+        <!--v-if-->
       </div>
       <div
         class="form-control"

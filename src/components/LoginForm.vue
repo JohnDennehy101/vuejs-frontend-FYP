@@ -13,6 +13,9 @@
           placeholder="Enter email"
           v-model="email"
         />
+        <p class="error-message" v-if="emailNotProvided">
+          Please provide an email
+        </p>
       </div>
       <div class="form-control">
         <label for="password">Password</label>
@@ -23,6 +26,9 @@
           placeholder="Enter password"
           v-model="password"
         />
+        <p class="error-message" v-if="passwordNotProvided">
+          Please provide a password
+        </p>
       </div>
       <div class="form-control">
         <button>Login</button>
@@ -54,6 +60,8 @@ export default {
       formTitle: this.title,
       invalidLogin: false,
       errorMessage: "There was an error logging you in.",
+      passwordNotProvided: false,
+      emailNotProvided: false,
     };
   },
   components: {
@@ -61,16 +69,28 @@ export default {
   },
   methods: {
     async submitForm() {
-      const user = await this.userService.loginUser(this.email, this.password);
-      console.log(user);
+      if (this.email.length > 0 && this.password.length > 0) {
+        const user = await this.userService.loginUser(
+          this.email,
+          this.password
+        );
 
-      if (user) {
-        this.$store.dispatch("setUserId", user.userId);
-        this.$store.dispatch("setUserEmail", user.userEmail);
-        this.$store.dispatch("login");
-        this.$router.push({ path: `/dashboard/${user.userId}` });
+        if (typeof user !== "string") {
+          this.$store.dispatch("setUserId", user.userId);
+          this.$store.dispatch("setUserEmail", user.userEmail);
+          this.$store.dispatch("login");
+          this.$router.push({ path: `/dashboard/${user.userId}` });
+        } else {
+          this.errorMessage = user;
+          this.invalidLogin = true;
+        }
       } else {
-        this.invalidLogin = true;
+        if (this.email.length === 0) {
+          this.emailNotProvided = true;
+        }
+        if (this.password.length === 0) {
+          this.passwordNotProvided = true;
+        }
       }
     },
     hideErrorMessage() {
@@ -138,6 +158,12 @@ form {
   }
   img {
     width: 1.5rem;
+  }
+  .error-message {
+    margin-top: 0.4rem;
+    margin-left: 0.1rem;
+    font-size: 0.9rem;
+    color: red;
   }
 }
 </style>

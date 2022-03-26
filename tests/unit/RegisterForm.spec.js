@@ -4,6 +4,7 @@ import AccountErrorMessage from "@/components/AccountErrorMessage";
 import mockSuccessfulUserService from "./mocks/userService.mock";
 import mockStore from "./mocks/mockStore.mock";
 import mockRouter from "./mocks/mockRouter.mock";
+import { nextTick } from "vue";
 
 const mockRoute = {
   params: {
@@ -12,10 +13,9 @@ const mockRoute = {
 };
 
 describe("RegisterForm.vue", () => {
-
   afterEach(() => {
-        jest.resetAllMocks();
-    });
+    jest.resetAllMocks();
+  });
 
   it("should render correctly", () => {
     const wrapper = shallowMount(RegisterForm);
@@ -46,7 +46,7 @@ describe("RegisterForm.vue", () => {
         mocks: {
           $store: mockStore,
           $route: mockRoute,
-          $router: mockRouter
+          $router: mockRouter,
         },
       },
     });
@@ -74,6 +74,89 @@ describe("RegisterForm.vue", () => {
       },
     });
     expect(wrapper.findComponent(AccountErrorMessage).isVisible()).toBe(true);
+  });
+
+  it("error registering a user if external API call fails", async () => {
+    const mockFailureUserService = {
+      registerUser() {
+        return new Promise((resolve, reject) => {
+          resolve(undefined);
+        });
+      },
+    };
+    const wrapper = mount(RegisterForm, {
+      props: {
+        userService: mockFailureUserService,
+      },
+      global: {
+        mocks: {
+          $store: mockStore,
+          $route: mockRoute,
+          $router: mockRouter,
+        },
+      },
+    });
+
+    await wrapper.find("input[type=text]").setValue("name@mail.com");
+    await wrapper
+      .find("input[type=password]")
+      .setValue("ReallyHardPassword112234%");
+
+    const button = await wrapper.find("button");
+    expect(button.exists()).toBe(true);
+
+    await wrapper.find("form").trigger("submit.prevent");
+
+    await nextTick();
+    expect(wrapper.vm.invalidRegistration).toBe(true);
+  });
+
+  it("error messages not shown if valid inputs provided for email and password", async () => {
+    const wrapper = mount(RegisterForm, {
+      props: {
+        userService: mockSuccessfulUserService,
+      },
+      global: {
+        mocks: {
+          $store: mockStore,
+          $route: mockRoute,
+          $router: mockRouter,
+        },
+      },
+    });
+
+    await wrapper.find("input[type=text]").setValue("name@mail.com");
+    await wrapper
+      .find("input[type=password]")
+      .setValue("ReallyHardPassword112234%");
+
+    expect(wrapper.find(".error-message").exists()).toBe(false);
+  });
+
+  it("error message shown in email field if invalid input value is not an email", async () => {
+    const wrapper = mount(RegisterForm, {
+      data() {
+        return {
+          email: "notEmail",
+        };
+      },
+    });
+    expect(wrapper.find(".error-message").text()).toBe(
+      "Please provide a valid email"
+    );
+  });
+
+  it("error message shown in password field if password criteria not satisfied", async () => {
+    const wrapper = mount(RegisterForm, {
+      data() {
+        return {
+          password: "notValid",
+        };
+      },
+    });
+    expect(wrapper.find(".error-message").text()).toBe(
+      "Password must have mininum length of 7, contain uppercase, lowercase, special characters."
+    );
   });
 
   it("hides error message if user clicks to remove message", async () => {

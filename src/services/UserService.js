@@ -25,8 +25,6 @@ class UserService {
         });
 
       if (!("error" in response)) {
-        localStorage.setItem("token", response.data.jwtToken);
-        localStorage.setItem("id", response.data.userId);
         return response.data.userId;
       } else {
         return false;
@@ -51,8 +49,10 @@ class UserService {
     if (!("error" in response)) {
       await localStorage.setItem("token", response.data.jwtToken);
       return response.data;
-    } else {
-      return false;
+    } else if (response.error.response.data.statusCode === 403) {
+      return "Please confirm account via email received before logging in.";
+    } else if (response.error.response.data.statusCode === 400) {
+      return "No account found with those credentials.";
     }
   }
   logoutUser() {
@@ -67,7 +67,7 @@ class UserService {
       .post(this.baseUrl + "/users/confirm-email", payload, {
         headers: {
           "Access-Control-Allow-Origin": "*",
-          "Authorization": `Bearer ${token}`
+          Authorization: `Bearer ${token}`,
         },
       })
       .catch((error) => {
@@ -79,11 +79,12 @@ class UserService {
   async updateUser(id, payload, token) {
     let headers;
     if (token) {
-      headers = {"Access-Control-Allow-Origin": "*",
-      "Authorization": "Bearer " + token}
-    }
-    else {
-      headers = {"Access-Control-Allow-Origin": "*"}
+      headers = {
+        "Access-Control-Allow-Origin": "*",
+        Authorization: "Bearer " + token,
+      };
+    } else {
+      headers = { "Access-Control-Allow-Origin": "*" };
     }
     const response = await axios
       .patch(`${this.baseUrl}/users/${id}`, payload, {
@@ -116,7 +117,7 @@ class UserService {
       .post(`${this.baseUrl}/users/${id}/image`, payload, {
         headers: {
           "Access-Control-Allow-Origin": "*",
-          "Content-Type":'multipart/form-data'
+          "Content-Type": "multipart/form-data",
         },
       })
       .catch((error) => {
@@ -124,10 +125,7 @@ class UserService {
       });
 
     return response;
-    
   }
-
-  
 }
 
 const userService = new UserService();

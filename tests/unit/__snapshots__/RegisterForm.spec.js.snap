@@ -26,8 +26,10 @@ VueWrapper {
               id="email"
               name="email"
               placeholder="Enter email"
+              required=""
               type="text"
             />
+            <!--v-if-->
           </div>
           <div
             class="form-control"
@@ -39,10 +41,13 @@ VueWrapper {
             </label>
             <input
               id="password"
+              minlength="7"
               name="password"
               placeholder="Enter password"
+              required=""
               type="password"
             />
+            <!--v-if-->
           </div>
           <div
             class="form-control"
@@ -185,6 +190,8 @@ VueWrapper {
           "userService": UserService {
             "baseUrl": "http://localhost:3000",
           },
+          "validEmail": false,
+          "validPassword": false,
         },
       },
       "render": [Function],
@@ -241,6 +248,8 @@ VueWrapper {
             "submitForm": 4,
             "toJSON": 0,
             "userService": 3,
+            "validEmail": 4,
+            "validPassword": 4,
             Symbol(Symbol.toStringTag): 0,
           },
           "appContext": Object {
@@ -314,6 +323,8 @@ VueWrapper {
             "userService": UserService {
               "baseUrl": "http://localhost:3000",
             },
+            "validEmail": false,
+            "validPassword": false,
           },
           "da": null,
           "data": Object {
@@ -330,6 +341,28 @@ VueWrapper {
             "deps": Array [
               Set {
                 [Circular],
+                ReactiveEffect {
+                  "active": true,
+                  "deps": Array [
+                    [Circular],
+                  ],
+                  "fn": [Function],
+                  "scheduler": [Function],
+                },
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+                ReactiveEffect {
+                  "active": true,
+                  "deps": Array [
+                    [Circular],
+                  ],
+                  "fn": [Function],
+                  "scheduler": [Function],
+                },
               },
               Set {
                 [Circular],
@@ -390,6 +423,8 @@ VueWrapper {
             "userService": UserService {
               "baseUrl": "http://localhost:3000",
             },
+            "validEmail": false,
+            "validPassword": false,
           },
           "refs": Object {},
           "render": [Function],
@@ -407,10 +442,120 @@ VueWrapper {
             "effects": Array [
               ReactiveEffect {
                 "active": true,
+                "deps": Array [
+                  Set {
+                    ReactiveEffect {
+                      "active": true,
+                      "allowRecurse": true,
+                      "deps": Array [
+                        [Circular],
+                        Set {
+                          [Circular],
+                        },
+                        Set {
+                          [Circular],
+                          ReactiveEffect {
+                            "active": true,
+                            "deps": Array [
+                              [Circular],
+                            ],
+                            "fn": [Function],
+                            "scheduler": [Function],
+                          },
+                        },
+                        Set {
+                          [Circular],
+                        },
+                        Set {
+                          [Circular],
+                        },
+                        Set {
+                          [Circular],
+                        },
+                      ],
+                      "fn": [Function],
+                      "onTrack": undefined,
+                      "onTrigger": undefined,
+                      "scheduler": [Function],
+                    },
+                    [Circular],
+                  },
+                ],
+                "fn": [Function],
+                "scheduler": [Function],
+              },
+              ReactiveEffect {
+                "active": true,
+                "deps": Array [
+                  Set {
+                    ReactiveEffect {
+                      "active": true,
+                      "allowRecurse": true,
+                      "deps": Array [
+                        Set {
+                          [Circular],
+                          ReactiveEffect {
+                            "active": true,
+                            "deps": Array [
+                              [Circular],
+                            ],
+                            "fn": [Function],
+                            "scheduler": [Function],
+                          },
+                        },
+                        Set {
+                          [Circular],
+                        },
+                        [Circular],
+                        Set {
+                          [Circular],
+                        },
+                        Set {
+                          [Circular],
+                        },
+                        Set {
+                          [Circular],
+                        },
+                      ],
+                      "fn": [Function],
+                      "onTrack": undefined,
+                      "onTrigger": undefined,
+                      "scheduler": [Function],
+                    },
+                    [Circular],
+                  },
+                ],
+                "fn": [Function],
+                "scheduler": [Function],
+              },
+              ReactiveEffect {
+                "active": true,
                 "allowRecurse": true,
                 "deps": Array [
                   Set {
                     [Circular],
+                    ReactiveEffect {
+                      "active": true,
+                      "deps": Array [
+                        [Circular],
+                      ],
+                      "fn": [Function],
+                      "scheduler": [Function],
+                    },
+                  },
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                    ReactiveEffect {
+                      "active": true,
+                      "deps": Array [
+                        [Circular],
+                      ],
+                      "fn": [Function],
+                      "scheduler": [Function],
+                    },
                   },
                   Set {
                     [Circular],
@@ -510,6 +655,8 @@ VueWrapper {
                               "userService": UserService {
                                 "baseUrl": "http://localhost:3000",
                               },
+                              "validEmail": false,
+                              "validPassword": false,
                             },
                             "modifiers": Object {},
                             "oldValue": undefined,
@@ -522,6 +669,7 @@ VueWrapper {
                           id="email"
                           name="email"
                           placeholder="Enter email"
+                          required=""
                           type="text"
                         />,
                         "key": null,
@@ -531,6 +679,7 @@ VueWrapper {
                           "name": "email",
                           "onUpdate:modelValue": [Function],
                           "placeholder": "Enter email",
+                          "required": "",
                           "type": "text",
                         },
                         "ref": null,
@@ -545,6 +694,33 @@ VueWrapper {
                         "targetAnchor": null,
                         "transition": null,
                         "type": "input",
+                      },
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "v-if",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": Array [],
+                        "dynamicProps": null,
+                        "el": <!--v-if-->,
+                        "key": null,
+                        "patchFlag": 0,
+                        "props": null,
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 8,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": Symbol(Comment),
                       },
                     ],
                     "component": null,
@@ -563,8 +739,10 @@ VueWrapper {
                         id="email"
                         name="email"
                         placeholder="Enter email"
+                        required=""
                         type="text"
                       />
+                      <!--v-if-->
                     </div>,
                     "key": null,
                     "patchFlag": 0,
@@ -649,6 +827,8 @@ VueWrapper {
                               "userService": UserService {
                                 "baseUrl": "http://localhost:3000",
                               },
+                              "validEmail": false,
+                              "validPassword": false,
                             },
                             "modifiers": Object {},
                             "oldValue": undefined,
@@ -659,17 +839,21 @@ VueWrapper {
                         "dynamicProps": null,
                         "el": <input
                           id="password"
+                          minlength="7"
                           name="password"
                           placeholder="Enter password"
+                          required=""
                           type="password"
                         />,
                         "key": null,
                         "patchFlag": 512,
                         "props": Object {
                           "id": "password",
+                          "minlength": "7",
                           "name": "password",
                           "onUpdate:modelValue": [Function],
                           "placeholder": "Enter password",
+                          "required": "",
                           "type": "password",
                         },
                         "ref": null,
@@ -684,6 +868,33 @@ VueWrapper {
                         "targetAnchor": null,
                         "transition": null,
                         "type": "input",
+                      },
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "v-if",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": Array [],
+                        "dynamicProps": null,
+                        "el": <!--v-if-->,
+                        "key": null,
+                        "patchFlag": 0,
+                        "props": null,
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 8,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": Symbol(Comment),
                       },
                     ],
                     "component": null,
@@ -700,10 +911,13 @@ VueWrapper {
                       </label>
                       <input
                         id="password"
+                        minlength="7"
                         name="password"
                         placeholder="Enter password"
+                        required=""
                         type="password"
                       />
+                      <!--v-if-->
                     </div>,
                     "key": null,
                     "patchFlag": 0,
@@ -1077,8 +1291,10 @@ VueWrapper {
                       id="email"
                       name="email"
                       placeholder="Enter email"
+                      required=""
                       type="text"
                     />
+                    <!--v-if-->
                   </div>
                   <div
                     class="form-control"
@@ -1090,10 +1306,13 @@ VueWrapper {
                     </label>
                     <input
                       id="password"
+                      minlength="7"
                       name="password"
                       placeholder="Enter password"
+                      required=""
                       type="password"
                     />
+                    <!--v-if-->
                   </div>
                   <div
                     class="form-control"
@@ -1155,6 +1374,8 @@ VueWrapper {
                       "userService": UserService {
                         "baseUrl": "http://localhost:3000",
                       },
+                      "validEmail": false,
+                      "validPassword": false,
                     },
                     "modifiers": Object {},
                     "oldValue": undefined,
@@ -1167,6 +1388,7 @@ VueWrapper {
                   id="email"
                   name="email"
                   placeholder="Enter email"
+                  required=""
                   type="text"
                 />,
                 "key": null,
@@ -1176,6 +1398,7 @@ VueWrapper {
                   "name": "email",
                   "onUpdate:modelValue": [Function],
                   "placeholder": "Enter email",
+                  "required": "",
                   "type": "text",
                 },
                 "ref": null,
@@ -1190,6 +1413,33 @@ VueWrapper {
                 "targetAnchor": null,
                 "transition": null,
                 "type": "input",
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": "v-if",
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": Array [],
+                "dynamicProps": null,
+                "el": <!--v-if-->,
+                "key": null,
+                "patchFlag": 0,
+                "props": null,
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 8,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": Symbol(Comment),
               },
               Object {
                 "__v_isVNode": true,
@@ -1217,6 +1467,8 @@ VueWrapper {
                       "userService": UserService {
                         "baseUrl": "http://localhost:3000",
                       },
+                      "validEmail": false,
+                      "validPassword": false,
                     },
                     "modifiers": Object {},
                     "oldValue": undefined,
@@ -1227,17 +1479,21 @@ VueWrapper {
                 "dynamicProps": null,
                 "el": <input
                   id="password"
+                  minlength="7"
                   name="password"
                   placeholder="Enter password"
+                  required=""
                   type="password"
                 />,
                 "key": null,
                 "patchFlag": 512,
                 "props": Object {
                   "id": "password",
+                  "minlength": "7",
                   "name": "password",
                   "onUpdate:modelValue": [Function],
                   "placeholder": "Enter password",
+                  "required": "",
                   "type": "password",
                 },
                 "ref": null,
@@ -1252,6 +1508,33 @@ VueWrapper {
                 "targetAnchor": null,
                 "transition": null,
                 "type": "input",
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": "v-if",
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": Array [],
+                "dynamicProps": null,
+                "el": <!--v-if-->,
+                "key": null,
+                "patchFlag": 0,
+                "props": null,
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 8,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": Symbol(Comment),
               },
               Object {
                 "__v_isVNode": true,
@@ -1552,8 +1835,10 @@ VueWrapper {
                     id="email"
                     name="email"
                     placeholder="Enter email"
+                    required=""
                     type="text"
                   />
+                  <!--v-if-->
                 </div>
                 <div
                   class="form-control"
@@ -1565,10 +1850,13 @@ VueWrapper {
                   </label>
                   <input
                     id="password"
+                    minlength="7"
                     name="password"
                     placeholder="Enter password"
+                    required=""
                     type="password"
                   />
+                  <!--v-if-->
                 </div>
                 <div
                   class="form-control"
@@ -1625,6 +1913,10 @@ VueWrapper {
                 "render": [Function],
               },
             },
+            "computed": Object {
+              "validEmail": [Function],
+              "validPassword": [Function],
+            },
             "data": [Function],
             "methods": Object {
               "hideErrorMessage": [Function],
@@ -1667,8 +1959,10 @@ VueWrapper {
                 id="email"
                 name="email"
                 placeholder="Enter email"
+                required=""
                 type="text"
               />
+              <!--v-if-->
             </div>
             <div
               class="form-control"
@@ -1680,10 +1974,13 @@ VueWrapper {
               </label>
               <input
                 id="password"
+                minlength="7"
                 name="password"
                 placeholder="Enter password"
+                required=""
                 type="password"
               />
+              <!--v-if-->
             </div>
             <div
               class="form-control"
@@ -1740,6 +2037,10 @@ VueWrapper {
               },
               "render": [Function],
             },
+          },
+          "computed": Object {
+            "validEmail": [Function],
+            "validPassword": [Function],
           },
           "data": [Function],
           "methods": Object {
@@ -1824,8 +2125,10 @@ VueWrapper {
                 id="email"
                 name="email"
                 placeholder="Enter email"
+                required=""
                 type="text"
               />
+              <!--v-if-->
             </div>
             <div
               class="form-control"
@@ -1837,10 +2140,13 @@ VueWrapper {
               </label>
               <input
                 id="password"
+                minlength="7"
                 name="password"
                 placeholder="Enter password"
+                required=""
                 type="password"
               />
+              <!--v-if-->
             </div>
             <div
               class="form-control"
@@ -1908,6 +2214,8 @@ VueWrapper {
     "userService": UserService {
       "baseUrl": "http://localhost:3000",
     },
+    "validEmail": false,
+    "validPassword": false,
   },
   "isDisabled": [Function],
   "rootVM": Object {},
@@ -1927,8 +2235,10 @@ VueWrapper {
           id="email"
           name="email"
           placeholder="Enter email"
+          required=""
           type="text"
         />
+        <!--v-if-->
       </div>
       <div
         class="form-control"
@@ -1940,10 +2250,13 @@ VueWrapper {
         </label>
         <input
           id="password"
+          minlength="7"
           name="password"
           placeholder="Enter password"
+          required=""
           type="password"
         />
+        <!--v-if-->
       </div>
       <div
         class="form-control"
