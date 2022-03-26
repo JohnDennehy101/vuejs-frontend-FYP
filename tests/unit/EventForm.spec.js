@@ -169,7 +169,13 @@ describe("EventForm.vue", () => {
       createEvent() {
         return new Promise((resolve, reject) => {
           resolve({
-            error: "Error message",
+            error: {
+              response: {
+                data: {
+                  statusCode: 400,
+                },
+              },
+            },
           });
         });
       },
@@ -205,6 +211,62 @@ describe("EventForm.vue", () => {
 
     await wrapper.find("form").trigger("submit.prevent");
     await nextTick();
+    expect(wrapper.vm.errorMessage).toBe(
+      "Error creating event. Bad request. Please ensure values are provided for each field and try again."
+    );
+    expect(wrapper.vm.invalidEventCreation).toBe(true);
+  });
+
+  it("for new event, if user uses an event title that has already been used, a 409 resopnse should be received", async () => {
+    const mockFailureEventService = {
+      createEvent() {
+        return new Promise((resolve, reject) => {
+          resolve({
+            error: {
+              response: {
+                data: {
+                  statusCode: 409,
+                },
+              },
+            },
+          });
+        });
+      },
+    };
+    const wrapper = mount(EventForm, {
+      data() {
+        return {
+          editEventAction: false,
+          editEventInfo: mockEvent,
+        };
+      },
+      props: {
+        eventService: mockFailureEventService,
+      },
+      global: {
+        mocks: {
+          $store: mockStore,
+          $route: mockRoute,
+          $router: mockRouter,
+        },
+      },
+    });
+
+    await wrapper.find("#title").setValue("Test Event");
+    const radio = wrapper.find("#DOMESTIC_DAY");
+    radio.element.selected = true;
+    radio.trigger("change");
+
+    wrapper.find("#location").setValue("Cork");
+
+    const button = await wrapper.find("button");
+    expect(button.exists()).toBe(true);
+
+    await wrapper.find("form").trigger("submit.prevent");
+    await nextTick();
+    expect(wrapper.vm.errorMessage).toBe(
+      "Error creating event. An event already exists with this title."
+    );
     expect(wrapper.vm.invalidEventCreation).toBe(true);
   });
 
@@ -367,7 +429,7 @@ describe("EventForm.vue", () => {
       },
     });
 
-    wrapper.find("#location").setValue("")
+    wrapper.find("#location").setValue("");
 
     const button = await wrapper.find("button");
     expect(button.exists()).toBe(true);
@@ -411,6 +473,58 @@ describe("EventForm.vue", () => {
     await wrapper.find("form").trigger("submit.prevent");
     expect(mockRouter.push).toHaveBeenCalledTimes(1);
     expect(wrapper.findComponent(AccountErrorMessage).isVisible()).toBe(false);
+  });
+
+  it("if editing event, if event title already in use by another record, should return a 409 response", async () => {
+    const mockFailureEventService = {
+      updateEvent() {
+        return new Promise((resolve, reject) => {
+          resolve({
+            error: {
+              response: {
+                data: {
+                  statusCode: 409,
+                },
+              },
+            },
+          });
+        });
+      },
+    };
+    const wrapper = mount(EventForm, {
+      data() {
+        return {
+          editEventAction: true,
+          editEventInfo: mockEvent,
+          invalidEventCreation: false,
+        };
+      },
+      props: {
+        eventService: mockFailureEventService,
+      },
+      global: {
+        mocks: {
+          $store: mockStore,
+          $route: mockRoute,
+          $router: mockRouter,
+        },
+      },
+    });
+    await wrapper.find("#title").setValue("Test Event");
+    const radio = wrapper.find("#DOMESTIC_DAY");
+    radio.element.selected = true;
+    radio.trigger("change");
+
+    wrapper.find("#location").setValue("Cork");
+
+    const button = await wrapper.find("button");
+    expect(button.exists()).toBe(true);
+
+    await wrapper.find("form").trigger("submit.prevent");
+    await nextTick();
+    expect(wrapper.vm.errorMessage).toBe(
+      "Error updating event. An event already exists with this title."
+    );
   });
 
   it("if unsuccessful response, error message rendered to user", async () => {

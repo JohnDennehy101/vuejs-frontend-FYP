@@ -223,6 +223,10 @@ export default {
             this.$router.push({ path: `/dashboard/${this.userId}` });
           } else {
             this.invalidEventCreation = true;
+            if (response.error.response.data.statusCode === 409) {
+              this.errorMessage =
+                "Error updating event. An event already exists with this title.";
+            }
           }
         } else {
           if (this.title.length === 0) {
@@ -260,10 +264,19 @@ export default {
             payload
           );
 
+          console.log(response);
+
           if (!("error" in response)) {
             this.$router.push({ path: `/dashboard/${this.userId}` });
           } else {
             this.invalidEventCreation = true;
+            if (response.error.response.data.statusCode === 409) {
+              this.errorMessage =
+                "Error creating event. An event already exists with this title.";
+            } else if (response.error.response.data.statusCode === 400) {
+              this.errorMessage =
+                "Error creating event. Bad request. Please ensure values are provided for each field and try again.";
+            }
           }
         } else {
           if (this.title.length === 0) {
@@ -347,7 +360,7 @@ export default {
 <style scoped lang="scss">
 form {
   width: 80%;
-  height: 90%;
+  height: 95%;
 
   background-color: #fff;
   margin: 1rem auto;

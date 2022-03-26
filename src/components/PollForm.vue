@@ -9,6 +9,9 @@
         placeholder="Enter title"
         v-model="title"
       />
+      <p class="error-message" v-if="titleNotProvided">
+        Please provide a title for the poll
+      </p>
     </div>
     <div class="form-control">
       <label for="startDate">Start Date</label>
@@ -17,6 +20,9 @@
         v-bind:style="datePickerStyleObject"
         :lower-limit="restrictDatePicker"
       />
+      <p class="error-message" v-if="startDateNotProvided">
+        Please provide a start date for the poll option
+      </p>
     </div>
     <div class="form-control">
       <label for="endDate">End Date</label>
@@ -25,8 +31,14 @@
         v-bind:style="datePickerStyleObject"
         :lower-limit="startDate"
       />
+      <p class="error-message" v-if="endDateNotProvided">
+        Please provide an end date for the poll option
+      </p>
     </div>
     <div class="form-control">
+      <p class="error-message" v-if="pollOptionNotProvided">
+        Please provide at least one poll option for the poll
+      </p>
       <button
         @click="addPollOption"
         data-testid="button"
@@ -57,6 +69,7 @@ import Datepicker from "vue3-datepicker";
 import PollOption from "./PollOption";
 import eventService from "../services/EventService";
 import StringUtils from "../utils/stringUtils";
+import { mapGetters } from "vuex";
 export default {
   props: {
     poll: Object,
@@ -76,6 +89,10 @@ export default {
       options: [],
       id: "",
       optionId: 0,
+      titleNotProvided: false,
+      startDateNotProvided: false,
+      endDateNotProvided: false,
+      pollOptionNotProvided: false,
       datePickerStyleObject: {
         height: "2.5rem",
         width: "98%",
@@ -84,6 +101,11 @@ export default {
         paddingLeft: "10px",
       },
     };
+  },
+  computed: {
+    ...mapGetters({
+      userId: "userId",
+    }),
   },
 
   watch: {
@@ -104,8 +126,6 @@ export default {
     },
     async submitForm() {
       if (this.editPollAction) {
-        const userId = localStorage.getItem("id");
-
         if (this.title.length > 0 && this.options.length > 0) {
           const payload = {
             title: this.title,
@@ -119,14 +139,23 @@ export default {
           );
 
           if (!("error" in response)) {
-            this.$router.push({ path: `/dashboard/${userId}` });
+            this.$router.push({ path: `/dashboard/${this.userId}` });
           } else {
             this.invalidLogin = true;
           }
+        } else {
+          if (this.options.length === 0) {
+            this.pollOptionNotProvided = true;
+          } else {
+            this.pollOptionNotProvided = false;
+          }
+          if (this.title.length === 0) {
+            this.titleNotProvided = true;
+          } else {
+            this.titleNotProvided = false;
+          }
         }
       } else {
-        const userId = localStorage.getItem("id");
-
         if (this.title.length > 0 && this.options.length > 0) {
           const payload = {
             title: this.title,
@@ -139,16 +168,33 @@ export default {
           );
 
           if (!("error" in response)) {
-            this.$router.push({ path: `/dashboard/${userId}` });
+            this.$router.push({ path: `/dashboard/${this.userId}` });
           } else {
             this.invalidLogin = true;
+          }
+        } else {
+          if (this.options.length === 0) {
+            this.pollOptionNotProvided = true;
+          } else {
+            this.pollOptionNotProvided = false;
+          }
+          if (this.title.length === 0) {
+            this.titleNotProvided = true;
+          } else {
+            this.titleNotProvided = false;
           }
         }
       }
     },
     async populateFormInfo() {
       if (this.editPollAction) {
-        const pollInformation = JSON.parse(this.pollInfo);
+        let pollInformation;
+
+        try {
+          pollInformation = JSON.parse(this.pollInfo);
+        } catch (e) {
+          pollInformation = this.pollInfo;
+        }
 
         const response = await this.eventService.getIndividualPoll(
           this.id,
@@ -169,10 +215,19 @@ export default {
           votes: [],
         });
 
+        this.pollOptionNotProvided = false;
+
         this.optionId++;
 
         this.startDate = null;
         this.endDate = null;
+      } else {
+        this.startDate === null
+          ? (this.startDateNotProvided = true)
+          : (this.startDateNotProvided = false);
+        this.endDate === null
+          ? (this.endDateNotProvided = true)
+          : (this.endDateNotProvided = false);
       }
     },
   },
@@ -264,6 +319,12 @@ form {
     }
     h3 {
       font-size: 1rem;
+    }
+    .error-message {
+      margin-top: 0.4rem;
+      margin-left: 0.1rem;
+      font-size: 0.9rem;
+      color: red;
     }
   }
 

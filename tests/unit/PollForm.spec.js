@@ -103,6 +103,157 @@ describe("PollForm.vue", () => {
     expect(mockRouter.push).toHaveBeenCalledTimes(1);
   });
 
+  it("for new poll, if title not present, error message should be displayed", async () => {
+    const wrapper = shallowMount(PollForm, {
+      props: {
+        editPoll: false,
+        eventService: mockSuccessfulEventService,
+      },
+      data() {
+        return {
+          id: "1",
+          options: [],
+          startDate: new Date(1747175775571),
+          endDate: new Date(1747175775571),
+        };
+      },
+      global: {
+        mocks: {
+          $store: mockStore,
+          $route: mockRoute,
+          $router: mockRouter,
+        },
+      },
+      components: {
+        PollOption,
+        Datepicker,
+      },
+      emits: ["removePollOption"],
+    });
+
+    await wrapper.find("form").trigger("submit.prevent");
+
+    console.log(wrapper.vm);
+
+    await wrapper.vm.$nextTick();
+
+    expect(wrapper.find(".error-message").text()).toBe(
+      "Please provide a title for the poll"
+    );
+  });
+
+  it("if user tries to add poll option without providing start date, error message should be rendered", async () => {
+    const wrapper = shallowMount(PollForm, {
+      props: {
+        editPoll: false,
+        eventService: mockSuccessfulEventService,
+      },
+      data() {
+        return {
+          id: "1",
+          options: [],
+          startDate: null,
+          endDate: new Date(1747175775571),
+        };
+      },
+      global: {
+        mocks: {
+          $store: mockStore,
+          $route: mockRoute,
+          $router: mockRouter,
+        },
+      },
+      components: {
+        PollOption,
+        Datepicker,
+      },
+      emits: ["removePollOption"],
+    });
+
+    await wrapper.find('[data-testid="button"]').trigger("click");
+
+    await wrapper.vm.$nextTick();
+
+    expect(wrapper.find(".error-message").text()).toBe(
+      "Please provide a start date for the poll option"
+    );
+  });
+
+  it("if user tries to add poll option without providing end date, error message should be rendered", async () => {
+    const wrapper = shallowMount(PollForm, {
+      props: {
+        editPoll: false,
+        eventService: mockSuccessfulEventService,
+      },
+      data() {
+        return {
+          id: "1",
+          options: [],
+          startDate: new Date(1747175775571),
+          endDate: null,
+        };
+      },
+      global: {
+        mocks: {
+          $store: mockStore,
+          $route: mockRoute,
+          $router: mockRouter,
+        },
+      },
+      components: {
+        PollOption,
+        Datepicker,
+      },
+      emits: ["removePollOption"],
+    });
+
+    await wrapper.find('[data-testid="button"]').trigger("click");
+
+    await wrapper.vm.$nextTick();
+
+    expect(wrapper.find(".error-message").text()).toBe(
+      "Please provide an end date for the poll option"
+    );
+  });
+
+  it("for new poll, if poll option not present, error message should be displayed", async () => {
+    const wrapper = shallowMount(PollForm, {
+      props: {
+        editPoll: false,
+        eventService: mockSuccessfulEventService,
+      },
+      data() {
+        return {
+          id: "1",
+          options: [],
+          startDate: new Date(1747175775571),
+          endDate: new Date(1747175775571),
+        };
+      },
+      global: {
+        mocks: {
+          $store: mockStore,
+          $route: mockRoute,
+          $router: mockRouter,
+        },
+      },
+      components: {
+        PollOption,
+        Datepicker,
+      },
+      emits: ["removePollOption"],
+    });
+
+    await wrapper.find("#title").setValue("Test Poll Title");
+    await wrapper.find("form").trigger("submit.prevent");
+
+    await wrapper.vm.$nextTick();
+
+    expect(wrapper.find(".error-message").text()).toBe(
+      "Please provide at least one poll option for the poll"
+    );
+  });
+
   it("for new poll, if title and poll option not present, poll should not be added", async () => {
     const wrapper = shallowMount(PollForm, {
       props: {
