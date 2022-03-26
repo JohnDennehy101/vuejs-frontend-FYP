@@ -21,8 +21,10 @@
         type="text"
         placeholder="Enter event title"
         v-model="title"
-        required
       />
+      <p class="error-message" v-if="titleNotProvided">
+        Please provide an event title
+      </p>
     </div>
     <div class="form-control">
       <h3>Event Type</h3>
@@ -35,7 +37,6 @@
           value="DOMESTIC_DAY"
           v-on:change="eventTypeChange"
           v-model="eventType"
-          required="required"
         />
         <label class="radio-label" for="DOMESTIC_DAY">Domestic Day Trip</label>
       </div>
@@ -47,7 +48,6 @@
           value="DOMESTIC_OVERNIGHT"
           v-model="eventType"
           v-on:change="eventTypeChange"
-          required="required"
         />
         <label class="radio-label" for="DOMESTIC_OVERNIGHT"
           >Domestic Overnight Trip</label
@@ -61,12 +61,14 @@
           value="FOREIGN_OVERNIGHT"
           v-model="eventType"
           v-on:change="eventTypeChange"
-          required="required"
         />
         <label class="radio-label" for="FOREIGN_OVERNIGHT"
           >Foreign Overnight Trip</label
         >
       </div>
+      <p class="error-message" v-if="typeNotProvided">
+        Please select an event type
+      </p>
     </div>
 
     <div v-if="foreignTrip" class="form-control">
@@ -77,6 +79,9 @@
           {{ city }}
         </option>
       </select>
+      <p class="error-message" v-if="departureNotProvided">
+        Please select a departure city
+      </p>
     </div>
 
     <div v-if="foreignTrip" class="form-control">
@@ -87,6 +92,9 @@
           {{ city }}
         </option>
       </select>
+      <p class="error-message" v-if="destinationNotProvided">
+        Please select a destination city
+      </p>
     </div>
 
     <div v-else class="form-control">
@@ -97,6 +105,9 @@
           {{ city }}
         </option>
       </select>
+      <p class="error-message" v-if="destinationNotProvided">
+        Please select a destination city
+      </p>
     </div>
 
     <div class="form-control">
@@ -109,7 +120,11 @@
         v-model="userEmail"
       />
     </div>
+
     <div class="form-control">
+      <p class="error-message" v-if="emailNotProvided">
+        Please provide an email
+      </p>
       <button @click="addUserEmail" id="add-option-button">Add Email</button>
     </div>
     <div v-if="userEmails.length > 0" class="form-control">
@@ -138,6 +153,7 @@ import AccountErrorMessage from "../components/AccountErrorMessage";
 import EventFormUserEmailDisplay from "../components/EventFormUserEmailDisplay";
 import eventService from "../services/EventService";
 import { mapGetters } from "vuex";
+import StringUtils from "../utils/stringUtils";
 export default {
   props: {
     edit: Boolean,
@@ -170,6 +186,11 @@ export default {
       location: "",
       departureCity: "",
       foreignTrip: false,
+      titleNotProvided: false,
+      typeNotProvided: false,
+      departureNotProvided: false,
+      destinationNotProvided: false,
+      emailNotProvided: false,
     };
   },
   computed: {
@@ -180,26 +201,52 @@ export default {
   methods: {
     async submitForm() {
       if (this.editEventAction) {
-        const payload = {
-          title: this.title,
-          type: this.eventType,
-          userEmails: this.userEmails,
-          city: this.location,
-          departureCity: this.departureCity,
-        };
+        if (
+          this.title.length > 0 &&
+          this.eventType !== null &&
+          this.location.length > 0
+        ) {
+          const payload = {
+            title: this.title,
+            type: this.eventType,
+            userEmails: this.userEmails,
+            city: this.location,
+            departureCity: this.departureCity,
+          };
 
-        const response = await this.eventService.updateEvent(
-          this.editEventInfo.id,
-          payload
-        );
+          const response = await this.eventService.updateEvent(
+            this.editEventInfo.id,
+            payload
+          );
 
-        if (!("error" in response)) {
-          this.$router.push({ path: `/dashboard/${this.userId}` });
+          if (!("error" in response)) {
+            this.$router.push({ path: `/dashboard/${this.userId}` });
+          } else {
+            this.invalidEventCreation = true;
+          }
         } else {
-          this.invalidEventCreation = true;
+          if (this.title.length === 0) {
+            this.titleNotProvided = true;
+          } else if (this.title.length > 0) {
+            this.titleNotProvided = false;
+          }
+          if (this.eventType === null) {
+            this.typeNotProvided = true;
+          } else if (this.eventType) {
+            this.typeNotProvided = false;
+          }
+          if (this.location.length === 0) {
+            this.destinationNotProvided = true;
+          } else {
+            this.destinationNotProvided = false;
+          }
         }
       } else {
-        if (this.title.length > 0 && this.eventType !== null) {
+        if (
+          this.title.length > 0 &&
+          this.eventType !== null &&
+          this.location.length > 0
+        ) {
           const payload = {
             title: this.title,
             type: this.eventType,
@@ -218,17 +265,35 @@ export default {
           } else {
             this.invalidEventCreation = true;
           }
+        } else {
+          if (this.title.length === 0) {
+            this.titleNotProvided = true;
+          } else if (this.title.length > 0) {
+            this.titleNotProvided = false;
+          }
+          if (this.eventType === null) {
+            this.typeNotProvided = true;
+          } else if (this.eventType) {
+            this.typeNotProvided = false;
+          }
+          if (this.location.length === 0) {
+            this.destinationNotProvided = true;
+          } else {
+            this.destinationNotProvided = false;
+          }
         }
       }
     },
     addUserEmail(event) {
       event.preventDefault();
-      //Add email validation here as well
-      if (
+      if (!StringUtils.validateEmail(this.userEmail)) {
+        this.emailNotProvided = true;
+      } else if (
         this.userEmail.length > 0 &&
         !this.userEmails.includes(this.userEmail)
       ) {
         this.userEmails.push(this.userEmail);
+        this.emailNotProvided = false;
 
         this.userEmail = "";
       }
@@ -280,22 +345,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.login-form-container {
-  width: 50%;
-  height: 80vh;
-  display: flex;
-  align-items: center;
-
-  @include for-phone-only {
-    width: 90%;
-  }
-}
 form {
-  width: 60%;
+  width: 80%;
   height: 90%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+
   background-color: #fff;
   margin: 1rem auto;
   border-radius: 10px;
@@ -399,6 +452,12 @@ form {
 
   img {
     width: 1.5rem;
+  }
+  .error-message {
+    margin-top: 0.4rem;
+    margin-left: 0.1rem;
+    font-size: 0.9rem;
+    color: red;
   }
 }
 </style>

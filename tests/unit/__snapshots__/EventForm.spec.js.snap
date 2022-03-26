@@ -31,9 +31,9 @@ VueWrapper {
             id="title"
             name="title"
             placeholder="Enter event title"
-            required=""
             type="text"
           />
+          <!--v-if-->
         </div>
         <div
           class="form-control"
@@ -47,7 +47,6 @@ VueWrapper {
             <input
               id="DOMESTIC_DAY"
               name="eventType"
-              required=""
               type="radio"
               value="DOMESTIC_DAY"
             />
@@ -64,7 +63,6 @@ VueWrapper {
             <input
               id="DOMESTIC_OVERNIGHT"
               name="eventType"
-              required=""
               type="radio"
               value="DOMESTIC_OVERNIGHT"
             />
@@ -81,7 +79,6 @@ VueWrapper {
             <input
               id="FOREIGN_OVERNIGHT"
               name="eventType"
-              required=""
               type="radio"
               value="FOREIGN_OVERNIGHT"
             />
@@ -92,6 +89,7 @@ VueWrapper {
               Foreign Overnight Trip
             </label>
           </div>
+          <!--v-if-->
         </div>
         <!--v-if-->
         <div
@@ -133,6 +131,7 @@ VueWrapper {
             </option>
             
           </select>
+          <!--v-if-->
         </div>
         <div
           class="form-control"
@@ -152,6 +151,7 @@ VueWrapper {
         <div
           class="form-control"
         >
+          <!--v-if-->
           <button
             id="add-option-button"
           >
@@ -353,6 +353,8 @@ VueWrapper {
           },
           "addUserEmail": [Function],
           "departureCity": "",
+          "departureNotProvided": false,
+          "destinationNotProvided": false,
           "domesticCityLocations": Array [
             "Cork",
             "Dublin",
@@ -364,6 +366,7 @@ VueWrapper {
           "edit": false,
           "editEventAction": false,
           "editEventInfo": undefined,
+          "emailNotProvided": false,
           "errorMessage": "There was an error adding this event, not successfully created.",
           "eventService": EventService {
             "baseUrl": "http://localhost:3000",
@@ -385,6 +388,8 @@ VueWrapper {
           "removeIndividualUserEmail": [Function],
           "submitForm": [Function],
           "title": "",
+          "titleNotProvided": false,
+          "typeNotProvided": false,
           "userEmail": "",
           "userEmails": Array [],
           "userId": [Function],
@@ -439,10 +444,13 @@ VueWrapper {
             "addUserEmail": 4,
             "constructor": 0,
             "departureCity": 2,
+            "departureNotProvided": 2,
+            "destinationNotProvided": 2,
             "domesticCityLocations": 2,
             "edit": 3,
             "editEventAction": 2,
             "editEventInfo": 2,
+            "emailNotProvided": 2,
             "errorMessage": 2,
             "eventService": 3,
             "eventType": 2,
@@ -460,7 +468,9 @@ VueWrapper {
             "removeIndividualUserEmail": 4,
             "submitForm": 4,
             "title": 2,
+            "titleNotProvided": 2,
             "toJSON": 0,
+            "typeNotProvided": 2,
             "userEmail": 2,
             "userEmails": 2,
             "userId": 4,
@@ -556,6 +566,8 @@ VueWrapper {
             },
             "addUserEmail": [Function],
             "departureCity": "",
+            "departureNotProvided": false,
+            "destinationNotProvided": false,
             "domesticCityLocations": Array [
               "Cork",
               "Dublin",
@@ -567,6 +579,7 @@ VueWrapper {
             "edit": false,
             "editEventAction": false,
             "editEventInfo": undefined,
+            "emailNotProvided": false,
             "errorMessage": "There was an error adding this event, not successfully created.",
             "eventService": EventService {
               "baseUrl": "http://localhost:3000",
@@ -588,6 +601,8 @@ VueWrapper {
             "removeIndividualUserEmail": [Function],
             "submitForm": [Function],
             "title": "",
+            "titleNotProvided": false,
+            "typeNotProvided": false,
             "userEmail": "",
             "userEmails": Array [],
             "userId": [Function],
@@ -595,6 +610,8 @@ VueWrapper {
           "da": null,
           "data": Object {
             "departureCity": "",
+            "departureNotProvided": false,
+            "destinationNotProvided": false,
             "domesticCityLocations": Array [
               "Cork",
               "Dublin",
@@ -605,6 +622,7 @@ VueWrapper {
             ],
             "editEventAction": false,
             "editEventInfo": undefined,
+            "emailNotProvided": false,
             "errorMessage": "There was an error adding this event, not successfully created.",
             "eventType": null,
             "foreignCityLocations": Array [
@@ -616,6 +634,8 @@ VueWrapper {
             "invalidEventCreation": false,
             "location": "",
             "title": "",
+            "titleNotProvided": false,
+            "typeNotProvided": false,
             "userEmail": "",
             "userEmails": Array [],
           },
@@ -625,6 +645,18 @@ VueWrapper {
             "active": true,
             "allowRecurse": true,
             "deps": Array [
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
               Set {
                 [Circular],
               },
@@ -757,6 +789,8 @@ VueWrapper {
             },
             "addUserEmail": [Function],
             "departureCity": "",
+            "departureNotProvided": false,
+            "destinationNotProvided": false,
             "domesticCityLocations": Array [
               "Cork",
               "Dublin",
@@ -768,6 +802,7 @@ VueWrapper {
             "edit": false,
             "editEventAction": false,
             "editEventInfo": undefined,
+            "emailNotProvided": false,
             "errorMessage": "There was an error adding this event, not successfully created.",
             "eventService": EventService {
               "baseUrl": "http://localhost:3000",
@@ -789,6 +824,8 @@ VueWrapper {
             "removeIndividualUserEmail": [Function],
             "submitForm": [Function],
             "title": "",
+            "titleNotProvided": false,
+            "typeNotProvided": false,
             "userEmail": "",
             "userEmails": Array [],
             "userId": [Function],
@@ -828,6 +865,18 @@ VueWrapper {
                 "active": true,
                 "allowRecurse": true,
                 "deps": Array [
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
                   Set {
                     [Circular],
                   },
@@ -1072,6 +1121,8 @@ VueWrapper {
                           },
                           "addUserEmail": [Function],
                           "departureCity": "",
+                          "departureNotProvided": false,
+                          "destinationNotProvided": false,
                           "domesticCityLocations": Array [
                             "Cork",
                             "Dublin",
@@ -1083,6 +1134,7 @@ VueWrapper {
                           "edit": false,
                           "editEventAction": false,
                           "editEventInfo": undefined,
+                          "emailNotProvided": false,
                           "errorMessage": "There was an error adding this event, not successfully created.",
                           "eventService": EventService {
                             "baseUrl": "http://localhost:3000",
@@ -1104,6 +1156,8 @@ VueWrapper {
                           "removeIndividualUserEmail": [Function],
                           "submitForm": [Function],
                           "title": "",
+                          "titleNotProvided": false,
+                          "typeNotProvided": false,
                           "userEmail": "",
                           "userEmails": Array [],
                           "userId": [Function],
@@ -1119,7 +1173,6 @@ VueWrapper {
                       id="title"
                       name="title"
                       placeholder="Enter event title"
-                      required=""
                       type="text"
                     />,
                     "key": null,
@@ -1129,7 +1182,6 @@ VueWrapper {
                       "name": "title",
                       "onUpdate:modelValue": [Function],
                       "placeholder": "Enter event title",
-                      "required": "",
                       "type": "text",
                     },
                     "ref": null,
@@ -1144,6 +1196,33 @@ VueWrapper {
                     "targetAnchor": null,
                     "transition": null,
                     "type": "input",
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": "v-if",
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": Array [],
+                    "dynamicProps": null,
+                    "el": <!--v-if-->,
+                    "key": null,
+                    "patchFlag": 0,
+                    "props": null,
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 8,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": Symbol(Comment),
                   },
                 ],
                 "component": null,
@@ -1162,9 +1241,9 @@ VueWrapper {
                     id="title"
                     name="title"
                     placeholder="Enter event title"
-                    required=""
                     type="text"
                   />
+                  <!--v-if-->
                 </div>,
                 "key": null,
                 "patchFlag": 0,
@@ -1262,6 +1341,8 @@ VueWrapper {
                               },
                               "addUserEmail": [Function],
                               "departureCity": "",
+                              "departureNotProvided": false,
+                              "destinationNotProvided": false,
                               "domesticCityLocations": Array [
                                 "Cork",
                                 "Dublin",
@@ -1273,6 +1354,7 @@ VueWrapper {
                               "edit": false,
                               "editEventAction": false,
                               "editEventInfo": undefined,
+                              "emailNotProvided": false,
                               "errorMessage": "There was an error adding this event, not successfully created.",
                               "eventService": EventService {
                                 "baseUrl": "http://localhost:3000",
@@ -1294,6 +1376,8 @@ VueWrapper {
                               "removeIndividualUserEmail": [Function],
                               "submitForm": [Function],
                               "title": "",
+                              "titleNotProvided": false,
+                              "typeNotProvided": false,
                               "userEmail": "",
                               "userEmails": Array [],
                               "userId": [Function],
@@ -1308,7 +1392,6 @@ VueWrapper {
                         "el": <input
                           id="DOMESTIC_DAY"
                           name="eventType"
-                          required=""
                           type="radio"
                           value="DOMESTIC_DAY"
                         />,
@@ -1319,7 +1402,6 @@ VueWrapper {
                           "name": "eventType",
                           "onChange": [Function],
                           "onUpdate:modelValue": [Function],
-                          "required": "required",
                           "type": "radio",
                           "value": "DOMESTIC_DAY",
                         },
@@ -1382,7 +1464,6 @@ VueWrapper {
                       <input
                         id="DOMESTIC_DAY"
                         name="eventType"
-                        required=""
                         type="radio"
                         value="DOMESTIC_DAY"
                       />
@@ -1454,6 +1535,8 @@ VueWrapper {
                               },
                               "addUserEmail": [Function],
                               "departureCity": "",
+                              "departureNotProvided": false,
+                              "destinationNotProvided": false,
                               "domesticCityLocations": Array [
                                 "Cork",
                                 "Dublin",
@@ -1465,6 +1548,7 @@ VueWrapper {
                               "edit": false,
                               "editEventAction": false,
                               "editEventInfo": undefined,
+                              "emailNotProvided": false,
                               "errorMessage": "There was an error adding this event, not successfully created.",
                               "eventService": EventService {
                                 "baseUrl": "http://localhost:3000",
@@ -1486,6 +1570,8 @@ VueWrapper {
                               "removeIndividualUserEmail": [Function],
                               "submitForm": [Function],
                               "title": "",
+                              "titleNotProvided": false,
+                              "typeNotProvided": false,
                               "userEmail": "",
                               "userEmails": Array [],
                               "userId": [Function],
@@ -1500,7 +1586,6 @@ VueWrapper {
                         "el": <input
                           id="DOMESTIC_OVERNIGHT"
                           name="eventType"
-                          required=""
                           type="radio"
                           value="DOMESTIC_OVERNIGHT"
                         />,
@@ -1511,7 +1596,6 @@ VueWrapper {
                           "name": "eventType",
                           "onChange": [Function],
                           "onUpdate:modelValue": [Function],
-                          "required": "required",
                           "type": "radio",
                           "value": "DOMESTIC_OVERNIGHT",
                         },
@@ -1574,7 +1658,6 @@ VueWrapper {
                       <input
                         id="DOMESTIC_OVERNIGHT"
                         name="eventType"
-                        required=""
                         type="radio"
                         value="DOMESTIC_OVERNIGHT"
                       />
@@ -1646,6 +1729,8 @@ VueWrapper {
                               },
                               "addUserEmail": [Function],
                               "departureCity": "",
+                              "departureNotProvided": false,
+                              "destinationNotProvided": false,
                               "domesticCityLocations": Array [
                                 "Cork",
                                 "Dublin",
@@ -1657,6 +1742,7 @@ VueWrapper {
                               "edit": false,
                               "editEventAction": false,
                               "editEventInfo": undefined,
+                              "emailNotProvided": false,
                               "errorMessage": "There was an error adding this event, not successfully created.",
                               "eventService": EventService {
                                 "baseUrl": "http://localhost:3000",
@@ -1678,6 +1764,8 @@ VueWrapper {
                               "removeIndividualUserEmail": [Function],
                               "submitForm": [Function],
                               "title": "",
+                              "titleNotProvided": false,
+                              "typeNotProvided": false,
                               "userEmail": "",
                               "userEmails": Array [],
                               "userId": [Function],
@@ -1692,7 +1780,6 @@ VueWrapper {
                         "el": <input
                           id="FOREIGN_OVERNIGHT"
                           name="eventType"
-                          required=""
                           type="radio"
                           value="FOREIGN_OVERNIGHT"
                         />,
@@ -1703,7 +1790,6 @@ VueWrapper {
                           "name": "eventType",
                           "onChange": [Function],
                           "onUpdate:modelValue": [Function],
-                          "required": "required",
                           "type": "radio",
                           "value": "FOREIGN_OVERNIGHT",
                         },
@@ -1766,7 +1852,6 @@ VueWrapper {
                       <input
                         id="FOREIGN_OVERNIGHT"
                         name="eventType"
-                        required=""
                         type="radio"
                         value="FOREIGN_OVERNIGHT"
                       />
@@ -1795,6 +1880,33 @@ VueWrapper {
                     "transition": null,
                     "type": "div",
                   },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": "v-if",
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": Array [],
+                    "dynamicProps": null,
+                    "el": <!--v-if-->,
+                    "key": null,
+                    "patchFlag": 0,
+                    "props": null,
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 8,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": Symbol(Comment),
+                  },
                 ],
                 "component": null,
                 "dirs": null,
@@ -1812,7 +1924,6 @@ VueWrapper {
                     <input
                       id="DOMESTIC_DAY"
                       name="eventType"
-                      required=""
                       type="radio"
                       value="DOMESTIC_DAY"
                     />
@@ -1829,7 +1940,6 @@ VueWrapper {
                     <input
                       id="DOMESTIC_OVERNIGHT"
                       name="eventType"
-                      required=""
                       type="radio"
                       value="DOMESTIC_OVERNIGHT"
                     />
@@ -1846,7 +1956,6 @@ VueWrapper {
                     <input
                       id="FOREIGN_OVERNIGHT"
                       name="eventType"
-                      required=""
                       type="radio"
                       value="FOREIGN_OVERNIGHT"
                     />
@@ -1857,6 +1966,7 @@ VueWrapper {
                       Foreign Overnight Trip
                     </label>
                   </div>
+                  <!--v-if-->
                 </div>,
                 "key": null,
                 "patchFlag": 0,
@@ -2234,6 +2344,8 @@ VueWrapper {
                           },
                           "addUserEmail": [Function],
                           "departureCity": "",
+                          "departureNotProvided": false,
+                          "destinationNotProvided": false,
                           "domesticCityLocations": Array [
                             "Cork",
                             "Dublin",
@@ -2245,6 +2357,7 @@ VueWrapper {
                           "edit": false,
                           "editEventAction": false,
                           "editEventInfo": undefined,
+                          "emailNotProvided": false,
                           "errorMessage": "There was an error adding this event, not successfully created.",
                           "eventService": EventService {
                             "baseUrl": "http://localhost:3000",
@@ -2266,6 +2379,8 @@ VueWrapper {
                           "removeIndividualUserEmail": [Function],
                           "submitForm": [Function],
                           "title": "",
+                          "titleNotProvided": false,
+                          "typeNotProvided": false,
                           "userEmail": "",
                           "userEmails": Array [],
                           "userId": [Function],
@@ -2325,6 +2440,33 @@ VueWrapper {
                     "targetAnchor": null,
                     "transition": null,
                     "type": "select",
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": "v-if",
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": Array [],
+                    "dynamicProps": null,
+                    "el": <!--v-if-->,
+                    "key": null,
+                    "patchFlag": 0,
+                    "props": null,
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 8,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": Symbol(Comment),
                   },
                 ],
                 "component": null,
@@ -2834,6 +2976,8 @@ VueWrapper {
                           },
                           "addUserEmail": [Function],
                           "departureCity": "",
+                          "departureNotProvided": false,
+                          "destinationNotProvided": false,
                           "domesticCityLocations": Array [
                             "Cork",
                             "Dublin",
@@ -2845,6 +2989,7 @@ VueWrapper {
                           "edit": false,
                           "editEventAction": false,
                           "editEventInfo": undefined,
+                          "emailNotProvided": false,
                           "errorMessage": "There was an error adding this event, not successfully created.",
                           "eventService": EventService {
                             "baseUrl": "http://localhost:3000",
@@ -2866,6 +3011,8 @@ VueWrapper {
                           "removeIndividualUserEmail": [Function],
                           "submitForm": [Function],
                           "title": "",
+                          "titleNotProvided": false,
+                          "typeNotProvided": false,
                           "userEmail": "",
                           "userEmails": Array [],
                           "userId": [Function],
@@ -2926,6 +3073,33 @@ VueWrapper {
                     "transition": null,
                     "type": "select",
                   },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": "v-if",
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": Array [],
+                    "dynamicProps": null,
+                    "el": <!--v-if-->,
+                    "key": null,
+                    "patchFlag": 0,
+                    "props": null,
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 8,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": Symbol(Comment),
+                  },
                 ],
                 "dynamicProps": null,
                 "el": <div
@@ -2967,6 +3141,7 @@ VueWrapper {
                     </option>
                     
                   </select>
+                  <!--v-if-->
                 </div>,
                 "key": 3,
                 "patchFlag": 0,
@@ -3064,6 +3239,8 @@ VueWrapper {
                           },
                           "addUserEmail": [Function],
                           "departureCity": "",
+                          "departureNotProvided": false,
+                          "destinationNotProvided": false,
                           "domesticCityLocations": Array [
                             "Cork",
                             "Dublin",
@@ -3075,6 +3252,7 @@ VueWrapper {
                           "edit": false,
                           "editEventAction": false,
                           "editEventInfo": undefined,
+                          "emailNotProvided": false,
                           "errorMessage": "There was an error adding this event, not successfully created.",
                           "eventService": EventService {
                             "baseUrl": "http://localhost:3000",
@@ -3096,6 +3274,8 @@ VueWrapper {
                           "removeIndividualUserEmail": [Function],
                           "submitForm": [Function],
                           "title": "",
+                          "titleNotProvided": false,
+                          "typeNotProvided": false,
                           "userEmail": "",
                           "userEmails": Array [],
                           "userId": [Function],
@@ -3184,6 +3364,33 @@ VueWrapper {
                     "__v_skip": true,
                     "anchor": null,
                     "appContext": null,
+                    "children": "v-if",
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": Array [],
+                    "dynamicProps": null,
+                    "el": <!--v-if-->,
+                    "key": null,
+                    "patchFlag": 0,
+                    "props": null,
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 8,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": Symbol(Comment),
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
                     "children": "Add Email",
                     "component": null,
                     "dirs": null,
@@ -3221,6 +3428,7 @@ VueWrapper {
                 "el": <div
                   class="form-control"
                 >
+                  <!--v-if-->
                   <button
                     id="add-option-button"
                   >
@@ -3746,6 +3954,8 @@ VueWrapper {
                       },
                       "addUserEmail": [Function],
                       "departureCity": "",
+                      "departureNotProvided": false,
+                      "destinationNotProvided": false,
                       "domesticCityLocations": Array [
                         "Cork",
                         "Dublin",
@@ -3757,6 +3967,7 @@ VueWrapper {
                       "edit": false,
                       "editEventAction": false,
                       "editEventInfo": undefined,
+                      "emailNotProvided": false,
                       "errorMessage": "There was an error adding this event, not successfully created.",
                       "eventService": EventService {
                         "baseUrl": "http://localhost:3000",
@@ -3778,6 +3989,8 @@ VueWrapper {
                       "removeIndividualUserEmail": [Function],
                       "submitForm": [Function],
                       "title": "",
+                      "titleNotProvided": false,
+                      "typeNotProvided": false,
                       "userEmail": "",
                       "userEmails": Array [],
                       "userId": [Function],
@@ -3793,7 +4006,6 @@ VueWrapper {
                   id="title"
                   name="title"
                   placeholder="Enter event title"
-                  required=""
                   type="text"
                 />,
                 "key": null,
@@ -3803,7 +4015,6 @@ VueWrapper {
                   "name": "title",
                   "onUpdate:modelValue": [Function],
                   "placeholder": "Enter event title",
-                  "required": "",
                   "type": "text",
                 },
                 "ref": null,
@@ -3818,6 +4029,33 @@ VueWrapper {
                 "targetAnchor": null,
                 "transition": null,
                 "type": "input",
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": "v-if",
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": Array [],
+                "dynamicProps": null,
+                "el": <!--v-if-->,
+                "key": null,
+                "patchFlag": 0,
+                "props": null,
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 8,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": Symbol(Comment),
               },
               Object {
                 "__v_isVNode": true,
@@ -3856,6 +4094,8 @@ VueWrapper {
                       },
                       "addUserEmail": [Function],
                       "departureCity": "",
+                      "departureNotProvided": false,
+                      "destinationNotProvided": false,
                       "domesticCityLocations": Array [
                         "Cork",
                         "Dublin",
@@ -3867,6 +4107,7 @@ VueWrapper {
                       "edit": false,
                       "editEventAction": false,
                       "editEventInfo": undefined,
+                      "emailNotProvided": false,
                       "errorMessage": "There was an error adding this event, not successfully created.",
                       "eventService": EventService {
                         "baseUrl": "http://localhost:3000",
@@ -3888,6 +4129,8 @@ VueWrapper {
                       "removeIndividualUserEmail": [Function],
                       "submitForm": [Function],
                       "title": "",
+                      "titleNotProvided": false,
+                      "typeNotProvided": false,
                       "userEmail": "",
                       "userEmails": Array [],
                       "userId": [Function],
@@ -3902,7 +4145,6 @@ VueWrapper {
                 "el": <input
                   id="DOMESTIC_DAY"
                   name="eventType"
-                  required=""
                   type="radio"
                   value="DOMESTIC_DAY"
                 />,
@@ -3913,7 +4155,6 @@ VueWrapper {
                   "name": "eventType",
                   "onChange": [Function],
                   "onUpdate:modelValue": [Function],
-                  "required": "required",
                   "type": "radio",
                   "value": "DOMESTIC_DAY",
                 },
@@ -3967,6 +4208,8 @@ VueWrapper {
                       },
                       "addUserEmail": [Function],
                       "departureCity": "",
+                      "departureNotProvided": false,
+                      "destinationNotProvided": false,
                       "domesticCityLocations": Array [
                         "Cork",
                         "Dublin",
@@ -3978,6 +4221,7 @@ VueWrapper {
                       "edit": false,
                       "editEventAction": false,
                       "editEventInfo": undefined,
+                      "emailNotProvided": false,
                       "errorMessage": "There was an error adding this event, not successfully created.",
                       "eventService": EventService {
                         "baseUrl": "http://localhost:3000",
@@ -3999,6 +4243,8 @@ VueWrapper {
                       "removeIndividualUserEmail": [Function],
                       "submitForm": [Function],
                       "title": "",
+                      "titleNotProvided": false,
+                      "typeNotProvided": false,
                       "userEmail": "",
                       "userEmails": Array [],
                       "userId": [Function],
@@ -4013,7 +4259,6 @@ VueWrapper {
                 "el": <input
                   id="DOMESTIC_OVERNIGHT"
                   name="eventType"
-                  required=""
                   type="radio"
                   value="DOMESTIC_OVERNIGHT"
                 />,
@@ -4024,7 +4269,6 @@ VueWrapper {
                   "name": "eventType",
                   "onChange": [Function],
                   "onUpdate:modelValue": [Function],
-                  "required": "required",
                   "type": "radio",
                   "value": "DOMESTIC_OVERNIGHT",
                 },
@@ -4078,6 +4322,8 @@ VueWrapper {
                       },
                       "addUserEmail": [Function],
                       "departureCity": "",
+                      "departureNotProvided": false,
+                      "destinationNotProvided": false,
                       "domesticCityLocations": Array [
                         "Cork",
                         "Dublin",
@@ -4089,6 +4335,7 @@ VueWrapper {
                       "edit": false,
                       "editEventAction": false,
                       "editEventInfo": undefined,
+                      "emailNotProvided": false,
                       "errorMessage": "There was an error adding this event, not successfully created.",
                       "eventService": EventService {
                         "baseUrl": "http://localhost:3000",
@@ -4110,6 +4357,8 @@ VueWrapper {
                       "removeIndividualUserEmail": [Function],
                       "submitForm": [Function],
                       "title": "",
+                      "titleNotProvided": false,
+                      "typeNotProvided": false,
                       "userEmail": "",
                       "userEmails": Array [],
                       "userId": [Function],
@@ -4124,7 +4373,6 @@ VueWrapper {
                 "el": <input
                   id="FOREIGN_OVERNIGHT"
                   name="eventType"
-                  required=""
                   type="radio"
                   value="FOREIGN_OVERNIGHT"
                 />,
@@ -4135,7 +4383,6 @@ VueWrapper {
                   "name": "eventType",
                   "onChange": [Function],
                   "onUpdate:modelValue": [Function],
-                  "required": "required",
                   "type": "radio",
                   "value": "FOREIGN_OVERNIGHT",
                 },
@@ -4151,6 +4398,33 @@ VueWrapper {
                 "targetAnchor": null,
                 "transition": null,
                 "type": "input",
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": "v-if",
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": Array [],
+                "dynamicProps": null,
+                "el": <!--v-if-->,
+                "key": null,
+                "patchFlag": 0,
+                "props": null,
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 8,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": Symbol(Comment),
               },
               Object {
                 "__v_isVNode": true,
@@ -4510,6 +4784,8 @@ VueWrapper {
                           },
                           "addUserEmail": [Function],
                           "departureCity": "",
+                          "departureNotProvided": false,
+                          "destinationNotProvided": false,
                           "domesticCityLocations": Array [
                             "Cork",
                             "Dublin",
@@ -4521,6 +4797,7 @@ VueWrapper {
                           "edit": false,
                           "editEventAction": false,
                           "editEventInfo": undefined,
+                          "emailNotProvided": false,
                           "errorMessage": "There was an error adding this event, not successfully created.",
                           "eventService": EventService {
                             "baseUrl": "http://localhost:3000",
@@ -4542,6 +4819,8 @@ VueWrapper {
                           "removeIndividualUserEmail": [Function],
                           "submitForm": [Function],
                           "title": "",
+                          "titleNotProvided": false,
+                          "typeNotProvided": false,
                           "userEmail": "",
                           "userEmails": Array [],
                           "userId": [Function],
@@ -4601,6 +4880,33 @@ VueWrapper {
                     "targetAnchor": null,
                     "transition": null,
                     "type": "select",
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": "v-if",
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": Array [],
+                    "dynamicProps": null,
+                    "el": <!--v-if-->,
+                    "key": null,
+                    "patchFlag": 0,
+                    "props": null,
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 8,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": Symbol(Comment),
                   },
                 ],
                 "component": null,
@@ -5110,6 +5416,8 @@ VueWrapper {
                           },
                           "addUserEmail": [Function],
                           "departureCity": "",
+                          "departureNotProvided": false,
+                          "destinationNotProvided": false,
                           "domesticCityLocations": Array [
                             "Cork",
                             "Dublin",
@@ -5121,6 +5429,7 @@ VueWrapper {
                           "edit": false,
                           "editEventAction": false,
                           "editEventInfo": undefined,
+                          "emailNotProvided": false,
                           "errorMessage": "There was an error adding this event, not successfully created.",
                           "eventService": EventService {
                             "baseUrl": "http://localhost:3000",
@@ -5142,6 +5451,8 @@ VueWrapper {
                           "removeIndividualUserEmail": [Function],
                           "submitForm": [Function],
                           "title": "",
+                          "titleNotProvided": false,
+                          "typeNotProvided": false,
                           "userEmail": "",
                           "userEmails": Array [],
                           "userId": [Function],
@@ -5202,6 +5513,33 @@ VueWrapper {
                     "transition": null,
                     "type": "select",
                   },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": "v-if",
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": Array [],
+                    "dynamicProps": null,
+                    "el": <!--v-if-->,
+                    "key": null,
+                    "patchFlag": 0,
+                    "props": null,
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 8,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": Symbol(Comment),
+                  },
                 ],
                 "dynamicProps": null,
                 "el": <div
@@ -5243,6 +5581,7 @@ VueWrapper {
                     </option>
                     
                   </select>
+                  <!--v-if-->
                 </div>,
                 "key": 3,
                 "patchFlag": 0,
@@ -5301,6 +5640,8 @@ VueWrapper {
                       },
                       "addUserEmail": [Function],
                       "departureCity": "",
+                      "departureNotProvided": false,
+                      "destinationNotProvided": false,
                       "domesticCityLocations": Array [
                         "Cork",
                         "Dublin",
@@ -5312,6 +5653,7 @@ VueWrapper {
                       "edit": false,
                       "editEventAction": false,
                       "editEventInfo": undefined,
+                      "emailNotProvided": false,
                       "errorMessage": "There was an error adding this event, not successfully created.",
                       "eventService": EventService {
                         "baseUrl": "http://localhost:3000",
@@ -5333,6 +5675,8 @@ VueWrapper {
                       "removeIndividualUserEmail": [Function],
                       "submitForm": [Function],
                       "title": "",
+                      "titleNotProvided": false,
+                      "typeNotProvided": false,
                       "userEmail": "",
                       "userEmails": Array [],
                       "userId": [Function],
@@ -5371,6 +5715,33 @@ VueWrapper {
                 "targetAnchor": null,
                 "transition": null,
                 "type": "input",
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": "v-if",
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": Array [],
+                "dynamicProps": null,
+                "el": <!--v-if-->,
+                "key": null,
+                "patchFlag": 0,
+                "props": null,
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 8,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": Symbol(Comment),
               },
               Object {
                 "__v_isVNode": true,
@@ -5746,9 +6117,9 @@ VueWrapper {
                   id="title"
                   name="title"
                   placeholder="Enter event title"
-                  required=""
                   type="text"
                 />
+                <!--v-if-->
               </div>
               <div
                 class="form-control"
@@ -5762,7 +6133,6 @@ VueWrapper {
                   <input
                     id="DOMESTIC_DAY"
                     name="eventType"
-                    required=""
                     type="radio"
                     value="DOMESTIC_DAY"
                   />
@@ -5779,7 +6149,6 @@ VueWrapper {
                   <input
                     id="DOMESTIC_OVERNIGHT"
                     name="eventType"
-                    required=""
                     type="radio"
                     value="DOMESTIC_OVERNIGHT"
                   />
@@ -5796,7 +6165,6 @@ VueWrapper {
                   <input
                     id="FOREIGN_OVERNIGHT"
                     name="eventType"
-                    required=""
                     type="radio"
                     value="FOREIGN_OVERNIGHT"
                   />
@@ -5807,6 +6175,7 @@ VueWrapper {
                     Foreign Overnight Trip
                   </label>
                 </div>
+                <!--v-if-->
               </div>
               <!--v-if-->
               <div
@@ -5848,6 +6217,7 @@ VueWrapper {
                   </option>
                   
                 </select>
+                <!--v-if-->
               </div>
               <div
                 class="form-control"
@@ -5867,6 +6237,7 @@ VueWrapper {
               <div
                 class="form-control"
               >
+                <!--v-if-->
                 <button
                   id="add-option-button"
                 >
@@ -5992,9 +6363,9 @@ VueWrapper {
               id="title"
               name="title"
               placeholder="Enter event title"
-              required=""
               type="text"
             />
+            <!--v-if-->
           </div>
           <div
             class="form-control"
@@ -6008,7 +6379,6 @@ VueWrapper {
               <input
                 id="DOMESTIC_DAY"
                 name="eventType"
-                required=""
                 type="radio"
                 value="DOMESTIC_DAY"
               />
@@ -6025,7 +6395,6 @@ VueWrapper {
               <input
                 id="DOMESTIC_OVERNIGHT"
                 name="eventType"
-                required=""
                 type="radio"
                 value="DOMESTIC_OVERNIGHT"
               />
@@ -6042,7 +6411,6 @@ VueWrapper {
               <input
                 id="FOREIGN_OVERNIGHT"
                 name="eventType"
-                required=""
                 type="radio"
                 value="FOREIGN_OVERNIGHT"
               />
@@ -6053,6 +6421,7 @@ VueWrapper {
                 Foreign Overnight Trip
               </label>
             </div>
+            <!--v-if-->
           </div>
           <!--v-if-->
           <div
@@ -6094,6 +6463,7 @@ VueWrapper {
               </option>
               
             </select>
+            <!--v-if-->
           </div>
           <div
             class="form-control"
@@ -6113,6 +6483,7 @@ VueWrapper {
           <div
             class="form-control"
           >
+            <!--v-if-->
             <button
               id="add-option-button"
             >
@@ -6280,9 +6651,9 @@ VueWrapper {
               id="title"
               name="title"
               placeholder="Enter event title"
-              required=""
               type="text"
             />
+            <!--v-if-->
           </div>
           <div
             class="form-control"
@@ -6296,7 +6667,6 @@ VueWrapper {
               <input
                 id="DOMESTIC_DAY"
                 name="eventType"
-                required=""
                 type="radio"
                 value="DOMESTIC_DAY"
               />
@@ -6313,7 +6683,6 @@ VueWrapper {
               <input
                 id="DOMESTIC_OVERNIGHT"
                 name="eventType"
-                required=""
                 type="radio"
                 value="DOMESTIC_OVERNIGHT"
               />
@@ -6330,7 +6699,6 @@ VueWrapper {
               <input
                 id="FOREIGN_OVERNIGHT"
                 name="eventType"
-                required=""
                 type="radio"
                 value="FOREIGN_OVERNIGHT"
               />
@@ -6341,6 +6709,7 @@ VueWrapper {
                 Foreign Overnight Trip
               </label>
             </div>
+            <!--v-if-->
           </div>
           <!--v-if-->
           <div
@@ -6382,6 +6751,7 @@ VueWrapper {
               </option>
               
             </select>
+            <!--v-if-->
           </div>
           <div
             class="form-control"
@@ -6401,6 +6771,7 @@ VueWrapper {
           <div
             class="form-control"
           >
+            <!--v-if-->
             <button
               id="add-option-button"
             >
@@ -6485,6 +6856,8 @@ VueWrapper {
     },
     "addUserEmail": [Function],
     "departureCity": "",
+    "departureNotProvided": false,
+    "destinationNotProvided": false,
     "domesticCityLocations": Array [
       "Cork",
       "Dublin",
@@ -6496,6 +6869,7 @@ VueWrapper {
     "edit": false,
     "editEventAction": false,
     "editEventInfo": undefined,
+    "emailNotProvided": false,
     "errorMessage": "There was an error adding this event, not successfully created.",
     "eventService": EventService {
       "baseUrl": "http://localhost:3000",
@@ -6517,6 +6891,8 @@ VueWrapper {
     "removeIndividualUserEmail": [Function],
     "submitForm": [Function],
     "title": "",
+    "titleNotProvided": false,
+    "typeNotProvided": false,
     "userEmail": "",
     "userEmails": Array [],
     "userId": [Function],
@@ -6565,9 +6941,9 @@ VueWrapper {
         id="title"
         name="title"
         placeholder="Enter event title"
-        required=""
         type="text"
       />
+      <!--v-if-->
     </div>
     <div
       class="form-control"
@@ -6581,7 +6957,6 @@ VueWrapper {
         <input
           id="DOMESTIC_DAY"
           name="eventType"
-          required=""
           type="radio"
           value="DOMESTIC_DAY"
         />
@@ -6598,7 +6973,6 @@ VueWrapper {
         <input
           id="DOMESTIC_OVERNIGHT"
           name="eventType"
-          required=""
           type="radio"
           value="DOMESTIC_OVERNIGHT"
         />
@@ -6615,7 +6989,6 @@ VueWrapper {
         <input
           id="FOREIGN_OVERNIGHT"
           name="eventType"
-          required=""
           type="radio"
           value="FOREIGN_OVERNIGHT"
         />
@@ -6626,6 +6999,7 @@ VueWrapper {
           Foreign Overnight Trip
         </label>
       </div>
+      <!--v-if-->
     </div>
     <!--v-if-->
     <div
@@ -6667,6 +7041,7 @@ VueWrapper {
         </option>
         
       </select>
+      <!--v-if-->
     </div>
     <div
       class="form-control"
@@ -6686,6 +7061,7 @@ VueWrapper {
     <div
       class="form-control"
     >
+      <!--v-if-->
       <button
         id="add-option-button"
       >

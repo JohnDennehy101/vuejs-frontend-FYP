@@ -5,292 +5,521 @@ import mockSuccessfulEventService from "./mocks/eventService.mock";
 import mockStore from "./mocks/mockStore.mock";
 import mockRouter from "./mocks/mockRouter.mock";
 import eventService from "../../src/services/EventService";
+import { nextTick } from "vue";
 
 const mockRoute = {
-    params: {
-        id: 1,
-    },
+  params: {
+    id: 1,
+  },
 };
 
 const mockEvent = {
-    title: "Test Event",
-    type: "DOMESTIC_OVERNIGHT",
-    location: "Cork",
+  title: "Test Event",
+  type: "DOMESTIC_OVERNIGHT",
+  location: "Cork",
 };
 
 const mockForeignEvent = {
-    title: "Test Event",
-    type: "FOREIGN_OVERNIGHT",
-    location: "London",
-    departureCity: "Cork"
+  title: "Test Event",
+  type: "FOREIGN_OVERNIGHT",
+  location: "London",
+  departureCity: "Cork",
 };
 
 describe("EventForm.vue", () => {
-    afterEach(() => {
-        jest.resetAllMocks();
+  afterEach(() => {
+    jest.resetAllMocks();
+  });
+  it("should render correctly", () => {
+    const wrapper = shallowMount(EventForm, {
+      global: {
+        mocks: {
+          $store: mockStore,
+          $route: mockRoute,
+          $router: mockRouter,
+        },
+      },
     });
-    it("should render correctly", () => {
-        const wrapper = shallowMount(EventForm, {
-            global: {
-                mocks: {
-                    $store: mockStore,
-                    $route: mockRoute,
-                    $router: mockRouter,
-                },
-            },
+    expect(wrapper).toMatchSnapshot();
+  });
+  it("if not edit action, hide form icon not rendered", async () => {
+    const wrapper = mount(EventForm, {
+      props: {
+        edit: false,
+      },
+      data() {
+        return {
+          editEventAction: false,
+          editEventInfo: mockEvent,
+        };
+      },
+    });
+
+    expect(wrapper.find("#hide-form-icon-container").exists()).toBe(false);
+  });
+
+  it("if not edit action, form title should be create event", async () => {
+    const wrapper = mount(EventForm, {
+      props: {
+        editEventAction: false,
+      },
+    });
+
+    await flushPromises();
+
+    expect(wrapper.find("h2").text()).toEqual("Create Event");
+  });
+
+  it("if edit action, hide form icon rendered", async () => {
+    const wrapper = mount(EventForm, {
+      data() {
+        return {
+          editEventAction: true,
+          editEventInfo: mockEvent,
+        };
+      },
+    });
+    await flushPromises();
+
+    expect(wrapper.find("#hide-form-icon-container").exists()).toBe(true);
+  });
+
+  it("if edit action, form title should be edit event", async () => {
+    const wrapper = mount(EventForm, {
+      data() {
+        return {
+          editEventAction: true,
+          editEventInfo: mockEvent,
+        };
+      },
+    });
+
+    await flushPromises();
+
+    expect(wrapper.find("h2").text()).toEqual("Edit Event");
+  });
+
+  it("clicking on exit form icon during edit of form should emit hideEditEventActionClick event", async () => {
+    const wrapper = mount(EventForm, {
+      data() {
+        return {
+          editEventAction: true,
+          editEventInfo: mockEvent,
+        };
+      },
+    });
+
+    await wrapper.find("span").trigger("click");
+
+    expect(wrapper.emitted()).toHaveProperty("hideEditEventActionClick");
+  });
+
+  it("calling hideErrorMessage function should set invalidEventCreation variable to false", async () => {
+    const wrapper = mount(EventForm, {
+      data() {
+        return {
+          editEventAction: true,
+          editEventInfo: mockEvent,
+        };
+      },
+    });
+
+    await wrapper.vm.hideErrorMessage();
+
+    expect(wrapper.vm.invalidEventCreation).toBe(false);
+  });
+
+  it("for new event, if user provides input for required fields successful request should be made", async () => {
+    const wrapper = mount(EventForm, {
+      data() {
+        return {
+          editEventAction: false,
+          editEventInfo: mockEvent,
+        };
+      },
+      props: {
+        eventService: mockSuccessfulEventService,
+      },
+      global: {
+        mocks: {
+          $store: mockStore,
+          $route: mockRoute,
+          $router: mockRouter,
+        },
+      },
+    });
+
+    await wrapper.find("#title").setValue("Test Event");
+    const radio = wrapper.find("#DOMESTIC_DAY");
+    radio.element.selected = true;
+    radio.trigger("change");
+
+    wrapper.find("#location").setValue("Cork");
+
+    const button = await wrapper.find("button");
+    expect(button.exists()).toBe(true);
+
+    await wrapper.find("form").trigger("submit.prevent");
+    expect(mockRouter.push).toHaveBeenCalledTimes(1);
+    expect(wrapper.findComponent(AccountErrorMessage).isVisible()).toBe(false);
+  });
+
+  it("for new event, if user provides input for required fields and failed external request, error message should be shown", async () => {
+    const mockFailureEventService = {
+      createEvent() {
+        return new Promise((resolve, reject) => {
+          resolve({
+            error: "Error message",
+          });
         });
-        expect(wrapper).toMatchSnapshot();
-    });
-    it("if not edit action, hide form icon not rendered", async () => {
-        const wrapper = mount(EventForm, {
-            props: {
-                edit: false,
-            },
-            data() {
-                return {
-                    editEventAction: false,
-                    editEventInfo: mockEvent,
-                };
-            },
-        });
-
-        expect(wrapper.find("#hide-form-icon-container").exists()).toBe(false);
-    });
-
-    it("if not edit action, form title should be create event", async () => {
-        const wrapper = mount(EventForm, {
-            props: {
-                editEventAction: false,
-            },
-        });
-
-        await flushPromises();
-
-        expect(wrapper.find("h2").text()).toEqual("Create Event");
+      },
+    };
+    const wrapper = mount(EventForm, {
+      data() {
+        return {
+          editEventAction: false,
+          editEventInfo: mockEvent,
+        };
+      },
+      props: {
+        eventService: mockFailureEventService,
+      },
+      global: {
+        mocks: {
+          $store: mockStore,
+          $route: mockRoute,
+          $router: mockRouter,
+        },
+      },
     });
 
-    it("if edit action, hide form icon rendered", async () => {
-        const wrapper = mount(EventForm, {
-            data() {
-                return {
-                    editEventAction: true,
-                    editEventInfo: mockEvent,
-                };
-            },
-        });
-        await flushPromises();
+    await wrapper.find("#title").setValue("Test Event");
+    const radio = wrapper.find("#DOMESTIC_DAY");
+    radio.element.selected = true;
+    radio.trigger("change");
 
-        expect(wrapper.find("#hide-form-icon-container").exists()).toBe(true);
+    wrapper.find("#location").setValue("Cork");
+
+    const button = await wrapper.find("button");
+    expect(button.exists()).toBe(true);
+
+    await wrapper.find("form").trigger("submit.prevent");
+    await nextTick();
+    expect(wrapper.vm.invalidEventCreation).toBe(true);
+  });
+
+  it("for new event, if user does not provide event title, error message should be rendered", async () => {
+    const wrapper = mount(EventForm, {
+      data() {
+        return {
+          editEventAction: false,
+          editEventInfo: mockEvent,
+        };
+      },
+      props: {
+        eventService: mockSuccessfulEventService,
+      },
+      global: {
+        mocks: {
+          $store: mockStore,
+          $route: mockRoute,
+          $router: mockRouter,
+        },
+      },
     });
 
-    it("if edit action, form title should be edit event", async () => {
-        const wrapper = mount(EventForm, {
-            data() {
-                return {
-                    editEventAction: true,
-                    editEventInfo: mockEvent,
-                };
-            },
-        });
+    const radio = wrapper.find("#DOMESTIC_DAY");
+    radio.element.selected = true;
+    radio.trigger("change");
 
-        await flushPromises();
+    wrapper.find("#location").setValue("Cork");
 
-        expect(wrapper.find("h2").text()).toEqual("Edit Event");
+    const button = await wrapper.find("button");
+    expect(button.exists()).toBe(true);
+
+    await wrapper.find("form").trigger("submit.prevent");
+    expect(wrapper.find(".error-message").text()).toBe(
+      "Please provide an event title"
+    );
+  });
+
+  it("for new event, if user does not provide event type, error message should be rendered", async () => {
+    const wrapper = mount(EventForm, {
+      data() {
+        return {
+          editEventAction: false,
+          editEventInfo: mockEvent,
+        };
+      },
+      props: {
+        eventService: mockSuccessfulEventService,
+      },
+      global: {
+        mocks: {
+          $store: mockStore,
+          $route: mockRoute,
+          $router: mockRouter,
+        },
+      },
     });
 
-    it("clicking on exit form icon during edit of form should emit hideEditEventActionClick event", async () => {
-        const wrapper = mount(EventForm, {
-            data() {
-                return {
-                    editEventAction: true,
-                    editEventInfo: mockEvent,
-                };
-            },
-        });
+    await wrapper.find("#title").setValue("Test Event");
 
-        wrapper.find("span").trigger("click");
+    wrapper.find("#location").setValue("Cork");
 
-        expect(wrapper.emitted()).toHaveProperty("hideEditEventActionClick");
+    const button = await wrapper.find("button");
+    expect(button.exists()).toBe(true);
+
+    await wrapper.find("form").trigger("submit.prevent");
+    expect(wrapper.find(".error-message").text()).toBe(
+      "Please select an event type"
+    );
+  });
+
+  it("for new event, if user does not provide event city, error message should be rendered ", async () => {
+    const wrapper = mount(EventForm, {
+      data() {
+        return {
+          editEventAction: false,
+          editEventInfo: mockEvent,
+        };
+      },
+      props: {
+        eventService: mockSuccessfulEventService,
+      },
+      global: {
+        mocks: {
+          $store: mockStore,
+          $route: mockRoute,
+          $router: mockRouter,
+        },
+      },
     });
 
-    it("for new event, if user provides input for required fields successful request should be made", async () => {
-        const wrapper = mount(EventForm, {
-            data() {
-                return {
-                    editEventAction: false,
-                    editEventInfo: mockEvent,
-                };
-            },
-            props: {
-                eventService: mockSuccessfulEventService,
-                
-            },
-            global: {
-                mocks: {
-                    $store: mockStore,
-                    $route: mockRoute,
-                    $router: mockRouter,
-                },
-            },
-        });
+    await wrapper.find("#title").setValue("Test Event");
+    const radio = wrapper.find("#DOMESTIC_DAY");
+    radio.element.selected = true;
+    radio.trigger("change");
 
-        await wrapper.find("#title").setValue("Test Event");
-        const radio = wrapper.find("#DOMESTIC_DAY");
-        radio.element.selected = true;
-        radio.trigger("change");
+    const button = await wrapper.find("button");
+    expect(button.exists()).toBe(true);
 
-        const button = await wrapper.find("button");
-        expect(button.exists()).toBe(true);
+    await wrapper.find("form").trigger("submit.prevent");
+    expect(wrapper.find(".error-message").text()).toBe(
+      "Please select a destination city"
+    );
+  });
 
-        await wrapper.find("form").trigger("submit.prevent");
-        expect(mockRouter.push).toHaveBeenCalledTimes(1);
-        expect(wrapper.findComponent(AccountErrorMessage).isVisible()).toBe(false);
+  it("for existing event, if user does not provide event title, error message should be rendered", async () => {
+    const wrapper = mount(EventForm, {
+      data() {
+        return {
+          editEventAction: true,
+          editEventInfo: mockEvent,
+        };
+      },
+      props: {
+        eventService: mockSuccessfulEventService,
+      },
+      global: {
+        mocks: {
+          $store: mockStore,
+          $route: mockRoute,
+          $router: mockRouter,
+        },
+      },
     });
 
-    it("for editing event, if user provides input for required fields successful request should be made", async () => {
-        const wrapper = mount(EventForm, {
-            data() {
-                return {
-                    editEventAction: true,
-                    editEventInfo: mockEvent,
-                    title: "Updated title",
-                    type: "DOMESTIC_DAY",
-                    userEmails: ["test@gmail.com"],
-                    city: "Limerick",
-                    departureCity: "N/A",
-                };
-            },
-            props: {
-                eventService: mockSuccessfulEventService,
-                
-            },
-            global: {
-                mocks: {
-                    $store: mockStore,
-                    $route: mockRoute,
-                    $router: mockRouter,
-                },
-            },
-        });
+    await wrapper.find("#title").setValue("");
 
-        const button = await wrapper.find("button");
-        expect(button.exists()).toBe(true);
+    const radio = wrapper.find("#DOMESTIC_DAY");
+    radio.element.selected = true;
+    radio.trigger("change");
 
-        await wrapper.find("form").trigger("submit.prevent");
-        expect(mockRouter.push).toHaveBeenCalledTimes(1);
-        expect(wrapper.findComponent(AccountErrorMessage).isVisible()).toBe(false);
+    wrapper.find("#location").setValue("Cork");
+
+    const button = await wrapper.find("button");
+    expect(button.exists()).toBe(true);
+
+    await wrapper.find("form").trigger("submit.prevent");
+    expect(wrapper.find(".error-message").text()).toBe(
+      "Please provide an event title"
+    );
+  });
+
+  it("for existing event, if user does not provide event city, error message should be rendered ", async () => {
+    const wrapper = mount(EventForm, {
+      data() {
+        return {
+          editEventAction: true,
+          editEventInfo: mockEvent,
+        };
+      },
+      props: {
+        eventService: mockSuccessfulEventService,
+      },
+      global: {
+        mocks: {
+          $store: mockStore,
+          $route: mockRoute,
+          $router: mockRouter,
+        },
+      },
     });
 
-    it("if unsuccessful response, error message rendered to user", async () => {
-        const wrapper = mount(EventForm, {
-            data() {
-                return {
-                    editEventAction: false,
-                    editEventInfo: mockEvent,
-                    invalidEventCreation: true,
-                };
-            },
-            props: {
-                eventService: mockSuccessfulEventService,
-                
-            },
-            global: {
-                mocks: {
-                    $store: mockStore,
-                    $route: mockRoute,
-                    $router: mockRouter,
-                },
-            },
-        });
-        expect(wrapper.findComponent(AccountErrorMessage).isVisible()).toBe(true);
+    wrapper.find("#location").setValue("")
+
+    const button = await wrapper.find("button");
+    expect(button.exists()).toBe(true);
+
+    await wrapper.find("form").trigger("submit.prevent");
+    expect(wrapper.find(".error-message").text()).toBe(
+      "Please select a destination city"
+    );
+  });
+
+  it("for editing event, if user provides input for required fields successful request should be made", async () => {
+    const wrapper = mount(EventForm, {
+      data() {
+        return {
+          editEventAction: true,
+          editEventInfo: mockEvent,
+          title: "Updated title",
+          type: "DOMESTIC_DAY",
+          userEmails: ["test@gmail.com"],
+          city: "Limerick",
+          departureCity: "N/A",
+        };
+      },
+      props: {
+        eventService: mockSuccessfulEventService,
+      },
+      global: {
+        mocks: {
+          $store: mockStore,
+          $route: mockRoute,
+          $router: mockRouter,
+        },
+      },
     });
 
-    it("if user changes event type to FOREIGN_OVERNIGHT, foreignTrip variable set to true", async () => {
-        const wrapper = mount(EventForm, {
-            data() {
-                return {
-                    editEventAction: false,
-                    editEventInfo: mockEvent,
-                };
-            },
-        });
+    wrapper.find("#location").setValue("Cork");
 
-        const radio = wrapper.find("#FOREIGN_OVERNIGHT");
-        radio.element.selected = true;
-        await radio.trigger("change");
+    const button = await wrapper.find("button");
+    expect(button.exists()).toBe(true);
 
-        await wrapper.vm.$nextTick()
+    await wrapper.find("form").trigger("submit.prevent");
+    expect(mockRouter.push).toHaveBeenCalledTimes(1);
+    expect(wrapper.findComponent(AccountErrorMessage).isVisible()).toBe(false);
+  });
 
-        expect(wrapper.vm.foreignTrip).toBe(true);
+  it("if unsuccessful response, error message rendered to user", async () => {
+    const wrapper = mount(EventForm, {
+      data() {
+        return {
+          editEventAction: false,
+          editEventInfo: mockEvent,
+          invalidEventCreation: true,
+        };
+      },
+      props: {
+        eventService: mockSuccessfulEventService,
+      },
+      global: {
+        mocks: {
+          $store: mockStore,
+          $route: mockRoute,
+          $router: mockRouter,
+        },
+      },
+    });
+    expect(wrapper.findComponent(AccountErrorMessage).isVisible()).toBe(true);
+  });
+
+  it("if user changes event type to FOREIGN_OVERNIGHT, foreignTrip variable set to true", async () => {
+    const wrapper = mount(EventForm, {
+      data() {
+        return {
+          editEventAction: false,
+          editEventInfo: mockEvent,
+        };
+      },
     });
 
-    it("if user changes event type to anything other than FOREIGN_OVERNIGHT, foreignTrip variable set to false", async () => {
-        const wrapper = mount(EventForm, {
-            data() {
-                return {
-                    editEventAction: false,
-                    editEventInfo: mockEvent,
-                };
-            },
-        });
+    const radio = wrapper.find("#FOREIGN_OVERNIGHT");
+    radio.element.selected = true;
+    await radio.trigger("change");
 
-        const radio = wrapper.find("#DOMESTIC_OVERNIGHT");
-        radio.element.selected = true;
-        await radio.trigger("change");
+    await wrapper.vm.$nextTick();
 
-        await wrapper.vm.$nextTick()
+    expect(wrapper.vm.foreignTrip).toBe(true);
+  });
 
-        expect(wrapper.vm.foreignTrip).toBe(false);
-        expect(wrapper.vm.departureCity).toEqual("N/A");
+  it("if user changes event type to anything other than FOREIGN_OVERNIGHT, foreignTrip variable set to false", async () => {
+    const wrapper = mount(EventForm, {
+      data() {
+        return {
+          editEventAction: false,
+          editEventInfo: mockEvent,
+        };
+      },
     });
 
-    it("if edited event is of type FOREIGN_OVERNIGHT, set foreignTrip to true and departure city to value", async () => {
-        const wrapper = mount(EventForm, {
-            data() {
-                return {
-                    editEventAction: true,
-                    editEventInfo: mockForeignEvent,
-                };
-            },
-        });
+    const radio = wrapper.find("#DOMESTIC_OVERNIGHT");
+    radio.element.selected = true;
+    await radio.trigger("change");
 
-        await wrapper.vm.$nextTick()
+    await wrapper.vm.$nextTick();
 
-        expect(wrapper.vm.foreignTrip).toBe(true);
-        expect(wrapper.vm.departureCity).toEqual(mockForeignEvent.departureCity);
+    expect(wrapper.vm.foreignTrip).toBe(false);
+    expect(wrapper.vm.departureCity).toEqual("N/A");
+  });
+
+  it("if edited event is of type FOREIGN_OVERNIGHT, set foreignTrip to true and departure city to value", async () => {
+    const wrapper = mount(EventForm, {
+      data() {
+        return {
+          editEventAction: true,
+          editEventInfo: mockForeignEvent,
+        };
+      },
     });
 
-    it("if user has provided value for email and clicks Add Email button, email added to list", async () => {
-        const wrapper = mount(EventForm);
+    await wrapper.vm.$nextTick();
 
-        await wrapper.find("#useremail").setValue("test@gmail.com")
+    expect(wrapper.vm.foreignTrip).toBe(true);
+    expect(wrapper.vm.departureCity).toEqual(mockForeignEvent.departureCity);
+  });
 
-        await wrapper.find("#add-option-button").trigger('click');
+  it("if user has provided value for email and clicks Add Email button, email added to list", async () => {
+    const wrapper = mount(EventForm);
 
-        expect(wrapper.vm.userEmails).toHaveLength(1)
-    });
+    await wrapper.find("#useremail").setValue("test@gmail.com");
 
-    it("if user has not provided value for email and clicks Add Email button, nothing added to list", async () => {
-        const wrapper = mount(EventForm);
+    await wrapper.find("#add-option-button").trigger("click");
 
-        await wrapper.find("#add-option-button").trigger('click');
+    expect(wrapper.vm.userEmails).toHaveLength(1);
+  });
 
-        expect(wrapper.vm.userEmails).toHaveLength(0)
-    });
+  it("if user has not provided value for email and clicks Add Email button, nothing added to list", async () => {
+    const wrapper = mount(EventForm);
 
-    it("if user has not provided value for email and clicks Add Email button, nothing added to list", async () => {
-        const wrapper = mount(EventForm);
+    await wrapper.find("#add-option-button").trigger("click");
 
+    expect(wrapper.vm.userEmails).toHaveLength(0);
+  });
 
-        await wrapper.find("#useremail").setValue("test@gmail.com")
+  it("if user has not provided value for email and clicks Add Email button, nothing added to list", async () => {
+    const wrapper = mount(EventForm);
 
-        await wrapper.find("#add-option-button").trigger('click');
+    await wrapper.find("#useremail").setValue("test@gmail.com");
 
-        expect(wrapper.vm.userEmails).toHaveLength(1)
+    await wrapper.find("#add-option-button").trigger("click");
 
-        await wrapper.vm.removeIndividualUserEmail("test@gmail.com")
+    expect(wrapper.vm.userEmails).toHaveLength(1);
 
-        expect(wrapper.vm.userEmails).toHaveLength(0)
-    });
+    await wrapper.vm.removeIndividualUserEmail("test@gmail.com");
 
+    expect(wrapper.vm.userEmails).toHaveLength(0);
+  });
 });

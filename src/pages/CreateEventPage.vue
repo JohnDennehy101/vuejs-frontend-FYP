@@ -22,7 +22,8 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80vh;
+  height: 100vh;
+  background-color: #f2f2f2;
 
   @include for-phone-only {
     min-height: 100vh;
