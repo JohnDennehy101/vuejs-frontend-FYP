@@ -47,9 +47,9 @@
       :routerLink="noCreatedPollsCallToActionLink"
     />
 
-    <h2>Comments</h2>
+    <h2 v-if="showEventChat">Comments</h2>
     <ChatMessagesDisplay
-      v-if="messages.length > 0 && userId && onlineUsers"
+      v-if="messages.length > 0 && userId && onlineUsers && showEventChat"
       v-on:deleteComment="deleteComment"
       :chatMessages="messages"
       :userId="userId"
@@ -63,9 +63,10 @@
       :eventUsers="this.individualEvent.invitedUsers"
       :onlineUsers="onlineUsers"
       :key="chatIndex"
+      v-on:showEventChat="toggleEventChat"
     />
 
-    <ChatMessagesInput v-on:addComment="addComment" />
+    <ChatMessagesInput v-if="showEventChat" v-on:addComment="addComment" />
 
     <div id="polls-display-parent-container" v-if="polls.length > 0">
       <h2>Event Polls</h2>
@@ -238,6 +239,7 @@ export default {
       message: "",
       onlineUsers: [],
       chatIndex: 0,
+      showEventChat: false,
     };
   },
   computed: {
@@ -553,6 +555,9 @@ export default {
       this.socket.emit("requestAllEventOnlineUsers", {
         room: this.eventId,
       });
+    },
+    toggleEventChat() {
+      this.showEventChat = !this.showEventChat;
     },
   },
   async created() {

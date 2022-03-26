@@ -97,4 +97,30 @@ describe("ChatOnlineUsers.vue", () => {
     expect(wrapper.find('[data-testid="defaultImage"]').exists()).toBe(true);
     expect(wrapper.find('[data-testid="userImage"]').exists()).toBe(false);
   });
+
+
+   it("clicking toggle chat button should emit event", async () => {
+    const wrapper = mount(ChatOnlineUsers, {
+      props: {
+        onlineUsers: [
+          {
+            id: "1",
+            email: "test@gmail.com",
+            profileImageUrl: null,
+          },
+        ],
+        eventUsers: [
+          {
+            id: "1",
+            email: "test@gmail.com",
+            profileImageUrl: null,
+          },
+        ],
+      },
+    });
+
+    await wrapper.find("button").trigger("click");
+
+    expect(wrapper.emitted()).toHaveProperty("showEventChat");
+  });
 });

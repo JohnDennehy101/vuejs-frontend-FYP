@@ -10,6 +10,7 @@ VueWrapper {
     "_container": <div
       data-v-app=""
     >
+      
       <div
         id="chat-online-users-container"
       >
@@ -31,6 +32,16 @@ VueWrapper {
         </div>
         
       </div>
+      <div
+        id="chat-online-users-toggle-button-container"
+      >
+        <button
+          data-testid="showChatButton"
+        >
+           Toggle Event Chat Display 
+        </button>
+      </div>
+      
     </div>,
     "_context": Object {
       "app": [Circular],
@@ -778,7 +789,9 @@ VueWrapper {
           },
           "refs": Object {},
           "render": [Function],
-          "renderCache": Array [],
+          "renderCache": Array [
+            [Function],
+          ],
           "root": [Circular],
           "rtc": null,
           "rtg": null,
@@ -1515,19 +1528,19 @@ VueWrapper {
           "subTree": Object {
             "__v_isVNode": true,
             "__v_skip": true,
-            "anchor": null,
+            "anchor": ,
             "appContext": null,
             "children": Array [
               Object {
                 "__v_isVNode": true,
                 "__v_skip": true,
-                "anchor": ,
+                "anchor": null,
                 "appContext": null,
                 "children": Array [
                   Object {
                     "__v_isVNode": true,
                     "__v_skip": true,
-                    "anchor": null,
+                    "anchor": ,
                     "appContext": null,
                     "children": Array [
                       Object {
@@ -1541,27 +1554,102 @@ VueWrapper {
                             "__v_skip": true,
                             "anchor": null,
                             "appContext": null,
-                            "children": null,
+                            "children": Array [
+                              Object {
+                                "__v_isVNode": true,
+                                "__v_skip": true,
+                                "anchor": null,
+                                "appContext": null,
+                                "children": null,
+                                "component": null,
+                                "dirs": null,
+                                "dynamicChildren": Array [],
+                                "dynamicProps": Array [
+                                  "src",
+                                ],
+                                "el": <img
+                                  data-testid="userImage"
+                                  src="https://www.cloudinary.com"
+                                />,
+                                "key": 0,
+                                "patchFlag": 8,
+                                "props": Object {
+                                  "data-testid": "userImage",
+                                  "key": 0,
+                                  "src": "https://www.cloudinary.com",
+                                },
+                                "ref": null,
+                                "scopeId": null,
+                                "shapeFlag": 1,
+                                "slotScopeIds": null,
+                                "ssContent": null,
+                                "ssFallback": null,
+                                "staticCount": 0,
+                                "suspense": null,
+                                "target": null,
+                                "targetAnchor": null,
+                                "transition": null,
+                                "type": "img",
+                              },
+                            ],
                             "component": null,
                             "dirs": null,
-                            "dynamicChildren": Array [],
-                            "dynamicProps": Array [
-                              "src",
+                            "dynamicChildren": Array [
+                              Object {
+                                "__v_isVNode": true,
+                                "__v_skip": true,
+                                "anchor": null,
+                                "appContext": null,
+                                "children": null,
+                                "component": null,
+                                "dirs": null,
+                                "dynamicChildren": Array [],
+                                "dynamicProps": Array [
+                                  "src",
+                                ],
+                                "el": <img
+                                  data-testid="userImage"
+                                  src="https://www.cloudinary.com"
+                                />,
+                                "key": 0,
+                                "patchFlag": 8,
+                                "props": Object {
+                                  "data-testid": "userImage",
+                                  "key": 0,
+                                  "src": "https://www.cloudinary.com",
+                                },
+                                "ref": null,
+                                "scopeId": null,
+                                "shapeFlag": 1,
+                                "slotScopeIds": null,
+                                "ssContent": null,
+                                "ssFallback": null,
+                                "staticCount": 0,
+                                "suspense": null,
+                                "target": null,
+                                "targetAnchor": null,
+                                "transition": null,
+                                "type": "img",
+                              },
                             ],
-                            "el": <img
-                              data-testid="userImage"
-                              src="https://www.cloudinary.com"
-                            />,
+                            "dynamicProps": null,
+                            "el": <div
+                              id="user-image-container"
+                            >
+                              <img
+                                data-testid="userImage"
+                                src="https://www.cloudinary.com"
+                              />
+                            </div>,
                             "key": 0,
-                            "patchFlag": 8,
+                            "patchFlag": 0,
                             "props": Object {
-                              "data-testid": "userImage",
+                              "id": "user-image-container",
                               "key": 0,
-                              "src": "https://www.cloudinary.com",
                             },
                             "ref": null,
                             "scopeId": null,
-                            "shapeFlag": 1,
+                            "shapeFlag": 17,
                             "slotScopeIds": null,
                             "ssContent": null,
                             "ssFallback": null,
@@ -1570,7 +1658,38 @@ VueWrapper {
                             "target": null,
                             "targetAnchor": null,
                             "transition": null,
-                            "type": "img",
+                            "type": "div",
+                          },
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": "test@gmail.com",
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": Array [],
+                            "dynamicProps": null,
+                            "el": <p>
+                              test@gmail.com
+                            </p>,
+                            "key": 1,
+                            "patchFlag": 1,
+                            "props": Object {
+                              "key": 1,
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 9,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "p",
                           },
                         ],
                         "component": null,
@@ -1581,27 +1700,102 @@ VueWrapper {
                             "__v_skip": true,
                             "anchor": null,
                             "appContext": null,
-                            "children": null,
+                            "children": Array [
+                              Object {
+                                "__v_isVNode": true,
+                                "__v_skip": true,
+                                "anchor": null,
+                                "appContext": null,
+                                "children": null,
+                                "component": null,
+                                "dirs": null,
+                                "dynamicChildren": Array [],
+                                "dynamicProps": Array [
+                                  "src",
+                                ],
+                                "el": <img
+                                  data-testid="userImage"
+                                  src="https://www.cloudinary.com"
+                                />,
+                                "key": 0,
+                                "patchFlag": 8,
+                                "props": Object {
+                                  "data-testid": "userImage",
+                                  "key": 0,
+                                  "src": "https://www.cloudinary.com",
+                                },
+                                "ref": null,
+                                "scopeId": null,
+                                "shapeFlag": 1,
+                                "slotScopeIds": null,
+                                "ssContent": null,
+                                "ssFallback": null,
+                                "staticCount": 0,
+                                "suspense": null,
+                                "target": null,
+                                "targetAnchor": null,
+                                "transition": null,
+                                "type": "img",
+                              },
+                            ],
                             "component": null,
                             "dirs": null,
-                            "dynamicChildren": Array [],
-                            "dynamicProps": Array [
-                              "src",
+                            "dynamicChildren": Array [
+                              Object {
+                                "__v_isVNode": true,
+                                "__v_skip": true,
+                                "anchor": null,
+                                "appContext": null,
+                                "children": null,
+                                "component": null,
+                                "dirs": null,
+                                "dynamicChildren": Array [],
+                                "dynamicProps": Array [
+                                  "src",
+                                ],
+                                "el": <img
+                                  data-testid="userImage"
+                                  src="https://www.cloudinary.com"
+                                />,
+                                "key": 0,
+                                "patchFlag": 8,
+                                "props": Object {
+                                  "data-testid": "userImage",
+                                  "key": 0,
+                                  "src": "https://www.cloudinary.com",
+                                },
+                                "ref": null,
+                                "scopeId": null,
+                                "shapeFlag": 1,
+                                "slotScopeIds": null,
+                                "ssContent": null,
+                                "ssFallback": null,
+                                "staticCount": 0,
+                                "suspense": null,
+                                "target": null,
+                                "targetAnchor": null,
+                                "transition": null,
+                                "type": "img",
+                              },
                             ],
-                            "el": <img
-                              data-testid="userImage"
-                              src="https://www.cloudinary.com"
-                            />,
+                            "dynamicProps": null,
+                            "el": <div
+                              id="user-image-container"
+                            >
+                              <img
+                                data-testid="userImage"
+                                src="https://www.cloudinary.com"
+                              />
+                            </div>,
                             "key": 0,
-                            "patchFlag": 8,
+                            "patchFlag": 0,
                             "props": Object {
-                              "data-testid": "userImage",
+                              "id": "user-image-container",
                               "key": 0,
-                              "src": "https://www.cloudinary.com",
                             },
                             "ref": null,
                             "scopeId": null,
-                            "shapeFlag": 1,
+                            "shapeFlag": 17,
                             "slotScopeIds": null,
                             "ssContent": null,
                             "ssFallback": null,
@@ -1610,23 +1804,61 @@ VueWrapper {
                             "target": null,
                             "targetAnchor": null,
                             "transition": null,
-                            "type": "img",
+                            "type": "div",
+                          },
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": "test@gmail.com",
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": Array [],
+                            "dynamicProps": null,
+                            "el": <p>
+                              test@gmail.com
+                            </p>,
+                            "key": 1,
+                            "patchFlag": 1,
+                            "props": Object {
+                              "key": 1,
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 9,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "p",
                           },
                         ],
                         "dynamicProps": null,
                         "el": <div
-                          id="user-image-container"
+                          class="individual-user-container"
                         >
-                          <img
-                            data-testid="userImage"
-                            src="https://www.cloudinary.com"
-                          />
+                          <div
+                            id="user-image-container"
+                          >
+                            <img
+                              data-testid="userImage"
+                              src="https://www.cloudinary.com"
+                            />
+                          </div>
+                          <p>
+                            test@gmail.com
+                          </p>
                         </div>,
-                        "key": 0,
+                        "key": "1",
                         "patchFlag": 0,
                         "props": Object {
-                          "id": "user-image-container",
-                          "key": 0,
+                          "class": "individual-user-container",
+                          "key": "1",
                         },
                         "ref": null,
                         "scopeId": null,
@@ -1640,210 +1872,19 @@ VueWrapper {
                         "targetAnchor": null,
                         "transition": null,
                         "type": "div",
-                      },
-                      Object {
-                        "__v_isVNode": true,
-                        "__v_skip": true,
-                        "anchor": null,
-                        "appContext": null,
-                        "children": "test@gmail.com",
-                        "component": null,
-                        "dirs": null,
-                        "dynamicChildren": Array [],
-                        "dynamicProps": null,
-                        "el": <p>
-                          test@gmail.com
-                        </p>,
-                        "key": 1,
-                        "patchFlag": 1,
-                        "props": Object {
-                          "key": 1,
-                        },
-                        "ref": null,
-                        "scopeId": null,
-                        "shapeFlag": 9,
-                        "slotScopeIds": null,
-                        "ssContent": null,
-                        "ssFallback": null,
-                        "staticCount": 0,
-                        "suspense": null,
-                        "target": null,
-                        "targetAnchor": null,
-                        "transition": null,
-                        "type": "p",
                       },
                     ],
                     "component": null,
                     "dirs": null,
-                    "dynamicChildren": Array [
-                      Object {
-                        "__v_isVNode": true,
-                        "__v_skip": true,
-                        "anchor": null,
-                        "appContext": null,
-                        "children": Array [
-                          Object {
-                            "__v_isVNode": true,
-                            "__v_skip": true,
-                            "anchor": null,
-                            "appContext": null,
-                            "children": null,
-                            "component": null,
-                            "dirs": null,
-                            "dynamicChildren": Array [],
-                            "dynamicProps": Array [
-                              "src",
-                            ],
-                            "el": <img
-                              data-testid="userImage"
-                              src="https://www.cloudinary.com"
-                            />,
-                            "key": 0,
-                            "patchFlag": 8,
-                            "props": Object {
-                              "data-testid": "userImage",
-                              "key": 0,
-                              "src": "https://www.cloudinary.com",
-                            },
-                            "ref": null,
-                            "scopeId": null,
-                            "shapeFlag": 1,
-                            "slotScopeIds": null,
-                            "ssContent": null,
-                            "ssFallback": null,
-                            "staticCount": 0,
-                            "suspense": null,
-                            "target": null,
-                            "targetAnchor": null,
-                            "transition": null,
-                            "type": "img",
-                          },
-                        ],
-                        "component": null,
-                        "dirs": null,
-                        "dynamicChildren": Array [
-                          Object {
-                            "__v_isVNode": true,
-                            "__v_skip": true,
-                            "anchor": null,
-                            "appContext": null,
-                            "children": null,
-                            "component": null,
-                            "dirs": null,
-                            "dynamicChildren": Array [],
-                            "dynamicProps": Array [
-                              "src",
-                            ],
-                            "el": <img
-                              data-testid="userImage"
-                              src="https://www.cloudinary.com"
-                            />,
-                            "key": 0,
-                            "patchFlag": 8,
-                            "props": Object {
-                              "data-testid": "userImage",
-                              "key": 0,
-                              "src": "https://www.cloudinary.com",
-                            },
-                            "ref": null,
-                            "scopeId": null,
-                            "shapeFlag": 1,
-                            "slotScopeIds": null,
-                            "ssContent": null,
-                            "ssFallback": null,
-                            "staticCount": 0,
-                            "suspense": null,
-                            "target": null,
-                            "targetAnchor": null,
-                            "transition": null,
-                            "type": "img",
-                          },
-                        ],
-                        "dynamicProps": null,
-                        "el": <div
-                          id="user-image-container"
-                        >
-                          <img
-                            data-testid="userImage"
-                            src="https://www.cloudinary.com"
-                          />
-                        </div>,
-                        "key": 0,
-                        "patchFlag": 0,
-                        "props": Object {
-                          "id": "user-image-container",
-                          "key": 0,
-                        },
-                        "ref": null,
-                        "scopeId": null,
-                        "shapeFlag": 17,
-                        "slotScopeIds": null,
-                        "ssContent": null,
-                        "ssFallback": null,
-                        "staticCount": 0,
-                        "suspense": null,
-                        "target": null,
-                        "targetAnchor": null,
-                        "transition": null,
-                        "type": "div",
-                      },
-                      Object {
-                        "__v_isVNode": true,
-                        "__v_skip": true,
-                        "anchor": null,
-                        "appContext": null,
-                        "children": "test@gmail.com",
-                        "component": null,
-                        "dirs": null,
-                        "dynamicChildren": Array [],
-                        "dynamicProps": null,
-                        "el": <p>
-                          test@gmail.com
-                        </p>,
-                        "key": 1,
-                        "patchFlag": 1,
-                        "props": Object {
-                          "key": 1,
-                        },
-                        "ref": null,
-                        "scopeId": null,
-                        "shapeFlag": 9,
-                        "slotScopeIds": null,
-                        "ssContent": null,
-                        "ssFallback": null,
-                        "staticCount": 0,
-                        "suspense": null,
-                        "target": null,
-                        "targetAnchor": null,
-                        "transition": null,
-                        "type": "p",
-                      },
-                    ],
+                    "dynamicChildren": Array [],
                     "dynamicProps": null,
-                    "el": <div
-                      class="individual-user-container"
-                    >
-                      <div
-                        id="user-image-container"
-                      >
-                        <img
-                          data-testid="userImage"
-                          src="https://www.cloudinary.com"
-                        />
-                      </div>
-                      <p>
-                        test@gmail.com
-                      </p>
-                    </div>,
-                    "key": "1",
-                    "patchFlag": 0,
-                    "props": Object {
-                      "class": "individual-user-container",
-                      "key": "1",
-                    },
+                    "el": ,
+                    "key": null,
+                    "patchFlag": 128,
+                    "props": null,
                     "ref": null,
                     "scopeId": null,
-                    "shapeFlag": 17,
+                    "shapeFlag": 16,
                     "slotScopeIds": null,
                     "ssContent": null,
                     "ssFallback": null,
@@ -1852,20 +1893,42 @@ VueWrapper {
                     "target": null,
                     "targetAnchor": null,
                     "transition": null,
-                    "type": "div",
+                    "type": Symbol(Fragment),
                   },
                 ],
                 "component": null,
                 "dirs": null,
-                "dynamicChildren": Array [],
+                "dynamicChildren": null,
                 "dynamicProps": null,
-                "el": ,
+                "el": <div
+                  id="chat-online-users-container"
+                >
+                  
+                  <div
+                    class="individual-user-container"
+                  >
+                    <div
+                      id="user-image-container"
+                    >
+                      <img
+                        data-testid="userImage"
+                        src="https://www.cloudinary.com"
+                      />
+                    </div>
+                    <p>
+                      test@gmail.com
+                    </p>
+                  </div>
+                  
+                </div>,
                 "key": null,
-                "patchFlag": 128,
-                "props": null,
+                "patchFlag": 0,
+                "props": Object {
+                  "id": "chat-online-users-container",
+                },
                 "ref": null,
                 "scopeId": null,
-                "shapeFlag": 16,
+                "shapeFlag": 17,
                 "slotScopeIds": null,
                 "ssContent": null,
                 "ssFallback": null,
@@ -1874,7 +1937,79 @@ VueWrapper {
                 "target": null,
                 "targetAnchor": null,
                 "transition": null,
-                "type": Symbol(Fragment),
+                "type": "div",
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": Array [
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": " Toggle Event Chat Display ",
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <button
+                      data-testid="showChatButton"
+                    >
+                       Toggle Event Chat Display 
+                    </button>,
+                    "key": null,
+                    "patchFlag": 0,
+                    "props": Object {
+                      "data-testid": "showChatButton",
+                      "onClick": [Function],
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 9,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "button",
+                  },
+                ],
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": null,
+                "dynamicProps": null,
+                "el": <div
+                  id="chat-online-users-toggle-button-container"
+                >
+                  <button
+                    data-testid="showChatButton"
+                  >
+                     Toggle Event Chat Display 
+                  </button>
+                </div>,
+                "key": null,
+                "patchFlag": 0,
+                "props": Object {
+                  "id": "chat-online-users-toggle-button-container",
+                },
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 17,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": "div",
               },
             ],
             "component": null,
@@ -2240,35 +2375,13 @@ VueWrapper {
               },
             ],
             "dynamicProps": null,
-            "el": <div
-              id="chat-online-users-container"
-            >
-              
-              <div
-                class="individual-user-container"
-              >
-                <div
-                  id="user-image-container"
-                >
-                  <img
-                    data-testid="userImage"
-                    src="https://www.cloudinary.com"
-                  />
-                </div>
-                <p>
-                  test@gmail.com
-                </p>
-              </div>
-              
-            </div>,
+            "el": ,
             "key": null,
-            "patchFlag": 0,
-            "props": Object {
-              "id": "chat-online-users-container",
-            },
+            "patchFlag": 64,
+            "props": null,
             "ref": null,
             "scopeId": null,
-            "shapeFlag": 17,
+            "shapeFlag": 16,
             "slotScopeIds": null,
             "ssContent": null,
             "ssFallback": null,
@@ -2277,7 +2390,7 @@ VueWrapper {
             "target": null,
             "targetAnchor": null,
             "transition": null,
-            "type": "div",
+            "type": Symbol(Fragment),
           },
           "suspense": null,
           "suspenseId": 0,
@@ -2303,27 +2416,7 @@ VueWrapper {
         "dirs": null,
         "dynamicChildren": null,
         "dynamicProps": null,
-        "el": <div
-          id="chat-online-users-container"
-        >
-          
-          <div
-            class="individual-user-container"
-          >
-            <div
-              id="user-image-container"
-            >
-              <img
-                data-testid="userImage"
-                src="https://www.cloudinary.com"
-              />
-            </div>
-            <p>
-              test@gmail.com
-            </p>
-          </div>
-          
-        </div>,
+        "el": ,
         "key": null,
         "patchFlag": 0,
         "props": Object {
@@ -2422,27 +2515,7 @@ VueWrapper {
         "dirs": null,
         "dynamicChildren": null,
         "dynamicProps": null,
-        "el": <div
-          id="chat-online-users-container"
-        >
-          
-          <div
-            class="individual-user-container"
-          >
-            <div
-              id="user-image-container"
-            >
-              <img
-                data-testid="userImage"
-                src="https://www.cloudinary.com"
-              />
-            </div>
-            <p>
-              test@gmail.com
-            </p>
-          </div>
-          
-        </div>,
+        "el": ,
         "key": null,
         "patchFlag": 0,
         "props": null,
@@ -2525,26 +2598,6 @@ VueWrapper {
   },
   "isDisabled": [Function],
   "rootVM": Object {},
-  "wrapperElement": <div
-    id="chat-online-users-container"
-  >
-    
-    <div
-      class="individual-user-container"
-    >
-      <div
-        id="user-image-container"
-      >
-        <img
-          data-testid="userImage"
-          src="https://www.cloudinary.com"
-        />
-      </div>
-      <p>
-        test@gmail.com
-      </p>
-    </div>
-    
-  </div>,
+  "wrapperElement": ,
 }
 `;

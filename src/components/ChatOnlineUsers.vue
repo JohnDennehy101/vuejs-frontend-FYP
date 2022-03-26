@@ -25,6 +25,14 @@
       </p>
     </div>
   </div>
+  <div id="chat-online-users-toggle-button-container">
+    <button
+      data-testid="showChatButton"
+      v-on:click="$emit('showEventChat', true)"
+    >
+      Toggle Event Chat Display
+    </button>
+  </div>
 </template>
 
 <script>
@@ -54,13 +62,45 @@ export default {
   justify-content: center;
   min-height: 20vh;
 
-  margin: 1rem auto;
+  margin: 1rem auto 0 auto;
   border-radius: 5px;
   background-color: #ffffff;
 
   @include for-phone-only {
     width: 90%;
     flex-direction: column;
+  }
+}
+#chat-online-users-toggle-button-container {
+  width: 80%;
+  background-color: #ffffff;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include for-phone-only {
+    width: 90%;
+    flex-direction: column;
+  }
+
+  button {
+    border-radius: 1rem;
+    border: none;
+    width: 20%;
+    background-color: #3a4374;
+    height: 2.5rem;
+
+    color: $primary-button-text-colour;
+
+    @include for-phone-only {
+      width: 60%;
+      height: 2rem;
+    }
+  }
+  button:hover {
+    cursor: pointer;
   }
 }
 .individual-user-container {
