@@ -80,7 +80,8 @@
     "coveragePathIgnorePatterns": [
       "node_modules",
       "<rootDir>/src/assets",
-      ".mock.js"
+      ".mock.js",
+      "<rootDir>/src/services"
     ],
     "transform": {
       ".*\\.(vue)$": "vue-jest",

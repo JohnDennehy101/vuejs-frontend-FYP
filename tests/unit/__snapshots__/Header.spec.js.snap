@@ -58,6 +58,7 @@ VueWrapper {
         </div>
         <!--v-if-->
         <!--v-if-->
+        <!--v-if-->
         <ul>
           <li
             data-testid="logoutLink"
@@ -1200,6 +1201,33 @@ VueWrapper {
                 "__v_skip": true,
                 "anchor": null,
                 "appContext": null,
+                "children": "v-if",
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": Array [],
+                "dynamicProps": null,
+                "el": <!--v-if-->,
+                "key": null,
+                "patchFlag": 0,
+                "props": null,
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 8,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": Symbol(Comment),
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
                 "children": Array [
                   Object {
                     "__v_isVNode": true,
@@ -1320,10 +1348,10 @@ VueWrapper {
                     </router-link>
                   </li>
                 </ul>,
-                "key": 2,
+                "key": 3,
                 "patchFlag": 0,
                 "props": Object {
-                  "key": 2,
+                  "key": 3,
                 },
                 "ref": null,
                 "scopeId": null,
@@ -1836,6 +1864,33 @@ VueWrapper {
                 "__v_skip": true,
                 "anchor": null,
                 "appContext": null,
+                "children": "v-if",
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": Array [],
+                "dynamicProps": null,
+                "el": <!--v-if-->,
+                "key": null,
+                "patchFlag": 0,
+                "props": null,
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 8,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": Symbol(Comment),
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
                 "children": Array [
                   Object {
                     "__v_isVNode": true,
@@ -1956,10 +2011,10 @@ VueWrapper {
                     </router-link>
                   </li>
                 </ul>,
-                "key": 2,
+                "key": 3,
                 "patchFlag": 0,
                 "props": Object {
-                  "key": 2,
+                  "key": 3,
                 },
                 "ref": null,
                 "scopeId": null,
@@ -2022,6 +2077,7 @@ VueWrapper {
                   </li>
                 </ul>
               </div>
+              <!--v-if-->
               <!--v-if-->
               <!--v-if-->
               <ul>
@@ -2136,6 +2192,7 @@ VueWrapper {
               </li>
             </ul>
           </div>
+          <!--v-if-->
           <!--v-if-->
           <!--v-if-->
           <ul>
@@ -2296,6 +2353,7 @@ VueWrapper {
           </div>
           <!--v-if-->
           <!--v-if-->
+          <!--v-if-->
           <ul>
             <li
               data-testid="logoutLink"
@@ -2449,6 +2507,7 @@ VueWrapper {
         </li>
       </ul>
     </div>
+    <!--v-if-->
     <!--v-if-->
     <!--v-if-->
     <ul>

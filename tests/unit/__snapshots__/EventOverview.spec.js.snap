@@ -13,16 +13,51 @@ VueWrapper {
       <div
         id="event-information-container"
       >
-        <h3>
-          Test Event
-        </h3>
-        <p>
-          More info about group trip here...description
-        </p>
-        <p />
-        <span>
-          DOMESTIC_OVERNIGHT
-        </span>
+        <div
+          id="event-overview-info-container"
+        >
+          <div>
+            <h3>
+              Title
+            </h3>
+            <p
+              data-testid="title"
+            >
+              Test Event
+            </p>
+          </div>
+          <div>
+            <h3>
+              Description:
+            </h3>
+            <p
+              data-testid="description"
+            >
+               More info about group trip here...description 
+            </p>
+          </div>
+          <!--v-if-->
+          <div>
+            <h3>
+              Destination City
+            </h3>
+            <p
+              data-testid="destinationCity"
+            >
+              Cork
+            </p>
+          </div>
+          <div>
+            <h3>
+              Event Type
+            </h3>
+            <p
+              data-testid="domesticOvernightEvent"
+            >
+               Domestic Overnight Event 
+            </p>
+          </div>
+        </div>
         <div
           id="event-users-parent-container"
         >
@@ -168,17 +203,18 @@ VueWrapper {
       "proxy": Object {},
       "refs": Object {
         "VTU_COMPONENT": Object {
-          "city": undefined,
+          "departureCity": "",
+          "destinationCity": "Cork",
           "guestUser": false,
           "hasOwnProperty": [Function],
           "individualEvent": Object {
-            "location": "Cork",
+            "city": "Cork",
             "title": "Test Event",
             "type": "DOMESTIC_OVERNIGHT",
           },
           "invitedUser": false,
           "item": Object {
-            "location": "Cork",
+            "city": "Cork",
             "title": "Test Event",
             "type": "DOMESTIC_OVERNIGHT",
           },
@@ -236,8 +272,9 @@ VueWrapper {
             "@@__IMMUTABLE_ITERABLE__@@": 0,
             "@@__IMMUTABLE_RECORD__@@": 0,
             "_isMockFunction": 0,
-            "city": 2,
             "constructor": 0,
+            "departureCity": 2,
+            "destinationCity": 2,
             "guestUser": 2,
             "hasOwnProperty": 4,
             "individualEvent": 3,
@@ -291,17 +328,18 @@ VueWrapper {
           "c": null,
           "components": Object {},
           "ctx": Object {
-            "city": undefined,
+            "departureCity": "",
+            "destinationCity": "Cork",
             "guestUser": false,
             "hasOwnProperty": [Function],
             "individualEvent": Object {
-              "location": "Cork",
+              "city": "Cork",
               "title": "Test Event",
               "type": "DOMESTIC_OVERNIGHT",
             },
             "invitedUser": false,
             "item": Object {
-              "location": "Cork",
+              "city": "Cork",
               "title": "Test Event",
               "type": "DOMESTIC_OVERNIGHT",
             },
@@ -311,10 +349,11 @@ VueWrapper {
           },
           "da": null,
           "data": Object {
-            "city": undefined,
+            "departureCity": "",
+            "destinationCity": "Cork",
             "guestUser": false,
             "item": Object {
-              "location": "Cork",
+              "city": "Cork",
               "title": "Test Event",
               "type": "DOMESTIC_OVERNIGHT",
             },
@@ -327,6 +366,9 @@ VueWrapper {
             "active": true,
             "allowRecurse": true,
             "deps": Array [
+              Set {
+                [Circular],
+              },
               Set {
                 [Circular],
               },
@@ -365,7 +407,7 @@ VueWrapper {
           "parent": [Circular],
           "props": Object {
             "individualEvent": Object {
-              "location": "Cork",
+              "city": "Cork",
               "title": "Test Event",
               "type": "DOMESTIC_OVERNIGHT",
             },
@@ -381,17 +423,18 @@ VueWrapper {
           ],
           "provides": Object {},
           "proxy": Object {
-            "city": undefined,
+            "departureCity": "",
+            "destinationCity": "Cork",
             "guestUser": false,
             "hasOwnProperty": [Function],
             "individualEvent": Object {
-              "location": "Cork",
+              "city": "Cork",
               "title": "Test Event",
               "type": "DOMESTIC_OVERNIGHT",
             },
             "invitedUser": false,
             "item": Object {
-              "location": "Cork",
+              "city": "Cork",
               "title": "Test Event",
               "type": "DOMESTIC_OVERNIGHT",
             },
@@ -433,6 +476,9 @@ VueWrapper {
                   Set {
                     [Circular],
                   },
+                  Set {
+                    [Circular],
+                  },
                 ],
                 "fn": [Function],
                 "onTrack": undefined,
@@ -456,20 +502,489 @@ VueWrapper {
                 "__v_skip": true,
                 "anchor": null,
                 "appContext": null,
-                "children": "Test Event",
+                "children": Array [
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": Array [
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "Title",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <h3>
+                          Title
+                        </h3>,
+                        "key": null,
+                        "patchFlag": -1,
+                        "props": null,
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 9,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "h3",
+                      },
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "Test Event",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <p
+                          data-testid="title"
+                        >
+                          Test Event
+                        </p>,
+                        "key": null,
+                        "patchFlag": 1,
+                        "props": Object {
+                          "data-testid": "title",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 9,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "p",
+                      },
+                    ],
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <div>
+                      <h3>
+                        Title
+                      </h3>
+                      <p
+                        data-testid="title"
+                      >
+                        Test Event
+                      </p>
+                    </div>,
+                    "key": null,
+                    "patchFlag": 0,
+                    "props": null,
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 17,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "div",
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": Array [
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "Description:",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <h3>
+                          Description:
+                        </h3>,
+                        "key": null,
+                        "patchFlag": 0,
+                        "props": null,
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 9,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "h3",
+                      },
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": " More info about group trip here...description ",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <p
+                          data-testid="description"
+                        >
+                           More info about group trip here...description 
+                        </p>,
+                        "key": null,
+                        "patchFlag": 0,
+                        "props": Object {
+                          "data-testid": "description",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 9,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "p",
+                      },
+                    ],
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <div>
+                      <h3>
+                        Description:
+                      </h3>
+                      <p
+                        data-testid="description"
+                      >
+                         More info about group trip here...description 
+                      </p>
+                    </div>,
+                    "key": null,
+                    "patchFlag": -1,
+                    "props": null,
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 17,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "div",
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": "v-if",
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": Array [],
+                    "dynamicProps": null,
+                    "el": <!--v-if-->,
+                    "key": null,
+                    "patchFlag": 0,
+                    "props": null,
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 8,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": Symbol(Comment),
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": Array [
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "Destination City",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <h3>
+                          Destination City
+                        </h3>,
+                        "key": null,
+                        "patchFlag": -1,
+                        "props": null,
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 9,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "h3",
+                      },
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "Cork",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <p
+                          data-testid="destinationCity"
+                        >
+                          Cork
+                        </p>,
+                        "key": null,
+                        "patchFlag": 1,
+                        "props": Object {
+                          "data-testid": "destinationCity",
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 9,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "p",
+                      },
+                    ],
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <div>
+                      <h3>
+                        Destination City
+                      </h3>
+                      <p
+                        data-testid="destinationCity"
+                      >
+                        Cork
+                      </p>
+                    </div>,
+                    "key": null,
+                    "patchFlag": 0,
+                    "props": null,
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 17,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "div",
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": Array [
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "Event Type",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <h3>
+                          Event Type
+                        </h3>,
+                        "key": null,
+                        "patchFlag": -1,
+                        "props": null,
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 9,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "h3",
+                      },
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": " Domestic Overnight Event ",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": Array [],
+                        "dynamicProps": null,
+                        "el": <p
+                          data-testid="domesticOvernightEvent"
+                        >
+                           Domestic Overnight Event 
+                        </p>,
+                        "key": 1,
+                        "patchFlag": 0,
+                        "props": Object {
+                          "data-testid": "domesticOvernightEvent",
+                          "key": 1,
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 9,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "p",
+                      },
+                    ],
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <div>
+                      <h3>
+                        Event Type
+                      </h3>
+                      <p
+                        data-testid="domesticOvernightEvent"
+                      >
+                         Domestic Overnight Event 
+                      </p>
+                    </div>,
+                    "key": null,
+                    "patchFlag": 0,
+                    "props": null,
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 17,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "div",
+                  },
+                ],
                 "component": null,
                 "dirs": null,
                 "dynamicChildren": null,
                 "dynamicProps": null,
-                "el": <h3>
-                  Test Event
-                </h3>,
+                "el": <div
+                  id="event-overview-info-container"
+                >
+                  <div>
+                    <h3>
+                      Title
+                    </h3>
+                    <p
+                      data-testid="title"
+                    >
+                      Test Event
+                    </p>
+                  </div>
+                  <div>
+                    <h3>
+                      Description:
+                    </h3>
+                    <p
+                      data-testid="description"
+                    >
+                       More info about group trip here...description 
+                    </p>
+                  </div>
+                  <!--v-if-->
+                  <div>
+                    <h3>
+                      Destination City
+                    </h3>
+                    <p
+                      data-testid="destinationCity"
+                    >
+                      Cork
+                    </p>
+                  </div>
+                  <div>
+                    <h3>
+                      Event Type
+                    </h3>
+                    <p
+                      data-testid="domesticOvernightEvent"
+                    >
+                       Domestic Overnight Event 
+                    </p>
+                  </div>
+                </div>,
                 "key": null,
-                "patchFlag": 1,
-                "props": null,
+                "patchFlag": 0,
+                "props": Object {
+                  "id": "event-overview-info-container",
+                },
                 "ref": null,
                 "scopeId": null,
-                "shapeFlag": 9,
+                "shapeFlag": 17,
                 "slotScopeIds": null,
                 "ssContent": null,
                 "ssFallback": null,
@@ -478,92 +993,7 @@ VueWrapper {
                 "target": null,
                 "targetAnchor": null,
                 "transition": null,
-                "type": "h3",
-              },
-              Object {
-                "__v_isVNode": true,
-                "__v_skip": true,
-                "anchor": null,
-                "appContext": null,
-                "children": "More info about group trip here...description",
-                "component": null,
-                "dirs": null,
-                "dynamicChildren": null,
-                "dynamicProps": null,
-                "el": <p>
-                  More info about group trip here...description
-                </p>,
-                "key": null,
-                "patchFlag": -1,
-                "props": null,
-                "ref": null,
-                "scopeId": null,
-                "shapeFlag": 9,
-                "slotScopeIds": null,
-                "ssContent": null,
-                "ssFallback": null,
-                "staticCount": 0,
-                "suspense": null,
-                "target": null,
-                "targetAnchor": null,
-                "transition": null,
-                "type": "p",
-              },
-              Object {
-                "__v_isVNode": true,
-                "__v_skip": true,
-                "anchor": null,
-                "appContext": null,
-                "children": "",
-                "component": null,
-                "dirs": null,
-                "dynamicChildren": null,
-                "dynamicProps": null,
-                "el": <p />,
-                "key": null,
-                "patchFlag": 1,
-                "props": null,
-                "ref": null,
-                "scopeId": null,
-                "shapeFlag": 1,
-                "slotScopeIds": null,
-                "ssContent": null,
-                "ssFallback": null,
-                "staticCount": 0,
-                "suspense": null,
-                "target": null,
-                "targetAnchor": null,
-                "transition": null,
-                "type": "p",
-              },
-              Object {
-                "__v_isVNode": true,
-                "__v_skip": true,
-                "anchor": null,
-                "appContext": null,
-                "children": "DOMESTIC_OVERNIGHT",
-                "component": null,
-                "dirs": null,
-                "dynamicChildren": null,
-                "dynamicProps": null,
-                "el": <span>
-                  DOMESTIC_OVERNIGHT
-                </span>,
-                "key": null,
-                "patchFlag": 1,
-                "props": null,
-                "ref": null,
-                "scopeId": null,
-                "shapeFlag": 9,
-                "slotScopeIds": null,
-                "ssContent": null,
-                "ssFallback": null,
-                "staticCount": 0,
-                "suspense": null,
-                "target": null,
-                "targetAnchor": null,
-                "transition": null,
-                "type": "span",
+                "type": "div",
               },
               Object {
                 "__v_isVNode": true,
@@ -782,42 +1212,19 @@ VueWrapper {
                 "dirs": null,
                 "dynamicChildren": null,
                 "dynamicProps": null,
-                "el": <h3>
+                "el": <p
+                  data-testid="title"
+                >
                   Test Event
-                </h3>,
+                </p>,
                 "key": null,
                 "patchFlag": 1,
-                "props": null,
+                "props": Object {
+                  "data-testid": "title",
+                },
                 "ref": null,
                 "scopeId": null,
                 "shapeFlag": 9,
-                "slotScopeIds": null,
-                "ssContent": null,
-                "ssFallback": null,
-                "staticCount": 0,
-                "suspense": null,
-                "target": null,
-                "targetAnchor": null,
-                "transition": null,
-                "type": "h3",
-              },
-              Object {
-                "__v_isVNode": true,
-                "__v_skip": true,
-                "anchor": null,
-                "appContext": null,
-                "children": "",
-                "component": null,
-                "dirs": null,
-                "dynamicChildren": null,
-                "dynamicProps": null,
-                "el": <p />,
-                "key": null,
-                "patchFlag": 1,
-                "props": null,
-                "ref": null,
-                "scopeId": null,
-                "shapeFlag": 1,
                 "slotScopeIds": null,
                 "ssContent": null,
                 "ssFallback": null,
@@ -833,17 +1240,48 @@ VueWrapper {
                 "__v_skip": true,
                 "anchor": null,
                 "appContext": null,
-                "children": "DOMESTIC_OVERNIGHT",
+                "children": "v-if",
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": Array [],
+                "dynamicProps": null,
+                "el": <!--v-if-->,
+                "key": null,
+                "patchFlag": 0,
+                "props": null,
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 8,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": Symbol(Comment),
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": "Cork",
                 "component": null,
                 "dirs": null,
                 "dynamicChildren": null,
                 "dynamicProps": null,
-                "el": <span>
-                  DOMESTIC_OVERNIGHT
-                </span>,
+                "el": <p
+                  data-testid="destinationCity"
+                >
+                  Cork
+                </p>,
                 "key": null,
                 "patchFlag": 1,
-                "props": null,
+                "props": Object {
+                  "data-testid": "destinationCity",
+                },
                 "ref": null,
                 "scopeId": null,
                 "shapeFlag": 9,
@@ -855,7 +1293,41 @@ VueWrapper {
                 "target": null,
                 "targetAnchor": null,
                 "transition": null,
-                "type": "span",
+                "type": "p",
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": " Domestic Overnight Event ",
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": Array [],
+                "dynamicProps": null,
+                "el": <p
+                  data-testid="domesticOvernightEvent"
+                >
+                   Domestic Overnight Event 
+                </p>,
+                "key": 1,
+                "patchFlag": 0,
+                "props": Object {
+                  "data-testid": "domesticOvernightEvent",
+                  "key": 1,
+                },
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 9,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": "p",
               },
               Object {
                 "__v_isVNode": true,
@@ -998,16 +1470,51 @@ VueWrapper {
             "el": <div
               id="event-information-container"
             >
-              <h3>
-                Test Event
-              </h3>
-              <p>
-                More info about group trip here...description
-              </p>
-              <p />
-              <span>
-                DOMESTIC_OVERNIGHT
-              </span>
+              <div
+                id="event-overview-info-container"
+              >
+                <div>
+                  <h3>
+                    Title
+                  </h3>
+                  <p
+                    data-testid="title"
+                  >
+                    Test Event
+                  </p>
+                </div>
+                <div>
+                  <h3>
+                    Description:
+                  </h3>
+                  <p
+                    data-testid="description"
+                  >
+                     More info about group trip here...description 
+                  </p>
+                </div>
+                <!--v-if-->
+                <div>
+                  <h3>
+                    Destination City
+                  </h3>
+                  <p
+                    data-testid="destinationCity"
+                  >
+                    Cork
+                  </p>
+                </div>
+                <div>
+                  <h3>
+                    Event Type
+                  </h3>
+                  <p
+                    data-testid="domesticOvernightEvent"
+                  >
+                     Domestic Overnight Event 
+                  </p>
+                </div>
+              </div>
               <div
                 id="event-users-parent-container"
               >
@@ -1075,16 +1582,51 @@ VueWrapper {
         "el": <div
           id="event-information-container"
         >
-          <h3>
-            Test Event
-          </h3>
-          <p>
-            More info about group trip here...description
-          </p>
-          <p />
-          <span>
-            DOMESTIC_OVERNIGHT
-          </span>
+          <div
+            id="event-overview-info-container"
+          >
+            <div>
+              <h3>
+                Title
+              </h3>
+              <p
+                data-testid="title"
+              >
+                Test Event
+              </p>
+            </div>
+            <div>
+              <h3>
+                Description:
+              </h3>
+              <p
+                data-testid="description"
+              >
+                 More info about group trip here...description 
+              </p>
+            </div>
+            <!--v-if-->
+            <div>
+              <h3>
+                Destination City
+              </h3>
+              <p
+                data-testid="destinationCity"
+              >
+                Cork
+              </p>
+            </div>
+            <div>
+              <h3>
+                Event Type
+              </h3>
+              <p
+                data-testid="domesticOvernightEvent"
+              >
+                 Domestic Overnight Event 
+              </p>
+            </div>
+          </div>
           <div
             id="event-users-parent-container"
           >
@@ -1110,7 +1652,7 @@ VueWrapper {
         "patchFlag": 0,
         "props": Object {
           "individualEvent": Object {
-            "location": "Cork",
+            "city": "Cork",
             "title": "Test Event",
             "type": "DOMESTIC_OVERNIGHT",
           },
@@ -1200,16 +1742,51 @@ VueWrapper {
         "el": <div
           id="event-information-container"
         >
-          <h3>
-            Test Event
-          </h3>
-          <p>
-            More info about group trip here...description
-          </p>
-          <p />
-          <span>
-            DOMESTIC_OVERNIGHT
-          </span>
+          <div
+            id="event-overview-info-container"
+          >
+            <div>
+              <h3>
+                Title
+              </h3>
+              <p
+                data-testid="title"
+              >
+                Test Event
+              </p>
+            </div>
+            <div>
+              <h3>
+                Description:
+              </h3>
+              <p
+                data-testid="description"
+              >
+                 More info about group trip here...description 
+              </p>
+            </div>
+            <!--v-if-->
+            <div>
+              <h3>
+                Destination City
+              </h3>
+              <p
+                data-testid="destinationCity"
+              >
+                Cork
+              </p>
+            </div>
+            <div>
+              <h3>
+                Event Type
+              </h3>
+              <p
+                data-testid="domesticOvernightEvent"
+              >
+                 Domestic Overnight Event 
+              </p>
+            </div>
+          </div>
           <div
             id="event-users-parent-container"
           >
@@ -1274,17 +1851,18 @@ VueWrapper {
   },
   "__setProps": [Function],
   "componentVM": Object {
-    "city": undefined,
+    "departureCity": "",
+    "destinationCity": "Cork",
     "guestUser": false,
     "hasOwnProperty": [Function],
     "individualEvent": Object {
-      "location": "Cork",
+      "city": "Cork",
       "title": "Test Event",
       "type": "DOMESTIC_OVERNIGHT",
     },
     "invitedUser": false,
     "item": Object {
-      "location": "Cork",
+      "city": "Cork",
       "title": "Test Event",
       "type": "DOMESTIC_OVERNIGHT",
     },
@@ -1297,16 +1875,51 @@ VueWrapper {
   "wrapperElement": <div
     id="event-information-container"
   >
-    <h3>
-      Test Event
-    </h3>
-    <p>
-      More info about group trip here...description
-    </p>
-    <p />
-    <span>
-      DOMESTIC_OVERNIGHT
-    </span>
+    <div
+      id="event-overview-info-container"
+    >
+      <div>
+        <h3>
+          Title
+        </h3>
+        <p
+          data-testid="title"
+        >
+          Test Event
+        </p>
+      </div>
+      <div>
+        <h3>
+          Description:
+        </h3>
+        <p
+          data-testid="description"
+        >
+           More info about group trip here...description 
+        </p>
+      </div>
+      <!--v-if-->
+      <div>
+        <h3>
+          Destination City
+        </h3>
+        <p
+          data-testid="destinationCity"
+        >
+          Cork
+        </p>
+      </div>
+      <div>
+        <h3>
+          Event Type
+        </h3>
+        <p
+          data-testid="domesticOvernightEvent"
+        >
+           Domestic Overnight Event 
+        </p>
+      </div>
+    </div>
     <div
       id="event-users-parent-container"
     >

@@ -17,6 +17,13 @@ VueWrapper {
           <div
             class="form-control"
           >
+            <h2>
+              Register
+            </h2>
+          </div>
+          <div
+            class="form-control"
+          >
             <label
               for="email"
             >
@@ -182,6 +189,7 @@ VueWrapper {
         "VTU_COMPONENT": Object {
           "email": "",
           "errorMessage": "There was an error registering your account details.",
+          "formTitle": "Register",
           "hasOwnProperty": [Function],
           "hideErrorMessage": [Function],
           "invalidRegistration": false,
@@ -240,6 +248,7 @@ VueWrapper {
             "constructor": 0,
             "email": 2,
             "errorMessage": 2,
+            "formTitle": 2,
             "hasOwnProperty": 4,
             "hideErrorMessage": 4,
             "invalidRegistration": 2,
@@ -315,6 +324,7 @@ VueWrapper {
           "ctx": Object {
             "email": "",
             "errorMessage": "There was an error registering your account details.",
+            "formTitle": "Register",
             "hasOwnProperty": [Function],
             "hideErrorMessage": [Function],
             "invalidRegistration": false,
@@ -330,6 +340,7 @@ VueWrapper {
           "data": Object {
             "email": "",
             "errorMessage": "There was an error registering your account details.",
+            "formTitle": "Register",
             "invalidRegistration": false,
             "password": "",
           },
@@ -339,6 +350,9 @@ VueWrapper {
             "active": true,
             "allowRecurse": true,
             "deps": Array [
+              Set {
+                [Circular],
+              },
               Set {
                 [Circular],
                 ReactiveEffect {
@@ -415,6 +429,7 @@ VueWrapper {
           "proxy": Object {
             "email": "",
             "errorMessage": "There was an error registering your account details.",
+            "formTitle": "Register",
             "hasOwnProperty": [Function],
             "hideErrorMessage": [Function],
             "invalidRegistration": false,
@@ -448,6 +463,9 @@ VueWrapper {
                       "active": true,
                       "allowRecurse": true,
                       "deps": Array [
+                        Set {
+                          [Circular],
+                        },
                         [Circular],
                         Set {
                           [Circular],
@@ -492,6 +510,9 @@ VueWrapper {
                       "active": true,
                       "allowRecurse": true,
                       "deps": Array [
+                        Set {
+                          [Circular],
+                        },
                         Set {
                           [Circular],
                           ReactiveEffect {
@@ -532,6 +553,9 @@ VueWrapper {
                 "active": true,
                 "allowRecurse": true,
                 "deps": Array [
+                  Set {
+                    [Circular],
+                  },
                   Set {
                     [Circular],
                     ReactiveEffect {
@@ -601,6 +625,71 @@ VueWrapper {
                         "__v_skip": true,
                         "anchor": null,
                         "appContext": null,
+                        "children": "Register",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <h2>
+                          Register
+                        </h2>,
+                        "key": null,
+                        "patchFlag": 1,
+                        "props": null,
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 9,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "h2",
+                      },
+                    ],
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <div
+                      class="form-control"
+                    >
+                      <h2>
+                        Register
+                      </h2>
+                    </div>,
+                    "key": null,
+                    "patchFlag": 0,
+                    "props": Object {
+                      "class": "form-control",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 17,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "div",
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": Array [
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
                         "children": "Email",
                         "component": null,
                         "dirs": null,
@@ -647,6 +736,7 @@ VueWrapper {
                             "instance": Object {
                               "email": "",
                               "errorMessage": "There was an error registering your account details.",
+                              "formTitle": "Register",
                               "hasOwnProperty": [Function],
                               "hideErrorMessage": [Function],
                               "invalidRegistration": false,
@@ -819,6 +909,7 @@ VueWrapper {
                             "instance": Object {
                               "email": "",
                               "errorMessage": "There was an error registering your account details.",
+                              "formTitle": "Register",
                               "hasOwnProperty": [Function],
                               "hideErrorMessage": [Function],
                               "invalidRegistration": false,
@@ -1282,6 +1373,13 @@ VueWrapper {
                   <div
                     class="form-control"
                   >
+                    <h2>
+                      Register
+                    </h2>
+                  </div>
+                  <div
+                    class="form-control"
+                  >
                     <label
                       for="email"
                     >
@@ -1353,6 +1451,35 @@ VueWrapper {
                 "__v_skip": true,
                 "anchor": null,
                 "appContext": null,
+                "children": "Register",
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": null,
+                "dynamicProps": null,
+                "el": <h2>
+                  Register
+                </h2>,
+                "key": null,
+                "patchFlag": 1,
+                "props": null,
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 9,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": "h2",
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
                 "children": null,
                 "component": null,
                 "dirs": Array [
@@ -1366,6 +1493,7 @@ VueWrapper {
                     "instance": Object {
                       "email": "",
                       "errorMessage": "There was an error registering your account details.",
+                      "formTitle": "Register",
                       "hasOwnProperty": [Function],
                       "hideErrorMessage": [Function],
                       "invalidRegistration": false,
@@ -1459,6 +1587,7 @@ VueWrapper {
                     "instance": Object {
                       "email": "",
                       "errorMessage": "There was an error registering your account details.",
+                      "formTitle": "Register",
                       "hasOwnProperty": [Function],
                       "hideErrorMessage": [Function],
                       "invalidRegistration": false,
@@ -1826,6 +1955,13 @@ VueWrapper {
                 <div
                   class="form-control"
                 >
+                  <h2>
+                    Register
+                  </h2>
+                </div>
+                <div
+                  class="form-control"
+                >
                   <label
                     for="email"
                   >
@@ -1947,6 +2083,13 @@ VueWrapper {
           class="login-form-container"
         >
           <form>
+            <div
+              class="form-control"
+            >
+              <h2>
+                Register
+              </h2>
+            </div>
             <div
               class="form-control"
             >
@@ -2116,6 +2259,13 @@ VueWrapper {
             <div
               class="form-control"
             >
+              <h2>
+                Register
+              </h2>
+            </div>
+            <div
+              class="form-control"
+            >
               <label
                 for="email"
               >
@@ -2206,6 +2356,7 @@ VueWrapper {
   "componentVM": Object {
     "email": "",
     "errorMessage": "There was an error registering your account details.",
+    "formTitle": "Register",
     "hasOwnProperty": [Function],
     "hideErrorMessage": [Function],
     "invalidRegistration": false,
@@ -2223,6 +2374,13 @@ VueWrapper {
     class="login-form-container"
   >
     <form>
+      <div
+        class="form-control"
+      >
+        <h2>
+          Register
+        </h2>
+      </div>
       <div
         class="form-control"
       >

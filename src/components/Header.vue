@@ -52,7 +52,7 @@
     </ul>
 
     <MobileNavBar
-      v-if="isMobile()"
+      v-if="isMobile() && !isLoggedIn"
       name="Logo Name"
       :navLinks="[
         {
@@ -60,6 +60,19 @@
           link: '/register',
         },
         { name: 'Login', link: '/login' },
+      ]"
+    />
+
+    <MobileNavBar
+      v-if="isMobile() && isLoggedIn"
+      name="Logo Name"
+      :navLinks="[
+        { name: 'User Settings Page', link: '/settings' },
+        {
+          name: 'Dashboard',
+          link: `/dashboard/${userId}`,
+        },
+        { name: 'Logout', link: '/logout' },
       ]"
     />
 

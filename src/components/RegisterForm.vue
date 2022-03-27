@@ -2,6 +2,9 @@
   <div class="login-form-container">
     <form @submit.prevent="submitForm">
       <div class="form-control">
+        <h2>{{ formTitle }}</h2>
+      </div>
+      <div class="form-control">
         <label for="email">Email</label>
         <input
           id="email"
@@ -53,6 +56,7 @@ export default {
     return {
       email: "",
       password: "",
+      formTitle: "Register",
       invalidRegistration: false,
       errorMessage: "There was an error registering your account details.",
     };
