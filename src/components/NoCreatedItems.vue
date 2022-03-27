@@ -28,7 +28,7 @@ export default {
 #no-items-call-to-action-container {
   height: 20vh;
   padding: 1rem 0;
-  width: 82%;
+  width: 80%;
   margin-bottom: 1rem;
   border-radius: 10px;
   border: 1px solid black;

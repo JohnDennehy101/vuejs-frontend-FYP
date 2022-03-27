@@ -1,9 +1,44 @@
 <template>
   <div id="event-information-container">
-    <h3>{{ title }}</h3>
-    <p>More info about group trip here...description</p>
-    <p>{{ city }}</p>
-    <span>{{ type }}</span>
+    <div id="event-overview-info-container">
+      <div>
+        <h3>Title</h3>
+        <p data-testid="title">{{ title }}</p>
+      </div>
+      <div>
+        <h3>Description:</h3>
+        <p data-testid="description">
+          More info about group trip here...description
+        </p>
+      </div>
+
+      <div v-if="departureCity.length > 0">
+        <h3>Departure City</h3>
+        <p data-testid="departureCity">{{ departureCity }}</p>
+      </div>
+
+      <div>
+        <h3>Destination City</h3>
+        <p data-testid="destinationCity">{{ destinationCity }}</p>
+      </div>
+
+      <div>
+        <h3>Event Type</h3>
+        <p data-testid="domesticDayEvent" v-if="type === 'DOMESTIC_DAY'">
+          Domestic Day Event
+        </p>
+        <p
+          data-testid="domesticOvernightEvent"
+          v-else-if="type === 'DOMESTIC_OVERNIGHT'"
+        >
+          Domestic Overnight Event
+        </p>
+        <p v-else data-testid="foreignOvernightEvent">
+          Foreign Overnight Event
+        </p>
+      </div>
+    </div>
+
     <div id="event-users-parent-container">
       <h4>Users</h4>
       <div
@@ -31,7 +66,8 @@ export default {
       item: this.individualEvent,
       title: "",
       type: "",
-      city: "",
+      destinationCity: "",
+      departureCity: "",
       guestUser: this.invitedUser,
     };
   },
@@ -42,7 +78,13 @@ export default {
       if (eventInfo !== null) {
         this.title = eventInfo.title;
         this.type = eventInfo.type;
-        this.city = eventInfo.city;
+        this.destinationCity = eventInfo.city;
+
+        console.log(eventInfo);
+
+        if (eventInfo.departureCity) {
+          this.departureCity = eventInfo.departureCity;
+        }
       }
     },
   },
@@ -64,6 +106,16 @@ export default {
     width: 90%;
   }
 
+  #event-overview-info-container {
+    margin: 1rem 3rem;
+    display: flex;
+    justify-content: space-between;
+
+    @include for-phone-only {
+      flex-direction: column;
+    }
+  }
+
   h3 {
     margin-top: 0.5rem;
     font-size: 1.1rem;
@@ -79,6 +131,7 @@ export default {
     }
   }
   span {
+    margin-top: 0.8rem;
     padding: 0.4rem;
     background-color: #f2f4fe;
     color: #3a4374;
@@ -92,6 +145,7 @@ export default {
       margin-top: 1rem;
       font-size: 1rem;
       color: #3a4374;
+      text-align: center;
     }
   }
 

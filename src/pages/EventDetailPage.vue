@@ -1,12 +1,19 @@
 <template>
   <div id="wrapper">
+    <loading
+      v-model:active="isLoading"
+      :can-cancel="true"
+      :on-cancel="onCancel"
+      :is-full-page="fullPage"
+      :loader="loaderType"
+      :color="loaderColour"
+    />
     <EventForm
       v-if="showEditForm"
       :edit="this.edit"
       :individualEvent="this.individualEvent"
       @hideEditEventActionClick="this.hideEditForm"
     />
-
     <EventOverview
       v-else-if="showEditForm == false && showEventInfo"
       :individualEvent="this.individualEvent"
@@ -82,21 +89,24 @@
       />
     </div>
     <EventDetailInfoSectionPlaceholder
-      v-if="!displayAccommodation"
+      v-if="!displayAccommodation && mostVotedPollOption"
       :title="accommodationSectionTitle"
       :icon="accommodationSectionIcon"
       :key="accommodationSectionKey"
       v-on:showScrapedInfo="toggleEventDetailInfo"
     />
 
-    <div class="scraped-info-wrapper" v-if="displayAccommodation">
+    <div
+      class="scraped-info-wrapper"
+      v-if="displayAccommodation && mostVotedPollOption"
+    >
       <EventDetailInfoToggleTableDisplay
         v-on:toggleEventDetailInfo="toggleEventDetailInfo"
         infoType="Accommodation"
       />
 
       <EventDetailInfoAccommodationTable
-        v-if="accommodationInfo"
+        v-if="accommodationInfo && accommodationDateRange"
         :accommodation="accommodationInfo"
         :dateRange="accommodationDateRange"
         v-on:checkedAccommodationChange="checkedAccommodationChange"
@@ -104,7 +114,7 @@
     </div>
 
     <EventDetailInfoSectionPlaceholder
-      v-if="!displayActivities"
+      v-if="!displayActivities && mostVotedPollOption"
       :title="activitySectionTitle"
       :icon="activitySectionIcon"
       :key="activitySectionKey"
@@ -113,7 +123,12 @@
 
     <div
       class="scraped-info-wrapper"
-      v-if="individualEvent && googlePlacesInfo && displayActivities"
+      v-if="
+        individualEvent &&
+        googlePlacesInfo &&
+        displayActivities &&
+        mostVotedPollOption
+      "
     >
       <EventDetailInfoToggleTableDisplay
         v-on:toggleEventDetailInfo="toggleEventDetailInfo"
@@ -129,14 +144,21 @@
     </div>
 
     <EventDetailInfoSectionPlaceholder
-      v-if="!displayFlights && individualEvent.type === 'FOREIGN_OVERNIGHT'"
+      v-if="
+        !displayFlights &&
+        individualEvent.type === 'FOREIGN_OVERNIGHT' &&
+        mostVotedPollOption
+      "
       :title="flightsSectionTitle"
       :icon="flightsSectionIcon"
       :key="flightSectionKey"
       v-on:showScrapedInfo="toggleEventDetailInfo"
     />
 
-    <div class="scraped-info-wrapper" v-if="flightInfo && displayFlights">
+    <div
+      class="scraped-info-wrapper"
+      v-if="flightInfo && displayFlights && mostVotedPollOption"
+    >
       <h2>Flight Results</h2>
 
       <EventDetailInfoToggleTableDisplay
@@ -184,6 +206,8 @@ import EventDetailInfoAccommodationTable from "../components/EventDetailInfoAcco
 import EventDetailInfoFlightsTable from "../components/EventDetailInfoFlightsTable";
 import EventDetailInfoActivitiesTable from "../components/EventDetailInfoActivitiesTable";
 import eventService from "../services/EventService";
+import Loading from "vue-loading-overlay";
+import "vue-loading-overlay/dist/vue-loading.css";
 export default {
   name: "eventDetailPage",
   props: {
@@ -240,6 +264,10 @@ export default {
       onlineUsers: [],
       chatIndex: 0,
       showEventChat: false,
+      isLoading: false,
+      fullPage: false,
+      loaderType: "dots",
+      loaderColour: "#0384ff",
     };
   },
   computed: {
@@ -274,12 +302,16 @@ export default {
     EventDetailInfoAccommodationTable,
     EventDetailInfoFlightsTable,
     EventDetailInfoActivitiesTable,
+    Loading,
   },
   methods: {
     async checkEditAction() {
       if (this.edit === "true") {
         this.showEditForm = true;
       }
+    },
+    onCancel() {
+      console.log("User cancelled the loader.");
     },
     editEventInfo(value) {
       this.showEditForm = value;
@@ -352,13 +384,17 @@ export default {
     },
 
     async getEventAccommodationInfo(startDate, endDate) {
+      this.isLoading = true;
       const response = await this.eventService.getAccommodationInformation(
         this.eventId,
         startDate,
         endDate
       );
 
+      this.isLoading = false;
+
       if (response.status === 200) {
+        console.log(response.data);
         this.accommodationInfo = response.data.resultPages;
         this.accommodationDateRange =
           response.data.resultPages[1][0].startDate +
@@ -368,22 +404,28 @@ export default {
     },
 
     async getEventFlightInfo(startDate, endDate) {
+      this.isLoading = true;
       const response = await this.eventService.getFlightInformation(
         this.eventId,
         startDate,
         endDate
       );
 
+      this.isLoading = false;
+
       if (response.status === 200) {
         this.flightInfo = response.data;
       }
     },
     async getEventPlacesInfo(latitude, longitude) {
+      this.isLoading = true;
       const response = await this.eventService.getActivityInformation(
         this.eventId,
         latitude,
         longitude
       );
+
+      this.isLoading = false;
 
       if (response.status === 200) {
         console.log(response.data.results);
