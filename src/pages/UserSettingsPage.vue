@@ -9,7 +9,7 @@
       :color="loaderColour"
     />
     <transition name="toast">
-      <Toast v-if="displayToast" :message="imageUpdatedMessage" />
+      <Toast v-if="displayToast" :message="message" />
     </transition>
     <UserSettingsProfileImage
       v-if="user"
@@ -17,7 +17,11 @@
       :userId="user.id"
       :image="user.profileImageUrl"
     />
-    <UserSettingsForm v-if="user" :user="user" />
+    <UserSettingsForm
+      v-if="user"
+      v-on:updateUserForm="formUpdateSuccessful"
+      :user="user"
+    />
   </div>
 </template>
 
@@ -43,7 +47,7 @@ export default {
       loaderType: "dots",
       loaderColour: "#0384ff",
       displayToast: false,
-      imageUpdatedMessage: "User Image successfully updated.",
+      message: "User Image successfully updated.",
     };
   },
   components: {
@@ -77,6 +81,13 @@ export default {
         setTimeout(() => (this.displayToast = false), 4000);
       }
       this.isLoading = value;
+    },
+    formUpdateSuccessful(value) {
+      if (value) {
+        this.message = "User account successfully updated.";
+        this.displayToast = true;
+        setTimeout(() => (this.displayToast = false), 4000);
+      }
     },
   },
   async created() {

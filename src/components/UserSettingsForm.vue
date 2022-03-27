@@ -100,8 +100,12 @@ export default {
         if (response) {
           await localStorage.setItem("token", response.data.jwtToken);
           this.$store.dispatch("setUserId", response.data.userId);
-
-          this.$router.push({ path: `/dashboard/${response.data.userId}` });
+          this.$emit("updateUserForm", true);
+          setTimeout(
+            () =>
+              this.$router.push({ path: `/dashboard/${response.data.userId}` }),
+            5000
+          );
         }
       } else {
         if (!StringUtils.validateEmail(this.email)) {

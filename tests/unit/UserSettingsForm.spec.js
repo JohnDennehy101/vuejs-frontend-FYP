@@ -71,7 +71,7 @@ describe("UserSettingsForm.vue", () => {
 
     await wrapper.find("form").trigger("submit.prevent");
 
-    expect(mockRouter.push).toHaveBeenCalledTimes(1);
+    expect(wrapper.emitted()).toHaveProperty("updateUserForm");
     expect(mockStore.dispatch).toHaveBeenCalledTimes(1);
     expect(wrapper.findComponent(AccountErrorMessage).isVisible()).toBe(false);
   });
