@@ -53,7 +53,7 @@ export default {
         this.invalidImageUpload = true;
       } else {
         this.$emit("updateUserImage", false);
-        this.$router.go(0);
+        setTimeout(() => this.$router.go(0), 5000);
       }
     },
   },
