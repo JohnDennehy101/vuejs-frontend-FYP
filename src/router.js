@@ -9,6 +9,7 @@ import CreatePollPage from "./pages/CreatePollPage";
 import TakePollPage from "./pages/TakePollPage";
 import EventDetailPage from "./pages/EventDetailPage";
 import UserSettingsPage from "./pages/UserSettingsPage";
+import RouteNotFound from "./components/RouteNotFound";
 import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
@@ -70,6 +71,11 @@ const routes = [
     component: EventDetailPage,
     props: true,
   },
+  {
+    path: "/:pathMatch(.*)*",
+    name: "Route Not Found",
+    component: RouteNotFound
+  }
 ];
 
 const router = createRouter({
