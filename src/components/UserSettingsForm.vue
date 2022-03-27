@@ -13,6 +13,9 @@
           placeholder="Enter email"
           v-model="email"
         />
+        <p class="error-message" v-if="emailNotProvided">
+          Please provide an email
+        </p>
       </div>
       <div class="form-control">
         <label for="password">Password</label>
@@ -23,6 +26,10 @@
           placeholder="Enter password"
           v-model="password"
         />
+        <p class="error-message" v-if="passwordNotProvided">
+          Please provide a password with a minimum length of 7 and a mix of
+          lowercase, uppercase, numbers and special characters
+        </p>
       </div>
 
       <div class="form-control">
@@ -33,6 +40,9 @@
           placeholder="Please Re-enter password"
           v-model="reEnterPassword"
         />
+        <p class="error-message" v-if="passwordsNotMatching">
+          Passwords not matching
+        </p>
       </div>
       <div class="form-control">
         <button>Update Account Settings</button>
@@ -50,6 +60,7 @@
 <script>
 import userService from "../services/UserService";
 import AccountErrorMessage from "./AccountErrorMessage";
+import StringUtils from "../utils/stringUtils";
 export default {
   props: {
     user: Object,
@@ -65,12 +76,15 @@ export default {
       formTitle: "Edit settings",
       errorMessage: "Values must be provided for email and password.",
       invalidUpdate: false,
+      emailNotProvided: false,
+      passwordNotProvided: false,
+      passwordsNotMatching: false,
     };
   },
   methods: {
     async submitForm() {
       if (
-        this.password.length > 0 &&
+        StringUtils.validatePassword(this.password) &&
         this.password === this.reEnterPassword &&
         this.email
       ) {
@@ -86,12 +100,28 @@ export default {
         if (response) {
           await localStorage.setItem("token", response.data.jwtToken);
           this.$store.dispatch("setUserId", response.data.userId);
-          //Bug here - user email is not currently returned
-          //this.$store.dispatch("setUserEmail", response.data.email);
 
           this.$router.push({ path: `/dashboard/${response.data.userId}` });
         }
       } else {
+        if (!StringUtils.validateEmail(this.email)) {
+          this.emailNotProvided = true;
+        } else {
+          this.emailNotProvided = false;
+        }
+        if (!StringUtils.validatePassword(this.password)) {
+          this.passwordNotProvided = true;
+        } else {
+          this.passwordNotProvided = false;
+        }
+        if (
+          StringUtils.validatePassword(this.password) &&
+          this.password !== this.reEnterPassword
+        ) {
+          this.passwordsNotMatching = true;
+        } else {
+          this.passwordsNotMatching = false;
+        }
         this.invalidUpdate = true;
       }
     },
@@ -128,6 +158,13 @@ form {
   margin: 0 auto;
   border-radius: 10px;
   border: 1px solid #eeeeee;
+
+  .error-message {
+    margin-top: 0.4rem;
+    margin-left: 0.1rem;
+    font-size: 0.9rem;
+    color: red;
+  }
 
   @include for-phone-only {
     height: 80%;

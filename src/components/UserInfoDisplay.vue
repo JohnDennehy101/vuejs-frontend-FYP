@@ -54,7 +54,7 @@ export default {
 
 <style scoped lang="scss">
 #user-info-display-wrapper-container {
-  width: 52%;
+  width: 85%;
   margin: 2rem auto 1rem auto;
   display: flex;
   background-color: white;

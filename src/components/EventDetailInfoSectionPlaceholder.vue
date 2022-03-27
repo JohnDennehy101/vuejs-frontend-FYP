@@ -25,10 +25,10 @@ export default {
 h2 {
   margin: 1rem 0;
   text-align: left;
-  width: 80%;
+  width: 85%;
 }
 #event-detail-info-placeholder-container {
-  width: 80%;
+  width: 85%;
 
   min-height: 15vh;
   display: flex;

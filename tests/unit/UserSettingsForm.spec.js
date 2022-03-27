@@ -63,8 +63,8 @@ describe("UserSettingsForm.vue", () => {
       },
     });
 
-    await wrapper.find("#password").setValue("NewPassword123");
-    await wrapper.find("#reEnterPassword").setValue("NewPassword123");
+    await wrapper.find("#password").setValue("NewPassword123£");
+    await wrapper.find("#reEnterPassword").setValue("NewPassword123£");
 
     const button = await wrapper.find("button");
     expect(button.exists()).toBe(true);
@@ -94,13 +94,96 @@ describe("UserSettingsForm.vue", () => {
       },
     });
 
-    await wrapper.find("#password").setValue("NewPassword12");
+    await wrapper.find("#password").setValue("NewPassword123£");
     await wrapper.find("#reEnterPassword").setValue("NewPassword123");
 
     const button = await wrapper.find("button");
     expect(button.exists()).toBe(true);
 
     await wrapper.find("form").trigger("submit.prevent");
+
+    expect(wrapper.find(".error-message").text()).toBe(
+      "Passwords not matching"
+    );
+
+    expect(mockRouter.push).toHaveBeenCalledTimes(0);
+    expect(mockStore.dispatch).toHaveBeenCalledTimes(0);
+    expect(wrapper.findComponent(AccountErrorMessage).isVisible()).toBe(true);
+  });
+
+  it("error message shown if password not strong enough and user clicks submit", async () => {
+    const wrapper = mount(UserSettingsForm, {
+      props: {
+        userService: mockSuccessfulUserService,
+        user: {
+          profileImageUrl: "https://www.cloudinary-image.com",
+          email: "test@gmail.com",
+        },
+      },
+      global: {
+        mocks: {
+          $store: mockStore,
+          $route: mockRoute,
+          $router: mockRouter,
+        },
+      },
+    });
+
+    await wrapper.find("#password").setValue("NewPassword");
+    await wrapper.find("#reEnterPassword").setValue("NewPassword");
+
+    const button = await wrapper.find("button");
+    expect(button.exists()).toBe(true);
+
+    await wrapper.find("form").trigger("submit.prevent");
+
+    await nextTick();
+
+    expect(wrapper.find(".error-message").text()).toBe(
+      "Please provide a password with a minimum length of 7 and a mix of lowercase, uppercase, numbers and special characters"
+    );
+
+    expect(wrapper.vm.passwordNotProvided).toBe(true);
+
+    expect(mockRouter.push).toHaveBeenCalledTimes(0);
+    expect(mockStore.dispatch).toHaveBeenCalledTimes(0);
+    expect(wrapper.findComponent(AccountErrorMessage).isVisible()).toBe(true);
+  });
+
+  it("error message shown if email not provided and user clicks submit", async () => {
+    const wrapper = mount(UserSettingsForm, {
+      props: {
+        userService: mockSuccessfulUserService,
+        user: {
+          profileImageUrl: "https://www.cloudinary-image.com",
+          email: "test@gmail.com",
+        },
+      },
+      global: {
+        mocks: {
+          $store: mockStore,
+          $route: mockRoute,
+          $router: mockRouter,
+        },
+      },
+    });
+
+    await wrapper.find("#email").setValue("");
+    await wrapper.find("#password").setValue("NewPassword123£");
+    await wrapper.find("#reEnterPassword").setValue("NewPassword123£");
+
+    const button = await wrapper.find("button");
+    expect(button.exists()).toBe(true);
+
+    await wrapper.find("form").trigger("submit.prevent");
+
+    await nextTick();
+
+    expect(wrapper.find(".error-message").text()).toBe(
+      "Please provide an email"
+    );
+
+    expect(wrapper.vm.emailNotProvided).toBe(true);
 
     expect(mockRouter.push).toHaveBeenCalledTimes(0);
     expect(mockStore.dispatch).toHaveBeenCalledTimes(0);

@@ -90,7 +90,7 @@ export default {
 
 <style scoped lang="scss">
 #chat-messages-container {
-  width: 80%;
+  width: 85%;
 
   margin: 1rem auto;
   border-radius: 5px;

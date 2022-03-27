@@ -656,10 +656,10 @@ export default {
 }
 h2 {
   text-align: left;
-  width: 80%;
+  width: 85%;
 }
 #polls-display-parent-container {
-  width: 80%;
+  width: 85%;
   margin: 1rem auto;
 
   @include for-phone-only {
@@ -670,7 +670,7 @@ h2 {
 
 .scraped-info-wrapper {
   margin: 25px 0;
-  width: 80%;
+  width: 85%;
 
   @include for-phone-only {
     width: 90%;

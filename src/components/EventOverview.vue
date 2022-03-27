@@ -96,7 +96,7 @@ export default {
 
 <style scoped lang="scss">
 #event-information-container {
-  width: 80%;
+  width: 85%;
   text-align: center;
   margin: 1rem auto;
   border-radius: 5px;

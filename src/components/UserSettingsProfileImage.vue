@@ -72,8 +72,9 @@ export default {
   }
 }
 img {
-  max-width: 428px;
-  max-height: 428px;
+  max-width: 250px;
+  max-height: 250px;
+  border-radius: 50%;
   display: block;
   margin: 2rem auto 2rem auto;
 }

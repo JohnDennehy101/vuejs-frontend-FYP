@@ -56,7 +56,7 @@ export default {
 
 <style scoped lang="scss">
 #chat-online-users-container {
-  width: 80%;
+  width: 85%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -72,7 +72,7 @@ export default {
   }
 }
 #chat-online-users-toggle-button-container {
-  width: 80%;
+  width: 85%;
   background-color: #ffffff;
   padding-top: 1rem;
   padding-bottom: 2rem;
