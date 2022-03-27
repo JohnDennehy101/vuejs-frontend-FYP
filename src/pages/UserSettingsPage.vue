@@ -64,7 +64,7 @@ export default {
   methods: {
     async getUserInfo() {
       console.log(this.userId);
-      const response = await this.userService.getUser(await this.userId);
+      const response = await this.userService.getUser(this.userId);
 
       console.log(response);
 
