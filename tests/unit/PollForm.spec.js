@@ -93,8 +93,6 @@ describe("PollForm.vue", () => {
 
     await wrapper.find("form").trigger("submit.prevent");
 
-    console.log(wrapper.vm);
-
     await wrapper.vm.$nextTick();
 
     expect(wrapper.vm.options).toHaveLength(1);
@@ -131,8 +129,6 @@ describe("PollForm.vue", () => {
     });
 
     await wrapper.find("form").trigger("submit.prevent");
-
-    console.log(wrapper.vm);
 
     await wrapper.vm.$nextTick();
 

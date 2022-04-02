@@ -49,8 +49,6 @@ describe("UserSettingsProfileImage.vue", () => {
 
     const profileImage = await wrapper.find('[data-testid="userImage"]');
 
-    console.log(profileImage);
-
     await nextTick();
 
     expect(profileImage.isVisible()).toBe(true);
@@ -67,8 +65,6 @@ describe("UserSettingsProfileImage.vue", () => {
     });
 
     const profileImage = await wrapper.find('[data-testid="userImage"]');
-
-    console.log(profileImage);
 
     await nextTick();
 

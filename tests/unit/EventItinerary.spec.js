@@ -11,7 +11,7 @@ const mockRoute = {
   },
 };
 
-jest.mock("leaflet");
+
 
 const accommodation = [
   {
@@ -84,10 +84,8 @@ const flights = [
 ];
 
 describe("EventItinerary.vue", () => {
-  afterEach(() => {
-    jest.resetAllMocks();
-  });
-  it("should render correctly", () => {
+  const mockMethodTwo = jest.spyOn(EventItinerary.methods, 'createMap').mockReturnValue(true);
+  it("should render correctly", async () => {
     const wrapper = shallowMount(EventItinerary, {
       global: {
         mocks: {
