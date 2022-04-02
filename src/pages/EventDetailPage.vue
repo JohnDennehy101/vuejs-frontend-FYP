@@ -136,7 +136,7 @@
       />
 
       <EventDetailInfoActivitiesTable
-        v-if="googlePlacesInfo && individualEvent"
+        v-if="googlePlacesInfo.length > 0 && individualEvent"
         v-on:checkedActivityChange="checkedThingToDoChange"
         :activitiesInfo="googlePlacesInfo"
         :eventCity="individualEvent.city"
@@ -419,6 +419,8 @@ export default {
 
       this.isLoading = false;
 
+      console.log(response);
+
       if (response.status === 200) {
         console.log(response.data.results);
         this.googlePlacesInfo = response.data.results;
@@ -492,6 +494,7 @@ export default {
       return extractedLink;
     },
     async toggleEventDetailInfo(value) {
+      console.log(value);
       if (value === "Accommodation") {
         if (this.mostVotedPollOption && !this.accommodationInfo) {
           await this.getEventAccommodationInfo(
@@ -505,7 +508,7 @@ export default {
         if (
           this.mostVotedPollOption &&
           this.individualEvent &&
-          !this.googlePlacesInfo
+          this.googlePlacesInfo.length === 0
         ) {
           await this.getEventPlacesInfo(
             this.individualEvent.cityLatitude,

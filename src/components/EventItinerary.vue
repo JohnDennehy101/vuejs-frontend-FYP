@@ -460,8 +460,7 @@ export default {
     },
   },
   mounted() {
-    //Commenting out to save on API calls
-    //this.createMap();
+    this.createMap();
   },
 };
 </script>
