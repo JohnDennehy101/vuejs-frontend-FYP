@@ -193,8 +193,6 @@ import DeleteModal from "../components/DeleteModal";
 import EventItinerary from "../components/EventItinerary";
 import StringUtils from "../utils/stringUtils";
 import EventDetailInfoSectionPlaceholder from "../components/EventDetailInfoSectionPlaceholder";
-//Using test data to construct UI to save on API
-import data from "../components/googleplaces_response.json";
 import { mapGetters } from "vuex";
 import WebSocketService from "../services/WebSocketService.js";
 import ChatMessagesDisplay from "../components/ChatMessagesDisplay";
@@ -354,12 +352,6 @@ export default {
 
           await this.getEventItinerary();
 
-          //Commenting out to save on API calls
-          /*await this.getEventPlacesInfo(
-            this.individualEvent.cityLatitude,
-            this.individualEvent.cityLongitude
-          );*/
-
           this.eventItineraryKey++;
         } else {
           this.mostVotedPollOption = undefined;
@@ -515,11 +507,10 @@ export default {
           this.individualEvent &&
           !this.googlePlacesInfo
         ) {
-          //Commenting out to save on API calls
-          /*await this.getEventPlacesInfo(
+          await this.getEventPlacesInfo(
             this.individualEvent.cityLatitude,
             this.individualEvent.cityLongitude
-          );*/
+          );
         }
 
         this.displayActivities = !this.displayActivities;
@@ -604,7 +595,6 @@ export default {
   },
   async created() {
     await this.extractIdFromUrl();
-    this.googlePlacesInfo = data.results;
     this.socket = WebSocketService.createSocketConnection(this.userEmail);
 
     this.socket.on("messageToClient", (message) => {
