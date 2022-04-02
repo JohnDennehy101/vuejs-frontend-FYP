@@ -4,7 +4,6 @@ import AccountErrorMessage from "@/components/AccountErrorMessage";
 import mockSuccessfulEventService from "./mocks/eventService.mock";
 import mockStore from "./mocks/mockStore.mock";
 import mockRouter from "./mocks/mockRouter.mock";
-import eventService from "../../src/services/EventService";
 import { nextTick } from "vue";
 
 const mockRoute = {
@@ -167,7 +166,7 @@ describe("EventForm.vue", () => {
   it("for new event, if user provides input for required fields and failed external request, error message should be shown", async () => {
     const mockFailureEventService = {
       createEvent() {
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
           resolve({
             error: {
               response: {
@@ -220,7 +219,7 @@ describe("EventForm.vue", () => {
   it("for new event, if user uses an event title that has already been used, a 409 resopnse should be received", async () => {
     const mockFailureEventService = {
       createEvent() {
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
           resolve({
             error: {
               response: {
@@ -478,7 +477,7 @@ describe("EventForm.vue", () => {
   it("if editing event, if event title already in use by another record, should return a 409 response", async () => {
     const mockFailureEventService = {
       updateEvent() {
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
           resolve({
             error: {
               response: {

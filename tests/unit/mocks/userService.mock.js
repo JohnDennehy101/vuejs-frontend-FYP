@@ -1,6 +1,6 @@
 const mockSuccessfulUserService = {
   loginUser() {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       resolve({
         jwtToken: "token",
         userId: "userId",
@@ -9,7 +9,7 @@ const mockSuccessfulUserService = {
     });
   },
   registerUser() {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       resolve({
         jwtToken: "token",
         userId: "userId",
@@ -18,7 +18,7 @@ const mockSuccessfulUserService = {
     });
   },
   updateUser() {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       resolve({
         data: {
           jwtToken: "token",
@@ -28,7 +28,7 @@ const mockSuccessfulUserService = {
     });
   },
   uploadUserProfileImage() {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       resolve({
         data: {
           secure_url: "https://www.cloudinary-new.com",

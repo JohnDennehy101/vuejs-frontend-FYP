@@ -995,7 +995,7 @@ VueWrapper {
                 "0": false,
                 "1": true,
                 "default": EventService {
-                  "baseUrl": "http://localhost:3000",
+                  "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
                 },
               },
               "flight": Object {
@@ -12262,7 +12262,7 @@ VueWrapper {
                 "0": false,
                 "1": true,
                 "default": EventService {
-                  "baseUrl": "http://localhost:3000",
+                  "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
                 },
               },
               "flight": [Function],
@@ -12363,7 +12363,7 @@ VueWrapper {
               "0": false,
               "1": true,
               "default": EventService {
-                "baseUrl": "http://localhost:3000",
+                "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
               },
             },
             "flight": [Function],

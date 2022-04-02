@@ -1,4 +1,4 @@
-import { mount, shallowMount, flushPromises } from "@vue/test-utils";
+import { mount, shallowMount } from "@vue/test-utils";
 import Header from "@/components/Header.vue";
 import mockStore from "./mocks/mockStore.mock";
 import mockRouter from "./mocks/mockRouter.mock";

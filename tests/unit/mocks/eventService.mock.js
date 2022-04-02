@@ -1,6 +1,6 @@
 const mockSuccessfulEventService = {
   createEvent() {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       resolve({
         jwtToken: "token",
         userId: "userId",
@@ -10,7 +10,7 @@ const mockSuccessfulEventService = {
   },
 
   updateEvent() {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       resolve({
         jwtToken: "token",
         userId: "userId",
@@ -20,7 +20,7 @@ const mockSuccessfulEventService = {
   },
 
   deleteEvent() {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       resolve({
         rawAffected: [],
         rowsImpacted: 1,
@@ -29,7 +29,7 @@ const mockSuccessfulEventService = {
   },
 
   createEventPoll() {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       resolve({
         data: {
           title: "Test Poll",
@@ -47,7 +47,7 @@ const mockSuccessfulEventService = {
   },
 
   editEventPoll() {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       resolve({
         title: "Test Poll",
         pollOptions: [
@@ -63,7 +63,7 @@ const mockSuccessfulEventService = {
   },
 
   deleteEventPoll() {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       resolve({
         rawAffected: [],
         rowsImpacted: 1,
@@ -72,7 +72,7 @@ const mockSuccessfulEventService = {
   },
 
   getindividualPoll() {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       resolve({
         data: {
           title: "Test Poll",
@@ -90,7 +90,7 @@ const mockSuccessfulEventService = {
   },
 
   createEventItinerary() {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       resolve({
         id: "1",
         completed: false,
@@ -102,7 +102,7 @@ const mockSuccessfulEventService = {
   },
 
   updateEventItinerary() {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       resolve({
         id: "1",
         completed: false,
@@ -113,7 +113,7 @@ const mockSuccessfulEventService = {
     });
   },
   deleteEventItinerary() {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       resolve({
         rowsAffected: 1,
         rawAffected: [],

@@ -1,6 +1,5 @@
 import { mount, shallowMount } from "@vue/test-utils";
 import UserSettingsProfileImage from "@/components/UserSettingsProfileImage.vue";
-import AccountErrorMessage from "@/components/AccountErrorMessage";
 import mockSuccessfulUserService from "./mocks/userService.mock";
 import mockStore from "./mocks/mockStore.mock";
 import mockRouter from "./mocks/mockRouter.mock";
@@ -14,7 +13,7 @@ const mockRoute = {
 
 const mockFailureUserService = {
   uploadUserProfileImage() {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       resolve({
         error: {
           message: "Error adding",

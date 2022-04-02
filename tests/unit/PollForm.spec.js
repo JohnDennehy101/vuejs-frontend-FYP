@@ -1,10 +1,9 @@
-import { mount, shallowMount, flushPromises } from "@vue/test-utils";
+import { mount, shallowMount } from "@vue/test-utils";
 import PollForm from "@/components/PollForm.vue";
 import PollOption from "@/components/PollOption";
 import mockSuccessfulEventService from "./mocks/eventService.mock";
 import mockStore from "./mocks/mockStore.mock";
 import mockRouter from "./mocks/mockRouter.mock";
-import { nextTick } from "vue";
 import Datepicker from "vue3-datepicker";
 
 const mockRoute = {

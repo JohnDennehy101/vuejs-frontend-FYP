@@ -1,10 +1,8 @@
-import { mount, shallowMount, flushPromises } from "@vue/test-utils";
+import { mount, shallowMount } from "@vue/test-utils";
 import DeleteModal from "@/components/DeleteModal.vue";
-import AccountErrorMessage from "@/components/AccountErrorMessage";
 import mockSuccessfulEventService from "./mocks/eventService.mock";
 import mockStore from "./mocks/mockStore.mock";
 import mockRouter from "./mocks/mockRouter.mock";
-import eventService from "../../src/services/EventService";
 
 const mockRoute = {
   params: {
@@ -16,13 +14,6 @@ const mockEvent = {
   title: "Test Event",
   type: "DOMESTIC_OVERNIGHT",
   location: "Cork",
-};
-
-const mockForeignEvent = {
-  title: "Test Event",
-  type: "FOREIGN_OVERNIGHT",
-  location: "London",
-  departureCity: "Cork",
 };
 
 describe("DeleteModal.vue", () => {

@@ -79,7 +79,7 @@ describe("RegisterForm.vue", () => {
   it("error registering a user if external API call fails", async () => {
     const mockFailureUserService = {
       registerUser() {
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
           resolve(undefined);
         });
       },

@@ -196,7 +196,7 @@ VueWrapper {
           "password": "",
           "submitForm": [Function],
           "userService": UserService {
-            "baseUrl": "http://localhost:3000",
+            "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
           },
           "validEmail": false,
           "validPassword": false,
@@ -331,7 +331,7 @@ VueWrapper {
             "password": "",
             "submitForm": [Function],
             "userService": UserService {
-              "baseUrl": "http://localhost:3000",
+              "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
             },
             "validEmail": false,
             "validPassword": false,
@@ -407,7 +407,7 @@ VueWrapper {
           "parent": [Circular],
           "props": Object {
             "userService": UserService {
-              "baseUrl": "http://localhost:3000",
+              "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
             },
           },
           "propsDefaults": Object {},
@@ -417,7 +417,7 @@ VueWrapper {
                 "0": false,
                 "1": true,
                 "default": UserService {
-                  "baseUrl": "http://localhost:3000",
+                  "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
                 },
               },
             },
@@ -436,7 +436,7 @@ VueWrapper {
             "password": "",
             "submitForm": [Function],
             "userService": UserService {
-              "baseUrl": "http://localhost:3000",
+              "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
             },
             "validEmail": false,
             "validPassword": false,
@@ -743,7 +743,7 @@ VueWrapper {
                               "password": "",
                               "submitForm": [Function],
                               "userService": UserService {
-                                "baseUrl": "http://localhost:3000",
+                                "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
                               },
                               "validEmail": false,
                               "validPassword": false,
@@ -916,7 +916,7 @@ VueWrapper {
                               "password": "",
                               "submitForm": [Function],
                               "userService": UserService {
-                                "baseUrl": "http://localhost:3000",
+                                "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
                               },
                               "validEmail": false,
                               "validPassword": false,
@@ -1500,7 +1500,7 @@ VueWrapper {
                       "password": "",
                       "submitForm": [Function],
                       "userService": UserService {
-                        "baseUrl": "http://localhost:3000",
+                        "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
                       },
                       "validEmail": false,
                       "validPassword": false,
@@ -1594,7 +1594,7 @@ VueWrapper {
                       "password": "",
                       "submitForm": [Function],
                       "userService": UserService {
-                        "baseUrl": "http://localhost:3000",
+                        "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
                       },
                       "validEmail": false,
                       "validPassword": false,
@@ -2063,7 +2063,7 @@ VueWrapper {
                 "0": false,
                 "1": true,
                 "default": UserService {
-                  "baseUrl": "http://localhost:3000",
+                  "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
                 },
               },
             },
@@ -2195,7 +2195,7 @@ VueWrapper {
               "0": false,
               "1": true,
               "default": UserService {
-                "baseUrl": "http://localhost:3000",
+                "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
               },
             },
           },
@@ -2363,7 +2363,7 @@ VueWrapper {
     "password": "",
     "submitForm": [Function],
     "userService": UserService {
-      "baseUrl": "http://localhost:3000",
+      "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
     },
     "validEmail": false,
     "validPassword": false,

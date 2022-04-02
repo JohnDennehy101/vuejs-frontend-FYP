@@ -23,7 +23,7 @@ describe("TakePollLabel.vue", () => {
   });
 
   it("checks computed properties are defined", async () => {
-    const wrapper = mount(TakePollLabel, {
+    mount(TakePollLabel, {
        props: {
         startDate: new Date(),
         endDate: new Date(),
