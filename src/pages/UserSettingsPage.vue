@@ -97,6 +97,15 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.vld-parent {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f2f2;
+}
 .toast-enter-active {
   animation: toast 0.5s ease;
 }

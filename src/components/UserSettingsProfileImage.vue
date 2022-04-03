@@ -66,7 +66,7 @@ export default {
   margin: 1rem auto;
   text-align: center;
   border: 1px solid #eeeeee;
-
+  background-color: #ffffff;
   @include for-phone-only {
     width: 90%;
   }

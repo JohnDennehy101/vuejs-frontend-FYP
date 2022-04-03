@@ -142,7 +142,7 @@ export default {
 <style scoped lang="scss">
 .settings-form-container {
   width: 60%;
-  height: 80vh;
+
   margin: 1rem auto;
   display: flex;
   align-items: center;
@@ -154,7 +154,7 @@ export default {
 }
 form {
   width: 100%;
-  height: 90%;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;

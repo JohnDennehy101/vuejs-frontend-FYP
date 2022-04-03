@@ -426,11 +426,9 @@ export default {
         this.googlePlacesInfo = response.data.results;
       }
     },
-    showDeleteModal(event) {
-      this.deletePollTitle =
-        event.path[3].children[0].childNodes[0].childNodes[1].textContent;
-      this.pollId =
-        event.path[3].children[0].children[0].children[3].textContent;
+    showDeleteModal(item) {
+      this.deletePollTitle = item.title;
+      this.pollId = item.id;
       this.displayDeleteModal = true;
     },
     checkedFlightChange(value) {
