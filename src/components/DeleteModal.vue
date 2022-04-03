@@ -63,6 +63,7 @@ export default {
       if (this.itemType === "Event") {
         const response = await this.eventService.deleteEvent(this.eventUuid);
         if (!("error" in response)) {
+          this.$store.dispatch("event/deleteEvent", this.eventUuid);
           this.$router.go(0);
         }
       } else {

@@ -84,9 +84,7 @@ const flights = [
 ];
 
 describe("EventItinerary.vue", () => {
-  afterEach(() => {
-    jest.resetAllMocks();
-  });
+  const mockMethodTwo = jest.spyOn(EventItinerary.methods, 'createMap').mockReturnValue(true);
   it("should render correctly", () => {
     const wrapper = shallowMount(EventItinerary, {
       global: {

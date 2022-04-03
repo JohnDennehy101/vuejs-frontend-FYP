@@ -995,7 +995,7 @@ VueWrapper {
                 "0": false,
                 "1": true,
                 "default": EventService {
-                  "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
+                  "baseUrl": "http://localhost:3000/api/v1",
                 },
               },
               "flight": Object {
@@ -12243,7 +12243,17 @@ VueWrapper {
             },
             "data": [Function],
             "methods": Object {
-              "createMap": [Function],
+              "createMap": [MockFunction] {
+                "calls": Array [
+                  Array [],
+                ],
+                "results": Array [
+                  Object {
+                    "type": "return",
+                    "value": true,
+                  },
+                ],
+              },
               "deletetItinerary": [Function],
               "extractLink": [Function],
               "submitItinerary": [Function],
@@ -12262,7 +12272,7 @@ VueWrapper {
                 "0": false,
                 "1": true,
                 "default": EventService {
-                  "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
+                  "baseUrl": "http://localhost:3000/api/v1",
                 },
               },
               "flight": [Function],
@@ -12344,7 +12354,17 @@ VueWrapper {
           },
           "data": [Function],
           "methods": Object {
-            "createMap": [Function],
+            "createMap": [MockFunction] {
+              "calls": Array [
+                Array [],
+              ],
+              "results": Array [
+                Object {
+                  "type": "return",
+                  "value": true,
+                },
+              ],
+            },
             "deletetItinerary": [Function],
             "extractLink": [Function],
             "submitItinerary": [Function],
@@ -12363,7 +12383,7 @@ VueWrapper {
               "0": false,
               "1": true,
               "default": EventService {
-                "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
+                "baseUrl": "http://localhost:3000/api/v1",
               },
             },
             "flight": [Function],

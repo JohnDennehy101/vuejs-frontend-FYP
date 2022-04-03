@@ -159,6 +159,7 @@ describe("EventForm.vue", () => {
     expect(button.exists()).toBe(true);
 
     await wrapper.find("form").trigger("submit.prevent");
+    expect(mockStore.dispatch).toHaveBeenCalledTimes(1)
     expect(mockRouter.push).toHaveBeenCalledTimes(1);
     expect(wrapper.findComponent(AccountErrorMessage).isVisible()).toBe(false);
   });

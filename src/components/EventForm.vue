@@ -267,6 +267,7 @@ export default {
           console.log(response);
 
           if (!("error" in response)) {
+            this.$store.dispatch("event/createEvent", response.data);
             this.$router.push({ path: `/dashboard/${this.userId}` });
           } else {
             this.invalidEventCreation = true;

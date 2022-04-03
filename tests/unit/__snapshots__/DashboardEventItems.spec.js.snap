@@ -486,9 +486,7 @@ VueWrapper {
           },
           "refs": Object {},
           "render": [Function],
-          "renderCache": Array [
-            [Function],
-          ],
+          "renderCache": Array [],
           "root": [Circular],
           "rtc": null,
           "rtg": null,
@@ -976,7 +974,9 @@ VueWrapper {
                                 "component": null,
                                 "dirs": null,
                                 "dynamicChildren": Array [],
-                                "dynamicProps": null,
+                                "dynamicProps": Array [
+                                  "onClick",
+                                ],
                                 "el": <span
                                   data-testid="deleteEvent"
                                 >
@@ -985,7 +985,7 @@ VueWrapper {
                                   />
                                 </span>,
                                 "key": 1,
-                                "patchFlag": 0,
+                                "patchFlag": 8,
                                 "props": Object {
                                   "data-testid": "deleteEvent",
                                   "key": 1,
@@ -1602,7 +1602,9 @@ VueWrapper {
                     "component": null,
                     "dirs": null,
                     "dynamicChildren": Array [],
-                    "dynamicProps": null,
+                    "dynamicProps": Array [
+                      "onClick",
+                    ],
                     "el": <span
                       data-testid="deleteEvent"
                     >
@@ -1611,7 +1613,7 @@ VueWrapper {
                       />
                     </span>,
                     "key": 1,
-                    "patchFlag": 0,
+                    "patchFlag": 8,
                     "props": Object {
                       "data-testid": "deleteEvent",
                       "key": 1,
@@ -2076,7 +2078,9 @@ VueWrapper {
                                 "component": null,
                                 "dirs": null,
                                 "dynamicChildren": Array [],
-                                "dynamicProps": null,
+                                "dynamicProps": Array [
+                                  "onClick",
+                                ],
                                 "el": <span
                                   data-testid="deleteEvent"
                                 >
@@ -2085,7 +2089,7 @@ VueWrapper {
                                   />
                                 </span>,
                                 "key": 1,
-                                "patchFlag": 0,
+                                "patchFlag": 8,
                                 "props": Object {
                                   "data-testid": "deleteEvent",
                                   "key": 1,
