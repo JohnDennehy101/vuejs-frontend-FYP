@@ -1,39 +1,49 @@
 <template>
-  <form @submit.prevent="submitForm" v-if="pollInformation">
-    <div class="form-control">
-      <h3>Suitable Dates Poll For - {{ pollInformation.title }}</h3>
+  <div class="vld-parent">
+    <loading
+      v-model:active="isLoading"
+      :can-cancel="true"
+      :on-cancel="onCancel"
+      :is-full-page="fullPage"
+      :loader="loaderType"
+      :color="loaderColour"
+    />
+    <form @submit.prevent="submitForm" v-if="pollInformation">
+      <div class="form-control">
+        <h3>Suitable Dates Poll For - {{ pollInformation.title }}</h3>
 
-      <PollBarChart
-        v-if="loaded"
-        :key="chartKey"
-        :chartKey="chartKey"
-        :chartData="chartdata"
-      />
-
-      <div
-        v-for="option in pollOptions"
-        v-bind:key="option.id"
-        class="checkbox-parent-container"
-      >
-        <input
-          :id="option.id"
-          type="checkbox"
-          v-on:change="triggerChartRefresh"
-          :value="option.id"
-          v-model="checkedOptions"
+        <PollBarChart
+          v-if="loaded"
+          :key="chartKey"
+          :chartKey="chartKey"
+          :chartData="chartdata"
         />
 
-        <TakePollLabel
-          :optionId="option.id"
-          :optionStartDate="option.startDate"
-          :optionEndDate="option.endDate"
-        />
+        <div
+          v-for="option in pollOptions"
+          v-bind:key="option.id"
+          class="checkbox-parent-container"
+        >
+          <input
+            :id="option.id"
+            type="checkbox"
+            v-on:change="triggerChartRefresh"
+            :value="option.id"
+            v-model="checkedOptions"
+          />
+
+          <TakePollLabel
+            :optionId="option.id"
+            :optionStartDate="option.startDate"
+            :optionEndDate="option.endDate"
+          />
+        </div>
       </div>
-    </div>
-    <div class="form-control button-container">
-      <button>Submit Poll</button>
-    </div>
-  </form>
+      <div class="form-control button-container">
+        <button>Submit Poll</button>
+      </div>
+    </form>
+  </div>
 </template>
 
 <script>
@@ -41,6 +51,8 @@ import TakePollLabel from "../components/TakePollLabel";
 import PollBarChart from "../components/PollBarChart";
 import eventService from "../services/EventService";
 import { mapGetters } from "vuex";
+import Loading from "vue-loading-overlay";
+import "vue-loading-overlay/dist/vue-loading.css";
 export default {
   props: {
     eventService: {
@@ -58,6 +70,10 @@ export default {
       loaded: false,
       chartdata: null,
       chartKey: 0,
+      isLoading: false,
+      fullPage: false,
+      loaderType: "dots",
+      loaderColour: "#0384ff",
     };
   },
   computed: {
@@ -127,6 +143,7 @@ export default {
           options: checkedOptions,
         };
 
+        this.isLoading = true;
         const response = await this.eventService.voteEventPoll(
           this.userId,
           this.eventId,
@@ -135,8 +152,10 @@ export default {
         );
 
         if (!("error" in response)) {
+          this.isLoading = false;
           this.$router.push({ path: `/dashboard/${this.userId}` });
         } else {
+          this.isLoading = false;
           this.invalidLogin = true;
         }
       }
@@ -148,6 +167,7 @@ export default {
     await this.populateFormInfo();
   },
   components: {
+    Loading,
     TakePollLabel,
     PollBarChart,
   },
@@ -155,6 +175,14 @@ export default {
 </script>
 
 <style scope lang="scss">
+.vld-parent {
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f2f2;
+}
 form {
   width: 60%;
   height: 90%;
