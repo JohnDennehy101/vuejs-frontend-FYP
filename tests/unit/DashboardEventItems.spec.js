@@ -3,6 +3,8 @@ import DashboardEventItems from "@/components/DashboardEventItems.vue";
 
 const mockEvent = {
   title: "Test Event",
+  description:
+    "Test Description that is really long should be cut off at some point here or test will fail",
   type: "DOMESTIC_OVERNIGHT",
   location: "Cork",
 };
@@ -42,6 +44,7 @@ describe("DashboardEventItems.vue", () => {
         events: [
           {
             title: "Test Event",
+            description: "Test Description",
             type: "DOMESTIC_DAY",
             location: "Cork",
           },
@@ -78,6 +81,7 @@ describe("DashboardEventItems.vue", () => {
         events: [
           {
             title: "Test Event",
+            description: "Test Description",
             type: "FOREIGN_OVERNIGHT",
             location: "Cork",
           },
@@ -104,6 +108,36 @@ describe("DashboardEventItems.vue", () => {
     expect(eventTitleElement.text()).toEqual(mockEvent.title);
   });
 
+  it("event description should be shortened on view if too long", () => {
+    const wrapper = mount(DashboardEventItems, {
+      props: {
+        userUuid: "1",
+        createdEvents: true,
+        events: [mockEvent],
+      },
+    });
+
+    const eventDescriptionElement = wrapper.find(
+      '[data-testid="eventDescription"]'
+    );
+    expect(eventDescriptionElement.text()).toContain("...");
+  });
+
+  it("event description should not be shortened on view if not too long", () => {
+    const wrapper = mount(DashboardEventItems, {
+      props: {
+        userUuid: "1",
+        createdEvents: true,
+        events: [{ ...mockEvent, description: "Short Description" }],
+      },
+    });
+
+    const eventDescriptionElement = wrapper.find(
+      '[data-testid="eventDescription"]'
+    );
+    expect(eventDescriptionElement.text()).toBe("Short Description");
+  });
+
   it("event type should be rendered", () => {
     const wrapper = mount(DashboardEventItems, {
       props: {
@@ -113,8 +147,10 @@ describe("DashboardEventItems.vue", () => {
       },
     });
 
-    const eventTypeElement = wrapper.find('[data-testid="eventType"]');
-    expect(eventTypeElement.text()).toEqual(mockEvent.type);
+    const eventTypeElement = wrapper.find(
+      '[data-testid="domesticOvernightEventType"]'
+    );
+    expect(eventTypeElement.text()).toEqual("Overnight Event in Ireland");
   });
 
   it("if created event, link to edit event should be rendered", () => {

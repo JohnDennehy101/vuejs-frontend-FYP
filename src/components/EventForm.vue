@@ -27,6 +27,19 @@
       </p>
     </div>
     <div class="form-control">
+      <label for="description">Description</label>
+      <input
+        id="description"
+        name="title"
+        type="text"
+        placeholder="Enter event description"
+        v-model="description"
+      />
+      <p class="error-message" v-if="descriptionNotProvided">
+        Please provide an event description
+      </p>
+    </div>
+    <div class="form-control">
       <h3>Event Type</h3>
 
       <div class="radio-parent-container">
@@ -192,6 +205,8 @@ export default {
       destinationNotProvided: false,
       emailNotProvided: false,
       buttonTitle: "Add Event",
+      description: "",
+      descriptionNotProvided: false,
     };
   },
   computed: {
@@ -205,10 +220,12 @@ export default {
         if (
           this.title.length > 0 &&
           this.eventType !== null &&
-          this.location.length > 0
+          this.location.length > 0 &&
+          this.description.length > 0
         ) {
           const payload = {
             title: this.title,
+            description: this.description,
             type: this.eventType,
             userEmails: this.userEmails,
             city: this.location,
@@ -249,15 +266,22 @@ export default {
           } else {
             this.destinationNotProvided = false;
           }
+          if (this.description.length === 0) {
+            this.descriptionNotProvided = true;
+          } else {
+            this.descriptionNotProvided = false;
+          }
         }
       } else {
         if (
           this.title.length > 0 &&
+          this.description.length > 0 &&
           this.eventType !== null &&
           this.location.length > 0
         ) {
           const payload = {
             title: this.title,
+            description: this.description,
             type: this.eventType,
             userEmails: this.userEmails,
             city: this.location,
@@ -300,6 +324,11 @@ export default {
           } else {
             this.destinationNotProvided = false;
           }
+          if (this.description.length === 0) {
+            this.descriptionNotProvided = true;
+          } else {
+            this.descriptionNotProvided = false;
+          }
         }
       }
     },
@@ -330,6 +359,7 @@ export default {
         const eventInfo = this.editEventInfo;
 
         this.title = eventInfo.title;
+        this.description = eventInfo.description;
         this.eventType = eventInfo.type;
         this.location = eventInfo.city;
 

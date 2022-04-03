@@ -27,4 +27,12 @@ export default {
     const passwordPattern = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)/;
     return passwordPattern.test(string) && string.length >= 7;
   },
+  returnSubString(string) {
+    if (string.length > 60) {
+      return string.replace(/^(.{60}[^\s]*).*/, "$1") + "...";
+    }
+    else {
+      return string;
+    }
+  }
 };
