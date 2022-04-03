@@ -57,7 +57,7 @@
           <span
             data-testid="deleteEvent"
             v-if="showAllEventActions"
-            @click.prevent="showDeleteModal"
+            @click.prevent="showDeleteModal(item)"
           >
             <i class="fas fa-times-circle"></i
           ></span>
@@ -102,8 +102,8 @@ export default {
     };
   },
   methods: {
-    showDeleteModal(event) {
-      this.$emit("showDeleteModal", event);
+    showDeleteModal(item) {
+      this.$emit("showDeleteModal", item);
     },
   },
 };

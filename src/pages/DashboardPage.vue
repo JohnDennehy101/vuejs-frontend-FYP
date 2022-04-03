@@ -133,11 +133,10 @@ export default {
         this.user = response.data;
       }
     },
-    showDeleteModal(event) {
-      console.log(event);
+    showDeleteModal(value) {
       this.$store.dispatch("event/populateDeleteModal", {
-        deleteEventTitle: event.path[4].children[0].textContent,
-        deleteEventId: event.path[4].children[2].textContent,
+        deleteEventTitle: value.title,
+        deleteEventId: value.id,
       });
 
       this.displayDeleteModal = true;
