@@ -6,6 +6,7 @@ const mockEvent = {
   title: "Test Event",
   type: "DOMESTIC_OVERNIGHT",
   city: "Cork",
+  polls: []
 };
 describe("EventOverview.vue", () => {
   afterEach(() => {

@@ -18,6 +18,10 @@
       v-else-if="showEditForm == false && showEventInfo"
       :individualEvent="this.individualEvent"
       :invitedUser="this.invitedUser"
+      :itineraryCreated="itineraryAlreadyCreated"
+      :itineraryCompleted="itineraryCompleted"
+      :pollCompleted="mostVotedPollOption"
+      :key="eventOverviewKey"
       @editActionClick="editEventInfo"
     />
 
@@ -266,6 +270,7 @@ export default {
       fullPage: false,
       loaderType: "dots",
       loaderColour: "#0384ff",
+      eventOverviewKey: 0,
     };
   },
   computed: {
@@ -371,6 +376,7 @@ export default {
           this.checkedFlight[0] = response.data.flight;
           this.itineraryAlreadyCreated = true;
           this.itineraryCompleted = response.data.completed;
+          this.eventOverviewKey++;
         }
       }
     },
