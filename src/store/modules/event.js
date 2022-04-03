@@ -31,16 +31,28 @@ export default {
       console.log(state.individualEvent);
     },
     deleteEvent(state, payload) {
-            if (state.createdEvents) {
-              state.createdEvents = state.createdEvents.filter((event) => event.id !== payload);
-            }
-            if (state.invitedEvents) {
-              state.invitedEvents = state.invitedEvents.filter((event) => event.id !== payload);
-            }
-        },
+      if (state.createdEvents) {
+        state.createdEvents = state.createdEvents.filter(
+          (event) => event.id !== payload
+        );
+      }
+      if (state.invitedEvents) {
+        state.invitedEvents = state.invitedEvents.filter(
+          (event) => event.id !== payload
+        );
+      }
+    },
     createEvent(state, payload) {
-      state.createdEvents.push(payload)
-    }
+      state.createdEvents.push(payload);
+    },
+    updateEvent(state, payload) {
+      const index = state.createdEvents.findIndex(
+        (event) => event.id === payload.id
+      );
+      console.log(index);
+      console.log(payload);
+      state.createdEvents[index] = payload.data;
+    },
   },
   actions: {
     populateDeleteModal(context, payload) {
@@ -56,11 +68,14 @@ export default {
       context.commit("setIndividualEvent", payload);
     },
     deleteEvent(context, payload) {
-      context.commit("deleteEvent", payload)
+      context.commit("deleteEvent", payload);
     },
     createEvent(context, payload) {
-      context.commit("createEvent", payload)
-    }
+      context.commit("createEvent", payload);
+    },
+    updateEvent(context, payload) {
+      context.commit("updateEvent", payload);
+    },
   },
   getters: {
     noCreatedEventsMessage(state) {

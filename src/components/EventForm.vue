@@ -137,7 +137,7 @@
       </ul>
     </div>
     <div class="form-control button-container">
-      <button>Add Event</button>
+      <button>{{ buttonTitle }}</button>
     </div>
 
     <AccountErrorMessage
@@ -191,6 +191,7 @@ export default {
       departureNotProvided: false,
       destinationNotProvided: false,
       emailNotProvided: false,
+      buttonTitle: "Add Event",
     };
   },
   computed: {
@@ -220,6 +221,10 @@ export default {
           );
 
           if (!("error" in response)) {
+            this.$store.dispatch("event/updateEvent", {
+              data: response.data,
+              id: this.editEventInfo.id,
+            });
             this.$router.push({ path: `/dashboard/${this.userId}` });
           } else {
             this.invalidEventCreation = true;
@@ -321,6 +326,7 @@ export default {
     populateFormInfo() {
       if (this.editEventAction) {
         this.formTitle = "Edit Event";
+        this.buttonTitle = "Update Event";
         const eventInfo = this.editEventInfo;
 
         this.title = eventInfo.title;
