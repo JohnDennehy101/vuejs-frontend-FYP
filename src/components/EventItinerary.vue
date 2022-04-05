@@ -352,7 +352,7 @@
       </div>
 
       <div v-if="editClick" class="event-itinerary-category">
-        <button id="delete-itinerary-button" @click="deletetItinerary">
+        <button id="delete-itinerary-button" @click="deleteItinerary">
           Delete Itinerary
         </button>
       </div>
@@ -414,26 +414,51 @@ export default {
         completed: this.finaliseItinerary,
       };
 
+      this.$emit("itineraryRequest", true);
+
       if (!this.editItinerary) {
-        await this.eventService.createEventItinerary(this.id, payload);
+        const response = await this.eventService.createEventItinerary(
+          this.id,
+          payload
+        );
+
+        if (response.status === 201) {
+          this.$emit("itineraryRequest", false);
+          this.$emit("showToast", { boolean: true, edit: false });
+          this.$router.go(0);
+        }
       } else {
-        await this.eventService.updateEventItinerary(this.id, payload);
+        const response = await this.eventService.updateEventItinerary(
+          this.id,
+          payload
+        );
+        if (response.status === 200) {
+          this.$emit("itineraryRequest", false);
+          this.$emit("showToast", { boolean: true, edit: true });
+          this.$router.go(0);
+        }
       }
     },
-    async deletetItinerary() {
+    async deleteItinerary() {
+      this.$emit("itineraryRequest", true);
       const response = await this.eventService.deleteEventItinerary(this.id);
 
       if (response.status === 200) {
+        this.$emit("itineraryRequest", false);
+        this.$emit("showToast", { boolean: true, edit: "" });
         this.$router.go(0);
       }
     },
     createMap() {
       let mymap;
 
+      /* istanbul ignore next */
       let latLng = LocationUtils.returnCityCoordinates(this.destinationCity);
 
+      /* istanbul ignore next */
       mymap = leaflet.map("itinerary-map").setView(latLng, 13);
 
+      /* istanbul ignore next */
       leaflet
         .tileLayer(
           `https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=${process.env.VUE_APP_MAPBOX_API_KEY}`,

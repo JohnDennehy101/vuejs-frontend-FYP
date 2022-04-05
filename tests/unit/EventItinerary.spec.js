@@ -84,7 +84,9 @@ const flights = [
 ];
 
 describe("EventItinerary.vue", () => {
-  const mockMethodTwo = jest.spyOn(EventItinerary.methods, 'createMap').mockReturnValue(true);
+  const mockMethodTwo = jest
+    .spyOn(EventItinerary.methods, "createMap")
+    .mockReturnValue(true);
   it("should render correctly", () => {
     const wrapper = shallowMount(EventItinerary, {
       global: {
@@ -866,7 +868,8 @@ describe("EventItinerary.vue", () => {
 
     const submitItineraryButton = wrapper.find('[data-testid="submitButton"]');
     await submitItineraryButton.trigger("click");
-
+    expect(wrapper.emitted()).toHaveProperty("itineraryRequest");
+    expect(wrapper.emitted()).toHaveProperty("showToast");
     expect(createEventItineraryMock).toHaveBeenCalled();
   });
 
@@ -896,7 +899,8 @@ describe("EventItinerary.vue", () => {
 
     const submitItineraryButton = wrapper.find('[data-testid="submitButton"]');
     await submitItineraryButton.trigger("click");
-
+    expect(wrapper.emitted()).toHaveProperty("itineraryRequest");
+    expect(wrapper.emitted()).toHaveProperty("showToast");
     expect(updateEventItineraryMock).toHaveBeenCalled();
   });
 
@@ -935,6 +939,8 @@ describe("EventItinerary.vue", () => {
     await deleteItineraryButton.trigger("click");
 
     expect(deleteEventItineraryMock).toHaveBeenCalled();
+    expect(wrapper.emitted()).toHaveProperty("itineraryRequest");
+    expect(wrapper.emitted()).toHaveProperty("showToast");
     expect(mockRouter.go).toHaveBeenCalled();
   });
 });

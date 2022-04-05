@@ -2,12 +2,14 @@
   <div id="wrapper">
     <loading
       v-model:active="isLoading"
-      :can-cancel="true"
+      :can-cancel="false"
       :on-cancel="onCancel"
       :is-full-page="fullPage"
       :loader="loaderType"
+      :lock-scroll="true"
       :color="loaderColour"
     />
+    <Toast v-if="displayToast" :message="toastMessage" />
     <EventForm
       v-if="showEditForm"
       :edit="this.edit"
@@ -43,6 +45,8 @@
       v-on:removeItineraryAccommodationClick="removeItineraryAccommodation"
       v-on:removeItineraryFlightsClick="removeItineraryFlights"
       v-on:removeItineraryActivityClick="removeItineraryActivity"
+      v-on:itineraryRequest="showLoader"
+      v-on:showToast="showToast"
       :editItineraryClick="editItineraryClick"
       :itemType="individualEvent.type"
       :guestUserCheck="invitedUser"
@@ -210,6 +214,7 @@ import EventDetailInfoActivitiesTable from "../components/EventDetailInfoActivit
 import eventService from "../services/EventService";
 import Loading from "vue-loading-overlay";
 import "vue-loading-overlay/dist/vue-loading.css";
+import Toast from "../components/Toast";
 export default {
   name: "eventDetailPage",
   props: {
@@ -267,10 +272,12 @@ export default {
       chatIndex: 0,
       showEventChat: false,
       isLoading: false,
-      fullPage: false,
+      fullPage: true,
       loaderType: "dots",
       loaderColour: "#0384ff",
       eventOverviewKey: 0,
+      displayToast: false,
+      toastMessage: "",
     };
   },
   computed: {
@@ -306,6 +313,7 @@ export default {
     EventDetailInfoFlightsTable,
     EventDetailInfoActivitiesTable,
     Loading,
+    Toast,
   },
   methods: {
     async checkEditAction() {
@@ -599,6 +607,20 @@ export default {
     toggleEventChat() {
       this.showEventChat = !this.showEventChat;
     },
+    showLoader(value) {
+      this.isLoading = value;
+    },
+    showToast(value) {
+      this.displayToast = value.boolean;
+      if (value.edit === true) {
+        this.toastMessage = "Successfully updated itinerary.";
+      } else if (value.edit === "") {
+        this.toastMessage = "Successfully deleted itinerary.";
+      } else {
+        this.toastMessage = "Successfully created itinerary.";
+      }
+      setTimeout(() => (this.displayToast = false), 5000);
+    },
   },
   async created() {
     await this.extractIdFromUrl();
@@ -671,6 +693,47 @@ h2 {
 
   @include for-phone-only {
     width: 90%;
+  }
+}
+
+.toast-enter-active {
+  animation: toast 0.5s ease;
+}
+.toast-leave-to {
+  opacity: 0;
+  transform: translateY(-60px);
+}
+.toast-leave-active {
+  transition: all 0.3s ease;
+}
+@keyframes toast {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  60% {
+    transform: translateX(8px);
+    opacity: 1;
+  }
+  70% {
+    transform: translateX(-8px);
+    opacity: 1;
+  }
+  80% {
+    transform: translateX(4px);
+    opacity: 1;
+  }
+  90% {
+    transform: translateX(-4px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
   }
 }
 </style>
