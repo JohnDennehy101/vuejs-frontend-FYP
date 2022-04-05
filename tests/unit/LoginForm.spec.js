@@ -1,6 +1,6 @@
 import { mount, shallowMount } from "@vue/test-utils";
 import LoginForm from "@/components/LoginForm.vue";
-import AccountErrorMessage from "@/components/AccountErrorMessage";
+import ResponseErrorMessage from "@/components/ResponseErrorMessage";
 import mockSuccessfulUserService from "./mocks/userService.mock";
 import mockStore from "./mocks/mockStore.mock";
 import mockRouter from "./mocks/mockRouter.mock";
@@ -134,7 +134,7 @@ describe("LoginForm.vue", () => {
 
     expect(mockRouter.push).toHaveBeenCalledTimes(1);
     expect(mockStore.dispatch).toHaveBeenCalledTimes(3);
-    expect(wrapper.findComponent(AccountErrorMessage).isVisible()).toBe(false);
+    expect(wrapper.findComponent(ResponseErrorMessage).isVisible()).toBe(false);
   });
 
   it("shows error message if invalid login", async () => {
@@ -145,7 +145,7 @@ describe("LoginForm.vue", () => {
         };
       },
     });
-    expect(wrapper.findComponent(AccountErrorMessage).isVisible()).toBe(true);
+    expect(wrapper.findComponent(ResponseErrorMessage).isVisible()).toBe(true);
   });
 
   it("hides error message if user clicks to remove message", async () => {
@@ -157,6 +157,6 @@ describe("LoginForm.vue", () => {
       },
     });
     await wrapper.vm.hideErrorMessage();
-    expect(wrapper.findComponent(AccountErrorMessage).isVisible()).toBe(false);
+    expect(wrapper.findComponent(ResponseErrorMessage).isVisible()).toBe(false);
   });
 });

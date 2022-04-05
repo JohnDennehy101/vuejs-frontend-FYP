@@ -1,6 +1,6 @@
 import { mount, shallowMount } from "@vue/test-utils";
 import UserSettingsForm from "@/components/UserSettingsForm.vue";
-import AccountErrorMessage from "@/components/AccountErrorMessage";
+import ResponseErrorMessage from "@/components/ResponseErrorMessage";
 import mockSuccessfulUserService from "./mocks/userService.mock";
 import mockStore from "./mocks/mockStore.mock";
 import mockRouter from "./mocks/mockRouter.mock";
@@ -73,7 +73,7 @@ describe("UserSettingsForm.vue", () => {
 
     expect(wrapper.emitted()).toHaveProperty("updateUserForm");
     expect(mockStore.dispatch).toHaveBeenCalledTimes(1);
-    expect(wrapper.findComponent(AccountErrorMessage).isVisible()).toBe(false);
+    expect(wrapper.findComponent(ResponseErrorMessage).isVisible()).toBe(false);
   });
 
   it("does not update user if passwords do not match", async () => {
@@ -108,7 +108,7 @@ describe("UserSettingsForm.vue", () => {
 
     expect(mockRouter.push).toHaveBeenCalledTimes(0);
     expect(mockStore.dispatch).toHaveBeenCalledTimes(0);
-    expect(wrapper.findComponent(AccountErrorMessage).isVisible()).toBe(true);
+    expect(wrapper.findComponent(ResponseErrorMessage).isVisible()).toBe(true);
   });
 
   it("error message shown if password not strong enough and user clicks submit", async () => {
@@ -147,7 +147,7 @@ describe("UserSettingsForm.vue", () => {
 
     expect(mockRouter.push).toHaveBeenCalledTimes(0);
     expect(mockStore.dispatch).toHaveBeenCalledTimes(0);
-    expect(wrapper.findComponent(AccountErrorMessage).isVisible()).toBe(true);
+    expect(wrapper.findComponent(ResponseErrorMessage).isVisible()).toBe(true);
   });
 
   it("error message shown if email not provided and user clicks submit", async () => {
@@ -187,7 +187,7 @@ describe("UserSettingsForm.vue", () => {
 
     expect(mockRouter.push).toHaveBeenCalledTimes(0);
     expect(mockStore.dispatch).toHaveBeenCalledTimes(0);
-    expect(wrapper.findComponent(AccountErrorMessage).isVisible()).toBe(true);
+    expect(wrapper.findComponent(ResponseErrorMessage).isVisible()).toBe(true);
   });
 
   it("if hideErrorMessageCalled, error message no longer displayed", async () => {
@@ -209,6 +209,6 @@ describe("UserSettingsForm.vue", () => {
     });
 
     await wrapper.vm.hideErrorMessage();
-    expect(wrapper.findComponent(AccountErrorMessage).isVisible()).toBe(false);
+    expect(wrapper.findComponent(ResponseErrorMessage).isVisible()).toBe(false);
   });
 });

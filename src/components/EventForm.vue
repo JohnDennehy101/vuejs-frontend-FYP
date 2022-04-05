@@ -153,7 +153,7 @@
       <button>{{ buttonTitle }}</button>
     </div>
 
-    <AccountErrorMessage
+    <ResponseErrorMessage
       :toggle="this.invalidEventCreation"
       :errorMessage="this.errorMessage"
       v-on:hideErrorMessage="hideErrorMessage"
@@ -162,7 +162,7 @@
 </template>
 
 <script>
-import AccountErrorMessage from "../components/AccountErrorMessage";
+import ResponseErrorMessage from "../components/ResponseErrorMessage";
 import EventFormUserEmailDisplay from "../components/EventFormUserEmailDisplay";
 import eventService from "../services/EventService";
 import { mapGetters } from "vuex";
@@ -388,7 +388,7 @@ export default {
     this.populateFormInfo();
   },
   components: {
-    AccountErrorMessage,
+    ResponseErrorMessage,
     EventFormUserEmailDisplay,
   },
 };

@@ -349,6 +349,10 @@
         >
           Submit
         </button>
+        <ResponseErrorMessage
+          :toggle="showErrorMessage"
+          :errorMessage="errorMessage"
+        />
       </div>
 
       <div v-if="editClick" class="event-itinerary-category">
@@ -365,6 +369,7 @@ import leaflet from "leaflet";
 import eventService from "../services/EventService";
 import StringUtils from "../utils/stringUtils";
 import LocationUtils from "../utils/locationUtils";
+import ResponseErrorMessage from "./ResponseErrorMessage";
 export default {
   props: {
     eventService: {
@@ -395,6 +400,8 @@ export default {
       finaliseItinerary: this.complete,
       showFinaliseItineraryCheck: this.displayFinaliseCheckbox,
       itineraryActivities: this.activities,
+      showErrorMessage: false,
+      errorMessage: "",
     };
   },
   methods: {
@@ -414,28 +421,51 @@ export default {
         completed: this.finaliseItinerary,
       };
 
-      this.$emit("itineraryRequest", true);
-
       if (!this.editItinerary) {
-        const response = await this.eventService.createEventItinerary(
-          this.id,
-          payload
-        );
+        if (
+          this.itineraryAccommodation.length > 0 ||
+          this.itineraryActivities.length > 0 ||
+          this.itineraryFlight[0].length > 0
+        ) {
+          this.$emit("itineraryRequest", true);
+          const response = await this.eventService.createEventItinerary(
+            this.id,
+            payload
+          );
 
-        if (response.status === 201) {
-          this.$emit("itineraryRequest", false);
-          this.$emit("showToast", { boolean: true, edit: false });
-          this.$router.go(0);
+          if (response.status === 201) {
+            this.$emit("itineraryRequest", false);
+            this.$emit("showToast", { boolean: true, edit: false });
+            this.$router.go(0);
+          } else {
+            this.showErrorMessage = true;
+            this.errorMessage = "Error creating itinerary.";
+          }
+        } else {
+          this.showErrorMessage = true;
+          this.errorMessage = "Please provide a value for the itinerary.";
         }
       } else {
-        const response = await this.eventService.updateEventItinerary(
-          this.id,
-          payload
-        );
-        if (response.status === 200) {
-          this.$emit("itineraryRequest", false);
-          this.$emit("showToast", { boolean: true, edit: true });
-          this.$router.go(0);
+        if (
+          this.itineraryAccommodation.length > 0 ||
+          this.itineraryActivities.length > 0 ||
+          this.itineraryFlight[0].length > 0
+        ) {
+          const response = await this.eventService.updateEventItinerary(
+            this.id,
+            payload
+          );
+          if (response.status === 200) {
+            this.$emit("itineraryRequest", false);
+            this.$emit("showToast", { boolean: true, edit: true });
+            this.$router.go(0);
+          } else {
+            this.showErrorMessage = true;
+            this.errorMessage = "Error updating itinerary.";
+          }
+        } else {
+          this.showErrorMessage = true;
+          this.errorMessage = "Please provide a value for the itinerary.";
         }
       }
     },
@@ -447,6 +477,9 @@ export default {
         this.$emit("itineraryRequest", false);
         this.$emit("showToast", { boolean: true, edit: "" });
         this.$router.go(0);
+      } else {
+        this.showErrorMessage = true;
+        this.errorMessage = "Error deleting itinerary.";
       }
     },
     createMap() {
@@ -483,6 +516,9 @@ export default {
     emptyItineraryCheck: function () {
       return this.flight.length === 0 && this.accommodation.length === 0;
     },
+  },
+  components: {
+    ResponseErrorMessage,
   },
   mounted() {
     this.createMap();

@@ -1,6 +1,6 @@
 import { mount, shallowMount, flushPromises } from "@vue/test-utils";
 import EventForm from "@/components/EventForm.vue";
-import AccountErrorMessage from "@/components/AccountErrorMessage";
+import ResponseErrorMessage from "@/components/ResponseErrorMessage";
 import mockSuccessfulEventService from "./mocks/eventService.mock";
 import mockStore from "./mocks/mockStore.mock";
 import mockRouter from "./mocks/mockRouter.mock";
@@ -164,7 +164,7 @@ describe("EventForm.vue", () => {
     await wrapper.find("form").trigger("submit.prevent");
     expect(mockStore.dispatch).toHaveBeenCalledTimes(1);
     expect(mockRouter.push).toHaveBeenCalledTimes(1);
-    expect(wrapper.findComponent(AccountErrorMessage).isVisible()).toBe(false);
+    expect(wrapper.findComponent(ResponseErrorMessage).isVisible()).toBe(false);
   });
 
   it("for new event, if user provides input for required fields and failed external request, error message should be shown", async () => {
@@ -554,7 +554,7 @@ describe("EventForm.vue", () => {
 
     await wrapper.find("form").trigger("submit.prevent");
     expect(mockRouter.push).toHaveBeenCalledTimes(1);
-    expect(wrapper.findComponent(AccountErrorMessage).isVisible()).toBe(false);
+    expect(wrapper.findComponent(ResponseErrorMessage).isVisible()).toBe(false);
   });
 
   it("if editing event, if event title already in use by another record, should return a 409 response", async () => {
@@ -629,7 +629,7 @@ describe("EventForm.vue", () => {
         },
       },
     });
-    expect(wrapper.findComponent(AccountErrorMessage).isVisible()).toBe(true);
+    expect(wrapper.findComponent(ResponseErrorMessage).isVisible()).toBe(true);
   });
 
   it("if user changes event type to FOREIGN_OVERNIGHT, foreignTrip variable set to true", async () => {

@@ -48,7 +48,7 @@
         <button>Update Account Settings</button>
       </div>
 
-      <AccountErrorMessage
+      <ResponseErrorMessage
         :toggle="this.invalidUpdate"
         :errorMessage="this.errorMessage"
         v-on:hideErrorMessage="hideErrorMessage"
@@ -59,7 +59,7 @@
 
 <script>
 import userService from "../services/UserService";
-import AccountErrorMessage from "./AccountErrorMessage";
+import ResponseErrorMessage from "./ResponseErrorMessage";
 import StringUtils from "../utils/stringUtils";
 export default {
   props: {
@@ -134,7 +134,7 @@ export default {
     },
   },
   components: {
-    AccountErrorMessage,
+    ResponseErrorMessage,
   },
 };
 </script>

@@ -1,17 +1,17 @@
 import { mount, shallowMount } from "@vue/test-utils";
-import AccountErrorMessage from "@/components/AccountErrorMessage.vue";
+import ResponseErrorMessage from "@/components/ResponseErrorMessage.vue";
 
-describe("AccountErrorMessage.vue", () => {
+describe("ResponseErrorMessage.vue", () => {
   afterEach(() => {
         jest.resetAllMocks();
     });
   it("should render correctly", () => {
-    const wrapper = shallowMount(AccountErrorMessage);
+    const wrapper = shallowMount(ResponseErrorMessage);
     expect(wrapper).toMatchSnapshot();
   });
 
   it("checks errorMessage prop is rendered correctly", async () => {
-    const wrapper = mount(AccountErrorMessage, {
+    const wrapper = mount(ResponseErrorMessage, {
       props: {
         errorMessage: "Error Message",
       },
@@ -21,7 +21,7 @@ describe("AccountErrorMessage.vue", () => {
   });
 
   it("checks event is emitted on click of x icon to hide error message", async () => {
-    const wrapper = mount(AccountErrorMessage, {
+    const wrapper = mount(ResponseErrorMessage, {
       data() {
         return {
           userEmail: "test@gmail.com",

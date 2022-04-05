@@ -58,7 +58,7 @@ VueWrapper {
               Login
             </button>
           </div>
-          <account-error-message-stub
+          <response-error-message-stub
             errormessage="There was an error logging you in."
             toggle="false"
           />
@@ -298,7 +298,7 @@ VueWrapper {
           "bum": null,
           "c": null,
           "components": Object {
-            "AccountErrorMessage": Object {
+            "ResponseErrorMessage": Object {
               "data": [Function],
               "methods": Object {
                 "hideErrorMessage": [Function],
@@ -1131,7 +1131,7 @@ VueWrapper {
                         "dirs": null,
                         "dynamicChildren": null,
                         "dynamicProps": null,
-                        "el": <account-error-message-stub
+                        "el": <response-error-message-stub
                           errormessage="There was an error logging you in."
                           toggle="false"
                         />,
@@ -1153,7 +1153,7 @@ VueWrapper {
                         "target": null,
                         "targetAnchor": null,
                         "transition": null,
-                        "type": "account-error-message-stub",
+                        "type": "response-error-message-stub",
                       },
                       "suspense": null,
                       "suspenseId": 0,
@@ -1162,7 +1162,7 @@ VueWrapper {
                           "MODE": 3,
                           "RENDER_FUNCTION": false,
                         },
-                        "name": "AccountErrorMessage",
+                        "name": "ResponseErrorMessage",
                         "props": Object {
                           "errorMessage": Object {
                             "0": false,
@@ -1191,7 +1191,7 @@ VueWrapper {
                       "errorMessage",
                       "onHideErrorMessage",
                     ],
-                    "el": <account-error-message-stub
+                    "el": <response-error-message-stub
                       errormessage="There was an error logging you in."
                       toggle="false"
                     />,
@@ -1218,7 +1218,7 @@ VueWrapper {
                         "MODE": 3,
                         "RENDER_FUNCTION": false,
                       },
-                      "name": "AccountErrorMessage",
+                      "name": "ResponseErrorMessage",
                       "props": Object {
                         "errorMessage": Object {
                           "0": false,
@@ -1284,7 +1284,7 @@ VueWrapper {
                       Login
                     </button>
                   </div>
-                  <account-error-message-stub
+                  <response-error-message-stub
                     errormessage="There was an error logging you in."
                     toggle="false"
                   />
@@ -1702,7 +1702,7 @@ VueWrapper {
                     "dirs": null,
                     "dynamicChildren": null,
                     "dynamicProps": null,
-                    "el": <account-error-message-stub
+                    "el": <response-error-message-stub
                       errormessage="There was an error logging you in."
                       toggle="false"
                     />,
@@ -1724,7 +1724,7 @@ VueWrapper {
                     "target": null,
                     "targetAnchor": null,
                     "transition": null,
-                    "type": "account-error-message-stub",
+                    "type": "response-error-message-stub",
                   },
                   "suspense": null,
                   "suspenseId": 0,
@@ -1733,7 +1733,7 @@ VueWrapper {
                       "MODE": 3,
                       "RENDER_FUNCTION": false,
                     },
-                    "name": "AccountErrorMessage",
+                    "name": "ResponseErrorMessage",
                     "props": Object {
                       "errorMessage": Object {
                         "0": false,
@@ -1762,7 +1762,7 @@ VueWrapper {
                   "errorMessage",
                   "onHideErrorMessage",
                 ],
-                "el": <account-error-message-stub
+                "el": <response-error-message-stub
                   errormessage="There was an error logging you in."
                   toggle="false"
                 />,
@@ -1789,7 +1789,7 @@ VueWrapper {
                     "MODE": 3,
                     "RENDER_FUNCTION": false,
                   },
-                  "name": "AccountErrorMessage",
+                  "name": "ResponseErrorMessage",
                   "props": Object {
                     "errorMessage": Object {
                       "0": false,
@@ -1855,7 +1855,7 @@ VueWrapper {
                     Login
                   </button>
                 </div>
-                <account-error-message-stub
+                <response-error-message-stub
                   errormessage="There was an error logging you in."
                   toggle="false"
                 />
@@ -1883,7 +1883,7 @@ VueWrapper {
           "suspenseId": 0,
           "type": Object {
             "components": Object {
-              "AccountErrorMessage": Object {
+              "ResponseErrorMessage": Object {
                 "data": [Function],
                 "methods": Object {
                   "hideErrorMessage": [Function],
@@ -1978,7 +1978,7 @@ VueWrapper {
                 Login
               </button>
             </div>
-            <account-error-message-stub
+            <response-error-message-stub
               errormessage="There was an error logging you in."
               toggle="false"
             />
@@ -2007,7 +2007,7 @@ VueWrapper {
         "transition": null,
         "type": Object {
           "components": Object {
-            "AccountErrorMessage": Object {
+            "ResponseErrorMessage": Object {
               "data": [Function],
               "methods": Object {
                 "hideErrorMessage": [Function],
@@ -2143,7 +2143,7 @@ VueWrapper {
                 Login
               </button>
             </div>
-            <account-error-message-stub
+            <response-error-message-stub
               errormessage="There was an error logging you in."
               toggle="false"
             />
@@ -2257,7 +2257,7 @@ VueWrapper {
           Login
         </button>
       </div>
-      <account-error-message-stub
+      <response-error-message-stub
         errormessage="There was an error logging you in."
         toggle="false"
       />
