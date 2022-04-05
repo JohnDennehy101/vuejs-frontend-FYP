@@ -75,6 +75,7 @@ VueWrapper {
         >
           <div
             class="individual-stage"
+            data-testid="eventCreatedMilestone"
           >
             <span>
               <i
@@ -87,6 +88,7 @@ VueWrapper {
           </div>
           <div
             class="individual-stage"
+            data-testid="pollCreatedMilestone"
           >
             <span>
               <i
@@ -99,6 +101,7 @@ VueWrapper {
           </div>
           <div
             class="individual-stage"
+            data-testid="pollCompletedMilestone"
           >
             <span>
               <i
@@ -111,6 +114,7 @@ VueWrapper {
           </div>
           <div
             class="individual-stage"
+            data-testid="itineraryCreatedMilestone"
           >
             <span>
               <i
@@ -123,6 +127,7 @@ VueWrapper {
           </div>
           <div
             class="individual-stage"
+            data-testid="itineraryFinalisedMilestone"
           >
             <span>
               <i
@@ -1377,6 +1382,7 @@ VueWrapper {
                     "dynamicProps": null,
                     "el": <div
                       class="individual-stage"
+                      data-testid="eventCreatedMilestone"
                     >
                       <span>
                         <i
@@ -1391,6 +1397,7 @@ VueWrapper {
                     "patchFlag": -1,
                     "props": Object {
                       "class": "individual-stage",
+                      "data-testid": "eventCreatedMilestone",
                     },
                     "ref": null,
                     "scopeId": null,
@@ -1511,6 +1518,7 @@ VueWrapper {
                     "dynamicProps": null,
                     "el": <div
                       class="individual-stage"
+                      data-testid="pollCreatedMilestone"
                     >
                       <span>
                         <i
@@ -1525,6 +1533,7 @@ VueWrapper {
                     "patchFlag": 0,
                     "props": Object {
                       "class": "individual-stage",
+                      "data-testid": "pollCreatedMilestone",
                     },
                     "ref": null,
                     "scopeId": null,
@@ -1645,6 +1654,7 @@ VueWrapper {
                     "dynamicProps": null,
                     "el": <div
                       class="individual-stage"
+                      data-testid="pollCompletedMilestone"
                     >
                       <span>
                         <i
@@ -1659,6 +1669,7 @@ VueWrapper {
                     "patchFlag": 0,
                     "props": Object {
                       "class": "individual-stage",
+                      "data-testid": "pollCompletedMilestone",
                     },
                     "ref": null,
                     "scopeId": null,
@@ -1779,6 +1790,7 @@ VueWrapper {
                     "dynamicProps": null,
                     "el": <div
                       class="individual-stage"
+                      data-testid="itineraryCreatedMilestone"
                     >
                       <span>
                         <i
@@ -1793,6 +1805,7 @@ VueWrapper {
                     "patchFlag": 0,
                     "props": Object {
                       "class": "individual-stage",
+                      "data-testid": "itineraryCreatedMilestone",
                     },
                     "ref": null,
                     "scopeId": null,
@@ -1913,6 +1926,7 @@ VueWrapper {
                     "dynamicProps": null,
                     "el": <div
                       class="individual-stage"
+                      data-testid="itineraryFinalisedMilestone"
                     >
                       <span>
                         <i
@@ -1927,6 +1941,7 @@ VueWrapper {
                     "patchFlag": 0,
                     "props": Object {
                       "class": "individual-stage",
+                      "data-testid": "itineraryFinalisedMilestone",
                     },
                     "ref": null,
                     "scopeId": null,
@@ -1951,6 +1966,7 @@ VueWrapper {
                 >
                   <div
                     class="individual-stage"
+                    data-testid="eventCreatedMilestone"
                   >
                     <span>
                       <i
@@ -1963,6 +1979,7 @@ VueWrapper {
                   </div>
                   <div
                     class="individual-stage"
+                    data-testid="pollCreatedMilestone"
                   >
                     <span>
                       <i
@@ -1975,6 +1992,7 @@ VueWrapper {
                   </div>
                   <div
                     class="individual-stage"
+                    data-testid="pollCompletedMilestone"
                   >
                     <span>
                       <i
@@ -1987,6 +2005,7 @@ VueWrapper {
                   </div>
                   <div
                     class="individual-stage"
+                    data-testid="itineraryCreatedMilestone"
                   >
                     <span>
                       <i
@@ -1999,6 +2018,7 @@ VueWrapper {
                   </div>
                   <div
                     class="individual-stage"
+                    data-testid="itineraryFinalisedMilestone"
                   >
                     <span>
                       <i
@@ -2630,6 +2650,7 @@ VueWrapper {
               >
                 <div
                   class="individual-stage"
+                  data-testid="eventCreatedMilestone"
                 >
                   <span>
                     <i
@@ -2642,6 +2663,7 @@ VueWrapper {
                 </div>
                 <div
                   class="individual-stage"
+                  data-testid="pollCreatedMilestone"
                 >
                   <span>
                     <i
@@ -2654,6 +2676,7 @@ VueWrapper {
                 </div>
                 <div
                   class="individual-stage"
+                  data-testid="pollCompletedMilestone"
                 >
                   <span>
                     <i
@@ -2666,6 +2689,7 @@ VueWrapper {
                 </div>
                 <div
                   class="individual-stage"
+                  data-testid="itineraryCreatedMilestone"
                 >
                   <span>
                     <i
@@ -2678,6 +2702,7 @@ VueWrapper {
                 </div>
                 <div
                   class="individual-stage"
+                  data-testid="itineraryFinalisedMilestone"
                 >
                   <span>
                     <i
@@ -2812,6 +2837,7 @@ VueWrapper {
           >
             <div
               class="individual-stage"
+              data-testid="eventCreatedMilestone"
             >
               <span>
                 <i
@@ -2824,6 +2850,7 @@ VueWrapper {
             </div>
             <div
               class="individual-stage"
+              data-testid="pollCreatedMilestone"
             >
               <span>
                 <i
@@ -2836,6 +2863,7 @@ VueWrapper {
             </div>
             <div
               class="individual-stage"
+              data-testid="pollCompletedMilestone"
             >
               <span>
                 <i
@@ -2848,6 +2876,7 @@ VueWrapper {
             </div>
             <div
               class="individual-stage"
+              data-testid="itineraryCreatedMilestone"
             >
               <span>
                 <i
@@ -2860,6 +2889,7 @@ VueWrapper {
             </div>
             <div
               class="individual-stage"
+              data-testid="itineraryFinalisedMilestone"
             >
               <span>
                 <i
@@ -3043,6 +3073,7 @@ VueWrapper {
           >
             <div
               class="individual-stage"
+              data-testid="eventCreatedMilestone"
             >
               <span>
                 <i
@@ -3055,6 +3086,7 @@ VueWrapper {
             </div>
             <div
               class="individual-stage"
+              data-testid="pollCreatedMilestone"
             >
               <span>
                 <i
@@ -3067,6 +3099,7 @@ VueWrapper {
             </div>
             <div
               class="individual-stage"
+              data-testid="pollCompletedMilestone"
             >
               <span>
                 <i
@@ -3079,6 +3112,7 @@ VueWrapper {
             </div>
             <div
               class="individual-stage"
+              data-testid="itineraryCreatedMilestone"
             >
               <span>
                 <i
@@ -3091,6 +3125,7 @@ VueWrapper {
             </div>
             <div
               class="individual-stage"
+              data-testid="itineraryFinalisedMilestone"
             >
               <span>
                 <i
@@ -3253,6 +3288,7 @@ VueWrapper {
     >
       <div
         class="individual-stage"
+        data-testid="eventCreatedMilestone"
       >
         <span>
           <i
@@ -3265,6 +3301,7 @@ VueWrapper {
       </div>
       <div
         class="individual-stage"
+        data-testid="pollCreatedMilestone"
       >
         <span>
           <i
@@ -3277,6 +3314,7 @@ VueWrapper {
       </div>
       <div
         class="individual-stage"
+        data-testid="pollCompletedMilestone"
       >
         <span>
           <i
@@ -3289,6 +3327,7 @@ VueWrapper {
       </div>
       <div
         class="individual-stage"
+        data-testid="itineraryCreatedMilestone"
       >
         <span>
           <i
@@ -3301,6 +3340,7 @@ VueWrapper {
       </div>
       <div
         class="individual-stage"
+        data-testid="itineraryFinalisedMilestone"
       >
         <span>
           <i

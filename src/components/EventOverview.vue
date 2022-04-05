@@ -52,32 +52,32 @@
     </div>
     <h4>Event Status</h4>
     <div id="event-stages-parent-container">
-      <div class="individual-stage">
+      <div class="individual-stage" data-testid="eventCreatedMilestone">
         <span> <i class="fas fa-check"></i> </span>
         <p>1. Event Created</p>
       </div>
-      <div class="individual-stage">
+      <div class="individual-stage" data-testid="pollCreatedMilestone">
         <span>
           <i v-if="pollAlreadyCreated" class="fas fa-check"></i>
           <i v-else class="fas fa-times-circle"></i>
         </span>
         <p>2. Poll Created</p>
       </div>
-      <div class="individual-stage">
+      <div class="individual-stage" data-testid="pollCompletedMilestone">
         <span>
           <i v-if="pollAlreadyCompleted" class="fas fa-check"></i>
           <i v-else class="fas fa-times-circle"></i>
         </span>
         <p>3. Poll Completed</p>
       </div>
-      <div class="individual-stage">
+      <div class="individual-stage" data-testid="itineraryCreatedMilestone">
         <span>
           <i v-if="itineraryAlreadyCreated" class="fas fa-check"></i>
           <i v-else class="fas fa-times-circle"></i>
         </span>
         <p>4. Itinerary Created</p>
       </div>
-      <div class="individual-stage">
+      <div class="individual-stage" data-testid="itineraryFinalisedMilestone">
         <span>
           <i v-if="itineraryAlreadyCompleted" class="fas fa-check"></i>
           <i v-else class="fas fa-times-circle"></i>
