@@ -39,6 +39,7 @@
             type="checkbox"
             :value="item"
             data-testid="accommodationCheckbox"
+            v-model="item.checked"
             @change="checkedAccommodationChange($event, item)"
           />
         </td>
@@ -84,11 +85,13 @@ export default {
   props: {
     accommodation: Array,
     dateRange: String,
+    checkedAccommodation: Array,
   },
   data() {
     return {
       accommodationInfo: this.accommodation,
       accommodationDateRange: this.dateRange,
+      selectedAccommodation: this.checkedAccommodation,
     };
   },
   methods: {
@@ -98,6 +101,18 @@ export default {
         item: item,
       });
     },
+    classifyAccommodation() {
+      if (this.selectedAccommodation.length > 0) {
+        this.accommodationInfo[1].map((item) => {
+          this.selectedAccommodation.find((a) => a.title === item.title)
+            ? (item.checked = true)
+            : (item.checked = false);
+        });
+      }
+    },
+  },
+  async created() {
+    await this.classifyAccommodation();
   },
 };
 </script>

@@ -290,9 +290,12 @@ VueWrapper {
               },
             ],
           },
+          "checkedAccommodation": undefined,
           "checkedAccommodationChange": [Function],
+          "classifyAccommodation": [Function],
           "dateRange": "15th March 2022 - 17th March 2022",
           "hasOwnProperty": [Function],
+          "selectedAccommodation": undefined,
         },
       },
       "render": [Function],
@@ -350,11 +353,14 @@ VueWrapper {
             "accommodation": 3,
             "accommodationDateRange": 2,
             "accommodationInfo": 2,
+            "checkedAccommodation": 3,
             "checkedAccommodationChange": 4,
+            "classifyAccommodation": 4,
             "constructor": 0,
             "dateRange": 3,
             "hasOwnProperty": 4,
             "isVueInstance": 0,
+            "selectedAccommodation": 2,
             "toJSON": 0,
             Symbol(Symbol.toStringTag): 0,
           },
@@ -432,9 +438,12 @@ VueWrapper {
                 },
               ],
             },
+            "checkedAccommodation": undefined,
             "checkedAccommodationChange": [Function],
+            "classifyAccommodation": [Function],
             "dateRange": "15th March 2022 - 17th March 2022",
             "hasOwnProperty": [Function],
+            "selectedAccommodation": undefined,
           },
           "da": null,
           "data": Object {
@@ -455,6 +464,7 @@ VueWrapper {
                 },
               ],
             },
+            "selectedAccommodation": undefined,
           },
           "directives": null,
           "ec": null,
@@ -462,6 +472,9 @@ VueWrapper {
             "active": true,
             "allowRecurse": true,
             "deps": Array [
+              Set {
+                [Circular],
+              },
               Set {
                 [Circular],
               },
@@ -548,12 +561,18 @@ VueWrapper {
                 },
               ],
             },
+            "checkedAccommodation": undefined,
             "dateRange": "15th March 2022 - 17th March 2022",
           },
           "propsDefaults": Object {},
           "propsOptions": Array [
             Object {
               "accommodation": Object {
+                "0": false,
+                "1": true,
+                "type": [Function],
+              },
+              "checkedAccommodation": Object {
                 "0": false,
                 "1": true,
                 "type": [Function],
@@ -601,9 +620,12 @@ VueWrapper {
                 },
               ],
             },
+            "checkedAccommodation": undefined,
             "checkedAccommodationChange": [Function],
+            "classifyAccommodation": [Function],
             "dateRange": "15th March 2022 - 17th March 2022",
             "hasOwnProperty": [Function],
+            "selectedAccommodation": undefined,
           },
           "refs": Object {},
           "render": [Function],
@@ -619,6 +641,9 @@ VueWrapper {
                 "active": true,
                 "allowRecurse": true,
                 "deps": Array [
+                  Set {
+                    [Circular],
+                  },
                   Set {
                     [Circular],
                   },
@@ -1193,10 +1218,65 @@ VueWrapper {
                                     "appContext": null,
                                     "children": null,
                                     "component": null,
-                                    "dirs": null,
+                                    "dirs": Array [
+                                      Object {
+                                        "arg": undefined,
+                                        "dir": Object {
+                                          "beforeUpdate": [Function],
+                                          "created": [Function],
+                                          "deep": true,
+                                          "mounted": [Function],
+                                        },
+                                        "instance": Object {
+                                          "accommodation": Object {
+                                            "1": Array [
+                                              Object {
+                                                "bookingSiteDisplayLocationMapLink": "https://www.mockbooking.com",
+                                                "bookingSiteLink": "https://www.mockbooking.com",
+                                                "locationDistance": "3km from centre",
+                                                "numberOfBedsRecommendedBooking": "1 Double Bed",
+                                                "price": "€200",
+                                                "ratingScore": "8.7",
+                                                "ratingScoreCategory": "Exceptional",
+                                                "reviewQuantity": "2000",
+                                                "roomTypeRecommendedBooking": "1 Double Room",
+                                                "title": "Mock Accommodation",
+                                              },
+                                            ],
+                                          },
+                                          "accommodationDateRange": "15th March 2022 - 17th March 2022",
+                                          "accommodationInfo": Object {
+                                            "1": Array [
+                                              Object {
+                                                "bookingSiteDisplayLocationMapLink": "https://www.mockbooking.com",
+                                                "bookingSiteLink": "https://www.mockbooking.com",
+                                                "locationDistance": "3km from centre",
+                                                "numberOfBedsRecommendedBooking": "1 Double Bed",
+                                                "price": "€200",
+                                                "ratingScore": "8.7",
+                                                "ratingScoreCategory": "Exceptional",
+                                                "reviewQuantity": "2000",
+                                                "roomTypeRecommendedBooking": "1 Double Room",
+                                                "title": "Mock Accommodation",
+                                              },
+                                            ],
+                                          },
+                                          "checkedAccommodation": undefined,
+                                          "checkedAccommodationChange": [Function],
+                                          "classifyAccommodation": [Function],
+                                          "dateRange": "15th March 2022 - 17th March 2022",
+                                          "hasOwnProperty": [Function],
+                                          "selectedAccommodation": undefined,
+                                        },
+                                        "modifiers": Object {},
+                                        "oldValue": undefined,
+                                        "value": undefined,
+                                      },
+                                    ],
                                     "dynamicChildren": null,
                                     "dynamicProps": Array [
                                       "value",
+                                      "onUpdate:modelValue",
                                       "onChange",
                                     ],
                                     "el": <input
@@ -1209,6 +1289,7 @@ VueWrapper {
                                     "props": Object {
                                       "data-testid": "accommodationCheckbox",
                                       "onChange": [Function],
+                                      "onUpdate:modelValue": [Function],
                                       "type": "checkbox",
                                       "value": Object {
                                         "bookingSiteDisplayLocationMapLink": "https://www.mockbooking.com",
@@ -1761,10 +1842,65 @@ VueWrapper {
                                 "appContext": null,
                                 "children": null,
                                 "component": null,
-                                "dirs": null,
+                                "dirs": Array [
+                                  Object {
+                                    "arg": undefined,
+                                    "dir": Object {
+                                      "beforeUpdate": [Function],
+                                      "created": [Function],
+                                      "deep": true,
+                                      "mounted": [Function],
+                                    },
+                                    "instance": Object {
+                                      "accommodation": Object {
+                                        "1": Array [
+                                          Object {
+                                            "bookingSiteDisplayLocationMapLink": "https://www.mockbooking.com",
+                                            "bookingSiteLink": "https://www.mockbooking.com",
+                                            "locationDistance": "3km from centre",
+                                            "numberOfBedsRecommendedBooking": "1 Double Bed",
+                                            "price": "€200",
+                                            "ratingScore": "8.7",
+                                            "ratingScoreCategory": "Exceptional",
+                                            "reviewQuantity": "2000",
+                                            "roomTypeRecommendedBooking": "1 Double Room",
+                                            "title": "Mock Accommodation",
+                                          },
+                                        ],
+                                      },
+                                      "accommodationDateRange": "15th March 2022 - 17th March 2022",
+                                      "accommodationInfo": Object {
+                                        "1": Array [
+                                          Object {
+                                            "bookingSiteDisplayLocationMapLink": "https://www.mockbooking.com",
+                                            "bookingSiteLink": "https://www.mockbooking.com",
+                                            "locationDistance": "3km from centre",
+                                            "numberOfBedsRecommendedBooking": "1 Double Bed",
+                                            "price": "€200",
+                                            "ratingScore": "8.7",
+                                            "ratingScoreCategory": "Exceptional",
+                                            "reviewQuantity": "2000",
+                                            "roomTypeRecommendedBooking": "1 Double Room",
+                                            "title": "Mock Accommodation",
+                                          },
+                                        ],
+                                      },
+                                      "checkedAccommodation": undefined,
+                                      "checkedAccommodationChange": [Function],
+                                      "classifyAccommodation": [Function],
+                                      "dateRange": "15th March 2022 - 17th March 2022",
+                                      "hasOwnProperty": [Function],
+                                      "selectedAccommodation": undefined,
+                                    },
+                                    "modifiers": Object {},
+                                    "oldValue": undefined,
+                                    "value": undefined,
+                                  },
+                                ],
                                 "dynamicChildren": null,
                                 "dynamicProps": Array [
                                   "value",
+                                  "onUpdate:modelValue",
                                   "onChange",
                                 ],
                                 "el": <input
@@ -1777,6 +1913,7 @@ VueWrapper {
                                 "props": Object {
                                   "data-testid": "accommodationCheckbox",
                                   "onChange": [Function],
+                                  "onUpdate:modelValue": [Function],
                                   "type": "checkbox",
                                   "value": Object {
                                     "bookingSiteDisplayLocationMapLink": "https://www.mockbooking.com",
@@ -2481,10 +2618,65 @@ VueWrapper {
                                 "appContext": null,
                                 "children": null,
                                 "component": null,
-                                "dirs": null,
+                                "dirs": Array [
+                                  Object {
+                                    "arg": undefined,
+                                    "dir": Object {
+                                      "beforeUpdate": [Function],
+                                      "created": [Function],
+                                      "deep": true,
+                                      "mounted": [Function],
+                                    },
+                                    "instance": Object {
+                                      "accommodation": Object {
+                                        "1": Array [
+                                          Object {
+                                            "bookingSiteDisplayLocationMapLink": "https://www.mockbooking.com",
+                                            "bookingSiteLink": "https://www.mockbooking.com",
+                                            "locationDistance": "3km from centre",
+                                            "numberOfBedsRecommendedBooking": "1 Double Bed",
+                                            "price": "€200",
+                                            "ratingScore": "8.7",
+                                            "ratingScoreCategory": "Exceptional",
+                                            "reviewQuantity": "2000",
+                                            "roomTypeRecommendedBooking": "1 Double Room",
+                                            "title": "Mock Accommodation",
+                                          },
+                                        ],
+                                      },
+                                      "accommodationDateRange": "15th March 2022 - 17th March 2022",
+                                      "accommodationInfo": Object {
+                                        "1": Array [
+                                          Object {
+                                            "bookingSiteDisplayLocationMapLink": "https://www.mockbooking.com",
+                                            "bookingSiteLink": "https://www.mockbooking.com",
+                                            "locationDistance": "3km from centre",
+                                            "numberOfBedsRecommendedBooking": "1 Double Bed",
+                                            "price": "€200",
+                                            "ratingScore": "8.7",
+                                            "ratingScoreCategory": "Exceptional",
+                                            "reviewQuantity": "2000",
+                                            "roomTypeRecommendedBooking": "1 Double Room",
+                                            "title": "Mock Accommodation",
+                                          },
+                                        ],
+                                      },
+                                      "checkedAccommodation": undefined,
+                                      "checkedAccommodationChange": [Function],
+                                      "classifyAccommodation": [Function],
+                                      "dateRange": "15th March 2022 - 17th March 2022",
+                                      "hasOwnProperty": [Function],
+                                      "selectedAccommodation": undefined,
+                                    },
+                                    "modifiers": Object {},
+                                    "oldValue": undefined,
+                                    "value": undefined,
+                                  },
+                                ],
                                 "dynamicChildren": null,
                                 "dynamicProps": Array [
                                   "value",
+                                  "onUpdate:modelValue",
                                   "onChange",
                                 ],
                                 "el": <input
@@ -2497,6 +2689,7 @@ VueWrapper {
                                 "props": Object {
                                   "data-testid": "accommodationCheckbox",
                                   "onChange": [Function],
+                                  "onUpdate:modelValue": [Function],
                                   "type": "checkbox",
                                   "value": Object {
                                     "bookingSiteDisplayLocationMapLink": "https://www.mockbooking.com",
@@ -3049,10 +3242,65 @@ VueWrapper {
                             "appContext": null,
                             "children": null,
                             "component": null,
-                            "dirs": null,
+                            "dirs": Array [
+                              Object {
+                                "arg": undefined,
+                                "dir": Object {
+                                  "beforeUpdate": [Function],
+                                  "created": [Function],
+                                  "deep": true,
+                                  "mounted": [Function],
+                                },
+                                "instance": Object {
+                                  "accommodation": Object {
+                                    "1": Array [
+                                      Object {
+                                        "bookingSiteDisplayLocationMapLink": "https://www.mockbooking.com",
+                                        "bookingSiteLink": "https://www.mockbooking.com",
+                                        "locationDistance": "3km from centre",
+                                        "numberOfBedsRecommendedBooking": "1 Double Bed",
+                                        "price": "€200",
+                                        "ratingScore": "8.7",
+                                        "ratingScoreCategory": "Exceptional",
+                                        "reviewQuantity": "2000",
+                                        "roomTypeRecommendedBooking": "1 Double Room",
+                                        "title": "Mock Accommodation",
+                                      },
+                                    ],
+                                  },
+                                  "accommodationDateRange": "15th March 2022 - 17th March 2022",
+                                  "accommodationInfo": Object {
+                                    "1": Array [
+                                      Object {
+                                        "bookingSiteDisplayLocationMapLink": "https://www.mockbooking.com",
+                                        "bookingSiteLink": "https://www.mockbooking.com",
+                                        "locationDistance": "3km from centre",
+                                        "numberOfBedsRecommendedBooking": "1 Double Bed",
+                                        "price": "€200",
+                                        "ratingScore": "8.7",
+                                        "ratingScoreCategory": "Exceptional",
+                                        "reviewQuantity": "2000",
+                                        "roomTypeRecommendedBooking": "1 Double Room",
+                                        "title": "Mock Accommodation",
+                                      },
+                                    ],
+                                  },
+                                  "checkedAccommodation": undefined,
+                                  "checkedAccommodationChange": [Function],
+                                  "classifyAccommodation": [Function],
+                                  "dateRange": "15th March 2022 - 17th March 2022",
+                                  "hasOwnProperty": [Function],
+                                  "selectedAccommodation": undefined,
+                                },
+                                "modifiers": Object {},
+                                "oldValue": undefined,
+                                "value": undefined,
+                              },
+                            ],
                             "dynamicChildren": null,
                             "dynamicProps": Array [
                               "value",
+                              "onUpdate:modelValue",
                               "onChange",
                             ],
                             "el": <input
@@ -3065,6 +3313,7 @@ VueWrapper {
                             "props": Object {
                               "data-testid": "accommodationCheckbox",
                               "onChange": [Function],
+                              "onUpdate:modelValue": [Function],
                               "type": "checkbox",
                               "value": Object {
                                 "bookingSiteDisplayLocationMapLink": "https://www.mockbooking.com",
@@ -3807,12 +4056,15 @@ VueWrapper {
           "suspenseId": 0,
           "type": Object {
             "components": Object {},
+            "created": [Function],
             "data": [Function],
             "methods": Object {
               "checkedAccommodationChange": [Function],
+              "classifyAccommodation": [Function],
             },
             "props": Object {
               "accommodation": [Function],
+              "checkedAccommodation": [Function],
               "dateRange": [Function],
             },
             "render": [Function],
@@ -3868,12 +4120,15 @@ VueWrapper {
         "transition": null,
         "type": Object {
           "components": Object {},
+          "created": [Function],
           "data": [Function],
           "methods": Object {
             "checkedAccommodationChange": [Function],
+            "classifyAccommodation": [Function],
           },
           "props": Object {
             "accommodation": [Function],
+            "checkedAccommodation": [Function],
             "dateRange": [Function],
           },
           "render": [Function],
@@ -4006,9 +4261,12 @@ VueWrapper {
         },
       ],
     },
+    "checkedAccommodation": undefined,
     "checkedAccommodationChange": [Function],
+    "classifyAccommodation": [Function],
     "dateRange": "15th March 2022 - 17th March 2022",
     "hasOwnProperty": [Function],
+    "selectedAccommodation": undefined,
   },
   "isDisabled": [Function],
   "rootVM": Object {},

@@ -116,7 +116,9 @@
       <EventDetailInfoAccommodationTable
         v-if="accommodationInfo && accommodationDateRange"
         :accommodation="accommodationInfo"
+        :checkedAccommodation="checkedAccommodation"
         :dateRange="accommodationDateRange"
+        :key="accommodationTableKey"
         v-on:checkedAccommodationChange="checkedAccommodationChange"
       />
     </div>
@@ -278,6 +280,7 @@ export default {
       eventOverviewKey: 0,
       displayToast: false,
       toastMessage: "",
+      accommodationTableKey: 0,
     };
   },
   computed: {
@@ -454,6 +457,7 @@ export default {
       if (value.event.target.checked) {
         this.checkedAccommodation = [];
         this.checkedAccommodation.push(value.item);
+        this.accommodationTableKey++;
 
         this.eventItineraryKey++;
       } else {
