@@ -183,6 +183,8 @@
         :flights="flightInfo"
         :mobile="mobileCheck"
         v-on:checkedFlightChange="checkedFlightChange"
+        :checkedFlight="checkedFlight"
+        :key="flightsTablekey"
       />
     </div>
 
@@ -284,6 +286,7 @@ export default {
       toastMessage: "",
       accommodationTableKey: 0,
       activityTableKey: 0,
+      flightsTablekey: 0,
     };
   },
   computed: {
@@ -455,6 +458,7 @@ export default {
       this.checkedFlight = [];
       this.checkedFlight.push(value.item);
       this.eventItineraryKey++;
+      this.flightsTablekey++;
     },
     checkedAccommodationChange(value) {
       if (value.event.target.checked) {

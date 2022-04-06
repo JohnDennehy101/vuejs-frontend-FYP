@@ -299,7 +299,9 @@ Heathrow
       "proxy": Object {},
       "refs": Object {
         "VTU_COMPONENT": Object {
+          "checkedFlight": undefined,
           "checkedFlightChange": [Function],
+          "classifyFlights": [Function],
           "flightInfo": Array [
             Array [
               Object {
@@ -430,7 +432,9 @@ Heathrow",
             "@@__IMMUTABLE_ITERABLE__@@": 0,
             "@@__IMMUTABLE_RECORD__@@": 0,
             "_isMockFunction": 0,
+            "checkedFlight": 3,
             "checkedFlightChange": 4,
+            "classifyFlights": 4,
             "constructor": 0,
             "flightInfo": 2,
             "flights": 3,
@@ -482,7 +486,9 @@ Heathrow",
           "c": null,
           "components": Object {},
           "ctx": Object {
+            "checkedFlight": undefined,
             "checkedFlightChange": [Function],
+            "classifyFlights": [Function],
             "flightInfo": Array [
               Array [
                 Object {
@@ -680,6 +686,9 @@ Heathrow",
               Set {
                 [Circular],
               },
+              Set {
+                [Circular],
+              },
             ],
             "fn": [Function],
             "onTrack": undefined,
@@ -699,6 +708,7 @@ Heathrow",
           "next": null,
           "parent": [Circular],
           "props": Object {
+            "checkedFlight": undefined,
             "flights": Array [
               Array [
                 Object {
@@ -742,6 +752,11 @@ Heathrow",
           "propsDefaults": Object {},
           "propsOptions": Array [
             Object {
+              "checkedFlight": Object {
+                "0": false,
+                "1": true,
+                "type": [Function],
+              },
               "flights": Object {
                 "0": false,
                 "1": true,
@@ -757,7 +772,9 @@ Heathrow",
           ],
           "provides": Object {},
           "proxy": Object {
+            "checkedFlight": undefined,
             "checkedFlightChange": [Function],
+            "classifyFlights": [Function],
             "flightInfo": Array [
               Array [
                 Object {
@@ -852,6 +869,9 @@ Heathrow",
                 "active": true,
                 "allowRecurse": true,
                 "deps": Array [
+                  Set {
+                    [Circular],
+                  },
                   Set {
                     [Circular],
                   },
@@ -1918,9 +1938,107 @@ Heathrow",
                                     "appContext": null,
                                     "children": null,
                                     "component": null,
-                                    "dirs": null,
+                                    "dirs": Array [
+                                      Object {
+                                        "arg": undefined,
+                                        "dir": Object {
+                                          "beforeUpdate": [Function],
+                                          "created": [Function],
+                                          "deep": true,
+                                          "mounted": [Function],
+                                        },
+                                        "instance": Object {
+                                          "checkedFlight": undefined,
+                                          "checkedFlightChange": [Function],
+                                          "classifyFlights": [Function],
+                                          "flightInfo": Array [
+                                            Array [
+                                              Object {
+                                                "airport": "ORK
+Cork",
+                                                "arrivalCity": "London",
+                                                "arrivalTime": "21:45",
+                                                "carrier": "British Airways",
+                                                "departureCity": "Cork",
+                                                "departureTime": "20:30",
+                                                "directFlight": "direct",
+                                                "duration": "1h 15m",
+                                                "endDate": "2022-04-15",
+                                                "flightUrl": "https://www.kayak.ie/flights/ORK-LON/2022-04-08/2022-04-15/2adults?sort=bestflight_a",
+                                                "index": "0",
+                                                "pricePerPerson": "€826",
+                                                "priceTotal": "€1,652 total",
+                                                "startDate": "2022-04-08",
+                                              },
+                                              Object {
+                                                "airport": "LHR
+Heathrow",
+                                                "arrivalCity": "London",
+                                                "arrivalTime": "15:10",
+                                                "carrier": "British Airways",
+                                                "departureCity": "Cork",
+                                                "departureTime": "13:50",
+                                                "directFlight": "direct",
+                                                "duration": "1h 20m",
+                                                "endDate": "2022-04-15",
+                                                "flightUrl": "https://www.kayak.ie/flights/ORK-LON/2022-04-08/2022-04-15/2adults?sort=bestflight_a",
+                                                "index": "0",
+                                                "pricePerPerson": "€826",
+                                                "priceTotal": "€1,652 total",
+                                                "startDate": "2022-04-08",
+                                              },
+                                            ],
+                                          ],
+                                          "flights": Array [
+                                            Array [
+                                              Object {
+                                                "airport": "ORK
+Cork",
+                                                "arrivalCity": "London",
+                                                "arrivalTime": "21:45",
+                                                "carrier": "British Airways",
+                                                "departureCity": "Cork",
+                                                "departureTime": "20:30",
+                                                "directFlight": "direct",
+                                                "duration": "1h 15m",
+                                                "endDate": "2022-04-15",
+                                                "flightUrl": "https://www.kayak.ie/flights/ORK-LON/2022-04-08/2022-04-15/2adults?sort=bestflight_a",
+                                                "index": "0",
+                                                "pricePerPerson": "€826",
+                                                "priceTotal": "€1,652 total",
+                                                "startDate": "2022-04-08",
+                                              },
+                                              Object {
+                                                "airport": "LHR
+Heathrow",
+                                                "arrivalCity": "London",
+                                                "arrivalTime": "15:10",
+                                                "carrier": "British Airways",
+                                                "departureCity": "Cork",
+                                                "departureTime": "13:50",
+                                                "directFlight": "direct",
+                                                "duration": "1h 20m",
+                                                "endDate": "2022-04-15",
+                                                "flightUrl": "https://www.kayak.ie/flights/ORK-LON/2022-04-08/2022-04-15/2adults?sort=bestflight_a",
+                                                "index": "0",
+                                                "pricePerPerson": "€826",
+                                                "priceTotal": "€1,652 total",
+                                                "startDate": "2022-04-08",
+                                              },
+                                            ],
+                                          ],
+                                          "hasOwnProperty": [Function],
+                                          "mobile": false,
+                                          "mobileDevice": false,
+                                        },
+                                        "modifiers": Object {},
+                                        "oldValue": undefined,
+                                        "value": undefined,
+                                      },
+                                    ],
                                     "dynamicChildren": null,
                                     "dynamicProps": Array [
+                                      "onUpdate:modelValue",
                                       "value",
                                     ],
                                     "el": <input
@@ -1932,6 +2050,7 @@ Heathrow",
                                     "patchFlag": 8,
                                     "props": Object {
                                       "data-testid": "desktopFlightCheckbox",
+                                      "onUpdate:modelValue": [Function],
                                       "type": "checkbox",
                                       "value": Object {
                                         "airport": "ORK
@@ -1975,9 +2094,107 @@ Cork",
                                     "appContext": null,
                                     "children": null,
                                     "component": null,
-                                    "dirs": null,
+                                    "dirs": Array [
+                                      Object {
+                                        "arg": undefined,
+                                        "dir": Object {
+                                          "beforeUpdate": [Function],
+                                          "created": [Function],
+                                          "deep": true,
+                                          "mounted": [Function],
+                                        },
+                                        "instance": Object {
+                                          "checkedFlight": undefined,
+                                          "checkedFlightChange": [Function],
+                                          "classifyFlights": [Function],
+                                          "flightInfo": Array [
+                                            Array [
+                                              Object {
+                                                "airport": "ORK
+Cork",
+                                                "arrivalCity": "London",
+                                                "arrivalTime": "21:45",
+                                                "carrier": "British Airways",
+                                                "departureCity": "Cork",
+                                                "departureTime": "20:30",
+                                                "directFlight": "direct",
+                                                "duration": "1h 15m",
+                                                "endDate": "2022-04-15",
+                                                "flightUrl": "https://www.kayak.ie/flights/ORK-LON/2022-04-08/2022-04-15/2adults?sort=bestflight_a",
+                                                "index": "0",
+                                                "pricePerPerson": "€826",
+                                                "priceTotal": "€1,652 total",
+                                                "startDate": "2022-04-08",
+                                              },
+                                              Object {
+                                                "airport": "LHR
+Heathrow",
+                                                "arrivalCity": "London",
+                                                "arrivalTime": "15:10",
+                                                "carrier": "British Airways",
+                                                "departureCity": "Cork",
+                                                "departureTime": "13:50",
+                                                "directFlight": "direct",
+                                                "duration": "1h 20m",
+                                                "endDate": "2022-04-15",
+                                                "flightUrl": "https://www.kayak.ie/flights/ORK-LON/2022-04-08/2022-04-15/2adults?sort=bestflight_a",
+                                                "index": "0",
+                                                "pricePerPerson": "€826",
+                                                "priceTotal": "€1,652 total",
+                                                "startDate": "2022-04-08",
+                                              },
+                                            ],
+                                          ],
+                                          "flights": Array [
+                                            Array [
+                                              Object {
+                                                "airport": "ORK
+Cork",
+                                                "arrivalCity": "London",
+                                                "arrivalTime": "21:45",
+                                                "carrier": "British Airways",
+                                                "departureCity": "Cork",
+                                                "departureTime": "20:30",
+                                                "directFlight": "direct",
+                                                "duration": "1h 15m",
+                                                "endDate": "2022-04-15",
+                                                "flightUrl": "https://www.kayak.ie/flights/ORK-LON/2022-04-08/2022-04-15/2adults?sort=bestflight_a",
+                                                "index": "0",
+                                                "pricePerPerson": "€826",
+                                                "priceTotal": "€1,652 total",
+                                                "startDate": "2022-04-08",
+                                              },
+                                              Object {
+                                                "airport": "LHR
+Heathrow",
+                                                "arrivalCity": "London",
+                                                "arrivalTime": "15:10",
+                                                "carrier": "British Airways",
+                                                "departureCity": "Cork",
+                                                "departureTime": "13:50",
+                                                "directFlight": "direct",
+                                                "duration": "1h 20m",
+                                                "endDate": "2022-04-15",
+                                                "flightUrl": "https://www.kayak.ie/flights/ORK-LON/2022-04-08/2022-04-15/2adults?sort=bestflight_a",
+                                                "index": "0",
+                                                "pricePerPerson": "€826",
+                                                "priceTotal": "€1,652 total",
+                                                "startDate": "2022-04-08",
+                                              },
+                                            ],
+                                          ],
+                                          "hasOwnProperty": [Function],
+                                          "mobile": false,
+                                          "mobileDevice": false,
+                                        },
+                                        "modifiers": Object {},
+                                        "oldValue": undefined,
+                                        "value": undefined,
+                                      },
+                                    ],
                                     "dynamicChildren": null,
                                     "dynamicProps": Array [
+                                      "onUpdate:modelValue",
                                       "value",
                                     ],
                                     "el": <input
@@ -1989,6 +2206,7 @@ Cork",
                                     "patchFlag": 8,
                                     "props": Object {
                                       "data-testid": "desktopFlightCheckbox",
+                                      "onUpdate:modelValue": [Function],
                                       "type": "checkbox",
                                       "value": Object {
                                         "airport": "ORK
@@ -2528,9 +2746,107 @@ Cork
                                     "appContext": null,
                                     "children": null,
                                     "component": null,
-                                    "dirs": null,
+                                    "dirs": Array [
+                                      Object {
+                                        "arg": undefined,
+                                        "dir": Object {
+                                          "beforeUpdate": [Function],
+                                          "created": [Function],
+                                          "deep": true,
+                                          "mounted": [Function],
+                                        },
+                                        "instance": Object {
+                                          "checkedFlight": undefined,
+                                          "checkedFlightChange": [Function],
+                                          "classifyFlights": [Function],
+                                          "flightInfo": Array [
+                                            Array [
+                                              Object {
+                                                "airport": "ORK
+Cork",
+                                                "arrivalCity": "London",
+                                                "arrivalTime": "21:45",
+                                                "carrier": "British Airways",
+                                                "departureCity": "Cork",
+                                                "departureTime": "20:30",
+                                                "directFlight": "direct",
+                                                "duration": "1h 15m",
+                                                "endDate": "2022-04-15",
+                                                "flightUrl": "https://www.kayak.ie/flights/ORK-LON/2022-04-08/2022-04-15/2adults?sort=bestflight_a",
+                                                "index": "0",
+                                                "pricePerPerson": "€826",
+                                                "priceTotal": "€1,652 total",
+                                                "startDate": "2022-04-08",
+                                              },
+                                              Object {
+                                                "airport": "LHR
+Heathrow",
+                                                "arrivalCity": "London",
+                                                "arrivalTime": "15:10",
+                                                "carrier": "British Airways",
+                                                "departureCity": "Cork",
+                                                "departureTime": "13:50",
+                                                "directFlight": "direct",
+                                                "duration": "1h 20m",
+                                                "endDate": "2022-04-15",
+                                                "flightUrl": "https://www.kayak.ie/flights/ORK-LON/2022-04-08/2022-04-15/2adults?sort=bestflight_a",
+                                                "index": "0",
+                                                "pricePerPerson": "€826",
+                                                "priceTotal": "€1,652 total",
+                                                "startDate": "2022-04-08",
+                                              },
+                                            ],
+                                          ],
+                                          "flights": Array [
+                                            Array [
+                                              Object {
+                                                "airport": "ORK
+Cork",
+                                                "arrivalCity": "London",
+                                                "arrivalTime": "21:45",
+                                                "carrier": "British Airways",
+                                                "departureCity": "Cork",
+                                                "departureTime": "20:30",
+                                                "directFlight": "direct",
+                                                "duration": "1h 15m",
+                                                "endDate": "2022-04-15",
+                                                "flightUrl": "https://www.kayak.ie/flights/ORK-LON/2022-04-08/2022-04-15/2adults?sort=bestflight_a",
+                                                "index": "0",
+                                                "pricePerPerson": "€826",
+                                                "priceTotal": "€1,652 total",
+                                                "startDate": "2022-04-08",
+                                              },
+                                              Object {
+                                                "airport": "LHR
+Heathrow",
+                                                "arrivalCity": "London",
+                                                "arrivalTime": "15:10",
+                                                "carrier": "British Airways",
+                                                "departureCity": "Cork",
+                                                "departureTime": "13:50",
+                                                "directFlight": "direct",
+                                                "duration": "1h 20m",
+                                                "endDate": "2022-04-15",
+                                                "flightUrl": "https://www.kayak.ie/flights/ORK-LON/2022-04-08/2022-04-15/2adults?sort=bestflight_a",
+                                                "index": "0",
+                                                "pricePerPerson": "€826",
+                                                "priceTotal": "€1,652 total",
+                                                "startDate": "2022-04-08",
+                                              },
+                                            ],
+                                          ],
+                                          "hasOwnProperty": [Function],
+                                          "mobile": false,
+                                          "mobileDevice": false,
+                                        },
+                                        "modifiers": Object {},
+                                        "oldValue": undefined,
+                                        "value": undefined,
+                                      },
+                                    ],
                                     "dynamicChildren": null,
                                     "dynamicProps": Array [
+                                      "onUpdate:modelValue",
                                       "value",
                                     ],
                                     "el": <input
@@ -2542,6 +2858,7 @@ Cork
                                     "patchFlag": 8,
                                     "props": Object {
                                       "data-testid": "desktopFlightCheckbox",
+                                      "onUpdate:modelValue": [Function],
                                       "type": "checkbox",
                                       "value": Object {
                                         "airport": "ORK
@@ -2585,9 +2902,107 @@ Cork",
                                     "appContext": null,
                                     "children": null,
                                     "component": null,
-                                    "dirs": null,
+                                    "dirs": Array [
+                                      Object {
+                                        "arg": undefined,
+                                        "dir": Object {
+                                          "beforeUpdate": [Function],
+                                          "created": [Function],
+                                          "deep": true,
+                                          "mounted": [Function],
+                                        },
+                                        "instance": Object {
+                                          "checkedFlight": undefined,
+                                          "checkedFlightChange": [Function],
+                                          "classifyFlights": [Function],
+                                          "flightInfo": Array [
+                                            Array [
+                                              Object {
+                                                "airport": "ORK
+Cork",
+                                                "arrivalCity": "London",
+                                                "arrivalTime": "21:45",
+                                                "carrier": "British Airways",
+                                                "departureCity": "Cork",
+                                                "departureTime": "20:30",
+                                                "directFlight": "direct",
+                                                "duration": "1h 15m",
+                                                "endDate": "2022-04-15",
+                                                "flightUrl": "https://www.kayak.ie/flights/ORK-LON/2022-04-08/2022-04-15/2adults?sort=bestflight_a",
+                                                "index": "0",
+                                                "pricePerPerson": "€826",
+                                                "priceTotal": "€1,652 total",
+                                                "startDate": "2022-04-08",
+                                              },
+                                              Object {
+                                                "airport": "LHR
+Heathrow",
+                                                "arrivalCity": "London",
+                                                "arrivalTime": "15:10",
+                                                "carrier": "British Airways",
+                                                "departureCity": "Cork",
+                                                "departureTime": "13:50",
+                                                "directFlight": "direct",
+                                                "duration": "1h 20m",
+                                                "endDate": "2022-04-15",
+                                                "flightUrl": "https://www.kayak.ie/flights/ORK-LON/2022-04-08/2022-04-15/2adults?sort=bestflight_a",
+                                                "index": "0",
+                                                "pricePerPerson": "€826",
+                                                "priceTotal": "€1,652 total",
+                                                "startDate": "2022-04-08",
+                                              },
+                                            ],
+                                          ],
+                                          "flights": Array [
+                                            Array [
+                                              Object {
+                                                "airport": "ORK
+Cork",
+                                                "arrivalCity": "London",
+                                                "arrivalTime": "21:45",
+                                                "carrier": "British Airways",
+                                                "departureCity": "Cork",
+                                                "departureTime": "20:30",
+                                                "directFlight": "direct",
+                                                "duration": "1h 15m",
+                                                "endDate": "2022-04-15",
+                                                "flightUrl": "https://www.kayak.ie/flights/ORK-LON/2022-04-08/2022-04-15/2adults?sort=bestflight_a",
+                                                "index": "0",
+                                                "pricePerPerson": "€826",
+                                                "priceTotal": "€1,652 total",
+                                                "startDate": "2022-04-08",
+                                              },
+                                              Object {
+                                                "airport": "LHR
+Heathrow",
+                                                "arrivalCity": "London",
+                                                "arrivalTime": "15:10",
+                                                "carrier": "British Airways",
+                                                "departureCity": "Cork",
+                                                "departureTime": "13:50",
+                                                "directFlight": "direct",
+                                                "duration": "1h 20m",
+                                                "endDate": "2022-04-15",
+                                                "flightUrl": "https://www.kayak.ie/flights/ORK-LON/2022-04-08/2022-04-15/2adults?sort=bestflight_a",
+                                                "index": "0",
+                                                "pricePerPerson": "€826",
+                                                "priceTotal": "€1,652 total",
+                                                "startDate": "2022-04-08",
+                                              },
+                                            ],
+                                          ],
+                                          "hasOwnProperty": [Function],
+                                          "mobile": false,
+                                          "mobileDevice": false,
+                                        },
+                                        "modifiers": Object {},
+                                        "oldValue": undefined,
+                                        "value": undefined,
+                                      },
+                                    ],
                                     "dynamicChildren": null,
                                     "dynamicProps": Array [
+                                      "onUpdate:modelValue",
                                       "value",
                                     ],
                                     "el": <input
@@ -2599,6 +3014,7 @@ Cork",
                                     "patchFlag": 8,
                                     "props": Object {
                                       "data-testid": "desktopFlightCheckbox",
+                                      "onUpdate:modelValue": [Function],
                                       "type": "checkbox",
                                       "value": Object {
                                         "airport": "ORK
@@ -4629,9 +5045,107 @@ Heathrow
                                 "appContext": null,
                                 "children": null,
                                 "component": null,
-                                "dirs": null,
+                                "dirs": Array [
+                                  Object {
+                                    "arg": undefined,
+                                    "dir": Object {
+                                      "beforeUpdate": [Function],
+                                      "created": [Function],
+                                      "deep": true,
+                                      "mounted": [Function],
+                                    },
+                                    "instance": Object {
+                                      "checkedFlight": undefined,
+                                      "checkedFlightChange": [Function],
+                                      "classifyFlights": [Function],
+                                      "flightInfo": Array [
+                                        Array [
+                                          Object {
+                                            "airport": "ORK
+Cork",
+                                            "arrivalCity": "London",
+                                            "arrivalTime": "21:45",
+                                            "carrier": "British Airways",
+                                            "departureCity": "Cork",
+                                            "departureTime": "20:30",
+                                            "directFlight": "direct",
+                                            "duration": "1h 15m",
+                                            "endDate": "2022-04-15",
+                                            "flightUrl": "https://www.kayak.ie/flights/ORK-LON/2022-04-08/2022-04-15/2adults?sort=bestflight_a",
+                                            "index": "0",
+                                            "pricePerPerson": "€826",
+                                            "priceTotal": "€1,652 total",
+                                            "startDate": "2022-04-08",
+                                          },
+                                          Object {
+                                            "airport": "LHR
+Heathrow",
+                                            "arrivalCity": "London",
+                                            "arrivalTime": "15:10",
+                                            "carrier": "British Airways",
+                                            "departureCity": "Cork",
+                                            "departureTime": "13:50",
+                                            "directFlight": "direct",
+                                            "duration": "1h 20m",
+                                            "endDate": "2022-04-15",
+                                            "flightUrl": "https://www.kayak.ie/flights/ORK-LON/2022-04-08/2022-04-15/2adults?sort=bestflight_a",
+                                            "index": "0",
+                                            "pricePerPerson": "€826",
+                                            "priceTotal": "€1,652 total",
+                                            "startDate": "2022-04-08",
+                                          },
+                                        ],
+                                      ],
+                                      "flights": Array [
+                                        Array [
+                                          Object {
+                                            "airport": "ORK
+Cork",
+                                            "arrivalCity": "London",
+                                            "arrivalTime": "21:45",
+                                            "carrier": "British Airways",
+                                            "departureCity": "Cork",
+                                            "departureTime": "20:30",
+                                            "directFlight": "direct",
+                                            "duration": "1h 15m",
+                                            "endDate": "2022-04-15",
+                                            "flightUrl": "https://www.kayak.ie/flights/ORK-LON/2022-04-08/2022-04-15/2adults?sort=bestflight_a",
+                                            "index": "0",
+                                            "pricePerPerson": "€826",
+                                            "priceTotal": "€1,652 total",
+                                            "startDate": "2022-04-08",
+                                          },
+                                          Object {
+                                            "airport": "LHR
+Heathrow",
+                                            "arrivalCity": "London",
+                                            "arrivalTime": "15:10",
+                                            "carrier": "British Airways",
+                                            "departureCity": "Cork",
+                                            "departureTime": "13:50",
+                                            "directFlight": "direct",
+                                            "duration": "1h 20m",
+                                            "endDate": "2022-04-15",
+                                            "flightUrl": "https://www.kayak.ie/flights/ORK-LON/2022-04-08/2022-04-15/2adults?sort=bestflight_a",
+                                            "index": "0",
+                                            "pricePerPerson": "€826",
+                                            "priceTotal": "€1,652 total",
+                                            "startDate": "2022-04-08",
+                                          },
+                                        ],
+                                      ],
+                                      "hasOwnProperty": [Function],
+                                      "mobile": false,
+                                      "mobileDevice": false,
+                                    },
+                                    "modifiers": Object {},
+                                    "oldValue": undefined,
+                                    "value": undefined,
+                                  },
+                                ],
                                 "dynamicChildren": null,
                                 "dynamicProps": Array [
+                                  "onUpdate:modelValue",
                                   "value",
                                 ],
                                 "el": <input
@@ -4643,6 +5157,7 @@ Heathrow
                                 "patchFlag": 8,
                                 "props": Object {
                                   "data-testid": "desktopFlightCheckbox",
+                                  "onUpdate:modelValue": [Function],
                                   "type": "checkbox",
                                   "value": Object {
                                     "airport": "ORK
@@ -4686,9 +5201,107 @@ Cork",
                                 "appContext": null,
                                 "children": null,
                                 "component": null,
-                                "dirs": null,
+                                "dirs": Array [
+                                  Object {
+                                    "arg": undefined,
+                                    "dir": Object {
+                                      "beforeUpdate": [Function],
+                                      "created": [Function],
+                                      "deep": true,
+                                      "mounted": [Function],
+                                    },
+                                    "instance": Object {
+                                      "checkedFlight": undefined,
+                                      "checkedFlightChange": [Function],
+                                      "classifyFlights": [Function],
+                                      "flightInfo": Array [
+                                        Array [
+                                          Object {
+                                            "airport": "ORK
+Cork",
+                                            "arrivalCity": "London",
+                                            "arrivalTime": "21:45",
+                                            "carrier": "British Airways",
+                                            "departureCity": "Cork",
+                                            "departureTime": "20:30",
+                                            "directFlight": "direct",
+                                            "duration": "1h 15m",
+                                            "endDate": "2022-04-15",
+                                            "flightUrl": "https://www.kayak.ie/flights/ORK-LON/2022-04-08/2022-04-15/2adults?sort=bestflight_a",
+                                            "index": "0",
+                                            "pricePerPerson": "€826",
+                                            "priceTotal": "€1,652 total",
+                                            "startDate": "2022-04-08",
+                                          },
+                                          Object {
+                                            "airport": "LHR
+Heathrow",
+                                            "arrivalCity": "London",
+                                            "arrivalTime": "15:10",
+                                            "carrier": "British Airways",
+                                            "departureCity": "Cork",
+                                            "departureTime": "13:50",
+                                            "directFlight": "direct",
+                                            "duration": "1h 20m",
+                                            "endDate": "2022-04-15",
+                                            "flightUrl": "https://www.kayak.ie/flights/ORK-LON/2022-04-08/2022-04-15/2adults?sort=bestflight_a",
+                                            "index": "0",
+                                            "pricePerPerson": "€826",
+                                            "priceTotal": "€1,652 total",
+                                            "startDate": "2022-04-08",
+                                          },
+                                        ],
+                                      ],
+                                      "flights": Array [
+                                        Array [
+                                          Object {
+                                            "airport": "ORK
+Cork",
+                                            "arrivalCity": "London",
+                                            "arrivalTime": "21:45",
+                                            "carrier": "British Airways",
+                                            "departureCity": "Cork",
+                                            "departureTime": "20:30",
+                                            "directFlight": "direct",
+                                            "duration": "1h 15m",
+                                            "endDate": "2022-04-15",
+                                            "flightUrl": "https://www.kayak.ie/flights/ORK-LON/2022-04-08/2022-04-15/2adults?sort=bestflight_a",
+                                            "index": "0",
+                                            "pricePerPerson": "€826",
+                                            "priceTotal": "€1,652 total",
+                                            "startDate": "2022-04-08",
+                                          },
+                                          Object {
+                                            "airport": "LHR
+Heathrow",
+                                            "arrivalCity": "London",
+                                            "arrivalTime": "15:10",
+                                            "carrier": "British Airways",
+                                            "departureCity": "Cork",
+                                            "departureTime": "13:50",
+                                            "directFlight": "direct",
+                                            "duration": "1h 20m",
+                                            "endDate": "2022-04-15",
+                                            "flightUrl": "https://www.kayak.ie/flights/ORK-LON/2022-04-08/2022-04-15/2adults?sort=bestflight_a",
+                                            "index": "0",
+                                            "pricePerPerson": "€826",
+                                            "priceTotal": "€1,652 total",
+                                            "startDate": "2022-04-08",
+                                          },
+                                        ],
+                                      ],
+                                      "hasOwnProperty": [Function],
+                                      "mobile": false,
+                                      "mobileDevice": false,
+                                    },
+                                    "modifiers": Object {},
+                                    "oldValue": undefined,
+                                    "value": undefined,
+                                  },
+                                ],
                                 "dynamicChildren": null,
                                 "dynamicProps": Array [
+                                  "onUpdate:modelValue",
                                   "value",
                                 ],
                                 "el": <input
@@ -4700,6 +5313,7 @@ Cork",
                                 "patchFlag": 8,
                                 "props": Object {
                                   "data-testid": "desktopFlightCheckbox",
+                                  "onUpdate:modelValue": [Function],
                                   "type": "checkbox",
                                   "value": Object {
                                     "airport": "ORK
@@ -5239,9 +5853,107 @@ Cork
                                 "appContext": null,
                                 "children": null,
                                 "component": null,
-                                "dirs": null,
+                                "dirs": Array [
+                                  Object {
+                                    "arg": undefined,
+                                    "dir": Object {
+                                      "beforeUpdate": [Function],
+                                      "created": [Function],
+                                      "deep": true,
+                                      "mounted": [Function],
+                                    },
+                                    "instance": Object {
+                                      "checkedFlight": undefined,
+                                      "checkedFlightChange": [Function],
+                                      "classifyFlights": [Function],
+                                      "flightInfo": Array [
+                                        Array [
+                                          Object {
+                                            "airport": "ORK
+Cork",
+                                            "arrivalCity": "London",
+                                            "arrivalTime": "21:45",
+                                            "carrier": "British Airways",
+                                            "departureCity": "Cork",
+                                            "departureTime": "20:30",
+                                            "directFlight": "direct",
+                                            "duration": "1h 15m",
+                                            "endDate": "2022-04-15",
+                                            "flightUrl": "https://www.kayak.ie/flights/ORK-LON/2022-04-08/2022-04-15/2adults?sort=bestflight_a",
+                                            "index": "0",
+                                            "pricePerPerson": "€826",
+                                            "priceTotal": "€1,652 total",
+                                            "startDate": "2022-04-08",
+                                          },
+                                          Object {
+                                            "airport": "LHR
+Heathrow",
+                                            "arrivalCity": "London",
+                                            "arrivalTime": "15:10",
+                                            "carrier": "British Airways",
+                                            "departureCity": "Cork",
+                                            "departureTime": "13:50",
+                                            "directFlight": "direct",
+                                            "duration": "1h 20m",
+                                            "endDate": "2022-04-15",
+                                            "flightUrl": "https://www.kayak.ie/flights/ORK-LON/2022-04-08/2022-04-15/2adults?sort=bestflight_a",
+                                            "index": "0",
+                                            "pricePerPerson": "€826",
+                                            "priceTotal": "€1,652 total",
+                                            "startDate": "2022-04-08",
+                                          },
+                                        ],
+                                      ],
+                                      "flights": Array [
+                                        Array [
+                                          Object {
+                                            "airport": "ORK
+Cork",
+                                            "arrivalCity": "London",
+                                            "arrivalTime": "21:45",
+                                            "carrier": "British Airways",
+                                            "departureCity": "Cork",
+                                            "departureTime": "20:30",
+                                            "directFlight": "direct",
+                                            "duration": "1h 15m",
+                                            "endDate": "2022-04-15",
+                                            "flightUrl": "https://www.kayak.ie/flights/ORK-LON/2022-04-08/2022-04-15/2adults?sort=bestflight_a",
+                                            "index": "0",
+                                            "pricePerPerson": "€826",
+                                            "priceTotal": "€1,652 total",
+                                            "startDate": "2022-04-08",
+                                          },
+                                          Object {
+                                            "airport": "LHR
+Heathrow",
+                                            "arrivalCity": "London",
+                                            "arrivalTime": "15:10",
+                                            "carrier": "British Airways",
+                                            "departureCity": "Cork",
+                                            "departureTime": "13:50",
+                                            "directFlight": "direct",
+                                            "duration": "1h 20m",
+                                            "endDate": "2022-04-15",
+                                            "flightUrl": "https://www.kayak.ie/flights/ORK-LON/2022-04-08/2022-04-15/2adults?sort=bestflight_a",
+                                            "index": "0",
+                                            "pricePerPerson": "€826",
+                                            "priceTotal": "€1,652 total",
+                                            "startDate": "2022-04-08",
+                                          },
+                                        ],
+                                      ],
+                                      "hasOwnProperty": [Function],
+                                      "mobile": false,
+                                      "mobileDevice": false,
+                                    },
+                                    "modifiers": Object {},
+                                    "oldValue": undefined,
+                                    "value": undefined,
+                                  },
+                                ],
                                 "dynamicChildren": null,
                                 "dynamicProps": Array [
+                                  "onUpdate:modelValue",
                                   "value",
                                 ],
                                 "el": <input
@@ -5253,6 +5965,7 @@ Cork
                                 "patchFlag": 8,
                                 "props": Object {
                                   "data-testid": "desktopFlightCheckbox",
+                                  "onUpdate:modelValue": [Function],
                                   "type": "checkbox",
                                   "value": Object {
                                     "airport": "ORK
@@ -5296,9 +6009,107 @@ Cork",
                                 "appContext": null,
                                 "children": null,
                                 "component": null,
-                                "dirs": null,
+                                "dirs": Array [
+                                  Object {
+                                    "arg": undefined,
+                                    "dir": Object {
+                                      "beforeUpdate": [Function],
+                                      "created": [Function],
+                                      "deep": true,
+                                      "mounted": [Function],
+                                    },
+                                    "instance": Object {
+                                      "checkedFlight": undefined,
+                                      "checkedFlightChange": [Function],
+                                      "classifyFlights": [Function],
+                                      "flightInfo": Array [
+                                        Array [
+                                          Object {
+                                            "airport": "ORK
+Cork",
+                                            "arrivalCity": "London",
+                                            "arrivalTime": "21:45",
+                                            "carrier": "British Airways",
+                                            "departureCity": "Cork",
+                                            "departureTime": "20:30",
+                                            "directFlight": "direct",
+                                            "duration": "1h 15m",
+                                            "endDate": "2022-04-15",
+                                            "flightUrl": "https://www.kayak.ie/flights/ORK-LON/2022-04-08/2022-04-15/2adults?sort=bestflight_a",
+                                            "index": "0",
+                                            "pricePerPerson": "€826",
+                                            "priceTotal": "€1,652 total",
+                                            "startDate": "2022-04-08",
+                                          },
+                                          Object {
+                                            "airport": "LHR
+Heathrow",
+                                            "arrivalCity": "London",
+                                            "arrivalTime": "15:10",
+                                            "carrier": "British Airways",
+                                            "departureCity": "Cork",
+                                            "departureTime": "13:50",
+                                            "directFlight": "direct",
+                                            "duration": "1h 20m",
+                                            "endDate": "2022-04-15",
+                                            "flightUrl": "https://www.kayak.ie/flights/ORK-LON/2022-04-08/2022-04-15/2adults?sort=bestflight_a",
+                                            "index": "0",
+                                            "pricePerPerson": "€826",
+                                            "priceTotal": "€1,652 total",
+                                            "startDate": "2022-04-08",
+                                          },
+                                        ],
+                                      ],
+                                      "flights": Array [
+                                        Array [
+                                          Object {
+                                            "airport": "ORK
+Cork",
+                                            "arrivalCity": "London",
+                                            "arrivalTime": "21:45",
+                                            "carrier": "British Airways",
+                                            "departureCity": "Cork",
+                                            "departureTime": "20:30",
+                                            "directFlight": "direct",
+                                            "duration": "1h 15m",
+                                            "endDate": "2022-04-15",
+                                            "flightUrl": "https://www.kayak.ie/flights/ORK-LON/2022-04-08/2022-04-15/2adults?sort=bestflight_a",
+                                            "index": "0",
+                                            "pricePerPerson": "€826",
+                                            "priceTotal": "€1,652 total",
+                                            "startDate": "2022-04-08",
+                                          },
+                                          Object {
+                                            "airport": "LHR
+Heathrow",
+                                            "arrivalCity": "London",
+                                            "arrivalTime": "15:10",
+                                            "carrier": "British Airways",
+                                            "departureCity": "Cork",
+                                            "departureTime": "13:50",
+                                            "directFlight": "direct",
+                                            "duration": "1h 20m",
+                                            "endDate": "2022-04-15",
+                                            "flightUrl": "https://www.kayak.ie/flights/ORK-LON/2022-04-08/2022-04-15/2adults?sort=bestflight_a",
+                                            "index": "0",
+                                            "pricePerPerson": "€826",
+                                            "priceTotal": "€1,652 total",
+                                            "startDate": "2022-04-08",
+                                          },
+                                        ],
+                                      ],
+                                      "hasOwnProperty": [Function],
+                                      "mobile": false,
+                                      "mobileDevice": false,
+                                    },
+                                    "modifiers": Object {},
+                                    "oldValue": undefined,
+                                    "value": undefined,
+                                  },
+                                ],
                                 "dynamicChildren": null,
                                 "dynamicProps": Array [
+                                  "onUpdate:modelValue",
                                   "value",
                                 ],
                                 "el": <input
@@ -5310,6 +6121,7 @@ Cork",
                                 "patchFlag": 8,
                                 "props": Object {
                                   "data-testid": "desktopFlightCheckbox",
+                                  "onUpdate:modelValue": [Function],
                                   "type": "checkbox",
                                   "value": Object {
                                     "airport": "ORK
@@ -6910,11 +7722,14 @@ Heathrow",
           "suspenseId": 0,
           "type": Object {
             "components": Object {},
+            "created": [Function],
             "data": [Function],
             "methods": Object {
               "checkedFlightChange": [Function],
+              "classifyFlights": [Function],
             },
             "props": Object {
+              "checkedFlight": [Function],
               "flights": [Function],
               "mobile": [Function],
             },
@@ -6993,11 +7808,14 @@ Heathrow",
         "transition": null,
         "type": Object {
           "components": Object {},
+          "created": [Function],
           "data": [Function],
           "methods": Object {
             "checkedFlightChange": [Function],
+            "classifyFlights": [Function],
           },
           "props": Object {
+            "checkedFlight": [Function],
             "flights": [Function],
             "mobile": [Function],
           },
@@ -7098,7 +7916,9 @@ Heathrow",
   },
   "__setProps": [Function],
   "componentVM": Object {
+    "checkedFlight": undefined,
     "checkedFlightChange": [Function],
+    "classifyFlights": [Function],
     "flightInfo": Array [
       Array [
         Object {

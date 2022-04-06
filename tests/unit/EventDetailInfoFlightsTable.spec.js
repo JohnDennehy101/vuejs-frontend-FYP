@@ -276,4 +276,16 @@ describe("EventDetailInfoFlightsTable.vue", () => {
 
     expect(wrapper.emitted()).toHaveProperty("checkedFlightChange");
   });
+
+  it("if user has already added flights to itinerary, should be pre-checked on future renders", async () => {
+    const wrapper = mount(EventDetailInfoFlightsTable, {
+      props: {
+        flights: mockFlights,
+        checkedFlight: mockFlights,
+        mobile: false,
+      },
+    });
+
+    expect(wrapper.vm.checkedFlight[0][0].checked).toBe(true);
+  });
 });
