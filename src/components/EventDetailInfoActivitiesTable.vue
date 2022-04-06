@@ -28,6 +28,7 @@
             type="checkbox"
             data-testid="activityCheckbox"
             :value="value"
+            v-model="value.checked"
             @change="checkedThingToDoChange($event, value)"
           />
         </td>
@@ -56,11 +57,13 @@ export default {
   props: {
     activitiesInfo: Array,
     eventCity: String,
+    checkedThingsToDo: Array,
   },
   data() {
     return {
       googlePlacesInfo: this.activitiesInfo,
       city: this.eventCity,
+      selectedActivities: this.checkedThingsToDo,
     };
   },
   methods: {
@@ -74,6 +77,18 @@ export default {
       let extractedLink = StringUtils.extractGoogleMapLink(link);
       return extractedLink;
     },
+    classifyActivities() {
+      if (this.selectedActivities.length > 0) {
+        this.googlePlacesInfo.map((item) => {
+          this.selectedActivities.find((a) => a.name === item.name)
+            ? (item.checked = true)
+            : (item.checked = false);
+        });
+      }
+    },
+  },
+  async created() {
+    await this.classifyActivities();
   },
 };
 </script>

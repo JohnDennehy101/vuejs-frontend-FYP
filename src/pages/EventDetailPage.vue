@@ -150,6 +150,8 @@
         v-on:checkedActivityChange="checkedThingToDoChange"
         :activitiesInfo="googlePlacesInfo"
         :eventCity="individualEvent.city"
+        :checkedThingsToDo="checkedThingsToDo"
+        :activityTableKey="activityTableKey"
       />
     </div>
 
@@ -281,6 +283,7 @@ export default {
       displayToast: false,
       toastMessage: "",
       accommodationTableKey: 0,
+      activityTableKey: 0,
     };
   },
   computed: {
@@ -484,7 +487,7 @@ export default {
           (activity) => activity.name !== value.item.name
         );
       }
-
+      this.activityTableKey++;
       this.eventItineraryKey++;
     },
     editItineraryButtonClick() {
