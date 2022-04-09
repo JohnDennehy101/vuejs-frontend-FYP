@@ -6,6 +6,7 @@
       :on-cancel="onCancel"
       :is-full-page="true"
       :loader="loaderType"
+      :opacity="loaderOpacity"
       :color="loaderColour"
     />
     <form @submit.prevent="submitForm" v-if="pollInformation">
@@ -80,6 +81,7 @@ export default {
       fullPage: false,
       loaderType: "dots",
       loaderColour: "#0384ff",
+      loaderOpacity: 1,
       showErrorMessage: false,
       pollVoteErrorMessage: "",
     };

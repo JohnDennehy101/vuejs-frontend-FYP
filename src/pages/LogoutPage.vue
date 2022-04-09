@@ -5,6 +5,7 @@
       :can-cancel="true"
       :on-cancel="onCancel"
       :is-full-page="fullPage"
+      :opacity="loaderOpacity"
       :loader="loaderType"
       :color="loaderColour"
     />
@@ -22,6 +23,7 @@ export default {
       fullPage: false,
       loaderType: "dots",
       loaderColour: "#0384ff",
+      loaderOpacity: 1,
     };
   },
   components: {

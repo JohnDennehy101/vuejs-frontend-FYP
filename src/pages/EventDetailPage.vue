@@ -7,6 +7,7 @@
       :is-full-page="fullPage"
       :loader="loaderType"
       :lock-scroll="true"
+      :opacity="loaderOpacity"
       :color="loaderColour"
     />
     <Toast v-if="displayToast" :message="toastMessage" />
@@ -281,6 +282,7 @@ export default {
       fullPage: true,
       loaderType: "dots",
       loaderColour: "#0384ff",
+      loaderOpacity: 1,
       eventOverviewKey: 0,
       displayToast: false,
       toastMessage: "",

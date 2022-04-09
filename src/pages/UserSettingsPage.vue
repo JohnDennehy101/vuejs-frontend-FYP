@@ -6,6 +6,7 @@
       :on-cancel="onCancel"
       :is-full-page="fullPage"
       :loader="loaderType"
+      :opacity="loaderOpacity"
       :color="loaderColour"
     />
     <transition name="toast">
@@ -46,6 +47,7 @@ export default {
       fullPage: false,
       loaderType: "dots",
       loaderColour: "#0384ff",
+      loaderOpacity: 1,
       displayToast: false,
       message: "User Image successfully updated.",
     };
