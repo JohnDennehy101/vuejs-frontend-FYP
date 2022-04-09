@@ -279,7 +279,7 @@ export default {
       onlineUsers: [],
       chatIndex: 0,
       showEventChat: false,
-      isLoading: false,
+      isLoading: true,
       fullPage: true,
       loaderType: "dots",
       loaderColour: "#0384ff",
@@ -297,6 +297,7 @@ export default {
       individualEvent: "event/individualEvent",
       userId: "userId",
       userEmail: "userEmail",
+      jwt: "jwt",
     }),
     mobileCheck() {
       return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
@@ -346,7 +347,10 @@ export default {
       this.eventId = window.location.pathname.split("/")[3];
     },
     async getEventInfo() {
-      const response = await this.eventService.getIndividualEvent(this.eventId);
+      const response = await this.eventService.getIndividualEvent(
+        this.eventId,
+        this.jwt
+      );
       if ("error" in response) {
         this.invalidEventCreation = true;
       } else {
@@ -382,11 +386,13 @@ export default {
           this.mostVotedPollOption = undefined;
         }
       }
+      this.isLoading = false;
     },
 
     async getEventItinerary() {
       const response = await this.eventService.getIndividualEventItinerary(
-        this.eventId
+        this.eventId,
+        this.jwt
       );
 
       if (response.status === 200) {

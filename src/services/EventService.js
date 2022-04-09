@@ -64,9 +64,13 @@ class EventService {
     return response;
   }
 
-  async getIndividualEvent(eventId) {
+  async getIndividualEvent(eventId, jwt) {
     const response = await axios
-      .get(this.baseUrl + "/events/" + eventId)
+      .get(this.baseUrl + "/events/" + eventId, {
+         headers: {
+          "Authorization": "Bearer " + jwt
+        }
+      })
       .catch((error) => {
         return { error };
       });
@@ -159,9 +163,13 @@ class EventService {
     return response;
   }
 
-  async getIndividualEventItinerary(eventId) {
+  async getIndividualEventItinerary(eventId, jwt) {
     const response = await axios
-      .get(`${this.baseUrl}/events/${eventId}/itinerary`)
+      .get(`${this.baseUrl}/events/${eventId}/itinerary`, {
+         headers: {
+          "Authorization": "Bearer " + jwt
+        }
+      })
       .catch((error) => {
         return { error };
       });
