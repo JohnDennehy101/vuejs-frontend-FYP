@@ -18,6 +18,8 @@ const store = createStore({
             state.isLoggedIn = true;
         },
         logout(state) {
+            state.userId = null;
+            state.userEmail = null;
             state.isLoggedIn = false;
         },
         setUserId(state, payload) {

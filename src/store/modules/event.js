@@ -26,9 +26,7 @@ export default {
       state.invitedEvents = payload;
     },
     setIndividualEvent(state, payload) {
-      console.log(payload);
       state.individualEvent = payload;
-      console.log(state.individualEvent);
     },
     deleteEvent(state, payload) {
       if (state.createdEvents) {
@@ -49,8 +47,6 @@ export default {
       const index = state.createdEvents.findIndex(
         (event) => event.id === payload.id
       );
-      console.log(index);
-      console.log(payload);
       state.createdEvents[index] = payload.data;
     },
   },
