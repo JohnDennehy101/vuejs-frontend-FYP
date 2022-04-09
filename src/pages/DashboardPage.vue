@@ -48,13 +48,15 @@
       :message="noInvitedEventsMessage"
       :invitedUser="true"
     />
-    <DeleteModal
-      v-if="displayDeleteModal"
-      :title="deleteEventTitle"
-      :eventId="deleteEventId"
-      :modalHeading="deleteEventModalHeading"
-      @close="displayDeleteModal = false"
-    />
+    <transition name="modal-transition">
+      <DeleteModal
+        v-if="displayDeleteModal"
+        :title="deleteEventTitle"
+        :eventId="deleteEventId"
+        :modalHeading="deleteEventModalHeading"
+        @close="displayDeleteModal = false"
+      />
+    </transition>
   </div>
 </template>
 
@@ -206,6 +208,26 @@ h2 {
 
   h2 {
     margin-left: 1rem;
+  }
+}
+
+.modal-transition-enter-active {
+  animation: modal-animation 0.2s ease-out;
+}
+
+.modal-transition-leave-active {
+  animation: modal-animation 0.2s ease-in;
+}
+
+@keyframes modal-animation {
+  from {
+    opacity: 0;
+    transform: translateY(0) scale(1);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 </style>

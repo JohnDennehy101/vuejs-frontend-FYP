@@ -188,15 +188,16 @@
         :key="flightsTablekey"
       />
     </div>
-
-    <DeleteModal
-      v-if="displayDeleteModal"
-      :title="deletePollTitle"
-      :eventId="this.eventId"
-      :pollId="this.pollId"
-      :modalHeading="deletePollModalHeading"
-      @close="displayDeleteModal = false"
-    />
+    <transition name="modal-transition">
+      <DeleteModal
+        v-if="displayDeleteModal"
+        :title="deletePollTitle"
+        :eventId="this.eventId"
+        :pollId="this.pollId"
+        :modalHeading="deletePollModalHeading"
+        @close="displayDeleteModal = false"
+      />
+    </transition>
   </div>
 </template>
 
@@ -747,6 +748,26 @@ h2 {
   100% {
     transform: translateX(0px);
     opacity: 1;
+  }
+}
+
+.modal-transition-enter-active {
+  animation: modal-animation 0.3s ease-out;
+}
+
+.modal-transition-leave-active {
+  animation: modal-animation 0.3s ease-in;
+}
+
+@keyframes modal-animation {
+  from {
+    opacity: 0;
+    transform: translateY(0) scale(1);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 </style>
