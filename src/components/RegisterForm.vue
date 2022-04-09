@@ -38,7 +38,7 @@
         <button>Sign up</button>
       </div>
 
-      <AccountErrorMessage
+      <ResponseErrorMessage
         :toggle="this.invalidRegistration"
         :errorMessage="this.errorMessage"
         v-on:hideErrorMessage="hideErrorMessage"
@@ -48,7 +48,7 @@
 </template>
 
 <script>
-import AccountErrorMessage from "./AccountErrorMessage";
+import ResponseErrorMessage from "./ResponseErrorMessage";
 import userService from "../services/UserService";
 import StringUtils from "../utils/stringUtils";
 export default {
@@ -93,7 +93,7 @@ export default {
       this.invalidRegistration = false;
     },
   },
-  components: { AccountErrorMessage },
+  components: { ResponseErrorMessage },
 };
 </script>
 

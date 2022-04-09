@@ -2,12 +2,15 @@
   <div id="wrapper">
     <loading
       v-model:active="isLoading"
-      :can-cancel="true"
+      :can-cancel="false"
       :on-cancel="onCancel"
       :is-full-page="fullPage"
       :loader="loaderType"
+      :lock-scroll="true"
+      :opacity="loaderOpacity"
       :color="loaderColour"
     />
+    <Toast v-if="displayToast" :message="toastMessage" />
     <EventForm
       v-if="showEditForm"
       :edit="this.edit"
@@ -18,6 +21,10 @@
       v-else-if="showEditForm == false && showEventInfo"
       :individualEvent="this.individualEvent"
       :invitedUser="this.invitedUser"
+      :itineraryCreated="itineraryAlreadyCreated"
+      :itineraryCompleted="itineraryCompleted"
+      :pollCompleted="mostVotedPollOption"
+      :key="eventOverviewKey"
       @editActionClick="editEventInfo"
     />
 
@@ -39,6 +46,8 @@
       v-on:removeItineraryAccommodationClick="removeItineraryAccommodation"
       v-on:removeItineraryFlightsClick="removeItineraryFlights"
       v-on:removeItineraryActivityClick="removeItineraryActivity"
+      v-on:itineraryRequest="showLoader"
+      v-on:showToast="showToast"
       :editItineraryClick="editItineraryClick"
       :itemType="individualEvent.type"
       :guestUserCheck="invitedUser"
@@ -108,7 +117,9 @@
       <EventDetailInfoAccommodationTable
         v-if="accommodationInfo && accommodationDateRange"
         :accommodation="accommodationInfo"
+        :checkedAccommodation="checkedAccommodation"
         :dateRange="accommodationDateRange"
+        :key="accommodationTableKey"
         v-on:checkedAccommodationChange="checkedAccommodationChange"
       />
     </div>
@@ -140,6 +151,8 @@
         v-on:checkedActivityChange="checkedThingToDoChange"
         :activitiesInfo="googlePlacesInfo"
         :eventCity="individualEvent.city"
+        :checkedThingsToDo="checkedThingsToDo"
+        :activityTableKey="activityTableKey"
       />
     </div>
 
@@ -171,17 +184,20 @@
         :flights="flightInfo"
         :mobile="mobileCheck"
         v-on:checkedFlightChange="checkedFlightChange"
+        :checkedFlight="checkedFlight"
+        :key="flightsTablekey"
       />
     </div>
-
-    <DeleteModal
-      v-if="displayDeleteModal"
-      :title="deletePollTitle"
-      :eventId="this.eventId"
-      :pollId="this.pollId"
-      :modalHeading="deletePollModalHeading"
-      @close="displayDeleteModal = false"
-    />
+    <transition name="modal-transition">
+      <DeleteModal
+        v-if="displayDeleteModal"
+        :title="deletePollTitle"
+        :eventId="this.eventId"
+        :pollId="this.pollId"
+        :modalHeading="deletePollModalHeading"
+        @close="displayDeleteModal = false"
+      />
+    </transition>
   </div>
 </template>
 
@@ -206,6 +222,7 @@ import EventDetailInfoActivitiesTable from "../components/EventDetailInfoActivit
 import eventService from "../services/EventService";
 import Loading from "vue-loading-overlay";
 import "vue-loading-overlay/dist/vue-loading.css";
+import Toast from "../components/Toast";
 export default {
   name: "eventDetailPage",
   props: {
@@ -262,10 +279,17 @@ export default {
       onlineUsers: [],
       chatIndex: 0,
       showEventChat: false,
-      isLoading: false,
-      fullPage: false,
+      isLoading: true,
+      fullPage: true,
       loaderType: "dots",
       loaderColour: "#0384ff",
+      loaderOpacity: 1,
+      eventOverviewKey: 0,
+      displayToast: false,
+      toastMessage: "",
+      accommodationTableKey: 0,
+      activityTableKey: 0,
+      flightsTablekey: 0,
     };
   },
   computed: {
@@ -273,6 +297,7 @@ export default {
       individualEvent: "event/individualEvent",
       userId: "userId",
       userEmail: "userEmail",
+      jwt: "jwt",
     }),
     mobileCheck() {
       return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
@@ -301,6 +326,7 @@ export default {
     EventDetailInfoFlightsTable,
     EventDetailInfoActivitiesTable,
     Loading,
+    Toast,
   },
   methods: {
     async checkEditAction() {
@@ -321,7 +347,10 @@ export default {
       this.eventId = window.location.pathname.split("/")[3];
     },
     async getEventInfo() {
-      const response = await this.eventService.getIndividualEvent(this.eventId);
+      const response = await this.eventService.getIndividualEvent(
+        this.eventId,
+        this.jwt
+      );
       if ("error" in response) {
         this.invalidEventCreation = true;
       } else {
@@ -357,11 +386,13 @@ export default {
           this.mostVotedPollOption = undefined;
         }
       }
+      this.isLoading = false;
     },
 
     async getEventItinerary() {
       const response = await this.eventService.getIndividualEventItinerary(
-        this.eventId
+        this.eventId,
+        this.jwt
       );
 
       if (response.status === 200) {
@@ -371,6 +402,7 @@ export default {
           this.checkedFlight[0] = response.data.flight;
           this.itineraryAlreadyCreated = true;
           this.itineraryCompleted = response.data.completed;
+          this.eventOverviewKey++;
         }
       }
     },
@@ -380,13 +412,13 @@ export default {
       const response = await this.eventService.getAccommodationInformation(
         this.eventId,
         startDate,
-        endDate
+        endDate,
+        this.jwt
       );
 
       this.isLoading = false;
 
       if (response.status === 200) {
-        console.log(response.data);
         this.accommodationInfo = response.data.resultPages;
         this.accommodationDateRange =
           response.data.resultPages[1][0].startDate +
@@ -400,7 +432,8 @@ export default {
       const response = await this.eventService.getFlightInformation(
         this.eventId,
         startDate,
-        endDate
+        endDate,
+        this.jwt
       );
 
       this.isLoading = false;
@@ -414,34 +447,32 @@ export default {
       const response = await this.eventService.getActivityInformation(
         this.eventId,
         latitude,
-        longitude
+        longitude,
+        this.jwt
       );
 
       this.isLoading = false;
 
-      console.log(response);
-
       if (response.status === 200) {
-        console.log(response.data.results);
         this.googlePlacesInfo = response.data.results;
       }
     },
-    showDeleteModal(event) {
-      this.deletePollTitle =
-        event.path[3].children[0].childNodes[0].childNodes[1].textContent;
-      this.pollId =
-        event.path[3].children[0].children[0].children[3].textContent;
+    showDeleteModal(item) {
+      this.deletePollTitle = item.title;
+      this.pollId = item.id;
       this.displayDeleteModal = true;
     },
     checkedFlightChange(value) {
       this.checkedFlight = [];
       this.checkedFlight.push(value.item);
       this.eventItineraryKey++;
+      this.flightsTablekey++;
     },
     checkedAccommodationChange(value) {
       if (value.event.target.checked) {
         this.checkedAccommodation = [];
         this.checkedAccommodation.push(value.item);
+        this.accommodationTableKey++;
 
         this.eventItineraryKey++;
       } else {
@@ -468,7 +499,7 @@ export default {
           (activity) => activity.name !== value.item.name
         );
       }
-
+      this.activityTableKey++;
       this.eventItineraryKey++;
     },
     editItineraryButtonClick() {
@@ -595,6 +626,20 @@ export default {
     toggleEventChat() {
       this.showEventChat = !this.showEventChat;
     },
+    showLoader(value) {
+      this.isLoading = value;
+    },
+    showToast(value) {
+      this.displayToast = value.boolean;
+      if (value.edit === true) {
+        this.toastMessage = "Successfully updated itinerary.";
+      } else if (value.edit === "") {
+        this.toastMessage = "Successfully deleted itinerary.";
+      } else {
+        this.toastMessage = "Successfully created itinerary.";
+      }
+      setTimeout(() => (this.displayToast = false), 5000);
+    },
   },
   async created() {
     await this.extractIdFromUrl();
@@ -667,6 +712,67 @@ h2 {
 
   @include for-phone-only {
     width: 90%;
+  }
+}
+
+.toast-enter-active {
+  animation: toast 0.5s ease;
+}
+.toast-leave-to {
+  opacity: 0;
+  transform: translateY(-60px);
+}
+.toast-leave-active {
+  transition: all 0.3s ease;
+}
+@keyframes toast {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  60% {
+    transform: translateX(8px);
+    opacity: 1;
+  }
+  70% {
+    transform: translateX(-8px);
+    opacity: 1;
+  }
+  80% {
+    transform: translateX(4px);
+    opacity: 1;
+  }
+  90% {
+    transform: translateX(-4px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+.modal-transition-enter-active {
+  animation: modal-animation 0.3s ease-out;
+}
+
+.modal-transition-leave-active {
+  animation: modal-animation 0.3s ease-in;
+}
+
+@keyframes modal-animation {
+  from {
+    opacity: 0;
+    transform: translateY(0) scale(1);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 </style>

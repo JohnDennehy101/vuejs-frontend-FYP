@@ -11,7 +11,44 @@ const mockRoute = {
   },
 };
 
+const mockFailureEventService = {
+  createEventItinerary() {
+    return new Promise((resolve) => {
+      resolve({
+        id: "1",
+        completed: false,
+        created_at: "2022-03-22",
+        updated_at: "2022-03-22",
+        eventId: "2",
+        status: 500,
+      });
+    });
+  },
 
+  updateEventItinerary() {
+    return new Promise((resolve) => {
+      resolve({
+        id: "1",
+        completed: false,
+        created_at: "2022-03-22",
+        updated_at: "2022-03-22",
+        eventId: "2",
+        status: 500,
+      });
+    });
+  },
+  deleteEventItinerary() {
+    return new Promise((resolve) => {
+      resolve({
+        rowsAffected: 1,
+        rawAffected: [],
+        status: 500,
+      });
+    });
+  },
+};
+
+jest.mock("leaflet");
 
 const accommodation = [
   {
@@ -84,8 +121,10 @@ const flights = [
 ];
 
 describe("EventItinerary.vue", () => {
-  const mockMethodTwo = jest.spyOn(EventItinerary.methods, 'createMap').mockReturnValue(true);
-  it("should render correctly", async () => {
+  const mockMethodTwo = jest
+    .spyOn(EventItinerary.methods, "createMap")
+    .mockReturnValue(true);
+  it("should render correctly", () => {
     const wrapper = shallowMount(EventItinerary, {
       global: {
         mocks: {
@@ -866,7 +905,8 @@ describe("EventItinerary.vue", () => {
 
     const submitItineraryButton = wrapper.find('[data-testid="submitButton"]');
     await submitItineraryButton.trigger("click");
-
+    expect(wrapper.emitted()).toHaveProperty("itineraryRequest");
+    expect(wrapper.emitted()).toHaveProperty("showToast");
     expect(createEventItineraryMock).toHaveBeenCalled();
   });
 
@@ -896,7 +936,8 @@ describe("EventItinerary.vue", () => {
 
     const submitItineraryButton = wrapper.find('[data-testid="submitButton"]');
     await submitItineraryButton.trigger("click");
-
+    expect(wrapper.emitted()).toHaveProperty("itineraryRequest");
+    expect(wrapper.emitted()).toHaveProperty("showToast");
     expect(updateEventItineraryMock).toHaveBeenCalled();
   });
 
@@ -935,6 +976,114 @@ describe("EventItinerary.vue", () => {
     await deleteItineraryButton.trigger("click");
 
     expect(deleteEventItineraryMock).toHaveBeenCalled();
+    expect(wrapper.emitted()).toHaveProperty("itineraryRequest");
+    expect(wrapper.emitted()).toHaveProperty("showToast");
     expect(mockRouter.go).toHaveBeenCalled();
+  });
+
+  it("if event itinerary already exists and user clicks delete button and failed response, error message shown to user", async () => {
+    const wrapper = mount(EventItinerary, {
+      props: {
+        accommodation: accommodation,
+        flight: [flights],
+        eventService: mockFailureEventService,
+        activities: activities,
+        itemType: "FOREIGN_OVERNIGHT",
+        displayFinaliseCheckbox: true,
+        editItinerary: true,
+      },
+      data() {
+        return {
+          editAction: true,
+          editClick: true,
+        };
+      },
+      global: {
+        mocks: {
+          $store: mockStore,
+          $route: mockRoute,
+          $router: mockRouter,
+        },
+      },
+    });
+
+    const deleteEventItineraryMock = jest.spyOn(
+      wrapper.vm.eventService,
+      "deleteEventItinerary"
+    );
+
+    const deleteItineraryButton = wrapper.find("#delete-itinerary-button");
+    await deleteItineraryButton.trigger("click");
+
+    expect(wrapper.vm.showErrorMessage).toBe(true);
+    expect(wrapper.vm.errorMessage).toBe("Error deleting itinerary.");
+  });
+
+  it("if event itinerary does not exist and user clicks submit button and failed response, error message shown to user", async () => {
+    const wrapper = mount(EventItinerary, {
+      props: {
+        accommodation: accommodation,
+        flight: [flights],
+        eventService: mockFailureEventService,
+        activities: activities,
+        itemType: "FOREIGN_OVERNIGHT",
+        displayFinaliseCheckbox: true,
+        editItinerary: false,
+        emptyItineraryCheck: false,
+      },
+      data() {
+        return {
+          editAction: true,
+          editClick: true,
+        };
+      },
+      global: {
+        mocks: {
+          $store: mockStore,
+          $route: mockRoute,
+          $router: mockRouter,
+        },
+      },
+    });
+
+    const submitItineraryButton = wrapper.find('[data-testid="submitButton"]');
+    await submitItineraryButton.trigger("click");
+
+    expect(wrapper.vm.showErrorMessage).toBe(true);
+    expect(wrapper.vm.errorMessage).toBe("Error creating itinerary.");
+  });
+
+  it("if event itinerary exits and user clicks submit button to update itinerary and failed response, error message shown to user", async () => {
+    const wrapper = mount(EventItinerary, {
+      props: {
+        accommodation: accommodation,
+        flight: [flights],
+        eventService: mockFailureEventService,
+        activities: activities,
+        itemType: "FOREIGN_OVERNIGHT",
+        displayFinaliseCheckbox: true,
+        editItinerary: true,
+        emptyItineraryCheck: false,
+      },
+      data() {
+        return {
+          editAction: true,
+          editClick: true,
+        };
+      },
+      global: {
+        mocks: {
+          $store: mockStore,
+          $route: mockRoute,
+          $router: mockRouter,
+        },
+      },
+    });
+
+    const submitItineraryButton = wrapper.find('[data-testid="submitButton"]');
+    await submitItineraryButton.trigger("click");
+
+    expect(wrapper.vm.showErrorMessage).toBe(true);
+    expect(wrapper.vm.errorMessage).toBe("Error updating itinerary.");
   });
 });

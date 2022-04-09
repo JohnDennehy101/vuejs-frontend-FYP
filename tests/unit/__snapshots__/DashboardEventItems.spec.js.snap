@@ -30,16 +30,18 @@ VueWrapper {
             >
               Test Event
             </h3>
-            <p>
-              More info about group trip here...description
+            <p
+              data-testid="eventDescription"
+            >
+              Test Description that is really long should be cut off at some...
             </p>
             <p
               style="display: none;"
             />
             <span
-              data-testid="eventType"
+              data-testid="domesticOvernightEventType"
             >
-              DOMESTIC_OVERNIGHT
+              Overnight Event in Ireland
             </span>
             <div
               class="event-user-actions-parent-container"
@@ -199,6 +201,7 @@ VueWrapper {
           "domesticOvernightColourHex": "#AD1FEA",
           "eventItems": Array [
             Object {
+              "description": "Test Description that is really long should be cut off at some point here or test will fail",
               "location": "Cork",
               "title": "Test Event",
               "type": "DOMESTIC_OVERNIGHT",
@@ -206,6 +209,7 @@ VueWrapper {
           ],
           "events": Array [
             Object {
+              "description": "Test Description that is really long should be cut off at some point here or test will fail",
               "location": "Cork",
               "title": "Test Event",
               "type": "DOMESTIC_OVERNIGHT",
@@ -215,6 +219,7 @@ VueWrapper {
           "hasOwnProperty": [Function],
           "showAllEventActions": true,
           "showDeleteModal": [Function],
+          "transformEventDescription": [Function],
           "userId": "1",
           "userUuid": "1",
         },
@@ -283,6 +288,7 @@ VueWrapper {
             "showAllEventActions": 2,
             "showDeleteModal": 4,
             "toJSON": 0,
+            "transformEventDescription": 4,
             "userId": 2,
             "userUuid": 3,
             Symbol(Symbol.toStringTag): 0,
@@ -333,6 +339,7 @@ VueWrapper {
             "domesticOvernightColourHex": "#AD1FEA",
             "eventItems": Array [
               Object {
+                "description": "Test Description that is really long should be cut off at some point here or test will fail",
                 "location": "Cork",
                 "title": "Test Event",
                 "type": "DOMESTIC_OVERNIGHT",
@@ -340,6 +347,7 @@ VueWrapper {
             ],
             "events": Array [
               Object {
+                "description": "Test Description that is really long should be cut off at some point here or test will fail",
                 "location": "Cork",
                 "title": "Test Event",
                 "type": "DOMESTIC_OVERNIGHT",
@@ -349,6 +357,7 @@ VueWrapper {
             "hasOwnProperty": [Function],
             "showAllEventActions": true,
             "showDeleteModal": [Function],
+            "transformEventDescription": [Function],
             "userId": "1",
             "userUuid": "1",
           },
@@ -358,6 +367,7 @@ VueWrapper {
             "domesticOvernightColourHex": "#AD1FEA",
             "eventItems": Array [
               Object {
+                "description": "Test Description that is really long should be cut off at some point here or test will fail",
                 "location": "Cork",
                 "title": "Test Event",
                 "type": "DOMESTIC_OVERNIGHT",
@@ -373,6 +383,9 @@ VueWrapper {
             "active": true,
             "allowRecurse": true,
             "deps": Array [
+              Set {
+                [Circular],
+              },
               Set {
                 [Circular],
               },
@@ -428,6 +441,7 @@ VueWrapper {
             "createdEvents": true,
             "events": Array [
               Object {
+                "description": "Test Description that is really long should be cut off at some point here or test will fail",
                 "location": "Cork",
                 "title": "Test Event",
                 "type": "DOMESTIC_OVERNIGHT",
@@ -465,6 +479,7 @@ VueWrapper {
             "domesticOvernightColourHex": "#AD1FEA",
             "eventItems": Array [
               Object {
+                "description": "Test Description that is really long should be cut off at some point here or test will fail",
                 "location": "Cork",
                 "title": "Test Event",
                 "type": "DOMESTIC_OVERNIGHT",
@@ -472,6 +487,7 @@ VueWrapper {
             ],
             "events": Array [
               Object {
+                "description": "Test Description that is really long should be cut off at some point here or test will fail",
                 "location": "Cork",
                 "title": "Test Event",
                 "type": "DOMESTIC_OVERNIGHT",
@@ -481,14 +497,13 @@ VueWrapper {
             "hasOwnProperty": [Function],
             "showAllEventActions": true,
             "showDeleteModal": [Function],
+            "transformEventDescription": [Function],
             "userId": "1",
             "userUuid": "1",
           },
           "refs": Object {},
           "render": [Function],
-          "renderCache": Array [
-            [Function],
-          ],
+          "renderCache": Array [],
           "root": [Circular],
           "rtc": null,
           "rtg": null,
@@ -500,6 +515,9 @@ VueWrapper {
                 "active": true,
                 "allowRecurse": true,
                 "deps": Array [
+                  Set {
+                    [Circular],
+                  },
                   Set {
                     [Circular],
                   },
@@ -641,17 +659,21 @@ VueWrapper {
                             "__v_skip": true,
                             "anchor": null,
                             "appContext": null,
-                            "children": "More info about group trip here...description",
+                            "children": "Test Description that is really long should be cut off at some...",
                             "component": null,
                             "dirs": null,
                             "dynamicChildren": null,
                             "dynamicProps": null,
-                            "el": <p>
-                              More info about group trip here...description
+                            "el": <p
+                              data-testid="eventDescription"
+                            >
+                              Test Description that is really long should be cut off at some...
                             </p>,
                             "key": null,
-                            "patchFlag": -1,
-                            "props": null,
+                            "patchFlag": 1,
+                            "props": Object {
+                              "data-testid": "eventDescription",
+                            },
                             "ref": null,
                             "scopeId": null,
                             "shapeFlag": 9,
@@ -703,20 +725,21 @@ VueWrapper {
                             "__v_skip": true,
                             "anchor": null,
                             "appContext": null,
-                            "children": "DOMESTIC_OVERNIGHT",
+                            "children": "Overnight Event in Ireland",
                             "component": null,
                             "dirs": null,
-                            "dynamicChildren": null,
+                            "dynamicChildren": Array [],
                             "dynamicProps": null,
                             "el": <span
-                              data-testid="eventType"
+                              data-testid="domesticOvernightEventType"
                             >
-                              DOMESTIC_OVERNIGHT
+                              Overnight Event in Ireland
                             </span>,
-                            "key": null,
-                            "patchFlag": 1,
+                            "key": 1,
+                            "patchFlag": 0,
                             "props": Object {
-                              "data-testid": "eventType",
+                              "data-testid": "domesticOvernightEventType",
+                              "key": 1,
                             },
                             "ref": null,
                             "scopeId": null,
@@ -803,7 +826,7 @@ VueWrapper {
                                         "name": "Event Detail Page",
                                         "params": Object {
                                           "editEvent": true,
-                                          "event": "{\\"title\\":\\"Test Event\\",\\"type\\":\\"DOMESTIC_OVERNIGHT\\",\\"location\\":\\"Cork\\"}",
+                                          "event": "{\\"title\\":\\"Test Event\\",\\"description\\":\\"Test Description that is really long should be cut off at some point here or test will fail\\",\\"type\\":\\"DOMESTIC_OVERNIGHT\\",\\"location\\":\\"Cork\\"}",
                                           "eventId": undefined,
                                           "userId": "1",
                                         },
@@ -886,7 +909,7 @@ VueWrapper {
                                         "name": "Event Detail Page",
                                         "params": Object {
                                           "editEvent": true,
-                                          "event": "{\\"title\\":\\"Test Event\\",\\"type\\":\\"DOMESTIC_OVERNIGHT\\",\\"location\\":\\"Cork\\"}",
+                                          "event": "{\\"title\\":\\"Test Event\\",\\"description\\":\\"Test Description that is really long should be cut off at some point here or test will fail\\",\\"type\\":\\"DOMESTIC_OVERNIGHT\\",\\"location\\":\\"Cork\\"}",
                                           "eventId": undefined,
                                           "userId": "1",
                                         },
@@ -976,7 +999,9 @@ VueWrapper {
                                 "component": null,
                                 "dirs": null,
                                 "dynamicChildren": Array [],
-                                "dynamicProps": null,
+                                "dynamicProps": Array [
+                                  "onClick",
+                                ],
                                 "el": <span
                                   data-testid="deleteEvent"
                                 >
@@ -985,7 +1010,7 @@ VueWrapper {
                                   />
                                 </span>,
                                 "key": 1,
-                                "patchFlag": 0,
+                                "patchFlag": 8,
                                 "props": Object {
                                   "data-testid": "deleteEvent",
                                   "key": 1,
@@ -1089,16 +1114,18 @@ VueWrapper {
                           >
                             Test Event
                           </h3>
-                          <p>
-                            More info about group trip here...description
+                          <p
+                            data-testid="eventDescription"
+                          >
+                            Test Description that is really long should be cut off at some...
                           </p>
                           <p
                             style="display: none;"
                           />
                           <span
-                            data-testid="eventType"
+                            data-testid="domesticOvernightEventType"
                           >
-                            DOMESTIC_OVERNIGHT
+                            Overnight Event in Ireland
                           </span>
                           <div
                             class="event-user-actions-parent-container"
@@ -1164,16 +1191,18 @@ VueWrapper {
                         >
                           Test Event
                         </h3>
-                        <p>
-                          More info about group trip here...description
+                        <p
+                          data-testid="eventDescription"
+                        >
+                          Test Description that is really long should be cut off at some...
                         </p>
                         <p
                           style="display: none;"
                         />
                         <span
-                          data-testid="eventType"
+                          data-testid="domesticOvernightEventType"
                         >
-                          DOMESTIC_OVERNIGHT
+                          Overnight Event in Ireland
                         </span>
                         <div
                           class="event-user-actions-parent-container"
@@ -1207,7 +1236,7 @@ VueWrapper {
                         "name": "Event Detail Page",
                         "params": Object {
                           "editEvent": false,
-                          "event": "{\\"title\\":\\"Test Event\\",\\"type\\":\\"DOMESTIC_OVERNIGHT\\",\\"location\\":\\"Cork\\"}",
+                          "event": "{\\"title\\":\\"Test Event\\",\\"description\\":\\"Test Description that is really long should be cut off at some point here or test will fail\\",\\"type\\":\\"DOMESTIC_OVERNIGHT\\",\\"location\\":\\"Cork\\"}",
                           "eventId": undefined,
                           "userId": "1",
                         },
@@ -1302,6 +1331,39 @@ VueWrapper {
                     "__v_skip": true,
                     "anchor": null,
                     "appContext": null,
+                    "children": "Test Description that is really long should be cut off at some...",
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <p
+                      data-testid="eventDescription"
+                    >
+                      Test Description that is really long should be cut off at some...
+                    </p>,
+                    "key": null,
+                    "patchFlag": 1,
+                    "props": Object {
+                      "data-testid": "eventDescription",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 9,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "p",
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
                     "children": "",
                     "component": null,
                     "dirs": null,
@@ -1335,20 +1397,21 @@ VueWrapper {
                     "__v_skip": true,
                     "anchor": null,
                     "appContext": null,
-                    "children": "DOMESTIC_OVERNIGHT",
+                    "children": "Overnight Event in Ireland",
                     "component": null,
                     "dirs": null,
-                    "dynamicChildren": null,
+                    "dynamicChildren": Array [],
                     "dynamicProps": null,
                     "el": <span
-                      data-testid="eventType"
+                      data-testid="domesticOvernightEventType"
                     >
-                      DOMESTIC_OVERNIGHT
+                      Overnight Event in Ireland
                     </span>,
-                    "key": null,
-                    "patchFlag": 1,
+                    "key": 1,
+                    "patchFlag": 0,
                     "props": Object {
-                      "data-testid": "eventType",
+                      "data-testid": "domesticOvernightEventType",
+                      "key": 1,
                     },
                     "ref": null,
                     "scopeId": null,
@@ -1429,7 +1492,7 @@ VueWrapper {
                             "name": "Event Detail Page",
                             "params": Object {
                               "editEvent": true,
-                              "event": "{\\"title\\":\\"Test Event\\",\\"type\\":\\"DOMESTIC_OVERNIGHT\\",\\"location\\":\\"Cork\\"}",
+                              "event": "{\\"title\\":\\"Test Event\\",\\"description\\":\\"Test Description that is really long should be cut off at some point here or test will fail\\",\\"type\\":\\"DOMESTIC_OVERNIGHT\\",\\"location\\":\\"Cork\\"}",
                               "eventId": undefined,
                               "userId": "1",
                             },
@@ -1512,7 +1575,7 @@ VueWrapper {
                             "name": "Event Detail Page",
                             "params": Object {
                               "editEvent": true,
-                              "event": "{\\"title\\":\\"Test Event\\",\\"type\\":\\"DOMESTIC_OVERNIGHT\\",\\"location\\":\\"Cork\\"}",
+                              "event": "{\\"title\\":\\"Test Event\\",\\"description\\":\\"Test Description that is really long should be cut off at some point here or test will fail\\",\\"type\\":\\"DOMESTIC_OVERNIGHT\\",\\"location\\":\\"Cork\\"}",
                               "eventId": undefined,
                               "userId": "1",
                             },
@@ -1602,7 +1665,9 @@ VueWrapper {
                     "component": null,
                     "dirs": null,
                     "dynamicChildren": Array [],
-                    "dynamicProps": null,
+                    "dynamicProps": Array [
+                      "onClick",
+                    ],
                     "el": <span
                       data-testid="deleteEvent"
                     >
@@ -1611,7 +1676,7 @@ VueWrapper {
                       />
                     </span>,
                     "key": 1,
-                    "patchFlag": 0,
+                    "patchFlag": 8,
                     "props": Object {
                       "data-testid": "deleteEvent",
                       "key": 1,
@@ -1741,17 +1806,21 @@ VueWrapper {
                             "__v_skip": true,
                             "anchor": null,
                             "appContext": null,
-                            "children": "More info about group trip here...description",
+                            "children": "Test Description that is really long should be cut off at some...",
                             "component": null,
                             "dirs": null,
                             "dynamicChildren": null,
                             "dynamicProps": null,
-                            "el": <p>
-                              More info about group trip here...description
+                            "el": <p
+                              data-testid="eventDescription"
+                            >
+                              Test Description that is really long should be cut off at some...
                             </p>,
                             "key": null,
-                            "patchFlag": -1,
-                            "props": null,
+                            "patchFlag": 1,
+                            "props": Object {
+                              "data-testid": "eventDescription",
+                            },
                             "ref": null,
                             "scopeId": null,
                             "shapeFlag": 9,
@@ -1803,20 +1872,21 @@ VueWrapper {
                             "__v_skip": true,
                             "anchor": null,
                             "appContext": null,
-                            "children": "DOMESTIC_OVERNIGHT",
+                            "children": "Overnight Event in Ireland",
                             "component": null,
                             "dirs": null,
-                            "dynamicChildren": null,
+                            "dynamicChildren": Array [],
                             "dynamicProps": null,
                             "el": <span
-                              data-testid="eventType"
+                              data-testid="domesticOvernightEventType"
                             >
-                              DOMESTIC_OVERNIGHT
+                              Overnight Event in Ireland
                             </span>,
-                            "key": null,
-                            "patchFlag": 1,
+                            "key": 1,
+                            "patchFlag": 0,
                             "props": Object {
-                              "data-testid": "eventType",
+                              "data-testid": "domesticOvernightEventType",
+                              "key": 1,
                             },
                             "ref": null,
                             "scopeId": null,
@@ -1903,7 +1973,7 @@ VueWrapper {
                                         "name": "Event Detail Page",
                                         "params": Object {
                                           "editEvent": true,
-                                          "event": "{\\"title\\":\\"Test Event\\",\\"type\\":\\"DOMESTIC_OVERNIGHT\\",\\"location\\":\\"Cork\\"}",
+                                          "event": "{\\"title\\":\\"Test Event\\",\\"description\\":\\"Test Description that is really long should be cut off at some point here or test will fail\\",\\"type\\":\\"DOMESTIC_OVERNIGHT\\",\\"location\\":\\"Cork\\"}",
                                           "eventId": undefined,
                                           "userId": "1",
                                         },
@@ -1986,7 +2056,7 @@ VueWrapper {
                                         "name": "Event Detail Page",
                                         "params": Object {
                                           "editEvent": true,
-                                          "event": "{\\"title\\":\\"Test Event\\",\\"type\\":\\"DOMESTIC_OVERNIGHT\\",\\"location\\":\\"Cork\\"}",
+                                          "event": "{\\"title\\":\\"Test Event\\",\\"description\\":\\"Test Description that is really long should be cut off at some point here or test will fail\\",\\"type\\":\\"DOMESTIC_OVERNIGHT\\",\\"location\\":\\"Cork\\"}",
                                           "eventId": undefined,
                                           "userId": "1",
                                         },
@@ -2076,7 +2146,9 @@ VueWrapper {
                                 "component": null,
                                 "dirs": null,
                                 "dynamicChildren": Array [],
-                                "dynamicProps": null,
+                                "dynamicProps": Array [
+                                  "onClick",
+                                ],
                                 "el": <span
                                   data-testid="deleteEvent"
                                 >
@@ -2085,7 +2157,7 @@ VueWrapper {
                                   />
                                 </span>,
                                 "key": 1,
-                                "patchFlag": 0,
+                                "patchFlag": 8,
                                 "props": Object {
                                   "data-testid": "deleteEvent",
                                   "key": 1,
@@ -2189,16 +2261,18 @@ VueWrapper {
                           >
                             Test Event
                           </h3>
-                          <p>
-                            More info about group trip here...description
+                          <p
+                            data-testid="eventDescription"
+                          >
+                            Test Description that is really long should be cut off at some...
                           </p>
                           <p
                             style="display: none;"
                           />
                           <span
-                            data-testid="eventType"
+                            data-testid="domesticOvernightEventType"
                           >
-                            DOMESTIC_OVERNIGHT
+                            Overnight Event in Ireland
                           </span>
                           <div
                             class="event-user-actions-parent-container"
@@ -2264,16 +2338,18 @@ VueWrapper {
                         >
                           Test Event
                         </h3>
-                        <p>
-                          More info about group trip here...description
+                        <p
+                          data-testid="eventDescription"
+                        >
+                          Test Description that is really long should be cut off at some...
                         </p>
                         <p
                           style="display: none;"
                         />
                         <span
-                          data-testid="eventType"
+                          data-testid="domesticOvernightEventType"
                         >
-                          DOMESTIC_OVERNIGHT
+                          Overnight Event in Ireland
                         </span>
                         <div
                           class="event-user-actions-parent-container"
@@ -2307,7 +2383,7 @@ VueWrapper {
                         "name": "Event Detail Page",
                         "params": Object {
                           "editEvent": false,
-                          "event": "{\\"title\\":\\"Test Event\\",\\"type\\":\\"DOMESTIC_OVERNIGHT\\",\\"location\\":\\"Cork\\"}",
+                          "event": "{\\"title\\":\\"Test Event\\",\\"description\\":\\"Test Description that is really long should be cut off at some point here or test will fail\\",\\"type\\":\\"DOMESTIC_OVERNIGHT\\",\\"location\\":\\"Cork\\"}",
                           "eventId": undefined,
                           "userId": "1",
                         },
@@ -2347,16 +2423,18 @@ VueWrapper {
                       >
                         Test Event
                       </h3>
-                      <p>
-                        More info about group trip here...description
+                      <p
+                        data-testid="eventDescription"
+                      >
+                        Test Description that is really long should be cut off at some...
                       </p>
                       <p
                         style="display: none;"
                       />
                       <span
-                        data-testid="eventType"
+                        data-testid="domesticOvernightEventType"
                       >
-                        DOMESTIC_OVERNIGHT
+                        Overnight Event in Ireland
                       </span>
                       <div
                         class="event-user-actions-parent-container"
@@ -2431,6 +2509,7 @@ VueWrapper {
             "data": [Function],
             "methods": Object {
               "showDeleteModal": [Function],
+              "transformEventDescription": [Function],
             },
             "props": Object {
               "createdEvents": [Function],
@@ -2456,6 +2535,7 @@ VueWrapper {
           "createdEvents": true,
           "events": Array [
             Object {
+              "description": "Test Description that is really long should be cut off at some point here or test will fail",
               "location": "Cork",
               "title": "Test Event",
               "type": "DOMESTIC_OVERNIGHT",
@@ -2485,6 +2565,7 @@ VueWrapper {
           "data": [Function],
           "methods": Object {
             "showDeleteModal": [Function],
+            "transformEventDescription": [Function],
           },
           "props": Object {
             "createdEvents": [Function],
@@ -2593,6 +2674,7 @@ VueWrapper {
     "domesticOvernightColourHex": "#AD1FEA",
     "eventItems": Array [
       Object {
+        "description": "Test Description that is really long should be cut off at some point here or test will fail",
         "location": "Cork",
         "title": "Test Event",
         "type": "DOMESTIC_OVERNIGHT",
@@ -2600,6 +2682,7 @@ VueWrapper {
     ],
     "events": Array [
       Object {
+        "description": "Test Description that is really long should be cut off at some point here or test will fail",
         "location": "Cork",
         "title": "Test Event",
         "type": "DOMESTIC_OVERNIGHT",
@@ -2609,6 +2692,7 @@ VueWrapper {
     "hasOwnProperty": [Function],
     "showAllEventActions": true,
     "showDeleteModal": [Function],
+    "transformEventDescription": [Function],
     "userId": "1",
     "userUuid": "1",
   },

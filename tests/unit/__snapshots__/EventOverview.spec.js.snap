@@ -26,15 +26,15 @@ VueWrapper {
               Test Event
             </p>
           </div>
-          <div>
+          <div
+            id="description"
+          >
             <h3>
               Description:
             </h3>
             <p
               data-testid="description"
-            >
-               More info about group trip here...description 
-            </p>
+            />
           </div>
           <!--v-if-->
           <div>
@@ -66,6 +66,78 @@ VueWrapper {
           </h4>
           
           
+        </div>
+        <h4>
+          Event Status
+        </h4>
+        <div
+          id="event-stages-parent-container"
+        >
+          <div
+            class="individual-stage"
+            data-testid="eventCreatedMilestone"
+          >
+            <span>
+              <i
+                class="fas fa-check"
+              />
+            </span>
+            <p>
+              1. Event Created
+            </p>
+          </div>
+          <div
+            class="individual-stage"
+            data-testid="pollCreatedMilestone"
+          >
+            <span>
+              <i
+                class="fas fa-times-circle"
+              />
+            </span>
+            <p>
+              2. Poll Created
+            </p>
+          </div>
+          <div
+            class="individual-stage"
+            data-testid="pollCompletedMilestone"
+          >
+            <span>
+              <i
+                class="fas fa-times-circle"
+              />
+            </span>
+            <p>
+              3. Poll Completed
+            </p>
+          </div>
+          <div
+            class="individual-stage"
+            data-testid="itineraryCreatedMilestone"
+          >
+            <span>
+              <i
+                class="fas fa-times-circle"
+              />
+            </span>
+            <p>
+              4. Itinerary Created
+            </p>
+          </div>
+          <div
+            class="individual-stage"
+            data-testid="itineraryFinalisedMilestone"
+          >
+            <span>
+              <i
+                class="fas fa-times-circle"
+              />
+            </span>
+            <p>
+              5. Itinerary Finalised
+            </p>
+          </div>
         </div>
         <div
           class="event-user-actions-parent-container"
@@ -204,20 +276,30 @@ VueWrapper {
       "refs": Object {
         "VTU_COMPONENT": Object {
           "departureCity": "",
+          "description": undefined,
           "destinationCity": "Cork",
           "guestUser": false,
           "hasOwnProperty": [Function],
           "individualEvent": Object {
             "city": "Cork",
+            "polls": Array [],
             "title": "Test Event",
             "type": "DOMESTIC_OVERNIGHT",
           },
           "invitedUser": false,
           "item": Object {
             "city": "Cork",
+            "polls": Array [],
             "title": "Test Event",
             "type": "DOMESTIC_OVERNIGHT",
           },
+          "itineraryAlreadyCompleted": undefined,
+          "itineraryAlreadyCreated": undefined,
+          "itineraryCompleted": undefined,
+          "itineraryCreated": undefined,
+          "pollAlreadyCompleted": undefined,
+          "pollAlreadyCreated": null,
+          "pollCompleted": undefined,
           "populateEventInfo": [Function],
           "title": "Test Event",
           "type": "DOMESTIC_OVERNIGHT",
@@ -274,6 +356,7 @@ VueWrapper {
             "_isMockFunction": 0,
             "constructor": 0,
             "departureCity": 2,
+            "description": 2,
             "destinationCity": 2,
             "guestUser": 2,
             "hasOwnProperty": 4,
@@ -281,6 +364,13 @@ VueWrapper {
             "invitedUser": 3,
             "isVueInstance": 0,
             "item": 2,
+            "itineraryAlreadyCompleted": 2,
+            "itineraryAlreadyCreated": 2,
+            "itineraryCompleted": 3,
+            "itineraryCreated": 3,
+            "pollAlreadyCompleted": 2,
+            "pollAlreadyCreated": 2,
+            "pollCompleted": 3,
             "populateEventInfo": 4,
             "title": 2,
             "toJSON": 0,
@@ -329,20 +419,30 @@ VueWrapper {
           "components": Object {},
           "ctx": Object {
             "departureCity": "",
+            "description": undefined,
             "destinationCity": "Cork",
             "guestUser": false,
             "hasOwnProperty": [Function],
             "individualEvent": Object {
               "city": "Cork",
+              "polls": Array [],
               "title": "Test Event",
               "type": "DOMESTIC_OVERNIGHT",
             },
             "invitedUser": false,
             "item": Object {
               "city": "Cork",
+              "polls": Array [],
               "title": "Test Event",
               "type": "DOMESTIC_OVERNIGHT",
             },
+            "itineraryAlreadyCompleted": undefined,
+            "itineraryAlreadyCreated": undefined,
+            "itineraryCompleted": undefined,
+            "itineraryCreated": undefined,
+            "pollAlreadyCompleted": undefined,
+            "pollAlreadyCreated": null,
+            "pollCompleted": undefined,
             "populateEventInfo": [Function],
             "title": "Test Event",
             "type": "DOMESTIC_OVERNIGHT",
@@ -350,13 +450,19 @@ VueWrapper {
           "da": null,
           "data": Object {
             "departureCity": "",
+            "description": undefined,
             "destinationCity": "Cork",
             "guestUser": false,
             "item": Object {
               "city": "Cork",
+              "polls": Array [],
               "title": "Test Event",
               "type": "DOMESTIC_OVERNIGHT",
             },
+            "itineraryAlreadyCompleted": undefined,
+            "itineraryAlreadyCreated": undefined,
+            "pollAlreadyCompleted": undefined,
+            "pollAlreadyCreated": null,
             "title": "Test Event",
             "type": "DOMESTIC_OVERNIGHT",
           },
@@ -366,6 +472,21 @@ VueWrapper {
             "active": true,
             "allowRecurse": true,
             "deps": Array [
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
               Set {
                 [Circular],
               },
@@ -408,36 +529,53 @@ VueWrapper {
           "props": Object {
             "individualEvent": Object {
               "city": "Cork",
+              "polls": Array [],
               "title": "Test Event",
               "type": "DOMESTIC_OVERNIGHT",
             },
             "invitedUser": false,
+            "itineraryCompleted": undefined,
+            "itineraryCreated": undefined,
+            "pollCompleted": undefined,
           },
           "propsDefaults": Object {},
           "propsOptions": Array [
             Object {
               "individualEvent": Object {},
               "invitedUser": Object {},
+              "itineraryCompleted": Object {},
+              "itineraryCreated": Object {},
+              "pollCompleted": Object {},
             },
             Array [],
           ],
           "provides": Object {},
           "proxy": Object {
             "departureCity": "",
+            "description": undefined,
             "destinationCity": "Cork",
             "guestUser": false,
             "hasOwnProperty": [Function],
             "individualEvent": Object {
               "city": "Cork",
+              "polls": Array [],
               "title": "Test Event",
               "type": "DOMESTIC_OVERNIGHT",
             },
             "invitedUser": false,
             "item": Object {
               "city": "Cork",
+              "polls": Array [],
               "title": "Test Event",
               "type": "DOMESTIC_OVERNIGHT",
             },
+            "itineraryAlreadyCompleted": undefined,
+            "itineraryAlreadyCreated": undefined,
+            "itineraryCompleted": undefined,
+            "itineraryCreated": undefined,
+            "pollAlreadyCompleted": undefined,
+            "pollAlreadyCreated": null,
+            "pollCompleted": undefined,
             "populateEventInfo": [Function],
             "title": "Test Event",
             "type": "DOMESTIC_OVERNIGHT",
@@ -458,6 +596,21 @@ VueWrapper {
                 "active": true,
                 "allowRecurse": true,
                 "deps": Array [
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
                   Set {
                     [Circular],
                   },
@@ -622,7 +775,7 @@ VueWrapper {
                           Description:
                         </h3>,
                         "key": null,
-                        "patchFlag": 0,
+                        "patchFlag": -1,
                         "props": null,
                         "ref": null,
                         "scopeId": null,
@@ -642,24 +795,22 @@ VueWrapper {
                         "__v_skip": true,
                         "anchor": null,
                         "appContext": null,
-                        "children": " More info about group trip here...description ",
+                        "children": "",
                         "component": null,
                         "dirs": null,
                         "dynamicChildren": null,
                         "dynamicProps": null,
                         "el": <p
                           data-testid="description"
-                        >
-                           More info about group trip here...description 
-                        </p>,
+                        />,
                         "key": null,
-                        "patchFlag": 0,
+                        "patchFlag": 1,
                         "props": Object {
                           "data-testid": "description",
                         },
                         "ref": null,
                         "scopeId": null,
-                        "shapeFlag": 9,
+                        "shapeFlag": 1,
                         "slotScopeIds": null,
                         "ssContent": null,
                         "ssFallback": null,
@@ -675,19 +826,21 @@ VueWrapper {
                     "dirs": null,
                     "dynamicChildren": null,
                     "dynamicProps": null,
-                    "el": <div>
+                    "el": <div
+                      id="description"
+                    >
                       <h3>
                         Description:
                       </h3>
                       <p
                         data-testid="description"
-                      >
-                         More info about group trip here...description 
-                      </p>
+                      />
                     </div>,
                     "key": null,
-                    "patchFlag": -1,
-                    "props": null,
+                    "patchFlag": 0,
+                    "props": Object {
+                      "id": "description",
+                    },
                     "ref": null,
                     "scopeId": null,
                     "shapeFlag": 17,
@@ -945,15 +1098,15 @@ VueWrapper {
                       Test Event
                     </p>
                   </div>
-                  <div>
+                  <div
+                    id="description"
+                  >
                     <h3>
                       Description:
                     </h3>
                     <p
                       data-testid="description"
-                    >
-                       More info about group trip here...description 
-                    </p>
+                    />
                   </div>
                   <!--v-if-->
                   <div>
@@ -1075,6 +1228,812 @@ VueWrapper {
                 "patchFlag": 0,
                 "props": Object {
                   "id": "event-users-parent-container",
+                },
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 17,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": "div",
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": "Event Status",
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": null,
+                "dynamicProps": null,
+                "el": <h4>
+                  Event Status
+                </h4>,
+                "key": null,
+                "patchFlag": -1,
+                "props": null,
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 9,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": "h4",
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": Array [
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": Array [
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": Array [
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": null,
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": null,
+                            "dynamicProps": null,
+                            "el": <i
+                              class="fas fa-check"
+                            />,
+                            "key": null,
+                            "patchFlag": 0,
+                            "props": Object {
+                              "class": "fas fa-check",
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 1,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "i",
+                          },
+                        ],
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <span>
+                          <i
+                            class="fas fa-check"
+                          />
+                        </span>,
+                        "key": null,
+                        "patchFlag": 0,
+                        "props": null,
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 17,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "span",
+                      },
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "1. Event Created",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <p>
+                          1. Event Created
+                        </p>,
+                        "key": null,
+                        "patchFlag": 0,
+                        "props": null,
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 9,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "p",
+                      },
+                    ],
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <div
+                      class="individual-stage"
+                      data-testid="eventCreatedMilestone"
+                    >
+                      <span>
+                        <i
+                          class="fas fa-check"
+                        />
+                      </span>
+                      <p>
+                        1. Event Created
+                      </p>
+                    </div>,
+                    "key": null,
+                    "patchFlag": -1,
+                    "props": Object {
+                      "class": "individual-stage",
+                      "data-testid": "eventCreatedMilestone",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 17,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "div",
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": Array [
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": Array [
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": null,
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": Array [],
+                            "dynamicProps": null,
+                            "el": <i
+                              class="fas fa-times-circle"
+                            />,
+                            "key": 1,
+                            "patchFlag": 0,
+                            "props": Object {
+                              "class": "fas fa-times-circle",
+                              "key": 1,
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 1,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "i",
+                          },
+                        ],
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <span>
+                          <i
+                            class="fas fa-times-circle"
+                          />
+                        </span>,
+                        "key": null,
+                        "patchFlag": 0,
+                        "props": null,
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 17,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "span",
+                      },
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "2. Poll Created",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <p>
+                          2. Poll Created
+                        </p>,
+                        "key": null,
+                        "patchFlag": -1,
+                        "props": null,
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 9,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "p",
+                      },
+                    ],
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <div
+                      class="individual-stage"
+                      data-testid="pollCreatedMilestone"
+                    >
+                      <span>
+                        <i
+                          class="fas fa-times-circle"
+                        />
+                      </span>
+                      <p>
+                        2. Poll Created
+                      </p>
+                    </div>,
+                    "key": null,
+                    "patchFlag": 0,
+                    "props": Object {
+                      "class": "individual-stage",
+                      "data-testid": "pollCreatedMilestone",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 17,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "div",
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": Array [
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": Array [
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": null,
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": Array [],
+                            "dynamicProps": null,
+                            "el": <i
+                              class="fas fa-times-circle"
+                            />,
+                            "key": 1,
+                            "patchFlag": 0,
+                            "props": Object {
+                              "class": "fas fa-times-circle",
+                              "key": 1,
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 1,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "i",
+                          },
+                        ],
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <span>
+                          <i
+                            class="fas fa-times-circle"
+                          />
+                        </span>,
+                        "key": null,
+                        "patchFlag": 0,
+                        "props": null,
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 17,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "span",
+                      },
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "3. Poll Completed",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <p>
+                          3. Poll Completed
+                        </p>,
+                        "key": null,
+                        "patchFlag": -1,
+                        "props": null,
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 9,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "p",
+                      },
+                    ],
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <div
+                      class="individual-stage"
+                      data-testid="pollCompletedMilestone"
+                    >
+                      <span>
+                        <i
+                          class="fas fa-times-circle"
+                        />
+                      </span>
+                      <p>
+                        3. Poll Completed
+                      </p>
+                    </div>,
+                    "key": null,
+                    "patchFlag": 0,
+                    "props": Object {
+                      "class": "individual-stage",
+                      "data-testid": "pollCompletedMilestone",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 17,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "div",
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": Array [
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": Array [
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": null,
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": Array [],
+                            "dynamicProps": null,
+                            "el": <i
+                              class="fas fa-times-circle"
+                            />,
+                            "key": 1,
+                            "patchFlag": 0,
+                            "props": Object {
+                              "class": "fas fa-times-circle",
+                              "key": 1,
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 1,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "i",
+                          },
+                        ],
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <span>
+                          <i
+                            class="fas fa-times-circle"
+                          />
+                        </span>,
+                        "key": null,
+                        "patchFlag": 0,
+                        "props": null,
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 17,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "span",
+                      },
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "4. Itinerary Created",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <p>
+                          4. Itinerary Created
+                        </p>,
+                        "key": null,
+                        "patchFlag": -1,
+                        "props": null,
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 9,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "p",
+                      },
+                    ],
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <div
+                      class="individual-stage"
+                      data-testid="itineraryCreatedMilestone"
+                    >
+                      <span>
+                        <i
+                          class="fas fa-times-circle"
+                        />
+                      </span>
+                      <p>
+                        4. Itinerary Created
+                      </p>
+                    </div>,
+                    "key": null,
+                    "patchFlag": 0,
+                    "props": Object {
+                      "class": "individual-stage",
+                      "data-testid": "itineraryCreatedMilestone",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 17,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "div",
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": Array [
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": Array [
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": null,
+                            "component": null,
+                            "dirs": null,
+                            "dynamicChildren": Array [],
+                            "dynamicProps": null,
+                            "el": <i
+                              class="fas fa-times-circle"
+                            />,
+                            "key": 1,
+                            "patchFlag": 0,
+                            "props": Object {
+                              "class": "fas fa-times-circle",
+                              "key": 1,
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 1,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": "i",
+                          },
+                        ],
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <span>
+                          <i
+                            class="fas fa-times-circle"
+                          />
+                        </span>,
+                        "key": null,
+                        "patchFlag": 0,
+                        "props": null,
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 17,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "span",
+                      },
+                      Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": "5. Itinerary Finalised",
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <p>
+                          5. Itinerary Finalised
+                        </p>,
+                        "key": null,
+                        "patchFlag": -1,
+                        "props": null,
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 9,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "p",
+                      },
+                    ],
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <div
+                      class="individual-stage"
+                      data-testid="itineraryFinalisedMilestone"
+                    >
+                      <span>
+                        <i
+                          class="fas fa-times-circle"
+                        />
+                      </span>
+                      <p>
+                        5. Itinerary Finalised
+                      </p>
+                    </div>,
+                    "key": null,
+                    "patchFlag": 0,
+                    "props": Object {
+                      "class": "individual-stage",
+                      "data-testid": "itineraryFinalisedMilestone",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 17,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "div",
+                  },
+                ],
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": null,
+                "dynamicProps": null,
+                "el": <div
+                  id="event-stages-parent-container"
+                >
+                  <div
+                    class="individual-stage"
+                    data-testid="eventCreatedMilestone"
+                  >
+                    <span>
+                      <i
+                        class="fas fa-check"
+                      />
+                    </span>
+                    <p>
+                      1. Event Created
+                    </p>
+                  </div>
+                  <div
+                    class="individual-stage"
+                    data-testid="pollCreatedMilestone"
+                  >
+                    <span>
+                      <i
+                        class="fas fa-times-circle"
+                      />
+                    </span>
+                    <p>
+                      2. Poll Created
+                    </p>
+                  </div>
+                  <div
+                    class="individual-stage"
+                    data-testid="pollCompletedMilestone"
+                  >
+                    <span>
+                      <i
+                        class="fas fa-times-circle"
+                      />
+                    </span>
+                    <p>
+                      3. Poll Completed
+                    </p>
+                  </div>
+                  <div
+                    class="individual-stage"
+                    data-testid="itineraryCreatedMilestone"
+                  >
+                    <span>
+                      <i
+                        class="fas fa-times-circle"
+                      />
+                    </span>
+                    <p>
+                      4. Itinerary Created
+                    </p>
+                  </div>
+                  <div
+                    class="individual-stage"
+                    data-testid="itineraryFinalisedMilestone"
+                  >
+                    <span>
+                      <i
+                        class="fas fa-times-circle"
+                      />
+                    </span>
+                    <p>
+                      5. Itinerary Finalised
+                    </p>
+                  </div>
+                </div>,
+                "key": null,
+                "patchFlag": 0,
+                "props": Object {
+                  "id": "event-stages-parent-container",
                 },
                 "ref": null,
                 "scopeId": null,
@@ -1240,6 +2199,37 @@ VueWrapper {
                 "__v_skip": true,
                 "anchor": null,
                 "appContext": null,
+                "children": "",
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": null,
+                "dynamicProps": null,
+                "el": <p
+                  data-testid="description"
+                />,
+                "key": null,
+                "patchFlag": 1,
+                "props": Object {
+                  "data-testid": "description",
+                },
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 1,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": "p",
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
                 "children": "v-if",
                 "component": null,
                 "dirs": null,
@@ -1355,6 +2345,134 @@ VueWrapper {
                 "targetAnchor": null,
                 "transition": null,
                 "type": Symbol(Fragment),
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": null,
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": Array [],
+                "dynamicProps": null,
+                "el": <i
+                  class="fas fa-times-circle"
+                />,
+                "key": 1,
+                "patchFlag": 0,
+                "props": Object {
+                  "class": "fas fa-times-circle",
+                  "key": 1,
+                },
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 1,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": "i",
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": null,
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": Array [],
+                "dynamicProps": null,
+                "el": <i
+                  class="fas fa-times-circle"
+                />,
+                "key": 1,
+                "patchFlag": 0,
+                "props": Object {
+                  "class": "fas fa-times-circle",
+                  "key": 1,
+                },
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 1,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": "i",
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": null,
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": Array [],
+                "dynamicProps": null,
+                "el": <i
+                  class="fas fa-times-circle"
+                />,
+                "key": 1,
+                "patchFlag": 0,
+                "props": Object {
+                  "class": "fas fa-times-circle",
+                  "key": 1,
+                },
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 1,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": "i",
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": null,
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": Array [],
+                "dynamicProps": null,
+                "el": <i
+                  class="fas fa-times-circle"
+                />,
+                "key": 1,
+                "patchFlag": 0,
+                "props": Object {
+                  "class": "fas fa-times-circle",
+                  "key": 1,
+                },
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 1,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": "i",
               },
               Object {
                 "__v_isVNode": true,
@@ -1483,15 +2601,15 @@ VueWrapper {
                     Test Event
                   </p>
                 </div>
-                <div>
+                <div
+                  id="description"
+                >
                   <h3>
                     Description:
                   </h3>
                   <p
                     data-testid="description"
-                  >
-                     More info about group trip here...description 
-                  </p>
+                  />
                 </div>
                 <!--v-if-->
                 <div>
@@ -1523,6 +2641,78 @@ VueWrapper {
                 </h4>
                 
                 
+              </div>
+              <h4>
+                Event Status
+              </h4>
+              <div
+                id="event-stages-parent-container"
+              >
+                <div
+                  class="individual-stage"
+                  data-testid="eventCreatedMilestone"
+                >
+                  <span>
+                    <i
+                      class="fas fa-check"
+                    />
+                  </span>
+                  <p>
+                    1. Event Created
+                  </p>
+                </div>
+                <div
+                  class="individual-stage"
+                  data-testid="pollCreatedMilestone"
+                >
+                  <span>
+                    <i
+                      class="fas fa-times-circle"
+                    />
+                  </span>
+                  <p>
+                    2. Poll Created
+                  </p>
+                </div>
+                <div
+                  class="individual-stage"
+                  data-testid="pollCompletedMilestone"
+                >
+                  <span>
+                    <i
+                      class="fas fa-times-circle"
+                    />
+                  </span>
+                  <p>
+                    3. Poll Completed
+                  </p>
+                </div>
+                <div
+                  class="individual-stage"
+                  data-testid="itineraryCreatedMilestone"
+                >
+                  <span>
+                    <i
+                      class="fas fa-times-circle"
+                    />
+                  </span>
+                  <p>
+                    4. Itinerary Created
+                  </p>
+                </div>
+                <div
+                  class="individual-stage"
+                  data-testid="itineraryFinalisedMilestone"
+                >
+                  <span>
+                    <i
+                      class="fas fa-times-circle"
+                    />
+                  </span>
+                  <p>
+                    5. Itinerary Finalised
+                  </p>
+                </div>
               </div>
               <div
                 class="event-user-actions-parent-container"
@@ -1566,6 +2756,9 @@ VueWrapper {
             "props": Array [
               "individualEvent",
               "invitedUser",
+              "itineraryCreated",
+              "itineraryCompleted",
+              "pollCompleted",
             ],
             "render": [Function],
           },
@@ -1595,15 +2788,15 @@ VueWrapper {
                 Test Event
               </p>
             </div>
-            <div>
+            <div
+              id="description"
+            >
               <h3>
                 Description:
               </h3>
               <p
                 data-testid="description"
-              >
-                 More info about group trip here...description 
-              </p>
+              />
             </div>
             <!--v-if-->
             <div>
@@ -1636,6 +2829,78 @@ VueWrapper {
             
             
           </div>
+          <h4>
+            Event Status
+          </h4>
+          <div
+            id="event-stages-parent-container"
+          >
+            <div
+              class="individual-stage"
+              data-testid="eventCreatedMilestone"
+            >
+              <span>
+                <i
+                  class="fas fa-check"
+                />
+              </span>
+              <p>
+                1. Event Created
+              </p>
+            </div>
+            <div
+              class="individual-stage"
+              data-testid="pollCreatedMilestone"
+            >
+              <span>
+                <i
+                  class="fas fa-times-circle"
+                />
+              </span>
+              <p>
+                2. Poll Created
+              </p>
+            </div>
+            <div
+              class="individual-stage"
+              data-testid="pollCompletedMilestone"
+            >
+              <span>
+                <i
+                  class="fas fa-times-circle"
+                />
+              </span>
+              <p>
+                3. Poll Completed
+              </p>
+            </div>
+            <div
+              class="individual-stage"
+              data-testid="itineraryCreatedMilestone"
+            >
+              <span>
+                <i
+                  class="fas fa-times-circle"
+                />
+              </span>
+              <p>
+                4. Itinerary Created
+              </p>
+            </div>
+            <div
+              class="individual-stage"
+              data-testid="itineraryFinalisedMilestone"
+            >
+              <span>
+                <i
+                  class="fas fa-times-circle"
+                />
+              </span>
+              <p>
+                5. Itinerary Finalised
+              </p>
+            </div>
+          </div>
           <div
             class="event-user-actions-parent-container"
           >
@@ -1653,6 +2918,7 @@ VueWrapper {
         "props": Object {
           "individualEvent": Object {
             "city": "Cork",
+            "polls": Array [],
             "title": "Test Event",
             "type": "DOMESTIC_OVERNIGHT",
           },
@@ -1685,6 +2951,9 @@ VueWrapper {
           "props": Array [
             "individualEvent",
             "invitedUser",
+            "itineraryCreated",
+            "itineraryCompleted",
+            "pollCompleted",
           ],
           "render": [Function],
         },
@@ -1755,15 +3024,15 @@ VueWrapper {
                 Test Event
               </p>
             </div>
-            <div>
+            <div
+              id="description"
+            >
               <h3>
                 Description:
               </h3>
               <p
                 data-testid="description"
-              >
-                 More info about group trip here...description 
-              </p>
+              />
             </div>
             <!--v-if-->
             <div>
@@ -1795,6 +3064,78 @@ VueWrapper {
             </h4>
             
             
+          </div>
+          <h4>
+            Event Status
+          </h4>
+          <div
+            id="event-stages-parent-container"
+          >
+            <div
+              class="individual-stage"
+              data-testid="eventCreatedMilestone"
+            >
+              <span>
+                <i
+                  class="fas fa-check"
+                />
+              </span>
+              <p>
+                1. Event Created
+              </p>
+            </div>
+            <div
+              class="individual-stage"
+              data-testid="pollCreatedMilestone"
+            >
+              <span>
+                <i
+                  class="fas fa-times-circle"
+                />
+              </span>
+              <p>
+                2. Poll Created
+              </p>
+            </div>
+            <div
+              class="individual-stage"
+              data-testid="pollCompletedMilestone"
+            >
+              <span>
+                <i
+                  class="fas fa-times-circle"
+                />
+              </span>
+              <p>
+                3. Poll Completed
+              </p>
+            </div>
+            <div
+              class="individual-stage"
+              data-testid="itineraryCreatedMilestone"
+            >
+              <span>
+                <i
+                  class="fas fa-times-circle"
+                />
+              </span>
+              <p>
+                4. Itinerary Created
+              </p>
+            </div>
+            <div
+              class="individual-stage"
+              data-testid="itineraryFinalisedMilestone"
+            >
+              <span>
+                <i
+                  class="fas fa-times-circle"
+                />
+              </span>
+              <p>
+                5. Itinerary Finalised
+              </p>
+            </div>
           </div>
           <div
             class="event-user-actions-parent-container"
@@ -1852,20 +3193,30 @@ VueWrapper {
   "__setProps": [Function],
   "componentVM": Object {
     "departureCity": "",
+    "description": undefined,
     "destinationCity": "Cork",
     "guestUser": false,
     "hasOwnProperty": [Function],
     "individualEvent": Object {
       "city": "Cork",
+      "polls": Array [],
       "title": "Test Event",
       "type": "DOMESTIC_OVERNIGHT",
     },
     "invitedUser": false,
     "item": Object {
       "city": "Cork",
+      "polls": Array [],
       "title": "Test Event",
       "type": "DOMESTIC_OVERNIGHT",
     },
+    "itineraryAlreadyCompleted": undefined,
+    "itineraryAlreadyCreated": undefined,
+    "itineraryCompleted": undefined,
+    "itineraryCreated": undefined,
+    "pollAlreadyCompleted": undefined,
+    "pollAlreadyCreated": null,
+    "pollCompleted": undefined,
     "populateEventInfo": [Function],
     "title": "Test Event",
     "type": "DOMESTIC_OVERNIGHT",
@@ -1888,15 +3239,15 @@ VueWrapper {
           Test Event
         </p>
       </div>
-      <div>
+      <div
+        id="description"
+      >
         <h3>
           Description:
         </h3>
         <p
           data-testid="description"
-        >
-           More info about group trip here...description 
-        </p>
+        />
       </div>
       <!--v-if-->
       <div>
@@ -1928,6 +3279,78 @@ VueWrapper {
       </h4>
       
       
+    </div>
+    <h4>
+      Event Status
+    </h4>
+    <div
+      id="event-stages-parent-container"
+    >
+      <div
+        class="individual-stage"
+        data-testid="eventCreatedMilestone"
+      >
+        <span>
+          <i
+            class="fas fa-check"
+          />
+        </span>
+        <p>
+          1. Event Created
+        </p>
+      </div>
+      <div
+        class="individual-stage"
+        data-testid="pollCreatedMilestone"
+      >
+        <span>
+          <i
+            class="fas fa-times-circle"
+          />
+        </span>
+        <p>
+          2. Poll Created
+        </p>
+      </div>
+      <div
+        class="individual-stage"
+        data-testid="pollCompletedMilestone"
+      >
+        <span>
+          <i
+            class="fas fa-times-circle"
+          />
+        </span>
+        <p>
+          3. Poll Completed
+        </p>
+      </div>
+      <div
+        class="individual-stage"
+        data-testid="itineraryCreatedMilestone"
+      >
+        <span>
+          <i
+            class="fas fa-times-circle"
+          />
+        </span>
+        <p>
+          4. Itinerary Created
+        </p>
+      </div>
+      <div
+        class="individual-stage"
+        data-testid="itineraryFinalisedMilestone"
+      >
+        <span>
+          <i
+            class="fas fa-times-circle"
+          />
+        </span>
+        <p>
+          5. Itinerary Finalised
+        </p>
+      </div>
     </div>
     <div
       class="event-user-actions-parent-container"

@@ -1,6 +1,6 @@
 import { mount, shallowMount, flushPromises } from "@vue/test-utils";
 import EventForm from "@/components/EventForm.vue";
-import AccountErrorMessage from "@/components/AccountErrorMessage";
+import ResponseErrorMessage from "@/components/ResponseErrorMessage";
 import mockSuccessfulEventService from "./mocks/eventService.mock";
 import mockStore from "./mocks/mockStore.mock";
 import mockRouter from "./mocks/mockRouter.mock";
@@ -14,12 +14,14 @@ const mockRoute = {
 
 const mockEvent = {
   title: "Test Event",
+  description: "Test Event Description",
   type: "DOMESTIC_OVERNIGHT",
   location: "Cork",
 };
 
 const mockForeignEvent = {
   title: "Test Event",
+  description: "Test Event Description",
   type: "FOREIGN_OVERNIGHT",
   location: "London",
   departureCity: "Cork",
@@ -149,6 +151,7 @@ describe("EventForm.vue", () => {
     });
 
     await wrapper.find("#title").setValue("Test Event");
+    await wrapper.find("#description").setValue("Test Event Description");
     const radio = wrapper.find("#DOMESTIC_DAY");
     radio.element.selected = true;
     radio.trigger("change");
@@ -159,8 +162,9 @@ describe("EventForm.vue", () => {
     expect(button.exists()).toBe(true);
 
     await wrapper.find("form").trigger("submit.prevent");
+    expect(mockStore.dispatch).toHaveBeenCalledTimes(1);
     expect(mockRouter.push).toHaveBeenCalledTimes(1);
-    expect(wrapper.findComponent(AccountErrorMessage).isVisible()).toBe(false);
+    expect(wrapper.findComponent(ResponseErrorMessage).isVisible()).toBe(false);
   });
 
   it("for new event, if user provides input for required fields and failed external request, error message should be shown", async () => {
@@ -199,6 +203,7 @@ describe("EventForm.vue", () => {
     });
 
     await wrapper.find("#title").setValue("Test Event");
+    await wrapper.find("#description").setValue("Test Event Description");
     const radio = wrapper.find("#DOMESTIC_DAY");
     radio.element.selected = true;
     radio.trigger("change");
@@ -252,6 +257,7 @@ describe("EventForm.vue", () => {
     });
 
     await wrapper.find("#title").setValue("Test Event");
+    await wrapper.find("#description").setValue("Test Event Description");
     const radio = wrapper.find("#DOMESTIC_DAY");
     radio.element.selected = true;
     radio.trigger("change");
@@ -289,6 +295,7 @@ describe("EventForm.vue", () => {
       },
     });
 
+    await wrapper.find("#description").setValue("Test Event Description");
     const radio = wrapper.find("#DOMESTIC_DAY");
     radio.element.selected = true;
     radio.trigger("change");
@@ -301,6 +308,42 @@ describe("EventForm.vue", () => {
     await wrapper.find("form").trigger("submit.prevent");
     expect(wrapper.find(".error-message").text()).toBe(
       "Please provide an event title"
+    );
+  });
+
+  it("for new event, if user does not provide event description, error message should be rendered", async () => {
+    const wrapper = mount(EventForm, {
+      data() {
+        return {
+          editEventAction: false,
+          editEventInfo: mockEvent,
+        };
+      },
+      props: {
+        eventService: mockSuccessfulEventService,
+      },
+      global: {
+        mocks: {
+          $store: mockStore,
+          $route: mockRoute,
+          $router: mockRouter,
+        },
+      },
+    });
+
+    await wrapper.find("#title").setValue("Test Event");
+    const radio = wrapper.find("#DOMESTIC_DAY");
+    radio.element.selected = true;
+    radio.trigger("change");
+
+    wrapper.find("#location").setValue("Cork");
+
+    const button = await wrapper.find("button");
+    expect(button.exists()).toBe(true);
+
+    await wrapper.find("form").trigger("submit.prevent");
+    expect(wrapper.find(".error-message").text()).toBe(
+      "Please provide an event description"
     );
   });
 
@@ -325,6 +368,7 @@ describe("EventForm.vue", () => {
     });
 
     await wrapper.find("#title").setValue("Test Event");
+    await wrapper.find("#description").setValue("Test Event Description");
 
     wrapper.find("#location").setValue("Cork");
 
@@ -358,6 +402,7 @@ describe("EventForm.vue", () => {
     });
 
     await wrapper.find("#title").setValue("Test Event");
+    await wrapper.find("#description").setValue("Test Event Description");
     const radio = wrapper.find("#DOMESTIC_DAY");
     radio.element.selected = true;
     radio.trigger("change");
@@ -392,7 +437,7 @@ describe("EventForm.vue", () => {
     });
 
     await wrapper.find("#title").setValue("");
-
+    await wrapper.find("#description").setValue("Test Event Description");
     const radio = wrapper.find("#DOMESTIC_DAY");
     radio.element.selected = true;
     radio.trigger("change");
@@ -405,6 +450,43 @@ describe("EventForm.vue", () => {
     await wrapper.find("form").trigger("submit.prevent");
     expect(wrapper.find(".error-message").text()).toBe(
       "Please provide an event title"
+    );
+  });
+
+  it("for existing event, if user does not provide event description, error message should be rendered", async () => {
+    const wrapper = mount(EventForm, {
+      data() {
+        return {
+          editEventAction: true,
+          editEventInfo: mockEvent,
+        };
+      },
+      props: {
+        eventService: mockSuccessfulEventService,
+      },
+      global: {
+        mocks: {
+          $store: mockStore,
+          $route: mockRoute,
+          $router: mockRouter,
+        },
+      },
+    });
+
+    await wrapper.find("#title").setValue("Event Title");
+    await wrapper.find("#description").setValue("");
+    const radio = wrapper.find("#DOMESTIC_DAY");
+    radio.element.selected = true;
+    radio.trigger("change");
+
+    wrapper.find("#location").setValue("Cork");
+
+    const button = await wrapper.find("button");
+    expect(button.exists()).toBe(true);
+
+    await wrapper.find("form").trigger("submit.prevent");
+    expect(wrapper.find(".error-message").text()).toBe(
+      "Please provide an event description"
     );
   });
 
@@ -450,6 +532,7 @@ describe("EventForm.vue", () => {
           userEmails: ["test@gmail.com"],
           city: "Limerick",
           departureCity: "N/A",
+          description: "Test Event Description",
         };
       },
       props: {
@@ -471,7 +554,7 @@ describe("EventForm.vue", () => {
 
     await wrapper.find("form").trigger("submit.prevent");
     expect(mockRouter.push).toHaveBeenCalledTimes(1);
-    expect(wrapper.findComponent(AccountErrorMessage).isVisible()).toBe(false);
+    expect(wrapper.findComponent(ResponseErrorMessage).isVisible()).toBe(false);
   });
 
   it("if editing event, if event title already in use by another record, should return a 409 response", async () => {
@@ -509,7 +592,7 @@ describe("EventForm.vue", () => {
         },
       },
     });
-    await wrapper.find("#title").setValue("Test Event");
+    await wrapper.find("#title").setValue("Test");
     const radio = wrapper.find("#DOMESTIC_DAY");
     radio.element.selected = true;
     radio.trigger("change");
@@ -546,7 +629,7 @@ describe("EventForm.vue", () => {
         },
       },
     });
-    expect(wrapper.findComponent(AccountErrorMessage).isVisible()).toBe(true);
+    expect(wrapper.findComponent(ResponseErrorMessage).isVisible()).toBe(true);
   });
 
   it("if user changes event type to FOREIGN_OVERNIGHT, foreignTrip variable set to true", async () => {

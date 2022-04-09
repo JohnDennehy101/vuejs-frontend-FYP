@@ -97,6 +97,7 @@ const mockSuccessfulEventService = {
         created_at: "2022-03-22",
         updated_at: "2022-03-22",
         eventId: "2",
+        status: 201
       });
     });
   },
@@ -109,6 +110,7 @@ const mockSuccessfulEventService = {
         created_at: "2022-03-22",
         updated_at: "2022-03-22",
         eventId: "2",
+        status: 200
       });
     });
   },

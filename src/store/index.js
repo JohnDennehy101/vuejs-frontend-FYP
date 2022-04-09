@@ -10,7 +10,8 @@ const store = createStore({
         return {
             isLoggedIn: false,
             userId: null,
-            userEmail: null
+            userEmail: null,
+            jwt: null
         }
     },
     mutations: {
@@ -18,6 +19,8 @@ const store = createStore({
             state.isLoggedIn = true;
         },
         logout(state) {
+            state.userId = null;
+            state.userEmail = null;
             state.isLoggedIn = false;
         },
         setUserId(state, payload) {
@@ -25,6 +28,9 @@ const store = createStore({
         },
         setUserEmail(state, payload) {
             state.userEmail= payload
+        },
+        setJWT(state, payload) {
+            state.jwt = payload;
         }
 
     },
@@ -40,6 +46,9 @@ const store = createStore({
         },
         setUserEmail(context, payload) {
             context.commit('setUserEmail', payload);
+        },
+        setJWT(context, payload) {
+            context.commit('setJWT', payload);
         }
     },
     getters: {
@@ -52,8 +61,10 @@ const store = createStore({
         },
         userEmail(state) {
             return state.userEmail
+        },
+        jwt(state) {
+            return state.jwt
         }
-
     }
 });
 

@@ -255,6 +255,10 @@ VueWrapper {
             >
                Submit 
             </button>
+            <response-error-message-stub
+              errormessage=""
+              toggle="false"
+            />
           </div>
           <!--v-if-->
         </div>
@@ -474,7 +478,7 @@ VueWrapper {
           "city": undefined,
           "complete": false,
           "createMap": [Function],
-          "deletetItinerary": [Function],
+          "deleteItinerary": [Function],
           "destinationCity": undefined,
           "displayFinaliseCheckbox": false,
           "editAction": false,
@@ -482,6 +486,7 @@ VueWrapper {
           "editItinerary": false,
           "editItineraryClick": false,
           "emptyItineraryCheck": false,
+          "errorMessage": "",
           "eventId": undefined,
           "eventService": Object {
             "createEvent": [Function],
@@ -528,6 +533,7 @@ VueWrapper {
           "itineraryFlight": Array [
             Array [],
           ],
+          "showErrorMessage": false,
           "showFinaliseItineraryCheck": false,
           "submitItinerary": [Function],
         },
@@ -596,7 +602,7 @@ VueWrapper {
             "complete": 3,
             "constructor": 0,
             "createMap": 4,
-            "deletetItinerary": 4,
+            "deleteItinerary": 4,
             "destinationCity": 2,
             "displayFinaliseCheckbox": 3,
             "editAction": 2,
@@ -604,6 +610,7 @@ VueWrapper {
             "editItinerary": 3,
             "editItineraryClick": 3,
             "emptyItineraryCheck": 4,
+            "errorMessage": 2,
             "eventId": 3,
             "eventService": 3,
             "eventType": 2,
@@ -619,6 +626,7 @@ VueWrapper {
             "itineraryAccommodation": 2,
             "itineraryActivities": 2,
             "itineraryFlight": 2,
+            "showErrorMessage": 2,
             "showFinaliseItineraryCheck": 2,
             "submitItinerary": 4,
             "toJSON": 0,
@@ -663,7 +671,27 @@ VueWrapper {
           "bu": null,
           "bum": null,
           "c": null,
-          "components": Object {},
+          "components": Object {
+            "ResponseErrorMessage": Object {
+              "data": [Function],
+              "methods": Object {
+                "hideErrorMessage": [Function],
+              },
+              "props": Object {
+                "errorMessage": Object {
+                  "0": false,
+                  "1": true,
+                  "type": [Function],
+                },
+                "toggle": Object {
+                  "0": true,
+                  "1": true,
+                  "type": [Function],
+                },
+              },
+              "render": [Function],
+            },
+          },
           "ctx": Object {
             "$route": Object {
               "params": Object {
@@ -707,7 +735,7 @@ VueWrapper {
             "city": undefined,
             "complete": false,
             "createMap": [Function],
-            "deletetItinerary": [Function],
+            "deleteItinerary": [Function],
             "destinationCity": undefined,
             "displayFinaliseCheckbox": false,
             "editAction": false,
@@ -715,6 +743,7 @@ VueWrapper {
             "editItinerary": false,
             "editItineraryClick": false,
             "emptyItineraryCheck": false,
+            "errorMessage": "",
             "eventId": undefined,
             "eventService": Object {
               "createEvent": [Function],
@@ -761,6 +790,7 @@ VueWrapper {
             "itineraryFlight": Array [
               Array [],
             ],
+            "showErrorMessage": false,
             "showFinaliseItineraryCheck": false,
             "submitItinerary": [Function],
           },
@@ -769,6 +799,7 @@ VueWrapper {
             "destinationCity": undefined,
             "editAction": false,
             "editClick": false,
+            "errorMessage": "",
             "eventType": undefined,
             "finaliseItinerary": false,
             "guestUser": false,
@@ -795,6 +826,7 @@ VueWrapper {
             "itineraryFlight": Array [
               Array [],
             ],
+            "showErrorMessage": false,
             "showFinaliseItineraryCheck": false,
           },
           "directives": null,
@@ -803,6 +835,12 @@ VueWrapper {
             "active": true,
             "allowRecurse": true,
             "deps": Array [
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
               Set {
                 [Circular],
               },
@@ -995,7 +1033,7 @@ VueWrapper {
                 "0": false,
                 "1": true,
                 "default": EventService {
-                  "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
+                  "baseUrl": "http://localhost:3000/api/v1",
                 },
               },
               "flight": Object {
@@ -1067,7 +1105,7 @@ VueWrapper {
             "city": undefined,
             "complete": false,
             "createMap": [Function],
-            "deletetItinerary": [Function],
+            "deleteItinerary": [Function],
             "destinationCity": undefined,
             "displayFinaliseCheckbox": false,
             "editAction": false,
@@ -1075,6 +1113,7 @@ VueWrapper {
             "editItinerary": false,
             "editItineraryClick": false,
             "emptyItineraryCheck": false,
+            "errorMessage": "",
             "eventId": undefined,
             "eventService": Object {
               "createEvent": [Function],
@@ -1121,6 +1160,7 @@ VueWrapper {
             "itineraryFlight": Array [
               Array [],
             ],
+            "showErrorMessage": false,
             "showFinaliseItineraryCheck": false,
             "submitItinerary": [Function],
           },
@@ -1157,6 +1197,12 @@ VueWrapper {
                 "active": true,
                 "allowRecurse": true,
                 "deps": Array [
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
                   Set {
                     [Circular],
                   },
@@ -6446,6 +6492,312 @@ VueWrapper {
                             "transition": null,
                             "type": "button",
                           },
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": null,
+                            "component": Object {
+                              "a": null,
+                              "accessCache": Object {},
+                              "appContext": Object {
+                                "app": [Circular],
+                                "components": Object {
+                                  "transition": Object {
+                                    "name": "transition",
+                                  },
+                                  "transition-group": Object {
+                                    "name": "transition-group",
+                                  },
+                                },
+                                "config": Object {
+                                  "compilerOptions": Object {},
+                                  "errorHandler": undefined,
+                                  "globalProperties": Object {},
+                                  "isNativeTag": [Function],
+                                  "optionMergeStrategies": Object {},
+                                  "performance": false,
+                                  "warnHandler": undefined,
+                                },
+                                "directives": Object {},
+                                "emitsCache": WeakMap {},
+                                "mixins": Array [
+                                  Object {
+                                    "beforeCreate": [Function],
+                                  },
+                                ],
+                                "optionsCache": WeakMap {},
+                                "propsCache": WeakMap {},
+                                "provides": Object {},
+                                "reload": [Function],
+                              },
+                              "asyncDep": null,
+                              "asyncResolved": false,
+                              "attrs": Object {},
+                              "bc": null,
+                              "bm": null,
+                              "bu": null,
+                              "bum": null,
+                              "c": null,
+                              "components": null,
+                              "ctx": Object {
+                                "$route": Object {
+                                  "params": Object {
+                                    "id": 1,
+                                  },
+                                },
+                                "$router": Object {
+                                  "go": [MockFunction],
+                                  "push": [MockFunction],
+                                },
+                                "$store": Object {
+                                  "dispatch": [MockFunction],
+                                  "getters": Object {
+                                    "isAuthenticated": [Function],
+                                    "userId": [Function],
+                                  },
+                                  "state": Object {
+                                    "jwtToken": "token",
+                                    "userId": 1,
+                                  },
+                                },
+                                "errorMessage": "",
+                                "toggle": false,
+                              },
+                              "da": null,
+                              "data": Object {},
+                              "directives": null,
+                              "ec": null,
+                              "effect": ReactiveEffect {
+                                "active": true,
+                                "allowRecurse": true,
+                                "deps": Array [
+                                  Set {
+                                    [Circular],
+                                  },
+                                  Set {
+                                    [Circular],
+                                  },
+                                  Set {
+                                    [Circular],
+                                  },
+                                  Set {
+                                    [Circular],
+                                  },
+                                ],
+                                "fn": [Function],
+                                "onTrack": undefined,
+                                "onTrigger": undefined,
+                                "scheduler": [Function],
+                              },
+                              "emit": [Function],
+                              "emitsOptions": null,
+                              "emitted": null,
+                              "exposeProxy": null,
+                              "exposed": null,
+                              "inheritAttrs": undefined,
+                              "isDeactivated": false,
+                              "isMounted": true,
+                              "isUnmounted": false,
+                              "m": null,
+                              "next": null,
+                              "parent": [Circular],
+                              "props": Object {
+                                "errorMessage": "",
+                                "toggle": false,
+                              },
+                              "propsDefaults": Object {},
+                              "propsOptions": Array [
+                                Object {
+                                  "errorMessage": Object {
+                                    "0": false,
+                                    "1": true,
+                                    "type": [Function],
+                                  },
+                                  "toggle": Object {
+                                    "0": true,
+                                    "1": true,
+                                    "type": [Function],
+                                  },
+                                },
+                                Array [
+                                  "toggle",
+                                ],
+                              ],
+                              "provides": Object {},
+                              "proxy": Object {
+                                "$route": Object {
+                                  "params": Object {
+                                    "id": 1,
+                                  },
+                                },
+                                "$router": Object {
+                                  "go": [MockFunction],
+                                  "push": [MockFunction],
+                                },
+                                "$store": Object {
+                                  "dispatch": [MockFunction],
+                                  "getters": Object {
+                                    "isAuthenticated": [Function],
+                                    "userId": [Function],
+                                  },
+                                  "state": Object {
+                                    "jwtToken": "token",
+                                    "userId": 1,
+                                  },
+                                },
+                                "errorMessage": "",
+                                "toggle": false,
+                              },
+                              "refs": Object {},
+                              "render": [Function],
+                              "renderCache": Array [],
+                              "root": [Circular],
+                              "rtc": null,
+                              "rtg": null,
+                              "scope": EffectScope {
+                                "active": true,
+                                "cleanups": Array [],
+                                "effects": Array [
+                                  ReactiveEffect {
+                                    "active": true,
+                                    "allowRecurse": true,
+                                    "deps": Array [
+                                      Set {
+                                        [Circular],
+                                      },
+                                      Set {
+                                        [Circular],
+                                      },
+                                      Set {
+                                        [Circular],
+                                      },
+                                      Set {
+                                        [Circular],
+                                      },
+                                    ],
+                                    "fn": [Function],
+                                    "onTrack": undefined,
+                                    "onTrigger": undefined,
+                                    "scheduler": [Function],
+                                  },
+                                ],
+                              },
+                              "setupContext": null,
+                              "setupState": Object {},
+                              "slots": Object {},
+                              "sp": null,
+                              "subTree": Object {
+                                "__v_isVNode": true,
+                                "__v_skip": true,
+                                "anchor": null,
+                                "appContext": null,
+                                "children": null,
+                                "component": null,
+                                "dirs": null,
+                                "dynamicChildren": null,
+                                "dynamicProps": null,
+                                "el": <response-error-message-stub
+                                  errormessage=""
+                                  toggle="false"
+                                />,
+                                "key": null,
+                                "patchFlag": 0,
+                                "props": Object {
+                                  "errorMessage": "",
+                                  "toggle": false,
+                                },
+                                "ref": null,
+                                "scopeId": null,
+                                "shapeFlag": 1,
+                                "slotScopeIds": null,
+                                "ssContent": null,
+                                "ssFallback": null,
+                                "staticCount": 0,
+                                "suspense": null,
+                                "target": null,
+                                "targetAnchor": null,
+                                "transition": null,
+                                "type": "response-error-message-stub",
+                              },
+                              "suspense": null,
+                              "suspenseId": 0,
+                              "type": Object {
+                                "compatConfig": Object {
+                                  "MODE": 3,
+                                  "RENDER_FUNCTION": false,
+                                },
+                                "name": "ResponseErrorMessage",
+                                "props": Object {
+                                  "errorMessage": Object {
+                                    "0": false,
+                                    "1": true,
+                                    "type": [Function],
+                                  },
+                                  "toggle": Object {
+                                    "0": true,
+                                    "1": true,
+                                    "type": [Function],
+                                  },
+                                },
+                                "render": [Function],
+                              },
+                              "u": null,
+                              "uid": 2,
+                              "um": null,
+                              "update": [Function],
+                              "vnode": [Circular],
+                              "withProxy": null,
+                            },
+                            "dirs": null,
+                            "dynamicChildren": null,
+                            "dynamicProps": Array [
+                              "toggle",
+                              "errorMessage",
+                            ],
+                            "el": <response-error-message-stub
+                              errormessage=""
+                              toggle="false"
+                            />,
+                            "key": null,
+                            "patchFlag": 8,
+                            "props": Object {
+                              "errorMessage": "",
+                              "toggle": false,
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 4,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": Object {
+                              "compatConfig": Object {
+                                "MODE": 3,
+                                "RENDER_FUNCTION": false,
+                              },
+                              "name": "ResponseErrorMessage",
+                              "props": Object {
+                                "errorMessage": Object {
+                                  "0": false,
+                                  "1": true,
+                                  "type": [Function],
+                                },
+                                "toggle": Object {
+                                  "0": true,
+                                  "1": true,
+                                  "type": [Function],
+                                },
+                              },
+                              "render": [Function],
+                            },
+                          },
                         ],
                         "component": null,
                         "dirs": null,
@@ -6485,6 +6837,325 @@ VueWrapper {
                             "transition": null,
                             "type": "button",
                           },
+                          Object {
+                            "__v_isVNode": true,
+                            "__v_skip": true,
+                            "anchor": null,
+                            "appContext": null,
+                            "children": null,
+                            "component": Object {
+                              "a": null,
+                              "accessCache": Object {
+                                "$route": 4,
+                                "$router": 4,
+                                "$store": 4,
+                                "@@__IMMUTABLE_ITERABLE__@@": 0,
+                                "@@__IMMUTABLE_RECORD__@@": 0,
+                                "_isMockFunction": 0,
+                                "constructor": 0,
+                                "errorMessage": 3,
+                                "isVueInstance": 0,
+                                "toJSON": 0,
+                                "toggle": 3,
+                                Symbol(Symbol.toStringTag): 0,
+                              },
+                              "appContext": Object {
+                                "app": [Circular],
+                                "components": Object {
+                                  "transition": Object {
+                                    "name": "transition",
+                                  },
+                                  "transition-group": Object {
+                                    "name": "transition-group",
+                                  },
+                                },
+                                "config": Object {
+                                  "compilerOptions": Object {},
+                                  "errorHandler": undefined,
+                                  "globalProperties": Object {},
+                                  "isNativeTag": [Function],
+                                  "optionMergeStrategies": Object {},
+                                  "performance": false,
+                                  "warnHandler": undefined,
+                                },
+                                "directives": Object {},
+                                "emitsCache": WeakMap {},
+                                "mixins": Array [
+                                  Object {
+                                    "beforeCreate": [Function],
+                                  },
+                                ],
+                                "optionsCache": WeakMap {},
+                                "propsCache": WeakMap {},
+                                "provides": Object {},
+                                "reload": [Function],
+                              },
+                              "asyncDep": null,
+                              "asyncResolved": false,
+                              "attrs": Object {},
+                              "bc": null,
+                              "bm": null,
+                              "bu": null,
+                              "bum": null,
+                              "c": null,
+                              "components": null,
+                              "ctx": Object {
+                                "$route": Object {
+                                  "params": Object {
+                                    "id": 1,
+                                  },
+                                },
+                                "$router": Object {
+                                  "go": [MockFunction],
+                                  "push": [MockFunction],
+                                },
+                                "$store": Object {
+                                  "dispatch": [MockFunction],
+                                  "getters": Object {
+                                    "isAuthenticated": [Function],
+                                    "userId": [Function],
+                                  },
+                                  "state": Object {
+                                    "jwtToken": "token",
+                                    "userId": 1,
+                                  },
+                                },
+                                "errorMessage": "",
+                                "toggle": false,
+                              },
+                              "da": null,
+                              "data": Object {},
+                              "directives": null,
+                              "ec": null,
+                              "effect": ReactiveEffect {
+                                "active": true,
+                                "allowRecurse": true,
+                                "deps": Array [
+                                  Set {
+                                    [Circular],
+                                  },
+                                  Set {
+                                    [Circular],
+                                  },
+                                  Set {
+                                    [Circular],
+                                  },
+                                  Set {
+                                    [Circular],
+                                  },
+                                ],
+                                "fn": [Function],
+                                "onTrack": undefined,
+                                "onTrigger": undefined,
+                                "scheduler": [Function],
+                              },
+                              "emit": [Function],
+                              "emitsOptions": null,
+                              "emitted": null,
+                              "exposeProxy": null,
+                              "exposed": null,
+                              "inheritAttrs": undefined,
+                              "isDeactivated": false,
+                              "isMounted": true,
+                              "isUnmounted": false,
+                              "m": null,
+                              "next": null,
+                              "parent": [Circular],
+                              "props": Object {
+                                "errorMessage": "",
+                                "toggle": false,
+                              },
+                              "propsDefaults": Object {},
+                              "propsOptions": Array [
+                                Object {
+                                  "errorMessage": Object {
+                                    "0": false,
+                                    "1": true,
+                                    "type": [Function],
+                                  },
+                                  "toggle": Object {
+                                    "0": true,
+                                    "1": true,
+                                    "type": [Function],
+                                  },
+                                },
+                                Array [
+                                  "toggle",
+                                ],
+                              ],
+                              "provides": Object {},
+                              "proxy": Object {
+                                "$route": Object {
+                                  "params": Object {
+                                    "id": 1,
+                                  },
+                                },
+                                "$router": Object {
+                                  "go": [MockFunction],
+                                  "push": [MockFunction],
+                                },
+                                "$store": Object {
+                                  "dispatch": [MockFunction],
+                                  "getters": Object {
+                                    "isAuthenticated": [Function],
+                                    "userId": [Function],
+                                  },
+                                  "state": Object {
+                                    "jwtToken": "token",
+                                    "userId": 1,
+                                  },
+                                },
+                                "errorMessage": "",
+                                "toggle": false,
+                              },
+                              "refs": Object {},
+                              "render": [Function],
+                              "renderCache": Array [],
+                              "root": [Circular],
+                              "rtc": null,
+                              "rtg": null,
+                              "scope": EffectScope {
+                                "active": true,
+                                "cleanups": Array [],
+                                "effects": Array [
+                                  ReactiveEffect {
+                                    "active": true,
+                                    "allowRecurse": true,
+                                    "deps": Array [
+                                      Set {
+                                        [Circular],
+                                      },
+                                      Set {
+                                        [Circular],
+                                      },
+                                      Set {
+                                        [Circular],
+                                      },
+                                      Set {
+                                        [Circular],
+                                      },
+                                    ],
+                                    "fn": [Function],
+                                    "onTrack": undefined,
+                                    "onTrigger": undefined,
+                                    "scheduler": [Function],
+                                  },
+                                ],
+                              },
+                              "setupContext": null,
+                              "setupState": Object {},
+                              "slots": Object {},
+                              "sp": null,
+                              "subTree": Object {
+                                "__v_isVNode": true,
+                                "__v_skip": true,
+                                "anchor": null,
+                                "appContext": null,
+                                "children": null,
+                                "component": null,
+                                "dirs": null,
+                                "dynamicChildren": null,
+                                "dynamicProps": null,
+                                "el": <response-error-message-stub
+                                  errormessage=""
+                                  toggle="false"
+                                />,
+                                "key": null,
+                                "patchFlag": 0,
+                                "props": Object {
+                                  "errorMessage": "",
+                                  "toggle": false,
+                                },
+                                "ref": null,
+                                "scopeId": null,
+                                "shapeFlag": 1,
+                                "slotScopeIds": null,
+                                "ssContent": null,
+                                "ssFallback": null,
+                                "staticCount": 0,
+                                "suspense": null,
+                                "target": null,
+                                "targetAnchor": null,
+                                "transition": null,
+                                "type": "response-error-message-stub",
+                              },
+                              "suspense": null,
+                              "suspenseId": 0,
+                              "type": Object {
+                                "compatConfig": Object {
+                                  "MODE": 3,
+                                  "RENDER_FUNCTION": false,
+                                },
+                                "name": "ResponseErrorMessage",
+                                "props": Object {
+                                  "errorMessage": Object {
+                                    "0": false,
+                                    "1": true,
+                                    "type": [Function],
+                                  },
+                                  "toggle": Object {
+                                    "0": true,
+                                    "1": true,
+                                    "type": [Function],
+                                  },
+                                },
+                                "render": [Function],
+                              },
+                              "u": null,
+                              "uid": 2,
+                              "um": null,
+                              "update": [Function],
+                              "vnode": [Circular],
+                              "withProxy": null,
+                            },
+                            "dirs": null,
+                            "dynamicChildren": null,
+                            "dynamicProps": Array [
+                              "toggle",
+                              "errorMessage",
+                            ],
+                            "el": <response-error-message-stub
+                              errormessage=""
+                              toggle="false"
+                            />,
+                            "key": null,
+                            "patchFlag": 8,
+                            "props": Object {
+                              "errorMessage": "",
+                              "toggle": false,
+                            },
+                            "ref": null,
+                            "scopeId": null,
+                            "shapeFlag": 4,
+                            "slotScopeIds": null,
+                            "ssContent": null,
+                            "ssFallback": null,
+                            "staticCount": 0,
+                            "suspense": null,
+                            "target": null,
+                            "targetAnchor": null,
+                            "transition": null,
+                            "type": Object {
+                              "compatConfig": Object {
+                                "MODE": 3,
+                                "RENDER_FUNCTION": false,
+                              },
+                              "name": "ResponseErrorMessage",
+                              "props": Object {
+                                "errorMessage": Object {
+                                  "0": false,
+                                  "1": true,
+                                  "type": [Function],
+                                },
+                                "toggle": Object {
+                                  "0": true,
+                                  "1": true,
+                                  "type": [Function],
+                                },
+                              },
+                              "render": [Function],
+                            },
+                          },
                         ],
                         "dynamicProps": null,
                         "el": <div
@@ -6495,6 +7166,10 @@ VueWrapper {
                           >
                              Submit 
                           </button>
+                          <response-error-message-stub
+                            errormessage=""
+                            toggle="false"
+                          />
                         </div>,
                         "key": 4,
                         "patchFlag": 0,
@@ -6778,6 +7453,10 @@ VueWrapper {
                         >
                            Submit 
                         </button>
+                        <response-error-message-stub
+                          errormessage=""
+                          toggle="false"
+                        />
                       </div>
                       <!--v-if-->
                     </div>,
@@ -7045,6 +7724,10 @@ VueWrapper {
                       >
                          Submit 
                       </button>
+                      <response-error-message-stub
+                        errormessage=""
+                        toggle="false"
+                      />
                     </div>
                     <!--v-if-->
                   </div>
@@ -12119,6 +12802,325 @@ VueWrapper {
                     "transition": null,
                     "type": "button",
                   },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": null,
+                    "component": Object {
+                      "a": null,
+                      "accessCache": Object {
+                        "$route": 4,
+                        "$router": 4,
+                        "$store": 4,
+                        "@@__IMMUTABLE_ITERABLE__@@": 0,
+                        "@@__IMMUTABLE_RECORD__@@": 0,
+                        "_isMockFunction": 0,
+                        "constructor": 0,
+                        "errorMessage": 3,
+                        "isVueInstance": 0,
+                        "toJSON": 0,
+                        "toggle": 3,
+                        Symbol(Symbol.toStringTag): 0,
+                      },
+                      "appContext": Object {
+                        "app": [Circular],
+                        "components": Object {
+                          "transition": Object {
+                            "name": "transition",
+                          },
+                          "transition-group": Object {
+                            "name": "transition-group",
+                          },
+                        },
+                        "config": Object {
+                          "compilerOptions": Object {},
+                          "errorHandler": undefined,
+                          "globalProperties": Object {},
+                          "isNativeTag": [Function],
+                          "optionMergeStrategies": Object {},
+                          "performance": false,
+                          "warnHandler": undefined,
+                        },
+                        "directives": Object {},
+                        "emitsCache": WeakMap {},
+                        "mixins": Array [
+                          Object {
+                            "beforeCreate": [Function],
+                          },
+                        ],
+                        "optionsCache": WeakMap {},
+                        "propsCache": WeakMap {},
+                        "provides": Object {},
+                        "reload": [Function],
+                      },
+                      "asyncDep": null,
+                      "asyncResolved": false,
+                      "attrs": Object {},
+                      "bc": null,
+                      "bm": null,
+                      "bu": null,
+                      "bum": null,
+                      "c": null,
+                      "components": null,
+                      "ctx": Object {
+                        "$route": Object {
+                          "params": Object {
+                            "id": 1,
+                          },
+                        },
+                        "$router": Object {
+                          "go": [MockFunction],
+                          "push": [MockFunction],
+                        },
+                        "$store": Object {
+                          "dispatch": [MockFunction],
+                          "getters": Object {
+                            "isAuthenticated": [Function],
+                            "userId": [Function],
+                          },
+                          "state": Object {
+                            "jwtToken": "token",
+                            "userId": 1,
+                          },
+                        },
+                        "errorMessage": "",
+                        "toggle": false,
+                      },
+                      "da": null,
+                      "data": Object {},
+                      "directives": null,
+                      "ec": null,
+                      "effect": ReactiveEffect {
+                        "active": true,
+                        "allowRecurse": true,
+                        "deps": Array [
+                          Set {
+                            [Circular],
+                          },
+                          Set {
+                            [Circular],
+                          },
+                          Set {
+                            [Circular],
+                          },
+                          Set {
+                            [Circular],
+                          },
+                        ],
+                        "fn": [Function],
+                        "onTrack": undefined,
+                        "onTrigger": undefined,
+                        "scheduler": [Function],
+                      },
+                      "emit": [Function],
+                      "emitsOptions": null,
+                      "emitted": null,
+                      "exposeProxy": null,
+                      "exposed": null,
+                      "inheritAttrs": undefined,
+                      "isDeactivated": false,
+                      "isMounted": true,
+                      "isUnmounted": false,
+                      "m": null,
+                      "next": null,
+                      "parent": [Circular],
+                      "props": Object {
+                        "errorMessage": "",
+                        "toggle": false,
+                      },
+                      "propsDefaults": Object {},
+                      "propsOptions": Array [
+                        Object {
+                          "errorMessage": Object {
+                            "0": false,
+                            "1": true,
+                            "type": [Function],
+                          },
+                          "toggle": Object {
+                            "0": true,
+                            "1": true,
+                            "type": [Function],
+                          },
+                        },
+                        Array [
+                          "toggle",
+                        ],
+                      ],
+                      "provides": Object {},
+                      "proxy": Object {
+                        "$route": Object {
+                          "params": Object {
+                            "id": 1,
+                          },
+                        },
+                        "$router": Object {
+                          "go": [MockFunction],
+                          "push": [MockFunction],
+                        },
+                        "$store": Object {
+                          "dispatch": [MockFunction],
+                          "getters": Object {
+                            "isAuthenticated": [Function],
+                            "userId": [Function],
+                          },
+                          "state": Object {
+                            "jwtToken": "token",
+                            "userId": 1,
+                          },
+                        },
+                        "errorMessage": "",
+                        "toggle": false,
+                      },
+                      "refs": Object {},
+                      "render": [Function],
+                      "renderCache": Array [],
+                      "root": [Circular],
+                      "rtc": null,
+                      "rtg": null,
+                      "scope": EffectScope {
+                        "active": true,
+                        "cleanups": Array [],
+                        "effects": Array [
+                          ReactiveEffect {
+                            "active": true,
+                            "allowRecurse": true,
+                            "deps": Array [
+                              Set {
+                                [Circular],
+                              },
+                              Set {
+                                [Circular],
+                              },
+                              Set {
+                                [Circular],
+                              },
+                              Set {
+                                [Circular],
+                              },
+                            ],
+                            "fn": [Function],
+                            "onTrack": undefined,
+                            "onTrigger": undefined,
+                            "scheduler": [Function],
+                          },
+                        ],
+                      },
+                      "setupContext": null,
+                      "setupState": Object {},
+                      "slots": Object {},
+                      "sp": null,
+                      "subTree": Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": null,
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <response-error-message-stub
+                          errormessage=""
+                          toggle="false"
+                        />,
+                        "key": null,
+                        "patchFlag": 0,
+                        "props": Object {
+                          "errorMessage": "",
+                          "toggle": false,
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 1,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "response-error-message-stub",
+                      },
+                      "suspense": null,
+                      "suspenseId": 0,
+                      "type": Object {
+                        "compatConfig": Object {
+                          "MODE": 3,
+                          "RENDER_FUNCTION": false,
+                        },
+                        "name": "ResponseErrorMessage",
+                        "props": Object {
+                          "errorMessage": Object {
+                            "0": false,
+                            "1": true,
+                            "type": [Function],
+                          },
+                          "toggle": Object {
+                            "0": true,
+                            "1": true,
+                            "type": [Function],
+                          },
+                        },
+                        "render": [Function],
+                      },
+                      "u": null,
+                      "uid": 2,
+                      "um": null,
+                      "update": [Function],
+                      "vnode": [Circular],
+                      "withProxy": null,
+                    },
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": Array [
+                      "toggle",
+                      "errorMessage",
+                    ],
+                    "el": <response-error-message-stub
+                      errormessage=""
+                      toggle="false"
+                    />,
+                    "key": null,
+                    "patchFlag": 8,
+                    "props": Object {
+                      "errorMessage": "",
+                      "toggle": false,
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 4,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": Object {
+                      "compatConfig": Object {
+                        "MODE": 3,
+                        "RENDER_FUNCTION": false,
+                      },
+                      "name": "ResponseErrorMessage",
+                      "props": Object {
+                        "errorMessage": Object {
+                          "0": false,
+                          "1": true,
+                          "type": [Function],
+                        },
+                        "toggle": Object {
+                          "0": true,
+                          "1": true,
+                          "type": [Function],
+                        },
+                      },
+                      "render": [Function],
+                    },
+                  },
                 ],
                 "component": null,
                 "dirs": null,
@@ -12158,6 +13160,325 @@ VueWrapper {
                     "transition": null,
                     "type": "button",
                   },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": null,
+                    "component": Object {
+                      "a": null,
+                      "accessCache": Object {
+                        "$route": 4,
+                        "$router": 4,
+                        "$store": 4,
+                        "@@__IMMUTABLE_ITERABLE__@@": 0,
+                        "@@__IMMUTABLE_RECORD__@@": 0,
+                        "_isMockFunction": 0,
+                        "constructor": 0,
+                        "errorMessage": 3,
+                        "isVueInstance": 0,
+                        "toJSON": 0,
+                        "toggle": 3,
+                        Symbol(Symbol.toStringTag): 0,
+                      },
+                      "appContext": Object {
+                        "app": [Circular],
+                        "components": Object {
+                          "transition": Object {
+                            "name": "transition",
+                          },
+                          "transition-group": Object {
+                            "name": "transition-group",
+                          },
+                        },
+                        "config": Object {
+                          "compilerOptions": Object {},
+                          "errorHandler": undefined,
+                          "globalProperties": Object {},
+                          "isNativeTag": [Function],
+                          "optionMergeStrategies": Object {},
+                          "performance": false,
+                          "warnHandler": undefined,
+                        },
+                        "directives": Object {},
+                        "emitsCache": WeakMap {},
+                        "mixins": Array [
+                          Object {
+                            "beforeCreate": [Function],
+                          },
+                        ],
+                        "optionsCache": WeakMap {},
+                        "propsCache": WeakMap {},
+                        "provides": Object {},
+                        "reload": [Function],
+                      },
+                      "asyncDep": null,
+                      "asyncResolved": false,
+                      "attrs": Object {},
+                      "bc": null,
+                      "bm": null,
+                      "bu": null,
+                      "bum": null,
+                      "c": null,
+                      "components": null,
+                      "ctx": Object {
+                        "$route": Object {
+                          "params": Object {
+                            "id": 1,
+                          },
+                        },
+                        "$router": Object {
+                          "go": [MockFunction],
+                          "push": [MockFunction],
+                        },
+                        "$store": Object {
+                          "dispatch": [MockFunction],
+                          "getters": Object {
+                            "isAuthenticated": [Function],
+                            "userId": [Function],
+                          },
+                          "state": Object {
+                            "jwtToken": "token",
+                            "userId": 1,
+                          },
+                        },
+                        "errorMessage": "",
+                        "toggle": false,
+                      },
+                      "da": null,
+                      "data": Object {},
+                      "directives": null,
+                      "ec": null,
+                      "effect": ReactiveEffect {
+                        "active": true,
+                        "allowRecurse": true,
+                        "deps": Array [
+                          Set {
+                            [Circular],
+                          },
+                          Set {
+                            [Circular],
+                          },
+                          Set {
+                            [Circular],
+                          },
+                          Set {
+                            [Circular],
+                          },
+                        ],
+                        "fn": [Function],
+                        "onTrack": undefined,
+                        "onTrigger": undefined,
+                        "scheduler": [Function],
+                      },
+                      "emit": [Function],
+                      "emitsOptions": null,
+                      "emitted": null,
+                      "exposeProxy": null,
+                      "exposed": null,
+                      "inheritAttrs": undefined,
+                      "isDeactivated": false,
+                      "isMounted": true,
+                      "isUnmounted": false,
+                      "m": null,
+                      "next": null,
+                      "parent": [Circular],
+                      "props": Object {
+                        "errorMessage": "",
+                        "toggle": false,
+                      },
+                      "propsDefaults": Object {},
+                      "propsOptions": Array [
+                        Object {
+                          "errorMessage": Object {
+                            "0": false,
+                            "1": true,
+                            "type": [Function],
+                          },
+                          "toggle": Object {
+                            "0": true,
+                            "1": true,
+                            "type": [Function],
+                          },
+                        },
+                        Array [
+                          "toggle",
+                        ],
+                      ],
+                      "provides": Object {},
+                      "proxy": Object {
+                        "$route": Object {
+                          "params": Object {
+                            "id": 1,
+                          },
+                        },
+                        "$router": Object {
+                          "go": [MockFunction],
+                          "push": [MockFunction],
+                        },
+                        "$store": Object {
+                          "dispatch": [MockFunction],
+                          "getters": Object {
+                            "isAuthenticated": [Function],
+                            "userId": [Function],
+                          },
+                          "state": Object {
+                            "jwtToken": "token",
+                            "userId": 1,
+                          },
+                        },
+                        "errorMessage": "",
+                        "toggle": false,
+                      },
+                      "refs": Object {},
+                      "render": [Function],
+                      "renderCache": Array [],
+                      "root": [Circular],
+                      "rtc": null,
+                      "rtg": null,
+                      "scope": EffectScope {
+                        "active": true,
+                        "cleanups": Array [],
+                        "effects": Array [
+                          ReactiveEffect {
+                            "active": true,
+                            "allowRecurse": true,
+                            "deps": Array [
+                              Set {
+                                [Circular],
+                              },
+                              Set {
+                                [Circular],
+                              },
+                              Set {
+                                [Circular],
+                              },
+                              Set {
+                                [Circular],
+                              },
+                            ],
+                            "fn": [Function],
+                            "onTrack": undefined,
+                            "onTrigger": undefined,
+                            "scheduler": [Function],
+                          },
+                        ],
+                      },
+                      "setupContext": null,
+                      "setupState": Object {},
+                      "slots": Object {},
+                      "sp": null,
+                      "subTree": Object {
+                        "__v_isVNode": true,
+                        "__v_skip": true,
+                        "anchor": null,
+                        "appContext": null,
+                        "children": null,
+                        "component": null,
+                        "dirs": null,
+                        "dynamicChildren": null,
+                        "dynamicProps": null,
+                        "el": <response-error-message-stub
+                          errormessage=""
+                          toggle="false"
+                        />,
+                        "key": null,
+                        "patchFlag": 0,
+                        "props": Object {
+                          "errorMessage": "",
+                          "toggle": false,
+                        },
+                        "ref": null,
+                        "scopeId": null,
+                        "shapeFlag": 1,
+                        "slotScopeIds": null,
+                        "ssContent": null,
+                        "ssFallback": null,
+                        "staticCount": 0,
+                        "suspense": null,
+                        "target": null,
+                        "targetAnchor": null,
+                        "transition": null,
+                        "type": "response-error-message-stub",
+                      },
+                      "suspense": null,
+                      "suspenseId": 0,
+                      "type": Object {
+                        "compatConfig": Object {
+                          "MODE": 3,
+                          "RENDER_FUNCTION": false,
+                        },
+                        "name": "ResponseErrorMessage",
+                        "props": Object {
+                          "errorMessage": Object {
+                            "0": false,
+                            "1": true,
+                            "type": [Function],
+                          },
+                          "toggle": Object {
+                            "0": true,
+                            "1": true,
+                            "type": [Function],
+                          },
+                        },
+                        "render": [Function],
+                      },
+                      "u": null,
+                      "uid": 2,
+                      "um": null,
+                      "update": [Function],
+                      "vnode": [Circular],
+                      "withProxy": null,
+                    },
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": Array [
+                      "toggle",
+                      "errorMessage",
+                    ],
+                    "el": <response-error-message-stub
+                      errormessage=""
+                      toggle="false"
+                    />,
+                    "key": null,
+                    "patchFlag": 8,
+                    "props": Object {
+                      "errorMessage": "",
+                      "toggle": false,
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 4,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": Object {
+                      "compatConfig": Object {
+                        "MODE": 3,
+                        "RENDER_FUNCTION": false,
+                      },
+                      "name": "ResponseErrorMessage",
+                      "props": Object {
+                        "errorMessage": Object {
+                          "0": false,
+                          "1": true,
+                          "type": [Function],
+                        },
+                        "toggle": Object {
+                          "0": true,
+                          "1": true,
+                          "type": [Function],
+                        },
+                      },
+                      "render": [Function],
+                    },
+                  },
                 ],
                 "dynamicProps": null,
                 "el": <div
@@ -12168,6 +13489,10 @@ VueWrapper {
                   >
                      Submit 
                   </button>
+                  <response-error-message-stub
+                    errormessage=""
+                    toggle="false"
+                  />
                 </div>,
                 "key": 4,
                 "patchFlag": 0,
@@ -12237,7 +13562,27 @@ VueWrapper {
           "suspense": null,
           "suspenseId": 0,
           "type": Object {
-            "components": Object {},
+            "components": Object {
+              "ResponseErrorMessage": Object {
+                "data": [Function],
+                "methods": Object {
+                  "hideErrorMessage": [Function],
+                },
+                "props": Object {
+                  "errorMessage": Object {
+                    "0": false,
+                    "1": true,
+                    "type": [Function],
+                  },
+                  "toggle": Object {
+                    "0": true,
+                    "1": true,
+                    "type": [Function],
+                  },
+                },
+                "render": [Function],
+              },
+            },
             "computed": Object {
               "emptyItineraryCheck": [Function],
             },
@@ -12254,7 +13599,7 @@ VueWrapper {
                   },
                 ],
               },
-              "deletetItinerary": [Function],
+              "deleteItinerary": [Function],
               "extractLink": [Function],
               "submitItinerary": [Function],
             },
@@ -12272,7 +13617,7 @@ VueWrapper {
                 "0": false,
                 "1": true,
                 "default": EventService {
-                  "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
+                  "baseUrl": "http://localhost:3000/api/v1",
                 },
               },
               "flight": [Function],
@@ -12348,7 +13693,27 @@ VueWrapper {
         "targetAnchor": null,
         "transition": null,
         "type": Object {
-          "components": Object {},
+          "components": Object {
+            "ResponseErrorMessage": Object {
+              "data": [Function],
+              "methods": Object {
+                "hideErrorMessage": [Function],
+              },
+              "props": Object {
+                "errorMessage": Object {
+                  "0": false,
+                  "1": true,
+                  "type": [Function],
+                },
+                "toggle": Object {
+                  "0": true,
+                  "1": true,
+                  "type": [Function],
+                },
+              },
+              "render": [Function],
+            },
+          },
           "computed": Object {
             "emptyItineraryCheck": [Function],
           },
@@ -12365,7 +13730,7 @@ VueWrapper {
                 },
               ],
             },
-            "deletetItinerary": [Function],
+            "deleteItinerary": [Function],
             "extractLink": [Function],
             "submitItinerary": [Function],
           },
@@ -12383,7 +13748,7 @@ VueWrapper {
               "0": false,
               "1": true,
               "default": EventService {
-                "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
+                "baseUrl": "http://localhost:3000/api/v1",
               },
             },
             "flight": [Function],
@@ -12529,7 +13894,7 @@ VueWrapper {
     "city": undefined,
     "complete": false,
     "createMap": [Function],
-    "deletetItinerary": [Function],
+    "deleteItinerary": [Function],
     "destinationCity": undefined,
     "displayFinaliseCheckbox": false,
     "editAction": false,
@@ -12537,6 +13902,7 @@ VueWrapper {
     "editItinerary": false,
     "editItineraryClick": false,
     "emptyItineraryCheck": false,
+    "errorMessage": "",
     "eventId": undefined,
     "eventService": Object {
       "createEvent": [Function],
@@ -12583,6 +13949,7 @@ VueWrapper {
     "itineraryFlight": Array [
       Array [],
     ],
+    "showErrorMessage": false,
     "showFinaliseItineraryCheck": false,
     "submitItinerary": [Function],
   },

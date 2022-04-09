@@ -253,7 +253,9 @@ VueWrapper {
             },
           ],
           "checkedThingToDoChange": [Function],
+          "checkedThingsToDo": undefined,
           "city": "London",
+          "classifyActivities": [Function],
           "eventCity": "London",
           "extractLink": [Function],
           "googlePlacesInfo": Array [
@@ -297,6 +299,7 @@ VueWrapper {
             },
           ],
           "hasOwnProperty": [Function],
+          "selectedActivities": undefined,
         },
       },
       "render": [Function],
@@ -350,13 +353,16 @@ VueWrapper {
             "_isMockFunction": 0,
             "activitiesInfo": 3,
             "checkedThingToDoChange": 4,
+            "checkedThingsToDo": 3,
             "city": 2,
+            "classifyActivities": 4,
             "constructor": 0,
             "eventCity": 3,
             "extractLink": 4,
             "googlePlacesInfo": 2,
             "hasOwnProperty": 4,
             "isVueInstance": 0,
+            "selectedActivities": 2,
             "toJSON": 0,
             Symbol(Symbol.toStringTag): 0,
           },
@@ -442,7 +448,9 @@ VueWrapper {
               },
             ],
             "checkedThingToDoChange": [Function],
+            "checkedThingsToDo": undefined,
             "city": "London",
+            "classifyActivities": [Function],
             "eventCity": "London",
             "extractLink": [Function],
             "googlePlacesInfo": Array [
@@ -486,6 +494,7 @@ VueWrapper {
               },
             ],
             "hasOwnProperty": [Function],
+            "selectedActivities": undefined,
           },
           "da": null,
           "data": Object {
@@ -530,6 +539,7 @@ VueWrapper {
                 "vicinity": "MacCurtain Street, Cork",
               },
             ],
+            "selectedActivities": undefined,
           },
           "directives": null,
           "ec": null,
@@ -537,6 +547,9 @@ VueWrapper {
             "active": true,
             "allowRecurse": true,
             "deps": Array [
+              Set {
+                [Circular],
+              },
               Set {
                 [Circular],
               },
@@ -638,12 +651,18 @@ VueWrapper {
                 "vicinity": "MacCurtain Street, Cork",
               },
             ],
+            "checkedThingsToDo": undefined,
             "eventCity": "London",
           },
           "propsDefaults": Object {},
           "propsOptions": Array [
             Object {
               "activitiesInfo": Object {
+                "0": false,
+                "1": true,
+                "type": [Function],
+              },
+              "checkedThingsToDo": Object {
                 "0": false,
                 "1": true,
                 "type": [Function],
@@ -699,7 +718,9 @@ VueWrapper {
               },
             ],
             "checkedThingToDoChange": [Function],
+            "checkedThingsToDo": undefined,
             "city": "London",
+            "classifyActivities": [Function],
             "eventCity": "London",
             "extractLink": [Function],
             "googlePlacesInfo": Array [
@@ -743,6 +764,7 @@ VueWrapper {
               },
             ],
             "hasOwnProperty": [Function],
+            "selectedActivities": undefined,
           },
           "refs": Object {},
           "render": [Function],
@@ -758,6 +780,9 @@ VueWrapper {
                 "active": true,
                 "allowRecurse": true,
                 "deps": Array [
+                  Set {
+                    [Circular],
+                  },
                   Set {
                     [Circular],
                   },
@@ -1171,10 +1196,114 @@ VueWrapper {
                                 "appContext": null,
                                 "children": null,
                                 "component": null,
-                                "dirs": null,
+                                "dirs": Array [
+                                  Object {
+                                    "arg": undefined,
+                                    "dir": Object {
+                                      "beforeUpdate": [Function],
+                                      "created": [Function],
+                                      "deep": true,
+                                      "mounted": [Function],
+                                    },
+                                    "instance": Object {
+                                      "activitiesInfo": Array [
+                                        Object {
+                                          "business_status": "OPERATIONAL",
+                                          "geometry": Object {
+                                            "location": Object {
+                                              "lat": 51.9013174,
+                                              "lng": -8.467591,
+                                            },
+                                            "viewport": Object {},
+                                          },
+                                          "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+                                          "icon_background_color": "#909CE1",
+                                          "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+                                          "name": "The Metropole Hotel",
+                                          "opening_hours": Object {
+                                            "open_now": true,
+                                          },
+                                          "photos": Array [
+                                            Object {
+                                              "height": 1367,
+                                              "html_attributions": Array [
+                                                <a href="https://maps.google.com/maps/contrib/115516656997182409995">The Metropole Hotel Cork</a>,
+                                              ],
+                                              "photo_reference": "Aap_uECgaS8iNf86Q4YQp_HxR99qNFyYO1hjP6ThARQIHOdLUc1WG7lXbpMVJ3i5tt9KgAIeU5AW12z_kio3tX4CxXLkxy9ZwpJDftezBXNST9UvYhsltApXWrP7qnk8hrtknOAw8npr_JECtUu3BlHzuxNwuDYXpUh6aZy2LZXVqRrFdhj0",
+                                              "width": 2048,
+                                            },
+                                          ],
+                                          "place_id": "ChIJr3MSiw6QREgRiqJTGHGWMkM",
+                                          "plus_code": Object {
+                                            "compound_code": "WG2J+GX Cork, County Cork, Ireland",
+                                            "global_code": "9C3HWG2J+GX",
+                                          },
+                                          "rating": 4.3,
+                                          "reference": "ChIJr3MSiw6QREgRiqJTGHGWMkM",
+                                          "scope": "GOOGLE",
+                                          "types": undefined,
+                                          "user_ratings_total": 1634,
+                                          "vicinity": "MacCurtain Street, Cork",
+                                        },
+                                      ],
+                                      "checkedThingToDoChange": [Function],
+                                      "checkedThingsToDo": undefined,
+                                      "city": "London",
+                                      "classifyActivities": [Function],
+                                      "eventCity": "London",
+                                      "extractLink": [Function],
+                                      "googlePlacesInfo": Array [
+                                        Object {
+                                          "business_status": "OPERATIONAL",
+                                          "geometry": Object {
+                                            "location": Object {
+                                              "lat": 51.9013174,
+                                              "lng": -8.467591,
+                                            },
+                                            "viewport": Object {},
+                                          },
+                                          "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+                                          "icon_background_color": "#909CE1",
+                                          "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+                                          "name": "The Metropole Hotel",
+                                          "opening_hours": Object {
+                                            "open_now": true,
+                                          },
+                                          "photos": Array [
+                                            Object {
+                                              "height": 1367,
+                                              "html_attributions": Array [
+                                                <a href="https://maps.google.com/maps/contrib/115516656997182409995">The Metropole Hotel Cork</a>,
+                                              ],
+                                              "photo_reference": "Aap_uECgaS8iNf86Q4YQp_HxR99qNFyYO1hjP6ThARQIHOdLUc1WG7lXbpMVJ3i5tt9KgAIeU5AW12z_kio3tX4CxXLkxy9ZwpJDftezBXNST9UvYhsltApXWrP7qnk8hrtknOAw8npr_JECtUu3BlHzuxNwuDYXpUh6aZy2LZXVqRrFdhj0",
+                                              "width": 2048,
+                                            },
+                                          ],
+                                          "place_id": "ChIJr3MSiw6QREgRiqJTGHGWMkM",
+                                          "plus_code": Object {
+                                            "compound_code": "WG2J+GX Cork, County Cork, Ireland",
+                                            "global_code": "9C3HWG2J+GX",
+                                          },
+                                          "rating": 4.3,
+                                          "reference": "ChIJr3MSiw6QREgRiqJTGHGWMkM",
+                                          "scope": "GOOGLE",
+                                          "types": undefined,
+                                          "user_ratings_total": 1634,
+                                          "vicinity": "MacCurtain Street, Cork",
+                                        },
+                                      ],
+                                      "hasOwnProperty": [Function],
+                                      "selectedActivities": undefined,
+                                    },
+                                    "modifiers": Object {},
+                                    "oldValue": undefined,
+                                    "value": undefined,
+                                  },
+                                ],
                                 "dynamicChildren": null,
                                 "dynamicProps": Array [
                                   "value",
+                                  "onUpdate:modelValue",
                                   "onChange",
                                 ],
                                 "el": <input
@@ -1187,6 +1316,7 @@ VueWrapper {
                                 "props": Object {
                                   "data-testid": "activityCheckbox",
                                   "onChange": [Function],
+                                  "onUpdate:modelValue": [Function],
                                   "type": "checkbox",
                                   "value": Object {
                                     "business_status": "OPERATIONAL",
@@ -1446,7 +1576,7 @@ VueWrapper {
                                 ],
                                 "component": null,
                                 "dirs": null,
-                                "dynamicChildren": null,
+                                "dynamicChildren": Array [],
                                 "dynamicProps": Array [
                                   "href",
                                 ],
@@ -1458,11 +1588,12 @@ VueWrapper {
                                     class="fas fa-map-marker-alt"
                                   />
                                 </a>,
-                                "key": null,
+                                "key": 0,
                                 "patchFlag": 8,
                                 "props": Object {
                                   "data-testid": "mapLink",
                                   "href": "https://maps.google.com/maps/contrib/115516656997182409995",
+                                  "key": 0,
                                 },
                                 "ref": null,
                                 "scopeId": null,
@@ -1587,10 +1718,114 @@ VueWrapper {
                             "appContext": null,
                             "children": null,
                             "component": null,
-                            "dirs": null,
+                            "dirs": Array [
+                              Object {
+                                "arg": undefined,
+                                "dir": Object {
+                                  "beforeUpdate": [Function],
+                                  "created": [Function],
+                                  "deep": true,
+                                  "mounted": [Function],
+                                },
+                                "instance": Object {
+                                  "activitiesInfo": Array [
+                                    Object {
+                                      "business_status": "OPERATIONAL",
+                                      "geometry": Object {
+                                        "location": Object {
+                                          "lat": 51.9013174,
+                                          "lng": -8.467591,
+                                        },
+                                        "viewport": Object {},
+                                      },
+                                      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+                                      "icon_background_color": "#909CE1",
+                                      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+                                      "name": "The Metropole Hotel",
+                                      "opening_hours": Object {
+                                        "open_now": true,
+                                      },
+                                      "photos": Array [
+                                        Object {
+                                          "height": 1367,
+                                          "html_attributions": Array [
+                                            <a href="https://maps.google.com/maps/contrib/115516656997182409995">The Metropole Hotel Cork</a>,
+                                          ],
+                                          "photo_reference": "Aap_uECgaS8iNf86Q4YQp_HxR99qNFyYO1hjP6ThARQIHOdLUc1WG7lXbpMVJ3i5tt9KgAIeU5AW12z_kio3tX4CxXLkxy9ZwpJDftezBXNST9UvYhsltApXWrP7qnk8hrtknOAw8npr_JECtUu3BlHzuxNwuDYXpUh6aZy2LZXVqRrFdhj0",
+                                          "width": 2048,
+                                        },
+                                      ],
+                                      "place_id": "ChIJr3MSiw6QREgRiqJTGHGWMkM",
+                                      "plus_code": Object {
+                                        "compound_code": "WG2J+GX Cork, County Cork, Ireland",
+                                        "global_code": "9C3HWG2J+GX",
+                                      },
+                                      "rating": 4.3,
+                                      "reference": "ChIJr3MSiw6QREgRiqJTGHGWMkM",
+                                      "scope": "GOOGLE",
+                                      "types": undefined,
+                                      "user_ratings_total": 1634,
+                                      "vicinity": "MacCurtain Street, Cork",
+                                    },
+                                  ],
+                                  "checkedThingToDoChange": [Function],
+                                  "checkedThingsToDo": undefined,
+                                  "city": "London",
+                                  "classifyActivities": [Function],
+                                  "eventCity": "London",
+                                  "extractLink": [Function],
+                                  "googlePlacesInfo": Array [
+                                    Object {
+                                      "business_status": "OPERATIONAL",
+                                      "geometry": Object {
+                                        "location": Object {
+                                          "lat": 51.9013174,
+                                          "lng": -8.467591,
+                                        },
+                                        "viewport": Object {},
+                                      },
+                                      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+                                      "icon_background_color": "#909CE1",
+                                      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+                                      "name": "The Metropole Hotel",
+                                      "opening_hours": Object {
+                                        "open_now": true,
+                                      },
+                                      "photos": Array [
+                                        Object {
+                                          "height": 1367,
+                                          "html_attributions": Array [
+                                            <a href="https://maps.google.com/maps/contrib/115516656997182409995">The Metropole Hotel Cork</a>,
+                                          ],
+                                          "photo_reference": "Aap_uECgaS8iNf86Q4YQp_HxR99qNFyYO1hjP6ThARQIHOdLUc1WG7lXbpMVJ3i5tt9KgAIeU5AW12z_kio3tX4CxXLkxy9ZwpJDftezBXNST9UvYhsltApXWrP7qnk8hrtknOAw8npr_JECtUu3BlHzuxNwuDYXpUh6aZy2LZXVqRrFdhj0",
+                                          "width": 2048,
+                                        },
+                                      ],
+                                      "place_id": "ChIJr3MSiw6QREgRiqJTGHGWMkM",
+                                      "plus_code": Object {
+                                        "compound_code": "WG2J+GX Cork, County Cork, Ireland",
+                                        "global_code": "9C3HWG2J+GX",
+                                      },
+                                      "rating": 4.3,
+                                      "reference": "ChIJr3MSiw6QREgRiqJTGHGWMkM",
+                                      "scope": "GOOGLE",
+                                      "types": undefined,
+                                      "user_ratings_total": 1634,
+                                      "vicinity": "MacCurtain Street, Cork",
+                                    },
+                                  ],
+                                  "hasOwnProperty": [Function],
+                                  "selectedActivities": undefined,
+                                },
+                                "modifiers": Object {},
+                                "oldValue": undefined,
+                                "value": undefined,
+                              },
+                            ],
                             "dynamicChildren": null,
                             "dynamicProps": Array [
                               "value",
+                              "onUpdate:modelValue",
                               "onChange",
                             ],
                             "el": <input
@@ -1603,6 +1838,7 @@ VueWrapper {
                             "props": Object {
                               "data-testid": "activityCheckbox",
                               "onChange": [Function],
+                              "onUpdate:modelValue": [Function],
                               "type": "checkbox",
                               "value": Object {
                                 "business_status": "OPERATIONAL",
@@ -1828,7 +2064,7 @@ VueWrapper {
                             ],
                             "component": null,
                             "dirs": null,
-                            "dynamicChildren": null,
+                            "dynamicChildren": Array [],
                             "dynamicProps": Array [
                               "href",
                             ],
@@ -1840,11 +2076,12 @@ VueWrapper {
                                 class="fas fa-map-marker-alt"
                               />
                             </a>,
-                            "key": null,
+                            "key": 0,
                             "patchFlag": 8,
                             "props": Object {
                               "data-testid": "mapLink",
                               "href": "https://maps.google.com/maps/contrib/115516656997182409995",
+                              "key": 0,
                             },
                             "ref": null,
                             "scopeId": null,
@@ -2183,10 +2420,114 @@ VueWrapper {
                             "appContext": null,
                             "children": null,
                             "component": null,
-                            "dirs": null,
+                            "dirs": Array [
+                              Object {
+                                "arg": undefined,
+                                "dir": Object {
+                                  "beforeUpdate": [Function],
+                                  "created": [Function],
+                                  "deep": true,
+                                  "mounted": [Function],
+                                },
+                                "instance": Object {
+                                  "activitiesInfo": Array [
+                                    Object {
+                                      "business_status": "OPERATIONAL",
+                                      "geometry": Object {
+                                        "location": Object {
+                                          "lat": 51.9013174,
+                                          "lng": -8.467591,
+                                        },
+                                        "viewport": Object {},
+                                      },
+                                      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+                                      "icon_background_color": "#909CE1",
+                                      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+                                      "name": "The Metropole Hotel",
+                                      "opening_hours": Object {
+                                        "open_now": true,
+                                      },
+                                      "photos": Array [
+                                        Object {
+                                          "height": 1367,
+                                          "html_attributions": Array [
+                                            <a href="https://maps.google.com/maps/contrib/115516656997182409995">The Metropole Hotel Cork</a>,
+                                          ],
+                                          "photo_reference": "Aap_uECgaS8iNf86Q4YQp_HxR99qNFyYO1hjP6ThARQIHOdLUc1WG7lXbpMVJ3i5tt9KgAIeU5AW12z_kio3tX4CxXLkxy9ZwpJDftezBXNST9UvYhsltApXWrP7qnk8hrtknOAw8npr_JECtUu3BlHzuxNwuDYXpUh6aZy2LZXVqRrFdhj0",
+                                          "width": 2048,
+                                        },
+                                      ],
+                                      "place_id": "ChIJr3MSiw6QREgRiqJTGHGWMkM",
+                                      "plus_code": Object {
+                                        "compound_code": "WG2J+GX Cork, County Cork, Ireland",
+                                        "global_code": "9C3HWG2J+GX",
+                                      },
+                                      "rating": 4.3,
+                                      "reference": "ChIJr3MSiw6QREgRiqJTGHGWMkM",
+                                      "scope": "GOOGLE",
+                                      "types": undefined,
+                                      "user_ratings_total": 1634,
+                                      "vicinity": "MacCurtain Street, Cork",
+                                    },
+                                  ],
+                                  "checkedThingToDoChange": [Function],
+                                  "checkedThingsToDo": undefined,
+                                  "city": "London",
+                                  "classifyActivities": [Function],
+                                  "eventCity": "London",
+                                  "extractLink": [Function],
+                                  "googlePlacesInfo": Array [
+                                    Object {
+                                      "business_status": "OPERATIONAL",
+                                      "geometry": Object {
+                                        "location": Object {
+                                          "lat": 51.9013174,
+                                          "lng": -8.467591,
+                                        },
+                                        "viewport": Object {},
+                                      },
+                                      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+                                      "icon_background_color": "#909CE1",
+                                      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+                                      "name": "The Metropole Hotel",
+                                      "opening_hours": Object {
+                                        "open_now": true,
+                                      },
+                                      "photos": Array [
+                                        Object {
+                                          "height": 1367,
+                                          "html_attributions": Array [
+                                            <a href="https://maps.google.com/maps/contrib/115516656997182409995">The Metropole Hotel Cork</a>,
+                                          ],
+                                          "photo_reference": "Aap_uECgaS8iNf86Q4YQp_HxR99qNFyYO1hjP6ThARQIHOdLUc1WG7lXbpMVJ3i5tt9KgAIeU5AW12z_kio3tX4CxXLkxy9ZwpJDftezBXNST9UvYhsltApXWrP7qnk8hrtknOAw8npr_JECtUu3BlHzuxNwuDYXpUh6aZy2LZXVqRrFdhj0",
+                                          "width": 2048,
+                                        },
+                                      ],
+                                      "place_id": "ChIJr3MSiw6QREgRiqJTGHGWMkM",
+                                      "plus_code": Object {
+                                        "compound_code": "WG2J+GX Cork, County Cork, Ireland",
+                                        "global_code": "9C3HWG2J+GX",
+                                      },
+                                      "rating": 4.3,
+                                      "reference": "ChIJr3MSiw6QREgRiqJTGHGWMkM",
+                                      "scope": "GOOGLE",
+                                      "types": undefined,
+                                      "user_ratings_total": 1634,
+                                      "vicinity": "MacCurtain Street, Cork",
+                                    },
+                                  ],
+                                  "hasOwnProperty": [Function],
+                                  "selectedActivities": undefined,
+                                },
+                                "modifiers": Object {},
+                                "oldValue": undefined,
+                                "value": undefined,
+                              },
+                            ],
                             "dynamicChildren": null,
                             "dynamicProps": Array [
                               "value",
+                              "onUpdate:modelValue",
                               "onChange",
                             ],
                             "el": <input
@@ -2199,6 +2540,7 @@ VueWrapper {
                             "props": Object {
                               "data-testid": "activityCheckbox",
                               "onChange": [Function],
+                              "onUpdate:modelValue": [Function],
                               "type": "checkbox",
                               "value": Object {
                                 "business_status": "OPERATIONAL",
@@ -2458,7 +2800,7 @@ VueWrapper {
                             ],
                             "component": null,
                             "dirs": null,
-                            "dynamicChildren": null,
+                            "dynamicChildren": Array [],
                             "dynamicProps": Array [
                               "href",
                             ],
@@ -2470,11 +2812,12 @@ VueWrapper {
                                 class="fas fa-map-marker-alt"
                               />
                             </a>,
-                            "key": null,
+                            "key": 0,
                             "patchFlag": 8,
                             "props": Object {
                               "data-testid": "mapLink",
                               "href": "https://maps.google.com/maps/contrib/115516656997182409995",
+                              "key": 0,
                             },
                             "ref": null,
                             "scopeId": null,
@@ -2599,10 +2942,114 @@ VueWrapper {
                         "appContext": null,
                         "children": null,
                         "component": null,
-                        "dirs": null,
+                        "dirs": Array [
+                          Object {
+                            "arg": undefined,
+                            "dir": Object {
+                              "beforeUpdate": [Function],
+                              "created": [Function],
+                              "deep": true,
+                              "mounted": [Function],
+                            },
+                            "instance": Object {
+                              "activitiesInfo": Array [
+                                Object {
+                                  "business_status": "OPERATIONAL",
+                                  "geometry": Object {
+                                    "location": Object {
+                                      "lat": 51.9013174,
+                                      "lng": -8.467591,
+                                    },
+                                    "viewport": Object {},
+                                  },
+                                  "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+                                  "icon_background_color": "#909CE1",
+                                  "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+                                  "name": "The Metropole Hotel",
+                                  "opening_hours": Object {
+                                    "open_now": true,
+                                  },
+                                  "photos": Array [
+                                    Object {
+                                      "height": 1367,
+                                      "html_attributions": Array [
+                                        <a href="https://maps.google.com/maps/contrib/115516656997182409995">The Metropole Hotel Cork</a>,
+                                      ],
+                                      "photo_reference": "Aap_uECgaS8iNf86Q4YQp_HxR99qNFyYO1hjP6ThARQIHOdLUc1WG7lXbpMVJ3i5tt9KgAIeU5AW12z_kio3tX4CxXLkxy9ZwpJDftezBXNST9UvYhsltApXWrP7qnk8hrtknOAw8npr_JECtUu3BlHzuxNwuDYXpUh6aZy2LZXVqRrFdhj0",
+                                      "width": 2048,
+                                    },
+                                  ],
+                                  "place_id": "ChIJr3MSiw6QREgRiqJTGHGWMkM",
+                                  "plus_code": Object {
+                                    "compound_code": "WG2J+GX Cork, County Cork, Ireland",
+                                    "global_code": "9C3HWG2J+GX",
+                                  },
+                                  "rating": 4.3,
+                                  "reference": "ChIJr3MSiw6QREgRiqJTGHGWMkM",
+                                  "scope": "GOOGLE",
+                                  "types": undefined,
+                                  "user_ratings_total": 1634,
+                                  "vicinity": "MacCurtain Street, Cork",
+                                },
+                              ],
+                              "checkedThingToDoChange": [Function],
+                              "checkedThingsToDo": undefined,
+                              "city": "London",
+                              "classifyActivities": [Function],
+                              "eventCity": "London",
+                              "extractLink": [Function],
+                              "googlePlacesInfo": Array [
+                                Object {
+                                  "business_status": "OPERATIONAL",
+                                  "geometry": Object {
+                                    "location": Object {
+                                      "lat": 51.9013174,
+                                      "lng": -8.467591,
+                                    },
+                                    "viewport": Object {},
+                                  },
+                                  "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+                                  "icon_background_color": "#909CE1",
+                                  "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+                                  "name": "The Metropole Hotel",
+                                  "opening_hours": Object {
+                                    "open_now": true,
+                                  },
+                                  "photos": Array [
+                                    Object {
+                                      "height": 1367,
+                                      "html_attributions": Array [
+                                        <a href="https://maps.google.com/maps/contrib/115516656997182409995">The Metropole Hotel Cork</a>,
+                                      ],
+                                      "photo_reference": "Aap_uECgaS8iNf86Q4YQp_HxR99qNFyYO1hjP6ThARQIHOdLUc1WG7lXbpMVJ3i5tt9KgAIeU5AW12z_kio3tX4CxXLkxy9ZwpJDftezBXNST9UvYhsltApXWrP7qnk8hrtknOAw8npr_JECtUu3BlHzuxNwuDYXpUh6aZy2LZXVqRrFdhj0",
+                                      "width": 2048,
+                                    },
+                                  ],
+                                  "place_id": "ChIJr3MSiw6QREgRiqJTGHGWMkM",
+                                  "plus_code": Object {
+                                    "compound_code": "WG2J+GX Cork, County Cork, Ireland",
+                                    "global_code": "9C3HWG2J+GX",
+                                  },
+                                  "rating": 4.3,
+                                  "reference": "ChIJr3MSiw6QREgRiqJTGHGWMkM",
+                                  "scope": "GOOGLE",
+                                  "types": undefined,
+                                  "user_ratings_total": 1634,
+                                  "vicinity": "MacCurtain Street, Cork",
+                                },
+                              ],
+                              "hasOwnProperty": [Function],
+                              "selectedActivities": undefined,
+                            },
+                            "modifiers": Object {},
+                            "oldValue": undefined,
+                            "value": undefined,
+                          },
+                        ],
                         "dynamicChildren": null,
                         "dynamicProps": Array [
                           "value",
+                          "onUpdate:modelValue",
                           "onChange",
                         ],
                         "el": <input
@@ -2615,6 +3062,7 @@ VueWrapper {
                         "props": Object {
                           "data-testid": "activityCheckbox",
                           "onChange": [Function],
+                          "onUpdate:modelValue": [Function],
                           "type": "checkbox",
                           "value": Object {
                             "business_status": "OPERATIONAL",
@@ -2840,7 +3288,7 @@ VueWrapper {
                         ],
                         "component": null,
                         "dirs": null,
-                        "dynamicChildren": null,
+                        "dynamicChildren": Array [],
                         "dynamicProps": Array [
                           "href",
                         ],
@@ -2852,11 +3300,12 @@ VueWrapper {
                             class="fas fa-map-marker-alt"
                           />
                         </a>,
-                        "key": null,
+                        "key": 0,
                         "patchFlag": 8,
                         "props": Object {
                           "data-testid": "mapLink",
                           "href": "https://maps.google.com/maps/contrib/115516656997182409995",
+                          "key": 0,
                         },
                         "ref": null,
                         "scopeId": null,
@@ -3170,13 +3619,16 @@ VueWrapper {
           "suspenseId": 0,
           "type": Object {
             "components": Object {},
+            "created": [Function],
             "data": [Function],
             "methods": Object {
               "checkedThingToDoChange": [Function],
+              "classifyActivities": [Function],
               "extractLink": [Function],
             },
             "props": Object {
               "activitiesInfo": [Function],
+              "checkedThingsToDo": [Function],
               "eventCity": [Function],
             },
             "render": [Function],
@@ -3333,13 +3785,16 @@ VueWrapper {
         "transition": null,
         "type": Object {
           "components": Object {},
+          "created": [Function],
           "data": [Function],
           "methods": Object {
             "checkedThingToDoChange": [Function],
+            "classifyActivities": [Function],
             "extractLink": [Function],
           },
           "props": Object {
             "activitiesInfo": [Function],
+            "checkedThingsToDo": [Function],
             "eventCity": [Function],
           },
           "render": [Function],
@@ -3557,7 +4012,9 @@ VueWrapper {
       },
     ],
     "checkedThingToDoChange": [Function],
+    "checkedThingsToDo": undefined,
     "city": "London",
+    "classifyActivities": [Function],
     "eventCity": "London",
     "extractLink": [Function],
     "googlePlacesInfo": Array [
@@ -3601,6 +4058,7 @@ VueWrapper {
       },
     ],
     "hasOwnProperty": [Function],
+    "selectedActivities": undefined,
   },
   "isDisabled": [Function],
   "rootVM": Object {},

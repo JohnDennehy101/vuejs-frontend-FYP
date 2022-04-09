@@ -48,7 +48,7 @@
         <button>Update Account Settings</button>
       </div>
 
-      <AccountErrorMessage
+      <ResponseErrorMessage
         :toggle="this.invalidUpdate"
         :errorMessage="this.errorMessage"
         v-on:hideErrorMessage="hideErrorMessage"
@@ -59,7 +59,7 @@
 
 <script>
 import userService from "../services/UserService";
-import AccountErrorMessage from "./AccountErrorMessage";
+import ResponseErrorMessage from "./ResponseErrorMessage";
 import StringUtils from "../utils/stringUtils";
 export default {
   props: {
@@ -134,7 +134,7 @@ export default {
     },
   },
   components: {
-    AccountErrorMessage,
+    ResponseErrorMessage,
   },
 };
 </script>
@@ -142,7 +142,7 @@ export default {
 <style scoped lang="scss">
 .settings-form-container {
   width: 60%;
-  height: 80vh;
+
   margin: 1rem auto;
   display: flex;
   align-items: center;
@@ -154,7 +154,7 @@ export default {
 }
 form {
   width: 100%;
-  height: 90%;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;

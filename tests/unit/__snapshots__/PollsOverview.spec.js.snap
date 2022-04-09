@@ -1334,7 +1334,6 @@ VueWrapper {
           "render": [Function],
           "renderCache": Array [
             [Function],
-            [Function],
           ],
           "root": [Circular],
           "rtc": null,
@@ -2539,7 +2538,9 @@ VueWrapper {
                         "component": null,
                         "dirs": null,
                         "dynamicChildren": Array [],
-                        "dynamicProps": null,
+                        "dynamicProps": Array [
+                          "onClick",
+                        ],
                         "el": <span
                           data-testid="deleteFunctionality"
                         >
@@ -2548,7 +2549,7 @@ VueWrapper {
                           />
                         </span>,
                         "key": 1,
-                        "patchFlag": 0,
+                        "patchFlag": 8,
                         "props": Object {
                           "data-testid": "deleteFunctionality",
                           "key": 1,
@@ -3301,7 +3302,9 @@ VueWrapper {
                     "component": null,
                     "dirs": null,
                     "dynamicChildren": Array [],
-                    "dynamicProps": null,
+                    "dynamicProps": Array [
+                      "onClick",
+                    ],
                     "el": <span
                       data-testid="deleteFunctionality"
                     >
@@ -3310,7 +3313,7 @@ VueWrapper {
                       />
                     </span>,
                     "key": 1,
-                    "patchFlag": 0,
+                    "patchFlag": 8,
                     "props": Object {
                       "data-testid": "deleteFunctionality",
                       "key": 1,
@@ -4552,7 +4555,9 @@ VueWrapper {
                         "component": null,
                         "dirs": null,
                         "dynamicChildren": Array [],
-                        "dynamicProps": null,
+                        "dynamicProps": Array [
+                          "onClick",
+                        ],
                         "el": <span
                           data-testid="deleteFunctionality"
                         >
@@ -4561,7 +4566,7 @@ VueWrapper {
                           />
                         </span>,
                         "key": 1,
-                        "patchFlag": 0,
+                        "patchFlag": 8,
                         "props": Object {
                           "data-testid": "deleteFunctionality",
                           "key": 1,
@@ -5314,7 +5319,9 @@ VueWrapper {
                     "component": null,
                     "dirs": null,
                     "dynamicChildren": Array [],
-                    "dynamicProps": null,
+                    "dynamicProps": Array [
+                      "onClick",
+                    ],
                     "el": <span
                       data-testid="deleteFunctionality"
                     >
@@ -5323,7 +5330,7 @@ VueWrapper {
                       />
                     </span>,
                     "key": 1,
-                    "patchFlag": 0,
+                    "patchFlag": 8,
                     "props": Object {
                       "data-testid": "deleteFunctionality",
                       "key": 1,
@@ -6565,7 +6572,9 @@ VueWrapper {
                         "component": null,
                         "dirs": null,
                         "dynamicChildren": Array [],
-                        "dynamicProps": null,
+                        "dynamicProps": Array [
+                          "onClick",
+                        ],
                         "el": <span
                           data-testid="deleteFunctionality"
                         >
@@ -6574,7 +6583,7 @@ VueWrapper {
                           />
                         </span>,
                         "key": 1,
-                        "patchFlag": 0,
+                        "patchFlag": 8,
                         "props": Object {
                           "data-testid": "deleteFunctionality",
                           "key": 1,
@@ -7327,7 +7336,9 @@ VueWrapper {
                     "component": null,
                     "dirs": null,
                     "dynamicChildren": Array [],
-                    "dynamicProps": null,
+                    "dynamicProps": Array [
+                      "onClick",
+                    ],
                     "el": <span
                       data-testid="deleteFunctionality"
                     >
@@ -7336,7 +7347,7 @@ VueWrapper {
                       />
                     </span>,
                     "key": 1,
-                    "patchFlag": 0,
+                    "patchFlag": 8,
                     "props": Object {
                       "data-testid": "deleteFunctionality",
                       "key": 1,
@@ -8578,7 +8589,9 @@ VueWrapper {
                         "component": null,
                         "dirs": null,
                         "dynamicChildren": Array [],
-                        "dynamicProps": null,
+                        "dynamicProps": Array [
+                          "onClick",
+                        ],
                         "el": <span
                           data-testid="deleteFunctionality"
                         >
@@ -8587,7 +8600,7 @@ VueWrapper {
                           />
                         </span>,
                         "key": 1,
-                        "patchFlag": 0,
+                        "patchFlag": 8,
                         "props": Object {
                           "data-testid": "deleteFunctionality",
                           "key": 1,
@@ -9340,7 +9353,9 @@ VueWrapper {
                     "component": null,
                     "dirs": null,
                     "dynamicChildren": Array [],
-                    "dynamicProps": null,
+                    "dynamicProps": Array [
+                      "onClick",
+                    ],
                     "el": <span
                       data-testid="deleteFunctionality"
                     >
@@ -9349,7 +9364,7 @@ VueWrapper {
                       />
                     </span>,
                     "key": 1,
-                    "patchFlag": 0,
+                    "patchFlag": 8,
                     "props": Object {
                       "data-testid": "deleteFunctionality",
                       "key": 1,
@@ -10591,7 +10606,9 @@ VueWrapper {
                         "component": null,
                         "dirs": null,
                         "dynamicChildren": Array [],
-                        "dynamicProps": null,
+                        "dynamicProps": Array [
+                          "onClick",
+                        ],
                         "el": <span
                           data-testid="deleteFunctionality"
                         >
@@ -10600,7 +10617,7 @@ VueWrapper {
                           />
                         </span>,
                         "key": 1,
-                        "patchFlag": 0,
+                        "patchFlag": 8,
                         "props": Object {
                           "data-testid": "deleteFunctionality",
                           "key": 1,
@@ -11353,7 +11370,9 @@ VueWrapper {
                     "component": null,
                     "dirs": null,
                     "dynamicChildren": Array [],
-                    "dynamicProps": null,
+                    "dynamicProps": Array [
+                      "onClick",
+                    ],
                     "el": <span
                       data-testid="deleteFunctionality"
                     >
@@ -11362,7 +11381,7 @@ VueWrapper {
                       />
                     </span>,
                     "key": 1,
-                    "patchFlag": 0,
+                    "patchFlag": 8,
                     "props": Object {
                       "data-testid": "deleteFunctionality",
                       "key": 1,
@@ -12604,7 +12623,9 @@ VueWrapper {
                         "component": null,
                         "dirs": null,
                         "dynamicChildren": Array [],
-                        "dynamicProps": null,
+                        "dynamicProps": Array [
+                          "onClick",
+                        ],
                         "el": <span
                           data-testid="deleteFunctionality"
                         >
@@ -12613,7 +12634,7 @@ VueWrapper {
                           />
                         </span>,
                         "key": 1,
-                        "patchFlag": 0,
+                        "patchFlag": 8,
                         "props": Object {
                           "data-testid": "deleteFunctionality",
                           "key": 1,
@@ -13366,7 +13387,9 @@ VueWrapper {
                     "component": null,
                     "dirs": null,
                     "dynamicChildren": Array [],
-                    "dynamicProps": null,
+                    "dynamicProps": Array [
+                      "onClick",
+                    ],
                     "el": <span
                       data-testid="deleteFunctionality"
                     >
@@ -13375,7 +13398,7 @@ VueWrapper {
                       />
                     </span>,
                     "key": 1,
-                    "patchFlag": 0,
+                    "patchFlag": 8,
                     "props": Object {
                       "data-testid": "deleteFunctionality",
                       "key": 1,
@@ -14617,7 +14640,9 @@ VueWrapper {
                         "component": null,
                         "dirs": null,
                         "dynamicChildren": Array [],
-                        "dynamicProps": null,
+                        "dynamicProps": Array [
+                          "onClick",
+                        ],
                         "el": <span
                           data-testid="deleteFunctionality"
                         >
@@ -14626,7 +14651,7 @@ VueWrapper {
                           />
                         </span>,
                         "key": 1,
-                        "patchFlag": 0,
+                        "patchFlag": 8,
                         "props": Object {
                           "data-testid": "deleteFunctionality",
                           "key": 1,
@@ -15379,7 +15404,9 @@ VueWrapper {
                     "component": null,
                     "dirs": null,
                     "dynamicChildren": Array [],
-                    "dynamicProps": null,
+                    "dynamicProps": Array [
+                      "onClick",
+                    ],
                     "el": <span
                       data-testid="deleteFunctionality"
                     >
@@ -15388,7 +15415,7 @@ VueWrapper {
                       />
                     </span>,
                     "key": 1,
-                    "patchFlag": 0,
+                    "patchFlag": 8,
                     "props": Object {
                       "data-testid": "deleteFunctionality",
                       "key": 1,
@@ -16630,7 +16657,9 @@ VueWrapper {
                         "component": null,
                         "dirs": null,
                         "dynamicChildren": Array [],
-                        "dynamicProps": null,
+                        "dynamicProps": Array [
+                          "onClick",
+                        ],
                         "el": <span
                           data-testid="deleteFunctionality"
                         >
@@ -16639,7 +16668,7 @@ VueWrapper {
                           />
                         </span>,
                         "key": 1,
-                        "patchFlag": 0,
+                        "patchFlag": 8,
                         "props": Object {
                           "data-testid": "deleteFunctionality",
                           "key": 1,
@@ -17392,7 +17421,9 @@ VueWrapper {
                     "component": null,
                     "dirs": null,
                     "dynamicChildren": Array [],
-                    "dynamicProps": null,
+                    "dynamicProps": Array [
+                      "onClick",
+                    ],
                     "el": <span
                       data-testid="deleteFunctionality"
                     >
@@ -17401,7 +17432,7 @@ VueWrapper {
                       />
                     </span>,
                     "key": 1,
-                    "patchFlag": 0,
+                    "patchFlag": 8,
                     "props": Object {
                       "data-testid": "deleteFunctionality",
                       "key": 1,

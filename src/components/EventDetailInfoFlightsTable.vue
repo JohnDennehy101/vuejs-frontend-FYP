@@ -32,6 +32,7 @@
           <input
             data-testid="mobileFlightCheckbox"
             type="checkbox"
+            v-model="item.checked"
             :value="item"
           />
         </td>
@@ -63,6 +64,7 @@
         <td v-if="key === 0 && !mobileDevice" rowspan="2">
           <input
             type="checkbox"
+            v-model="item.checked"
             data-testid="desktopFlightCheckbox"
             :value="item"
           />
@@ -114,6 +116,7 @@ export default {
   props: {
     flights: Array,
     mobile: Function,
+    checkedFlight: Array,
   },
   data() {
     return {
@@ -128,6 +131,43 @@ export default {
         item: item,
       });
     },
+    classifyFlights() {
+      if (this.checkedFlight.length > 0) {
+        for (const key in this.flights) {
+          if (this.flights[key][0] && this.flights[key][1]) {
+            if (
+              this.checkedFlight[0].find(
+                (a) =>
+                  a.airport === this.flights[key][0].airport &&
+                  a.arrivalTime === this.flights[key][0].arrivalTime &&
+                  a.departureTime === this.flights[key][0].departureTime &&
+                  a.duration === this.flights[key][0].duration &&
+                  a.carrier === this.flights[key][0].carrier
+              ) &&
+              this.checkedFlight[0].find(
+                (a) =>
+                  a.airport === this.flights[key][1].airport &&
+                  a.arrivalTime === this.flights[key][1].arrivalTime &&
+                  a.departureTime === this.flights[key][1].departureTime &&
+                  a.duration === this.flights[key][1].duration &&
+                  a.carrier === this.flights[key][1].carrier
+              )
+            ) {
+              this.flights[key].map((item) => {
+                item.checked = true;
+              });
+            } else {
+              this.flights[key].map((item) => {
+                item.checked = false;
+              });
+            }
+          }
+        }
+      }
+    },
+  },
+  async created() {
+    await this.classifyFlights();
   },
 };
 </script>

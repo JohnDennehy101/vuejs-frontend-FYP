@@ -5,10 +5,10 @@
         <h3>Title</h3>
         <p data-testid="title">{{ title }}</p>
       </div>
-      <div>
+      <div id="description">
         <h3>Description:</h3>
         <p data-testid="description">
-          More info about group trip here...description
+          {{ description }}
         </p>
       </div>
 
@@ -50,6 +50,41 @@
         <p>{{ user.email }}</p>
       </div>
     </div>
+    <h4>Event Status</h4>
+    <div id="event-stages-parent-container">
+      <div class="individual-stage" data-testid="eventCreatedMilestone">
+        <span> <i class="fas fa-check"></i> </span>
+        <p>1. Event Created</p>
+      </div>
+      <div class="individual-stage" data-testid="pollCreatedMilestone">
+        <span>
+          <i v-if="pollAlreadyCreated" class="fas fa-check"></i>
+          <i v-else class="fas fa-times-circle"></i>
+        </span>
+        <p>2. Poll Created</p>
+      </div>
+      <div class="individual-stage" data-testid="pollCompletedMilestone">
+        <span>
+          <i v-if="pollAlreadyCompleted" class="fas fa-check"></i>
+          <i v-else class="fas fa-times-circle"></i>
+        </span>
+        <p>3. Poll Completed</p>
+      </div>
+      <div class="individual-stage" data-testid="itineraryCreatedMilestone">
+        <span>
+          <i v-if="itineraryAlreadyCreated" class="fas fa-check"></i>
+          <i v-else class="fas fa-times-circle"></i>
+        </span>
+        <p>4. Itinerary Created</p>
+      </div>
+      <div class="individual-stage" data-testid="itineraryFinalisedMilestone">
+        <span>
+          <i v-if="itineraryAlreadyCompleted" class="fas fa-check"></i>
+          <i v-else class="fas fa-times-circle"></i>
+        </span>
+        <p>5. Itinerary Finalised</p>
+      </div>
+    </div>
     <div v-if="!guestUser" class="event-user-actions-parent-container">
       <span id="editEventIcon" v-on:click="$emit('editActionClick', true)">
         <i class="fas fa-pen"></i
@@ -60,15 +95,26 @@
 
 <script>
 export default {
-  props: ["individualEvent", "invitedUser"],
+  props: [
+    "individualEvent",
+    "invitedUser",
+    "itineraryCreated",
+    "itineraryCompleted",
+    "pollCompleted",
+  ],
   data() {
     return {
       item: this.individualEvent,
       title: "",
+      description: "",
       type: "",
       destinationCity: "",
       departureCity: "",
       guestUser: this.invitedUser,
+      pollAlreadyCreated: null,
+      pollAlreadyCompleted: this.pollCompleted,
+      itineraryAlreadyCreated: this.itineraryCreated,
+      itineraryAlreadyCompleted: this.itineraryCompleted,
     };
   },
   methods: {
@@ -77,13 +123,16 @@ export default {
 
       if (eventInfo !== null) {
         this.title = eventInfo.title;
+        this.description = eventInfo.description;
         this.type = eventInfo.type;
         this.destinationCity = eventInfo.city;
 
-        console.log(eventInfo);
-
         if (eventInfo.departureCity) {
           this.departureCity = eventInfo.departureCity;
+        }
+
+        if (eventInfo.polls.length > 0) {
+          this.pollAlreadyCreated = true;
         }
       }
     },
@@ -109,10 +158,18 @@ export default {
   #event-overview-info-container {
     margin: 1rem 3rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 
     @include for-phone-only {
       flex-direction: column;
+    }
+  }
+
+  #description {
+    max-width: 40%;
+
+    @include for-phone-only {
+      max-width: 100%;
     }
   }
 
@@ -131,7 +188,6 @@ export default {
     }
   }
   span {
-    margin-top: 0.8rem;
     padding: 0.4rem;
     background-color: #f2f4fe;
     color: #3a4374;
@@ -149,6 +205,22 @@ export default {
     }
   }
 
+  #event-stages-parent-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include for-phone-only {
+      flex-direction: column;
+    }
+  }
+  h4 {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #3a4374;
+    text-align: center;
+  }
+
   .event-user-container {
     display: flex;
     justify-content: center;
@@ -161,6 +233,29 @@ export default {
       min-width: 220px;
       text-align: left;
     }
+    svg {
+      font-size: 1rem;
+      padding: 0.2rem;
+    }
+  }
+
+  .individual-stage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+
+    @include for-phone-only {
+      justify-content: start;
+      min-width: 60%;
+    }
+
+    p {
+      display: inline-block;
+      margin: 0 0.8rem;
+      text-align: center;
+    }
+
     svg {
       font-size: 1rem;
       padding: 0.2rem;

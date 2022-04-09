@@ -34,7 +34,7 @@
         <button>Login</button>
       </div>
 
-      <AccountErrorMessage
+      <ResponseErrorMessage
         :toggle="this.invalidLogin"
         :errorMessage="this.errorMessage"
         v-on:hideErrorMessage="hideErrorMessage"
@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import AccountErrorMessage from "./AccountErrorMessage";
+import ResponseErrorMessage from "./ResponseErrorMessage";
 import userService from "../services/UserService";
 export default {
   props: {
@@ -65,7 +65,7 @@ export default {
     };
   },
   components: {
-    AccountErrorMessage,
+    ResponseErrorMessage,
   },
   methods: {
     async submitForm() {
@@ -78,6 +78,7 @@ export default {
         if (typeof user !== "string") {
           this.$store.dispatch("setUserId", user.userId);
           this.$store.dispatch("setUserEmail", user.userEmail);
+          this.$store.dispatch("setJWT", user.jwtToken);
           this.$store.dispatch("login");
           this.$router.push({ path: `/dashboard/${user.userId}` });
         } else {

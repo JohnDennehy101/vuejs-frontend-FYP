@@ -38,6 +38,22 @@ VueWrapper {
         <div
           class="form-control"
         >
+          <label
+            for="description"
+          >
+            Description
+          </label>
+          <input
+            id="description"
+            name="title"
+            placeholder="Enter event description"
+            type="text"
+          />
+          <!--v-if-->
+        </div>
+        <div
+          class="form-control"
+        >
           <h3>
             Event Type
           </h3>
@@ -166,7 +182,7 @@ VueWrapper {
             Add Event
           </button>
         </div>
-        <account-error-message-stub
+        <response-error-message-stub
           errormessage="There was an error adding this event, not successfully created."
           toggle="false"
         />
@@ -352,8 +368,11 @@ VueWrapper {
             },
           },
           "addUserEmail": [Function],
+          "buttonTitle": "Add Event",
           "departureCity": "",
           "departureNotProvided": false,
+          "description": "",
+          "descriptionNotProvided": false,
           "destinationNotProvided": false,
           "domesticCityLocations": Array [
             "Cork",
@@ -369,7 +388,7 @@ VueWrapper {
           "emailNotProvided": false,
           "errorMessage": "There was an error adding this event, not successfully created.",
           "eventService": EventService {
-            "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
+            "baseUrl": "http://localhost:3000/api/v1",
           },
           "eventType": null,
           "eventTypeChange": [Function],
@@ -383,6 +402,7 @@ VueWrapper {
           "hideErrorMessage": [Function],
           "individualEvent": undefined,
           "invalidEventCreation": false,
+          "jwt": undefined,
           "location": "",
           "populateFormInfo": [Function],
           "removeIndividualUserEmail": [Function],
@@ -442,9 +462,12 @@ VueWrapper {
             "@@__IMMUTABLE_RECORD__@@": 0,
             "_isMockFunction": 0,
             "addUserEmail": 4,
+            "buttonTitle": 2,
             "constructor": 0,
             "departureCity": 2,
             "departureNotProvided": 2,
+            "description": 2,
+            "descriptionNotProvided": 2,
             "destinationNotProvided": 2,
             "domesticCityLocations": 2,
             "edit": 3,
@@ -463,6 +486,7 @@ VueWrapper {
             "individualEvent": 3,
             "invalidEventCreation": 2,
             "isVueInstance": 0,
+            "jwt": 4,
             "location": 2,
             "populateFormInfo": 4,
             "removeIndividualUserEmail": 4,
@@ -516,7 +540,14 @@ VueWrapper {
           "bum": null,
           "c": null,
           "components": Object {
-            "AccountErrorMessage": Object {
+            "EventFormUserEmailDisplay": Object {
+              "data": [Function],
+              "props": Array [
+                "email",
+              ],
+              "render": [Function],
+            },
+            "ResponseErrorMessage": Object {
               "data": [Function],
               "methods": Object {
                 "hideErrorMessage": [Function],
@@ -533,13 +564,6 @@ VueWrapper {
                   "type": [Function],
                 },
               },
-              "render": [Function],
-            },
-            "EventFormUserEmailDisplay": Object {
-              "data": [Function],
-              "props": Array [
-                "email",
-              ],
               "render": [Function],
             },
           },
@@ -565,8 +589,11 @@ VueWrapper {
               },
             },
             "addUserEmail": [Function],
+            "buttonTitle": "Add Event",
             "departureCity": "",
             "departureNotProvided": false,
+            "description": "",
+            "descriptionNotProvided": false,
             "destinationNotProvided": false,
             "domesticCityLocations": Array [
               "Cork",
@@ -582,7 +609,7 @@ VueWrapper {
             "emailNotProvided": false,
             "errorMessage": "There was an error adding this event, not successfully created.",
             "eventService": EventService {
-              "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
+              "baseUrl": "http://localhost:3000/api/v1",
             },
             "eventType": null,
             "eventTypeChange": [Function],
@@ -596,6 +623,7 @@ VueWrapper {
             "hideErrorMessage": [Function],
             "individualEvent": undefined,
             "invalidEventCreation": false,
+            "jwt": undefined,
             "location": "",
             "populateFormInfo": [Function],
             "removeIndividualUserEmail": [Function],
@@ -609,8 +637,11 @@ VueWrapper {
           },
           "da": null,
           "data": Object {
+            "buttonTitle": "Add Event",
             "departureCity": "",
             "departureNotProvided": false,
+            "description": "",
+            "descriptionNotProvided": false,
             "destinationNotProvided": false,
             "domesticCityLocations": Array [
               "Cork",
@@ -714,6 +745,15 @@ VueWrapper {
               Set {
                 [Circular],
               },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
+              Set {
+                [Circular],
+              },
             ],
             "fn": [Function],
             "onTrack": undefined,
@@ -735,7 +775,7 @@ VueWrapper {
           "props": Object {
             "edit": false,
             "eventService": EventService {
-              "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
+              "baseUrl": "http://localhost:3000/api/v1",
             },
             "individualEvent": undefined,
           },
@@ -751,7 +791,7 @@ VueWrapper {
                 "0": false,
                 "1": true,
                 "default": EventService {
-                  "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
+                  "baseUrl": "http://localhost:3000/api/v1",
                 },
               },
               "individualEvent": Object {
@@ -788,8 +828,11 @@ VueWrapper {
               },
             },
             "addUserEmail": [Function],
+            "buttonTitle": "Add Event",
             "departureCity": "",
             "departureNotProvided": false,
+            "description": "",
+            "descriptionNotProvided": false,
             "destinationNotProvided": false,
             "domesticCityLocations": Array [
               "Cork",
@@ -805,7 +848,7 @@ VueWrapper {
             "emailNotProvided": false,
             "errorMessage": "There was an error adding this event, not successfully created.",
             "eventService": EventService {
-              "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
+              "baseUrl": "http://localhost:3000/api/v1",
             },
             "eventType": null,
             "eventTypeChange": [Function],
@@ -819,6 +862,7 @@ VueWrapper {
             "hideErrorMessage": [Function],
             "individualEvent": undefined,
             "invalidEventCreation": false,
+            "jwt": undefined,
             "location": "",
             "populateFormInfo": [Function],
             "removeIndividualUserEmail": [Function],
@@ -834,6 +878,7 @@ VueWrapper {
           "render": [Function],
           "renderCache": Array [
             undefined,
+            [Function],
             [Function],
             [Function],
             [Function],
@@ -863,8 +908,23 @@ VueWrapper {
               },
               ReactiveEffect {
                 "active": true,
+                "deps": Array [],
+                "fn": [Function],
+                "scheduler": [Function],
+              },
+              ReactiveEffect {
+                "active": true,
                 "allowRecurse": true,
                 "deps": Array [
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
+                  Set {
+                    [Circular],
+                  },
                   Set {
                     [Circular],
                   },
@@ -1120,8 +1180,11 @@ VueWrapper {
                             },
                           },
                           "addUserEmail": [Function],
+                          "buttonTitle": "Add Event",
                           "departureCity": "",
                           "departureNotProvided": false,
+                          "description": "",
+                          "descriptionNotProvided": false,
                           "destinationNotProvided": false,
                           "domesticCityLocations": Array [
                             "Cork",
@@ -1137,7 +1200,7 @@ VueWrapper {
                           "emailNotProvided": false,
                           "errorMessage": "There was an error adding this event, not successfully created.",
                           "eventService": EventService {
-                            "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
+                            "baseUrl": "http://localhost:3000/api/v1",
                           },
                           "eventType": null,
                           "eventTypeChange": [Function],
@@ -1151,6 +1214,7 @@ VueWrapper {
                           "hideErrorMessage": [Function],
                           "individualEvent": undefined,
                           "invalidEventCreation": false,
+                          "jwt": undefined,
                           "location": "",
                           "populateFormInfo": [Function],
                           "removeIndividualUserEmail": [Function],
@@ -1274,6 +1338,229 @@ VueWrapper {
                     "__v_skip": true,
                     "anchor": null,
                     "appContext": null,
+                    "children": "Description",
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <label
+                      for="description"
+                    >
+                      Description
+                    </label>,
+                    "key": null,
+                    "patchFlag": -1,
+                    "props": Object {
+                      "for": "description",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 9,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "label",
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": null,
+                    "component": null,
+                    "dirs": Array [
+                      Object {
+                        "arg": undefined,
+                        "dir": Object {
+                          "beforeUpdate": [Function],
+                          "created": [Function],
+                          "mounted": [Function],
+                        },
+                        "instance": Object {
+                          "$route": Object {
+                            "params": Object {
+                              "id": 1,
+                            },
+                          },
+                          "$router": Object {
+                            "go": [MockFunction],
+                            "push": [MockFunction],
+                          },
+                          "$store": Object {
+                            "dispatch": [MockFunction],
+                            "getters": Object {
+                              "isAuthenticated": [Function],
+                              "userId": [Function],
+                            },
+                            "state": Object {
+                              "jwtToken": "token",
+                              "userId": 1,
+                            },
+                          },
+                          "addUserEmail": [Function],
+                          "buttonTitle": "Add Event",
+                          "departureCity": "",
+                          "departureNotProvided": false,
+                          "description": "",
+                          "descriptionNotProvided": false,
+                          "destinationNotProvided": false,
+                          "domesticCityLocations": Array [
+                            "Cork",
+                            "Dublin",
+                            "Galway",
+                            "Kilkenny",
+                            "Limerick",
+                            "Waterford",
+                          ],
+                          "edit": false,
+                          "editEventAction": false,
+                          "editEventInfo": undefined,
+                          "emailNotProvided": false,
+                          "errorMessage": "There was an error adding this event, not successfully created.",
+                          "eventService": EventService {
+                            "baseUrl": "http://localhost:3000/api/v1",
+                          },
+                          "eventType": null,
+                          "eventTypeChange": [Function],
+                          "foreignCityLocations": Array [
+                            "London",
+                            "Manchester",
+                          ],
+                          "foreignTrip": false,
+                          "formTitle": "Create Event",
+                          "hasOwnProperty": [Function],
+                          "hideErrorMessage": [Function],
+                          "individualEvent": undefined,
+                          "invalidEventCreation": false,
+                          "jwt": undefined,
+                          "location": "",
+                          "populateFormInfo": [Function],
+                          "removeIndividualUserEmail": [Function],
+                          "submitForm": [Function],
+                          "title": "",
+                          "titleNotProvided": false,
+                          "typeNotProvided": false,
+                          "userEmail": "",
+                          "userEmails": Array [],
+                          "userId": [Function],
+                        },
+                        "modifiers": Object {},
+                        "oldValue": undefined,
+                        "value": "",
+                      },
+                    ],
+                    "dynamicChildren": null,
+                    "dynamicProps": null,
+                    "el": <input
+                      id="description"
+                      name="title"
+                      placeholder="Enter event description"
+                      type="text"
+                    />,
+                    "key": null,
+                    "patchFlag": 512,
+                    "props": Object {
+                      "id": "description",
+                      "name": "title",
+                      "onUpdate:modelValue": [Function],
+                      "placeholder": "Enter event description",
+                      "type": "text",
+                    },
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 1,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": "input",
+                  },
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
+                    "children": "v-if",
+                    "component": null,
+                    "dirs": null,
+                    "dynamicChildren": Array [],
+                    "dynamicProps": null,
+                    "el": <!--v-if-->,
+                    "key": null,
+                    "patchFlag": 0,
+                    "props": null,
+                    "ref": null,
+                    "scopeId": null,
+                    "shapeFlag": 8,
+                    "slotScopeIds": null,
+                    "ssContent": null,
+                    "ssFallback": null,
+                    "staticCount": 0,
+                    "suspense": null,
+                    "target": null,
+                    "targetAnchor": null,
+                    "transition": null,
+                    "type": Symbol(Comment),
+                  },
+                ],
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": null,
+                "dynamicProps": null,
+                "el": <div
+                  class="form-control"
+                >
+                  <label
+                    for="description"
+                  >
+                    Description
+                  </label>
+                  <input
+                    id="description"
+                    name="title"
+                    placeholder="Enter event description"
+                    type="text"
+                  />
+                  <!--v-if-->
+                </div>,
+                "key": null,
+                "patchFlag": 0,
+                "props": Object {
+                  "class": "form-control",
+                },
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 17,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": "div",
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": Array [
+                  Object {
+                    "__v_isVNode": true,
+                    "__v_skip": true,
+                    "anchor": null,
+                    "appContext": null,
                     "children": "Event Type",
                     "component": null,
                     "dirs": null,
@@ -1340,8 +1627,11 @@ VueWrapper {
                                 },
                               },
                               "addUserEmail": [Function],
+                              "buttonTitle": "Add Event",
                               "departureCity": "",
                               "departureNotProvided": false,
+                              "description": "",
+                              "descriptionNotProvided": false,
                               "destinationNotProvided": false,
                               "domesticCityLocations": Array [
                                 "Cork",
@@ -1357,7 +1647,7 @@ VueWrapper {
                               "emailNotProvided": false,
                               "errorMessage": "There was an error adding this event, not successfully created.",
                               "eventService": EventService {
-                                "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
+                                "baseUrl": "http://localhost:3000/api/v1",
                               },
                               "eventType": null,
                               "eventTypeChange": [Function],
@@ -1371,6 +1661,7 @@ VueWrapper {
                               "hideErrorMessage": [Function],
                               "individualEvent": undefined,
                               "invalidEventCreation": false,
+                              "jwt": undefined,
                               "location": "",
                               "populateFormInfo": [Function],
                               "removeIndividualUserEmail": [Function],
@@ -1534,8 +1825,11 @@ VueWrapper {
                                 },
                               },
                               "addUserEmail": [Function],
+                              "buttonTitle": "Add Event",
                               "departureCity": "",
                               "departureNotProvided": false,
+                              "description": "",
+                              "descriptionNotProvided": false,
                               "destinationNotProvided": false,
                               "domesticCityLocations": Array [
                                 "Cork",
@@ -1551,7 +1845,7 @@ VueWrapper {
                               "emailNotProvided": false,
                               "errorMessage": "There was an error adding this event, not successfully created.",
                               "eventService": EventService {
-                                "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
+                                "baseUrl": "http://localhost:3000/api/v1",
                               },
                               "eventType": null,
                               "eventTypeChange": [Function],
@@ -1565,6 +1859,7 @@ VueWrapper {
                               "hideErrorMessage": [Function],
                               "individualEvent": undefined,
                               "invalidEventCreation": false,
+                              "jwt": undefined,
                               "location": "",
                               "populateFormInfo": [Function],
                               "removeIndividualUserEmail": [Function],
@@ -1728,8 +2023,11 @@ VueWrapper {
                                 },
                               },
                               "addUserEmail": [Function],
+                              "buttonTitle": "Add Event",
                               "departureCity": "",
                               "departureNotProvided": false,
+                              "description": "",
+                              "descriptionNotProvided": false,
                               "destinationNotProvided": false,
                               "domesticCityLocations": Array [
                                 "Cork",
@@ -1745,7 +2043,7 @@ VueWrapper {
                               "emailNotProvided": false,
                               "errorMessage": "There was an error adding this event, not successfully created.",
                               "eventService": EventService {
-                                "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
+                                "baseUrl": "http://localhost:3000/api/v1",
                               },
                               "eventType": null,
                               "eventTypeChange": [Function],
@@ -1759,6 +2057,7 @@ VueWrapper {
                               "hideErrorMessage": [Function],
                               "individualEvent": undefined,
                               "invalidEventCreation": false,
+                              "jwt": undefined,
                               "location": "",
                               "populateFormInfo": [Function],
                               "removeIndividualUserEmail": [Function],
@@ -2343,8 +2642,11 @@ VueWrapper {
                             },
                           },
                           "addUserEmail": [Function],
+                          "buttonTitle": "Add Event",
                           "departureCity": "",
                           "departureNotProvided": false,
+                          "description": "",
+                          "descriptionNotProvided": false,
                           "destinationNotProvided": false,
                           "domesticCityLocations": Array [
                             "Cork",
@@ -2360,7 +2662,7 @@ VueWrapper {
                           "emailNotProvided": false,
                           "errorMessage": "There was an error adding this event, not successfully created.",
                           "eventService": EventService {
-                            "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
+                            "baseUrl": "http://localhost:3000/api/v1",
                           },
                           "eventType": null,
                           "eventTypeChange": [Function],
@@ -2374,6 +2676,7 @@ VueWrapper {
                           "hideErrorMessage": [Function],
                           "individualEvent": undefined,
                           "invalidEventCreation": false,
+                          "jwt": undefined,
                           "location": "",
                           "populateFormInfo": [Function],
                           "removeIndividualUserEmail": [Function],
@@ -2975,8 +3278,11 @@ VueWrapper {
                             },
                           },
                           "addUserEmail": [Function],
+                          "buttonTitle": "Add Event",
                           "departureCity": "",
                           "departureNotProvided": false,
+                          "description": "",
+                          "descriptionNotProvided": false,
                           "destinationNotProvided": false,
                           "domesticCityLocations": Array [
                             "Cork",
@@ -2992,7 +3298,7 @@ VueWrapper {
                           "emailNotProvided": false,
                           "errorMessage": "There was an error adding this event, not successfully created.",
                           "eventService": EventService {
-                            "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
+                            "baseUrl": "http://localhost:3000/api/v1",
                           },
                           "eventType": null,
                           "eventTypeChange": [Function],
@@ -3006,6 +3312,7 @@ VueWrapper {
                           "hideErrorMessage": [Function],
                           "individualEvent": undefined,
                           "invalidEventCreation": false,
+                          "jwt": undefined,
                           "location": "",
                           "populateFormInfo": [Function],
                           "removeIndividualUserEmail": [Function],
@@ -3238,8 +3545,11 @@ VueWrapper {
                             },
                           },
                           "addUserEmail": [Function],
+                          "buttonTitle": "Add Event",
                           "departureCity": "",
                           "departureNotProvided": false,
+                          "description": "",
+                          "descriptionNotProvided": false,
                           "destinationNotProvided": false,
                           "domesticCityLocations": Array [
                             "Cork",
@@ -3255,7 +3565,7 @@ VueWrapper {
                           "emailNotProvided": false,
                           "errorMessage": "There was an error adding this event, not successfully created.",
                           "eventService": EventService {
-                            "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
+                            "baseUrl": "http://localhost:3000/api/v1",
                           },
                           "eventType": null,
                           "eventTypeChange": [Function],
@@ -3269,6 +3579,7 @@ VueWrapper {
                           "hideErrorMessage": [Function],
                           "individualEvent": undefined,
                           "invalidEventCreation": false,
+                          "jwt": undefined,
                           "location": "",
                           "populateFormInfo": [Function],
                           "removeIndividualUserEmail": [Function],
@@ -3500,7 +3811,7 @@ VueWrapper {
                       Add Event
                     </button>,
                     "key": null,
-                    "patchFlag": 0,
+                    "patchFlag": 1,
                     "props": null,
                     "ref": null,
                     "scopeId": null,
@@ -3528,7 +3839,7 @@ VueWrapper {
                   </button>
                 </div>,
                 "key": null,
-                "patchFlag": -1,
+                "patchFlag": 0,
                 "props": Object {
                   "class": "form-control button-container",
                 },
@@ -3753,7 +4064,7 @@ VueWrapper {
                     "dirs": null,
                     "dynamicChildren": null,
                     "dynamicProps": null,
-                    "el": <account-error-message-stub
+                    "el": <response-error-message-stub
                       errormessage="There was an error adding this event, not successfully created."
                       toggle="false"
                     />,
@@ -3775,7 +4086,7 @@ VueWrapper {
                     "target": null,
                     "targetAnchor": null,
                     "transition": null,
-                    "type": "account-error-message-stub",
+                    "type": "response-error-message-stub",
                   },
                   "suspense": null,
                   "suspenseId": 0,
@@ -3784,7 +4095,7 @@ VueWrapper {
                       "MODE": 3,
                       "RENDER_FUNCTION": false,
                     },
-                    "name": "AccountErrorMessage",
+                    "name": "ResponseErrorMessage",
                     "props": Object {
                       "errorMessage": Object {
                         "0": false,
@@ -3813,7 +4124,7 @@ VueWrapper {
                   "errorMessage",
                   "onHideErrorMessage",
                 ],
-                "el": <account-error-message-stub
+                "el": <response-error-message-stub
                   errormessage="There was an error adding this event, not successfully created."
                   toggle="false"
                 />,
@@ -3840,7 +4151,7 @@ VueWrapper {
                     "MODE": 3,
                     "RENDER_FUNCTION": false,
                   },
-                  "name": "AccountErrorMessage",
+                  "name": "ResponseErrorMessage",
                   "props": Object {
                     "errorMessage": Object {
                       "0": false,
@@ -3953,8 +4264,11 @@ VueWrapper {
                         },
                       },
                       "addUserEmail": [Function],
+                      "buttonTitle": "Add Event",
                       "departureCity": "",
                       "departureNotProvided": false,
+                      "description": "",
+                      "descriptionNotProvided": false,
                       "destinationNotProvided": false,
                       "domesticCityLocations": Array [
                         "Cork",
@@ -3970,7 +4284,7 @@ VueWrapper {
                       "emailNotProvided": false,
                       "errorMessage": "There was an error adding this event, not successfully created.",
                       "eventService": EventService {
-                        "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
+                        "baseUrl": "http://localhost:3000/api/v1",
                       },
                       "eventType": null,
                       "eventTypeChange": [Function],
@@ -3984,6 +4298,7 @@ VueWrapper {
                       "hideErrorMessage": [Function],
                       "individualEvent": undefined,
                       "invalidEventCreation": false,
+                      "jwt": undefined,
                       "location": "",
                       "populateFormInfo": [Function],
                       "removeIndividualUserEmail": [Function],
@@ -4070,6 +4385,7 @@ VueWrapper {
                     "dir": Object {
                       "beforeUpdate": [Function],
                       "created": [Function],
+                      "mounted": [Function],
                     },
                     "instance": Object {
                       "$route": Object {
@@ -4093,8 +4409,11 @@ VueWrapper {
                         },
                       },
                       "addUserEmail": [Function],
+                      "buttonTitle": "Add Event",
                       "departureCity": "",
                       "departureNotProvided": false,
+                      "description": "",
+                      "descriptionNotProvided": false,
                       "destinationNotProvided": false,
                       "domesticCityLocations": Array [
                         "Cork",
@@ -4110,7 +4429,7 @@ VueWrapper {
                       "emailNotProvided": false,
                       "errorMessage": "There was an error adding this event, not successfully created.",
                       "eventService": EventService {
-                        "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
+                        "baseUrl": "http://localhost:3000/api/v1",
                       },
                       "eventType": null,
                       "eventTypeChange": [Function],
@@ -4124,6 +4443,151 @@ VueWrapper {
                       "hideErrorMessage": [Function],
                       "individualEvent": undefined,
                       "invalidEventCreation": false,
+                      "jwt": undefined,
+                      "location": "",
+                      "populateFormInfo": [Function],
+                      "removeIndividualUserEmail": [Function],
+                      "submitForm": [Function],
+                      "title": "",
+                      "titleNotProvided": false,
+                      "typeNotProvided": false,
+                      "userEmail": "",
+                      "userEmails": Array [],
+                      "userId": [Function],
+                    },
+                    "modifiers": Object {},
+                    "oldValue": undefined,
+                    "value": "",
+                  },
+                ],
+                "dynamicChildren": null,
+                "dynamicProps": null,
+                "el": <input
+                  id="description"
+                  name="title"
+                  placeholder="Enter event description"
+                  type="text"
+                />,
+                "key": null,
+                "patchFlag": 512,
+                "props": Object {
+                  "id": "description",
+                  "name": "title",
+                  "onUpdate:modelValue": [Function],
+                  "placeholder": "Enter event description",
+                  "type": "text",
+                },
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 1,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": "input",
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": "v-if",
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": Array [],
+                "dynamicProps": null,
+                "el": <!--v-if-->,
+                "key": null,
+                "patchFlag": 0,
+                "props": null,
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 8,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": Symbol(Comment),
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": null,
+                "component": null,
+                "dirs": Array [
+                  Object {
+                    "arg": undefined,
+                    "dir": Object {
+                      "beforeUpdate": [Function],
+                      "created": [Function],
+                    },
+                    "instance": Object {
+                      "$route": Object {
+                        "params": Object {
+                          "id": 1,
+                        },
+                      },
+                      "$router": Object {
+                        "go": [MockFunction],
+                        "push": [MockFunction],
+                      },
+                      "$store": Object {
+                        "dispatch": [MockFunction],
+                        "getters": Object {
+                          "isAuthenticated": [Function],
+                          "userId": [Function],
+                        },
+                        "state": Object {
+                          "jwtToken": "token",
+                          "userId": 1,
+                        },
+                      },
+                      "addUserEmail": [Function],
+                      "buttonTitle": "Add Event",
+                      "departureCity": "",
+                      "departureNotProvided": false,
+                      "description": "",
+                      "descriptionNotProvided": false,
+                      "destinationNotProvided": false,
+                      "domesticCityLocations": Array [
+                        "Cork",
+                        "Dublin",
+                        "Galway",
+                        "Kilkenny",
+                        "Limerick",
+                        "Waterford",
+                      ],
+                      "edit": false,
+                      "editEventAction": false,
+                      "editEventInfo": undefined,
+                      "emailNotProvided": false,
+                      "errorMessage": "There was an error adding this event, not successfully created.",
+                      "eventService": EventService {
+                        "baseUrl": "http://localhost:3000/api/v1",
+                      },
+                      "eventType": null,
+                      "eventTypeChange": [Function],
+                      "foreignCityLocations": Array [
+                        "London",
+                        "Manchester",
+                      ],
+                      "foreignTrip": false,
+                      "formTitle": "Create Event",
+                      "hasOwnProperty": [Function],
+                      "hideErrorMessage": [Function],
+                      "individualEvent": undefined,
+                      "invalidEventCreation": false,
+                      "jwt": undefined,
                       "location": "",
                       "populateFormInfo": [Function],
                       "removeIndividualUserEmail": [Function],
@@ -4207,8 +4671,11 @@ VueWrapper {
                         },
                       },
                       "addUserEmail": [Function],
+                      "buttonTitle": "Add Event",
                       "departureCity": "",
                       "departureNotProvided": false,
+                      "description": "",
+                      "descriptionNotProvided": false,
                       "destinationNotProvided": false,
                       "domesticCityLocations": Array [
                         "Cork",
@@ -4224,7 +4691,7 @@ VueWrapper {
                       "emailNotProvided": false,
                       "errorMessage": "There was an error adding this event, not successfully created.",
                       "eventService": EventService {
-                        "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
+                        "baseUrl": "http://localhost:3000/api/v1",
                       },
                       "eventType": null,
                       "eventTypeChange": [Function],
@@ -4238,6 +4705,7 @@ VueWrapper {
                       "hideErrorMessage": [Function],
                       "individualEvent": undefined,
                       "invalidEventCreation": false,
+                      "jwt": undefined,
                       "location": "",
                       "populateFormInfo": [Function],
                       "removeIndividualUserEmail": [Function],
@@ -4321,8 +4789,11 @@ VueWrapper {
                         },
                       },
                       "addUserEmail": [Function],
+                      "buttonTitle": "Add Event",
                       "departureCity": "",
                       "departureNotProvided": false,
+                      "description": "",
+                      "descriptionNotProvided": false,
                       "destinationNotProvided": false,
                       "domesticCityLocations": Array [
                         "Cork",
@@ -4338,7 +4809,7 @@ VueWrapper {
                       "emailNotProvided": false,
                       "errorMessage": "There was an error adding this event, not successfully created.",
                       "eventService": EventService {
-                        "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
+                        "baseUrl": "http://localhost:3000/api/v1",
                       },
                       "eventType": null,
                       "eventTypeChange": [Function],
@@ -4352,6 +4823,7 @@ VueWrapper {
                       "hideErrorMessage": [Function],
                       "individualEvent": undefined,
                       "invalidEventCreation": false,
+                      "jwt": undefined,
                       "location": "",
                       "populateFormInfo": [Function],
                       "removeIndividualUserEmail": [Function],
@@ -4783,8 +5255,11 @@ VueWrapper {
                             },
                           },
                           "addUserEmail": [Function],
+                          "buttonTitle": "Add Event",
                           "departureCity": "",
                           "departureNotProvided": false,
+                          "description": "",
+                          "descriptionNotProvided": false,
                           "destinationNotProvided": false,
                           "domesticCityLocations": Array [
                             "Cork",
@@ -4800,7 +5275,7 @@ VueWrapper {
                           "emailNotProvided": false,
                           "errorMessage": "There was an error adding this event, not successfully created.",
                           "eventService": EventService {
-                            "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
+                            "baseUrl": "http://localhost:3000/api/v1",
                           },
                           "eventType": null,
                           "eventTypeChange": [Function],
@@ -4814,6 +5289,7 @@ VueWrapper {
                           "hideErrorMessage": [Function],
                           "individualEvent": undefined,
                           "invalidEventCreation": false,
+                          "jwt": undefined,
                           "location": "",
                           "populateFormInfo": [Function],
                           "removeIndividualUserEmail": [Function],
@@ -5415,8 +5891,11 @@ VueWrapper {
                             },
                           },
                           "addUserEmail": [Function],
+                          "buttonTitle": "Add Event",
                           "departureCity": "",
                           "departureNotProvided": false,
+                          "description": "",
+                          "descriptionNotProvided": false,
                           "destinationNotProvided": false,
                           "domesticCityLocations": Array [
                             "Cork",
@@ -5432,7 +5911,7 @@ VueWrapper {
                           "emailNotProvided": false,
                           "errorMessage": "There was an error adding this event, not successfully created.",
                           "eventService": EventService {
-                            "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
+                            "baseUrl": "http://localhost:3000/api/v1",
                           },
                           "eventType": null,
                           "eventTypeChange": [Function],
@@ -5446,6 +5925,7 @@ VueWrapper {
                           "hideErrorMessage": [Function],
                           "individualEvent": undefined,
                           "invalidEventCreation": false,
+                          "jwt": undefined,
                           "location": "",
                           "populateFormInfo": [Function],
                           "removeIndividualUserEmail": [Function],
@@ -5639,8 +6119,11 @@ VueWrapper {
                         },
                       },
                       "addUserEmail": [Function],
+                      "buttonTitle": "Add Event",
                       "departureCity": "",
                       "departureNotProvided": false,
+                      "description": "",
+                      "descriptionNotProvided": false,
                       "destinationNotProvided": false,
                       "domesticCityLocations": Array [
                         "Cork",
@@ -5656,7 +6139,7 @@ VueWrapper {
                       "emailNotProvided": false,
                       "errorMessage": "There was an error adding this event, not successfully created.",
                       "eventService": EventService {
-                        "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
+                        "baseUrl": "http://localhost:3000/api/v1",
                       },
                       "eventType": null,
                       "eventTypeChange": [Function],
@@ -5670,6 +6153,7 @@ VueWrapper {
                       "hideErrorMessage": [Function],
                       "individualEvent": undefined,
                       "invalidEventCreation": false,
+                      "jwt": undefined,
                       "location": "",
                       "populateFormInfo": [Function],
                       "removeIndividualUserEmail": [Function],
@@ -5769,6 +6253,35 @@ VueWrapper {
                 "targetAnchor": null,
                 "transition": null,
                 "type": Symbol(Comment),
+              },
+              Object {
+                "__v_isVNode": true,
+                "__v_skip": true,
+                "anchor": null,
+                "appContext": null,
+                "children": "Add Event",
+                "component": null,
+                "dirs": null,
+                "dynamicChildren": null,
+                "dynamicProps": null,
+                "el": <button>
+                  Add Event
+                </button>,
+                "key": null,
+                "patchFlag": 1,
+                "props": null,
+                "ref": null,
+                "scopeId": null,
+                "shapeFlag": 9,
+                "slotScopeIds": null,
+                "ssContent": null,
+                "ssFallback": null,
+                "staticCount": 0,
+                "suspense": null,
+                "target": null,
+                "targetAnchor": null,
+                "transition": null,
+                "type": "button",
               },
               Object {
                 "__v_isVNode": true,
@@ -5991,7 +6504,7 @@ VueWrapper {
                     "dirs": null,
                     "dynamicChildren": null,
                     "dynamicProps": null,
-                    "el": <account-error-message-stub
+                    "el": <response-error-message-stub
                       errormessage="There was an error adding this event, not successfully created."
                       toggle="false"
                     />,
@@ -6013,7 +6526,7 @@ VueWrapper {
                     "target": null,
                     "targetAnchor": null,
                     "transition": null,
-                    "type": "account-error-message-stub",
+                    "type": "response-error-message-stub",
                   },
                   "suspense": null,
                   "suspenseId": 0,
@@ -6022,7 +6535,7 @@ VueWrapper {
                       "MODE": 3,
                       "RENDER_FUNCTION": false,
                     },
-                    "name": "AccountErrorMessage",
+                    "name": "ResponseErrorMessage",
                     "props": Object {
                       "errorMessage": Object {
                         "0": false,
@@ -6051,7 +6564,7 @@ VueWrapper {
                   "errorMessage",
                   "onHideErrorMessage",
                 ],
-                "el": <account-error-message-stub
+                "el": <response-error-message-stub
                   errormessage="There was an error adding this event, not successfully created."
                   toggle="false"
                 />,
@@ -6078,7 +6591,7 @@ VueWrapper {
                     "MODE": 3,
                     "RENDER_FUNCTION": false,
                   },
-                  "name": "AccountErrorMessage",
+                  "name": "ResponseErrorMessage",
                   "props": Object {
                     "errorMessage": Object {
                       "0": false,
@@ -6117,6 +6630,22 @@ VueWrapper {
                   id="title"
                   name="title"
                   placeholder="Enter event title"
+                  type="text"
+                />
+                <!--v-if-->
+              </div>
+              <div
+                class="form-control"
+              >
+                <label
+                  for="description"
+                >
+                  Description
+                </label>
+                <input
+                  id="description"
+                  name="title"
+                  placeholder="Enter event description"
                   type="text"
                 />
                 <!--v-if-->
@@ -6252,7 +6781,7 @@ VueWrapper {
                   Add Event
                 </button>
               </div>
-              <account-error-message-stub
+              <response-error-message-stub
                 errormessage="There was an error adding this event, not successfully created."
                 toggle="false"
               />
@@ -6279,7 +6808,14 @@ VueWrapper {
           "suspenseId": 0,
           "type": Object {
             "components": Object {
-              "AccountErrorMessage": Object {
+              "EventFormUserEmailDisplay": Object {
+                "data": [Function],
+                "props": Array [
+                  "email",
+                ],
+                "render": [Function],
+              },
+              "ResponseErrorMessage": Object {
                 "data": [Function],
                 "methods": Object {
                   "hideErrorMessage": [Function],
@@ -6298,15 +6834,9 @@ VueWrapper {
                 },
                 "render": [Function],
               },
-              "EventFormUserEmailDisplay": Object {
-                "data": [Function],
-                "props": Array [
-                  "email",
-                ],
-                "render": [Function],
-              },
             },
             "computed": Object {
+              "jwt": [Function],
               "userId": [Function],
             },
             "created": [Function],
@@ -6325,7 +6855,7 @@ VueWrapper {
                 "0": false,
                 "1": true,
                 "default": EventService {
-                  "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
+                  "baseUrl": "http://localhost:3000/api/v1",
                 },
               },
               "individualEvent": [Function],
@@ -6363,6 +6893,22 @@ VueWrapper {
               id="title"
               name="title"
               placeholder="Enter event title"
+              type="text"
+            />
+            <!--v-if-->
+          </div>
+          <div
+            class="form-control"
+          >
+            <label
+              for="description"
+            >
+              Description
+            </label>
+            <input
+              id="description"
+              name="title"
+              placeholder="Enter event description"
               type="text"
             />
             <!--v-if-->
@@ -6498,7 +7044,7 @@ VueWrapper {
               Add Event
             </button>
           </div>
-          <account-error-message-stub
+          <response-error-message-stub
             errormessage="There was an error adding this event, not successfully created."
             toggle="false"
           />
@@ -6526,7 +7072,14 @@ VueWrapper {
         "transition": null,
         "type": Object {
           "components": Object {
-            "AccountErrorMessage": Object {
+            "EventFormUserEmailDisplay": Object {
+              "data": [Function],
+              "props": Array [
+                "email",
+              ],
+              "render": [Function],
+            },
+            "ResponseErrorMessage": Object {
               "data": [Function],
               "methods": Object {
                 "hideErrorMessage": [Function],
@@ -6545,15 +7098,9 @@ VueWrapper {
               },
               "render": [Function],
             },
-            "EventFormUserEmailDisplay": Object {
-              "data": [Function],
-              "props": Array [
-                "email",
-              ],
-              "render": [Function],
-            },
           },
           "computed": Object {
+            "jwt": [Function],
             "userId": [Function],
           },
           "created": [Function],
@@ -6572,7 +7119,7 @@ VueWrapper {
               "0": false,
               "1": true,
               "default": EventService {
-                "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
+                "baseUrl": "http://localhost:3000/api/v1",
               },
             },
             "individualEvent": [Function],
@@ -6658,6 +7205,22 @@ VueWrapper {
           <div
             class="form-control"
           >
+            <label
+              for="description"
+            >
+              Description
+            </label>
+            <input
+              id="description"
+              name="title"
+              placeholder="Enter event description"
+              type="text"
+            />
+            <!--v-if-->
+          </div>
+          <div
+            class="form-control"
+          >
             <h3>
               Event Type
             </h3>
@@ -6786,7 +7349,7 @@ VueWrapper {
               Add Event
             </button>
           </div>
-          <account-error-message-stub
+          <response-error-message-stub
             errormessage="There was an error adding this event, not successfully created."
             toggle="false"
           />
@@ -6855,8 +7418,11 @@ VueWrapper {
       },
     },
     "addUserEmail": [Function],
+    "buttonTitle": "Add Event",
     "departureCity": "",
     "departureNotProvided": false,
+    "description": "",
+    "descriptionNotProvided": false,
     "destinationNotProvided": false,
     "domesticCityLocations": Array [
       "Cork",
@@ -6872,7 +7438,7 @@ VueWrapper {
     "emailNotProvided": false,
     "errorMessage": "There was an error adding this event, not successfully created.",
     "eventService": EventService {
-      "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
+      "baseUrl": "http://localhost:3000/api/v1",
     },
     "eventType": null,
     "eventTypeChange": [Function],
@@ -6886,6 +7452,7 @@ VueWrapper {
     "hideErrorMessage": [Function],
     "individualEvent": undefined,
     "invalidEventCreation": false,
+    "jwt": undefined,
     "location": "",
     "populateFormInfo": [Function],
     "removeIndividualUserEmail": [Function],
@@ -6941,6 +7508,22 @@ VueWrapper {
         id="title"
         name="title"
         placeholder="Enter event title"
+        type="text"
+      />
+      <!--v-if-->
+    </div>
+    <div
+      class="form-control"
+    >
+      <label
+        for="description"
+      >
+        Description
+      </label>
+      <input
+        id="description"
+        name="title"
+        placeholder="Enter event description"
         type="text"
       />
       <!--v-if-->
@@ -7076,7 +7659,7 @@ VueWrapper {
         Add Event
       </button>
     </div>
-    <account-error-message-stub
+    <response-error-message-stub
       errormessage="There was an error adding this event, not successfully created."
       toggle="false"
     />

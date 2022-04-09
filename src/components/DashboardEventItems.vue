@@ -35,9 +35,23 @@
 
       <div class="event-information-container">
         <h3 data-testid="eventTitle">{{ item.title }}</h3>
-        <p>More info about group trip here...description</p>
+        <p data-testid="eventDescription">
+          {{ transformEventDescription(item.description) }}
+        </p>
         <p style="display: none">{{ item.id }}</p>
-        <span data-testid="eventType">{{ item.type }}</span>
+        <span
+          v-if="item.type === 'DOMESTIC_DAY'"
+          data-testid="domesticDayEventType"
+          >One-Day Event in Ireland</span
+        >
+        <span
+          v-else-if="item.type === 'DOMESTIC_OVERNIGHT'"
+          data-testid="domesticOvernightEventType"
+          >Overnight Event in Ireland</span
+        >
+        <span v-else data-testid="foreignOvernightEventType"
+          >Overnight Event Abroad</span
+        >
         <div class="event-user-actions-parent-container">
           <span v-if="showAllEventActions"
             ><router-link
@@ -57,7 +71,7 @@
           <span
             data-testid="deleteEvent"
             v-if="showAllEventActions"
-            @click.prevent="showDeleteModal"
+            @click.prevent="showDeleteModal(item)"
           >
             <i class="fas fa-times-circle"></i
           ></span>
@@ -85,6 +99,7 @@
 </template>
 
 <script>
+import StringUtils from "../utils/stringUtils";
 export default {
   props: {
     events: Array,
@@ -102,8 +117,11 @@ export default {
     };
   },
   methods: {
-    showDeleteModal(event) {
-      this.$emit("showDeleteModal", event);
+    showDeleteModal(item) {
+      this.$emit("showDeleteModal", item);
+    },
+    transformEventDescription(string) {
+      return StringUtils.returnSubString(string);
     },
   },
 };
@@ -112,7 +130,7 @@ export default {
 <style scoped lang="scss">
 .individual-event-container {
   width: 30%;
-  height: 28vh;
+  height: 25vh;
   display: inline-block;
   margin: 1rem 1.2rem;
   border-radius: 5px;
@@ -155,6 +173,11 @@ export default {
       margin: 0.8rem auto;
       color: #647196;
       font-size: 1rem;
+      height: 20%;
+
+      @include for-phone-only {
+        height: 30%;
+      }
     }
     span {
       padding: 0.4rem;

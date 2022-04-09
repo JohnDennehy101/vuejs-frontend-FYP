@@ -98,7 +98,7 @@ describe("DeleteModal.vue", () => {
     });
 
     await wrapper.find("#modal-delete-button").trigger("click");
-
+    expect(mockStore.dispatch).toHaveBeenCalledTimes(1)
     expect(mockRouter.go).toHaveBeenCalledTimes(1);
   });
 

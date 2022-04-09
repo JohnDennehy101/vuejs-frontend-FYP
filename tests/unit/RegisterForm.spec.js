@@ -1,6 +1,6 @@
 import { mount, shallowMount } from "@vue/test-utils";
 import RegisterForm from "@/components/RegisterForm.vue";
-import AccountErrorMessage from "@/components/AccountErrorMessage";
+import ResponseErrorMessage from "@/components/ResponseErrorMessage";
 import mockSuccessfulUserService from "./mocks/userService.mock";
 import mockStore from "./mocks/mockStore.mock";
 import mockRouter from "./mocks/mockRouter.mock";
@@ -62,7 +62,7 @@ describe("RegisterForm.vue", () => {
     await wrapper.find("form").trigger("submit.prevent");
 
     expect(wrapper.emitted()).toHaveProperty("showToast");
-    expect(wrapper.findComponent(AccountErrorMessage).isVisible()).toBe(false);
+    expect(wrapper.findComponent(ResponseErrorMessage).isVisible()).toBe(false);
   });
 
   it("shows error message if invalid registration", async () => {
@@ -73,7 +73,7 @@ describe("RegisterForm.vue", () => {
         };
       },
     });
-    expect(wrapper.findComponent(AccountErrorMessage).isVisible()).toBe(true);
+    expect(wrapper.findComponent(ResponseErrorMessage).isVisible()).toBe(true);
   });
 
   it("error registering a user if external API call fails", async () => {
@@ -168,6 +168,6 @@ describe("RegisterForm.vue", () => {
       },
     });
     await wrapper.vm.hideErrorMessage();
-    expect(wrapper.findComponent(AccountErrorMessage).isVisible()).toBe(false);
+    expect(wrapper.findComponent(ResponseErrorMessage).isVisible()).toBe(false);
   });
 });

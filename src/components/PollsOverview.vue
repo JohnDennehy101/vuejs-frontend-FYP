@@ -89,7 +89,7 @@
       <span
         data-testid="deleteFunctionality"
         v-if="!invitedUser"
-        @click.prevent="showDeleteModal"
+        @click.prevent="showDeleteModal(poll)"
       >
         <i class="fas fa-trash-alt"></i
       ></span>
@@ -123,9 +123,8 @@ export default {
     formatDate(date) {
       return DateUtils.returnFormattedDate(date);
     },
-    showDeleteModal(event) {
-      console.log(event);
-      this.$emit("showDeleteModal", event);
+    showDeleteModal(item) {
+      this.$emit("showDeleteModal", item);
     },
   },
 };

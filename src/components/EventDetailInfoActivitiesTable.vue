@@ -28,6 +28,7 @@
             type="checkbox"
             data-testid="activityCheckbox"
             :value="value"
+            v-model="value.checked"
             @change="checkedThingToDoChange($event, value)"
           />
         </td>
@@ -38,6 +39,7 @@
         <td data-testid="ratingQuantity">{{ value.user_ratings_total }}</td>
         <td>
           <a
+            v-if="value.photos"
             data-testid="mapLink"
             :href="extractLink(value.photos[0].html_attributions[0])"
           >
@@ -56,11 +58,13 @@ export default {
   props: {
     activitiesInfo: Array,
     eventCity: String,
+    checkedThingsToDo: Array,
   },
   data() {
     return {
       googlePlacesInfo: this.activitiesInfo,
       city: this.eventCity,
+      selectedActivities: this.checkedThingsToDo,
     };
   },
   methods: {
@@ -74,6 +78,18 @@ export default {
       let extractedLink = StringUtils.extractGoogleMapLink(link);
       return extractedLink;
     },
+    classifyActivities() {
+      if (this.selectedActivities.length > 0) {
+        this.googlePlacesInfo.map((item) => {
+          this.selectedActivities.find((a) => a.name === item.name)
+            ? (item.checked = true)
+            : (item.checked = false);
+        });
+      }
+    },
+  },
+  async created() {
+    await this.classifyActivities();
   },
 };
 </script>

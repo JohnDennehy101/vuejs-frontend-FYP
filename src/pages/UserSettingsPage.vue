@@ -6,6 +6,7 @@
       :on-cancel="onCancel"
       :is-full-page="fullPage"
       :loader="loaderType"
+      :opacity="loaderOpacity"
       :color="loaderColour"
     />
     <transition name="toast">
@@ -46,6 +47,7 @@ export default {
       fullPage: false,
       loaderType: "dots",
       loaderColour: "#0384ff",
+      loaderOpacity: 1,
       displayToast: false,
       message: "User Image successfully updated.",
     };
@@ -59,14 +61,12 @@ export default {
   computed: {
     ...mapGetters({
       userId: "userId",
+      jwt: "jwt",
     }),
   },
   methods: {
     async getUserInfo() {
-      console.log(this.userId);
-      const response = await this.userService.getUser(this.userId);
-
-      console.log(response);
+      const response = await this.userService.getUser(this.userId, this.jwt);
 
       if ("error" in response) {
         this.invalidEventCreation = true;
@@ -75,7 +75,6 @@ export default {
       }
     },
     updateUserImage(value) {
-      console.log(value);
       if (value === false) {
         this.displayToast = true;
         setTimeout(() => (this.displayToast = false), 4000);
@@ -97,6 +96,15 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.vld-parent {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f2f2;
+}
 .toast-enter-active {
   animation: toast 0.5s ease;
 }

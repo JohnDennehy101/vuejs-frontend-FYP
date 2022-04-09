@@ -146,4 +146,34 @@ describe("EventDetailInfoActivitiesTable.vue", () => {
 
     expect(wrapper.find('[data-testid="icon"]').exists()).toBe(true);
   });
+
+  it("checks that event is emitted on click of checkbox", async () => {
+    const wrapper = mount(EventDetailInfoActivitiesTable, {
+      props: {
+        activitiesInfo: mockActivity,
+        checkedThingsToDo: [],
+        eventCity: "London",
+      },
+    });
+
+    const checkboxElement = wrapper.find('[data-testid="activityCheckbox"]');
+
+    checkboxElement.element.checked = true;
+
+    checkboxElement.trigger("change");
+
+    expect(wrapper.emitted()).toHaveProperty("checkedActivityChange");
+  });
+
+  it("if user has already saved an activity to itinerary, should be checked on subsequent renders", async () => {
+    const wrapper = mount(EventDetailInfoActivitiesTable, {
+      props: {
+        activitiesInfo: mockActivity,
+        checkedThingsToDo: mockActivity,
+        eventCity: "London",
+      },
+    });
+
+    expect(wrapper.vm.googlePlacesInfo[0].checked).toBe(true);
+  });
 });

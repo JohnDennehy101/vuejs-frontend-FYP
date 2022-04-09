@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AccountErrorMessage.vue should render correctly 1`] = `
+exports[`ResponseErrorMessage.vue should render correctly 1`] = `
 VueWrapper {
   "__app": Object {
     "_component": Object {

@@ -12,9 +12,13 @@ class EventService {
     }
   }
 
-  async createEvent(userId, payload) {
+  async createEvent(userId, payload, jwt) {
     const response = await axios
-      .post(`${this.baseUrl}/events/${userId}`, payload)
+      .post(`${this.baseUrl}/events/${userId}`, payload, {
+         headers: {
+          "Authorization": "Bearer " + jwt
+        }
+      })
       .catch((error) => {
         return { error };
       });
@@ -22,9 +26,13 @@ class EventService {
     return response;
   }
 
-  async updateEvent(eventId, payload) {
+  async updateEvent(eventId, payload, jwt) {
     const response = await axios
-      .patch(`${this.baseUrl}/events/${eventId}`, payload)
+      .patch(`${this.baseUrl}/events/${eventId}`, payload, {
+         headers: {
+          "Authorization": "Bearer " + jwt
+        }
+      })
       .catch((error) => {
         return { error };
       });
@@ -42,9 +50,13 @@ class EventService {
     return response;
   }
 
-  async getUserEvents(userId) {
+  async getUserEvents(userId, jwt) {
     const response = await axios
-      .get(this.baseUrl + "/events/user/" + userId)
+      .get(this.baseUrl + "/events/user/" + userId, {
+        headers: {
+          "Authorization": "Bearer " + jwt
+        }
+      })
       .catch((error) => {
         return { error };
       });
@@ -52,9 +64,13 @@ class EventService {
     return response;
   }
 
-  async getIndividualEvent(eventId) {
+  async getIndividualEvent(eventId, jwt) {
     const response = await axios
-      .get(this.baseUrl + "/events/" + eventId)
+      .get(this.baseUrl + "/events/" + eventId, {
+         headers: {
+          "Authorization": "Bearer " + jwt
+        }
+      })
       .catch((error) => {
         return { error };
       });
@@ -147,9 +163,13 @@ class EventService {
     return response;
   }
 
-  async getIndividualEventItinerary(eventId) {
+  async getIndividualEventItinerary(eventId, jwt) {
     const response = await axios
-      .get(`${this.baseUrl}/events/${eventId}/itinerary`)
+      .get(`${this.baseUrl}/events/${eventId}/itinerary`, {
+         headers: {
+          "Authorization": "Bearer " + jwt
+        }
+      })
       .catch((error) => {
         return { error };
       });
@@ -177,10 +197,14 @@ class EventService {
     return response;
   }
 
-  async getAccommodationInformation(eventId, startDate, endDate) {
+  async getAccommodationInformation(eventId, startDate, endDate, jwt) {
     const response = await axios
       .get(
-        `${this.baseUrl}/events/${eventId}/accommodation?startDate=${startDate}&endDate=${endDate}`
+        `${this.baseUrl}/events/${eventId}/accommodation?startDate=${startDate}&endDate=${endDate}`, {
+          headers: {
+          "Authorization": "Bearer " + jwt
+        }
+        }
       )
       .catch((error) => {
         return { error };
@@ -189,10 +213,14 @@ class EventService {
     return response;
   }
 
-  async getFlightInformation(eventId, startDate, endDate) {
+  async getFlightInformation(eventId, startDate, endDate, jwt) {
     const response = await axios
       .get(
-        `${this.baseUrl}/events/${eventId}/flights?startDate=${startDate}&endDate=${endDate}`
+        `${this.baseUrl}/events/${eventId}/flights?startDate=${startDate}&endDate=${endDate}`, {
+          headers: {
+          "Authorization": "Bearer " + jwt
+        }
+        }
       )
       .catch((error) => {
         return { error };
@@ -201,10 +229,14 @@ class EventService {
     return response;
   }
 
-  async getActivityInformation(eventId, latitude, longitude) {
+  async getActivityInformation(eventId, latitude, longitude, jwt) {
     const response = await axios
       .get(
-        `${this.baseUrl}/events/${eventId}/places?latitude=${latitude}&longitude=${longitude}`
+        `${this.baseUrl}/events/${eventId}/places?latitude=${latitude}&longitude=${longitude}`, {
+          headers: {
+          "Authorization": "Bearer " + jwt
+        } 
+        }
       )
       .catch((error) => {
         return { error };

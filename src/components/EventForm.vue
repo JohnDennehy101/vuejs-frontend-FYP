@@ -27,6 +27,19 @@
       </p>
     </div>
     <div class="form-control">
+      <label for="description">Description</label>
+      <input
+        id="description"
+        name="title"
+        type="text"
+        placeholder="Enter event description"
+        v-model="description"
+      />
+      <p class="error-message" v-if="descriptionNotProvided">
+        Please provide an event description
+      </p>
+    </div>
+    <div class="form-control">
       <h3>Event Type</h3>
 
       <div class="radio-parent-container">
@@ -137,10 +150,10 @@
       </ul>
     </div>
     <div class="form-control button-container">
-      <button>Add Event</button>
+      <button>{{ buttonTitle }}</button>
     </div>
 
-    <AccountErrorMessage
+    <ResponseErrorMessage
       :toggle="this.invalidEventCreation"
       :errorMessage="this.errorMessage"
       v-on:hideErrorMessage="hideErrorMessage"
@@ -149,7 +162,7 @@
 </template>
 
 <script>
-import AccountErrorMessage from "../components/AccountErrorMessage";
+import ResponseErrorMessage from "../components/ResponseErrorMessage";
 import EventFormUserEmailDisplay from "../components/EventFormUserEmailDisplay";
 import eventService from "../services/EventService";
 import { mapGetters } from "vuex";
@@ -191,11 +204,15 @@ export default {
       departureNotProvided: false,
       destinationNotProvided: false,
       emailNotProvided: false,
+      buttonTitle: "Add Event",
+      description: "",
+      descriptionNotProvided: false,
     };
   },
   computed: {
     ...mapGetters({
       userId: "userId",
+      jwt: "jwt",
     }),
   },
   methods: {
@@ -204,10 +221,12 @@ export default {
         if (
           this.title.length > 0 &&
           this.eventType !== null &&
-          this.location.length > 0
+          this.location.length > 0 &&
+          this.description.length > 0
         ) {
           const payload = {
             title: this.title,
+            description: this.description,
             type: this.eventType,
             userEmails: this.userEmails,
             city: this.location,
@@ -216,10 +235,15 @@ export default {
 
           const response = await this.eventService.updateEvent(
             this.editEventInfo.id,
-            payload
+            payload,
+            this.jwt
           );
 
           if (!("error" in response)) {
+            this.$store.dispatch("event/updateEvent", {
+              data: response.data,
+              id: this.editEventInfo.id,
+            });
             this.$router.push({ path: `/dashboard/${this.userId}` });
           } else {
             this.invalidEventCreation = true;
@@ -244,15 +268,22 @@ export default {
           } else {
             this.destinationNotProvided = false;
           }
+          if (this.description.length === 0) {
+            this.descriptionNotProvided = true;
+          } else {
+            this.descriptionNotProvided = false;
+          }
         }
       } else {
         if (
           this.title.length > 0 &&
+          this.description.length > 0 &&
           this.eventType !== null &&
           this.location.length > 0
         ) {
           const payload = {
             title: this.title,
+            description: this.description,
             type: this.eventType,
             userEmails: this.userEmails,
             city: this.location,
@@ -261,12 +292,12 @@ export default {
 
           const response = await this.eventService.createEvent(
             this.userId,
-            payload
+            payload,
+            this.jwt
           );
 
-          console.log(response);
-
           if (!("error" in response)) {
+            this.$store.dispatch("event/createEvent", response.data);
             this.$router.push({ path: `/dashboard/${this.userId}` });
           } else {
             this.invalidEventCreation = true;
@@ -294,6 +325,11 @@ export default {
           } else {
             this.destinationNotProvided = false;
           }
+          if (this.description.length === 0) {
+            this.descriptionNotProvided = true;
+          } else {
+            this.descriptionNotProvided = false;
+          }
         }
       }
     },
@@ -320,9 +356,11 @@ export default {
     populateFormInfo() {
       if (this.editEventAction) {
         this.formTitle = "Edit Event";
+        this.buttonTitle = "Update Event";
         const eventInfo = this.editEventInfo;
 
         this.title = eventInfo.title;
+        this.description = eventInfo.description;
         this.eventType = eventInfo.type;
         this.location = eventInfo.city;
 
@@ -351,7 +389,7 @@ export default {
     this.populateFormInfo();
   },
   components: {
-    AccountErrorMessage,
+    ResponseErrorMessage,
     EventFormUserEmailDisplay,
   },
 };

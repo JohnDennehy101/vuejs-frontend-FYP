@@ -5,6 +5,7 @@
       :can-cancel="true"
       :on-cancel="onCancel"
       :is-full-page="fullPage"
+      :opacity="loaderOpacity"
       :loader="loaderType"
       :color="loaderColour"
     />
@@ -22,6 +23,7 @@ export default {
       fullPage: false,
       loaderType: "dots",
       loaderColour: "#0384ff",
+      loaderOpacity: 1,
     };
   },
   components: {
@@ -35,6 +37,9 @@ export default {
       this.$store.dispatch("setUserId", null);
       this.$store.dispatch("setUserEmail", null);
       this.$store.dispatch("logout");
+      this.$store.dispatch("event/populateUserCreatedEvents", []);
+      this.$store.dispatch("event/populateUserInvitedEvents", []);
+      this.$store.dispatch("setJWT", null);
       userService.logoutUser();
       setTimeout(() => this.$router.push({ name: "Login" }), 2500);
     },
