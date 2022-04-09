@@ -4,7 +4,7 @@
       v-model:active="isLoading"
       :can-cancel="true"
       :on-cancel="onCancel"
-      :is-full-page="fullPage"
+      :is-full-page="true"
       :loader="loaderType"
       :color="loaderColour"
     />
@@ -41,6 +41,11 @@
       </div>
       <div class="form-control button-container">
         <button>Submit Poll</button>
+        <ResponseErrorMessage
+          :toggle="showErrorMessage"
+          :errorMessage="pollVoteErrorMessage"
+          v-on:hideErrorMessage="hideErrorMessage"
+        />
       </div>
     </form>
   </div>
@@ -53,6 +58,7 @@ import eventService from "../services/EventService";
 import { mapGetters } from "vuex";
 import Loading from "vue-loading-overlay";
 import "vue-loading-overlay/dist/vue-loading.css";
+import ResponseErrorMessage from "../components/ResponseErrorMessage";
 export default {
   props: {
     eventService: {
@@ -74,6 +80,8 @@ export default {
       fullPage: false,
       loaderType: "dots",
       loaderColour: "#0384ff",
+      showErrorMessage: false,
+      pollVoteErrorMessage: "",
     };
   },
   computed: {
@@ -99,11 +107,11 @@ export default {
         this.eventId,
         this.pollId
       );
-
-      console.log(response);
-
       if ("error" in response) {
-        this.invalidEventCreation = true;
+        this.loaded = true;
+        this.pollVoteErrorMessage =
+          "Error adding poll votes. Please try again.";
+        this.showErrorMessage = true;
       } else {
         this.pollInformation = response.data;
         this.pollOptions = response.data.pollOptions;
@@ -158,7 +166,14 @@ export default {
           this.isLoading = false;
           this.invalidLogin = true;
         }
+      } else {
+        this.showErrorMessage = true;
+        this.pollVoteErrorMessage =
+          "Please select a poll option to submit your vote.";
       }
+    },
+    hideErrorMessage() {
+      this.showErrorMessage = false;
     },
   },
   async created() {
@@ -170,6 +185,7 @@ export default {
     Loading,
     TakePollLabel,
     PollBarChart,
+    ResponseErrorMessage,
   },
 };
 </script>
@@ -177,7 +193,7 @@ export default {
 <style scope lang="scss">
 .vld-parent {
   width: 100vw;
-  height: 90vh;
+  min-height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
