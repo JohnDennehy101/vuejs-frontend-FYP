@@ -127,8 +127,6 @@ export default {
         this.type = eventInfo.type;
         this.destinationCity = eventInfo.city;
 
-        console.log(eventInfo);
-
         if (eventInfo.departureCity) {
           this.departureCity = eventInfo.departureCity;
         }

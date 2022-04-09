@@ -412,13 +412,13 @@ export default {
       const response = await this.eventService.getAccommodationInformation(
         this.eventId,
         startDate,
-        endDate
+        endDate,
+        this.jwt
       );
 
       this.isLoading = false;
 
       if (response.status === 200) {
-        console.log(response.data);
         this.accommodationInfo = response.data.resultPages;
         this.accommodationDateRange =
           response.data.resultPages[1][0].startDate +
@@ -432,7 +432,8 @@ export default {
       const response = await this.eventService.getFlightInformation(
         this.eventId,
         startDate,
-        endDate
+        endDate,
+        this.jwt
       );
 
       this.isLoading = false;
@@ -446,15 +447,13 @@ export default {
       const response = await this.eventService.getActivityInformation(
         this.eventId,
         latitude,
-        longitude
+        longitude,
+        this.jwt
       );
 
       this.isLoading = false;
 
-      console.log(response);
-
       if (response.status === 200) {
-        console.log(response.data.results);
         this.googlePlacesInfo = response.data.results;
       }
     },

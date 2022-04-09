@@ -197,10 +197,14 @@ class EventService {
     return response;
   }
 
-  async getAccommodationInformation(eventId, startDate, endDate) {
+  async getAccommodationInformation(eventId, startDate, endDate, jwt) {
     const response = await axios
       .get(
-        `${this.baseUrl}/events/${eventId}/accommodation?startDate=${startDate}&endDate=${endDate}`
+        `${this.baseUrl}/events/${eventId}/accommodation?startDate=${startDate}&endDate=${endDate}`, {
+          headers: {
+          "Authorization": "Bearer " + jwt
+        }
+        }
       )
       .catch((error) => {
         return { error };
@@ -209,10 +213,14 @@ class EventService {
     return response;
   }
 
-  async getFlightInformation(eventId, startDate, endDate) {
+  async getFlightInformation(eventId, startDate, endDate, jwt) {
     const response = await axios
       .get(
-        `${this.baseUrl}/events/${eventId}/flights?startDate=${startDate}&endDate=${endDate}`
+        `${this.baseUrl}/events/${eventId}/flights?startDate=${startDate}&endDate=${endDate}`, {
+          headers: {
+          "Authorization": "Bearer " + jwt
+        }
+        }
       )
       .catch((error) => {
         return { error };
@@ -221,10 +229,14 @@ class EventService {
     return response;
   }
 
-  async getActivityInformation(eventId, latitude, longitude) {
+  async getActivityInformation(eventId, latitude, longitude, jwt) {
     const response = await axios
       .get(
-        `${this.baseUrl}/events/${eventId}/places?latitude=${latitude}&longitude=${longitude}`
+        `${this.baseUrl}/events/${eventId}/places?latitude=${latitude}&longitude=${longitude}`, {
+          headers: {
+          "Authorization": "Bearer " + jwt
+        } 
+        }
       )
       .catch((error) => {
         return { error };

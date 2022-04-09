@@ -66,10 +66,7 @@ export default {
   },
   methods: {
     async getUserInfo() {
-      console.log(this.userId);
       const response = await this.userService.getUser(this.userId, this.jwt);
-
-      console.log(response);
 
       if ("error" in response) {
         this.invalidEventCreation = true;
@@ -78,7 +75,6 @@ export default {
       }
     },
     updateUserImage(value) {
-      console.log(value);
       if (value === false) {
         this.displayToast = true;
         setTimeout(() => (this.displayToast = false), 4000);

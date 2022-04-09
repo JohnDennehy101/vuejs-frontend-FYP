@@ -296,8 +296,6 @@ export default {
             this.jwt
           );
 
-          console.log(response);
-
           if (!("error" in response)) {
             this.$store.dispatch("event/createEvent", response.data);
             this.$router.push({ path: `/dashboard/${this.userId}` });

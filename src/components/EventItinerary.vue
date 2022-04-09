@@ -451,6 +451,7 @@ export default {
           this.itineraryActivities.length > 0 ||
           this.itineraryFlight[0].length > 0
         ) {
+     
           const response = await this.eventService.updateEventItinerary(
             this.id,
             payload
