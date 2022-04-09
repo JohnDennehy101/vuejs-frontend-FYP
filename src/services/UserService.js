@@ -4,7 +4,7 @@ import axios from "axios";
 
 class UserService {
   constructor() {
-    this.baseUrl = "http://localhost:3000/api/v1";
+    this.baseUrl = "https://group-activity-planning-nest.herokuapp.com/api/v1";
     if (localStorage.token) {
       axios.defaults.headers.common["Authorization"] =
         "Bearer " + localStorage.token;

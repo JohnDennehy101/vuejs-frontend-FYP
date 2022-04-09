@@ -133,7 +133,7 @@ describe("LoginForm.vue", () => {
     await wrapper.find("form").trigger("submit.prevent");
 
     expect(mockRouter.push).toHaveBeenCalledTimes(1);
-    expect(mockStore.dispatch).toHaveBeenCalledTimes(3);
+    expect(mockStore.dispatch).toHaveBeenCalledTimes(4);
     expect(wrapper.findComponent(ResponseErrorMessage).isVisible()).toBe(false);
   });
 

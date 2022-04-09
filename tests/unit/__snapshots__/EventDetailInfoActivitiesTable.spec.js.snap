@@ -1576,7 +1576,7 @@ VueWrapper {
                                 ],
                                 "component": null,
                                 "dirs": null,
-                                "dynamicChildren": null,
+                                "dynamicChildren": Array [],
                                 "dynamicProps": Array [
                                   "href",
                                 ],
@@ -1588,11 +1588,12 @@ VueWrapper {
                                     class="fas fa-map-marker-alt"
                                   />
                                 </a>,
-                                "key": null,
+                                "key": 0,
                                 "patchFlag": 8,
                                 "props": Object {
                                   "data-testid": "mapLink",
                                   "href": "https://maps.google.com/maps/contrib/115516656997182409995",
+                                  "key": 0,
                                 },
                                 "ref": null,
                                 "scopeId": null,
@@ -2063,7 +2064,7 @@ VueWrapper {
                             ],
                             "component": null,
                             "dirs": null,
-                            "dynamicChildren": null,
+                            "dynamicChildren": Array [],
                             "dynamicProps": Array [
                               "href",
                             ],
@@ -2075,11 +2076,12 @@ VueWrapper {
                                 class="fas fa-map-marker-alt"
                               />
                             </a>,
-                            "key": null,
+                            "key": 0,
                             "patchFlag": 8,
                             "props": Object {
                               "data-testid": "mapLink",
                               "href": "https://maps.google.com/maps/contrib/115516656997182409995",
+                              "key": 0,
                             },
                             "ref": null,
                             "scopeId": null,
@@ -2798,7 +2800,7 @@ VueWrapper {
                             ],
                             "component": null,
                             "dirs": null,
-                            "dynamicChildren": null,
+                            "dynamicChildren": Array [],
                             "dynamicProps": Array [
                               "href",
                             ],
@@ -2810,11 +2812,12 @@ VueWrapper {
                                 class="fas fa-map-marker-alt"
                               />
                             </a>,
-                            "key": null,
+                            "key": 0,
                             "patchFlag": 8,
                             "props": Object {
                               "data-testid": "mapLink",
                               "href": "https://maps.google.com/maps/contrib/115516656997182409995",
+                              "key": 0,
                             },
                             "ref": null,
                             "scopeId": null,
@@ -3285,7 +3288,7 @@ VueWrapper {
                         ],
                         "component": null,
                         "dirs": null,
-                        "dynamicChildren": null,
+                        "dynamicChildren": Array [],
                         "dynamicProps": Array [
                           "href",
                         ],
@@ -3297,11 +3300,12 @@ VueWrapper {
                             class="fas fa-map-marker-alt"
                           />
                         </a>,
-                        "key": null,
+                        "key": 0,
                         "patchFlag": 8,
                         "props": Object {
                           "data-testid": "mapLink",
                           "href": "https://maps.google.com/maps/contrib/115516656997182409995",
+                          "key": 0,
                         },
                         "ref": null,
                         "scopeId": null,
