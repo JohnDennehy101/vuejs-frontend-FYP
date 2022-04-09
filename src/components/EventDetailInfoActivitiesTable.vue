@@ -39,6 +39,7 @@
         <td data-testid="ratingQuantity">{{ value.user_ratings_total }}</td>
         <td>
           <a
+            v-if="value.photos"
             data-testid="mapLink"
             :href="extractLink(value.photos[0].html_attributions[0])"
           >
