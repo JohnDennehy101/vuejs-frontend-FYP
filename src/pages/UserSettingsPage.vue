@@ -61,12 +61,13 @@ export default {
   computed: {
     ...mapGetters({
       userId: "userId",
+      jwt: "jwt",
     }),
   },
   methods: {
     async getUserInfo() {
       console.log(this.userId);
-      const response = await this.userService.getUser(this.userId);
+      const response = await this.userService.getUser(this.userId, this.jwt);
 
       console.log(response);
 

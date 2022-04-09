@@ -48,14 +48,14 @@
       :message="noInvitedEventsMessage"
       :invitedUser="true"
     />
+    <DeleteModal
+      v-if="displayDeleteModal"
+      :title="deleteEventTitle"
+      :eventId="deleteEventId"
+      :modalHeading="deleteEventModalHeading"
+      @close="displayDeleteModal = false"
+    />
   </div>
-  <DeleteModal
-    v-if="displayDeleteModal"
-    :title="deleteEventTitle"
-    :eventId="deleteEventId"
-    :modalHeading="deleteEventModalHeading"
-    @close="displayDeleteModal = false"
-  />
 </template>
 
 <script>
