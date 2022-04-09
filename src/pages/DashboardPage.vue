@@ -1,5 +1,13 @@
 <template>
   <div id="wrapper">
+    <loading
+      v-model:active="isLoading"
+      :can-cancel="false"
+      :on-cancel="onCancel"
+      :is-full-page="true"
+      :loader="loaderType"
+      :color="loaderColour"
+    />
     <UserInfoDisplay
       v-if="user"
       :user="user"
@@ -56,6 +64,8 @@ import eventService from "../services/EventService";
 import userService from "../services/UserService";
 import UserInfoDisplay from "../components/UserInfoDisplay";
 import DashboardEventItems from "../components/DashboardEventItems";
+import Loading from "vue-loading-overlay";
+import "vue-loading-overlay/dist/vue-loading.css";
 
 import { mapGetters } from "vuex";
 export default {
@@ -74,6 +84,9 @@ export default {
         "There was an error adding this event, not successfully created.",
       displayDeleteModal: false,
       user: null,
+      loaderType: "dots",
+      loaderColour: "#0384ff",
+      isLoading: true,
     };
   },
   computed: {
@@ -145,12 +158,14 @@ export default {
   async created() {
     await this.getUserInfo();
     await this.getUserCreatedEvents();
+    this.isLoading = false;
   },
   components: {
     NoCreatedItems,
     DeleteModal,
     UserInfoDisplay,
     DashboardEventItems,
+    Loading,
   },
 };
 </script>
