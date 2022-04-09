@@ -37,6 +37,7 @@ export default {
       this.$store.dispatch("logout");
       this.$store.dispatch("event/populateUserCreatedEvents", []);
       this.$store.dispatch("event/populateUserInvitedEvents", []);
+      this.$store.dispatch("setJWT", null);
       userService.logoutUser();
       setTimeout(() => this.$router.push({ name: "Login" }), 2500);
     },

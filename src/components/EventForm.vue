@@ -212,6 +212,7 @@ export default {
   computed: {
     ...mapGetters({
       userId: "userId",
+      jwt: "jwt",
     }),
   },
   methods: {
@@ -234,7 +235,8 @@ export default {
 
           const response = await this.eventService.updateEvent(
             this.editEventInfo.id,
-            payload
+            payload,
+            this.jwt
           );
 
           if (!("error" in response)) {
@@ -290,7 +292,8 @@ export default {
 
           const response = await this.eventService.createEvent(
             this.userId,
-            payload
+            payload,
+            this.jwt
           );
 
           console.log(response);

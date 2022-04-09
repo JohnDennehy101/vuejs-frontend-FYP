@@ -12,9 +12,13 @@ class EventService {
     }
   }
 
-  async createEvent(userId, payload) {
+  async createEvent(userId, payload, jwt) {
     const response = await axios
-      .post(`${this.baseUrl}/events/${userId}`, payload)
+      .post(`${this.baseUrl}/events/${userId}`, payload, {
+         headers: {
+          "Authorization": "Bearer " + jwt
+        }
+      })
       .catch((error) => {
         return { error };
       });
@@ -22,9 +26,13 @@ class EventService {
     return response;
   }
 
-  async updateEvent(eventId, payload) {
+  async updateEvent(eventId, payload, jwt) {
     const response = await axios
-      .patch(`${this.baseUrl}/events/${eventId}`, payload)
+      .patch(`${this.baseUrl}/events/${eventId}`, payload, {
+         headers: {
+          "Authorization": "Bearer " + jwt
+        }
+      })
       .catch((error) => {
         return { error };
       });
@@ -42,9 +50,13 @@ class EventService {
     return response;
   }
 
-  async getUserEvents(userId) {
+  async getUserEvents(userId, jwt) {
     const response = await axios
-      .get(this.baseUrl + "/events/user/" + userId)
+      .get(this.baseUrl + "/events/user/" + userId, {
+        headers: {
+          "Authorization": "Bearer " + jwt
+        }
+      })
       .catch((error) => {
         return { error };
       });

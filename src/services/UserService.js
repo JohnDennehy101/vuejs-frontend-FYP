@@ -96,11 +96,12 @@ class UserService {
 
     return response;
   }
-  async getUser(id) {
+  async getUser(id, jwt) {
     const response = await axios
       .get(`${this.baseUrl}/users/${id}`, {
         headers: {
           "Access-Control-Allow-Origin": "*",
+          "Authorization": "Bearer " + jwt
         },
       })
       .catch((error) => {

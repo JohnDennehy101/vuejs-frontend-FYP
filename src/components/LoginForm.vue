@@ -78,6 +78,7 @@ export default {
         if (typeof user !== "string") {
           this.$store.dispatch("setUserId", user.userId);
           this.$store.dispatch("setUserEmail", user.userEmail);
+          this.$store.dispatch("setJWT", user.jwtToken);
           this.$store.dispatch("login");
           this.$router.push({ path: `/dashboard/${user.userId}` });
         } else {

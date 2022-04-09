@@ -6,6 +6,7 @@
       :on-cancel="onCancel"
       :is-full-page="true"
       :loader="loaderType"
+      :opacity="loaderOpacity"
       :color="loaderColour"
     />
     <UserInfoDisplay
@@ -86,6 +87,7 @@ export default {
       user: null,
       loaderType: "dots",
       loaderColour: "#0384ff",
+      loaderOpacity: 1,
       isLoading: true,
     };
   },
@@ -101,11 +103,15 @@ export default {
       createdEvents: "event/createdEvents",
       invitedEvents: "event/invitedEvents",
       userId: "userId",
+      jwt: "jwt",
     }),
   },
   methods: {
     async getUserCreatedEvents() {
-      const response = await this.eventService.getUserEvents(this.userId);
+      const response = await this.eventService.getUserEvents(
+        this.userId,
+        this.jwt
+      );
 
       if ("error" in response) {
         this.invalidEventCreation = true;
@@ -138,7 +144,7 @@ export default {
       }
     },
     async getUserInfo() {
-      const response = await this.userService.getUser(this.userId);
+      const response = await this.userService.getUser(this.userId, this.jwt);
 
       if ("error" in response) {
         console.log("Invalid");
