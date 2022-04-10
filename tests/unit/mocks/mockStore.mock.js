@@ -7,6 +7,9 @@ const mockStore = {
     userId: () => {
       return 1;
     },
+    jwt: () => {
+      return '1abc'
+    },
     isAuthenticated: () => {
       return true;
     }

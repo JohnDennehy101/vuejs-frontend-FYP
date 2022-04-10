@@ -1,5 +1,6 @@
 <template>
   <div class="vld-parent">
+    <Toast v-if="displayToast" :message="toastMessage" />
     <loading
       v-model:active="isLoading"
       :can-cancel="true"
@@ -60,6 +61,7 @@ import { mapGetters } from "vuex";
 import Loading from "vue-loading-overlay";
 import "vue-loading-overlay/dist/vue-loading.css";
 import ResponseErrorMessage from "../components/ResponseErrorMessage";
+import Toast from "../components/Toast";
 export default {
   props: {
     eventService: {
@@ -84,11 +86,14 @@ export default {
       loaderOpacity: 1,
       showErrorMessage: false,
       pollVoteErrorMessage: "",
+      displayToast: false,
+      toastMessage: "",
     };
   },
   computed: {
     ...mapGetters({
       userId: "userId",
+      jwt: "jwt",
     }),
   },
   methods: {
@@ -107,7 +112,8 @@ export default {
     async getEventPollInfo() {
       const response = await this.eventService.getEventPolls(
         this.eventId,
-        this.pollId
+        this.pollId,
+        this.jwt
       );
       if ("error" in response) {
         this.loaded = true;
@@ -158,12 +164,18 @@ export default {
           this.userId,
           this.eventId,
           this.pollId,
-          payload
+          payload,
+          this.jwt
         );
 
         if (!("error" in response)) {
           this.isLoading = false;
-          this.$router.push({ path: `/dashboard/${this.userId}` });
+          this.toastMessage = "Successfully voted in poll";
+          this.displayToast = true;
+          setTimeout(
+            () => this.$router.push({ path: `/dashboard/${this.userId}` }),
+            2000
+          );
         } else {
           this.isLoading = false;
           this.invalidLogin = true;
@@ -188,6 +200,7 @@ export default {
     TakePollLabel,
     PollBarChart,
     ResponseErrorMessage,
+    Toast,
   },
 };
 </script>

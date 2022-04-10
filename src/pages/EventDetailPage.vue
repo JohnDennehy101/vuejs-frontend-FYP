@@ -39,6 +39,7 @@
       :flight="checkedFlight"
       :activities="checkedThingsToDo"
       :eventId="eventId"
+      :jwt="jwt"
       :city="this.individualEvent.city"
       :editItinerary="itineraryAlreadyCreated"
       :key="eventItineraryKey"
@@ -509,16 +510,34 @@ export default {
     },
     removeItineraryAccommodation() {
       this.checkedAccommodation = [];
+      this.accommodationInfo[1].map((item) => delete item.checked);
+      this.accommodationTableKey++;
     },
     removeItineraryFlights() {
       this.checkedFlight = [[]];
       this.eventItineraryKey++;
+      this.flightInfo[0].map((flightGroup) => {
+        for (let i in flightGroup) {
+          delete flightGroup[i].checked;
+        }
+      });
+      this.flightsTablekey++;
     },
     removeItineraryActivity(value) {
       this.checkedThingsToDo = this.checkedThingsToDo.filter(
         (activity) => activity.name !== value
       );
+      this.googlePlacesInfo.map((item) => {
+        if (
+          this.checkedThingsToDo.filter(
+            (activity) => activity.name === item.name
+          ).length === 0
+        ) {
+          delete item.checked;
+        }
+      });
       this.eventItineraryKey++;
+      this.activityTableKey++;
     },
     extractLink(link) {
       let extractedLink = StringUtils.extractGoogleMapLink(link);
@@ -606,6 +625,9 @@ export default {
         this.messages.findIndex((message) => message.id === messageId),
         1
       );
+      this.displayToast = true;
+      this.toastMessage = "Message successfully deleted";
+      setTimeout(() => (this.displayToast = false), 3000);
     },
     joinChatRoom() {
       if (!this.memberOfChatRoom) {

@@ -353,6 +353,7 @@ VueWrapper {
           "dispatch": [MockFunction],
           "getters": Object {
             "isAuthenticated": [Function],
+            "jwt": [Function],
             "userId": [Function],
           },
           "state": Object {
@@ -426,6 +427,7 @@ VueWrapper {
           "dispatch": [MockFunction],
           "getters": Object {
             "isAuthenticated": [Function],
+            "jwt": [Function],
             "userId": [Function],
           },
           "state": Object {
@@ -449,6 +451,7 @@ VueWrapper {
             "dispatch": [MockFunction],
             "getters": Object {
               "isAuthenticated": [Function],
+              "jwt": [Function],
               "userId": [Function],
             },
             "state": Object {
@@ -533,9 +536,11 @@ VueWrapper {
           "itineraryFlight": Array [
             Array [],
           ],
+          "jwt": undefined,
           "showErrorMessage": false,
           "showFinaliseItineraryCheck": false,
           "submitItinerary": [Function],
+          "token": undefined,
         },
       },
       "render": [Function],
@@ -626,10 +631,12 @@ VueWrapper {
             "itineraryAccommodation": 2,
             "itineraryActivities": 2,
             "itineraryFlight": 2,
+            "jwt": 3,
             "showErrorMessage": 2,
             "showFinaliseItineraryCheck": 2,
             "submitItinerary": 4,
             "toJSON": 0,
+            "token": 2,
             Symbol(Symbol.toStringTag): 0,
           },
           "appContext": Object {
@@ -706,6 +713,7 @@ VueWrapper {
               "dispatch": [MockFunction],
               "getters": Object {
                 "isAuthenticated": [Function],
+                "jwt": [Function],
                 "userId": [Function],
               },
               "state": Object {
@@ -790,9 +798,11 @@ VueWrapper {
             "itineraryFlight": Array [
               Array [],
             ],
+            "jwt": undefined,
             "showErrorMessage": false,
             "showFinaliseItineraryCheck": false,
             "submitItinerary": [Function],
+            "token": undefined,
           },
           "da": null,
           "data": Object {
@@ -828,6 +838,7 @@ VueWrapper {
             ],
             "showErrorMessage": false,
             "showFinaliseItineraryCheck": false,
+            "token": undefined,
           },
           "directives": null,
           "ec": null,
@@ -985,6 +996,7 @@ VueWrapper {
             ],
             "guestUserCheck": false,
             "itemType": undefined,
+            "jwt": undefined,
           },
           "propsDefaults": Object {},
           "propsOptions": Array [
@@ -1033,7 +1045,7 @@ VueWrapper {
                 "0": false,
                 "1": true,
                 "default": EventService {
-                  "baseUrl": "http://localhost:3000/api/v1",
+                  "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
                 },
               },
               "flight": Object {
@@ -1047,6 +1059,11 @@ VueWrapper {
                 "type": [Function],
               },
               "itemType": Object {
+                "0": false,
+                "1": true,
+                "type": [Function],
+              },
+              "jwt": Object {
                 "0": false,
                 "1": true,
                 "type": [Function],
@@ -1076,6 +1093,7 @@ VueWrapper {
               "dispatch": [MockFunction],
               "getters": Object {
                 "isAuthenticated": [Function],
+                "jwt": [Function],
                 "userId": [Function],
               },
               "state": Object {
@@ -1160,9 +1178,11 @@ VueWrapper {
             "itineraryFlight": Array [
               Array [],
             ],
+            "jwt": undefined,
             "showErrorMessage": false,
             "showFinaliseItineraryCheck": false,
             "submitItinerary": [Function],
+            "token": undefined,
           },
           "refs": Object {},
           "render": [Function],
@@ -6555,6 +6575,7 @@ VueWrapper {
                                   "dispatch": [MockFunction],
                                   "getters": Object {
                                     "isAuthenticated": [Function],
+                                    "jwt": [Function],
                                     "userId": [Function],
                                   },
                                   "state": Object {
@@ -6640,6 +6661,7 @@ VueWrapper {
                                   "dispatch": [MockFunction],
                                   "getters": Object {
                                     "isAuthenticated": [Function],
+                                    "jwt": [Function],
                                     "userId": [Function],
                                   },
                                   "state": Object {
@@ -6913,6 +6935,7 @@ VueWrapper {
                                   "dispatch": [MockFunction],
                                   "getters": Object {
                                     "isAuthenticated": [Function],
+                                    "jwt": [Function],
                                     "userId": [Function],
                                   },
                                   "state": Object {
@@ -6998,6 +7021,7 @@ VueWrapper {
                                   "dispatch": [MockFunction],
                                   "getters": Object {
                                     "isAuthenticated": [Function],
+                                    "jwt": [Function],
                                     "userId": [Function],
                                   },
                                   "state": Object {
@@ -12878,6 +12902,7 @@ VueWrapper {
                           "dispatch": [MockFunction],
                           "getters": Object {
                             "isAuthenticated": [Function],
+                            "jwt": [Function],
                             "userId": [Function],
                           },
                           "state": Object {
@@ -12963,6 +12988,7 @@ VueWrapper {
                           "dispatch": [MockFunction],
                           "getters": Object {
                             "isAuthenticated": [Function],
+                            "jwt": [Function],
                             "userId": [Function],
                           },
                           "state": Object {
@@ -13236,6 +13262,7 @@ VueWrapper {
                           "dispatch": [MockFunction],
                           "getters": Object {
                             "isAuthenticated": [Function],
+                            "jwt": [Function],
                             "userId": [Function],
                           },
                           "state": Object {
@@ -13321,6 +13348,7 @@ VueWrapper {
                           "dispatch": [MockFunction],
                           "getters": Object {
                             "isAuthenticated": [Function],
+                            "jwt": [Function],
                             "userId": [Function],
                           },
                           "state": Object {
@@ -13617,12 +13645,13 @@ VueWrapper {
                 "0": false,
                 "1": true,
                 "default": EventService {
-                  "baseUrl": "http://localhost:3000/api/v1",
+                  "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
                 },
               },
               "flight": [Function],
               "guestUserCheck": [Function],
               "itemType": [Function],
+              "jwt": [Function],
             },
             "render": [Function],
           },
@@ -13748,12 +13777,13 @@ VueWrapper {
               "0": false,
               "1": true,
               "default": EventService {
-                "baseUrl": "http://localhost:3000/api/v1",
+                "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
               },
             },
             "flight": [Function],
             "guestUserCheck": [Function],
             "itemType": [Function],
+            "jwt": [Function],
           },
           "render": [Function],
         },
@@ -13865,6 +13895,7 @@ VueWrapper {
       "dispatch": [MockFunction],
       "getters": Object {
         "isAuthenticated": [Function],
+        "jwt": [Function],
         "userId": [Function],
       },
       "state": Object {
@@ -13949,9 +13980,11 @@ VueWrapper {
     "itineraryFlight": Array [
       Array [],
     ],
+    "jwt": undefined,
     "showErrorMessage": false,
     "showFinaliseItineraryCheck": false,
     "submitItinerary": [Function],
+    "token": undefined,
   },
   "isDisabled": [Function],
   "rootVM": Object {
@@ -13968,6 +14001,7 @@ VueWrapper {
       "dispatch": [MockFunction],
       "getters": Object {
         "isAuthenticated": [Function],
+        "jwt": [Function],
         "userId": [Function],
       },
       "state": Object {

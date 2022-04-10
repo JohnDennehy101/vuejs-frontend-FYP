@@ -39,24 +39,55 @@ describe("UserInfoDisplay.vue", () => {
     });
 
     const createdEventsQuantityTextElement = wrapper.find(
-      '[data-testid="numberOfCreatedEvents"]'
+      '[data-testid="numberOfCreatedEventsSingular"]'
     );
     expect(createdEventsQuantityTextElement.text()).toContain(1);
   });
 
-  it("checks that number of invited events is rendered", async () => {
+  it("checks that for multiple created events, plural of event is rendered (events)", async () => {
     const wrapper = mount(UserInfoDisplay, {
       props: {
         user: { email: "test@gmail.com", profileImageUrl: null },
         invitedEventsQuantity: 2,
+        createdEventsQuantity: 2,
+      },
+    });
+
+    const createdEventsQuantityTextElement = wrapper.find(
+      '[data-testid="numberOfCreatedEventsPlural"]'
+    );
+    expect(createdEventsQuantityTextElement.text()).toBe("2 events created");
+  });
+
+  it("checks that singular invited event, singulr of event is rendered (event)", async () => {
+    const wrapper = mount(UserInfoDisplay, {
+      props: {
+        user: { email: "test@gmail.com", profileImageUrl: null },
+        invitedEventsQuantity: 1,
         createdEventsQuantity: 1,
       },
     });
 
     const invitedEventsQuantityTextElement = wrapper.find(
-      '[data-testid="numberOfInvitedEvents"]'
+      '[data-testid="numberOfInvitedEventsSingular"]'
     );
-    expect(invitedEventsQuantityTextElement.text()).toContain(2);
+    expect(invitedEventsQuantityTextElement.text()).toBe("1 event invite");
+  });
+
+
+  it("checks that for multiple invited events, plural of event is rendered (events)", async () => {
+    const wrapper = mount(UserInfoDisplay, {
+      props: {
+        user: { email: "test@gmail.com", profileImageUrl: null },
+        invitedEventsQuantity: 2,
+        createdEventsQuantity: 2,
+      },
+    });
+
+    const createdEventsQuantityTextElement = wrapper.find(
+      '[data-testid="numberOfInvitedEventsPlural"]'
+    );
+    expect(createdEventsQuantityTextElement.text()).toBe("2 event invites");
   });
 
   it("checks that user image is rendered if passed as a prop", async () => {

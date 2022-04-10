@@ -8,6 +8,10 @@
       placeholder="Enter password"
       v-model="password"
     />
+    <p class="error-message" v-if="!validPassword && password.length > 0">
+      Password must have mininum length of 7, contain uppercase, lowercase,
+      special characters.
+    </p>
   </div>
   <div class="form-control">
     <button @click="updateUser">Submit</button>
@@ -15,7 +19,13 @@
 </template>
 
 <script>
+import StringUtils from "../utils/stringUtils";
 export default {
+  computed: {
+    validPassword() {
+      return StringUtils.validatePassword(this.password);
+    },
+  },
   data() {
     return {
       password: "",
@@ -60,5 +70,11 @@ button {
 }
 button:hover {
   cursor: pointer;
+}
+.error-message {
+  margin-top: 0.4rem;
+  margin-left: 0.1rem;
+  font-size: 0.9rem;
+  color: red;
 }
 </style>

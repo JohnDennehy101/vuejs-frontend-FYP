@@ -1,5 +1,6 @@
 <template>
   <div class="vld-parent">
+    <Toast v-if="displayToast" :message="toastMessage" />
     <loading
       v-model:active="isLoading"
       :can-cancel="true"
@@ -35,6 +36,8 @@ import "vue-loading-overlay/dist/vue-loading.css";
 import userService from "../services/UserService";
 import AccountConfirmationInfoMessage from "../components/AccountConfirmationInfoMessage";
 import AccountConfirmationProvidePassword from "../components/AccountConfirmationProvidePassword";
+import Toast from "../components/Toast";
+import StringUtils from "../utils/stringUtils";
 export default {
   data() {
     return {
@@ -53,6 +56,8 @@ export default {
         "Thanks for confirming your email, please provide a password for your account.",
       emailConfirmedPasswordNotRequiredMessage:
         "Thank you for confirming your email, you will now be re-directed to the login page to access the service.",
+      displayToast: false,
+      toastMessage: "",
     };
   },
   props: {
@@ -64,6 +69,7 @@ export default {
     Loading,
     AccountConfirmationInfoMessage,
     AccountConfirmationProvidePassword,
+    Toast,
   },
   methods: {
     onCancel() {
@@ -88,7 +94,7 @@ export default {
       }
     },
     async updateUser(value) {
-      if (value.length > 5) {
+      if (StringUtils.validatePassword(value)) {
         const payload = {
           email: this.email,
           password: value,
@@ -101,6 +107,9 @@ export default {
         );
 
         if (response.status === 200) {
+          this.displayToast = true;
+          this.toastMessage =
+            "Password successfully updated. You can now login.";
           setTimeout(() => this.$router.push({ name: "Login" }), 2500);
         }
       }

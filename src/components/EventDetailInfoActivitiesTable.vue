@@ -41,7 +41,7 @@
           <a
             v-if="value.photos"
             data-testid="mapLink"
-            :href="extractLink(value.photos[0].html_attributions[0])"
+            :href="extractLink(value.geometry.location, value.name)"
           >
             <i class="fas fa-map-marker-alt"></i>
           </a>
@@ -74,8 +74,11 @@ export default {
         item: item,
       });
     },
-    extractLink(link) {
-      let extractedLink = StringUtils.extractGoogleMapLink(link);
+    extractLink(coordinates, title) {
+      let extractedLink = StringUtils.generateGoogleMapsLink(
+        coordinates,
+        title
+      );
       return extractedLink;
     },
     classifyActivities() {

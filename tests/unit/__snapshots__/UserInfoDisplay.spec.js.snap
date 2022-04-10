@@ -51,9 +51,9 @@ VueWrapper {
             class="user-individual-info"
           >
             <p
-              data-testid="numberOfCreatedEvents"
+              data-testid="numberOfCreatedEventsSingular"
             >
-              1 events created 
+              1 event created 
             </p>
           </div>
           <i
@@ -63,7 +63,7 @@ VueWrapper {
             class="user-individual-info"
           >
             <p
-              data-testid="numberOfInvitedEvents"
+              data-testid="numberOfInvitedEventsPlural"
             >
               2 event invites 
             </p>
@@ -780,20 +780,21 @@ VueWrapper {
                         "__v_skip": true,
                         "anchor": null,
                         "appContext": null,
-                        "children": "1 events created ",
+                        "children": "1 event created ",
                         "component": null,
                         "dirs": null,
-                        "dynamicChildren": null,
+                        "dynamicChildren": Array [],
                         "dynamicProps": null,
                         "el": <p
-                          data-testid="numberOfCreatedEvents"
+                          data-testid="numberOfCreatedEventsSingular"
                         >
-                          1 events created 
+                          1 event created 
                         </p>,
-                        "key": null,
+                        "key": 0,
                         "patchFlag": 1,
                         "props": Object {
-                          "data-testid": "numberOfCreatedEvents",
+                          "data-testid": "numberOfCreatedEventsSingular",
+                          "key": 0,
                         },
                         "ref": null,
                         "scopeId": null,
@@ -817,9 +818,9 @@ VueWrapper {
                       class="user-individual-info"
                     >
                       <p
-                        data-testid="numberOfCreatedEvents"
+                        data-testid="numberOfCreatedEventsSingular"
                       >
-                        1 events created 
+                        1 event created 
                       </p>
                     </div>,
                     "key": null,
@@ -885,17 +886,18 @@ VueWrapper {
                         "children": "2 event invites ",
                         "component": null,
                         "dirs": null,
-                        "dynamicChildren": null,
+                        "dynamicChildren": Array [],
                         "dynamicProps": null,
                         "el": <p
-                          data-testid="numberOfInvitedEvents"
+                          data-testid="numberOfInvitedEventsPlural"
                         >
                           2 event invites 
                         </p>,
-                        "key": null,
+                        "key": 1,
                         "patchFlag": 1,
                         "props": Object {
-                          "data-testid": "numberOfInvitedEvents",
+                          "data-testid": "numberOfInvitedEventsPlural",
+                          "key": 1,
                         },
                         "ref": null,
                         "scopeId": null,
@@ -919,7 +921,7 @@ VueWrapper {
                       class="user-individual-info"
                     >
                       <p
-                        data-testid="numberOfInvitedEvents"
+                        data-testid="numberOfInvitedEventsPlural"
                       >
                         2 event invites 
                       </p>
@@ -957,9 +959,9 @@ VueWrapper {
                     class="user-individual-info"
                   >
                     <p
-                      data-testid="numberOfCreatedEvents"
+                      data-testid="numberOfCreatedEventsSingular"
                     >
-                      1 events created 
+                      1 event created 
                     </p>
                   </div>
                   <i
@@ -969,7 +971,7 @@ VueWrapper {
                     class="user-individual-info"
                   >
                     <p
-                      data-testid="numberOfInvitedEvents"
+                      data-testid="numberOfInvitedEventsPlural"
                     >
                       2 event invites 
                     </p>
@@ -1069,20 +1071,21 @@ VueWrapper {
                 "__v_skip": true,
                 "anchor": null,
                 "appContext": null,
-                "children": "1 events created ",
+                "children": "1 event created ",
                 "component": null,
                 "dirs": null,
-                "dynamicChildren": null,
+                "dynamicChildren": Array [],
                 "dynamicProps": null,
                 "el": <p
-                  data-testid="numberOfCreatedEvents"
+                  data-testid="numberOfCreatedEventsSingular"
                 >
-                  1 events created 
+                  1 event created 
                 </p>,
-                "key": null,
+                "key": 0,
                 "patchFlag": 1,
                 "props": Object {
-                  "data-testid": "numberOfCreatedEvents",
+                  "data-testid": "numberOfCreatedEventsSingular",
+                  "key": 0,
                 },
                 "ref": null,
                 "scopeId": null,
@@ -1105,17 +1108,18 @@ VueWrapper {
                 "children": "2 event invites ",
                 "component": null,
                 "dirs": null,
-                "dynamicChildren": null,
+                "dynamicChildren": Array [],
                 "dynamicProps": null,
                 "el": <p
-                  data-testid="numberOfInvitedEvents"
+                  data-testid="numberOfInvitedEventsPlural"
                 >
                   2 event invites 
                 </p>,
-                "key": null,
+                "key": 1,
                 "patchFlag": 1,
                 "props": Object {
-                  "data-testid": "numberOfInvitedEvents",
+                  "data-testid": "numberOfInvitedEventsPlural",
+                  "key": 1,
                 },
                 "ref": null,
                 "scopeId": null,
@@ -1173,9 +1177,9 @@ VueWrapper {
                   class="user-individual-info"
                 >
                   <p
-                    data-testid="numberOfCreatedEvents"
+                    data-testid="numberOfCreatedEventsSingular"
                   >
-                    1 events created 
+                    1 event created 
                   </p>
                 </div>
                 <i
@@ -1185,7 +1189,7 @@ VueWrapper {
                   class="user-individual-info"
                 >
                   <p
-                    data-testid="numberOfInvitedEvents"
+                    data-testid="numberOfInvitedEventsPlural"
                   >
                     2 event invites 
                   </p>
@@ -1273,9 +1277,9 @@ VueWrapper {
               class="user-individual-info"
             >
               <p
-                data-testid="numberOfCreatedEvents"
+                data-testid="numberOfCreatedEventsSingular"
               >
-                1 events created 
+                1 event created 
               </p>
             </div>
             <i
@@ -1285,7 +1289,7 @@ VueWrapper {
               class="user-individual-info"
             >
               <p
-                data-testid="numberOfInvitedEvents"
+                data-testid="numberOfInvitedEventsPlural"
               >
                 2 event invites 
               </p>
@@ -1421,9 +1425,9 @@ VueWrapper {
               class="user-individual-info"
             >
               <p
-                data-testid="numberOfCreatedEvents"
+                data-testid="numberOfCreatedEventsSingular"
               >
-                1 events created 
+                1 event created 
               </p>
             </div>
             <i
@@ -1433,7 +1437,7 @@ VueWrapper {
               class="user-individual-info"
             >
               <p
-                data-testid="numberOfInvitedEvents"
+                data-testid="numberOfInvitedEventsPlural"
               >
                 2 event invites 
               </p>
@@ -1540,9 +1544,9 @@ VueWrapper {
         class="user-individual-info"
       >
         <p
-          data-testid="numberOfCreatedEvents"
+          data-testid="numberOfCreatedEventsSingular"
         >
-          1 events created 
+          1 event created 
         </p>
       </div>
       <i
@@ -1552,7 +1556,7 @@ VueWrapper {
         class="user-individual-info"
       >
         <p
-          data-testid="numberOfInvitedEvents"
+          data-testid="numberOfInvitedEventsPlural"
         >
           2 event invites 
         </p>

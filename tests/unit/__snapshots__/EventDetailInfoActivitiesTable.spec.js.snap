@@ -71,7 +71,7 @@ VueWrapper {
             <td>
               <a
                 data-testid="mapLink"
-                href="https://maps.google.com/maps/contrib/115516656997182409995"
+                href="https://www.google.com/maps/place/The+Metropole+Hotel/@51.9013174,-8.467591,17z/data=!3m1!4b1"
               >
                 <i
                   class="fas fa-map-marker-alt"
@@ -592,6 +592,9 @@ VueWrapper {
               Set {
                 [Circular],
               },
+              Set {
+                [Circular],
+              },
             ],
             "fn": [Function],
             "onTrack": undefined,
@@ -780,6 +783,9 @@ VueWrapper {
                 "active": true,
                 "allowRecurse": true,
                 "deps": Array [
+                  Set {
+                    [Circular],
+                  },
                   Set {
                     [Circular],
                   },
@@ -1582,7 +1588,7 @@ VueWrapper {
                                 ],
                                 "el": <a
                                   data-testid="mapLink"
-                                  href="https://maps.google.com/maps/contrib/115516656997182409995"
+                                  href="https://www.google.com/maps/place/The+Metropole+Hotel/@51.9013174,-8.467591,17z/data=!3m1!4b1"
                                 >
                                   <i
                                     class="fas fa-map-marker-alt"
@@ -1592,7 +1598,7 @@ VueWrapper {
                                 "patchFlag": 8,
                                 "props": Object {
                                   "data-testid": "mapLink",
-                                  "href": "https://maps.google.com/maps/contrib/115516656997182409995",
+                                  "href": "https://www.google.com/maps/place/The+Metropole+Hotel/@51.9013174,-8.467591,17z/data=!3m1!4b1",
                                   "key": 0,
                                 },
                                 "ref": null,
@@ -1616,7 +1622,7 @@ VueWrapper {
                             "el": <td>
                               <a
                                 data-testid="mapLink"
-                                href="https://maps.google.com/maps/contrib/115516656997182409995"
+                                href="https://www.google.com/maps/place/The+Metropole+Hotel/@51.9013174,-8.467591,17z/data=!3m1!4b1"
                               >
                                 <i
                                   class="fas fa-map-marker-alt"
@@ -2070,7 +2076,7 @@ VueWrapper {
                             ],
                             "el": <a
                               data-testid="mapLink"
-                              href="https://maps.google.com/maps/contrib/115516656997182409995"
+                              href="https://www.google.com/maps/place/The+Metropole+Hotel/@51.9013174,-8.467591,17z/data=!3m1!4b1"
                             >
                               <i
                                 class="fas fa-map-marker-alt"
@@ -2080,7 +2086,7 @@ VueWrapper {
                             "patchFlag": 8,
                             "props": Object {
                               "data-testid": "mapLink",
-                              "href": "https://maps.google.com/maps/contrib/115516656997182409995",
+                              "href": "https://www.google.com/maps/place/The+Metropole+Hotel/@51.9013174,-8.467591,17z/data=!3m1!4b1",
                               "key": 0,
                             },
                             "ref": null,
@@ -2164,7 +2170,7 @@ VueWrapper {
                           <td>
                             <a
                               data-testid="mapLink"
-                              href="https://maps.google.com/maps/contrib/115516656997182409995"
+                              href="https://www.google.com/maps/place/The+Metropole+Hotel/@51.9013174,-8.467591,17z/data=!3m1!4b1"
                             >
                               <i
                                 class="fas fa-map-marker-alt"
@@ -2330,7 +2336,7 @@ VueWrapper {
                     <td>
                       <a
                         data-testid="mapLink"
-                        href="https://maps.google.com/maps/contrib/115516656997182409995"
+                        href="https://www.google.com/maps/place/The+Metropole+Hotel/@51.9013174,-8.467591,17z/data=!3m1!4b1"
                       >
                         <i
                           class="fas fa-map-marker-alt"
@@ -2806,7 +2812,7 @@ VueWrapper {
                             ],
                             "el": <a
                               data-testid="mapLink"
-                              href="https://maps.google.com/maps/contrib/115516656997182409995"
+                              href="https://www.google.com/maps/place/The+Metropole+Hotel/@51.9013174,-8.467591,17z/data=!3m1!4b1"
                             >
                               <i
                                 class="fas fa-map-marker-alt"
@@ -2816,7 +2822,7 @@ VueWrapper {
                             "patchFlag": 8,
                             "props": Object {
                               "data-testid": "mapLink",
-                              "href": "https://maps.google.com/maps/contrib/115516656997182409995",
+                              "href": "https://www.google.com/maps/place/The+Metropole+Hotel/@51.9013174,-8.467591,17z/data=!3m1!4b1",
                               "key": 0,
                             },
                             "ref": null,
@@ -2840,7 +2846,7 @@ VueWrapper {
                         "el": <td>
                           <a
                             data-testid="mapLink"
-                            href="https://maps.google.com/maps/contrib/115516656997182409995"
+                            href="https://www.google.com/maps/place/The+Metropole+Hotel/@51.9013174,-8.467591,17z/data=!3m1!4b1"
                           >
                             <i
                               class="fas fa-map-marker-alt"
@@ -3294,7 +3300,7 @@ VueWrapper {
                         ],
                         "el": <a
                           data-testid="mapLink"
-                          href="https://maps.google.com/maps/contrib/115516656997182409995"
+                          href="https://www.google.com/maps/place/The+Metropole+Hotel/@51.9013174,-8.467591,17z/data=!3m1!4b1"
                         >
                           <i
                             class="fas fa-map-marker-alt"
@@ -3304,7 +3310,7 @@ VueWrapper {
                         "patchFlag": 8,
                         "props": Object {
                           "data-testid": "mapLink",
-                          "href": "https://maps.google.com/maps/contrib/115516656997182409995",
+                          "href": "https://www.google.com/maps/place/The+Metropole+Hotel/@51.9013174,-8.467591,17z/data=!3m1!4b1",
                           "key": 0,
                         },
                         "ref": null,
@@ -3388,7 +3394,7 @@ VueWrapper {
                       <td>
                         <a
                           data-testid="mapLink"
-                          href="https://maps.google.com/maps/contrib/115516656997182409995"
+                          href="https://www.google.com/maps/place/The+Metropole+Hotel/@51.9013174,-8.467591,17z/data=!3m1!4b1"
                         >
                           <i
                             class="fas fa-map-marker-alt"
@@ -3579,7 +3585,7 @@ VueWrapper {
                   <td>
                     <a
                       data-testid="mapLink"
-                      href="https://maps.google.com/maps/contrib/115516656997182409995"
+                      href="https://www.google.com/maps/place/The+Metropole+Hotel/@51.9013174,-8.467591,17z/data=!3m1!4b1"
                     >
                       <i
                         class="fas fa-map-marker-alt"
@@ -3704,7 +3710,7 @@ VueWrapper {
               <td>
                 <a
                   data-testid="mapLink"
-                  href="https://maps.google.com/maps/contrib/115516656997182409995"
+                  href="https://www.google.com/maps/place/The+Metropole+Hotel/@51.9013174,-8.467591,17z/data=!3m1!4b1"
                 >
                   <i
                     class="fas fa-map-marker-alt"
@@ -3911,7 +3917,7 @@ VueWrapper {
               <td>
                 <a
                   data-testid="mapLink"
-                  href="https://maps.google.com/maps/contrib/115516656997182409995"
+                  href="https://www.google.com/maps/place/The+Metropole+Hotel/@51.9013174,-8.467591,17z/data=!3m1!4b1"
                 >
                   <i
                     class="fas fa-map-marker-alt"
@@ -4123,7 +4129,7 @@ VueWrapper {
         <td>
           <a
             data-testid="mapLink"
-            href="https://maps.google.com/maps/contrib/115516656997182409995"
+            href="https://www.google.com/maps/place/The+Metropole+Hotel/@51.9013174,-8.467591,17z/data=!3m1!4b1"
           >
             <i
               class="fas fa-map-marker-alt"

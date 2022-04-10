@@ -9,6 +9,7 @@ class EventService {
     if (localStorage.token) {
       axios.defaults.headers.common["Authorization"] =
         "Bearer " + localStorage.token;
+      axios.defaults.headers.common["Access-Control-Allow-Origin"] = "*"
     }
   }
 
@@ -78,11 +79,12 @@ class EventService {
     return response;
   }
 
-  async createEventPoll(id, payload) {
+  async createEventPoll(id, payload, jwt) {
     const response = await axios
       .post(`${this.baseUrl}/events/${id}/poll`, payload, {
         headers: {
           "Access-Control-Allow-Origin": "*",
+          "Authorization": "Bearer " + jwt
         },
       })
       .catch((error) => {
@@ -92,9 +94,13 @@ class EventService {
     return response;
   }
 
-  async getEventPolls(eventId, pollId) {
+  async getEventPolls(eventId, pollId, jwt) {
     const response = await axios
-      .get(`${this.baseUrl}/events/${eventId}/poll/${pollId}`)
+      .get(`${this.baseUrl}/events/${eventId}/poll/${pollId}`, {
+        headers: {
+          "Authorization": "Bearer " + jwt
+        }
+      })
       .catch((error) => {
         return { error };
       });
@@ -102,9 +108,13 @@ class EventService {
     return response;
   }
 
-  async getIndividualPoll(eventId, pollId) {
+  async getIndividualPoll(eventId, pollId, jwt) {
     const response = await axios
-      .get(`${this.baseUrl}/events/${eventId}/poll/${pollId}`)
+      .get(`${this.baseUrl}/events/${eventId}/poll/${pollId}`, {
+        headers: {
+          "Authorization": "Bearer " + jwt
+        }
+      })
       .catch((error) => {
         return { error };
       });
@@ -112,7 +122,7 @@ class EventService {
     return response;
   }
 
-  async editEventPoll(id, pollInfo, payload) {
+  async editEventPoll(id, pollInfo, payload, jwt) {
     const response = await axios
       .patch(
         `${this.baseUrl}/events/${id}/poll/${JSON.parse(pollInfo).id}`,
@@ -120,6 +130,7 @@ class EventService {
         {
           headers: {
             "Access-Control-Allow-Origin": "*",
+            "Authorization": "Bearer " + jwt
           },
         }
       )
@@ -140,11 +151,15 @@ class EventService {
     return response;
   }
 
-  async voteEventPoll(userId, eventId, pollId, payload) {
+  async voteEventPoll(userId, eventId, pollId, payload, jwt) {
     const response = await axios
       .patch(
         `${this.baseUrl}/events/${userId}/${eventId}/poll/${pollId}/vote`,
-        payload
+        payload, {
+          headers: {
+          "Authorization": "Bearer " + jwt
+        }
+        }
       )
       .catch((error) => {
         return { error };
@@ -153,9 +168,13 @@ class EventService {
     return response;
   }
 
-  async createEventItinerary(eventId, payload) {
+  async createEventItinerary(eventId, payload, jwt) {
     const response = await axios
-      .post(`${this.baseUrl}/events/${eventId}/itinerary`, payload)
+      .post(`${this.baseUrl}/events/${eventId}/itinerary`, payload, {
+        headers: {
+          "Authorization": "Bearer " + jwt
+        }
+      })
       .catch((error) => {
         return { error };
       });
@@ -187,9 +206,13 @@ class EventService {
     return response;
   }
 
-  async deleteEventItinerary(eventId) {
+  async deleteEventItinerary(eventId, jwt) {
     const response = await axios
-      .delete(`${this.baseUrl}/events/${eventId}/itinerary`)
+      .delete(`${this.baseUrl}/events/${eventId}/itinerary`, {
+        headers: {
+          "Authorization": "Bearer " + jwt
+        }
+      })
       .catch((error) => {
         return { error };
       });

@@ -2,7 +2,30 @@ export default {
   extractGoogleMapLink(link) {
     let startIndex = link.indexOf('"');
     let endIndex = link.indexOf('"', startIndex + 1);
-    return startIndex && endIndex ? link.toString().substring(startIndex + 1, endIndex) : "#";
+    return startIndex && endIndex
+      ? link.toString().substring(startIndex + 1, endIndex)
+      : "#";
+  },
+  generatedTitleQueryGooglePlaces(string) {
+    let result = "";
+    let titleWord = "";
+    for (let i in string) {
+      if (string[i] === " ") {
+        result += titleWord + "+";
+        titleWord = "";
+      } else if (string[i] !== " " && i != string.length - 1) {
+        titleWord += string[i];
+      } else if (i == string.length - 1) {
+        titleWord += string[i];
+        result += titleWord;
+      }
+    }
+    return result;
+  },
+  generateGoogleMapsLink(coordinates, title) {
+    const mapLocationTitle = this.generatedTitleQueryGooglePlaces(title);
+    return `https://www.google.com/maps/place/${mapLocationTitle}/@${coordinates.lat},${coordinates.lng},17z/data=!3m1!4b1`;
+    
   },
   generateUUID() {
     let d = new Date().getTime(),
@@ -30,9 +53,8 @@ export default {
   returnSubString(string) {
     if (string.length > 60) {
       return string.replace(/^(.{60}[^\s]*).*/, "$1") + "...";
-    }
-    else {
+    } else {
       return string;
     }
-  }
+  },
 };

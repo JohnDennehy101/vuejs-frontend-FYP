@@ -24,14 +24,26 @@
       <i class="far fa-address-book"></i>
 
       <div class="user-individual-info">
-        <p data-testid="numberOfCreatedEvents">
+        <p
+          v-if="createdEventsQuantity === 1"
+          data-testid="numberOfCreatedEventsSingular"
+        >
+          {{ createdEventsQuantity }} event created
+        </p>
+        <p v-else data-testid="numberOfCreatedEventsPlural">
           {{ createdEventsQuantity }} events created
         </p>
       </div>
       <i class="fas fa-user-friends"></i>
 
       <div class="user-individual-info">
-        <p data-testid="numberOfInvitedEvents">
+        <p
+          v-if="invitedEventsQuantity === 1"
+          data-testid="numberOfInvitedEventsSingular"
+        >
+          {{ invitedEventsQuantity }} event invite
+        </p>
+        <p v-else data-testid="numberOfInvitedEventsPlural">
           {{ invitedEventsQuantity }} event invites
         </p>
       </div>
