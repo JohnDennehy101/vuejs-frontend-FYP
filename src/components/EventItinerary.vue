@@ -386,6 +386,7 @@ export default {
     city: String,
     complete: Boolean,
     displayFinaliseCheckbox: Boolean,
+    jwt: String,
   },
   data() {
     return {
@@ -402,6 +403,7 @@ export default {
       itineraryActivities: this.activities,
       showErrorMessage: false,
       errorMessage: "",
+      token: this.jwt,
     };
   },
   methods: {
@@ -430,7 +432,8 @@ export default {
           this.$emit("itineraryRequest", true);
           const response = await this.eventService.createEventItinerary(
             this.id,
-            payload
+            payload,
+            this.token
           );
 
           if (response.status === 201) {
@@ -451,7 +454,6 @@ export default {
           this.itineraryActivities.length > 0 ||
           this.itineraryFlight[0].length > 0
         ) {
-     
           const response = await this.eventService.updateEventItinerary(
             this.id,
             payload
@@ -472,7 +474,10 @@ export default {
     },
     async deleteItinerary() {
       this.$emit("itineraryRequest", true);
-      const response = await this.eventService.deleteEventItinerary(this.id);
+      const response = await this.eventService.deleteEventItinerary(
+        this.id,
+        this.token
+      );
 
       if (response.status === 200) {
         this.$emit("itineraryRequest", false);

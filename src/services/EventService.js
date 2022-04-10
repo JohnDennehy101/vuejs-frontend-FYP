@@ -168,9 +168,13 @@ class EventService {
     return response;
   }
 
-  async createEventItinerary(eventId, payload) {
+  async createEventItinerary(eventId, payload, jwt) {
     const response = await axios
-      .post(`${this.baseUrl}/events/${eventId}/itinerary`, payload)
+      .post(`${this.baseUrl}/events/${eventId}/itinerary`, payload, {
+        headers: {
+          "Authorization": "Bearer " + jwt
+        }
+      })
       .catch((error) => {
         return { error };
       });
@@ -202,9 +206,13 @@ class EventService {
     return response;
   }
 
-  async deleteEventItinerary(eventId) {
+  async deleteEventItinerary(eventId, jwt) {
     const response = await axios
-      .delete(`${this.baseUrl}/events/${eventId}/itinerary`)
+      .delete(`${this.baseUrl}/events/${eventId}/itinerary`, {
+        headers: {
+          "Authorization": "Bearer " + jwt
+        }
+      })
       .catch((error) => {
         return { error };
       });
