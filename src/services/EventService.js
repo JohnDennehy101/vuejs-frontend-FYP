@@ -9,16 +9,17 @@ class EventService {
     if (localStorage.token) {
       axios.defaults.headers.common["Authorization"] =
         "Bearer " + localStorage.token;
-      axios.defaults.headers.common["Access-Control-Allow-Origin"] = "*"
+      axios.defaults.headers.common["Access-Control-Allow-Origin"] = "*";
     }
   }
 
   async createEvent(userId, payload, jwt) {
     const response = await axios
       .post(`${this.baseUrl}/events/${userId}`, payload, {
-         headers: {
-          "Authorization": "Bearer " + jwt
-        }
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          Authorization: "Bearer " + jwt,
+        },
       })
       .catch((error) => {
         return { error };
@@ -30,9 +31,10 @@ class EventService {
   async updateEvent(eventId, payload, jwt) {
     const response = await axios
       .patch(`${this.baseUrl}/events/${eventId}`, payload, {
-         headers: {
-          "Authorization": "Bearer " + jwt
-        }
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          Authorization: "Bearer " + jwt,
+        },
       })
       .catch((error) => {
         return { error };
@@ -43,7 +45,11 @@ class EventService {
 
   async deleteEvent(eventId) {
     const response = await axios
-      .delete(`${this.baseUrl}/events/${eventId}`)
+      .delete(`${this.baseUrl}/events/${eventId}`, {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
+      })
       .catch((error) => {
         return { error };
       });
@@ -55,8 +61,9 @@ class EventService {
     const response = await axios
       .get(this.baseUrl + "/events/user/" + userId, {
         headers: {
-          "Authorization": "Bearer " + jwt
-        }
+          "Access-Control-Allow-Origin": "*",
+          Authorization: "Bearer " + jwt,
+        },
       })
       .catch((error) => {
         return { error };
@@ -68,9 +75,10 @@ class EventService {
   async getIndividualEvent(eventId, jwt) {
     const response = await axios
       .get(this.baseUrl + "/events/" + eventId, {
-         headers: {
-          "Authorization": "Bearer " + jwt
-        }
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          Authorization: "Bearer " + jwt,
+        },
       })
       .catch((error) => {
         return { error };
@@ -84,7 +92,7 @@ class EventService {
       .post(`${this.baseUrl}/events/${id}/poll`, payload, {
         headers: {
           "Access-Control-Allow-Origin": "*",
-          "Authorization": "Bearer " + jwt
+          Authorization: "Bearer " + jwt,
         },
       })
       .catch((error) => {
@@ -98,8 +106,9 @@ class EventService {
     const response = await axios
       .get(`${this.baseUrl}/events/${eventId}/poll/${pollId}`, {
         headers: {
-          "Authorization": "Bearer " + jwt
-        }
+          "Access-Control-Allow-Origin": "*",
+          Authorization: "Bearer " + jwt,
+        },
       })
       .catch((error) => {
         return { error };
@@ -112,8 +121,9 @@ class EventService {
     const response = await axios
       .get(`${this.baseUrl}/events/${eventId}/poll/${pollId}`, {
         headers: {
-          "Authorization": "Bearer " + jwt
-        }
+          "Access-Control-Allow-Origin": "*",
+          Authorization: "Bearer " + jwt,
+        },
       })
       .catch((error) => {
         return { error };
@@ -130,7 +140,7 @@ class EventService {
         {
           headers: {
             "Access-Control-Allow-Origin": "*",
-            "Authorization": "Bearer " + jwt
+            Authorization: "Bearer " + jwt,
           },
         }
       )
@@ -143,7 +153,11 @@ class EventService {
 
   async deleteEventPoll(eventId, pollId) {
     const response = await axios
-      .delete(`${this.baseUrl}/events/${eventId}/poll/${pollId}`)
+      .delete(`${this.baseUrl}/events/${eventId}/poll/${pollId}`, {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
+      })
       .catch((error) => {
         return { error };
       });
@@ -155,10 +169,12 @@ class EventService {
     const response = await axios
       .patch(
         `${this.baseUrl}/events/${userId}/${eventId}/poll/${pollId}/vote`,
-        payload, {
+        payload,
+        {
           headers: {
-          "Authorization": "Bearer " + jwt
-        }
+            "Access-Control-Allow-Origin": "*",
+            Authorization: "Bearer " + jwt,
+          },
         }
       )
       .catch((error) => {
@@ -172,8 +188,9 @@ class EventService {
     const response = await axios
       .post(`${this.baseUrl}/events/${eventId}/itinerary`, payload, {
         headers: {
-          "Authorization": "Bearer " + jwt
-        }
+          "Access-Control-Allow-Origin": "*",
+          Authorization: "Bearer " + jwt,
+        },
       })
       .catch((error) => {
         return { error };
@@ -185,9 +202,10 @@ class EventService {
   async getIndividualEventItinerary(eventId, jwt) {
     const response = await axios
       .get(`${this.baseUrl}/events/${eventId}/itinerary`, {
-         headers: {
-          "Authorization": "Bearer " + jwt
-        }
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          Authorization: "Bearer " + jwt,
+        },
       })
       .catch((error) => {
         return { error };
@@ -198,7 +216,11 @@ class EventService {
 
   async updateEventItinerary(eventId, payload) {
     const response = await axios
-      .patch(`${this.baseUrl}/events/${eventId}/itinerary`, payload)
+      .patch(`${this.baseUrl}/events/${eventId}/itinerary`, payload, {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
+      })
       .catch((error) => {
         return { error };
       });
@@ -210,8 +232,9 @@ class EventService {
     const response = await axios
       .delete(`${this.baseUrl}/events/${eventId}/itinerary`, {
         headers: {
-          "Authorization": "Bearer " + jwt
-        }
+          "Access-Control-Allow-Origin": "*",
+          Authorization: "Bearer " + jwt,
+        },
       })
       .catch((error) => {
         return { error };
@@ -223,10 +246,12 @@ class EventService {
   async getAccommodationInformation(eventId, startDate, endDate, jwt) {
     const response = await axios
       .get(
-        `${this.baseUrl}/events/${eventId}/accommodation?startDate=${startDate}&endDate=${endDate}`, {
+        `${this.baseUrl}/events/${eventId}/accommodation?startDate=${startDate}&endDate=${endDate}`,
+        {
           headers: {
-          "Authorization": "Bearer " + jwt
-        }
+            "Access-Control-Allow-Origin": "*",
+            Authorization: "Bearer " + jwt,
+          },
         }
       )
       .catch((error) => {
@@ -239,10 +264,12 @@ class EventService {
   async getFlightInformation(eventId, startDate, endDate, jwt) {
     const response = await axios
       .get(
-        `${this.baseUrl}/events/${eventId}/flights?startDate=${startDate}&endDate=${endDate}`, {
+        `${this.baseUrl}/events/${eventId}/flights?startDate=${startDate}&endDate=${endDate}`,
+        {
           headers: {
-          "Authorization": "Bearer " + jwt
-        }
+            "Access-Control-Allow-Origin": "*",
+            Authorization: "Bearer " + jwt,
+          },
         }
       )
       .catch((error) => {
@@ -255,10 +282,12 @@ class EventService {
   async getActivityInformation(eventId, latitude, longitude, jwt) {
     const response = await axios
       .get(
-        `${this.baseUrl}/events/${eventId}/places?latitude=${latitude}&longitude=${longitude}`, {
+        `${this.baseUrl}/events/${eventId}/places?latitude=${latitude}&longitude=${longitude}`,
+        {
           headers: {
-          "Authorization": "Bearer " + jwt
-        } 
+            "Access-Control-Allow-Origin": "*",
+            Authorization: "Bearer " + jwt,
+          },
         }
       )
       .catch((error) => {
