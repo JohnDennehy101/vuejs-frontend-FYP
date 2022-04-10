@@ -1,67 +1,70 @@
 <template>
-  <form @submit.prevent="submitForm">
-    <div class="form-control">
-      <label for="title">Title</label>
-      <input
-        id="title"
-        name="title"
-        type="text"
-        placeholder="Enter title"
-        v-model="title"
-      />
-      <p class="error-message" v-if="titleNotProvided">
-        Please provide a title for the poll
-      </p>
-    </div>
-    <div class="form-control">
-      <label for="startDate">Start Date</label>
-      <datepicker
-        v-model="startDate"
-        v-bind:style="datePickerStyleObject"
-        :lower-limit="restrictDatePicker"
-      />
-      <p class="error-message" v-if="startDateNotProvided">
-        Please provide a start date for the poll option
-      </p>
-    </div>
-    <div class="form-control">
-      <label for="endDate">End Date</label>
-      <datepicker
-        v-model="endDate"
-        v-bind:style="datePickerStyleObject"
-        :lower-limit="startDate"
-      />
-      <p class="error-message" v-if="endDateNotProvided">
-        Please provide an end date for the poll option
-      </p>
-    </div>
-    <div class="form-control">
-      <p class="error-message" v-if="pollOptionNotProvided">
-        Please provide at least one poll option for the poll
-      </p>
-      <button
-        @click="addPollOption"
-        data-testid="button"
-        id="add-option-button"
-      >
-        Add Option
-      </button>
-    </div>
-    <div v-if="options.length > 0" class="form-control">
-      <label for="options">Poll Options</label>
-      <ul v-for="option in options" :key="option.id">
-        <PollOption
-          v-on:removePollOption="removeIndividualPollOption"
-          :startDate="option.startDate"
-          :endDate="option.endDate"
-          :optionId="option.id"
+  <div id="wrapper">
+    <Toast v-if="displayToast" :message="toastMessage" />
+    <form @submit.prevent="submitForm">
+      <div class="form-control">
+        <label for="title">Title</label>
+        <input
+          id="title"
+          name="title"
+          type="text"
+          placeholder="Enter title"
+          v-model="title"
         />
-      </ul>
-    </div>
-    <div class="form-control">
-      <button>Submit</button>
-    </div>
-  </form>
+        <p class="error-message" v-if="titleNotProvided">
+          Please provide a title for the poll
+        </p>
+      </div>
+      <div class="form-control">
+        <label for="startDate">Start Date</label>
+        <datepicker
+          v-model="startDate"
+          v-bind:style="datePickerStyleObject"
+          :lower-limit="restrictDatePicker"
+        />
+        <p class="error-message" v-if="startDateNotProvided">
+          Please provide a start date for the poll option
+        </p>
+      </div>
+      <div class="form-control">
+        <label for="endDate">End Date</label>
+        <datepicker
+          v-model="endDate"
+          v-bind:style="datePickerStyleObject"
+          :lower-limit="startDate"
+        />
+        <p class="error-message" v-if="endDateNotProvided">
+          Please provide an end date for the poll option
+        </p>
+      </div>
+      <div class="form-control">
+        <p class="error-message" v-if="pollOptionNotProvided">
+          Please provide at least one poll option for the poll
+        </p>
+        <button
+          @click="addPollOption"
+          data-testid="button"
+          id="add-option-button"
+        >
+          Add Option
+        </button>
+      </div>
+      <div v-if="options.length > 0" class="form-control">
+        <label for="options">Poll Options</label>
+        <ul v-for="option in options" :key="option.id">
+          <PollOption
+            v-on:removePollOption="removeIndividualPollOption"
+            :startDate="option.startDate"
+            :endDate="option.endDate"
+            :optionId="option.id"
+          />
+        </ul>
+      </div>
+      <div class="form-control">
+        <button>Submit</button>
+      </div>
+    </form>
+  </div>
 </template>
 
 <script>
@@ -70,6 +73,7 @@ import PollOption from "./PollOption";
 import eventService from "../services/EventService";
 import StringUtils from "../utils/stringUtils";
 import { mapGetters } from "vuex";
+import Toast from "../components/Toast";
 export default {
   props: {
     poll: Object,
@@ -100,11 +104,14 @@ export default {
         border: "1px solid grey",
         paddingLeft: "10px",
       },
+      displayToast: false,
+      toastMessage: "",
     };
   },
   computed: {
     ...mapGetters({
       userId: "userId",
+      jwt: "jwt",
     }),
   },
 
@@ -135,11 +142,17 @@ export default {
           const response = await this.eventService.editEventPoll(
             this.id,
             this.pollInfo,
-            payload
+            payload,
+            this.jwt
           );
 
           if (!("error" in response)) {
-            this.$router.push({ path: `/dashboard/${this.userId}` });
+            this.toastMessage = "Successfully updated poll";
+            this.displayToast = true;
+            setTimeout(
+              () => this.$router.push({ path: `/dashboard/${this.userId}` }),
+              2000
+            );
           } else {
             this.invalidLogin = true;
           }
@@ -164,11 +177,17 @@ export default {
 
           const response = await this.eventService.createEventPoll(
             this.id,
-            payload
+            payload,
+            this.jwt
           );
 
           if (!("error" in response)) {
-            this.$router.push({ path: `/dashboard/${this.userId}` });
+            this.toastMessage = "Successfully created poll";
+            this.displayToast = true;
+            setTimeout(
+              () => this.$router.push({ path: `/dashboard/${this.userId}` }),
+              2000
+            );
           } else {
             this.invalidLogin = true;
           }
@@ -198,7 +217,8 @@ export default {
 
         const response = await this.eventService.getIndividualPoll(
           this.id,
-          pollInformation.id
+          pollInformation.id,
+          this.jwt
         );
 
         this.title = response.data.title;
@@ -239,11 +259,16 @@ export default {
   components: {
     Datepicker,
     PollOption,
+    Toast,
   },
 };
 </script>
 
 <style scoped lang="scss">
+#wrapper {
+  width: 100%;
+  min-height: 100%;
+}
 .v3dp__datepicker {
   --vdp-bg-color: #ffffff;
   --vdp-text-color: #000000;

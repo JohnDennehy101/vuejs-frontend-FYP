@@ -9,6 +9,7 @@ class EventService {
     if (localStorage.token) {
       axios.defaults.headers.common["Authorization"] =
         "Bearer " + localStorage.token;
+      axios.defaults.headers.common["Access-Control-Allow-Origin"] = "*"
     }
   }
 
@@ -78,11 +79,12 @@ class EventService {
     return response;
   }
 
-  async createEventPoll(id, payload) {
+  async createEventPoll(id, payload, jwt) {
     const response = await axios
       .post(`${this.baseUrl}/events/${id}/poll`, payload, {
         headers: {
           "Access-Control-Allow-Origin": "*",
+          "Authorization": "Bearer " + jwt
         },
       })
       .catch((error) => {
@@ -102,9 +104,13 @@ class EventService {
     return response;
   }
 
-  async getIndividualPoll(eventId, pollId) {
+  async getIndividualPoll(eventId, pollId, jwt) {
     const response = await axios
-      .get(`${this.baseUrl}/events/${eventId}/poll/${pollId}`)
+      .get(`${this.baseUrl}/events/${eventId}/poll/${pollId}`, {
+        headers: {
+          "Authorization": "Bearer " + jwt
+        }
+      })
       .catch((error) => {
         return { error };
       });
@@ -112,7 +118,7 @@ class EventService {
     return response;
   }
 
-  async editEventPoll(id, pollInfo, payload) {
+  async editEventPoll(id, pollInfo, payload, jwt) {
     const response = await axios
       .patch(
         `${this.baseUrl}/events/${id}/poll/${JSON.parse(pollInfo).id}`,
@@ -120,6 +126,7 @@ class EventService {
         {
           headers: {
             "Access-Control-Allow-Origin": "*",
+            "Authorization": "Bearer " + jwt
           },
         }
       )
