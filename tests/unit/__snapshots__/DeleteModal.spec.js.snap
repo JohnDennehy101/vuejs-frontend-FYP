@@ -247,7 +247,7 @@ VueWrapper {
           "deleteEvent": [Function],
           "eventId": undefined,
           "eventService": EventService {
-            "baseUrl": "http://localhost:3000/api/v1",
+            "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
           },
           "eventUuid": undefined,
           "hasOwnProperty": [Function],
@@ -386,7 +386,7 @@ VueWrapper {
             "deleteEvent": [Function],
             "eventId": undefined,
             "eventService": EventService {
-              "baseUrl": "http://localhost:3000/api/v1",
+              "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
             },
             "eventUuid": undefined,
             "hasOwnProperty": [Function],
@@ -437,7 +437,7 @@ VueWrapper {
           "props": Object {
             "eventId": undefined,
             "eventService": EventService {
-              "baseUrl": "http://localhost:3000/api/v1",
+              "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
             },
             "modalHeading": undefined,
             "pollId": undefined,
@@ -455,7 +455,7 @@ VueWrapper {
                 "0": false,
                 "1": true,
                 "default": EventService {
-                  "baseUrl": "http://localhost:3000/api/v1",
+                  "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
                 },
               },
               "modalHeading": Object {
@@ -504,7 +504,7 @@ VueWrapper {
             "deleteEvent": [Function],
             "eventId": undefined,
             "eventService": EventService {
-              "baseUrl": "http://localhost:3000/api/v1",
+              "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
             },
             "eventUuid": undefined,
             "hasOwnProperty": [Function],
@@ -1402,7 +1402,7 @@ VueWrapper {
                 "0": false,
                 "1": true,
                 "default": EventService {
-                  "baseUrl": "http://localhost:3000/api/v1",
+                  "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
                 },
               },
               "modalHeading": [Function],
@@ -1455,7 +1455,7 @@ VueWrapper {
               "0": false,
               "1": true,
               "default": EventService {
-                "baseUrl": "http://localhost:3000/api/v1",
+                "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
               },
             },
             "modalHeading": [Function],
@@ -1583,7 +1583,7 @@ VueWrapper {
     "deleteEvent": [Function],
     "eventId": undefined,
     "eventService": EventService {
-      "baseUrl": "http://localhost:3000/api/v1",
+      "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
     },
     "eventUuid": undefined,
     "hasOwnProperty": [Function],

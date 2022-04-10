@@ -132,7 +132,7 @@ describe("EventDetailInfoActivitiesTable.vue", () => {
     });
 
     expect(wrapper.find('[data-testid="mapLink"]').attributes().href).toEqual(
-      "https://maps.google.com/maps/contrib/115516656997182409995"
+      "https://www.google.com/maps/place/The+Metropole+Hotel/@51.9013174,-8.467591,17z/data=!3m1!4b1"
     );
   });
 

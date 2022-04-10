@@ -391,7 +391,7 @@ VueWrapper {
           "emailNotProvided": false,
           "errorMessage": "There was an error adding this event, not successfully created.",
           "eventService": EventService {
-            "baseUrl": "http://localhost:3000/api/v1",
+            "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
           },
           "eventType": null,
           "eventTypeChange": [Function],
@@ -613,7 +613,7 @@ VueWrapper {
             "emailNotProvided": false,
             "errorMessage": "There was an error adding this event, not successfully created.",
             "eventService": EventService {
-              "baseUrl": "http://localhost:3000/api/v1",
+              "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
             },
             "eventType": null,
             "eventTypeChange": [Function],
@@ -779,7 +779,7 @@ VueWrapper {
           "props": Object {
             "edit": false,
             "eventService": EventService {
-              "baseUrl": "http://localhost:3000/api/v1",
+              "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
             },
             "individualEvent": undefined,
           },
@@ -795,7 +795,7 @@ VueWrapper {
                 "0": false,
                 "1": true,
                 "default": EventService {
-                  "baseUrl": "http://localhost:3000/api/v1",
+                  "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
                 },
               },
               "individualEvent": Object {
@@ -853,7 +853,7 @@ VueWrapper {
             "emailNotProvided": false,
             "errorMessage": "There was an error adding this event, not successfully created.",
             "eventService": EventService {
-              "baseUrl": "http://localhost:3000/api/v1",
+              "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
             },
             "eventType": null,
             "eventTypeChange": [Function],
@@ -1206,7 +1206,7 @@ VueWrapper {
                           "emailNotProvided": false,
                           "errorMessage": "There was an error adding this event, not successfully created.",
                           "eventService": EventService {
-                            "baseUrl": "http://localhost:3000/api/v1",
+                            "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
                           },
                           "eventType": null,
                           "eventTypeChange": [Function],
@@ -1430,7 +1430,7 @@ VueWrapper {
                           "emailNotProvided": false,
                           "errorMessage": "There was an error adding this event, not successfully created.",
                           "eventService": EventService {
-                            "baseUrl": "http://localhost:3000/api/v1",
+                            "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
                           },
                           "eventType": null,
                           "eventTypeChange": [Function],
@@ -1655,7 +1655,7 @@ VueWrapper {
                               "emailNotProvided": false,
                               "errorMessage": "There was an error adding this event, not successfully created.",
                               "eventService": EventService {
-                                "baseUrl": "http://localhost:3000/api/v1",
+                                "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
                               },
                               "eventType": null,
                               "eventTypeChange": [Function],
@@ -1854,7 +1854,7 @@ VueWrapper {
                               "emailNotProvided": false,
                               "errorMessage": "There was an error adding this event, not successfully created.",
                               "eventService": EventService {
-                                "baseUrl": "http://localhost:3000/api/v1",
+                                "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
                               },
                               "eventType": null,
                               "eventTypeChange": [Function],
@@ -2053,7 +2053,7 @@ VueWrapper {
                               "emailNotProvided": false,
                               "errorMessage": "There was an error adding this event, not successfully created.",
                               "eventService": EventService {
-                                "baseUrl": "http://localhost:3000/api/v1",
+                                "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
                               },
                               "eventType": null,
                               "eventTypeChange": [Function],
@@ -2673,7 +2673,7 @@ VueWrapper {
                           "emailNotProvided": false,
                           "errorMessage": "There was an error adding this event, not successfully created.",
                           "eventService": EventService {
-                            "baseUrl": "http://localhost:3000/api/v1",
+                            "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
                           },
                           "eventType": null,
                           "eventTypeChange": [Function],
@@ -3310,7 +3310,7 @@ VueWrapper {
                           "emailNotProvided": false,
                           "errorMessage": "There was an error adding this event, not successfully created.",
                           "eventService": EventService {
-                            "baseUrl": "http://localhost:3000/api/v1",
+                            "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
                           },
                           "eventType": null,
                           "eventTypeChange": [Function],
@@ -3578,7 +3578,7 @@ VueWrapper {
                           "emailNotProvided": false,
                           "errorMessage": "There was an error adding this event, not successfully created.",
                           "eventService": EventService {
-                            "baseUrl": "http://localhost:3000/api/v1",
+                            "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
                           },
                           "eventType": null,
                           "eventTypeChange": [Function],
@@ -4300,7 +4300,7 @@ VueWrapper {
                       "emailNotProvided": false,
                       "errorMessage": "There was an error adding this event, not successfully created.",
                       "eventService": EventService {
-                        "baseUrl": "http://localhost:3000/api/v1",
+                        "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
                       },
                       "eventType": null,
                       "eventTypeChange": [Function],
@@ -4446,7 +4446,7 @@ VueWrapper {
                       "emailNotProvided": false,
                       "errorMessage": "There was an error adding this event, not successfully created.",
                       "eventService": EventService {
-                        "baseUrl": "http://localhost:3000/api/v1",
+                        "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
                       },
                       "eventType": null,
                       "eventTypeChange": [Function],
@@ -4591,7 +4591,7 @@ VueWrapper {
                       "emailNotProvided": false,
                       "errorMessage": "There was an error adding this event, not successfully created.",
                       "eventService": EventService {
-                        "baseUrl": "http://localhost:3000/api/v1",
+                        "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
                       },
                       "eventType": null,
                       "eventTypeChange": [Function],
@@ -4710,7 +4710,7 @@ VueWrapper {
                       "emailNotProvided": false,
                       "errorMessage": "There was an error adding this event, not successfully created.",
                       "eventService": EventService {
-                        "baseUrl": "http://localhost:3000/api/v1",
+                        "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
                       },
                       "eventType": null,
                       "eventTypeChange": [Function],
@@ -4829,7 +4829,7 @@ VueWrapper {
                       "emailNotProvided": false,
                       "errorMessage": "There was an error adding this event, not successfully created.",
                       "eventService": EventService {
-                        "baseUrl": "http://localhost:3000/api/v1",
+                        "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
                       },
                       "eventType": null,
                       "eventTypeChange": [Function],
@@ -5296,7 +5296,7 @@ VueWrapper {
                           "emailNotProvided": false,
                           "errorMessage": "There was an error adding this event, not successfully created.",
                           "eventService": EventService {
-                            "baseUrl": "http://localhost:3000/api/v1",
+                            "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
                           },
                           "eventType": null,
                           "eventTypeChange": [Function],
@@ -5933,7 +5933,7 @@ VueWrapper {
                           "emailNotProvided": false,
                           "errorMessage": "There was an error adding this event, not successfully created.",
                           "eventService": EventService {
-                            "baseUrl": "http://localhost:3000/api/v1",
+                            "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
                           },
                           "eventType": null,
                           "eventTypeChange": [Function],
@@ -6162,7 +6162,7 @@ VueWrapper {
                       "emailNotProvided": false,
                       "errorMessage": "There was an error adding this event, not successfully created.",
                       "eventService": EventService {
-                        "baseUrl": "http://localhost:3000/api/v1",
+                        "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
                       },
                       "eventType": null,
                       "eventTypeChange": [Function],
@@ -6880,7 +6880,7 @@ VueWrapper {
                 "0": false,
                 "1": true,
                 "default": EventService {
-                  "baseUrl": "http://localhost:3000/api/v1",
+                  "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
                 },
               },
               "individualEvent": [Function],
@@ -7144,7 +7144,7 @@ VueWrapper {
               "0": false,
               "1": true,
               "default": EventService {
-                "baseUrl": "http://localhost:3000/api/v1",
+                "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
               },
             },
             "individualEvent": [Function],
@@ -7464,7 +7464,7 @@ VueWrapper {
     "emailNotProvided": false,
     "errorMessage": "There was an error adding this event, not successfully created.",
     "eventService": EventService {
-      "baseUrl": "http://localhost:3000/api/v1",
+      "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
     },
     "eventType": null,
     "eventTypeChange": [Function],
