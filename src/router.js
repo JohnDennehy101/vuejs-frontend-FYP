@@ -11,6 +11,7 @@ import EventDetailPage from "./pages/EventDetailPage";
 import UserSettingsPage from "./pages/UserSettingsPage";
 import RouteNotFound from "./components/RouteNotFound";
 import { createRouter, createWebHistory } from "vue-router";
+import store from "./store/index";
 
 const routes = [
   {
@@ -42,45 +43,72 @@ const routes = [
     path: "/dashboard/:id",
     name: "Dashboard",
     component: DashboardPage,
+    meta: {
+      authenticationRequired: true,
+    },
   },
   {
     path: "/dashboard/createEvent",
     name: "Create Event Page",
     component: CreateEventPage,
+    meta: {
+      authenticationRequired: true,
+    },
   },
   {
     path: "/settings",
     name: "User Settings Page",
     component: UserSettingsPage,
+    meta: {
+      authenticationRequired: true,
+    },
   },
   {
     path: "/event/:userId/:eventId/poll",
     name: "Create Poll Page",
     component: CreatePollPage,
     props: true,
+    meta: {
+      authenticationRequired: true,
+    },
   },
   {
     path: "/event/:userId/:eventId/poll/:pollId",
     name: "Take Poll Page",
     component: TakePollPage,
     props: true,
+    meta: {
+      authenticationRequired: true,
+    },
   },
   {
     path: "/event/:userId/:eventId",
     name: "Event Detail Page",
     component: EventDetailPage,
     props: true,
+    meta: {
+      authenticationRequired: true,
+    },
   },
   {
     path: "/:pathMatch(.*)*",
     name: "Route Not Found",
-    component: RouteNotFound
-  }
+    component: RouteNotFound,
+  },
 ];
 
 const router = createRouter({
   history: createWebHistory(),
   routes: routes,
+});
+
+router.beforeEach(function (to, from, next) {
+  console.log()
+  if (to.meta.authenticationRequired && !store.getters.isAuthenticated) {
+    next("/login");
+  } else {
+    next();
+  }
 });
 
 export { routes };
