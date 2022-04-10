@@ -606,6 +606,9 @@ export default {
         this.messages.findIndex((message) => message.id === messageId),
         1
       );
+      this.displayToast = true;
+      this.toastMessage = "Message successfully deleted";
+      setTimeout(() => (this.displayToast = false), 3000);
     },
     joinChatRoom() {
       if (!this.memberOfChatRoom) {
