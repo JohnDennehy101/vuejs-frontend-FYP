@@ -353,6 +353,7 @@ VueWrapper {
           "dispatch": [MockFunction],
           "getters": Object {
             "isAuthenticated": [Function],
+            "jwt": [Function],
             "userId": [Function],
           },
           "state": Object {
@@ -426,6 +427,7 @@ VueWrapper {
           "dispatch": [MockFunction],
           "getters": Object {
             "isAuthenticated": [Function],
+            "jwt": [Function],
             "userId": [Function],
           },
           "state": Object {
@@ -449,6 +451,7 @@ VueWrapper {
             "dispatch": [MockFunction],
             "getters": Object {
               "isAuthenticated": [Function],
+              "jwt": [Function],
               "userId": [Function],
             },
             "state": Object {
@@ -706,6 +709,7 @@ VueWrapper {
               "dispatch": [MockFunction],
               "getters": Object {
                 "isAuthenticated": [Function],
+                "jwt": [Function],
                 "userId": [Function],
               },
               "state": Object {
@@ -1076,6 +1080,7 @@ VueWrapper {
               "dispatch": [MockFunction],
               "getters": Object {
                 "isAuthenticated": [Function],
+                "jwt": [Function],
                 "userId": [Function],
               },
               "state": Object {
@@ -6555,6 +6560,7 @@ VueWrapper {
                                   "dispatch": [MockFunction],
                                   "getters": Object {
                                     "isAuthenticated": [Function],
+                                    "jwt": [Function],
                                     "userId": [Function],
                                   },
                                   "state": Object {
@@ -6640,6 +6646,7 @@ VueWrapper {
                                   "dispatch": [MockFunction],
                                   "getters": Object {
                                     "isAuthenticated": [Function],
+                                    "jwt": [Function],
                                     "userId": [Function],
                                   },
                                   "state": Object {
@@ -6913,6 +6920,7 @@ VueWrapper {
                                   "dispatch": [MockFunction],
                                   "getters": Object {
                                     "isAuthenticated": [Function],
+                                    "jwt": [Function],
                                     "userId": [Function],
                                   },
                                   "state": Object {
@@ -6998,6 +7006,7 @@ VueWrapper {
                                   "dispatch": [MockFunction],
                                   "getters": Object {
                                     "isAuthenticated": [Function],
+                                    "jwt": [Function],
                                     "userId": [Function],
                                   },
                                   "state": Object {
@@ -12878,6 +12887,7 @@ VueWrapper {
                           "dispatch": [MockFunction],
                           "getters": Object {
                             "isAuthenticated": [Function],
+                            "jwt": [Function],
                             "userId": [Function],
                           },
                           "state": Object {
@@ -12963,6 +12973,7 @@ VueWrapper {
                           "dispatch": [MockFunction],
                           "getters": Object {
                             "isAuthenticated": [Function],
+                            "jwt": [Function],
                             "userId": [Function],
                           },
                           "state": Object {
@@ -13236,6 +13247,7 @@ VueWrapper {
                           "dispatch": [MockFunction],
                           "getters": Object {
                             "isAuthenticated": [Function],
+                            "jwt": [Function],
                             "userId": [Function],
                           },
                           "state": Object {
@@ -13321,6 +13333,7 @@ VueWrapper {
                           "dispatch": [MockFunction],
                           "getters": Object {
                             "isAuthenticated": [Function],
+                            "jwt": [Function],
                             "userId": [Function],
                           },
                           "state": Object {
@@ -13865,6 +13878,7 @@ VueWrapper {
       "dispatch": [MockFunction],
       "getters": Object {
         "isAuthenticated": [Function],
+        "jwt": [Function],
         "userId": [Function],
       },
       "state": Object {
@@ -13968,6 +13982,7 @@ VueWrapper {
       "dispatch": [MockFunction],
       "getters": Object {
         "isAuthenticated": [Function],
+        "jwt": [Function],
         "userId": [Function],
       },
       "state": Object {

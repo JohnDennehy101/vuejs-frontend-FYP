@@ -51,7 +51,10 @@ describe("PollForm.vue", () => {
   });
 
   it("for new poll, if title and poll option present, poll should be successfully added", async () => {
-    const wrapper = shallowMount(PollForm, {
+    jest.setTimeout(30000);
+    jest.useFakeTimers();
+    jest.spyOn(global, 'setTimeout');
+    const wrapper = mount(PollForm, {
       props: {
         editPoll: false,
         eventService: mockSuccessfulEventService,
@@ -96,6 +99,7 @@ describe("PollForm.vue", () => {
     console.log(wrapper.vm);
 
     await wrapper.vm.$nextTick();
+    jest.runOnlyPendingTimers()
 
     expect(wrapper.vm.options).toHaveLength(1);
 
@@ -131,8 +135,6 @@ describe("PollForm.vue", () => {
     });
 
     await wrapper.find("form").trigger("submit.prevent");
-
-    console.log(wrapper.vm);
 
     await wrapper.vm.$nextTick();
 
@@ -291,7 +293,10 @@ describe("PollForm.vue", () => {
   });
 
   it("for existing poll, if title and poll option present, poll should be successfully updated", async () => {
-    const wrapper = shallowMount(PollForm, {
+    jest.setTimeout(30000);
+    jest.useFakeTimers();
+    jest.spyOn(global, 'setTimeout');
+    const wrapper = mount(PollForm, {
       props: {
         editPoll: true,
         eventService: mockSuccessfulEventService,
@@ -332,6 +337,7 @@ describe("PollForm.vue", () => {
     expect(wrapper.vm.options).toHaveLength(1);
 
     await wrapper.find("form").trigger("submit.prevent");
+    jest.runOnlyPendingTimers();
 
     expect(mockRouter.push).toHaveBeenCalledTimes(1);
   });

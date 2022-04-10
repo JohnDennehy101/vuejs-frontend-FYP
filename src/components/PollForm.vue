@@ -184,6 +184,7 @@ export default {
           if (!("error" in response)) {
             this.toastMessage = "Successfully created poll";
             this.displayToast = true;
+            console.log("HITTING");
             setTimeout(
               () => this.$router.push({ path: `/dashboard/${this.userId}` }),
               2000
