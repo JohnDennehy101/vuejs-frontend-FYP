@@ -94,9 +94,13 @@ class EventService {
     return response;
   }
 
-  async getEventPolls(eventId, pollId) {
+  async getEventPolls(eventId, pollId, jwt) {
     const response = await axios
-      .get(`${this.baseUrl}/events/${eventId}/poll/${pollId}`)
+      .get(`${this.baseUrl}/events/${eventId}/poll/${pollId}`, {
+        headers: {
+          "Authorization": "Bearer " + jwt
+        }
+      })
       .catch((error) => {
         return { error };
       });
@@ -147,11 +151,15 @@ class EventService {
     return response;
   }
 
-  async voteEventPoll(userId, eventId, pollId, payload) {
+  async voteEventPoll(userId, eventId, pollId, payload, jwt) {
     const response = await axios
       .patch(
         `${this.baseUrl}/events/${userId}/${eventId}/poll/${pollId}/vote`,
-        payload
+        payload, {
+          headers: {
+          "Authorization": "Bearer " + jwt
+        }
+        }
       )
       .catch((error) => {
         return { error };

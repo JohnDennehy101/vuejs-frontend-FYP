@@ -93,6 +93,7 @@ export default {
   computed: {
     ...mapGetters({
       userId: "userId",
+      jwt: "jwt",
     }),
   },
   methods: {
@@ -111,7 +112,8 @@ export default {
     async getEventPollInfo() {
       const response = await this.eventService.getEventPolls(
         this.eventId,
-        this.pollId
+        this.pollId,
+        this.jwt
       );
       if ("error" in response) {
         this.loaded = true;
@@ -162,7 +164,8 @@ export default {
           this.userId,
           this.eventId,
           this.pollId,
-          payload
+          payload,
+          this.jwt
         );
 
         if (!("error" in response)) {
