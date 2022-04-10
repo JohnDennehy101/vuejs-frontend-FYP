@@ -159,9 +159,11 @@ VueWrapper {
           "id": undefined,
           "image": "https://www.cloudinaryimage.com",
           "invalidImageUpload": null,
+          "jwt": undefined,
           "newImage": null,
           "previewFiles": [Function],
           "profileImage": "https://www.cloudinaryimage.com",
+          "token": undefined,
           "updateUserImage": [Function],
           "userId": undefined,
           "userService": Object {
@@ -230,10 +232,12 @@ VueWrapper {
             "image": 3,
             "invalidImageUpload": 2,
             "isVueInstance": 0,
+            "jwt": 3,
             "newImage": 2,
             "previewFiles": 4,
             "profileImage": 2,
             "toJSON": 0,
+            "token": 2,
             "updateUserImage": 4,
             "userId": 3,
             "userService": 3,
@@ -286,9 +290,11 @@ VueWrapper {
             "id": undefined,
             "image": "https://www.cloudinaryimage.com",
             "invalidImageUpload": null,
+            "jwt": undefined,
             "newImage": null,
             "previewFiles": [Function],
             "profileImage": "https://www.cloudinaryimage.com",
+            "token": undefined,
             "updateUserImage": [Function],
             "userId": undefined,
             "userService": Object {
@@ -304,6 +310,7 @@ VueWrapper {
             "invalidImageUpload": null,
             "newImage": null,
             "profileImage": "https://www.cloudinaryimage.com",
+            "token": undefined,
           },
           "directives": null,
           "ec": null,
@@ -334,6 +341,7 @@ VueWrapper {
           "parent": [Circular],
           "props": Object {
             "image": "https://www.cloudinaryimage.com",
+            "jwt": undefined,
             "userId": undefined,
             "userService": Object {
               "loginUser": [Function],
@@ -346,6 +354,11 @@ VueWrapper {
           "propsOptions": Array [
             Object {
               "image": Object {
+                "0": false,
+                "1": true,
+                "type": [Function],
+              },
+              "jwt": Object {
                 "0": false,
                 "1": true,
                 "type": [Function],
@@ -373,9 +386,11 @@ VueWrapper {
             "id": undefined,
             "image": "https://www.cloudinaryimage.com",
             "invalidImageUpload": null,
+            "jwt": undefined,
             "newImage": null,
             "previewFiles": [Function],
             "profileImage": "https://www.cloudinaryimage.com",
+            "token": undefined,
             "updateUserImage": [Function],
             "userId": undefined,
             "userService": Object {
@@ -616,6 +631,7 @@ VueWrapper {
             },
             "props": Object {
               "image": [Function],
+              "jwt": [Function],
               "userId": [Function],
               "userService": Object {
                 "0": false,
@@ -693,6 +709,7 @@ VueWrapper {
           },
           "props": Object {
             "image": [Function],
+            "jwt": [Function],
             "userId": [Function],
             "userService": Object {
               "0": false,
@@ -820,9 +837,11 @@ VueWrapper {
     "id": undefined,
     "image": "https://www.cloudinaryimage.com",
     "invalidImageUpload": null,
+    "jwt": undefined,
     "newImage": null,
     "previewFiles": [Function],
     "profileImage": "https://www.cloudinaryimage.com",
+    "token": undefined,
     "updateUserImage": [Function],
     "userId": undefined,
     "userService": Object {

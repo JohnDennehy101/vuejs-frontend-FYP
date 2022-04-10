@@ -16,6 +16,7 @@
       v-if="user"
       v-on:updateUserImage="updateUserImage"
       :userId="user.id"
+      :jwt="jwt"
       :image="user.profileImageUrl"
     />
     <UserSettingsForm
@@ -43,8 +44,8 @@ export default {
   data() {
     return {
       user: null,
-      isLoading: false,
-      fullPage: false,
+      isLoading: true,
+      fullPage: true,
       loaderType: "dots",
       loaderColour: "#0384ff",
       loaderOpacity: 1,
@@ -72,12 +73,12 @@ export default {
         this.invalidEventCreation = true;
       } else {
         this.user = response.data;
+        this.isLoading = false;
       }
     },
     updateUserImage(value) {
       if (value === false) {
         this.displayToast = true;
-        setTimeout(() => (this.displayToast = false), 4000);
       }
       this.isLoading = value;
     },
@@ -85,7 +86,6 @@ export default {
       if (value) {
         this.message = "User account successfully updated.";
         this.displayToast = true;
-        setTimeout(() => (this.displayToast = false), 4000);
       }
     },
   },

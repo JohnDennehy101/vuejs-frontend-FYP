@@ -111,7 +111,7 @@ class UserService {
     return response;
   }
 
-  async uploadUserProfileImage(id, image) {
+  async uploadUserProfileImage(id, image, token) {
     let payload = new FormData();
     payload.append("file", image);
     const response = await axios
@@ -119,6 +119,7 @@ class UserService {
         headers: {
           "Access-Control-Allow-Origin": "*",
           "Content-Type": "multipart/form-data",
+          "Authorization": "Bearer " + token
         },
       })
       .catch((error) => {

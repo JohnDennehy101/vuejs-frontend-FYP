@@ -26,6 +26,7 @@ export default {
     },
     userId: String,
     image: String,
+    jwt: String,
   },
   data() {
     return {
@@ -33,6 +34,7 @@ export default {
       id: this.userId,
       newImage: null,
       invalidImageUpload: null,
+      token: this.jwt,
     };
   },
   methods: {
@@ -46,14 +48,15 @@ export default {
     async updateUserImage() {
       const response = await this.userService.uploadUserProfileImage(
         this.id,
-        this.newImage
+        this.newImage,
+        this.token
       );
 
       if ("error" in response) {
         this.invalidImageUpload = true;
       } else {
+        setTimeout(() => this.$router.go(0), 1000);
         this.$emit("updateUserImage", false);
-        setTimeout(() => this.$router.go(0), 5000);
       }
     },
   },
