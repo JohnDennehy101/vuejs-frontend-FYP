@@ -49,6 +49,7 @@ export default {
     eventId: String,
     modalHeading: String,
     pollId: String,
+    token: String,
   },
   data() {
     return {
@@ -56,6 +57,7 @@ export default {
       itemTitle: this.title,
       eventUuid: this.eventId,
       pollUuid: this.pollId,
+      jwt: this.token,
     };
   },
   methods: {
@@ -69,7 +71,8 @@ export default {
       } else {
         const response = await this.eventService.deleteEventPoll(
           this.eventUuid,
-          this.pollUuid
+          this.pollUuid,
+          this.jwt
         );
         if (!("error" in response)) {
           this.$router.go(0);

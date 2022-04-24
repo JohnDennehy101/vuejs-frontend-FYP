@@ -151,11 +151,12 @@ class EventService {
     return response;
   }
 
-  async deleteEventPoll(eventId, pollId) {
+  async deleteEventPoll(eventId, pollId, jwt) {
     const response = await axios
       .delete(`${this.baseUrl}/events/${eventId}/poll/${pollId}`, {
         headers: {
           "Access-Control-Allow-Origin": "*",
+           Authorization: "Bearer " + jwt,
         },
       })
       .catch((error) => {

@@ -195,6 +195,7 @@
         :title="deletePollTitle"
         :eventId="this.eventId"
         :pollId="this.pollId"
+        :token="this.jwt"
         :modalHeading="deletePollModalHeading"
         @close="displayDeleteModal = false"
       />
@@ -376,7 +377,7 @@ export default {
         if (pollCompletionCheck.length > 0) {
           this.mostVotedPollOption = pollCompletionCheck[0].pollOptions.reduce(
             function (prev, current) {
-              return prev.y > current.y ? prev : current;
+              return prev.votes.length > current.votes.length ? prev : current;
             }
           );
 

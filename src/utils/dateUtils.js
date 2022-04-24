@@ -1,6 +1,7 @@
 export default {
     returnFormattedDate(unformattedDate) {
         let date = new Date(unformattedDate);
+        date.setHours(date.getHours() + 1);
         let month = date.getMonth();
         let months = [
         "January",
