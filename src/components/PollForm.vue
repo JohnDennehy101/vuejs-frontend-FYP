@@ -72,6 +72,7 @@ import Datepicker from "vue3-datepicker";
 import PollOption from "./PollOption";
 import eventService from "../services/EventService";
 import StringUtils from "../utils/stringUtils";
+import DateUtils from "../utils/dateUtils";
 import { mapGetters } from "vuex";
 import Toast from "../components/Toast";
 export default {
@@ -228,11 +229,12 @@ export default {
     },
     addPollOption(event) {
       event.preventDefault();
+
       if (this.startDate !== null && this.endDate !== null) {
         this.options.push({
           id: StringUtils.generateUUID(),
-          startDate: this.startDate,
-          endDate: this.endDate,
+          startDate: DateUtils.returnFormattedDateWithUTCTime(this.startDate),
+          endDate: DateUtils.returnFormattedDateWithUTCTime(this.endDate),
           votes: [],
         });
 
