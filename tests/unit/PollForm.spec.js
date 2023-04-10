@@ -53,7 +53,7 @@ describe("PollForm.vue", () => {
   it("for new poll, if title and poll option present, poll should be successfully added", async () => {
     jest.setTimeout(30000);
     jest.useFakeTimers();
-    jest.spyOn(global, 'setTimeout');
+    jest.spyOn(global, "setTimeout");
     const wrapper = mount(PollForm, {
       props: {
         editPoll: false,
@@ -97,7 +97,7 @@ describe("PollForm.vue", () => {
     await wrapper.find("form").trigger("submit.prevent");
 
     await wrapper.vm.$nextTick();
-    jest.runOnlyPendingTimers()
+    jest.runOnlyPendingTimers();
 
     expect(wrapper.vm.options).toHaveLength(1);
 
@@ -293,9 +293,12 @@ describe("PollForm.vue", () => {
   it("for existing poll, if title and poll option present, poll should be successfully updated", async () => {
     jest.setTimeout(30000);
     jest.useFakeTimers();
-    jest.spyOn(global, 'setTimeout');
+    jest.spyOn(global, "setTimeout");
     const wrapper = mount(PollForm, {
       props: {
+        poll: {
+          id: 1,
+        },
         editPoll: true,
         eventService: mockSuccessfulEventService,
       },
@@ -343,6 +346,9 @@ describe("PollForm.vue", () => {
   it("for existing poll, if title and poll option not present, poll should not be updated", async () => {
     const wrapper = shallowMount(PollForm, {
       props: {
+        poll: {
+          id: 1,
+        },
         editPoll: true,
         eventService: mockSuccessfulEventService,
       },

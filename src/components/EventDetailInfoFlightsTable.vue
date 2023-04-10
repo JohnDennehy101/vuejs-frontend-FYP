@@ -132,34 +132,36 @@ export default {
       });
     },
     classifyFlights() {
-      if (this.checkedFlight.length > 0) {
-        for (const key in this.flights) {
-          if (this.flights[key][0] && this.flights[key][1]) {
-            if (
-              this.checkedFlight[0].find(
-                (a) =>
-                  a.airport === this.flights[key][0].airport &&
-                  a.arrivalTime === this.flights[key][0].arrivalTime &&
-                  a.departureTime === this.flights[key][0].departureTime &&
-                  a.duration === this.flights[key][0].duration &&
-                  a.carrier === this.flights[key][0].carrier
-              ) &&
-              this.checkedFlight[0].find(
-                (a) =>
-                  a.airport === this.flights[key][1].airport &&
-                  a.arrivalTime === this.flights[key][1].arrivalTime &&
-                  a.departureTime === this.flights[key][1].departureTime &&
-                  a.duration === this.flights[key][1].duration &&
-                  a.carrier === this.flights[key][1].carrier
-              )
-            ) {
-              this.flights[key].map((item) => {
-                item.checked = true;
-              });
-            } else {
-              this.flights[key].map((item) => {
-                item.checked = false;
-              });
+      if (this.checkedFlight) {
+        if (this.checkedFlight.length > 0) {
+          for (const key in this.flights) {
+            if (this.flights[key][0] && this.flights[key][1]) {
+              if (
+                this.checkedFlight[0].find(
+                  (a) =>
+                    a.airport === this.flights[key][0].airport &&
+                    a.arrivalTime === this.flights[key][0].arrivalTime &&
+                    a.departureTime === this.flights[key][0].departureTime &&
+                    a.duration === this.flights[key][0].duration &&
+                    a.carrier === this.flights[key][0].carrier
+                ) &&
+                this.checkedFlight[0].find(
+                  (a) =>
+                    a.airport === this.flights[key][1].airport &&
+                    a.arrivalTime === this.flights[key][1].arrivalTime &&
+                    a.departureTime === this.flights[key][1].departureTime &&
+                    a.duration === this.flights[key][1].duration &&
+                    a.carrier === this.flights[key][1].carrier
+                )
+              ) {
+                this.flights[key].map((item) => {
+                  item.checked = true;
+                });
+              } else {
+                this.flights[key].map((item) => {
+                  item.checked = false;
+                });
+              }
             }
           }
         }

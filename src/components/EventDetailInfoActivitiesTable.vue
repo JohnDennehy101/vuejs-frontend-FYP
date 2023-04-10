@@ -82,12 +82,14 @@ export default {
       return extractedLink;
     },
     classifyActivities() {
-      if (this.selectedActivities.length > 0) {
-        this.googlePlacesInfo.map((item) => {
-          this.selectedActivities.find((a) => a.name === item.name)
-            ? (item.checked = true)
-            : (item.checked = false);
-        });
+      if (this.selectedActivities) {
+        if (this.selectedActivities.length > 0) {
+          this.googlePlacesInfo.map((item) => {
+            this.selectedActivities.find((a) => a.name === item.name)
+              ? (item.checked = true)
+              : (item.checked = false);
+          });
+        }
       }
     },
   },

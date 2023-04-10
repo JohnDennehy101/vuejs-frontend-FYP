@@ -347,7 +347,6 @@ VueWrapper {
         },
         "$router": Object {
           "go": [MockFunction],
-          "push": [MockFunction],
         },
         "$store": Object {
           "dispatch": [MockFunction],
@@ -421,7 +420,6 @@ VueWrapper {
         },
         "$router": Object {
           "go": [MockFunction],
-          "push": [MockFunction],
         },
         "$store": Object {
           "dispatch": [MockFunction],
@@ -445,7 +443,6 @@ VueWrapper {
           },
           "$router": Object {
             "go": [MockFunction],
-            "push": [MockFunction],
           },
           "$store": Object {
             "dispatch": [MockFunction],
@@ -499,7 +496,7 @@ VueWrapper {
             "deleteEventItinerary": [Function],
             "deleteEventPoll": [Function],
             "editEventPoll": [Function],
-            "getindividualPoll": [Function],
+            "getIndividualPoll": [Function],
             "updateEvent": [Function],
             "updateEventItinerary": [Function],
           },
@@ -707,7 +704,6 @@ VueWrapper {
             },
             "$router": Object {
               "go": [MockFunction],
-              "push": [MockFunction],
             },
             "$store": Object {
               "dispatch": [MockFunction],
@@ -761,7 +757,7 @@ VueWrapper {
               "deleteEventItinerary": [Function],
               "deleteEventPoll": [Function],
               "editEventPoll": [Function],
-              "getindividualPoll": [Function],
+              "getIndividualPoll": [Function],
               "updateEvent": [Function],
               "updateEventItinerary": [Function],
             },
@@ -987,7 +983,7 @@ VueWrapper {
               "deleteEventItinerary": [Function],
               "deleteEventPoll": [Function],
               "editEventPoll": [Function],
-              "getindividualPoll": [Function],
+              "getIndividualPoll": [Function],
               "updateEvent": [Function],
               "updateEventItinerary": [Function],
             },
@@ -1045,7 +1041,7 @@ VueWrapper {
                 "0": false,
                 "1": true,
                 "default": EventService {
-                  "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
+                  "baseUrl": undefined,
                 },
               },
               "flight": Object {
@@ -1087,7 +1083,6 @@ VueWrapper {
             },
             "$router": Object {
               "go": [MockFunction],
-              "push": [MockFunction],
             },
             "$store": Object {
               "dispatch": [MockFunction],
@@ -1141,7 +1136,7 @@ VueWrapper {
               "deleteEventItinerary": [Function],
               "deleteEventPoll": [Function],
               "editEventPoll": [Function],
-              "getindividualPoll": [Function],
+              "getIndividualPoll": [Function],
               "updateEvent": [Function],
               "updateEventItinerary": [Function],
             },
@@ -6569,7 +6564,6 @@ VueWrapper {
                                 },
                                 "$router": Object {
                                   "go": [MockFunction],
-                                  "push": [MockFunction],
                                 },
                                 "$store": Object {
                                   "dispatch": [MockFunction],
@@ -6655,7 +6649,6 @@ VueWrapper {
                                 },
                                 "$router": Object {
                                   "go": [MockFunction],
-                                  "push": [MockFunction],
                                 },
                                 "$store": Object {
                                   "dispatch": [MockFunction],
@@ -6929,7 +6922,6 @@ VueWrapper {
                                 },
                                 "$router": Object {
                                   "go": [MockFunction],
-                                  "push": [MockFunction],
                                 },
                                 "$store": Object {
                                   "dispatch": [MockFunction],
@@ -7015,7 +7007,6 @@ VueWrapper {
                                 },
                                 "$router": Object {
                                   "go": [MockFunction],
-                                  "push": [MockFunction],
                                 },
                                 "$store": Object {
                                   "dispatch": [MockFunction],
@@ -12896,7 +12887,6 @@ VueWrapper {
                         },
                         "$router": Object {
                           "go": [MockFunction],
-                          "push": [MockFunction],
                         },
                         "$store": Object {
                           "dispatch": [MockFunction],
@@ -12982,7 +12972,6 @@ VueWrapper {
                         },
                         "$router": Object {
                           "go": [MockFunction],
-                          "push": [MockFunction],
                         },
                         "$store": Object {
                           "dispatch": [MockFunction],
@@ -13256,7 +13245,6 @@ VueWrapper {
                         },
                         "$router": Object {
                           "go": [MockFunction],
-                          "push": [MockFunction],
                         },
                         "$store": Object {
                           "dispatch": [MockFunction],
@@ -13342,7 +13330,6 @@ VueWrapper {
                         },
                         "$router": Object {
                           "go": [MockFunction],
-                          "push": [MockFunction],
                         },
                         "$store": Object {
                           "dispatch": [MockFunction],
@@ -13645,7 +13632,7 @@ VueWrapper {
                 "0": false,
                 "1": true,
                 "default": EventService {
-                  "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
+                  "baseUrl": undefined,
                 },
               },
               "flight": [Function],
@@ -13696,7 +13683,7 @@ VueWrapper {
             "deleteEventItinerary": [Function],
             "deleteEventPoll": [Function],
             "editEventPoll": [Function],
-            "getindividualPoll": [Function],
+            "getIndividualPoll": [Function],
             "updateEvent": [Function],
             "updateEventItinerary": [Function],
           },
@@ -13777,7 +13764,7 @@ VueWrapper {
               "0": false,
               "1": true,
               "default": EventService {
-                "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
+                "baseUrl": undefined,
               },
             },
             "flight": [Function],
@@ -13889,7 +13876,6 @@ VueWrapper {
     },
     "$router": Object {
       "go": [MockFunction],
-      "push": [MockFunction],
     },
     "$store": Object {
       "dispatch": [MockFunction],
@@ -13943,7 +13929,7 @@ VueWrapper {
       "deleteEventItinerary": [Function],
       "deleteEventPoll": [Function],
       "editEventPoll": [Function],
-      "getindividualPoll": [Function],
+      "getIndividualPoll": [Function],
       "updateEvent": [Function],
       "updateEventItinerary": [Function],
     },
@@ -13995,7 +13981,6 @@ VueWrapper {
     },
     "$router": Object {
       "go": [MockFunction],
-      "push": [MockFunction],
     },
     "$store": Object {
       "dispatch": [MockFunction],

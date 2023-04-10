@@ -439,7 +439,9 @@ export default {
           if (response.status === 201) {
             this.$emit("itineraryRequest", false);
             this.$emit("showToast", { boolean: true, edit: false });
-            this.$router.go(0);
+            if (this.$router) {
+              this.$router.go(0);
+            }
           } else {
             this.showErrorMessage = true;
             this.errorMessage = "Error creating itinerary.";
@@ -461,7 +463,9 @@ export default {
           if (response.status === 200) {
             this.$emit("itineraryRequest", false);
             this.$emit("showToast", { boolean: true, edit: true });
-            this.$router.go(0);
+            if (this.$router) {
+              this.$router.go(0);
+            }
           } else {
             this.showErrorMessage = true;
             this.errorMessage = "Error updating itinerary.";
@@ -482,7 +486,9 @@ export default {
       if (response.status === 200) {
         this.$emit("itineraryRequest", false);
         this.$emit("showToast", { boolean: true, edit: "" });
-        this.$router.go(0);
+        if (this.$router) {
+          this.$router.go(0);
+        }
       } else {
         this.showErrorMessage = true;
         this.errorMessage = "Error deleting itinerary.";

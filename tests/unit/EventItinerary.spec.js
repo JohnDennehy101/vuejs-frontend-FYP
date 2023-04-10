@@ -130,7 +130,7 @@ describe("EventItinerary.vue", () => {
         mocks: {
           $store: mockStore,
           $route: mockRoute,
-          $router: mockRouter,
+          $router: { go: jest.fn() },
         },
       },
       props: {

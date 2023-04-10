@@ -1,10 +1,9 @@
 import axios from "axios";
 //this.baseUrl = http://localhost:3000/api/v1 for local
-//this.baseUrl = https://group-activity-planning-nest.herokuapp.com/api/v1 for live
 
 class UserService {
   constructor() {
-    this.baseUrl = "https://group-activity-planning-nest.herokuapp.com/api/v1";
+    this.baseUrl = process.env.VUE_APP_BACK_END_API_URL;
     if (localStorage.token) {
       axios.defaults.headers.common["Authorization"] =
         "Bearer " + localStorage.token;
@@ -101,7 +100,7 @@ class UserService {
       .get(`${this.baseUrl}/users/${id}`, {
         headers: {
           "Access-Control-Allow-Origin": "*",
-          "Authorization": "Bearer " + jwt
+          Authorization: "Bearer " + jwt,
         },
       })
       .catch((error) => {
@@ -119,7 +118,7 @@ class UserService {
         headers: {
           "Access-Control-Allow-Origin": "*",
           "Content-Type": "multipart/form-data",
-          "Authorization": "Bearer " + token
+          Authorization: "Bearer " + token,
         },
       })
       .catch((error) => {

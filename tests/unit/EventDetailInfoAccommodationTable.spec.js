@@ -221,30 +221,29 @@ describe("EventDetailInfoAccommodationTable.vue", () => {
     expect(wrapper.emitted()).toHaveProperty("checkedAccommodationChange");
   });
 
-   it("if accommodation already attached to itinerary, item should be pre-checked on table on load", async () => {
+  it("if accommodation already attached to itinerary, item should be pre-checked on table on load", async () => {
     const wrapper = mount(EventDetailInfoAccommodationTable, {
       props: {
         accommodation: mockAccommodation,
         dateRange: "15th March 2022 - 17th March 2022",
         checkedAccommodation: [
-        {
-          title: 'Mock Accommodation',
-          price: '€200',
-          roomTypeRecommendedBooking: '1 Double Room',
-          numberOfBedsRecommendedBooking: '1 Double Bed',
-          ratingScoreCategory: 'Exceptional',
-          reviewQuantity: '2000',
-          ratingScore: '8.7',
-          locationDistance: '3km from centre',
-          bookingSiteLink: 'https://www.mockbooking.com',
-          bookingSiteDisplayLocationMapLink: 'https://www.mockbooking.com'
-        }
-      ]
+          {
+            title: "Mock Accommodation",
+            price: "€200",
+            roomTypeRecommendedBooking: "1 Double Room",
+            numberOfBedsRecommendedBooking: "1 Double Bed",
+            ratingScoreCategory: "Exceptional",
+            reviewQuantity: "2000",
+            ratingScore: "8.7",
+            locationDistance: "3km from centre",
+            bookingSiteLink: "https://www.mockbooking.com",
+            bookingSiteDisplayLocationMapLink: "https://www.mockbooking.com",
+          },
+        ],
       },
     });
 
     await nextTick();
-
 
     expect(wrapper.vm.accommodationInfo["1"][0].checked).toBe(true);
   });

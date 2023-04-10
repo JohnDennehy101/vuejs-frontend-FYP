@@ -194,7 +194,7 @@ VueWrapper {
           "submitForm": [Function],
           "title": undefined,
           "userService": UserService {
-            "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
+            "baseUrl": undefined,
           },
         },
       },
@@ -331,7 +331,7 @@ VueWrapper {
             "submitForm": [Function],
             "title": undefined,
             "userService": UserService {
-              "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
+              "baseUrl": undefined,
             },
           },
           "da": null,
@@ -392,7 +392,7 @@ VueWrapper {
           "props": Object {
             "title": undefined,
             "userService": UserService {
-              "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
+              "baseUrl": undefined,
             },
           },
           "propsDefaults": Object {},
@@ -407,7 +407,7 @@ VueWrapper {
                 "0": false,
                 "1": true,
                 "default": UserService {
-                  "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
+                  "baseUrl": undefined,
                 },
               },
             },
@@ -429,7 +429,7 @@ VueWrapper {
             "submitForm": [Function],
             "title": undefined,
             "userService": UserService {
-              "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
+              "baseUrl": undefined,
             },
           },
           "refs": Object {},
@@ -623,7 +623,7 @@ VueWrapper {
                               "submitForm": [Function],
                               "title": undefined,
                               "userService": UserService {
-                                "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
+                                "baseUrl": undefined,
                               },
                             },
                             "modifiers": Object {},
@@ -794,7 +794,7 @@ VueWrapper {
                               "submitForm": [Function],
                               "title": undefined,
                               "userService": UserService {
-                                "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
+                                "baseUrl": undefined,
                               },
                             },
                             "modifiers": Object {},
@@ -1366,7 +1366,7 @@ VueWrapper {
                       "submitForm": [Function],
                       "title": undefined,
                       "userService": UserService {
-                        "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
+                        "baseUrl": undefined,
                       },
                     },
                     "modifiers": Object {},
@@ -1459,7 +1459,7 @@ VueWrapper {
                       "submitForm": [Function],
                       "title": undefined,
                       "userService": UserService {
-                        "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
+                        "baseUrl": undefined,
                       },
                     },
                     "modifiers": Object {},
@@ -1914,7 +1914,7 @@ VueWrapper {
                 "0": false,
                 "1": true,
                 "default": UserService {
-                  "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
+                  "baseUrl": undefined,
                 },
               },
             },
@@ -2038,7 +2038,7 @@ VueWrapper {
               "0": false,
               "1": true,
               "default": UserService {
-                "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
+                "baseUrl": undefined,
               },
             },
           },
@@ -2204,7 +2204,7 @@ VueWrapper {
     "submitForm": [Function],
     "title": undefined,
     "userService": UserService {
-      "baseUrl": "https://group-activity-planning-nest.herokuapp.com/api/v1",
+      "baseUrl": undefined,
     },
   },
   "isDisabled": [Function],

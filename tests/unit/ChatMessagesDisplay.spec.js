@@ -205,7 +205,7 @@ describe("ChatMessagesDisplay.vue", () => {
       '[data-testid="messageTimestamp"]'
     );
 
-    expect(messageTimestampElement.text()).toContain("2022");
+    expect(messageTimestampElement.text()).toContain(new Date().getFullYear());
   });
 
   it("Message content should be rendered", async () => {

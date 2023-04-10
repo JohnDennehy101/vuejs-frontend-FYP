@@ -1,10 +1,9 @@
 import axios from "axios";
 //this.baseUrl = http://localhost:3000/api/v1 for local
-//this.baseUrl = https://group-activity-planning-nest.herokuapp.com/api/v1 for live
 
 class EventService {
   constructor() {
-    this.baseUrl = "https://group-activity-planning-nest.herokuapp.com/api/v1";
+    this.baseUrl = process.env.VUE_APP_BACK_END_API_URL;
 
     if (localStorage.token) {
       axios.defaults.headers.common["Authorization"] =
@@ -156,7 +155,7 @@ class EventService {
       .delete(`${this.baseUrl}/events/${eventId}/poll/${pollId}`, {
         headers: {
           "Access-Control-Allow-Origin": "*",
-           Authorization: "Bearer " + jwt,
+          Authorization: "Bearer " + jwt,
         },
       })
       .catch((error) => {

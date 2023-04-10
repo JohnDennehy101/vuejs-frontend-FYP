@@ -102,12 +102,14 @@ export default {
       });
     },
     classifyAccommodation() {
-      if (this.selectedAccommodation.length > 0) {
-        this.accommodationInfo[1].map((item) => {
-          this.selectedAccommodation.find((a) => a.title === item.title)
-            ? (item.checked = true)
-            : (item.checked = false);
-        });
+      if (this.selectedAccommodation) {
+        if (this.selectedAccommodation.length > 0) {
+          this.accommodationInfo[1].map((item) => {
+            this.selectedAccommodation.find((a) => a.title === item.title)
+              ? (item.checked = true)
+              : (item.checked = false);
+          });
+        }
       }
     },
   },
