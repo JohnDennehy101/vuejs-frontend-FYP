@@ -68,7 +68,7 @@ import userService from "../services/UserService";
 import UserInfoDisplay from "../components/UserInfoDisplay";
 import DashboardEventItems from "../components/DashboardEventItems";
 import Loading from "vue-loading-overlay";
-import "vue-loading-overlay/dist/vue-loading.css";
+import "vue-loading-overlay/dist/css/index.css";
 
 import { mapGetters } from "vuex";
 export default {

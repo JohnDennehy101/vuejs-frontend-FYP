@@ -59,7 +59,7 @@ import PollBarChart from "../components/PollBarChart";
 import eventService from "../services/EventService";
 import { mapGetters } from "vuex";
 import Loading from "vue-loading-overlay";
-import "vue-loading-overlay/dist/vue-loading.css";
+import "vue-loading-overlay/dist/css/index.css";
 import ResponseErrorMessage from "../components/ResponseErrorMessage";
 import Toast from "../components/Toast";
 export default {

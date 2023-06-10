@@ -1,6 +1,6 @@
 <template>
   <div id="wrapper">
-    <BarChart
+    <Bar
       ref="barchartRef"
       :chartData="chartInfo"
       :options="options"
@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { BarChart } from "vue-chart-3";
+import { Bar } from "vue-chartjs";
 import { computed, ref } from "vue";
 import DateUtils from "../utils/dateUtils";
 export default {
@@ -90,7 +90,7 @@ export default {
   },
 
   components: {
-    BarChart,
+    Bar,
   },
 };
 </script>

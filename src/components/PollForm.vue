@@ -74,7 +74,7 @@ import eventService from "../services/EventService";
 import StringUtils from "../utils/stringUtils";
 import DateUtils from "../utils/dateUtils";
 import { mapGetters } from "vuex";
-import Toast from "../components/Toast";
+import Toast from "./Toast";
 export default {
   props: {
     poll: Object,
@@ -150,10 +150,10 @@ export default {
           if (!("error" in response)) {
             this.toastMessage = "Successfully updated poll";
             this.displayToast = true;
-            setTimeout(
-              () => this.$router.push({ path: `/dashboard/${this.userId}` }),
-              2000
-            );
+
+            if (this.$router) {
+              this.$router.push({ path: `/dashboard/${this.userId}` });
+            }
           } else {
             this.invalidLogin = true;
           }
@@ -185,7 +185,6 @@ export default {
           if (!("error" in response)) {
             this.toastMessage = "Successfully created poll";
             this.displayToast = true;
-            console.log("HITTING");
             setTimeout(
               () => this.$router.push({ path: `/dashboard/${this.userId}` }),
               2000

@@ -41,7 +41,7 @@ describe("UserInfoDisplay.vue", () => {
     const createdEventsQuantityTextElement = wrapper.find(
       '[data-testid="numberOfCreatedEventsSingular"]'
     );
-    expect(createdEventsQuantityTextElement.text()).toContain(1);
+    expect(createdEventsQuantityTextElement.text()).toContain("1");
   });
 
   it("checks that for multiple created events, plural of event is rendered (events)", async () => {
@@ -73,7 +73,6 @@ describe("UserInfoDisplay.vue", () => {
     );
     expect(invitedEventsQuantityTextElement.text()).toBe("1 event invite");
   });
-
 
   it("checks that for multiple invited events, plural of event is rendered (events)", async () => {
     const wrapper = mount(UserInfoDisplay, {
